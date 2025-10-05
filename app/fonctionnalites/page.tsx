@@ -46,12 +46,6 @@ const FEATURES = [
     tag: "Suivi",
   },
   {
-    title: "Feuille de match automatique",
-    desc: "Génération instantanée selon les réponses aux convocations. Export tableau prêt à imprimer.",
-    icon: <LayoutDashboard size={28} className="text-[#5BE37D]" />,
-    tag: "Match day",
-  },
-  {
     title: "Création d'évènement ciblée",
     desc: "Choisissez précisément les équipes ou joueurs concernés. Disponibilités, rappels, documents liés.",
     icon: <CalendarDays size={28} className="text-[#5BE37D]" />,
@@ -102,12 +96,6 @@ const FEATURES = [
     desc: "Système de notification avancé : relances intelligentes, résumés quotidiens, silence nocturne.",
     icon: <BellRing size={28} className="text-[#5BE37D]" />,
     tag: "Rappels",
-  },
-  {
-    title: "Vidéo & IA coach (bientôt)",
-    desc: "Analyse automatisée, tracking des actions, tableaux de bord coach & joueur.",
-    icon: <Video size={28} className="text-[#5BE37D]" />,
-    tag: "Prochainement",
   },
 ];
 

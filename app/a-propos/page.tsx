@@ -49,13 +49,13 @@ export default function AboutPage() {
           </div>
           <div className="flex flex-col items-center">
             <Image
-              src="/vanessa.png"
-              alt="Vanessa Roland"
+              src="/vanessa.jpeg"
+              alt="Vanessa Rolland"
               width={120}
               height={120}
               className="rounded-full object-cover border-4 border-[#5BE37D]/60 shadow"
             />
-            <div className="font-bold text-[#14482F] text-lg mt-4">Vanessa Roland</div>
+            <div className="font-bold text-[#14482F] text-lg mt-4">Vanessa Rolland</div>
             <div className="text-[#14482F]/60 text-sm">Développeur Expert · Associée</div>
           </div>
           <div className="flex flex-col items-center">
@@ -94,7 +94,7 @@ export default function AboutPage() {
         </section>
 
         {/* Engagements */}
-        <section className="mb-12">
+        <section className="mb-12 text-[#000000]">
           <h2 className="text-2xl font-bold text-[#14482F] mb-6 text-center">Nos engagements</h2>
           <div className="flex flex-col md:flex-row gap-6 justify-center">
             <div className="flex-1 flex items-start gap-4 bg-[#D9C6A3]/60 rounded-xl p-5 shadow">
@@ -130,7 +130,7 @@ export default function AboutPage() {
 
         {/* Call to action */}
         <section className="flex flex-col items-center mt-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#5BE37D] mb-3 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#000000] mb-3 text-center">
             Envie de faire grandir votre club avec une équipe passionnée ?
           </h2>
           <a
