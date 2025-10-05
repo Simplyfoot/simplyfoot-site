@@ -328,7 +328,7 @@ export default async function BlogArticle(
       />
 
       {/* Fil d’Ariane */}
-      <nav className="text-sm text-[#D9C6A3]/80 mb-4">
+      <nav className="text-sm text-[#F8E9CA]/80 mb-4">
         <Link href="/" className="hover:text-white">Accueil</Link>
         <span className="mx-2">/</span>
         <Link href="/blog" className="hover:text-white">Blog</Link>
@@ -341,7 +341,7 @@ export default async function BlogArticle(
         <h1 className="text-3xl md:text-5xl font-extrabold text-[#5BE37D] drop-shadow">
           {post.title}
         </h1>
-        <div className="mt-3 flex flex-wrap items-center gap-3 text-[#D9C6A3]">
+        <div className="mt-3 flex flex-wrap items-center gap-3 text-[#F8E9CA]">
           <span>{fmt(post.date)}</span>
           <span>•</span>
           <span>{readingTime(post.content)}</span>
@@ -363,7 +363,7 @@ export default async function BlogArticle(
             {post.tags.map((t) => (
               <span
                 key={t}
-                className="rounded-full border border-[#5BE37D]/30 bg-[#1d3e2e]/50 px-3 py-1 text-xs font-semibold text-[#D9C6A3]"
+                className="rounded-full border border-[#5BE37D]/30 bg-[#1d3e2e]/50 px-3 py-1 text-xs font-semibold text-[#F8E9CA]"
               >
                 #{t}
               </span>
@@ -391,7 +391,7 @@ export default async function BlogArticle(
         {toc.length ? (
           <aside className="lg:sticky lg:top-24 h-max rounded-2xl border border-[#5BE37D]/20 bg-[#1d3e2e]/40 p-4">
             <div className="text-[#5BE37D] font-bold mb-2">Sommaire</div>
-            <ul className="space-y-1 text-sm text-[#D9C6A3]">
+            <ul className="space-y-1 text-sm text-[#F8E9CA]">
               {toc.map((i) => (
                 <li key={i.id} className={i.level === 3 ? "ml-3" : ""}>
                   <a
@@ -421,7 +421,7 @@ export default async function BlogArticle(
             href={`/blog/${prev.slug}`}
             className="group rounded-2xl border border-[#5BE37D]/20 bg-[#1d3e2e]/40 p-5 hover:border-[#5BE37D]/40 transition"
           >
-            <div className="text-xs text-[#D9C6A3]/80">Article précédent</div>
+            <div className="text-xs text-[#F8E9CA]/80">Article précédent</div>
             <div className="mt-1 font-bold text-white group-hover:text-[#5BE37D]">
               {prev.title}
             </div>
@@ -434,7 +434,7 @@ export default async function BlogArticle(
             href={`/blog/${next.slug}`}
             className="group rounded-2xl border border-[#5BE37D]/20 bg-[#1d3e2e]/40 p-5 text-right hover:border-[#5BE37D]/40 transition"
           >
-            <div className="text-xs text-[#D9C6A3]/80">Article suivant</div>
+            <div className="text-xs text-[#F8E9CA]/80">Article suivant</div>
             <div className="mt-1 font-bold text-white group-hover:text-[#5BE37D]">
               {next.title}
             </div>
@@ -448,11 +448,11 @@ export default async function BlogArticle(
       <div className="mt-10 flex flex-wrap gap-4 justify-between items-center">
         <Link
           href="/blog"
-          className="rounded-xl border border-[#5BE37D]/30 bg-[#1d3e2e]/50 px-4 py-2 text-sm text-[#D9C6A3] hover:text-white"
+          className="rounded-xl border border-[#5BE37D]/30 bg-[#1d3e2e]/50 px-4 py-2 text-sm text-[#F8E9CA] hover:text-white"
         >
           ← Revenir au blog
         </Link>
-        <div className="text-sm text-[#D9C6A3]">
+        <div className="text-sm text-[#F8E9CA]">
           Partager :
           <a
             className="ml-2 underline hover:text-white"

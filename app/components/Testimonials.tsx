@@ -48,7 +48,7 @@ export default function Testimonials() {
             />
             <div className="font-bold text-lg text-white">{t.name}</div>
             <div className="text-[#5BE37D] font-semibold mb-2">{t.role}</div>
-            <p className="text-base text-[#D9C6A3]">{t.text}</p>
+            <p className="text-base text-[#F8E9CA]">{t.text}</p>
           </motion.div>
         ))}
       </div>

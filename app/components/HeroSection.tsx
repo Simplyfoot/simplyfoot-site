@@ -60,7 +60,7 @@ export default function HeroSection() {
           >
             Centralisez la gestion, motivez, communiquez, gagnez du temps.
             <br />
-            <span className="font-semibold text-[#D9C6A3]">
+            <span className="font-semibold text-[#F8E9CA]">
               SimplyFoot simplifie la vie des bénévoles et dirigeants, tout en offrant une expérience unique aux joueurs et familles.
             </span>
           </motion.p>
@@ -75,13 +75,13 @@ export default function HeroSection() {
               className="px-8 py-4 rounded-xl font-bold text-lg bg-[#5BE37D] text-[#14482F] shadow-xl hover:bg-[#68FB7A] hover:scale-105 active:scale-95 focus:outline-none transition duration-150"
             >
               Inscrire mon club
-              <span className="ml-2 text-xs bg-[#D9C6A3]/80 text-[#14482F] px-2 py-1 rounded-full font-semibold align-middle animate-bounce">
+              <span className="ml-2 text-xs bg-[#F8E9CA]/80 text-[#14482F] px-2 py-1 rounded-full font-semibold align-middle animate-bounce">
                 Nouveau 2024
               </span>
             </a>
             <a
               href="/contact"
-              className="px-8 py-4 rounded-xl font-bold text-lg border border-[#D9C6A3]/60 text-[#D9C6A3] hover:border-[#5BE37D] hover:text-[#5BE37D] hover:scale-105 active:scale-95 focus:outline-none transition duration-150"
+              className="px-8 py-4 rounded-xl font-bold text-lg border border-[#F8E9CA]/60 text-[#F8E9CA] hover:border-[#5BE37D] hover:text-[#5BE37D] hover:scale-105 active:scale-95 focus:outline-none transition duration-150"
             >
               Demander une démo
             </a>
@@ -131,18 +131,18 @@ export default function HeroSection() {
         initial={{ y: 40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1, duration: 0.8 }}
-        className="relative w-full max-w-6xl mx-auto px-4 py-6 z-30 flex flex-col sm:flex-row justify-center items-center gap-7
-                   bg-[#D9C6A3]/95 rounded-t-3xl shadow-2xl border-t border-[#5BE37D]/20 mt-[-56px] mb-0
+        className="relative w-full max-w-6xl mx-auto px-4 py-6 z-30 flex flex-col sm:flex-row justify-center items-center gap-16
+                   bg-[#F8E9CA]/95 rounded-t-3xl shadow-2xl border-t border-[#5BE37D]/20 mb-0
                    backdrop-blur-md"
         aria-label="Chiffres clés SimplyFoot"
       >
-        <div className="text-center flex flex-col items-center">
+        {/* <div className="text-center flex flex-col items-center">
           <span className="text-2xl md:text-3xl font-extrabold text-[#175438]">
             +{clubs} clubs
           </span>
           <span className="text-[#175438]/80 text-sm font-semibold">déjà équipés</span>
-        </div>
-        <div className="h-8 w-px bg-[#175438]/20 hidden sm:block" aria-hidden="true" />
+        </div> */}
+        {/* <div className="h-8 w-px bg-[#175438]/20 hidden sm:block" aria-hidden="true" /> */}
         <div className="text-center flex flex-col items-center">
           <span className="text-2xl md:text-3xl font-extrabold text-[#175438]">100 %</span>
           <span className="text-[#175438]/80 text-sm font-semibold">dédié aux clubs amateurs</span>

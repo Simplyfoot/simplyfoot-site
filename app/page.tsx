@@ -20,10 +20,10 @@ export default function Home() {
       <HomeBenefits />
 
       {/* 3️⃣ Témoignages clients */}
-      <Testimonials />
+      {/* <Testimonials /> */}
 
       {/* 4️⃣ Carousel de logos clubs */}
-      <ClubLogosCarousel />
+      {/* <ClubLogosCarousel /> */}
 
       {/* 5️⃣ Modules essentiels */}
       <SectionModules />

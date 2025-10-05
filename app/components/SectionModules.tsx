@@ -45,7 +45,7 @@ const MODULES = [
 
 export default function SectionModules() {
   return (
-    <section id="modules" className="w-full bg-[#D9C6A3] py-20 border-t border-[#175438]/10">
+    <section id="modules" className="w-full bg-[#F8E9CA] py-20 border-t border-[#175438]/10">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-12 text-[#175438] drop-shadow-lg">
           Les <span className="text-[#14482F]">modules essentiels</span> SimplyFoot

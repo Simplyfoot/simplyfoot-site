@@ -92,7 +92,7 @@ export default function ContactPage() {
           <h1 className="text-4xl md:text-6xl font-extrabold text-[#5BE37D] drop-shadow">
             Contactez l’équipe SimplyFoot
           </h1>
-          <p className="mx-auto mt-3 max-w-2xl text-lg font-semibold text-[#D9C6A3]">
+          <p className="mx-auto mt-3 max-w-2xl text-lg font-semibold text-[#F8E9CA]">
             Une question, une démo, un projet club&nbsp;? Nous répondons sous 24h ouvrées.
           </p>
         </header>
@@ -132,7 +132,7 @@ export default function ContactPage() {
               />
 
               <div className="mt-6 rounded-2xl border border-[#5BE37D]/20 bg-[#14482F]/50 p-4">
-                <p className="text-sm text-[#D9C6A3]">
+                <p className="text-sm text-[#F8E9CA]">
                   <strong className="text-white">Conseil personnalisé</strong> — Réservez un créneau
                   de 20 minutes pour découvrir SimplyFoot et vos besoins.
                 </p>
@@ -321,7 +321,7 @@ function InfoRow({
     <div className="mt-3 flex items-start gap-3">
       <div className="mt-0.5">{icon}</div>
       <div>
-        <div className="text-xs uppercase tracking-wide text-[#D9C6A3]">{label}</div>
+        <div className="text-xs uppercase tracking-wide text-[#F8E9CA]">{label}</div>
         <div className="text-base leading-6">{value}</div>
       </div>
     </div>

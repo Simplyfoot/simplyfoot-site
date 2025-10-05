@@ -78,14 +78,14 @@ export default function GestionEquipePage() {
         {/* HERO */}
         <section className="flex flex-col md:flex-row gap-10 items-center">
           <div className="flex-1">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#5BE37D]/40 bg-[#1d3e2e]/50 px-3 py-1 text-xs font-semibold text-[#D9C6A3]/90">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#5BE37D]/40 bg-[#1d3e2e]/50 px-3 py-1 text-xs font-semibold text-[#F8E9CA]/90">
               <span className="h-2 w-2 rounded-full bg-[#5BE37D] animate-pulse" />
               Pour les équipes ambitieuses
             </span>
             <h1 className="mt-4 text-4xl md:text-6xl font-extrabold text-white leading-tight">
               Gérez votre <span className="text-[#5BE37D]">équipe</span> comme jamais : simple, fun, efficace
             </h1>
-            <p className="text-[#D9C6A3] text-lg md:text-xl mt-4 font-medium">
+            <p className="text-[#F8E9CA] text-lg md:text-xl mt-4 font-medium">
               Planifiez, communiquez et progressez ensemble. Des outils pro, pensés pour le plaisir du jeu et la cohésion.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-white/90 text-base">
@@ -103,7 +103,7 @@ export default function GestionEquipePage() {
               </a>
               <a
                 href="#contact"
-                className="px-8 py-4 rounded-xl font-bold text-lg border border-[#D9C6A3]/60 text-[#D9C6A3] hover:border-[#5BE37D] hover:text-[#5BE37D] active:scale-[.98] transition"
+                className="px-8 py-4 rounded-xl font-bold text-lg border border-[#F8E9CA]/60 text-[#F8E9CA] hover:border-[#5BE37D] hover:text-[#5BE37D] active:scale-[.98] transition"
               >
                 Demander une démo
               </a>
@@ -126,7 +126,7 @@ export default function GestionEquipePage() {
           <h2 id="divisions-title" className="text-3xl md:text-4xl font-bold text-[#5BE37D] mb-8 text-center">
             Progresser, se challenger, s&#39;amuser ensemble
           </h2>
-          <p className="mx-auto max-w-3xl text-center text-[#D9C6A3] mb-8">
+          <p className="mx-auto max-w-3xl text-center text-[#F8E9CA] mb-8">
             Des blasons 3D immersifs pour visualiser votre progression : survolez pour les voir tourner. Un repère clair pour motiver l&#39;équipe semaine après semaine.
           </p>
 
@@ -143,7 +143,7 @@ export default function GestionEquipePage() {
                   <CrestGLB src={d.model} />
                 </div>
                 <h3 className="text-xl font-bold text-white mt-3 mb-1">{d.nom}</h3>
-                <p className="text-sm text-[#D9C6A3] text-center">{d.desc}</p>
+                <p className="text-sm text-[#F8E9CA] text-center">{d.desc}</p>
               </article>
             ))}
           </div>
@@ -158,7 +158,7 @@ export default function GestionEquipePage() {
             {MODULES_EQUIPE.map((mod) => (
               <div
                 key={mod.title}
-                className="bg-[#D9C6A3]/90 rounded-xl p-6 flex flex-col items-center text-center shadow border border-[#5BE37D]/10"
+                className="bg-[#F8E9CA]/90 rounded-xl p-6 flex flex-col items-center text-center shadow border border-[#5BE37D]/10"
               >
                 <span className="text-3xl mb-3" aria-hidden>{mod.icon}</span>
                 <h3 className="font-extrabold text-lg text-[#14482F] mb-2">{mod.title}</h3>
@@ -173,7 +173,7 @@ export default function GestionEquipePage() {
           <h2 id="how-title" className="text-3xl font-bold text-white text-center mb-6">
             Comment ça marche ?
           </h2>
-          <ol className="grid grid-cols-1 md:grid-cols-3 gap-6 text-[#D9C6A3]">
+          <ol className="grid grid-cols-1 md:grid-cols-3 gap-6 text-[#F8E9CA]">
             <li className="rounded-xl bg-[#232729]/70 p-5 border border-[#5BE37D]/10">
               <span className="text-[#5BE37D] font-bold">1. Créez l&#39;équipe</span>
               <p>Donnez un nom, choisissez un visuel, invitez vos membres en 1 clic.</p>
@@ -203,7 +203,7 @@ export default function GestionEquipePage() {
             </a>
             <a
               href="/contact"
-              className="px-10 py-4 rounded-lg font-bold text-lg border border-[#D9C6A3]/60 text-[#D9C6A3] hover:border-[#5BE37D] hover:text-[#5BE37D] active:scale-[.98] transition"
+              className="px-10 py-4 rounded-lg font-bold text-lg border border-[#F8E9CA]/60 text-[#F8E9CA] hover:border-[#5BE37D] hover:text-[#5BE37D] active:scale-[.98] transition"
             >
               Être recontacté par un coach
             </a>

@@ -147,21 +147,21 @@ export default function FonctionnalitesPage() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#5BE37D]/40 bg-[#1d3e2e]/50 px-3 py-1 text-xs font-semibold text-[#D9C6A3]/90">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#5BE37D]/40 bg-[#1d3e2e]/50 px-3 py-1 text-xs font-semibold text-[#F8E9CA]/90">
             <span className="h-2 w-2 animate-pulse rounded-full bg-[#5BE37D]" />
             Conçu avec des coachs & des parents
           </span>
           <h1 className="mt-4 text-4xl md:text-6xl font-extrabold text-white leading-tight">
             Toutes les fonctionnalités pour <span className="text-[#5BE37D]">simplifier</span> et <span className="text-[#5BE37D]">motiver</span>
           </h1>
-          <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl font-medium text-[#D9C6A3]">
+          <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl font-medium text-[#F8E9CA]">
             SimplyFoot centralise l&#39;organisation, les échanges et la progression sportive. Moins d&#39;administratif, plus de football.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a href="/offres" className="rounded-xl bg-[#5BE37D] px-8 py-4 text-lg font-extrabold text-[#14482F] shadow-xl transition hover:bg-[#63f286] active:scale-[.98]">
               Essayer gratuitement
             </a>
-            <a href="/contact" className="rounded-xl border border-[#D9C6A3]/60 px-8 py-4 text-lg font-bold text-[#D9C6A3] transition hover:border-[#5BE37D] hover:text-[#5BE37D] active:scale-[.98]">
+            <a href="/contact" className="rounded-xl border border-[#F8E9CA]/60 px-8 py-4 text-lg font-bold text-[#F8E9CA] transition hover:border-[#5BE37D] hover:text-[#5BE37D] active:scale-[.98]">
               Demander une démo
             </a>
           </div>
@@ -186,7 +186,7 @@ export default function FonctionnalitesPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-extrabold text-white">{f.title}</h3>
-                    <p className="mt-1 text-sm text-[#D9C6A3]">{f.desc}</p>
+                    <p className="mt-1 text-sm text-[#F8E9CA]">{f.desc}</p>
                   </div>
                 </div>
                 <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#5BE37D]/25 bg-[#14482F]/60 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-[#5BE37D]">
@@ -208,7 +208,7 @@ export default function FonctionnalitesPage() {
                 key={b.role}
                 {...fadeUp}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="rounded-2xl border border-[#5BE37D]/15 bg-[#232729] p-6 text-[#D9C6A3] shadow"
+                className="rounded-2xl border border-[#5BE37D]/15 bg-[#232729] p-6 text-[#F8E9CA] shadow"
               >
                 <h3 className="text-white mb-2 font-extrabold">{b.role}</h3>
                 <ul className="space-y-2">
@@ -225,7 +225,7 @@ export default function FonctionnalitesPage() {
         <section className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
           <motion.div {...fadeUp} transition={{ duration: 0.5 }} className="relative overflow-hidden rounded-2xl border border-[#5BE37D]/20 bg-[#232729] p-6">
             <h3 className="text-white text-xl font-extrabold">Transport responsable</h3>
-            <p className="mt-2 text-[#D9C6A3] text-sm">
+            <p className="mt-2 text-[#F8E9CA] text-sm">
               Covoiturage clair, parents engagés via charte, itinéraires partagés en un clic. 
               Les coachs gagnent du temps, les familles sont rassurées.
             </p>
@@ -239,7 +239,7 @@ export default function FonctionnalitesPage() {
 
           <motion.div {...fadeUp} transition={{ duration: 0.5, delay: 0.1 }} className="relative overflow-hidden rounded-2xl border border-[#5BE37D]/20 bg-[#232729] p-6">
             <h3 className="text-white text-xl font-extrabold">Compo par glisser‑déposer</h3>
-            <p className="mt-2 text-[#D9C6A3] text-sm">
+            <p className="mt-2 text-[#F8E9CA] text-sm">
               Composez votre équipe sur un terrain interactif, sauvegardez vos schémas et partagez‑les en deux secondes.
             </p>
             <div className="mt-4 flex flex-wrap gap-2 text-xs">
@@ -256,14 +256,14 @@ export default function FonctionnalitesPage() {
           <h2 className="text-3xl md:text-4xl font-extrabold text-white">
             Moins d&#39;organisation. Plus de football.
           </h2>
-          <p className="mx-auto mt-2 max-w-2xl text-[#D9C6A3]">
+          <p className="mx-auto mt-2 max-w-2xl text-[#F8E9CA]">
             Adoptez les fonctionnalités qui libèrent coachs et bénévoles, et qui motivent les joueurs semaine après semaine.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             <a href="/offres" className="rounded-xl bg-[#5BE37D] px-8 py-4 text-lg font-extrabold text-[#14482F] shadow-xl transition hover:bg-[#63f286] active:scale-[.98]">
               Découvrir les offres
             </a>
-            <a href="/inscription" className="rounded-xl border border-[#D9C6A3]/60 px-8 py-4 text-lg font-bold text-[#D9C6A3] transition hover:border-[#5BE37D] hover:text-[#5BE37D] active:scale-[.98]">
+            <a href="/inscription" className="rounded-xl border border-[#F8E9CA]/60 px-8 py-4 text-lg font-bold text-[#F8E9CA] transition hover:border-[#5BE37D] hover:text-[#5BE37D] active:scale-[.98]">
               Créer un compte club
             </a>
           </div>

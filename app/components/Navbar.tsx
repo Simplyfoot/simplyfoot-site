@@ -84,7 +84,7 @@ export default function Header() {
       {/* Skip to content for accessibility */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only absolute top-2 left-2 z-50 rounded bg-white px-4 py-2 text-sm text-[#14482F] shadow-lg"
+        className="sr-only focus:not-sr-only absolute top-2 left-2 z-50 rounded bg-white px-4 py-2 text-sm text-[#F8E9CA] shadow-lg"
       >
         Aller au contenu principal
       </a>
@@ -96,18 +96,18 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3" aria-label="Accueil">
           <Image src="/logo.png" alt="Logo SimplyFoot" width={40} height={40} priority />
-          <span className="text-2xl font-bold text-[#D9C6A3]">
-            Simply<span className="text-[#5BE37D]">Foot</span>
+          <span className="text-2xl font-bold text-[#F8E9CA]">
+            Simply<span className="text-[#567E66]">Foot</span>
           </span>
         </Link>
 
         {/* Desktop links */}
         <ul className="hidden items-center gap-8 lg:flex">
           {NAV_LINKS.map((link) => (
-            <li key={link.name} className="relative">
+            <li key={link.name} className="relative text-[#F8E9CA]">
               {link.dropdown ? (
                 <Menu as="div" className="relative inline-block text-left">
-                  <Menu.Button className="flex items-center text-[#D9C6A3] font-medium hover:text-[#5BE37D]">
+                  <Menu.Button className="flex items-center font-medium hover:text-[#5BE37D]">
                     {link.name}
                     <ChevronDown className="ml-1 h-5 w-5" />
                   </Menu.Button>
@@ -129,7 +129,7 @@ export default function Header() {
                               href={sub.href}
                               className={clsx(
                                 "block rounded-md px-4 py-2 text-sm font-medium",
-                                active ? "bg-[#5BE37D]/10 text-[#5BE37D]" : "text-[#D9C6A3]"
+                                active ? "bg-[#5BE37D]/10 text-[#5BE37D]" : "text-[#F8E9CA]"
                               )}
                             >
                               {sub.name}
@@ -141,7 +141,7 @@ export default function Header() {
                   </Transition>
                 </Menu>
               ) : (
-                <Link href={link.href} className="group relative text-[#D9C6A3] font-medium">
+                <Link href={link.href} className="group relative text-[#F8E9CA] font-medium">
                   {link.name}
                   <span className="absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 bg-[#5BE37D] transition-transform duration-200 group-hover:scale-x-100" />
                 </Link>
@@ -192,7 +192,7 @@ export default function Header() {
           type="button"
           aria-label="Ouvrir le menu"
           onClick={() => setMobileMenuOpen(true)}
-          className="text-[#D9C6A3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5BE37D] lg:hidden"
+          className="text-[#F8E9CA] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5BE37D] lg:hidden"
         >
           <MenuIcon className="h-8 w-8" />
         </button>
@@ -227,7 +227,7 @@ export default function Header() {
                 <button
                   type="button"
                   aria-label="Fermer le menu"
-                  className="absolute top-4 right-4 text-[#D9C6A3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5BE37D]"
+                  className="absolute top-4 right-4 text-[#F8E9CA] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5BE37D]"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <XIcon className="h-7 w-7" />
@@ -253,7 +253,7 @@ export default function Header() {
                                 <Menu.Item key={sub.name}>
                                   <Link
                                     href={sub.href}
-                                    className="block rounded-md px-4 py-2 text-sm font-medium text-[#D9C6A3] hover:text-[#5BE37D]"
+                                    className="block rounded-md px-4 py-2 text-sm font-medium text-[#F8E9CA] hover:text-[#5BE37D]"
                                     onClick={() => setMobileMenuOpen(false)}
                                   >
                                     {sub.name}

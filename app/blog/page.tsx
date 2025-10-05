@@ -109,7 +109,7 @@ export default function BlogPage() {
           <h1 className="text-4xl md:text-6xl font-extrabold text-[#5BE37D] drop-shadow-xl">
             SimplyFoot Le Journal
           </h1>
-          <p className="mt-3 text-xl md:text-2xl font-semibold text-[#D9C6A3]">
+          <p className="mt-3 text-xl md:text-2xl font-semibold text-[#F8E9CA]">
             Conseils, innovations & actualités pour les clubs amateurs
           </p>
 
@@ -132,7 +132,7 @@ export default function BlogPage() {
                 className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold transition ${
                   tag === null
                     ? "bg-[#5BE37D] text-[#14482F]"
-                    : "text-[#D9C6A3] ring-1 ring-[#5BE37D]/30 hover:text-white"
+                    : "text-[#F8E9CA] ring-1 ring-[#5BE37D]/30 hover:text-white"
                 }`}
               >
                 <Tag className="h-3.5 w-3.5" /> Tout
@@ -144,7 +144,7 @@ export default function BlogPage() {
                   className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold transition ${
                     tag === t
                       ? "bg-[#5BE37D] text-[#14482F]"
-                      : "text-[#D9C6A3] ring-1 ring-[#5BE37D]/30 hover:text-white"
+                      : "text-[#F8E9CA] ring-1 ring-[#5BE37D]/30 hover:text-white"
                   }`}
                 >
                   <Tag className="h-3.5 w-3.5" /> {t}
@@ -170,12 +170,12 @@ export default function BlogPage() {
                   />
                 </div>
                 <div className="p-6 md:p-8">
-                  <div className="flex flex-wrap items-center gap-3 text-xs text-[#D9C6A3]">
+                  <div className="flex flex-wrap items-center gap-3 text-xs text-[#F8E9CA]">
                     <span className="inline-flex items-center gap-1"><Calendar className="h-4 w-4 text-[#5BE37D]" /> {formatDate(featured.date)}</span>
                     <span className="inline-flex items-center gap-1"><Clock className="h-4 w-4 text-[#5BE37D]" /> {readingTime(featured.contenu)} min</span>
                   </div>
                   <h2 className="mt-2 text-2xl md:text-3xl font-extrabold text-white">{featured.titre}</h2>
-                  <p className="mt-1 text-[#D9C6A3]">{featured.resume}</p>
+                  <p className="mt-1 text-[#F8E9CA]">{featured.resume}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {featured.tags.map((t) => (
                       <span key={t} className="rounded-full bg-[#14482F]/70 px-2.5 py-1 text-xs font-semibold text-[#5BE37D] ring-1 ring-[#5BE37D]/30">
@@ -191,7 +191,7 @@ export default function BlogPage() {
             </article>
 
             {/* Quick view panel */}
-            <aside className="rounded-3xl border border-[#5BE37D]/20 bg-[#232729] p-6 shadow-lg text-[#D9C6A3]">
+            <aside className="rounded-3xl border border-[#5BE37D]/20 bg-[#232729] p-6 shadow-lg text-[#F8E9CA]">
               <h3 className="text-white text-lg font-extrabold">Aperçu rapide</h3>
               <p className="mt-2 text-sm">
                 Plongez dans nos guides : gestion, organisation, performance, motivation. Cliquez sur un article pour le lire en entier.
@@ -255,7 +255,7 @@ export default function BlogPage() {
             ))}
 
             {others.length === 0 && (
-              <div className="col-span-full rounded-2xl border border-[#5BE37D]/20 bg-[#232729] p-10 text-center text-[#D9C6A3]">
+              <div className="col-span-full rounded-2xl border border-[#5BE37D]/20 bg-[#232729] p-10 text-center text-[#F8E9CA]">
                 Aucun article ne correspond à votre recherche.
               </div>
             )}
@@ -265,7 +265,7 @@ export default function BlogPage() {
         {/* NEWSLETTER */}
         <section className="mt-16 rounded-3xl border border-[#5BE37D]/20 bg-[#1d3e2e]/60 p-8 text-center">
           <h3 className="text-2xl font-extrabold text-white">Recevez nos conseils directement dans votre boîte mail</h3>
-          <p className="mt-2 text-[#D9C6A3]">
+          <p className="mt-2 text-[#F8E9CA]">
             1 email / mois. Pas de spam, que du terrain et des idées concrètes pour votre club.
           </p>
           <form

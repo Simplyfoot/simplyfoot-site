@@ -290,7 +290,7 @@ export default function UserDashboard() {
             </a>
             <a
               href="/api/billing-portal"
-              className="inline-flex items-center gap-2 rounded-xl border border-[#5BE37D]/40 px-4 py-2 font-semibold text-[#D9C6A3] hover:border-[#5BE37D] hover:text-white"
+              className="inline-flex items-center gap-2 rounded-xl border border-[#5BE37D]/40 px-4 py-2 font-semibold text-[#F8E9CA] hover:border-[#5BE37D] hover:text-white"
             >
               <CreditCard className="h-4 w-4" /> Gérer la facturation
             </a>
@@ -350,7 +350,7 @@ export default function UserDashboard() {
           </div>
 
           {/* Commandes */}
-          <div className="rounded-2xl border border-[#5BE37D]/20 bg-[#D9C6A3] p-6">
+          <div className="rounded-2xl border border-[#5BE37D]/20 bg-[#F8E9CA] p-6">
             <div className="mb-3 flex items-center gap-2 text-[#14482F]">
               <ShoppingCart className="h-5 w-5" />
               <span className="font-bold">Mes commandes</span>
@@ -422,7 +422,7 @@ export default function UserDashboard() {
           <h2 className="mb-4 text-xl font-extrabold text-[#14482F]">Historique de mes achats</h2>
           <div className="overflow-x-auto">
             <table className="min-w-full text-[#14482F]">
-              <thead className="bg-[#D9C6A3]/60">
+              <thead className="bg-[#F8E9CA]/60">
                 <tr>
                   <th className="px-4 py-2 text-left text-sm font-bold">N° Commande</th>
                   <th className="px-4 py-2 text-left text-sm font-bold">Date</th>

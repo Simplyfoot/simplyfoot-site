@@ -34,7 +34,7 @@ export default function HomeBenefits() {
       {/* Titre section : impact, SEO et accessibilité */}
       <h2
         id="home-benefits-title"
-        className="text-3xl md:text-4xl font-extrabold text-white text-center mb-10 drop-shadow"
+        className="text-3xl md:text-4xl font-extrabold text-white text-center mt-10 mb-10 drop-shadow"
       >
         Pourquoi SimplyFoot transforme votre club
       </h2>
@@ -62,7 +62,7 @@ export default function HomeBenefits() {
           >
             <div className="mb-3 group-hover:scale-110 transition-transform duration-200">{b.icon}</div>
             <h3 className="text-xl font-extrabold text-white mb-2 drop-shadow">{b.title}</h3>
-            <p className="text-base text-[#D9C6A3] font-medium">{b.desc}</p>
+            <p className="text-base text-[#F8E9CA] font-medium">{b.desc}</p>
           </motion.article>
         ))}
       </div>

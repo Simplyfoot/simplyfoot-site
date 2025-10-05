@@ -77,14 +77,14 @@ export default function GestionClubPage() {
         {/* Hero Section */}
         <section className="flex flex-col md:flex-row gap-10 items-center">
           <div className="flex-1">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#5BE37D]/40 bg-[#1d3e2e]/50 px-3 py-1 text-xs font-semibold text-[#D9C6A3]/90">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#5BE37D]/40 bg-[#1d3e2e]/50 px-3 py-1 text-xs font-semibold text-[#F8E9CA]/90">
               <span className="h-2 w-2 rounded-full bg-[#5BE37D] animate-pulse" />
               Conçu avec les clubs amateurs
             </span>
             <h1 className="mt-4 text-4xl md:text-6xl font-extrabold text-white leading-tight">
               <span className="text-[#5BE37D]">SimplyFoot</span> – la gestion de club qui motive et fait gagner du temps
             </h1>
-            <p className="text-[#D9C6A3] text-lg md:text-xl mt-4 font-medium">
+            <p className="text-[#F8E9CA] text-lg md:text-xl mt-4 font-medium">
               Structurez vos équipes, planifiez en 1 clic, centralisez vos docs et suivez la progression. Une plateforme pensée pour les bénévoles, les coachs et les familles.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-white/90 text-base">
@@ -102,7 +102,7 @@ export default function GestionClubPage() {
               </a>
               <a
                 href="#contact"
-                className="px-8 py-4 rounded-xl font-bold text-lg border border-[#D9C6A3]/60 text-[#D9C6A3] hover:border-[#5BE37D] hover:text-[#5BE37D] active:scale-[.98] transition"
+                className="px-8 py-4 rounded-xl font-bold text-lg border border-[#F8E9CA]/60 text-[#F8E9CA] hover:border-[#5BE37D] hover:text-[#5BE37D] active:scale-[.98] transition"
               >
                 Demander une démo
               </a>
@@ -125,7 +125,7 @@ export default function GestionClubPage() {
           <h2 id="divisions-title" className="text-3xl md:text-4xl font-bold text-[#5BE37D] mb-8 text-center">
             Classement & progression des joueurs : les 6 divisions SimplyFoot
           </h2>
-          <p className="mx-auto max-w-3xl text-center text-[#D9C6A3] mb-8">
+          <p className="mx-auto max-w-3xl text-center text-[#F8E9CA] mb-8">
             Visualisez les statuts des joueurs avec des blasons 3D immersifs. Survolez pour les voir tourner : motivation garantie lors des annonces et des remises de trophées.
           </p>
 
@@ -143,12 +143,12 @@ export default function GestionClubPage() {
                   <CrestGLB src={d.model} />
                 </div>
                 <h3 className="text-xl font-bold text-white mt-3 mb-1">{d.nom}</h3>
-                <p className="text-sm text-[#D9C6A3] text-center">{d.desc}</p>
+                <p className="text-sm text-[#F8E9CA] text-center">{d.desc}</p>
               </article>
             ))}
           </div>
 
-          <p className="mt-8 text-center text-lg text-[#D9C6A3]">
+          <p className="mt-8 text-center text-lg text-[#F8E9CA]">
             Chaque joueur évolue de Bronze à Master selon ses performances, son implication et l’avis des coachs.
             <span className="block text-[#5BE37D] font-semibold">Un classement motivant, inspiré de l’eSport et des grandes académies !</span>
           </p>
@@ -163,7 +163,7 @@ export default function GestionClubPage() {
             {MODULES.map((mod) => (
               <div
                 key={mod.title}
-                className="bg-[#D9C6A3]/90 rounded-xl p-6 flex flex-col items-center text-center shadow border border-[#5BE37D]/10"
+                className="bg-[#F8E9CA]/90 rounded-xl p-6 flex flex-col items-center text-center shadow border border-[#5BE37D]/10"
               >
                 <span className="text-3xl mb-3" aria-hidden>{mod.icon}</span>
                 <h3 className="font-extrabold text-lg text-[#14482F] mb-2">{mod.title}</h3>
@@ -178,7 +178,7 @@ export default function GestionClubPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-[#5BE37D] mb-6 text-center">
             Un dashboard coach ultra‑puissant, pensé pour l’action
           </h2>
-          <p className="max-w-3xl text-[#D9C6A3] text-lg text-center mb-6">
+          <p className="max-w-3xl text-[#F8E9CA] text-lg text-center mb-6">
             Visualisez en temps réel les données clés de votre effectif, gérez les absences/blessures, suivez la progression de chaque joueur et pilotez votre club comme un pro.
           </p>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-base text-white/90">
@@ -212,7 +212,7 @@ export default function GestionClubPage() {
             </a>
             <a
               href="/contact"
-              className="px-10 py-4 rounded-lg font-bold text-lg border border-[#D9C6A3]/60 text-[#D9C6A3] hover:border-[#5BE37D] hover:text-[#5BE37D] active:scale-[.98] transition"
+              className="px-10 py-4 rounded-lg font-bold text-lg border border-[#F8E9CA]/60 text-[#F8E9CA] hover:border-[#5BE37D] hover:text-[#5BE37D] active:scale-[.98] transition"
             >
               Être recontacté par un expert
             </a>

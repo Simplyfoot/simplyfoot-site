@@ -200,12 +200,12 @@ export default function OffresPage() {
           <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
             Choisissez l’offre <span className="text-[#5BE37D]">qui fait gagner du temps</span>
           </h1>
-          <p className="mt-4 text-[#D9C6A3] text-lg md:text-xl font-medium">
+          <p className="mt-4 text-[#F8E9CA] text-lg md:text-xl font-medium">
             Toutes les fonctionnalités, sans limites cachées. Concentrez-vous sur le terrain, on s’occupe du reste.
           </p>
 
           {/* Essai Gratuit */}
-          <div className="mx-auto mt-6 max-w-3xl rounded-2xl border border-[#5BE37D]/30 bg-[#1d3e2e]/70 p-4 text-left text-[#D9C6A3]">
+          <div className="mx-auto mt-6 max-w-3xl rounded-2xl border border-[#5BE37D]/30 bg-[#1d3e2e]/70 p-4 text-left text-[#F8E9CA]">
             <p className="text-white font-extrabold">1 mois gratuit, sans stress ✨</p>
             <ul className="mt-2 list-inside list-disc space-y-1 text-sm">
               <li>Testez SimplyFoot gratuitement pendant 30 jours.</li>
@@ -225,7 +225,7 @@ export default function OffresPage() {
             <button
               onClick={() => setBilling("monthly")}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition ${
-                billing === "monthly" ? "bg-[#5BE37D] text-[#14482F]" : "text-[#D9C6A3] hover:text-white"
+                billing === "monthly" ? "bg-[#5BE37D] text-[#14482F]" : "text-[#F8E9CA] hover:text-white"
               }`}
             >
               Mensuel
@@ -233,7 +233,7 @@ export default function OffresPage() {
             <button
               onClick={() => setBilling("yearly")}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition ${
-                billing === "yearly" ? "bg-[#5BE37D] text-[#14482F]" : "text-[#D9C6A3] hover:text-white"
+                billing === "yearly" ? "bg-[#5BE37D] text-[#14482F]" : "text-[#F8E9CA] hover:text-white"
               }`}
             >
               Annuel <span className="ml-1 text-xs opacity-80">(-10 %)</span>
@@ -245,7 +245,7 @@ export default function OffresPage() {
             {VALUE_ICONS.map((v) => (
               <span
                 key={v.t}
-                className="inline-flex items-center gap-2 rounded-full border border-[#5BE37D]/30 bg-[#1d3e2e]/50 px-3 py-1 text-xs font-semibold text-[#D9C6A3]"
+                className="inline-flex items-center gap-2 rounded-full border border-[#5BE37D]/30 bg-[#1d3e2e]/50 px-3 py-1 text-xs font-semibold text-[#F8E9CA]"
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-[#5BE37D]" /> {v.t}
               </span>
@@ -339,7 +339,7 @@ export default function OffresPage() {
             {REMISES.map((r) => (
               <div
                 key={r.titre}
-                className="flex items-center gap-3 rounded-2xl border border-[#14482F]/15 bg-[#D9C6A3] px-4 py-3 shadow"
+                className="flex items-center gap-3 rounded-2xl border border-[#14482F]/15 bg-[#F8E9CA] px-4 py-3 shadow"
               >
                 <span className="text-xl">{r.icon}</span>
                 <span>
@@ -354,7 +354,7 @@ export default function OffresPage() {
         {/* Comparatif rapide */}
         <section className="mt-16 rounded-2xl border border-[#5BE37D]/20 bg-[#1d3e2e]/50 p-6">
           <h3 className="mb-6 text-center text-2xl font-bold text-white">Tout ce qu&#39;il faut, dès le premier plan</h3>
-          <div className="grid grid-cols-1 gap-6 text-[#D9C6A3] md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 text-[#F8E9CA] md:grid-cols-3">
             <div className="rounded-xl border border-[#5BE37D]/10 bg-[#232729]/70 p-5">
               <h4 className="mb-2 font-bold text-white">Organisation</h4>
               <p>Calendrier centralisé, présences, feuilles de match, documents sécurisés.</p>
@@ -393,7 +393,7 @@ export default function OffresPage() {
                   {f.q}
                   <ChevronDown className="h-5 w-5 text-[#5BE37D] transition-transform group-open:rotate-180" />
                 </summary>
-                <p className="mt-2 text-[#D9C6A3]">{f.a}</p>
+                <p className="mt-2 text-[#F8E9CA]">{f.a}</p>
               </details>
             ))}
           </div>
