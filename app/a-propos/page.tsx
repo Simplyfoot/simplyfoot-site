@@ -14,63 +14,6 @@ export default function AboutPage() {
 
         {/* Portraits associés */}
         <div className="flex flex-wrap gap-10 items-center justify-center mb-12">
-<<<<<<< Updated upstream
-          <div className="flex flex-col items-center">
-            <Image
-              src="/11.png"
-              alt="Romain Pennacchio"
-              width={120}
-              height={120}
-              className="rounded-full object-cover border-4 border-[#5BE37D]/60 shadow"
-            />
-            <div className="font-bold text-[#14482F] text-lg mt-4">Romain Pennacchio</div>
-            <div className="text-[#14482F]/60 text-sm">Directeur Technique · Associé</div>
-          </div>
-          <div className="flex flex-col items-center">
-            <Image
-              src="/3.jpg"
-              alt="Jérémy Baruc"
-              width={120}
-              height={120}
-              className="rounded-full object-cover border-4 border-[#5BE37D]/60 shadow"
-            />
-            <div className="font-bold text-[#14482F] text-lg mt-4">Jérémy Baruc</div>
-            <div className="text-[#14482F]/60 text-sm">Fondateur · CEO</div>
-          </div>
-          <div className="flex flex-col items-center">
-            <Image
-              src="/jean.png"
-              alt="Jean Carboni"
-              width={120}
-              height={120}
-              className="rounded-full object-cover border-4 border-[#5BE37D]/60 shadow"
-            />
-            <div className="font-bold text-[#14482F] text-lg mt-4">Jean Carboni</div>
-            <div className="text-[#14482F]/60 text-sm">Développeur Expert · Associé</div>
-          </div>
-          <div className="flex flex-col items-center">
-            <Image
-              src="/vanessa.jpeg"
-              alt="Vanessa Rolland"
-              width={120}
-              height={120}
-              className="rounded-full object-cover border-4 border-[#5BE37D]/60 shadow"
-            />
-            <div className="font-bold text-[#14482F] text-lg mt-4">Vanessa Rolland</div>
-            <div className="text-[#14482F]/60 text-sm">Développeur Expert · Associée</div>
-          </div>
-          <div className="flex flex-col items-center">
-            <Image
-              src="/hugo.png"
-              alt="Hugo Pecorella"
-              width={120}
-              height={120}
-              className="rounded-full object-cover border-4 border-[#5BE37D]/60 shadow"
-            />
-            <div className="font-bold text-[#14482F] text-lg mt-4">Hugo Pecorella</div>
-            <div className="text-[#14482F]/60 text-sm">Tech & Cybersécurité · Associé</div>
-          </div>
-=======
           {[
             {
               src: "/11.png",
@@ -91,7 +34,7 @@ export default function AboutPage() {
               role: "Développeur Expert · Associé",
             },
             {
-              src: "/vanessa.png",
+              src: "/vanessa.jpeg",
               alt: "Vanessa Rolland",
               name: "Vanessa Rolland",
               role: "Développeur Expert · Associée",
@@ -117,7 +60,6 @@ export default function AboutPage() {
               <div className="text-[#14482F]/60 text-sm">{person.role}</div>
             </div>
           ))}
->>>>>>> Stashed changes
         </div>
 
         {/* Histoire */}
@@ -181,13 +123,8 @@ export default function AboutPage() {
 
         {/* Call to action */}
         <section className="flex flex-col items-center mt-8">
-<<<<<<< Updated upstream
-          <h2 className="text-2xl md:text-3xl font-bold text-[#000000] mb-3 text-center">
-            Envie de faire grandir votre club avec une équipe passionnée ?
-=======
           <h2 className="text-2xl md:text-3xl font-bold text-[#5BE37D] mb-3 text-center">
             Envie de faire grandir votre club avec une équipe passionnée ?
->>>>>>> Stashed changes
           </h2>
           <a
             href="/contact"
