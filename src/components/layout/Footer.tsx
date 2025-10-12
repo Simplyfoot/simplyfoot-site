@@ -32,10 +32,10 @@ export default function Footer() {
               <MapPin size={16} /> 60 rue François 1er, 75008 Paris
             </span>
             <span className="flex items-start gap-2">
-              <Phone size={16} /> +33 6 82 84 56 41
+              <Phone size={16} /><a className="font-semibold hover:underline" href="tel:+33682845641">+33 6 82 84 56 41</a>
             </span>
             <span className="flex items-start gap-2">
-              <Mail size={16} /> contact@simplyfoot.fr
+              <Mail size={16} /><a className="font-semibold hover:underline" href="mailto:contact@simplyfoot.com">contact@simplyfoot.fr</a>
             </span>
           </address>
         </section>

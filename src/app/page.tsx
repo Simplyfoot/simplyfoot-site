@@ -23,7 +23,6 @@ export default function Home() {
       {/* <SectionValeurs />       // ADN SimplyFoot */}
       {/* <SectionEquipe />        // présentation de l’équipe */}
 
-      <Footer />
     </main>
   );
 }

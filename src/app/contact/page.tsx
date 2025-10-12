@@ -42,13 +42,13 @@ export default function ContactPage() {
   // ✅ Handler générique, sans any
   const setField =
     <K extends keyof FormState>(name: K) =>
-    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      const v =
-        name === "consent"
-          ? ((e.target as HTMLInputElement).checked as FormState[K])
-          : (e.target.value as FormState[K]);
-      setForm((f) => ({ ...f, [name]: v }));
-    };
+      (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const v =
+          name === "consent"
+            ? ((e.target as HTMLInputElement).checked as FormState[K])
+            : (e.target.value as FormState[K]);
+        setForm((f) => ({ ...f, [name]: v }));
+      };
 
   function validate(): boolean {
     const e: Record<string, string> = {};
@@ -154,7 +154,7 @@ export default function ContactPage() {
               ref={formRef}
               onSubmit={handleSubmit}
               noValidate
-              className="rounded-3xl border border-[#5BE37D]/20 bg-[#F7F6F3] p-6 shadow"
+              className="rounded-3xl border border-[#5BE37D]/20 bg-[#F7F6F3] p-6 shadow space-y-2"
             >
               <Field
                 label="Nom / Club"
@@ -288,25 +288,16 @@ export default function ContactPage() {
             <div className="mt-6 flex flex-wrap justify-center gap-8">
               <TeamCard initials="RP" name="Romain Pennacchio" role="Fondateur – Associé" />
               <TeamCard initials="JB" name="Jérémy Baruc" role="Fondateur – Associé" />
+              <TeamCard initials="JC" name="Jean Carboni" role="Développeur Expert · Associé" />
+              <TeamCard initials="VR" name="Vanessa Rolland" role="Développeur Expert · Associée" />
+              <TeamCard initials="HP" name="Hugo Pecorella" role="Tech & Cybersécurité · Associé" />
             </div>
           </div>
         </section>
       </div>
-
-      {/* utilitaires inputs */}
-      <style jsx global>{`
-        .form-input {
-          @apply mt-2 w-full rounded-lg border border-gray-200 bg-gray-100 px-3 py-2 outline-none focus:ring-2 focus:ring-[#5BE37D];
-        }
-        .form-textarea {
-          @apply mt-2 w-full rounded-lg border border-gray-200 bg-gray-100 px-3 py-2 outline-none focus:ring-2 focus:ring-[#5BE37D];
-        }
-      `}</style>
     </main>
   );
 }
-
-/* ====== composants ======= */
 
 function InfoRow({
   icon,
@@ -338,13 +329,25 @@ function Field({
   error?: string;
 }) {
   return (
-    <label className="mb-3 block font-semibold text-[#14482F]">
-      {label}
-      {input}
-      {error && <span className="mt-1 block text-sm font-semibold text-rose-700">{error}</span>}
-    </label>
+    <div className="flex flex-col md:flex-row md:items-start md:gap-x-4 gap-y-1">
+      {/* Bloc label */}
+      <label className="w-40 shrink-0 font-semibold text-[#14482F] md:pt-2">
+        {label}
+      </label>
+
+      {/* Bloc input + erreur */}
+      <div className="flex-1 flex flex-col gap-1">
+        {input}
+        {error && (
+          <p className="text-sm font-medium text-rose-700">
+            {error}
+          </p>
+        )}
+      </div>
+    </div>
   );
 }
+
 
 function Alert({
   tone,
@@ -359,9 +362,8 @@ function Alert({
   return (
     <div
       role="status"
-      className={`mt-5 flex items-start gap-3 rounded-xl p-3 ${
-        isSuccess ? "bg-emerald-50 text-emerald-800" : "bg-rose-50 text-rose-800"
-      }`}
+      className={`mt-5 flex items-start gap-3 rounded-xl p-3 ${isSuccess ? "bg-emerald-50 text-emerald-800" : "bg-rose-50 text-rose-800"
+        }`}
     >
       {isSuccess ? <CheckCircle2 className="h-5 w-5" /> : <AlertCircle className="h-5 w-5" />}
       <div>

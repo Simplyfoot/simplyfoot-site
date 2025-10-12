@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "../components/layout/Header";
+import Footer from "components/layout/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
@@ -40,10 +41,19 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className={inter.variable}>
-      <body className={`${inter.className} min-h-dvh bg-[#14482F] text-white antialiased`}>
+      <body className={`${inter.className} min-h-dvh flex flex-col bg-[#14482F] text-white antialiased`}>
         <div aria-hidden className="fixed inset-0 -z-10 bg-[#14482F]" />
+
+        {/* HEADER GLOBAL */}
         <Navbar locale={"fr"} />
-        <main id="main-content" className="w-full pt-20 lg:pt-24">{children}</main>
+
+        {/* CONTENU DES PAGES */}
+        <main id="main-content" className="flex-grow w-full pt-20 lg:pt-24">
+          {children}
+        </main>
+
+        {/* FOOTER GLOBAL */}
+        <Footer />
       </body>
     </html>
   );

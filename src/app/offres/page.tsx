@@ -4,6 +4,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useMemo, useState } from "react";
 import { Check, ChevronDown } from "lucide-react";
+import GooglePlay from "../../assets/images/google_play_store.png";
+import AppStore from "../../assets/images/apple_appstore.svg";
 
 // ------- Helpers -------
 const eur = new Intl.NumberFormat("fr-FR", {
@@ -39,12 +41,9 @@ function priceFor(billing: Billing, monthlyBase: number) {
     savings: `Économisez ${eur.format(save)}/an`,
   };
 }
-
-// ------- Data -------
 const plateformes = [
-  { name: "Android", src: "/android.svg", url: "#" },
-  { name: "iOS", src: "/ios.svg", url: "#" },
-  { name: "Windows", src: "/windows.svg", url: "#" },
+  { name: "Google Play", url: "https://play.google.com/store/apps/details?id=com.simplyfoot.app", src: GooglePlay },
+  { name: "App Store", url: "https://apps.apple.com/app/simplyfoot/id6446304301", src: AppStore },
 ] as const;
 
 type Plan = {
