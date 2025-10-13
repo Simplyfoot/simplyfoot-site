@@ -44,7 +44,7 @@ export default function ConnexionPage() {
   };
 
   return (
-    <main className="w-full min-h-screen bg-[#14482F] flex flex-col items-center justify-center py-10">
+    <main className="w-full min-h-screen bg-[#14482F] flex flex-col items-center justify-start pt-10 lg:pt-16">
       <div className="bg-white/95 rounded-2xl shadow-2xl px-6 py-10 max-w-md w-full border border-[#5BE37D]/10">
         <h1 className="text-3xl font-bold mb-6 text-[#14482F] text-center">
           Connexion à l’espace club

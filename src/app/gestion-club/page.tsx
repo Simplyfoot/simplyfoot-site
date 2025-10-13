@@ -1,5 +1,6 @@
 import CrestGLB from "components/CrestGLB";
 import Image from "next/image";
+import Image1 from "../../assets/images/Cohesion_4.png"
 
 // Blasons divisions (GLB + fallback image pour SEO/perf)
 const DIVISIONS = [
@@ -101,7 +102,7 @@ export default function GestionClubPage() {
                 Découvrir les offres club
               </a>
               <a
-                href="#contact"
+                href="/contact"
                 className="px-8 py-4 rounded-xl font-bold text-lg border border-[#F8E9CA]/60 text-[#F8E9CA] hover:border-[#5BE37D] hover:text-[#5BE37D] active:scale-[.98] transition"
               >
                 Demander une démo
@@ -110,7 +111,7 @@ export default function GestionClubPage() {
           </div>
           <div className="flex-1 flex items-center justify-center">
             <Image
-              src="/1.png"
+              src={Image1}
               alt="Interface de gestion SimplyFoot"
               width={520}
               height={520}
