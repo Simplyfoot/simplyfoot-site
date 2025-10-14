@@ -45,7 +45,7 @@ export default function ConnexionPage() {
 
   return (
     <main className="w-full min-h-screen bg-[#14482F] flex flex-col items-center justify-start pt-10 lg:pt-16">
-      <div className="bg-white/95 rounded-2xl shadow-2xl px-6 py-10 max-w-md w-full border border-[#5BE37D]/10">
+      <div className="bg-white/95 rounded-2xl shadow-2xl px-6 py-10 max-w-md w-full border border-[#29be4f]/10">
         <h1 className="text-3xl font-bold mb-6 text-[#14482F] text-center">
           Connexion à l’espace club
         </h1>
@@ -80,7 +80,7 @@ export default function ConnexionPage() {
               type="checkbox"
               checked={remember}
               onChange={(e) => setRemember(e.target.checked)}
-              className="h-4 w-4 rounded border-gray-300 text-[#5BE37D] focus:ring-[#5BE37D]"
+              className="h-4 w-4 rounded border-gray-300 text-[#29be4f] focus:ring-[#29be4f]"
             />
             Sauvegarder mes identifiants (email) pour la prochaine connexion
           </label>
@@ -89,7 +89,7 @@ export default function ConnexionPage() {
 
           <button
             type="submit"
-            className="mt-2 px-8 py-3 rounded-lg font-bold bg-[#5BE37D] text-[#14482F] text-lg shadow hover:bg-[#68FB7A] transition"
+            className="mt-2 px-8 py-3 rounded-lg font-bold bg-[#29be4f] text-[#14482F] text-lg shadow hover:bg-[#68FB7A] transition"
           >
             Se connecter
           </button>
@@ -97,7 +97,7 @@ export default function ConnexionPage() {
 
         <p className="text-center text-[#14482F] mt-6">
           Pas encore de compte club ?{" "}
-          <a href="/inscription" className="underline font-bold hover:text-[#5BE37D]">
+          <a href="/inscription" className="underline font-bold hover:text-[#29be4f]">
             Créer mon compte
           </a>
         </p>

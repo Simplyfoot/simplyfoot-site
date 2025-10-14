@@ -4,22 +4,22 @@ import { CheckCircle, AlarmClock, Users, Star } from "lucide-react";
 
 const BENEFITS = [
   {
-    icon: <CheckCircle className="w-10 h-10 text-[#5BE37D]" />,
+    icon: <CheckCircle className="w-10 h-10 text-[#29be4f]" />,
     title: "Simplicité absolue",
     desc: "Prenez en main votre club en 10 minutes. Gestion intuitive pour tous, même sans compétence technique.",
   },
   {
-    icon: <AlarmClock className="w-10 h-10 text-[#5BE37D]" />,
+    icon: <AlarmClock className="w-10 h-10 text-[#29be4f]" />,
     title: "Gain de temps",
     desc: "Automatisez convocations, feuilles de match, statistiques, rappels… Concentrez-vous sur le jeu, pas sur l’administratif.",
   },
   {
-    icon: <Users className="w-10 h-10 text-[#5BE37D]" />,
+    icon: <Users className="w-10 h-10 text-[#29be4f]" />,
     title: "Cohésion & motivation",
     desc: "Valorisez chaque membre, renforcez l’esprit d’équipe et l’engagement des joueurs et familles.",
   },
   {
-    icon: <Star className="w-10 h-10 text-[#5BE37D]" />,
+    icon: <Star className="w-10 h-10 text-[#29be4f]" />,
     title: "Image professionnelle",
     desc: "Mettez en avant votre club auprès de la mairie, des parents, des partenaires. Fini les outils bricolés !",
   },
@@ -53,7 +53,7 @@ export default function HomeBenefits() {
               stiffness: 90,
               damping: 13,
             }}
-            className="bg-[#232729]/95 rounded-2xl p-8 shadow-2xl flex flex-col items-center text-center border border-[#5BE37D]/15
+            className="bg-[#232729]/95 rounded-2xl p-8 shadow-2xl flex flex-col items-center text-center border border-[#29be4f]/15
                        hover:scale-[1.06] hover:shadow-emerald-400/20 hover:z-20 hover:-translate-y-2 transition-all duration-250 group
                        backdrop-blur-sm"
             role="region"

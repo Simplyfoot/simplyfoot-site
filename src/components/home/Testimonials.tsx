@@ -26,7 +26,7 @@ const TESTIMONIALS = [
 export default function Testimonials() {
   return (
     <section className="w-full max-w-6xl mx-auto px-6 py-16">
-      <h2 className="text-2xl md:text-3xl font-bold text-[#5BE37D] mb-9 text-center">
+      <h2 className="text-2xl md:text-3xl font-bold text-[#29be4f] mb-9 text-center">
         Ils témoignent
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -37,17 +37,17 @@ export default function Testimonials() {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ delay: .15 * i, duration: .55, type: "spring" }}
-            className="bg-[#232729] rounded-2xl p-7 shadow-xl flex flex-col items-center text-center border border-[#5BE37D]/12 hover:scale-105 transition-all duration-200 group"
+            className="bg-[#232729] rounded-2xl p-7 shadow-xl flex flex-col items-center text-center border border-[#29be4f]/12 hover:scale-105 transition-all duration-200 group"
           >
             <Image
               src={t.avatar}
               alt={t.name}
               width={68}
               height={68}
-              className="rounded-full mb-3 border-2 border-[#5BE37D]/50"
+              className="rounded-full mb-3 border-2 border-[#29be4f]/50"
             />
             <div className="font-bold text-lg text-white">{t.name}</div>
-            <div className="text-[#5BE37D] font-semibold mb-2">{t.role}</div>
+            <div className="text-[#29be4f] font-semibold mb-2">{t.role}</div>
             <p className="text-base text-[#F8E9CA]">{t.text}</p>
           </motion.div>
         ))}

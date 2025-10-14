@@ -201,7 +201,7 @@ function renderMarkdown(md: string): RenderResult {
         <a
           key={`${text}-${url}-${parts.length}`}
           href={url}
-          className="underline decoration-[#5BE37D] hover:text-[#5BE37D]"
+          className="underline decoration-[#29be4f] hover:text-[#29be4f]"
           target={/^https?:\/\//.test(url) ? "_blank" : undefined}
           rel="noopener"
         >
@@ -338,7 +338,7 @@ export default async function BlogArticle(
 
       {/* En-tête */}
       <header className="mb-8">
-        <h1 className="text-3xl md:text-5xl font-extrabold text-[#5BE37D] drop-shadow">
+        <h1 className="text-3xl md:text-5xl font-extrabold text-[#29be4f] drop-shadow">
           {post.title}
         </h1>
         <div className="mt-3 flex flex-wrap items-center gap-3 text-[#F8E9CA]">
@@ -363,7 +363,7 @@ export default async function BlogArticle(
             {post.tags.map((t) => (
               <span
                 key={t}
-                className="rounded-full border border-[#5BE37D]/30 bg-[#1d3e2e]/50 px-3 py-1 text-xs font-semibold text-[#F8E9CA]"
+                className="rounded-full border border-[#29be4f]/30 bg-[#1d3e2e]/50 px-3 py-1 text-xs font-semibold text-[#F8E9CA]"
               >
                 #{t}
               </span>
@@ -374,7 +374,7 @@ export default async function BlogArticle(
 
       {/* Visuel + mise en page 2 colonnes : TOC + article */}
       {post.cover && (
-        <div className="mb-8 overflow-hidden rounded-2xl border border-[#5BE37D]/20 shadow">
+        <div className="mb-8 overflow-hidden rounded-2xl border border-[#29be4f]/20 shadow">
           <Image
             src={post.cover}
             alt={post.title}
@@ -389,8 +389,8 @@ export default async function BlogArticle(
       <div className="grid grid-cols-1 lg:grid-cols-[260px_minmax(0,1fr)] gap-10">
         {/* TOC */}
         {toc.length ? (
-          <aside className="lg:sticky lg:top-24 h-max rounded-2xl border border-[#5BE37D]/20 bg-[#1d3e2e]/40 p-4">
-            <div className="text-[#5BE37D] font-bold mb-2">Sommaire</div>
+          <aside className="lg:sticky lg:top-24 h-max rounded-2xl border border-[#29be4f]/20 bg-[#1d3e2e]/40 p-4">
+            <div className="text-[#29be4f] font-bold mb-2">Sommaire</div>
             <ul className="space-y-1 text-sm text-[#F8E9CA]">
               {toc.map((i) => (
                 <li key={i.id} className={i.level === 3 ? "ml-3" : ""}>
@@ -409,7 +409,7 @@ export default async function BlogArticle(
         )}
 
         {/* Article */}
-        <article className="prose prose-lg max-w-none prose-headings:text-[#175438] prose-li:marker:text-[#5BE37D] prose-a:text-[#175438]">
+        <article className="prose prose-lg max-w-none prose-headings:text-[#175438] prose-li:marker:text-[#29be4f] prose-a:text-[#175438]">
           {nodes}
         </article>
       </div>
@@ -419,10 +419,10 @@ export default async function BlogArticle(
         {prev ? (
           <Link
             href={`/blog/${prev.slug}`}
-            className="group rounded-2xl border border-[#5BE37D]/20 bg-[#1d3e2e]/40 p-5 hover:border-[#5BE37D]/40 transition"
+            className="group rounded-2xl border border-[#29be4f]/20 bg-[#1d3e2e]/40 p-5 hover:border-[#29be4f]/40 transition"
           >
             <div className="text-xs text-[#F8E9CA]/80">Article précédent</div>
-            <div className="mt-1 font-bold text-white group-hover:text-[#5BE37D]">
+            <div className="mt-1 font-bold text-white group-hover:text-[#29be4f]">
               {prev.title}
             </div>
           </Link>
@@ -432,10 +432,10 @@ export default async function BlogArticle(
         {next ? (
           <Link
             href={`/blog/${next.slug}`}
-            className="group rounded-2xl border border-[#5BE37D]/20 bg-[#1d3e2e]/40 p-5 text-right hover:border-[#5BE37D]/40 transition"
+            className="group rounded-2xl border border-[#29be4f]/20 bg-[#1d3e2e]/40 p-5 text-right hover:border-[#29be4f]/40 transition"
           >
             <div className="text-xs text-[#F8E9CA]/80">Article suivant</div>
-            <div className="mt-1 font-bold text-white group-hover:text-[#5BE37D]">
+            <div className="mt-1 font-bold text-white group-hover:text-[#29be4f]">
               {next.title}
             </div>
           </Link>
@@ -448,7 +448,7 @@ export default async function BlogArticle(
       <div className="mt-10 flex flex-wrap gap-4 justify-between items-center">
         <Link
           href="/blog"
-          className="rounded-xl border border-[#5BE37D]/30 bg-[#1d3e2e]/50 px-4 py-2 text-sm text-[#F8E9CA] hover:text-white"
+          className="rounded-xl border border-[#29be4f]/30 bg-[#1d3e2e]/50 px-4 py-2 text-sm text-[#F8E9CA] hover:text-white"
         >
           ← Revenir au blog
         </Link>

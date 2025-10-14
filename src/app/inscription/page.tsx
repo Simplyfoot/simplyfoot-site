@@ -51,7 +51,7 @@ export default function InscriptionPage() {
 
   return (
     <main className="w-full min-h-screen bg-[#14482F] flex flex-col items-center justify-center py-10">
-      <div className="bg-white/95 rounded-2xl shadow-2xl px-6 py-10 max-w-xl w-full border border-[#5BE37D]/10">
+      <div className="bg-white/95 rounded-2xl shadow-2xl px-6 py-10 max-w-xl w-full border border-[#29be4f]/10">
         <h1 className="text-3xl font-bold mb-6 text-[#14482F] text-center">
           Inscription d’un club ou d’un particulier
         </h1>
@@ -198,24 +198,24 @@ export default function InscriptionPage() {
               required
               checked={form.cgu}
               onChange={e => update("cgu", e.target.checked)}
-              className="accent-[#5BE37D] w-5 h-5"
+              className="accent-[#29be4f] w-5 h-5"
             />
             <span className="text-[#14482F]">
               J’ai lu et j’accepte les&nbsp;
-              <a href="/cgu" target="_blank" className="underline hover:text-[#5BE37D]">conditions générales</a>
+              <a href="/cgu" target="_blank" className="underline hover:text-[#29be4f]">conditions générales</a>
             </span>
           </label>
           {error && <div className="text-red-600 font-semibold">{error}</div>}
           <button
             type="submit"
-            className="mt-4 px-8 py-3 rounded-lg font-bold bg-[#5BE37D] text-[#14482F] text-lg shadow hover:bg-[#68FB7A] transition"
+            className="mt-4 px-8 py-3 rounded-lg font-bold bg-[#29be4f] text-[#14482F] text-lg shadow hover:bg-[#68FB7A] transition"
           >
             Créer mon compte club
           </button>
         </form>
         <p className="text-center text-[#14482F] mt-6">
           Déjà inscrit ?{" "}
-          <a href="/connexion" className="underline font-bold hover:text-[#5BE37D]">Me connecter</a>
+          <a href="/connexion" className="underline font-bold hover:text-[#29be4f]">Me connecter</a>
         </p>
       </div>
     </main>

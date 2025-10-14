@@ -40,10 +40,10 @@ export default function HeroSection() {
             transition={{ delay: 0.1, duration: 0.9, type: "spring" }}
             className="text-white font-extrabold text-4xl md:text-6xl mb-3 drop-shadow-xl leading-tight"
           >
-            <span className="text-[#5BE37D]">SimplyFoot.</span>
+            <span className="text-[#29be4f]">SimplyFoot</span>
             <br />
             <span className="block">
-              Le logiciel qui{" "}
+              L'application qui{" "}
               <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -75,16 +75,16 @@ export default function HeroSection() {
           >
             <a
               href="/inscription"
-              className="px-8 py-4 rounded-xl font-bold text-lg bg-[#5BE37D] text-[#14482F] shadow-xl hover:bg-[#68FB7A] hover:scale-105 active:scale-95 focus:outline-none transition duration-150"
+              className="px-8 py-4 rounded-xl font-bold text-lg bg-[#29be4f] text-[#14482F] shadow-xl hover:bg-[#68FB7A] hover:scale-105 active:scale-95 focus:outline-none transition duration-150"
             >
               Inscrire mon club
-              <span className="ml-2 text-xs bg-[#F8E9CA]/80 text-[#14482F] px-2 py-1 rounded-full font-semibold align-middle animate-bounce">
-                Nouveau 2024
+            <span className="ml-2 text-xs bg-[#F8E9CA]/80 text-[#14482F] px-2 py-1 rounded-full font-semibold align-middle animate-bounce">
+                Nouveauté 2025
               </span>
             </a>
             <a
               href="/contact"
-              className="px-8 py-4 rounded-xl font-bold text-lg border border-[#F8E9CA]/60 text-[#F8E9CA] hover:border-[#5BE37D] hover:text-[#5BE37D] hover:scale-105 active:scale-95 focus:outline-none transition duration-150"
+              className="px-8 py-4 rounded-xl font-bold text-lg border border-[#F8E9CA]/60 text-[#F8E9CA] hover:border-[#29be4f] hover:text-[#29be4f] hover:scale-105 active:scale-95 focus:outline-none transition duration-150"
             >
               Demander une démo
             </a>
@@ -98,7 +98,7 @@ export default function HeroSection() {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="flex-1 flex items-center justify-center mt-8 md:mt-0"
         >
-          <div className="relative rounded-3xl shadow-2xl border-4 border-[#5BE37D]/40 overflow-hidden bg-white/10 w-[320px] h-[580px] md:w-[360px] md:h-[620px] group">
+          <div className="relative rounded-3xl shadow-2xl border-4 border-[#29be4f]/40 overflow-hidden bg-white/10 w-[320px] h-[580px] md:w-[360px] md:h-[620px] group">
             <Image
               src="/1.png"
               alt="Aperçu SimplyFoot"
@@ -121,7 +121,7 @@ export default function HeroSection() {
               className="absolute inset-0 flex items-center justify-center"
             >
               <svg width="80" height="80" fill="none">
-                <circle cx="40" cy="40" r="38" stroke="#5BE37D" strokeWidth="5" fill="#fff9" />
+                <circle cx="40" cy="40" r="38" stroke="#29be4f" strokeWidth="5" fill="#fff9" />
                 <polygon points="34,28 58,40 34,52" fill="#14432D" />
               </svg>
             </motion.div>
@@ -135,7 +135,7 @@ export default function HeroSection() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1, duration: 0.8 }}
         className="relative w-full max-w-6xl mx-auto px-4 py-6 z-30 flex flex-col sm:flex-row justify-center items-center gap-16
-                   bg-[#F8E9CA]/95 rounded-t-3xl shadow-2xl border-t border-[#5BE37D]/20 mb-0
+                   bg-[#F8E9CA]/95 rounded-t-3xl shadow-2xl border-t border-[#29be4f]/20 mb-0
                    backdrop-blur-md"
         aria-label="Chiffres clés SimplyFoot"
       >

@@ -22,7 +22,7 @@ export default function LangSwitcher() {
     <button
       onClick={switchLanguage}
       disabled={isPending}
-      className="rounded-full border border-[#5BE37D]/60 px-3 py-1 text-sm text-[#5BE37D] hover:bg-[#5BE37D]/10 transition disabled:opacity-50"
+      className="rounded-full border border-[#29be4f]/60 px-3 py-1 text-sm text-[#29be4f] hover:bg-[#29be4f]/10 transition disabled:opacity-50"
     >
       {currentLocale === "fr" ? "EN" : "FR"}
     </button>

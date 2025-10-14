@@ -32,11 +32,11 @@ export default function BlogAdmin() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#14482F] to-[#175438] py-12 px-4">
       <div className="max-w-3xl mx-auto bg-white/95 rounded-3xl shadow-2xl p-10">
-        <h1 className="text-3xl font-extrabold text-[#5BE37D] mb-8">Publier un nouvel article</h1>
+        <h1 className="text-3xl font-extrabold text-[#29be4f] mb-8">Publier un nouvel article</h1>
         {!isCreating && (
           <button
             onClick={() => setIsCreating(true)}
-            className="mb-8 px-6 py-3 rounded-lg font-bold bg-[#5BE37D] text-[#14482F] hover:bg-[#68FB7A] shadow transition"
+            className="mb-8 px-6 py-3 rounded-lg font-bold bg-[#29be4f] text-[#14482F] hover:bg-[#68FB7A] shadow transition"
           >
             + Rédiger un article
           </button>
@@ -71,7 +71,7 @@ export default function BlogAdmin() {
               required
             />
             <div className="flex gap-3">
-              <button type="submit" className="px-8 py-2 rounded-lg font-bold bg-[#5BE37D] text-[#14482F] hover:bg-[#68FB7A] shadow">
+              <button type="submit" className="px-8 py-2 rounded-lg font-bold bg-[#29be4f] text-[#14482F] hover:bg-[#68FB7A] shadow">
                 Publier
               </button>
               <button

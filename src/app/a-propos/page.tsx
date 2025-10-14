@@ -85,7 +85,9 @@ export default function AboutPage() {
 
         <section className="mb-12 text-[#000000]">
           <h2 className="text-2xl font-bold text-[#14482F] mb-6 text-center">Nos engagements</h2>
-          <div className="flex flex-col md:flex-row flex-wrap gap-6 justify-center">
+
+          {/* ✅ Grille fluide : 1 colonne sur mobile, 2 sur tablette et + */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center">
             {[
               {
                 icon: <Users2 className="text-[#29be4f] w-16 h-16 mt-1" />,
@@ -108,7 +110,10 @@ export default function AboutPage() {
                 desc: "Chez SimplyFoot, chaque club garde son identité, ses valeurs, son histoire. On ne standardise pas l’humain, on le valorise.",
               },
             ].map((item) => (
-              <div key={item.title} className="flex-1 flex items-start gap-4 bg-[#F8E9CA]/60 rounded-xl p-5 shadow max-w-sm">
+              <div
+                key={item.title}
+                className="flex items-start gap-4 bg-[#F8E9CA]/60 rounded-xl p-5 shadow max-w-sm w-full"
+              >
                 {item.icon}
                 <div>
                   <div className="font-bold text-[#14482F]">{item.title}</div>
@@ -118,6 +123,7 @@ export default function AboutPage() {
             ))}
           </div>
         </section>
+
 
         <section className="flex flex-col items-center mt-8">
           <h2 className="text-2xl md:text-3xl font-bold text-[#29be4f] mb-3 text-center">

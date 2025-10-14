@@ -80,12 +80,12 @@ export default function GestionEquipePage() {
         {/* HERO */}
         <section className="flex flex-col md:flex-row gap-10 items-center">
           <div className="flex-1">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#5BE37D]/40 bg-[#1d3e2e]/50 px-3 py-1 text-xs font-semibold text-[#F8E9CA]/90">
-              <span className="h-2 w-2 rounded-full bg-[#5BE37D] animate-pulse" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#29be4f]/40 bg-[#1d3e2e]/50 px-3 py-1 text-xs font-semibold text-[#F8E9CA]/90">
+              <span className="h-2 w-2 rounded-full bg-[#29be4f] animate-pulse" />
               Pour les équipes ambitieuses
             </span>
             <h1 className="mt-4 text-4xl md:text-6xl font-extrabold text-white leading-tight">
-              Gérez votre <span className="text-[#5BE37D]">équipe</span> comme jamais : simple, fun, efficace
+              Gérez votre <span className="text-[#29be4f]">équipe</span> comme jamais : simple, fun, efficace
             </h1>
             <p className="text-[#F8E9CA] text-lg md:text-xl mt-4 font-medium">
               Planifiez, communiquez et progressez ensemble. Des outils pro, pensés pour le plaisir du jeu et la cohésion.
@@ -99,13 +99,13 @@ export default function GestionEquipePage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <a
                 href="/offres"
-                className="px-8 py-4 rounded-xl font-bold text-lg bg-[#5BE37D] text-[#14482F] shadow-xl hover:bg-[#63f286] active:scale-[.98] transition"
+                className="px-8 py-4 rounded-xl font-bold text-lg bg-[#29be4f] text-[#14482F] shadow-xl hover:bg-[#63f286] active:scale-[.98] transition"
               >
                 Créer mon équipe
               </a>
               <a
                 href="#contact"
-                className="px-8 py-4 rounded-xl font-bold text-lg border border-[#F8E9CA]/60 text-[#F8E9CA] hover:border-[#5BE37D] hover:text-[#5BE37D] active:scale-[.98] transition"
+                className="px-8 py-4 rounded-xl font-bold text-lg border border-[#F8E9CA]/60 text-[#F8E9CA] hover:border-[#29be4f] hover:text-[#29be4f] active:scale-[.98] transition"
               >
                 Demander une démo
               </a>
@@ -118,14 +118,14 @@ export default function GestionEquipePage() {
               width={520}
               height={520}
               priority
-              className="rounded-3xl shadow-2xl border-4 border-[#5BE37D]/40 object-cover"
+              className="rounded-3xl shadow-2xl border-4 border-[#29be4f]/40 object-cover"
             />
           </div>
         </section>
 
         {/* DIVISIONS 3D */}
         <section aria-labelledby="divisions-title">
-          <h2 id="divisions-title" className="text-3xl md:text-4xl font-bold text-[#5BE37D] mb-8 text-center">
+          <h2 id="divisions-title" className="text-3xl md:text-4xl font-bold text-[#29be4f] mb-8 text-center">
             Progresser, se challenger, s&#39;amuser ensemble
           </h2>
           <p className="mx-auto max-w-3xl text-center text-[#F8E9CA] mb-8">
@@ -136,7 +136,7 @@ export default function GestionEquipePage() {
             {DIVISIONS_EQUIPE.map((d) => (
               <article
                 key={d.nom}
-                className="flex flex-col items-center justify-start bg-[#232729] rounded-2xl p-6 shadow border border-[#5BE37D]/10"
+                className="flex flex-col items-center justify-start bg-[#232729] rounded-2xl p-6 shadow border border-[#29be4f]/10"
               >
                 <div className="relative flex items-center justify-center w-[130px] h-[130px]">
                   <noscript>
@@ -153,14 +153,14 @@ export default function GestionEquipePage() {
 
         {/* MODULES */}
         <section aria-labelledby="modules-title">
-          <h2 id="modules-title" className="text-3xl md:text-4xl font-bold text-[#5BE37D] mb-8 text-center">
+          <h2 id="modules-title" className="text-3xl md:text-4xl font-bold text-[#29be4f] mb-8 text-center">
             Simplifiez-vous la vie avec SimplyFoot
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7">
             {MODULES_EQUIPE.map((mod) => (
               <div
                 key={mod.title}
-                className="bg-[#F8E9CA]/90 rounded-xl p-6 flex flex-col items-center text-center shadow border border-[#5BE37D]/10"
+                className="bg-[#F8E9CA]/90 rounded-xl p-6 flex flex-col items-center text-center shadow border border-[#29be4f]/10"
               >
                 <span className="text-3xl mb-3" aria-hidden>{mod.icon}</span>
                 <h3 className="font-extrabold text-lg text-[#14482F] mb-2">{mod.title}</h3>
@@ -171,21 +171,21 @@ export default function GestionEquipePage() {
         </section>
 
         {/* SECTION COMMENT ÇA MARCHE */}
-        <section aria-labelledby="how-title" className="bg-[#1d3e2e]/60 rounded-2xl border border-[#5BE37D]/20 p-8">
+        <section aria-labelledby="how-title" className="bg-[#1d3e2e]/60 rounded-2xl border border-[#29be4f]/20 p-8">
           <h2 id="how-title" className="text-3xl font-bold text-white text-center mb-6">
             Comment ça marche ?
           </h2>
           <ol className="grid grid-cols-1 md:grid-cols-3 gap-6 text-[#F8E9CA]">
-            <li className="rounded-xl bg-[#232729]/70 p-5 border border-[#5BE37D]/10">
-              <span className="text-[#5BE37D] font-bold">1. Créez l&#39;équipe</span>
+            <li className="rounded-xl bg-[#232729]/70 p-5 border border-[#29be4f]/10">
+              <span className="text-[#29be4f] font-bold">1. Créez l&#39;équipe</span>
               <p>Donnez un nom, choisissez un visuel, invitez vos membres en 1 clic.</p>
             </li>
-            <li className="rounded-xl bg-[#232729]/70 p-5 border border-[#5BE37D]/10">
-              <span className="text-[#5BE37D] font-bold">2. Organisez</span>
+            <li className="rounded-xl bg-[#232729]/70 p-5 border border-[#29be4f]/10">
+              <span className="text-[#29be4f] font-bold">2. Organisez</span>
               <p>Ajoutez matchs/entraînements, sondages de présence et covoit&#39; automatique.</p>
             </li>
-            <li className="rounded-xl bg-[#232729]/70 p-5 border border-[#5BE37D]/10">
-              <span className="text-[#5BE37D] font-bold">3. Progressez</span>
+            <li className="rounded-xl bg-[#232729]/70 p-5 border border-[#29be4f]/10">
+              <span className="text-[#29be4f] font-bold">3. Progressez</span>
               <p>Stats, défis, badges & IA : tout pour s&#39;améliorer ensemble et garder le sourire.</p>
             </li>
           </ol>
@@ -193,19 +193,19 @@ export default function GestionEquipePage() {
 
         {/* CTA FINAL */}
         <section className="flex flex-col items-center mt-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#5BE37D] mb-3 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#29be4f] mb-3 text-center">
             Prêts à donner un nouvel élan à votre équipe ?
           </h2>
           <div className="flex flex-wrap gap-4">
             <a
               href="/offres"
-              className="px-10 py-4 rounded-lg font-bold text-lg bg-[#5BE37D] text-[#14482F] shadow-xl hover:bg-[#63f286] active:scale-[.98] transition"
+              className="px-10 py-4 rounded-lg font-bold text-lg bg-[#29be4f] text-[#14482F] shadow-xl hover:bg-[#63f286] active:scale-[.98] transition"
             >
               Essayer gratuitement
             </a>
             <a
               href="/contact"
-              className="px-10 py-4 rounded-lg font-bold text-lg border border-[#F8E9CA]/60 text-[#F8E9CA] hover:border-[#5BE37D] hover:text-[#5BE37D] active:scale-[.98] transition"
+              className="px-10 py-4 rounded-lg font-bold text-lg border border-[#F8E9CA]/60 text-[#F8E9CA] hover:border-[#29be4f] hover:text-[#29be4f] active:scale-[.98] transition"
             >
               Être recontacté par un coach
             </a>

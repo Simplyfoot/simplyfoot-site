@@ -96,7 +96,7 @@ export default function CrestGLB({ src, size = 140, padding = 1.2 }: Props) {
   return (
     <div
       style={{ width: size, height: size }}
-      className="rounded-2xl bg-[#1f2f27] ring-1 ring-[#5BE37D]/25 shadow-[0_10px_30px_rgba(0,0,0,.25)] overflow-hidden"
+      className="rounded-2xl bg-[#1f2f27] ring-1 ring-[#29be4f]/25 shadow-[0_10px_30px_rgba(0,0,0,.25)] overflow-hidden"
     >
       <Canvas
         dpr={[1, 2]}

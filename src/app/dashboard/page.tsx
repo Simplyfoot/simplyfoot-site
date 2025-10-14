@@ -184,7 +184,7 @@ function RingCountdown({
 
   const { days, hours, mins, expired } = diffParts(end);
   const pct = betweenProgress(start, end);
-  const ring = `conic-gradient(#5BE37D ${pct * 3.6}deg, rgba(255,255,255,0.08) 0)`;
+  const ring = `conic-gradient(#29be4f ${pct * 3.6}deg, rgba(255,255,255,0.08) 0)`;
 
   return (
     <div className="flex items-center gap-4" aria-live="polite">
@@ -195,7 +195,7 @@ function RingCountdown({
       </div>
       <div className="text-sm">
         <div className="text-white/80">{label}</div>
-        <div className="font-extrabold text-[#5BE37D]">
+        <div className="font-extrabold text-[#29be4f]">
           {expired ? "Expiré" : `${days}j ${hours}h ${mins}m`}
         </div>
         <div className="text-[11px] text-white/60">
@@ -232,7 +232,7 @@ function SeatUsage({ used, quota }: { used: number; quota: number }) {
 
 function SkeletonCard() {
   return (
-    <div className="animate-pulse rounded-2xl border border-[#5BE37D]/20 bg-white/5 p-6">
+    <div className="animate-pulse rounded-2xl border border-[#29be4f]/20 bg-white/5 p-6">
       <div className="mb-4 h-4 w-24 rounded bg-white/20" />
       <div className="mb-2 h-6 w-40 rounded bg-white/30" />
       <div className="h-3 w-56 rounded bg-white/10" />
@@ -271,26 +271,26 @@ export default function UserDashboard() {
 
       <div className="mx-auto max-w-6xl px-6 py-10">
         {/* HEADER */}
-        <header className="mb-8 rounded-3xl border border-[#5BE37D]/20 bg-[#1d3e2e]/70 p-6 backdrop-blur">
+        <header className="mb-8 rounded-3xl border border-[#29be4f]/20 bg-[#1d3e2e]/70 p-6 backdrop-blur">
           <div className="flex flex-wrap items-center gap-4">
-            <div className="grid h-14 w-14 place-items-center rounded-full bg-[#5BE37D] text-[#14482F] shadow">
+            <div className="grid h-14 w-14 place-items-center rounded-full bg-[#29be4f] text-[#14482F] shadow">
               <User2 className="h-7 w-7" />
             </div>
             <div className="mr-auto">
               <div className="text-xl font-extrabold text-white">{data.name}</div>
               <div className="text-sm text-white/70">{data.email}</div>
-              <div className="text-sm font-semibold text-[#5BE37D]">{data.club}</div>
+              <div className="text-sm font-semibold text-[#29be4f]">{data.club}</div>
             </div>
 
             <a
               href="/offres"
-              className="inline-flex items-center gap-2 rounded-xl bg-[#5BE37D] px-4 py-2 font-extrabold text-[#14482F] shadow hover:bg-[#63f286]"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#29be4f] px-4 py-2 font-extrabold text-[#14482F] shadow hover:bg-[#63f286]"
             >
               Changer de plan <ArrowUpRight className="h-4 w-4" />
             </a>
             <a
               href="/api/billing-portal"
-              className="inline-flex items-center gap-2 rounded-xl border border-[#5BE37D]/40 px-4 py-2 font-semibold text-[#F8E9CA] hover:border-[#5BE37D] hover:text-white"
+              className="inline-flex items-center gap-2 rounded-xl border border-[#29be4f]/40 px-4 py-2 font-semibold text-[#F8E9CA] hover:border-[#29be4f] hover:text-white"
             >
               <CreditCard className="h-4 w-4" /> Gérer la facturation
             </a>
@@ -300,9 +300,9 @@ export default function UserDashboard() {
         {/* CARDS GRID */}
         <section className="grid gap-6 lg:grid-cols-3">
           {/* Abonnement */}
-          <div className="rounded-2xl border border-[#5BE37D]/20 bg-[#232729] p-6 text-white">
+          <div className="rounded-2xl border border-[#29be4f]/20 bg-[#232729] p-6 text-white">
             <div className="mb-3 flex items-center gap-2">
-              <Crown className="h-5 w-5 text-[#5BE37D]" />
+              <Crown className="h-5 w-5 text-[#29be4f]" />
               <span className="font-bold">Mon abonnement</span>
               <span
                 className={`ml-auto inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-bold ${
@@ -334,7 +334,7 @@ export default function UserDashboard() {
               </a>
               <a
                 href="/api/billing-portal"
-                className="rounded-lg border border-[#5BE37D]/30 px-4 py-2 text-sm font-semibold hover:border-[#5BE37D]"
+                className="rounded-lg border border-[#29be4f]/30 px-4 py-2 text-sm font-semibold hover:border-[#29be4f]"
               >
                 Voir mes moyens de paiement
               </a>
@@ -342,7 +342,7 @@ export default function UserDashboard() {
 
             {sub.nextInvoice && (
               <div className="mt-4 flex items-center gap-2 rounded-lg bg-[#14482F] px-3 py-2 text-sm">
-                <Calendar className="h-4 w-4 text-[#5BE37D]" />
+                <Calendar className="h-4 w-4 text-[#29be4f]" />
                 Prochaine facture le <strong className="ml-1">{formatDate(sub.nextInvoice.date)}</strong> —{" "}
                 <strong>{EUR.format(sub.nextInvoice.amount)}</strong>
               </div>
@@ -350,7 +350,7 @@ export default function UserDashboard() {
           </div>
 
           {/* Commandes */}
-          <div className="rounded-2xl border border-[#5BE37D]/20 bg-[#F8E9CA] p-6">
+          <div className="rounded-2xl border border-[#29be4f]/20 bg-[#F8E9CA] p-6">
             <div className="mb-3 flex items-center gap-2 text-[#14482F]">
               <ShoppingCart className="h-5 w-5" />
               <span className="font-bold">Mes commandes</span>
@@ -390,9 +390,9 @@ export default function UserDashboard() {
           </div>
 
           {/* Accès / Sécurité */}
-          <div className="rounded-2xl border border-[#5BE37D]/20 bg-[#1d3e2e]/70 p-6 text-white">
+          <div className="rounded-2xl border border-[#29be4f]/20 bg-[#1d3e2e]/70 p-6 text-white">
             <div className="mb-3 flex items-center gap-2">
-              <ShieldCheck className="h-5 w-5 text-[#5BE37D]" />
+              <ShieldCheck className="h-5 w-5 text-[#29be4f]" />
               <span className="font-bold">Accès & statut</span>
             </div>
 
@@ -404,12 +404,12 @@ export default function UserDashboard() {
             <div className="mt-6 grid gap-2 sm:grid-cols-2">
               <a
                 href="/security"
-                className="rounded-lg border border-[#5BE37D]/30 px-4 py-2 text-sm font-semibold hover:border-[#5BE37D]"
+                className="rounded-lg border border-[#29be4f]/30 px-4 py-2 text-sm font-semibold hover:border-[#29be4f]"
               >
                 Gérer la sécurité du compte
               </a>
               {!sub.active && (
-                <a className="rounded-lg bg-[#5BE37D] px-4 py-2 text-sm font-extrabold text-[#14482F] hover:bg-[#63f286]" href="/offres">
+                <a className="rounded-lg bg-[#29be4f] px-4 py-2 text-sm font-extrabold text-[#14482F] hover:bg-[#63f286]" href="/offres">
                   Renouveler maintenant
                 </a>
               )}
@@ -418,7 +418,7 @@ export default function UserDashboard() {
         </section>
 
         {/* TABLE COMMANDES */}
-        <section id="orders" className="mt-10 rounded-2xl border border-[#5BE37D]/20 bg-white/95 p-6">
+        <section id="orders" className="mt-10 rounded-2xl border border-[#29be4f]/20 bg-white/95 p-6">
           <h2 className="mb-4 text-xl font-extrabold text-[#14482F]">Historique de mes achats</h2>
           <div className="overflow-x-auto">
             <table className="min-w-full text-[#14482F]">
@@ -460,13 +460,13 @@ export default function UserDashboard() {
         </section>
 
         {/* SUPPORT */}
-        <section className="mt-8 rounded-2xl border border-[#5BE37D]/20 bg-[#14482F] p-6 text-white">
+        <section className="mt-8 rounded-2xl border border-[#29be4f]/20 bg-[#14482F] p-6 text-white">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <div className="text-lg font-extrabold">Besoin d’aide, d’une facture ou d’un support ?</div>
-            <div className="sm:ml-auto text-[#5BE37D]">Contactez l’équipe SimplyFoot.</div>
+            <div className="sm:ml-auto text-[#29be4f]">Contactez l’équipe SimplyFoot.</div>
             <a
               href="mailto:contact@simplyfoot.com"
-              className="inline-flex items-center justify-center rounded-xl bg-[#5BE37D] px-5 py-2 font-extrabold text-[#14482F] hover:bg-[#63f286]"
+              className="inline-flex items-center justify-center rounded-xl bg-[#29be4f] px-5 py-2 font-extrabold text-[#14482F] hover:bg-[#63f286]"
             >
               Nous écrire
             </a>

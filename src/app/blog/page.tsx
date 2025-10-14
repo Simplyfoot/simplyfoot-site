@@ -106,7 +106,7 @@ export default function BlogPage() {
       <div className="mx-auto max-w-7xl px-5 py-12">
         {/* HERO */}
         <header className="text-center">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-[#5BE37D] drop-shadow-xl">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-[#29be4f] drop-shadow-xl">
             SimplyFoot Le Journal
           </h1>
           <p className="mt-3 text-xl md:text-2xl font-semibold text-[#F8E9CA]">
@@ -115,8 +115,8 @@ export default function BlogPage() {
 
           {/* Search + tags */}
           <div className="mt-8 flex flex-col items-center gap-3">
-            <div className="flex w-full max-w-2xl items-center gap-2 rounded-full bg-[#1d3e2e]/70 px-4 py-2 ring-1 ring-[#5BE37D]/30">
-              <Search className="h-5 w-5 text-[#5BE37D]" />
+            <div className="flex w-full max-w-2xl items-center gap-2 rounded-full bg-[#1d3e2e]/70 px-4 py-2 ring-1 ring-[#29be4f]/30">
+              <Search className="h-5 w-5 text-[#29be4f]" />
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
@@ -131,8 +131,8 @@ export default function BlogPage() {
                 onClick={() => setTag(null)}
                 className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold transition ${
                   tag === null
-                    ? "bg-[#5BE37D] text-[#14482F]"
-                    : "text-[#F8E9CA] ring-1 ring-[#5BE37D]/30 hover:text-white"
+                    ? "bg-[#29be4f] text-[#14482F]"
+                    : "text-[#F8E9CA] ring-1 ring-[#29be4f]/30 hover:text-white"
                 }`}
               >
                 <Tag className="h-3.5 w-3.5" /> Tout
@@ -143,8 +143,8 @@ export default function BlogPage() {
                   onClick={() => setTag((old) => (old === t ? null : t))}
                   className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold transition ${
                     tag === t
-                      ? "bg-[#5BE37D] text-[#14482F]"
-                      : "text-[#F8E9CA] ring-1 ring-[#5BE37D]/30 hover:text-white"
+                      ? "bg-[#29be4f] text-[#14482F]"
+                      : "text-[#F8E9CA] ring-1 ring-[#29be4f]/30 hover:text-white"
                   }`}
                 >
                   <Tag className="h-3.5 w-3.5" /> {t}
@@ -157,7 +157,7 @@ export default function BlogPage() {
         {/* FEATURED */}
         {featured && (
           <section className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 items-stretch">
-            <article className="relative overflow-hidden rounded-3xl border border-[#5BE37D]/20 bg-[#1f4733] shadow-lg">
+            <article className="relative overflow-hidden rounded-3xl border border-[#29be4f]/20 bg-[#1f4733] shadow-lg">
               <Link href={`/blog/${featured.slug}`} className="group block h-full">
                 <div className="relative h-64 w-full md:h-full">
                   <Image
@@ -171,19 +171,19 @@ export default function BlogPage() {
                 </div>
                 <div className="p-6 md:p-8">
                   <div className="flex flex-wrap items-center gap-3 text-xs text-[#F8E9CA]">
-                    <span className="inline-flex items-center gap-1"><Calendar className="h-4 w-4 text-[#5BE37D]" /> {formatDate(featured.date)}</span>
-                    <span className="inline-flex items-center gap-1"><Clock className="h-4 w-4 text-[#5BE37D]" /> {readingTime(featured.contenu)} min</span>
+                    <span className="inline-flex items-center gap-1"><Calendar className="h-4 w-4 text-[#29be4f]" /> {formatDate(featured.date)}</span>
+                    <span className="inline-flex items-center gap-1"><Clock className="h-4 w-4 text-[#29be4f]" /> {readingTime(featured.contenu)} min</span>
                   </div>
                   <h2 className="mt-2 text-2xl md:text-3xl font-extrabold text-white">{featured.titre}</h2>
                   <p className="mt-1 text-[#F8E9CA]">{featured.resume}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {featured.tags.map((t) => (
-                      <span key={t} className="rounded-full bg-[#14482F]/70 px-2.5 py-1 text-xs font-semibold text-[#5BE37D] ring-1 ring-[#5BE37D]/30">
+                      <span key={t} className="rounded-full bg-[#14482F]/70 px-2.5 py-1 text-xs font-semibold text-[#29be4f] ring-1 ring-[#29be4f]/30">
                         {t}
                       </span>
                     ))}
                   </div>
-                  <div className="mt-6 inline-flex items-center gap-2 text-[#5BE37D] font-bold">
+                  <div className="mt-6 inline-flex items-center gap-2 text-[#29be4f] font-bold">
                     Lire l’article <ArrowRight className="h-5 w-5" />
                   </div>
                 </div>
@@ -191,7 +191,7 @@ export default function BlogPage() {
             </article>
 
             {/* Quick view panel */}
-            <aside className="rounded-3xl border border-[#5BE37D]/20 bg-[#232729] p-6 shadow-lg text-[#F8E9CA]">
+            <aside className="rounded-3xl border border-[#29be4f]/20 bg-[#232729] p-6 shadow-lg text-[#F8E9CA]">
               <h3 className="text-white text-lg font-extrabold">Aperçu rapide</h3>
               <p className="mt-2 text-sm">
                 Plongez dans nos guides : gestion, organisation, performance, motivation. Cliquez sur un article pour le lire en entier.
@@ -199,11 +199,11 @@ export default function BlogPage() {
               <ul className="mt-4 space-y-3">
                 {others.slice(0, 4).map((b) => (
                   <li key={b.id} className="flex items-start gap-3">
-                    <div className="relative h-14 w-20 overflow-hidden rounded-lg ring-1 ring-[#5BE37D]/20">
+                    <div className="relative h-14 w-20 overflow-hidden rounded-lg ring-1 ring-[#29be4f]/20">
                       <Image src={b.image} alt="" fill className="object-cover" />
                     </div>
                     <div>
-                      <Link href={`/blog/${b.slug}`} className="text-white font-semibold hover:text-[#5BE37D]">
+                      <Link href={`/blog/${b.slug}`} className="text-white font-semibold hover:text-[#29be4f]">
                         {b.titre}
                       </Link>
                       <div className="text-xs opacity-80 flex items-center gap-2">
@@ -229,7 +229,7 @@ export default function BlogPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.35 }}
                 viewport={{ once: true }}
-                className="group overflow-hidden rounded-3xl border border-[#5BE37D]/20 bg-white/95 shadow-xl hover:shadow-2xl"
+                className="group overflow-hidden rounded-3xl border border-[#29be4f]/20 bg-white/95 shadow-xl hover:shadow-2xl"
               >
                 <Link href={`/blog/${blog.slug}`} className="block h-full">
                   <div className="relative h-44 w-full">
@@ -237,14 +237,14 @@ export default function BlogPage() {
                   </div>
                   <div className="flex flex-col gap-2 p-6 text-[#14482F]">
                     <div className="flex flex-wrap items-center gap-3 text-xs text-[#3a6a52]">
-                      <span className="inline-flex items-center gap-1"><Calendar className="h-4 w-4 text-[#5BE37D]" /> {formatDate(blog.date)}</span>
-                      <span className="inline-flex items-center gap-1"><Clock className="h-4 w-4 text-[#5BE37D]" /> {readingTime(blog.contenu)} min</span>
+                      <span className="inline-flex items-center gap-1"><Calendar className="h-4 w-4 text-[#29be4f]" /> {formatDate(blog.date)}</span>
+                      <span className="inline-flex items-center gap-1"><Clock className="h-4 w-4 text-[#29be4f]" /> {readingTime(blog.contenu)} min</span>
                     </div>
                     <h3 className="text-lg font-extrabold">{blog.titre}</h3>
                     <p className="text-sm text-[#175438]">{blog.resume}</p>
                     <div className="mt-1 flex flex-wrap gap-2">
                       {blog.tags.map((t) => (
-                        <span key={t} className="rounded-full bg-[#e7efe9] px-2.5 py-1 text-[11px] font-semibold text-[#185C41] ring-1 ring-[#5BE37D]/20">
+                        <span key={t} className="rounded-full bg-[#e7efe9] px-2.5 py-1 text-[11px] font-semibold text-[#185C41] ring-1 ring-[#29be4f]/20">
                           {t}
                         </span>
                       ))}
@@ -255,7 +255,7 @@ export default function BlogPage() {
             ))}
 
             {others.length === 0 && (
-              <div className="col-span-full rounded-2xl border border-[#5BE37D]/20 bg-[#232729] p-10 text-center text-[#F8E9CA]">
+              <div className="col-span-full rounded-2xl border border-[#29be4f]/20 bg-[#232729] p-10 text-center text-[#F8E9CA]">
                 Aucun article ne correspond à votre recherche.
               </div>
             )}
@@ -263,7 +263,7 @@ export default function BlogPage() {
         </section>
 
         {/* NEWSLETTER */}
-        <section className="mt-16 rounded-3xl border border-[#5BE37D]/20 bg-[#1d3e2e]/60 p-8 text-center">
+        <section className="mt-16 rounded-3xl border border-[#29be4f]/20 bg-[#1d3e2e]/60 p-8 text-center">
           <h3 className="text-2xl font-extrabold text-white">Recevez nos conseils directement dans votre boîte mail</h3>
           <p className="mt-2 text-[#F8E9CA]">
             1 email / mois. Pas de spam, que du terrain et des idées concrètes pour votre club.
@@ -281,7 +281,7 @@ export default function BlogPage() {
               placeholder="Votre email club@exemple.fr"
               className="w-full rounded-xl bg-white/95 px-4 py-3 text-[#14482F] placeholder:text-[#14482F]/60 focus:outline-none"
             />
-            <button className="rounded-xl bg-[#5BE37D] px-5 py-3 font-extrabold text-[#14482F] shadow hover:bg-[#63f286]">
+            <button className="rounded-xl bg-[#29be4f] px-5 py-3 font-extrabold text-[#14482F] shadow hover:bg-[#63f286]">
               S&#39;abonner
             </button>
           </form>
@@ -306,13 +306,13 @@ export default function BlogPage() {
                 <p className="text-[#232729]">{quickView.resume}</p>
                 <div className="flex flex-wrap gap-2 pt-2">
                   {quickView.tags.map((t) => (
-                    <span key={t} className="rounded-full bg-[#e7efe9] px-2.5 py-1 text-[11px] font-semibold text-[#185C41] ring-1 ring-[#5BE37D]/20">
+                    <span key={t} className="rounded-full bg-[#e7efe9] px-2.5 py-1 text-[11px] font-semibold text-[#185C41] ring-1 ring-[#29be4f]/20">
                       {t}
                     </span>
                   ))}
                 </div>
                 <div className="pt-3">
-                  <Link href={`/blog/${quickView.slug}`} className="inline-flex items-center gap-2 rounded-xl bg-[#5BE37D] px-5 py-2 font-extrabold text-[#14482F] hover:bg-[#63f286]">
+                  <Link href={`/blog/${quickView.slug}`} className="inline-flex items-center gap-2 rounded-xl bg-[#29be4f] px-5 py-2 font-extrabold text-[#14482F] hover:bg-[#63f286]">
                     Lire l’article <ArrowRight className="h-5 w-5" />
                   </Link>
                 </div>

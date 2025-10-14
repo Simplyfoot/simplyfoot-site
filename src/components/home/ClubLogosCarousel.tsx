@@ -16,7 +16,7 @@ export default function ClubLogosCarousel() {
   const logos = [...CLUB_LOGOS, ...CLUB_LOGOS];
   return (
     <section className="relative w-full py-10 overflow-hidden bg-[#181B1D]">
-      <h2 className="text-2xl md:text-3xl font-bold text-[#5BE37D] mb-7 text-center">
+      <h2 className="text-2xl md:text-3xl font-bold text-[#29be4f] mb-7 text-center">
         +120 clubs déjà équipés par SimplyFoot
       </h2>
       <div className="relative w-full h-20 overflow-x-hidden">

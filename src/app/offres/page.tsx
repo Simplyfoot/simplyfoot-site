@@ -197,14 +197,14 @@ export default function OffresPage() {
           className="text-center"
         >
           <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
-            Choisissez l’offre <span className="text-[#5BE37D]">qui fait gagner du temps</span>
+            Choisissez l’offre <span className="text-[#29be4f]">qui fait gagner du temps</span>
           </h1>
           <p className="mt-4 text-[#F8E9CA] text-lg md:text-xl font-medium">
             Toutes les fonctionnalités, sans limites cachées. Concentrez-vous sur le terrain, on s’occupe du reste.
           </p>
 
           {/* Essai Gratuit */}
-          <div className="mx-auto mt-6 max-w-3xl rounded-2xl border border-[#5BE37D]/30 bg-[#1d3e2e]/70 p-4 text-left text-[#F8E9CA]">
+          <div className="mx-auto mt-6 max-w-3xl rounded-2xl border border-[#29be4f]/30 bg-[#1d3e2e]/70 p-4 text-left text-[#F8E9CA]">
             <p className="text-white font-extrabold">1 mois gratuit, sans stress ✨</p>
             <ul className="mt-2 list-inside list-disc space-y-1 text-sm">
               <li>Testez SimplyFoot gratuitement pendant 30 jours.</li>
@@ -220,11 +220,11 @@ export default function OffresPage() {
           </div>
 
           {/* Toggle facturation */}
-          <div className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#1d3e2e]/70 p-1 ring-1 ring-[#5BE37D]/30">
+          <div className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#1d3e2e]/70 p-1 ring-1 ring-[#29be4f]/30">
             <button
               onClick={() => setBilling("monthly")}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition ${
-                billing === "monthly" ? "bg-[#5BE37D] text-[#14482F]" : "text-[#F8E9CA] hover:text-white"
+                billing === "monthly" ? "bg-[#29be4f] text-[#14482F]" : "text-[#F8E9CA] hover:text-white"
               }`}
             >
               Mensuel
@@ -232,7 +232,7 @@ export default function OffresPage() {
             <button
               onClick={() => setBilling("yearly")}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition ${
-                billing === "yearly" ? "bg-[#5BE37D] text-[#14482F]" : "text-[#F8E9CA] hover:text-white"
+                billing === "yearly" ? "bg-[#29be4f] text-[#14482F]" : "text-[#F8E9CA] hover:text-white"
               }`}
             >
               Annuel <span className="ml-1 text-xs opacity-80">(-10 %)</span>
@@ -244,9 +244,9 @@ export default function OffresPage() {
             {VALUE_ICONS.map((v) => (
               <span
                 key={v.t}
-                className="inline-flex items-center gap-2 rounded-full border border-[#5BE37D]/30 bg-[#1d3e2e]/50 px-3 py-1 text-xs font-semibold text-[#F8E9CA]"
+                className="inline-flex items-center gap-2 rounded-full border border-[#29be4f]/30 bg-[#1d3e2e]/50 px-3 py-1 text-xs font-semibold text-[#F8E9CA]"
               >
-                <span className="h-1.5 w-1.5 rounded-full bg-[#5BE37D]" /> {v.t}
+                <span className="h-1.5 w-1.5 rounded-full bg-[#29be4f]" /> {v.t}
               </span>
             ))}
           </div>
@@ -304,7 +304,7 @@ export default function OffresPage() {
                 <ul className="mt-6 space-y-2">
                   {offre.points.map((d) => (
                     <li key={d} className="flex items-start gap-2 text-[#232729]">
-                      <Check className="mt-0.5 h-5 w-5 text-[#5BE37D]" />
+                      <Check className="mt-0.5 h-5 w-5 text-[#29be4f]" />
                       <span>{d}</span>
                     </li>
                   ))}
@@ -318,7 +318,7 @@ export default function OffresPage() {
                   href={offre.cta.href}
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.98 }}
-                  className="mt-6 inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-[#67D07C] to-[#5BE37D] px-6 py-3 text-base font-extrabold text-[#14482F] shadow-lg hover:from-[#5BE37D] hover:to-[#68FB7A] focus:outline-none focus:ring-2 focus:ring-[#67D07C]"
+                  className="mt-6 inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-[#67D07C] to-[#29be4f] px-6 py-3 text-base font-extrabold text-[#14482F] shadow-lg hover:from-[#29be4f] hover:to-[#68FB7A] focus:outline-none focus:ring-2 focus:ring-[#67D07C]"
                 >
                   {offre.cta.label}
                 </motion.a>
@@ -333,7 +333,7 @@ export default function OffresPage() {
 
         {/* Remises */}
         <div className="mt-14 text-center">
-          <h3 className="text-2xl font-extrabold text-[#5BE37D]">Remises et offres spéciales</h3>
+          <h3 className="text-2xl font-extrabold text-[#29be4f]">Remises et offres spéciales</h3>
           <div className="mt-4 flex flex-wrap justify-center gap-6">
             {REMISES.map((r) => (
               <div
@@ -351,18 +351,18 @@ export default function OffresPage() {
         </div>
 
         {/* Comparatif rapide */}
-        <section className="mt-16 rounded-2xl border border-[#5BE37D]/20 bg-[#1d3e2e]/50 p-6">
+        <section className="mt-16 rounded-2xl border border-[#29be4f]/20 bg-[#1d3e2e]/50 p-6">
           <h3 className="mb-6 text-center text-2xl font-bold text-white">Tout ce qu&#39;il faut, dès le premier plan</h3>
           <div className="grid grid-cols-1 gap-6 text-[#F8E9CA] md:grid-cols-3">
-            <div className="rounded-xl border border-[#5BE37D]/10 bg-[#232729]/70 p-5">
+            <div className="rounded-xl border border-[#29be4f]/10 bg-[#232729]/70 p-5">
               <h4 className="mb-2 font-bold text-white">Organisation</h4>
               <p>Calendrier centralisé, présences, feuilles de match, documents sécurisés.</p>
             </div>
-            <div className="rounded-xl border border-[#5BE37D]/10 bg-[#232729]/70 p-5">
+            <div className="rounded-xl border border-[#29be4f]/10 bg-[#232729]/70 p-5">
               <h4 className="mb-2 font-bold text-white">Motivation</h4>
               <p>Classements ludiques, badges, blasons 3D, objectifs partagés.</p>
             </div>
-            <div className="rounded-xl border border-[#5BE37D]/10 bg-[#232729]/70 p-5">
+            <div className="rounded-xl border border-[#29be4f]/10 bg-[#232729]/70 p-5">
               <h4 className="mb-2 font-bold text-white">Performance</h4>
               <p>Stats essentielles, reporting avancé, coaching par IA.</p>
             </div>
@@ -371,8 +371,8 @@ export default function OffresPage() {
 
         {/* FAQ */}
         <section className="mt-16">
-          <h3 className="mb-6 text-center text-2xl font-extrabold text-[#5BE37D]">Questions fréquentes</h3>
-          <div className="mx-auto max-w-3xl divide-y divide-[#5BE37D]/20 rounded-2xl border border-[#5BE37D]/20 bg-[#1d3e2e]/50">
+          <h3 className="mb-6 text-center text-2xl font-extrabold text-[#29be4f]">Questions fréquentes</h3>
+          <div className="mx-auto max-w-3xl divide-y divide-[#29be4f]/20 rounded-2xl border border-[#29be4f]/20 bg-[#1d3e2e]/50">
             {[
               {
                 q: "Comment fonctionne l’essai gratuit de 30 jours ?",
@@ -390,7 +390,7 @@ export default function OffresPage() {
               <details key={i} className="group px-5 py-4">
                 <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-white">
                   {f.q}
-                  <ChevronDown className="h-5 w-5 text-[#5BE37D] transition-transform group-open:rotate-180" />
+                  <ChevronDown className="h-5 w-5 text-[#29be4f] transition-transform group-open:rotate-180" />
                 </summary>
                 <p className="mt-2 text-[#F8E9CA]">{f.a}</p>
               </details>
@@ -400,7 +400,7 @@ export default function OffresPage() {
 
         {/* Apps */}
         <section className="mt-16 text-center">
-          <h3 className="mb-4 text-2xl font-extrabold text-[#5BE37D]">Téléchargez l’application SimplyFoot</h3>
+          <h3 className="mb-4 text-2xl font-extrabold text-[#29be4f]">Téléchargez l’application SimplyFoot</h3>
           <div className="flex flex-wrap justify-center gap-8">
             {plateformes.map((p) => (
               <a
@@ -415,7 +415,7 @@ export default function OffresPage() {
               </a>
             ))}
           </div>
-          <div className="mt-6 font-bold text-[#5BE37D]">Bientôt disponible sur tous vos appareils !</div>
+          <div className="mt-6 font-bold text-[#29be4f]">Bientôt disponible sur tous vos appareils !</div>
         </section>
       </div>
     </main>

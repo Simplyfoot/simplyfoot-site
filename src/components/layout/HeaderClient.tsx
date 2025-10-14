@@ -83,7 +83,7 @@ export default function HeaderClient({
             priority
           />
           <span className="text-2xl font-bold text-[#F8E9CA]">
-            Simply<span className="text-[#567E66]">Foot</span>
+            Simply<span className="text-[#4e9369]">Foot</span>
           </span>
         </Link>
 
@@ -93,8 +93,8 @@ export default function HeaderClient({
             <Link
               href={getRoute(locale as "fr" | "en", "club")}
               className={clsx(
-                "transition-colors hover:text-[#5BE37D]",
-                pathname === "/gestion-club" ? "text-[#5BE37D]" : "text-[#F8E9CA]"
+                "transition-colors hover:text-[#29be4f]",
+                pathname === "/gestion-club" ? "text-[#29be4f]" : "text-[#F8E9CA]"
               )}
               title="Gestion de club – SimplyFoot"
             >
@@ -105,8 +105,8 @@ export default function HeaderClient({
             <Link
               href={getRoute(locale as "fr" | "en", "team")}
               className={clsx(
-                "transition-colors hover:text-[#5BE37D]",
-                pathname === "/gestion-equipe" ? "text-[#5BE37D]" : "text-[#F8E9CA]"
+                "transition-colors hover:text-[#29be4f]",
+                pathname === "/gestion-equipe" ? "text-[#29be4f]" : "text-[#F8E9CA]"
               )}
               title="Gestion d’équipe – SimplyFoot"
             >
@@ -115,7 +115,7 @@ export default function HeaderClient({
           </li>
           <li className="relative">
             <Menu as="div" className="relative inline-block text-left">
-              <Menu.Button className="flex items-center hover:text-[#5BE37D]" aria-haspopup="true">
+              <Menu.Button className="flex items-center hover:text-[#29be4f]" aria-haspopup="true">
                 {dict.solutions}
                 <ChevronDown className="ml-1 h-5 w-5" />
               </Menu.Button>
@@ -128,11 +128,11 @@ export default function HeaderClient({
                 leaveFrom="transform opacity-100 translate-y-0"
                 leaveTo="transform opacity-0 translate-y-1"
               >
-                <Menu.Items className="absolute left-0 z-20 mt-3 w-56 origin-top-left rounded-xl border border-[#5BE37D]/40 bg-[#232729]/90 p-2 backdrop-blur">
+                <Menu.Items className="absolute left-0 z-20 mt-3 w-56 origin-top-left rounded-xl border border-[#29be4f]/40 bg-[#232729]/90 p-2 backdrop-blur">
                   <Menu.Item>
                     <Link
                       href={getRoute(locale as "fr" | "en", "offers")}
-                      className="block rounded-md px-4 py-2 text-sm hover:text-[#5BE37D]"
+                      className="block rounded-md px-4 py-2 text-sm hover:text-[#29be4f]"
                       title="Nos offres SimplyFoot"
                     >
                       {dict.offers}
@@ -141,7 +141,7 @@ export default function HeaderClient({
                   <Menu.Item>
                     <Link
                       href={getRoute(locale as "fr" | "en", "features")}
-                      className="block rounded-md px-4 py-2 text-sm hover:text-[#5BE37D]"
+                      className="block rounded-md px-4 py-2 text-sm hover:text-[#29be4f]"
                       title="Fonctionnalités SimplyFoot"
                     >
                       {dict.features}
@@ -151,24 +151,26 @@ export default function HeaderClient({
               </Transition>
             </Menu>
           </li>
-          <li>
+
+          {/* Section Blog temporairement désactivée */}
+          {/* <li>
             <Link
               href={getRoute(locale as "fr" | "en", "blog")}
               className={clsx(
-                "transition-colors hover:text-[#5BE37D]",
-                pathname.startsWith("/blog") ? "text-[#5BE37D]" : "text-[#F8E9CA]"
+                "transition-colors hover:text-[#29be4f]",
+                pathname.startsWith("/blog") ? "text-[#29be4f]" : "text-[#F8E9CA]"
               )}
               title="Blog SimplyFoot"
             >
               {dict.blog}
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link
               href={getRoute(locale as "fr" | "en", "about")}
               className={clsx(
-                "transition-colors hover:text-[#5BE37D]",
-                pathname.startsWith("/a-propos") ? "text-[#5BE37D]" : "text-[#F8E9CA]"
+                "transition-colors hover:text-[#29be4f]",
+                pathname.startsWith("/a-propos") ? "text-[#29be4f]" : "text-[#F8E9CA]"
               )}
               title="À propos de SimplyFoot"
             >
@@ -179,8 +181,8 @@ export default function HeaderClient({
             <Link
               href={getRoute(locale as "fr" | "en", "contact")}
               className={clsx(
-                "transition-colors hover:text-[#5BE37D]",
-                pathname.startsWith("/contact") ? "text-[#5BE37D]" : "text-[#F8E9CA]"
+                "transition-colors hover:text-[#29be4f]",
+                pathname.startsWith("/contact") ? "text-[#29be4f]" : "text-[#F8E9CA]"
               )}
               title="Contact SimplyFoot"
             >
@@ -195,7 +197,7 @@ export default function HeaderClient({
             <>
               <Link
                 href="/dashboard"
-                className="inline-flex items-center gap-2 rounded-full border border-[#5BE37D] px-5 py-2 text-sm font-semibold text-[#5BE37D] shadow-md hover:bg-[#5BE37D]/10"
+                className="inline-flex items-center gap-2 rounded-full border border-[#29be4f] px-5 py-2 text-sm font-semibold text-[#29be4f] shadow-md hover:bg-[#29be4f]/10"
                 title="Tableau de bord"
               >
                 <User className="h-4 w-4" />
@@ -203,7 +205,7 @@ export default function HeaderClient({
               </Link>
               <button
                 onClick={handleLogout}
-                className="inline-flex items-center gap-2 rounded-full bg-[#5BE37D] px-5 py-2 text-sm font-semibold text-[#14482F] shadow-md hover:bg-[#63f286]"
+                className="inline-flex items-center gap-2 rounded-full bg-[#29be4f] px-5 py-2 text-sm font-semibold text-[#14482F] shadow-md hover:bg-[#63f286]"
                 title="Se déconnecter"
               >
                 <LogOut className="h-4 w-4" />
@@ -214,14 +216,14 @@ export default function HeaderClient({
             <>
               <Link
                 href={getRoute(locale as "fr" | "en", "login")}
-                className="inline-flex items-center rounded-full border border-[#5BE37D] px-5 py-2 text-sm font-semibold text-[#5BE37D] shadow-md hover:bg-[#5BE37D]/10"
+                className="inline-flex items-center rounded-full border border-[#29be4f] px-5 py-2 text-sm font-semibold text-[#29be4f] shadow-md hover:bg-[#29be4f]/10"
                 title="Connexion à l’espace club"
               >
                 Connexion
               </Link>
               <Link
                 href={getRoute(locale as "fr" | "en", "signup")}
-                className="inline-flex animate-[pulse_6s_ease-in-out_infinite] items-center rounded-full bg-[#5BE37D] px-5 py-2 text-sm font-semibold text-[#14482F] shadow-md hover:bg-[#63f286]"
+                className="inline-flex animate-[pulse_6s_ease-in-out_infinite] items-center rounded-full bg-[#29be4f] px-5 py-2 text-sm font-semibold text-[#14482F] shadow-md hover:bg-[#63f286]"
                 title="Créer un compte gratuitement"
               >
                 Tester gratuitement
@@ -257,7 +259,7 @@ export default function HeaderClient({
           </Transition.Child>
 
           <div className="fixed inset-0 flex items-center justify-center">
-            <Dialog.Panel className="relative mx-6 w-full max-w-md rounded-2xl border border-[#5BE37D]/40 bg-[#232729]/95 p-8 backdrop-blur">
+            <Dialog.Panel className="relative mx-6 w-full max-w-md rounded-2xl border border-[#29be4f]/40 bg-[#232729]/95 p-8 backdrop-blur">
               <button
                 type="button"
                 aria-label="Fermer le menu mobile"
@@ -270,11 +272,11 @@ export default function HeaderClient({
               <div className="flex flex-col items-center gap-6">
                 {(
                   [
-                    "clubManagement",
-                    "teamManagement",
+                    "club",
+                    "team",
                     "offers",
-                    "fonctionnalites",
-                    "blog",
+                    "features",
+                    // "blog",
                     "about",
                     "contact",
                   ] as RouteKey[]
@@ -288,8 +290,8 @@ export default function HeaderClient({
                       className={clsx(
                         "text-2xl font-bold transition-all",
                         pathname.includes(key)
-                          ? "text-[#5BE37D]"
-                          : "text-[#F8E9CA] hover:text-[#5BE37D]"
+                          ? "text-[#29be4f]"
+                          : "text-[#F8E9CA] hover:text-[#29be4f]"
                       )}
                       onClick={() => setMobileMenuOpen(false)}
                       title={`${dict[key]} – SimplyFoot`}
@@ -303,7 +305,7 @@ export default function HeaderClient({
                   <>
                     <Link
                       href="/dashboard"
-                      className="w-full rounded-full border border-[#5BE37D] py-3 text-center text-lg font-semibold text-[#5BE37D] shadow-md"
+                      className="w-full rounded-full border border-[#29be4f] py-3 text-center text-lg font-semibold text-[#29be4f] shadow-md"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Tableau de bord
@@ -313,7 +315,7 @@ export default function HeaderClient({
                         setMobileMenuOpen(false);
                         handleLogout();
                       }}
-                      className="w-full rounded-full bg-[#5BE37D] py-3 text-center text-lg font-semibold text-[#14482F] shadow-md hover:bg-[#63f286]"
+                      className="w-full rounded-full bg-[#29be4f] py-3 text-center text-lg font-semibold text-[#14482F] shadow-md hover:bg-[#63f286]"
                     >
                       Se déconnecter
                     </button>
@@ -322,14 +324,14 @@ export default function HeaderClient({
                   <>
                     <Link
                       href={getRoute(locale as "fr" | "en", "login")}
-                      className="w-full rounded-full border border-[#5BE37D] py-3 text-center text-lg font-semibold text-[#5BE37D] shadow-md"
+                      className="w-full rounded-full border border-[#29be4f] py-3 text-center text-lg font-semibold text-[#29be4f] shadow-md"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Connexion
                     </Link>
                     <Link
                       href={getRoute(locale as "fr" | "en", "signup")}
-                      className="w-full rounded-full bg-[#5BE37D] py-3 text-center text-lg font-semibold text-[#14482F] shadow-md hover:bg-[#63f286]"
+                      className="w-full rounded-full bg-[#29be4f] py-3 text-center text-lg font-semibold text-[#14482F] shadow-md hover:bg-[#63f286]"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Tester gratuitement

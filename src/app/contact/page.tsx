@@ -89,7 +89,7 @@ export default function ContactPage() {
       <div className="mx-auto max-w-6xl px-6 py-14">
         {/* Hero */}
         <header className="mb-10 text-center">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-[#5BE37D] drop-shadow">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-[#29be4f] drop-shadow">
             Contactez l’équipe SimplyFoot
           </h1>
           <p className="mx-auto mt-3 max-w-2xl text-lg font-semibold text-[#F8E9CA]">
@@ -100,11 +100,11 @@ export default function ContactPage() {
         <section className="grid grid-cols-1 gap-8 lg:grid-cols-5">
           {/* Infos */}
           <aside className="lg:col-span-2">
-            <div className="rounded-3xl border border-[#5BE37D]/20 bg-[#1d3e2e]/70 p-6 text-white backdrop-blur">
+            <div className="rounded-3xl border border-[#29be4f]/20 bg-[#1d3e2e]/70 p-6 text-white backdrop-blur">
               <h2 className="mb-4 text-xl font-extrabold">Parlons-en</h2>
 
               <InfoRow
-                icon={<Mail className="h-5 w-5 text-[#5BE37D]" />}
+                icon={<Mail className="h-5 w-5 text-[#29be4f]" />}
                 label="Email"
                 value={
                   <a className="font-semibold hover:underline" href="mailto:contact@simplyfoot.com">
@@ -113,7 +113,7 @@ export default function ContactPage() {
                 }
               />
               <InfoRow
-                icon={<Phone className="h-5 w-5 text-[#5BE37D]" />}
+                icon={<Phone className="h-5 w-5 text-[#29be4f]" />}
                 label="Téléphone"
                 value={
                   <a className="font-semibold hover:underline" href="tel:+33682845641">
@@ -122,7 +122,7 @@ export default function ContactPage() {
                 }
               />
               <InfoRow
-                icon={<MapPin className="h-5 w-5 text-[#5BE37D]" />}
+                icon={<MapPin className="h-5 w-5 text-[#29be4f]" />}
                 label="Adresse"
                 value={
                   <span className="font-semibold">
@@ -131,7 +131,7 @@ export default function ContactPage() {
                 }
               />
 
-              <div className="mt-6 rounded-2xl border border-[#5BE37D]/20 bg-[#14482F]/50 p-4">
+              <div className="mt-6 rounded-2xl border border-[#29be4f]/20 bg-[#14482F]/50 p-4">
                 <p className="text-sm text-[#F8E9CA]">
                   <strong className="text-white">Conseil personnalisé</strong> — Réservez un créneau
                   de 20 minutes pour découvrir SimplyFoot et vos besoins.
@@ -140,7 +140,7 @@ export default function ContactPage() {
                   href="https://calendly.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-2 rounded-xl bg-[#5BE37D] px-4 py-2 font-extrabold text-[#14482F] hover:bg-[#63f286]"
+                  className="mt-3 inline-flex items-center gap-2 rounded-xl bg-[#29be4f] px-4 py-2 font-extrabold text-[#14482F] hover:bg-[#63f286]"
                 >
                   Prendre rendez-vous <Send className="h-4 w-4" />
                 </a>
@@ -154,7 +154,7 @@ export default function ContactPage() {
               ref={formRef}
               onSubmit={handleSubmit}
               noValidate
-              className="rounded-3xl border border-[#5BE37D]/20 bg-[#F7F6F3] p-6 shadow space-y-2"
+              className="rounded-3xl border border-[#29be4f]/20 bg-[#F7F6F3] p-6 shadow space-y-2"
             >
               <Field
                 label="Nom / Club"
@@ -231,7 +231,7 @@ export default function ContactPage() {
                   name="consent"
                   type="checkbox"
                   onChange={setField("consent")}
-                  className="mt-1 h-4 w-4 rounded border-gray-300 text-[#5BE37D] focus:ring-[#5BE37D]"
+                  className="mt-1 h-4 w-4 rounded border-gray-300 text-[#29be4f] focus:ring-[#29be4f]"
                 />
                 <span>
                   J’accepte que SimplyFoot me contacte à propos de ma demande. Mes données
@@ -244,7 +244,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="inline-flex items-center gap-2 rounded-xl bg-[#5BE37D] px-6 py-3 font-extrabold text-[#14482F] shadow hover:bg-[#63f286] disabled:opacity-70"
+                  className="inline-flex items-center gap-2 rounded-xl bg-[#29be4f] px-6 py-3 font-extrabold text-[#14482F] shadow hover:bg-[#63f286] disabled:opacity-70"
                 >
                   {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : <Send className="h-5 w-5" />}
                   Envoyer
@@ -252,7 +252,7 @@ export default function ContactPage() {
 
                 <a
                   href="mailto:contact@simplyfoot.fr"
-                  className="inline-flex items-center gap-2 rounded-xl border border-[#5BE37D]/40 px-6 py-3 font-semibold text-[#14482F] hover:border-[#5BE37D]"
+                  className="inline-flex items-center gap-2 rounded-xl border border-[#29be4f]/40 px-6 py-3 font-semibold text-[#14482F] hover:border-[#29be4f]"
                 >
                   Ou par email direct
                 </a>
@@ -277,20 +277,49 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Bloc équipe */}
         <section className="mt-12">
-          <div className="rounded-3xl border border-[#5BE37D]/20 bg-white/95 p-6 text-center">
-            <h3 className="text-2xl font-extrabold text-[#14482F]">Notre équipe à votre service</h3>
+          <div className="rounded-3xl border border-[#29be4f]/20 bg-white/95 p-6 text-center">
+            <h3 className="text-2xl font-extrabold text-[#14482F]">
+              Notre équipe à votre service
+            </h3>
             <p className="mx-auto mt-2 max-w-2xl text-[#232729]">
               Des passionnés de terrain, dédiés à simplifier la vie des clubs amateurs.
             </p>
 
-            <div className="mt-6 flex flex-wrap justify-center gap-8">
-              <TeamCard initials="RP" name="Romain Pennacchio" role="Fondateur – Associé" />
-              <TeamCard initials="JB" name="Jérémy Baruc" role="Fondateur – Associé" />
-              <TeamCard initials="JC" name="Jean Carboni" role="Développeur Expert · Associé" />
-              <TeamCard initials="VR" name="Vanessa Rolland" role="Développeur Expert · Associée" />
-              <TeamCard initials="HP" name="Hugo Pecorella" role="Tech & Cybersécurité · Associé" />
+            {/* Grille équilibrée 3 / 2 */}
+            <div className="mt-8 flex flex-col items-center gap-8">
+              {/* Ligne 1 : 3 membres */}
+              <div className="flex flex-wrap justify-center gap-8">
+                {[
+                  { initials: "JB", name: "Jérémy Baruc", role: "Fondateur – Associé" },
+                  { initials: "RP", name: "Romain Pennacchio", role: "Fondateur – Associé" },
+                  { initials: "JC", name: "Jean Carboni", role: "Développeur Expert · Associé" },
+                ].map((member) => (
+                  <div key={member.name} className="flex flex-col items-center w-[160px]">
+                    <div className="grid h-16 w-16 place-items-center rounded-full bg-[#29be4f] text-2xl font-extrabold text-[#14482F] shadow">
+                      {member.initials}
+                    </div>
+                    <div className="mt-2 font-semibold text-[#14482F]">{member.name}</div>
+                    <div className="text-sm text-[#14482F]/60">{member.role}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Ligne 2 : 2 membres centrés */}
+              <div className="flex justify-center gap-12">
+                {[
+                  { initials: "VR", name: "Vanessa Rolland", role: "Développeuse Experte · Associée" },
+                  { initials: "HP", name: "Hugo Pecorella", role: "Tech & Cybersécurité · Associé" },
+                ].map((member) => (
+                  <div key={member.name} className="flex flex-col items-center w-[160px]">
+                    <div className="grid h-16 w-16 place-items-center rounded-full bg-[#29be4f] text-2xl font-extrabold text-[#14482F] shadow">
+                      {member.initials}
+                    </div>
+                    <div className="mt-2 font-semibold text-[#14482F]">{member.name}</div>
+                    <div className="text-sm text-[#14482F]/60">{member.role}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -377,7 +406,7 @@ function Alert({
 function TeamCard({ initials, name, role }: { initials: string; name: string; role: string }) {
   return (
     <div className="flex w-[220px] flex-col items-center">
-      <div className="grid h-16 w-16 place-items-center rounded-full bg-[#5BE37D] text-2xl font-extrabold text-[#14482F] shadow">
+      <div className="grid h-16 w-16 place-items-center rounded-full bg-[#29be4f] text-2xl font-extrabold text-[#14482F] shadow">
         {initials}
       </div>
       <div className="mt-2 font-semibold text-[#14482F]">{name}</div>
