@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Image3 from "assets/images/3.jpg";
+import Image2 from "assets/images/2.jpg";
 
 export default function HeroSection() {
   // Animation du compteur clubs
@@ -100,7 +101,7 @@ export default function HeroSection() {
         >
           <div className="relative rounded-3xl shadow-2xl border-4 border-[#29be4f]/40 overflow-hidden bg-white/10 w-[320px] h-[580px] md:w-[360px] md:h-[620px] group">
             <Image
-              src="/1.png"
+              src={Image2}
               alt="Aperçu SimplyFoot"
               className="w-full h-full object-cover rounded-3xl"
               draggable={false}
@@ -109,7 +110,7 @@ export default function HeroSection() {
               priority
             />
             {/* Play animé */}
-            <motion.div
+            {/* <motion.div
               animate={{
                 scale: [1, 1.13, 1],
                 opacity: [1, 0.75, 1]
@@ -124,7 +125,7 @@ export default function HeroSection() {
                 <circle cx="40" cy="40" r="38" stroke="#29be4f" strokeWidth="5" fill="#fff9" />
                 <polygon points="34,28 58,40 34,52" fill="#14432D" />
               </svg>
-            </motion.div>
+            </motion.div> */}
           </div>
         </motion.div>
       </div>
