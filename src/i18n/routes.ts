@@ -1,4 +1,4 @@
-export const routes = {
+export const ROUTES = {
   fr: {
     home: "/",
     about: "/a-propos",
@@ -6,16 +6,16 @@ export const routes = {
     blog: "/blog",
     cgu: "/cgu",
     cgv: "/cgv",
-    clubManagement: "/gestion-club",
-    teamManagement: "/gestion-equipe",
-    fonctionnalites: "/fonctionnalites",
+    club: "/gestion-club",
+    team: "/gestion-equipe",
+    features: "/fonctionnalites",
     offers: "/offres",
     contact: "/contact",
-    connexion: "/connexion",
-    inscription: "/inscription",
+    login: "/connexion",
+    signup: "/inscription",
     dashboard: "/dashboard",
-    confidentialite: "/confidentialite",
-    mentionsLegales: "/mentions-legales",
+    privacy: "/confidentialite",
+    legal: "/mentions-legales",
   },
   en: {
     home: "/en",
@@ -24,23 +24,22 @@ export const routes = {
     blog: "/en/blog",
     cgu: "/en/terms",
     cgv: "/en/sales-terms",
-    clubManagement: "/en/club-management",
-    teamManagement: "/en/team-management",
-    fonctionnalites: "/en/features",
+    club: "/en/club-management",
+    team: "/en/team-management",
+    features: "/en/features",
     offers: "/en/offers",
     contact: "/en/contact",
-    connexion: "/en/sign-in",
-    inscription: "/en/sign-up",
+    login: "/en/sign-in",
+    signup: "/en/sign-up",
     dashboard: "/en/dashboard",
-    confidentialite: "/en/privacy",
-    mentionsLegales: "/en/legal-notices",
+    privacy: "/en/privacy",
+    legal: "/en/legal-notices",
   },
 } as const;
 
-export type Locale = keyof typeof routes;
-export type RouteKey = keyof typeof routes.fr;
+export type Locale = keyof typeof ROUTES;
+export type RouteKey = keyof typeof ROUTES.fr;
 
-export const getRoute = (locale: Locale, key: RouteKey) => {
-  if (locale === "fr") return routes.fr[key];
-  else return routes[locale][key];
+export const getRoute = (locale: Locale, routeKey: RouteKey): string => {
+  return ROUTES[locale][routeKey] ?? "/";
 };

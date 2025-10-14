@@ -23,13 +23,13 @@ const labels = {
 } as const;
 
 export const getNavLinks = (locale: keyof typeof labels) => [
-  { name: labels[locale].club, href: getRoute(locale, "clubManagement") },
-  { name: labels[locale].team, href: getRoute(locale, "teamManagement") },
+  { name: labels[locale].club, href: getRoute(locale, "club") },
+  { name: labels[locale].team, href: getRoute(locale, "team") },
   {
     name: labels[locale].solutions,
     dropdown: [
       { name: labels[locale].offers, href: getRoute(locale, "offers") },
-      { name: labels[locale].features, href: getRoute(locale, "fonctionnalites") },
+      { name: labels[locale].features, href: getRoute(locale, "features") },
     ],
   },
   { name: labels[locale].blog, href: getRoute(locale, "blog") },
