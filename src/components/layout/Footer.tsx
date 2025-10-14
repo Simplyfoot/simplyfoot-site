@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Mail, MapPin, Phone, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Mail, MapPin, Phone, Facebook, Linkedin, Instagram } from "lucide-react";
 
 const LINKS = [
   { label: "Mentions légales", href: "/mentions-legales" },

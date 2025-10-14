@@ -8,7 +8,7 @@ import { Menu as MenuIcon, X as XIcon, ChevronDown, LogOut, User } from "lucide-
 import { Menu, Transition, Dialog } from "@headlessui/react";
 import clsx from "clsx";
 import { usePathname, useRouter } from "next/navigation";
-import { getRoute } from "../../i18n/routes";
+import { getRoute, type RouteKey } from "../../i18n/routes";
 
 const AUTH_KEY = "sf_auth";
 
@@ -26,14 +26,14 @@ export default function HeaderClient({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [logged, setLogged] = useState(false);
 
-  // Détection du scroll pour ajouter une ombre au header
+  // Effet scroll : ajout d'une ombre au scroll
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 80);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // État connexion
+  // État de connexion
   useEffect(() => {
     const sync = () => setLogged(!!localStorage.getItem(AUTH_KEY));
     sync();
@@ -57,7 +57,7 @@ export default function HeaderClient({
       )}
       role="banner"
     >
-      {/* Lien d’accès rapide au contenu principal (SEO + accessibilité) */}
+      {/* Lien d’accès rapide au contenu principal (accessibilité) */}
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only absolute top-2 left-2 z-50 rounded bg-white px-4 py-2 text-sm text-[#14482F] shadow-lg"
@@ -69,7 +69,7 @@ export default function HeaderClient({
         aria-label="Navigation principale du site SimplyFoot"
         className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 lg:py-6"
       >
-        {/* Logo optimisé pour le SEO */}
+        {/* Logo SEO */}
         <Link
           href={getRoute(locale as "fr" | "en", "home")}
           className="flex items-center gap-3"
@@ -142,7 +142,7 @@ export default function HeaderClient({
                     <Link
                       href={getRoute(locale as "fr" | "en", "features")}
                       className="block rounded-md px-4 py-2 text-sm hover:text-[#5BE37D]"
-                      title="Fonctionnalités de l’application SimplyFoot"
+                      title="Fonctionnalités SimplyFoot"
                     >
                       {dict.features}
                     </Link>
@@ -182,7 +182,7 @@ export default function HeaderClient({
                 "transition-colors hover:text-[#5BE37D]",
                 pathname.startsWith("/contact") ? "text-[#5BE37D]" : "text-[#F8E9CA]"
               )}
-              title="Page de contact SimplyFoot"
+              title="Contact SimplyFoot"
             >
               {dict.contact}
             </Link>
@@ -196,7 +196,7 @@ export default function HeaderClient({
               <Link
                 href="/dashboard"
                 className="inline-flex items-center gap-2 rounded-full border border-[#5BE37D] px-5 py-2 text-sm font-semibold text-[#5BE37D] shadow-md hover:bg-[#5BE37D]/10"
-                title="Tableau de bord SimplyFoot"
+                title="Tableau de bord"
               >
                 <User className="h-4 w-4" />
                 Tableau de bord
@@ -222,7 +222,7 @@ export default function HeaderClient({
               <Link
                 href={getRoute(locale as "fr" | "en", "signup")}
                 className="inline-flex animate-[pulse_6s_ease-in-out_infinite] items-center rounded-full bg-[#5BE37D] px-5 py-2 text-sm font-semibold text-[#14482F] shadow-md hover:bg-[#63f286]"
-                title="Créer un compte SimplyFoot gratuitement"
+                title="Créer un compte gratuitement"
               >
                 Tester gratuitement
               </Link>
@@ -268,16 +268,18 @@ export default function HeaderClient({
               </button>
 
               <div className="flex flex-col items-center gap-6">
-                {[
-                  "club",
-                  "team",
-                  "offers",
-                  "features",
-                  "blog",
-                  "about",
-                  "contact",
-                ].map((key) => {
-                  const route = getRoute(locale as "fr" | "en", key as any);
+                {(
+                  [
+                    "clubManagement",
+                    "teamManagement",
+                    "offers",
+                    "fonctionnalites",
+                    "blog",
+                    "about",
+                    "contact",
+                  ] as RouteKey[]
+                ).map((key) => {
+                  const route = getRoute(locale as "fr" | "en", key);
                   if (!route) return null;
                   return (
                     <Link

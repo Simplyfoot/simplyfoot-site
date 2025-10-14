@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import Image3 from "assets/images/3.jpg";
 
 export default function BlogAdmin() {
@@ -88,7 +89,13 @@ export default function BlogAdmin() {
         <ul className="space-y-8">
           {blogs.map(blog => (
             <li key={blog.id} className="rounded-xl shadow border bg-[#F7F6F3] flex gap-5 p-5">
-              <img src={blog.image || (typeof Image3 === "string" ? Image3 : Image3.src)} alt={blog.titre} className="w-24 h-24 object-cover rounded-lg" />
+              <Image
+                src={blog.image || (typeof Image3 === "string" ? Image3 : Image3.src)}
+                alt={blog.titre}
+                width={96} // équivalent à w-24
+                height={96} // équivalent à h-24
+                className="object-cover rounded-lg"
+              />
               <div>
                 <h3 className="font-bold text-lg text-[#14482F]">{blog.titre}</h3>
                 <div className="text-[#175438] text-base mb-2">{blog.resume}</div>
