@@ -43,7 +43,7 @@ export default function HeroSection() {
             <span className="text-[#29be4f]">SimplyFoot</span>
             <br />
             <span className="block">
-              L'application qui{" "}
+              L&apos;application qui{" "}
               <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

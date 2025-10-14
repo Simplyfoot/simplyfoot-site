@@ -403,15 +403,3 @@ function Alert({
   );
 }
 
-function TeamCard({ initials, name, role }: { initials: string; name: string; role: string }) {
-  return (
-    <div className="flex w-[220px] flex-col items-center">
-      <div className="grid h-16 w-16 place-items-center rounded-full bg-[#29be4f] text-2xl font-extrabold text-[#14482F] shadow">
-        {initials}
-      </div>
-      <div className="mt-2 font-semibold text-[#14482F]">{name}</div>
-      <div className="text-sm text-[#14482F]/60">{role}</div>
-    </div>
-  );
-}
-
