@@ -24,26 +24,51 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
+
 .animate-marquee {
   animation: marquee 24s linear infinite;
 }
+
 @layer utilities {
   .pulse {
     animation: pulse-ring 2.1s infinite;
   }
+
   @keyframes pulse-ring {
-    0% { box-shadow: 0 0 0 0 #5BE37D44; }
-    70% { box-shadow: 0 0 0 15px #5BE37D11; }
-    100% { box-shadow: 0 0 0 0 #5BE37D00; }
+    0% {
+      box-shadow: 0 0 0 0 #5BE37D44;
+    }
+
+    70% {
+      box-shadow: 0 0 0 15px #5BE37D11;
+    }
+
+    100% {
+      box-shadow: 0 0 0 0 #5BE37D00;
+    }
   }
 }
+
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-slideDown {
@@ -53,10 +78,7 @@ body {
 /* === Champs de formulaire SimplyFoot === */
 .form-input,
 .form-textarea {
-  @apply w-full rounded-lg border border-[#DAD7CF] bg-[#F7F6F3] 
-  text-[#14482F] placeholder:text-[#5f6b61] 
-  px-3 py-2 outline-none 
-  focus:ring-2 focus:ring-[#5BE37D] focus:bg-white focus:border-[#5BE37D];
+  @apply w-full rounded-lg border border-[#DAD7CF] bg-[#F7F6F3] text-[#14482F] placeholder:text-[#5f6b61] px-3 py-2 outline-none focus:ring-2 focus:ring-[#5BE37D] focus:bg-white focus:border-[#5BE37D];
 }
 
 /* ===== Legal content styling (headings, text, links) ===== */
@@ -64,7 +86,8 @@ body {
   .legal h2 {
     @apply mt-10 mb-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100;
     position: relative;
-    padding-left: 0.75rem; /* space for accent */
+    padding-left: 0.75rem;
+    /* space for accent */
   }
 
   /* Emerald accent bar on the left of h2 */
@@ -75,13 +98,18 @@ body {
     top: 0.5em;
     width: 6px;
     height: 0.9em;
-    background-color: rgb(16 185 129); /* emerald-500 */
+    background-color: rgb(16 185 129);
+    /* emerald-500 */
     border-radius: 9999px;
   }
 
   /* First heading doesn’t need a big top margin */
   .legal h2:first-child {
     @apply mt-0;
+  }
+
+  .legal h3 {
+    @apply mt-5 text-lg font-semibold text-[#14482F] dark:text-emerald-400;
   }
 
   .legal p {

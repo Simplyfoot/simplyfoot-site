@@ -1,12 +1,11 @@
 export default function LegalNoticesPage() {
   return (
     <main id="top" className="mx-auto max-w-4xl px-6 py-20">
-      {/* Hero */}
       <header className="mb-10">
         <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200/60 bg-emerald-50 px-3 py-1 text-sm text-emerald-700 dark:border-emerald-900/40 dark:bg-emerald-950/40 dark:text-emerald-300">
           SimplyFoot • Mentions légales
           <span className="mx-1 h-1 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400" />
-          Version 2025-10-13
+          Mis à jour le 13-10-2025
         </div>
 
         <h1 className="mt-4 text-4xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
@@ -18,7 +17,6 @@ export default function LegalNoticesPage() {
         </p>
       </header>
 
-      {/* Cartouche d’infos */}
       <section className="mb-8 rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
         <dl className="grid gap-4 sm:grid-cols-2">
           <div>
@@ -87,7 +85,6 @@ export default function LegalNoticesPage() {
         </dl>
       </section>
 
-      {/* Corps du texte */}
       <article className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
         <div className="legal prose prose-zinc max-w-none dark:prose-invert">
           <h2>1. Présentation du site</h2>
@@ -183,7 +180,6 @@ export default function LegalNoticesPage() {
         </div>
       </article>
 
-      {/* Actions */}
       <div className="mt-8 flex flex-wrap items-center gap-3">
         <span
           className="inline-flex items-center rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-2 text-sm text-zinc-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300"
