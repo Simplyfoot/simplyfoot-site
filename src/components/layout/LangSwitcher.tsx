@@ -1,6 +1,6 @@
 "use client";
 
-import { routes } from "i18n/routes";
+import { ROUTES } from "i18n/routes";
 import { usePathname, useRouter } from "next/navigation";
 import { useTransition } from "react";
 
@@ -30,11 +30,11 @@ export default function LangSwitcher() {
 }
 
 function getTranslatedPath(pathname: string, from: "fr" | "en", to: "fr" | "en") {
-  const key = Object.keys(routes[from]).find(
-    (k) => routes[from][k as keyof typeof routes["fr"]] === pathname
+  const key = Object.keys(ROUTES[from]).find(
+    (k) => ROUTES[from][k as keyof typeof ROUTES["fr"]] === pathname
   );
 
-  if (key) return routes[to][key as keyof typeof routes["fr"]];
+  if (key) return ROUTES[to][key as keyof typeof ROUTES["fr"]];
   if (pathname === "/" && to === "en") return "/en";
   if (pathname === "/en" && to === "fr") return "/";
   return to === "en" ? `/en${pathname}` : pathname.replace(/^\/en/, "");
