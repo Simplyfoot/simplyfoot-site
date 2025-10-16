@@ -81,6 +81,16 @@ export default function ContactPage() {
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
 
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        "template_auto_reply", // 👈 ton Template ID d’auto-réponse
+        {
+          nom: form.nom,
+          email: form.email,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+
       setSent("ok");
       setForm(initial);
       formRef.current?.reset();
