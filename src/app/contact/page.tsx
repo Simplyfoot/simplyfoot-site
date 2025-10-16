@@ -1,5 +1,6 @@
 "use client";
 
+import emailjs from "@emailjs/browser";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Mail, Phone, MapPin, Send, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 
@@ -65,21 +66,32 @@ export default function ContactPage() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!validate()) return;
+
+    setLoading(true);
     try {
-      setLoading(true);
-      // 👉 Branche ici ton backend (ex: /api/contact)
-      // const res = await fetch("/api/contact", { method: "POST", body: JSON.stringify(form) });
-      // if (!res.ok) throw new Error("send_failed");
-      await new Promise((r) => setTimeout(r, 900)); // simulate
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          nom: form.nom,
+          email: form.email,
+          sujet: form.sujet,
+          message: form.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+
       setSent("ok");
       setForm(initial);
       formRef.current?.reset();
-    } catch {
+    } catch (error) {
+      console.error("Erreur EmailJS :", error);
       setSent("ko");
     } finally {
       setLoading(false);
     }
   }
+
 
   return (
     <main className="relative min-h-screen w-full bg-[#14482F]">
