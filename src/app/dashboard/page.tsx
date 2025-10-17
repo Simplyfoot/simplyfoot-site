@@ -104,7 +104,7 @@ const MOCK: Dashboard = {
   subscription: {
     plan: "Maxi Club",
     start: "2024-07-01T00:00:00Z",
-    end: "2025-07-01T00:00:00Z",
+    end: "2026-07-01T00:00:00Z",
     active: true,
     seats: { used: 284, quota: 500 },
     renewsAutomatically: true,
@@ -465,7 +465,7 @@ export default function UserDashboard() {
             <div className="text-lg font-extrabold">Besoin d’aide, d’une facture ou d’un support ?</div>
             <div className="sm:ml-auto text-[#29be4f]">Contactez l’équipe SimplyFoot.</div>
             <a
-              href="mailto:contact@simplyfoot.com"
+              href="mailto:contact@simplyfoot.fr"
               className="inline-flex items-center justify-center rounded-xl bg-[#29be4f] px-5 py-2 font-extrabold text-[#14482F] hover:bg-[#63f286]"
             >
               Nous écrire
