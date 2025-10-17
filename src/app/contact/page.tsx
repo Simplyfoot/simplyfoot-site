@@ -83,7 +83,7 @@ export default function ContactPage() {
 
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        "template_auto_reply", // 👈 ton Template ID d’auto-réponse
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_AUTO_REPLY!,
         {
           nom: form.nom,
           email: form.email,
@@ -129,7 +129,7 @@ export default function ContactPage() {
                 icon={<Mail className="h-5 w-5 text-[#29be4f]" />}
                 label="Email"
                 value={
-                  <a className="font-semibold hover:underline" href="mailto:contact@simplyfoot.com">
+                  <a className="font-semibold hover:underline" href="mailto:contact@simplyfoot.fr">
                     contact@simplyfoot.fr
                   </a>
                 }
@@ -292,7 +292,7 @@ export default function ContactPage() {
                 <Alert
                   tone="error"
                   title="Envoi impossible"
-                  text="Désolé, un problème est survenu. Réessayez ou écrivez-nous à contact@simplyfoot.com."
+                  text="Désolé, un problème est survenu. Réessayez ou écrivez-nous à contact@simplyfoot.fr"
                 />
               )}
             </form>

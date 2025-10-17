@@ -3,11 +3,10 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useMemo, useState } from "react";
-import { Check, ChevronDown } from "lucide-react";
+import { Check } from "lucide-react";
 import GooglePlay from "../../assets/images/google_play_store.png";
 import AppStore from "../../assets/images/apple_appstore.svg";
 
-// ------- Helpers -------
 const eur = new Intl.NumberFormat("fr-FR", {
   style: "currency",
   currency: "EUR",
@@ -16,11 +15,6 @@ const eur = new Intl.NumberFormat("fr-FR", {
 
 type Billing = "monthly" | "yearly";
 
-/**
- * Prix:
- * - Mensuel: montant mensuel
- * - Annuel: TOTAL à l’année (–10% vs mensuel), + équivalent mensuel et économies/an
- */
 function priceFor(billing: Billing, monthlyBase: number) {
   if (billing === "monthly") {
     return {
@@ -31,7 +25,7 @@ function priceFor(billing: Billing, monthlyBase: number) {
     };
   }
   const annualNoDisc = monthlyBase * 12;
-  const annualTotal = +(annualNoDisc * 0.9).toFixed(2); // –10%
+  const annualTotal = +(annualNoDisc * 0.9).toFixed(2);
   const equiv = +(annualTotal / 12).toFixed(2);
   const save = +(annualNoDisc - annualTotal).toFixed(2);
   return {
@@ -41,25 +35,261 @@ function priceFor(billing: Billing, monthlyBase: number) {
     savings: `Économisez ${eur.format(save)}/an`,
   };
 }
-const plateformes = [
-  { name: "Google Play", url: "https://play.google.com/store/apps/details?id=com.simplyfoot.app", src: GooglePlay },
-  { name: "App Store", url: "https://apps.apple.com/app/simplyfoot/id6446304301", src: AppStore },
-] as const;
 
-type Plan = {
-  key: string;
-  nom: string;
-  couleur: string;
-  cible: string;
-  monthly: number | null; // base mensuelle servant au calcul
-  sousTitre: string;
-  points: readonly string[];
-  bonus: string;
-  badge?: string;
-  cta: { label: string; href: string };
-};
+/* =========================================================================
+   Fonction d’abonnement Stripe
+   ========================================================================= */
+async function handleSubscribe(planKey: string, billing: Billing, email: string) {
+  const cleanEmail = email.trim();
+  if (!cleanEmail || !cleanEmail.includes("@")) {
+    alert("Merci de renseigner une adresse email valide 🙂");
+    return;
+  }
+  try {
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ planKey, email: cleanEmail, billing }),
+    });
+    const { url, error } = await res.json();
+    if (error) throw new Error(error);
+    window.location.href = url;
+  } catch (err) {
+    console.error("Erreur abonnement :", err);
+    alert("Une erreur est survenue lors de la création de la session Stripe.");
+  }
+}
 
-const PLANS: readonly Plan[] = [
+/* =========================================================================
+   PAGE
+   ========================================================================= */
+export default function OffresPage() {
+  const [billing, setBilling] = useState<Billing>("yearly");
+  const [showModal, setShowModal] = useState(false);
+  const [email, setEmail] = useState("");
+  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+
+  const plans = useMemo(() => {
+    return PLANS.map((p) => {
+      const price = p.monthly == null ? null : priceFor(billing, p.monthly);
+      return { ...p, price };
+    });
+  }, [billing]);
+
+  return (
+    <main className="relative w-full min-h-screen bg-[#14482F]">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(80%_60%_at_50%_-10%,rgba(91,227,125,.18),transparent_60%)]" />
+
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        {/* HERO */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+            Choisissez l’offre{" "}
+            <span className="text-[#29be4f]">qui fait gagner du temps</span>
+          </h1>
+          <p className="mt-4 text-[#F8E9CA] text-lg md:text-xl font-medium">
+            Toutes les fonctionnalités, sans limites cachées. Concentrez-vous
+            sur le terrain, on s’occupe du reste.
+          </p>
+
+          {/* Toggle facturation */}
+          <div className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#1d3e2e]/70 p-1 ring-1 ring-[#29be4f]/30">
+            <button
+              onClick={() => setBilling("monthly")}
+              className={`px-5 py-2 rounded-full text-sm font-semibold transition ${
+                billing === "monthly"
+                  ? "bg-[#29be4f] text-[#14482F]"
+                  : "text-[#F8E9CA] hover:text-white"
+              }`}
+            >
+              Mensuel
+            </button>
+            <button
+              onClick={() => setBilling("yearly")}
+              className={`px-5 py-2 rounded-full text-sm font-semibold transition ${
+                billing === "yearly"
+                  ? "bg-[#29be4f] text-[#14482F]"
+                  : "text-[#F8E9CA] hover:text-white"
+              }`}
+            >
+              Annuel{" "}
+              <span className="ml-1 text-xs opacity-80">(-10 %)</span>
+            </button>
+          </div>
+        </motion.div>
+
+        {/* GRID OFFRES */}
+        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {plans.map((offre) => (
+            <motion.article
+              key={offre.key}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              viewport={{ once: true }}
+              className={`relative rounded-3xl border-2 bg-gradient-to-br ${offre.couleur} p-[2px] shadow-xl`}
+            >
+              {offre.badge && (
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-[#14482F] shadow">
+                  {offre.badge}
+                </span>
+              )}
+              <div className="flex h-full w-full flex-col rounded-[22px] bg-[#F7F6F3] p-8">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-2xl font-extrabold text-[#14482F]">
+                    {offre.nom}
+                  </h2>
+                  <span className="text-xs font-bold text-[#175438]">
+                    {offre.cible}
+                  </span>
+                </div>
+                <p className="mt-1 text-sm font-medium text-[#175438]">
+                  {offre.sousTitre}
+                </p>
+
+                {/* Prix */}
+                <div className="mt-6">
+                  {offre.price ? (
+                    <div className="space-y-1">
+                      <div className="text-4xl font-extrabold text-[#14482F]">
+                        {offre.price.main}{" "}
+                        <span className="text-base font-medium text-[#232729]">
+                          {offre.price.sub}
+                        </span>
+                      </div>
+                      {offre.price.foot && (
+                        <div className="text-xs font-medium text-[#175438]/90">
+                          {offre.price.foot}
+                        </div>
+                      )}
+                      {billing === "yearly" && offre.price.savings && (
+                        <div className="inline-block rounded-full bg-[#e6f7eb] px-3 py-1 text-xs font-bold text-[#1f853f]">
+                          {offre.price.savings}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <div className="text-3xl font-extrabold text-[#14482F]">
+                      Sur devis
+                    </div>
+                  )}
+                </div>
+
+                {/* Points */}
+                <ul className="mt-6 space-y-2">
+                  {offre.points.map((d) => (
+                    <li
+                      key={d}
+                      className="flex items-start gap-2 text-[#232729]"
+                    >
+                      <Check className="mt-0.5 h-5 w-5 text-[#29be4f]" />
+                      <span>{d}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-4 italic font-medium text-[#175438]">
+                  {offre.bonus}
+                </div>
+
+                {/* CTA */}
+                {offre.key === "district" ? (
+                  <motion.a
+                    href="/contact?type=district"
+                    whileHover={{ scale: 1.04 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="mt-6 inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-[#67D07C] to-[#29be4f] px-6 py-3 text-base font-extrabold text-[#14482F] shadow-lg hover:from-[#29be4f] hover:to-[#68FB7A]"
+                  >
+                    {offre.ctaLabel}
+                  </motion.a>
+                ) : (
+                  <motion.button
+                    onClick={() => {
+                      setSelectedPlan(offre.key);
+                      setShowModal(true);
+                    }}
+                    whileHover={{ scale: 1.04 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="mt-6 inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-[#67D07C] to-[#29be4f] px-6 py-3 text-base font-extrabold text-[#14482F] shadow-lg hover:from-[#29be4f] hover:to-[#68FB7A]"
+                  >
+                    {offre.ctaLabel}
+                  </motion.button>
+                )}
+
+                <div className="mt-2 text-center text-xs font-semibold text-[#175438]">
+                  Essai 30 jours • Annulez à tout moment avant la fin de l’essai
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </div>
+
+      {/* MODALE EMAIL */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.25 }}
+            className="rounded-2xl bg-white p-6 w-80 text-center shadow-lg"
+          >
+            <h3 className="text-xl font-extrabold text-[#14482F] mb-2">
+              Votre email
+            </h3>
+            <p className="text-sm text-[#232729]/80 mb-4">
+              Indiquez votre adresse email pour finaliser l’abonnement.
+            </p>
+            <input
+              type="email"
+              placeholder="adresse@email.fr"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-[#14482F] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
+            />
+            <div className="mt-5 flex gap-3 justify-center">
+              <button
+                onClick={() => setShowModal(false)}
+                className="rounded-lg px-4 py-2 text-sm font-semibold text-gray-500 hover:text-gray-700"
+              >
+                Annuler
+              </button>
+              <button
+                onClick={() => {
+                  const cleanEmail = email.trim();
+                  if (!cleanEmail || !cleanEmail.includes("@")) {
+                    alert("Merci de renseigner une adresse email valide 🙂");
+                    return;
+                  }
+                  if (selectedPlan) {
+                    setShowModal(false);
+                    handleSubscribe(selectedPlan, billing, cleanEmail);
+                  }
+                }}
+                disabled={!email}
+                className="rounded-lg bg-[#29be4f] px-5 py-2 text-sm font-extrabold text-[#14482F] hover:bg-[#63f286] disabled:opacity-60"
+              >
+                Continuer
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </main>
+  );
+}
+
+/* =========================================================================
+   DONNÉES DES PLANS
+   ========================================================================= */
+const PLANS = [
   {
     key: "mini",
     nom: "Mini Club",
@@ -74,7 +304,7 @@ const PLANS: readonly Plan[] = [
     ],
     bonus: "Le choix malin pour passer à l'action",
     badge: "Découverte",
-    cta: { label: "Commencer le mois gratuit", href: "/inscription?plan=mini" },
+    ctaLabel: "Commencer le mois gratuit",
   },
   {
     key: "local",
@@ -90,7 +320,7 @@ const PLANS: readonly Plan[] = [
     ],
     bonus: "Notre plan le plus choisi",
     badge: "Meilleur choix",
-    cta: { label: "Commencer le mois gratuit", href: "/inscription?plan=local" },
+    ctaLabel: "Commencer le mois gratuit",
   },
   {
     key: "regional",
@@ -106,7 +336,7 @@ const PLANS: readonly Plan[] = [
     ],
     bonus: "Grandir comme les pros",
     badge: "Performance",
-    cta: { label: "Commencer le mois gratuit", href: "/inscription?plan=regional" },
+    ctaLabel: "Commencer le mois gratuit",
   },
   {
     key: "grand",
@@ -121,7 +351,7 @@ const PLANS: readonly Plan[] = [
       "Priorité support",
     ],
     bonus: "Plus de limites pour le staff",
-    cta: { label: "Commencer le mois gratuit", href: "/inscription?plan=grand" },
+    ctaLabel: "Commencer le mois gratuit",
   },
   {
     key: "maxi",
@@ -136,7 +366,7 @@ const PLANS: readonly Plan[] = [
       "Intégrations API (calendrier ligue)",
     ],
     bonus: "Pensé pour les clubs structurés",
-    cta: { label: "Commencer le mois gratuit", href: "/inscription?plan=maxi" },
+    ctaLabel: "Commencer le mois gratuit",
   },
   {
     key: "district",
@@ -151,276 +381,6 @@ const PLANS: readonly Plan[] = [
       "Interlocuteur dédié",
     ],
     bonus: "Pensé pour groupements et collectivités",
-    cta: { label: "Parler à un expert", href: "/contact?type=district" },
+    ctaLabel: "Parler à un expert",
   },
-] as const;
-
-const REMISES = [
-  { icon: "🔁", titre: "Paiement annuel", desc: "-10 % immédiat" },
-  { icon: "🎓", titre: "Scolaire / UNSS", desc: "-30 % sur justificatif" },
-  { icon: "🤝", titre: "Groupement de clubs", desc: "Tarifs dégressifs" },
-] as const;
-
-const VALUE_ICONS = [
-  { t: "Mise en route accompagnée" },
-  { t: "Sécurité & RGPD" },
-  { t: "Applications mobiles" },
-  { t: "Support réactif" },
-] as const;
-
-// ------- Page -------
-export default function OffresPage() {
-  // On met en avant l'annuel par défaut
-  const [billing, setBilling] = useState<Billing>("yearly");
-
-  const plans = useMemo(
-    () =>
-      PLANS.map((p) => {
-        const price = p.monthly == null ? null : priceFor(billing, p.monthly);
-        return { ...p, price };
-      }),
-    [billing]
-  );
-
-  return (
-    <main className="relative w-full min-h-screen bg-[#14482F]">
-      {/* halo */}
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(80%_60%_at_50%_-10%,rgba(91,227,125,.18),transparent_60%)]" />
-
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        {/* HERO */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
-            Choisissez l’offre <span className="text-[#29be4f]">qui fait gagner du temps</span>
-          </h1>
-          <p className="mt-4 text-[#F8E9CA] text-lg md:text-xl font-medium">
-            Toutes les fonctionnalités, sans limites cachées. Concentrez-vous sur le terrain, on s’occupe du reste.
-          </p>
-
-          {/* Essai Gratuit */}
-          <div className="mx-auto mt-6 max-w-3xl rounded-2xl border border-[#29be4f]/30 bg-[#1d3e2e]/70 p-4 text-left text-[#F8E9CA]">
-            <p className="text-white font-extrabold">1 mois gratuit, sans stress ✨</p>
-            <ul className="mt-2 list-inside list-disc space-y-1 text-sm">
-              <li>Testez SimplyFoot gratuitement pendant 30 jours.</li>
-              <li>
-                À la fin de l’essai : <strong>annulez</strong> en un clic, ou laissez l’abonnement démarrer
-                automatiquement.
-              </li>
-              <li>
-                Le plan est déterminé par le <strong>nombre de licenciés actifs</strong> présents dans l’app au moment
-                de la bascule.
-              </li>
-            </ul>
-          </div>
-
-          {/* Toggle facturation */}
-          <div className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#1d3e2e]/70 p-1 ring-1 ring-[#29be4f]/30">
-            <button
-              onClick={() => setBilling("monthly")}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition ${
-                billing === "monthly" ? "bg-[#29be4f] text-[#14482F]" : "text-[#F8E9CA] hover:text-white"
-              }`}
-            >
-              Mensuel
-            </button>
-            <button
-              onClick={() => setBilling("yearly")}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition ${
-                billing === "yearly" ? "bg-[#29be4f] text-[#14482F]" : "text-[#F8E9CA] hover:text-white"
-              }`}
-            >
-              Annuel <span className="ml-1 text-xs opacity-80">(-10 %)</span>
-            </button>
-          </div>
-
-          {/* Value icons */}
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
-            {VALUE_ICONS.map((v) => (
-              <span
-                key={v.t}
-                className="inline-flex items-center gap-2 rounded-full border border-[#29be4f]/30 bg-[#1d3e2e]/50 px-3 py-1 text-xs font-semibold text-[#F8E9CA]"
-              >
-                <span className="h-1.5 w-1.5 rounded-full bg-[#29be4f]" /> {v.t}
-              </span>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* GRID OFFRES */}
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {plans.map((offre) => (
-            <motion.article
-              key={offre.key}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              viewport={{ once: true }}
-              className={`relative rounded-3xl border-2 bg-gradient-to-br ${offre.couleur} p-[2px] shadow-xl transition-shadow hover:shadow-2xl`}
-            >
-              {/* Badge */}
-              {offre.badge && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-[#14482F] shadow">
-                  {offre.badge}
-                </span>
-              )}
-
-              <div className="flex h-full w-full flex-col rounded-[22px] bg-[#F7F6F3] p-8">
-                <div className="flex items-center justify-between">
-                  <h2 className="text-2xl font-extrabold text-[#14482F]">{offre.nom}</h2>
-                  <span className="text-xs font-bold text-[#175438]">{offre.cible}</span>
-                </div>
-                <p className="mt-1 text-sm font-medium text-[#175438]">{offre.sousTitre}</p>
-
-                {/* Price */}
-                <div className="mt-6">
-                  {offre.price ? (
-                    <div className="space-y-1">
-                      <div className="text-4xl font-extrabold text-[#14482F]">
-                        {offre.price.main}{" "}
-                        <span className="text-base font-medium text-[#232729]">{offre.price.sub}</span>
-                      </div>
-                      {offre.price.foot && (
-                        <div className="text-xs font-medium text-[#175438]/90">{offre.price.foot}</div>
-                      )}
-                      {/* Économies en annuel */}
-                      {billing === "yearly" && offre.price.savings && (
-                        <div className="inline-block rounded-full bg-[#e6f7eb] px-3 py-1 text-xs font-bold text-[#1f853f]">
-                          {offre.price.savings}
-                        </div>
-                      )}
-                    </div>
-                  ) : (
-                    <div className="text-3xl font-extrabold text-[#14482F]">Sur devis</div>
-                  )}
-                </div>
-
-                {/* Points */}
-                <ul className="mt-6 space-y-2">
-                  {offre.points.map((d) => (
-                    <li key={d} className="flex items-start gap-2 text-[#232729]">
-                      <Check className="mt-0.5 h-5 w-5 text-[#29be4f]" />
-                      <span>{d}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Bonus */}
-                <div className="mt-4 italic font-medium text-[#175438]">{offre.bonus}</div>
-
-                {/* CTA */}
-                <motion.a
-                  href={offre.cta.href}
-                  whileHover={{ scale: 1.04 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="mt-6 inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-[#67D07C] to-[#29be4f] px-6 py-3 text-base font-extrabold text-[#14482F] shadow-lg hover:from-[#29be4f] hover:to-[#68FB7A] focus:outline-none focus:ring-2 focus:ring-[#67D07C]"
-                >
-                  {offre.cta.label}
-                </motion.a>
-
-                <div className="mt-2 text-center text-xs font-semibold text-[#175438]">
-                  Essai 30 jours • Annulez à tout moment avant la fin de l’essai
-                </div>
-              </div>
-            </motion.article>
-          ))}
-        </div>
-
-        {/* Remises */}
-        <div className="mt-14 text-center">
-          <h3 className="text-2xl font-extrabold text-[#29be4f]">Remises et offres spéciales</h3>
-          <div className="mt-4 flex flex-wrap justify-center gap-6">
-            {REMISES.map((r) => (
-              <div
-                key={r.titre}
-                className="flex items-center gap-3 rounded-2xl border border-[#14482F]/15 bg-[#F8E9CA] px-4 py-3 shadow"
-              >
-                <span className="text-xl">{r.icon}</span>
-                <span>
-                  <span className="font-bold text-[#14482F]">{r.titre}</span>{" "}
-                  <span className="text-[#232729]">{r.desc}</span>
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Comparatif rapide */}
-        <section className="mt-16 rounded-2xl border border-[#29be4f]/20 bg-[#1d3e2e]/50 p-6">
-          <h3 className="mb-6 text-center text-2xl font-bold text-white">Tout ce qu&#39;il faut, dès le premier plan</h3>
-          <div className="grid grid-cols-1 gap-6 text-[#F8E9CA] md:grid-cols-3">
-            <div className="rounded-xl border border-[#29be4f]/10 bg-[#232729]/70 p-5">
-              <h4 className="mb-2 font-bold text-white">Organisation</h4>
-              <p>Calendrier centralisé, présences, feuilles de match, documents sécurisés.</p>
-            </div>
-            <div className="rounded-xl border border-[#29be4f]/10 bg-[#232729]/70 p-5">
-              <h4 className="mb-2 font-bold text-white">Motivation</h4>
-              <p>Classements ludiques, badges, blasons 3D, objectifs partagés.</p>
-            </div>
-            <div className="rounded-xl border border-[#29be4f]/10 bg-[#232729]/70 p-5">
-              <h4 className="mb-2 font-bold text-white">Performance</h4>
-              <p>Stats essentielles, reporting avancé, coaching par IA.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="mt-16">
-          <h3 className="mb-6 text-center text-2xl font-extrabold text-[#29be4f]">Questions fréquentes</h3>
-          <div className="mx-auto max-w-3xl divide-y divide-[#29be4f]/20 rounded-2xl border border-[#29be4f]/20 bg-[#1d3e2e]/50">
-            {[
-              {
-                q: "Comment fonctionne l’essai gratuit de 30 jours ?",
-                a: "Créez votre compte et profitez de toutes les fonctionnalités sans frais. Avant la fin de l’essai, vous pouvez annuler en un clic. Sinon, l’abonnement démarre automatiquement au plan correspondant au nombre de licenciés actifs présents dans votre application au moment de la bascule.",
-              },
-              {
-                q: "Puis-je changer de plan si le nombre de licenciés évolue ?",
-                a: "Oui. Le plan s’adapte automatiquement au volume de licenciés actifs. Vous pouvez aussi changer de plan manuellement depuis votre espace de facturation.",
-              },
-              {
-                q: "Y a-t-il un engagement ?",
-                a: "En mensuel, aucun engagement : vous arrêtez quand vous voulez. En annuel, vous bénéficiez de 10% de remise pour un règlement en une fois.",
-              },
-            ].map((f, i) => (
-              <details key={i} className="group px-5 py-4">
-                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-white">
-                  {f.q}
-                  <ChevronDown className="h-5 w-5 text-[#29be4f] transition-transform group-open:rotate-180" />
-                </summary>
-                <p className="mt-2 text-[#F8E9CA]">{f.a}</p>
-              </details>
-            ))}
-          </div>
-        </section>
-
-        {/* Apps */}
-        <section className="mt-16 text-center">
-          <h3 className="mb-4 text-2xl font-extrabold text-[#29be4f]">Téléchargez l’application SimplyFoot</h3>
-          <div className="flex flex-wrap justify-center gap-8">
-            {plateformes.map((p) => (
-              <a
-                key={p.name}
-                href={p.url}
-                target="_blank"
-                rel="noopener"
-                className="flex items-center gap-3 rounded-xl border border-[#14482F]/10 bg-white px-6 py-3 shadow transition hover:scale-105"
-              >
-                <Image src={p.src} alt={p.name} width={32} height={32} />
-                <span className="font-semibold text-[#14482F]">{p.name}</span>
-              </a>
-            ))}
-          </div>
-          <div className="mt-6 font-bold text-[#29be4f]">Bientôt disponible sur tous vos appareils !</div>
-        </section>
-      </div>
-    </main>
-  );
-}
-
-
-
+];
