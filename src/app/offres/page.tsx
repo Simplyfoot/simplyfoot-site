@@ -1,11 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { useMemo, useState } from "react";
 import { Check } from "lucide-react";
-import GooglePlay from "../../assets/images/google_play_store.png";
-import AppStore from "../../assets/images/apple_appstore.svg";
+import { supabase } from "lib/supabaseClient";
 
 const eur = new Intl.NumberFormat("fr-FR", {
   style: "currency",
@@ -39,27 +37,40 @@ function priceFor(billing: Billing, monthlyBase: number) {
 /* =========================================================================
    Fonction d’abonnement Stripe
    ========================================================================= */
-async function handleSubscribe(planKey: string, billing: Billing, email: string) {
-  const cleanEmail = email.trim();
-  if (!cleanEmail || !cleanEmail.includes("@")) {
-    alert("Merci de renseigner une adresse email valide 🙂");
-    return;
-  }
+async function handleSubscribe(planKey: string, billing: Billing, email?: string) {
   try {
+    // Vérifie si un utilisateur est connecté
+    const { data: { user } } = await supabase.auth.getUser();
+
+    if (!user) {
+      // pas connecté → redirige vers la page d'inscription
+      window.location.href = "/inscription";
+      return;
+    }
+
+    // si email non fourni, utilise celui du compte
+    const cleanEmail = (email ?? user.email ?? "").trim();
+    if (!cleanEmail || !cleanEmail.includes("@")) {
+      alert("Merci de renseigner une adresse email valide 🙂");
+      return;
+    }
+
+    // création de la session Stripe
     const res = await fetch("/api/checkout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ planKey, email: cleanEmail, billing }),
     });
+
     const { url, error } = await res.json();
     if (error) throw new Error(error);
-    window.location.href = url;
+
+    window.location.href = url; // redirection vers Stripe
   } catch (err) {
     console.error("Erreur abonnement :", err);
     alert("Une erreur est survenue lors de la création de la session Stripe.");
   }
 }
-
 /* =========================================================================
    PAGE
    ========================================================================= */
@@ -102,21 +113,19 @@ export default function OffresPage() {
           <div className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#1d3e2e]/70 p-1 ring-1 ring-[#29be4f]/30">
             <button
               onClick={() => setBilling("monthly")}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition ${
-                billing === "monthly"
-                  ? "bg-[#29be4f] text-[#14482F]"
-                  : "text-[#F8E9CA] hover:text-white"
-              }`}
+              className={`cursor-pointer px-5 py-2 rounded-full text-sm font-semibold transition ${billing === "monthly"
+                ? "bg-[#29be4f] text-[#14482F]"
+                : "text-[#F8E9CA] hover:text-white"
+                }`}
             >
               Mensuel
             </button>
             <button
               onClick={() => setBilling("yearly")}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition ${
-                billing === "yearly"
-                  ? "bg-[#29be4f] text-[#14482F]"
-                  : "text-[#F8E9CA] hover:text-white"
-              }`}
+              className={`cursor-pointer px-5 py-2 rounded-full text-sm font-semibold transition ${billing === "yearly"
+                ? "bg-[#29be4f] text-[#14482F]"
+                : "text-[#F8E9CA] hover:text-white"
+                }`}
             >
               Annuel{" "}
               <span className="ml-1 text-xs opacity-80">(-10 %)</span>
@@ -210,13 +219,10 @@ export default function OffresPage() {
                   </motion.a>
                 ) : (
                   <motion.button
-                    onClick={() => {
-                      setSelectedPlan(offre.key);
-                      setShowModal(true);
-                    }}
+                    onClick={() => handleSubscribe(offre.key, billing)}
                     whileHover={{ scale: 1.04 }}
                     whileTap={{ scale: 0.98 }}
-                    className="mt-6 inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-[#67D07C] to-[#29be4f] px-6 py-3 text-base font-extrabold text-[#14482F] shadow-lg hover:from-[#29be4f] hover:to-[#68FB7A]"
+                    className="cursor-pointer mt-6 inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-[#67D07C] to-[#29be4f] px-6 py-3 text-base font-extrabold text-[#14482F] shadow-lg hover:from-[#29be4f] hover:to-[#68FB7A]"
                   >
                     {offre.ctaLabel}
                   </motion.button>

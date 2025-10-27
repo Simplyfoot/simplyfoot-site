@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/layout/Header";
 import Footer from "components/layout/Footer";
+import { AuthProvider } from "lib/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
@@ -76,14 +77,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
       <body className={`${inter.className} min-h-dvh flex flex-col bg-[#14482F] text-white antialiased`}>
         <div aria-hidden className="fixed inset-0 -z-10 bg-[#14482F]" />
+        <AuthProvider>
+          <Navbar locale="fr" />
 
-        <Navbar locale="fr" />
+          <main id="main-content" className="flex-grow w-full pt-20 lg:pt-24">
+            {children}
+          </main>
 
-        <main id="main-content" className="flex-grow w-full pt-20 lg:pt-24">
-          {children}
-        </main>
-
-        <Footer />
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );

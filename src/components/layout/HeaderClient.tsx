@@ -9,6 +9,7 @@ import { Menu, Transition, Dialog } from "@headlessui/react";
 import clsx from "clsx";
 import { usePathname, useRouter } from "next/navigation";
 import { getRoute, type RouteKey } from "../../i18n/routes";
+import { supabase } from "lib/supabaseClient";
 
 const AUTH_KEY = "sf_auth";
 
@@ -26,27 +27,35 @@ export default function HeaderClient({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [logged, setLogged] = useState(false);
 
-  // Effet scroll : ajout d'une ombre au scroll
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 80);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // État de connexion
   useEffect(() => {
-    const sync = () => setLogged(!!localStorage.getItem(AUTH_KEY));
-    sync();
-    window.addEventListener("storage", sync);
-    return () => window.removeEventListener("storage", sync);
+    supabase.auth.getUser().then(({ data }) => {
+      setLogged(!!data.user);
+    });
+
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setLogged(!!session?.user);
+    });
+
+    return () => {
+      listener.subscription.unsubscribe();
+    };
   }, []);
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     localStorage.removeItem(AUTH_KEY);
     try {
-      window.dispatchEvent(new StorageEvent("storage", { key: AUTH_KEY, newValue: null }));
-    } catch {}
-    router.push(getRoute(locale as "fr" | "en", "signup"));
+      await supabase.auth.signOut();
+      setLogged(false);
+      router.push("/connexion");
+    } catch {
+    }
+
   };
 
   return (
@@ -57,7 +66,6 @@ export default function HeaderClient({
       )}
       role="banner"
     >
-      {/* Lien d’accès rapide au contenu principal (accessibilité) */}
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only absolute top-2 left-2 z-50 rounded bg-white px-4 py-2 text-sm text-[#14482F] shadow-lg"
@@ -69,15 +77,14 @@ export default function HeaderClient({
         aria-label="Navigation principale du site SimplyFoot"
         className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 lg:py-6"
       >
-        {/* Logo SEO */}
         <Link
           href={getRoute(locale as "fr" | "en", "home")}
           className="flex items-center gap-3"
-          aria-label="Page d’accueil SimplyFoot"
+          aria-label="Retour à la page d’accueil SimplyFoot"
         >
           <Image
             src={Logo}
-            alt="Logo SimplyFoot, application de gestion de clubs de football amateurs"
+            alt="SimplyFoot — Application de gestion de clubs et associations de football amateurs"
             width={40}
             height={40}
             priority
@@ -87,7 +94,6 @@ export default function HeaderClient({
           </span>
         </Link>
 
-        {/* NAVIGATION DESKTOP */}
         <ul className="hidden items-center gap-8 lg:flex text-[#F8E9CA] font-medium">
           <li>
             <Link
@@ -96,7 +102,7 @@ export default function HeaderClient({
                 "transition-colors hover:text-[#29be4f]",
                 pathname === "/gestion-club" ? "text-[#29be4f]" : "text-[#F8E9CA]"
               )}
-              title="Gestion de club – SimplyFoot"
+              title="Solution de gestion de club – SimplyFoot"
             >
               {dict.club}
             </Link>
@@ -108,16 +114,21 @@ export default function HeaderClient({
                 "transition-colors hover:text-[#29be4f]",
                 pathname === "/gestion-equipe" ? "text-[#29be4f]" : "text-[#F8E9CA]"
               )}
-              title="Gestion d’équipe – SimplyFoot"
+              title="Outil de gestion d’équipe – SimplyFoot"
             >
               {dict.team}
             </Link>
           </li>
+
           <li className="relative">
             <Menu as="div" className="relative inline-block text-left">
-              <Menu.Button className="flex items-center hover:text-[#29be4f]" aria-haspopup="true">
+              <Menu.Button
+                className="flex items-center cursor-pointer hover:text-[#29be4f]"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
                 {dict.solutions}
-                <ChevronDown className="ml-1 h-5 w-5" />
+                <ChevronDown className="ml-1 h-5 w-5" aria-hidden="true" />
               </Menu.Button>
               <Transition
                 as={Fragment}
@@ -133,7 +144,7 @@ export default function HeaderClient({
                     <Link
                       href={getRoute(locale as "fr" | "en", "offers")}
                       className="block rounded-md px-4 py-2 text-sm hover:text-[#29be4f]"
-                      title="Nos offres SimplyFoot"
+                      title="Découvrez nos offres SimplyFoot"
                     >
                       {dict.offers}
                     </Link>
@@ -142,7 +153,7 @@ export default function HeaderClient({
                     <Link
                       href={getRoute(locale as "fr" | "en", "features")}
                       className="block rounded-md px-4 py-2 text-sm hover:text-[#29be4f]"
-                      title="Fonctionnalités SimplyFoot"
+                      title="Fonctionnalités principales de SimplyFoot"
                     >
                       {dict.features}
                     </Link>
@@ -152,19 +163,6 @@ export default function HeaderClient({
             </Menu>
           </li>
 
-          {/* Section Blog temporairement désactivée */}
-          {/* <li>
-            <Link
-              href={getRoute(locale as "fr" | "en", "blog")}
-              className={clsx(
-                "transition-colors hover:text-[#29be4f]",
-                pathname.startsWith("/blog") ? "text-[#29be4f]" : "text-[#F8E9CA]"
-              )}
-              title="Blog SimplyFoot"
-            >
-              {dict.blog}
-            </Link>
-          </li> */}
           <li>
             <Link
               href={getRoute(locale as "fr" | "en", "about")}
@@ -184,55 +182,53 @@ export default function HeaderClient({
                 "transition-colors hover:text-[#29be4f]",
                 pathname.startsWith("/contact") ? "text-[#29be4f]" : "text-[#F8E9CA]"
               )}
-              title="Contact SimplyFoot"
+              title="Contactez l’équipe SimplyFoot"
             >
               {dict.contact}
             </Link>
           </li>
         </ul>
 
-        {/* BOUTONS CONNEXION / DASHBOARD */}
         <div className="hidden items-center gap-4 lg:flex">
           {logged ? (
             <>
               <Link
                 href="/dashboard"
-                className="inline-flex items-center gap-2 rounded-full border border-[#29be4f] px-5 py-2 text-sm font-semibold text-[#29be4f] shadow-md hover:bg-[#29be4f]/10"
-                title="Tableau de bord"
+                className="cursor-pointer inline-flex items-center gap-2 rounded-full border border-[#29be4f] px-5 py-2 text-sm font-semibold text-[#29be4f] shadow-md hover:bg-[#29be4f]/10"
+                title="Accéder à mon tableau de bord SimplyFoot"
               >
                 <User className="h-4 w-4" />
                 Tableau de bord
               </Link>
               <button
                 onClick={handleLogout}
-                className="inline-flex items-center gap-2 rounded-full bg-[#29be4f] px-5 py-2 text-sm font-semibold text-[#14482F] shadow-md hover:bg-[#63f286]"
-                title="Se déconnecter"
+                className="cursor-pointer inline-flex items-center gap-2 rounded-full bg-[#29be4f] px-5 py-2 text-sm font-semibold text-[#14482F] shadow-md hover:bg-[#63f286]"
+                title="Se déconnecter de SimplyFoot"
               >
                 <LogOut className="h-4 w-4" />
-                Se déconnecter
+                Déconnexion
               </button>
             </>
           ) : (
             <>
               <Link
                 href={getRoute(locale as "fr" | "en", "login")}
-                className="inline-flex items-center rounded-full border border-[#29be4f] px-5 py-2 text-sm font-semibold text-[#29be4f] shadow-md hover:bg-[#29be4f]/10"
-                title="Connexion à l’espace club"
+                className="cursor-pointer inline-flex items-center rounded-full border border-[#29be4f] px-5 py-2 text-sm font-semibold text-[#29be4f] shadow-md hover:bg-[#29be4f]/10"
+                title="Connexion à votre espace SimplyFoot"
               >
                 Connexion
               </Link>
               <Link
                 href={getRoute(locale as "fr" | "en", "signup")}
-                className="inline-flex animate-[pulse_6s_ease-in-out_infinite] items-center rounded-full bg-[#29be4f] px-5 py-2 text-sm font-semibold text-[#14482F] shadow-md hover:bg-[#63f286]"
-                title="Créer un compte gratuitement"
+                className="cursor-pointer inline-flex animate-[pulse_6s_ease-in-out_infinite] items-center rounded-full bg-[#29be4f] px-5 py-2 text-sm font-semibold text-[#14482F] shadow-md hover:bg-[#63f286]"
+                title="Créer un compte gratuitement sur SimplyFoot"
               >
-                Tester gratuitement
+                Créer un compte
               </Link>
             </>
           )}
         </div>
 
-        {/* MENU BURGER MOBILE */}
         <button
           type="button"
           aria-label="Ouvrir le menu mobile"
@@ -243,7 +239,6 @@ export default function HeaderClient({
         </button>
       </nav>
 
-      {/* OVERLAY MOBILE */}
       <Transition show={mobileMenuOpen} as={Fragment}>
         <Dialog as="div" className="relative z-50 lg:hidden" onClose={setMobileMenuOpen}>
           <Transition.Child
@@ -276,7 +271,6 @@ export default function HeaderClient({
                     "team",
                     "offers",
                     "features",
-                    // "blog",
                     "about",
                     "contact",
                   ] as RouteKey[]
@@ -307,6 +301,7 @@ export default function HeaderClient({
                       href="/dashboard"
                       className="w-full rounded-full border border-[#29be4f] py-3 text-center text-lg font-semibold text-[#29be4f] shadow-md"
                       onClick={() => setMobileMenuOpen(false)}
+                      title="Tableau de bord SimplyFoot"
                     >
                       Tableau de bord
                     </Link>
@@ -316,8 +311,9 @@ export default function HeaderClient({
                         handleLogout();
                       }}
                       className="w-full rounded-full bg-[#29be4f] py-3 text-center text-lg font-semibold text-[#14482F] shadow-md hover:bg-[#63f286]"
+                      title="Se déconnecter de SimplyFoot"
                     >
-                      Se déconnecter
+                      Déconnexion
                     </button>
                   </>
                 ) : (
@@ -326,6 +322,7 @@ export default function HeaderClient({
                       href={getRoute(locale as "fr" | "en", "login")}
                       className="w-full rounded-full border border-[#29be4f] py-3 text-center text-lg font-semibold text-[#29be4f] shadow-md"
                       onClick={() => setMobileMenuOpen(false)}
+                      title="Connexion à votre espace SimplyFoot"
                     >
                       Connexion
                     </Link>
@@ -333,8 +330,9 @@ export default function HeaderClient({
                       href={getRoute(locale as "fr" | "en", "signup")}
                       className="w-full rounded-full bg-[#29be4f] py-3 text-center text-lg font-semibold text-[#14482F] shadow-md hover:bg-[#63f286]"
                       onClick={() => setMobileMenuOpen(false)}
+                      title="Créer un compte SimplyFoot gratuitement"
                     >
-                      Tester gratuitement
+                      Créer un compte
                     </Link>
                   </>
                 )}

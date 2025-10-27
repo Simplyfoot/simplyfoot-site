@@ -1,12 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import { supabase } from "lib/supabaseClient";
+import { Eye, EyeOff } from "lucide-react"; // 👁️ import des icônes
 
 export default function InscriptionPage() {
   const [form, setForm] = useState({
-    type: "", // "club" | "association" | "particulier"
+    type: "",
     nomClub: "",
     nomResponsable: "",
+    prenomResponsable: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -18,14 +21,23 @@ export default function InscriptionPage() {
     codePostal: "",
     cgu: false,
   });
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  // Pour chaque champ, maj state
-  const update = (k: keyof typeof form, v: typeof form[typeof k]) => setForm(f => ({ ...f, [k]: v }));
+  const update = (k: keyof typeof form, v: typeof form[typeof k]) =>
+    setForm((f) => ({ ...f, [k]: v }));
 
-  // Validation (tu pourras l’améliorer/adapter backend)
   const validate = () => {
-    if (!form.nomResponsable || !form.email || !form.password || !form.confirmPassword) {
+    if (
+      !form.prenomResponsable ||
+      !form.nomResponsable ||
+      !form.email ||
+      !form.password ||
+      !form.confirmPassword
+    ) {
       setError("Merci de remplir tous les champs obligatoires.");
       return false;
     }
@@ -40,58 +52,132 @@ export default function InscriptionPage() {
     return true;
   };
 
-  // Submission
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
     if (!validate()) return;
-    // Ici tu peux envoyer vers ton API, puis rediriger :
-    window.location.href = "/dashboard";
+    setLoading(true);
+
+    try {
+      const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+        email: form.email,
+        password: form.password,
+        options: {
+          data: {
+            type: form.type,
+            nomClub: form.nomClub,
+            nomResponsable: form.nomResponsable,
+            prenomResponsable: form.prenomResponsable,
+            tel: form.tel,
+          },
+        },
+      });
+
+      if (signUpError) {
+        setError("Erreur lors de la création du compte : " + signUpError.message);
+        setLoading(false);
+        return;
+      }
+
+      const userId = signUpData.user?.id;
+      if (!userId) {
+        setError("Erreur : aucun utilisateur créé.");
+        setLoading(false);
+        return;
+      }
+
+      const { error: insertError } = await supabase.from("users").insert({
+        id: userId,
+        email: form.email,
+        is_active: true,
+        is_child: false,
+      });
+
+      if (insertError) {
+        setError("Compte créé, mais l’ajout du profil utilisateur a échoué.");
+        setLoading(false);
+        return;
+      }
+
+      window.location.href = "/dashboard";
+    } catch (err) {
+      console.error(err);
+      setError("Erreur inattendue lors de l’inscription.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <main className="w-full min-h-screen bg-[#14482F] flex flex-col items-center justify-center py-10">
       <div className="bg-white/95 rounded-2xl shadow-2xl px-6 py-10 max-w-xl w-full border border-[#29be4f]/10">
         <h1 className="text-3xl font-bold mb-6 text-[#14482F] text-center">
-          Inscription d’un club ou d’un particulier
+          Rejoignez la communauté <span className="text-[#29be4f]">SimplyFoot</span> !
         </h1>
+
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+          {/* Type de compte */}
           <label className="font-semibold text-[#14482F]">
-            Vous êtes :
+            Vous êtes : <span className="text-red-500">*</span>
             <select
               className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
               value={form.type}
               required
-              onChange={e => update("type", e.target.value)}
+              onChange={(e) => update("type", e.target.value)}
             >
               <option value="">Sélectionnez...</option>
-              <option value="club">Un club affilié (FFF, Futsal...)</option>
-              <option value="association">Une association / amicale</option>
-              <option value="particulier">Un particulier (famille, auto-organisation)</option>
+              <option value="club">Un club de football affilié (FFF, Futsal...)</option>
+              <option value="association">Une association ou amicale sportive</option>
             </select>
           </label>
+
+          {/* Nom du club */}
           <label className="font-semibold text-[#14482F]">
-            Nom du club / association / groupe <span className="text-red-500">*</span>
+            {form.type === "club"
+              ? "Nom du Club "
+              : "Nom de l’association / amicale "}
+            <span className="text-red-500">*</span>
             <input
               className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
               type="text"
               required
               value={form.nomClub}
-              onChange={e => update("nomClub", e.target.value)}
-              placeholder="Ex : FC Provence, Amicale Toulon, Famille Durand..."
+              onChange={(e) => update("nomClub", e.target.value)}
+              placeholder={
+                form.type === "association"
+                  ? "Ex : Amicale des parents, Les Pitchouns..."
+                  : "Ex : FC Provence, US Marseille..."
+              }
             />
           </label>
-          <label className="font-semibold text-[#14482F]">
-            Nom du responsable <span className="text-red-500">*</span>
-            <input
-              className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
-              type="text"
-              required
-              value={form.nomResponsable}
-              onChange={e => update("nomResponsable", e.target.value)}
-              placeholder="Nom Prénom"
-            />
-          </label>
+
+          {/* Nom / Prénom */}
+          <div className="flex gap-3">
+            <label className="font-semibold text-[#14482F] flex-1">
+              Nom du responsable <span className="text-red-500">*</span>
+              <input
+                className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
+                type="text"
+                required
+                value={form.nomResponsable}
+                onChange={(e) => update("nomResponsable", e.target.value)}
+                placeholder="Nom"
+              />
+            </label>
+            <label className="font-semibold text-[#14482F] flex-1">
+              Prénom du responsable <span className="text-red-500">*</span>
+              <input
+                className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
+                type="text"
+                required
+                value={form.prenomResponsable}
+                onChange={(e) => update("prenomResponsable", e.target.value)}
+                placeholder="Prénom"
+              />
+            </label>
+          </div>
+
+          {/* Email */}
           <label className="font-semibold text-[#14482F]">
             Email <span className="text-red-500">*</span>
             <input
@@ -99,123 +185,109 @@ export default function InscriptionPage() {
               type="email"
               required
               value={form.email}
-              onChange={e => update("email", e.target.value)}
+              onChange={(e) => update("email", e.target.value)}
               placeholder="adresse@email.com"
             />
           </label>
+
+          {/* Mot de passe + Confirmation avec œils 👁️ */}
           <div className="flex gap-3">
-            <label className="font-semibold text-[#14482F] flex-1">
+            {/* Mot de passe */}
+            <div className="font-semibold text-[#14482F] flex-1 relative">
               Mot de passe <span className="text-red-500">*</span>
               <input
-                className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
-                type="password"
+                className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100 pr-10"
+                type={showPassword ? "text" : "password"}
                 required
                 value={form.password}
-                onChange={e => update("password", e.target.value)}
+                onChange={(e) => update("password", e.target.value)}
+                placeholder="••••••••"
               />
-            </label>
-            <label className="font-semibold text-[#14482F] flex-1">
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-[38px] text-gray-500 hover:text-[#14482F]"
+                tabIndex={-1}
+                aria-label={showPassword ? "Masquer le mot de passe" : "Afficher le mot de passe"}
+              >
+                {showPassword ? <EyeOff className="h-5 w-5 mt-1 cursor-pointer" /> : <Eye className="h-5 w-5 mt-1 cursor-pointer" />}
+              </button>
+            </div>
+
+            {/* Confirmation */}
+            <div className="font-semibold text-[#14482F] flex-1 relative">
               Confirmation <span className="text-red-500">*</span>
               <input
-                className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
-                type="password"
+                className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100 pr-10"
+                type={showConfirm ? "text" : "password"}
                 required
                 value={form.confirmPassword}
-                onChange={e => update("confirmPassword", e.target.value)}
+                onChange={(e) => update("confirmPassword", e.target.value)}
+                placeholder="••••••••"
               />
-            </label>
+              <button
+                type="button"
+                onClick={() => setShowConfirm(!showConfirm)}
+                className="absolute right-3 top-[38px] text-gray-500 hover:text-[#14482F]"
+                tabIndex={-1}
+                aria-label={showConfirm ? "Masquer la confirmation" : "Afficher la confirmation"}
+              >
+                {showConfirm ? <EyeOff className="h-5 w-5 mt-1 cursor-pointer" /> : <Eye className="h-5 w-5 mt-1 cursor-pointer" />}
+              </button>
+            </div>
           </div>
+
+          {/* Téléphone */}
           <label className="font-semibold text-[#14482F]">
-            Téléphone
+            Téléphone (optionnel)
             <input
               className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
               type="tel"
               value={form.tel}
-              onChange={e => update("tel", e.target.value)}
+              onChange={(e) => update("tel", e.target.value)}
               placeholder="06 12 34 56 78"
             />
           </label>
-          {(form.type === "club" || form.type === "association") && (
-            <div className="flex gap-3">
-              <label className="font-semibold text-[#14482F] flex-1">
-                SIRET (optionnel)
-                <input
-                  className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
-                  type="text"
-                  value={form.siret}
-                  onChange={e => update("siret", e.target.value)}
-                  placeholder="14 chiffres"
-                  pattern="[0-9]{14}"
-                />
-              </label>
-              <label className="font-semibold text-[#14482F] flex-1">
-                SIREN (optionnel)
-                <input
-                  className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
-                  type="text"
-                  value={form.siren}
-                  onChange={e => update("siren", e.target.value)}
-                  placeholder="9 chiffres"
-                  pattern="[0-9]{9}"
-                />
-              </label>
-            </div>
-          )}
-          <label className="font-semibold text-[#14482F]">
-            Adresse (optionnel)
-            <input
-              className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
-              type="text"
-              value={form.adresse}
-              onChange={e => update("adresse", e.target.value)}
-              placeholder="Numéro et rue"
-            />
-          </label>
-          <div className="flex gap-3">
-            <label className="font-semibold text-[#14482F] flex-1">
-              Ville (optionnel)
-              <input
-                className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
-                type="text"
-                value={form.ville}
-                onChange={e => update("ville", e.target.value)}
-              />
-            </label>
-            <label className="font-semibold text-[#14482F] flex-1">
-              Code postal (optionnel)
-              <input
-                className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
-                type="text"
-                value={form.codePostal}
-                onChange={e => update("codePostal", e.target.value)}
-                pattern="[0-9]{5}"
-              />
-            </label>
-          </div>
-          <label className="flex items-center gap-2">
+
+          {/* CGU */}
+          <label className="flex items-center gap-2 pt-4 cursor-pointer">
             <input
               type="checkbox"
               required
               checked={form.cgu}
-              onChange={e => update("cgu", e.target.checked)}
-              className="accent-[#29be4f] w-5 h-5"
+              onChange={(e) => update("cgu", e.target.checked)}
+              className="accent-[#29be4f] w-5 h-5 cursor-pointer"
             />
-            <span className="text-[#14482F]">
-              J’ai lu et j’accepte les&nbsp;
-              <a href="/cgu" target="_blank" className="underline hover:text-[#29be4f]">conditions générales</a>
+            <span className="text-[#14482F] text-sm">
+              J’ai lu et j’accepte les{" "}
+              <a href="/cgu" target="_blank" className="underline hover:text-[#29be4f]">
+                conditions générales
+              </a>
             </span>
           </label>
-          {error && <div className="text-red-600 font-semibold">{error}</div>}
+
+          {/* Erreur */}
+          {error && <div className="text-red-600 font-semibold text-center">{error}</div>}
+
+          {/* Bouton inscription */}
           <button
             type="submit"
-            className="mt-4 px-8 py-3 rounded-lg font-bold bg-[#29be4f] text-[#14482F] text-lg shadow hover:bg-[#68FB7A] transition"
+            disabled={loading}
+            className={`mt-4 px-8 py-3 rounded-lg font-bold text-lg shadow cursor-pointer transition ${
+              loading
+                ? "bg-gray-400 cursor-not-allowed text-[#14482F]"
+                : "bg-[#29be4f] hover:bg-[#68FB7A] text-[#14482F]"
+            }`}
           >
-            Créer mon compte club
+            {loading ? "Création du compte..." : "Créer mon compte"}
           </button>
         </form>
+
         <p className="text-center text-[#14482F] mt-6">
-          Déjà inscrit ?{" "}
-          <a href="/connexion" className="underline font-bold hover:text-[#29be4f]">Me connecter</a>
+          Déjà inscrit ?{" "}
+          <a href="/connexion" className="underline font-bold hover:text-[#29be4f]">
+            Me connecter
+          </a>
         </p>
       </div>
     </main>
