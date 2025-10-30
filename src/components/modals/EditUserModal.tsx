@@ -66,33 +66,73 @@ export default function EditUserModal({
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Prénom */}
-          <div>
-            <label className="block text-sm font-semibold text-[#14482F]">Prénom</label>
-            <input
-              type="text"
-              value={form.firstname}
-              onChange={(e) => handleChange("firstname", e.target.value)}
-              className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-[#14482F] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
-              required
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Nom */}
+            <div>
+              <label className="block text-sm font-semibold text-[#14482F]">Nom <span className="text-red-500">*</span></label>
+              <input
+                type="text"
+                value={form.lastname}
+                onChange={(e) => handleChange("lastname", e.target.value)}
+                className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-[#14482F] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
+                required
+              />
+            </div>
+            {/* Prénom */}
+            <div>
+              <label className="block text-sm font-semibold text-[#14482F]">Prénom <span className="text-red-500">*</span></label>
+              <input
+                type="text"
+                value={form.firstname}
+                onChange={(e) => handleChange("firstname", e.target.value)}
+                className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-[#14482F] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
+                required
+              />
+            </div>
           </div>
 
-          {/* Nom */}
-          <div>
-            <label className="block text-sm font-semibold text-[#14482F]">Nom</label>
-            <input
-              type="text"
-              value={form.lastname}
-              onChange={(e) => handleChange("lastname", e.target.value)}
-              className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-[#14482F] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
-              required
-            />
+
+          {/* Date de naissance */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-semibold text-[#14482F]">Date de naissance</label>
+              <input
+                type="date"
+                value={form.birth_date ? form.birth_date.split("T")[0] : ""}
+                onChange={(e) => handleChange("birth_date", e.target.value)}
+                className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-[#14482F] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
+              />
+            </div>
+
+            {/* Genre */}
+            <div>
+              <label className="block text-sm font-semibold text-[#14482F]">Genre</label>
+              <select
+                value={form.gender ?? ""}
+                onChange={(e) => handleChange("gender", e.target.value as any)}
+                className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-[#14482F] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
+              >
+                <option value="">— Sélectionner —</option>
+                <option value="MALE">Homme</option>
+                <option value="FEMALE">Femme</option>
+                <option value="OTHER">Autre</option>
+              </select>
+
+              {form.gender === "OTHER" && (
+                <input
+                  type="text"
+                  value={form.gender_other_label ?? ""}
+                  onChange={(e) => handleChange("gender_other_label", e.target.value)}
+                  placeholder="Précisez"
+                  className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-[#14482F] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
+                />
+              )}
+            </div>
           </div>
 
           {/* Email */}
           <div>
-            <label className="block text-sm font-semibold text-[#14482F]">Email</label>
+            <label className="block text-sm font-semibold text-[#14482F]">Email <span className="text-red-500">*</span></label>
             <input
               type="email"
               value={form.email}
@@ -112,42 +152,6 @@ export default function EditUserModal({
               placeholder="06 12 34 56 78"
               className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-[#14482F] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
             />
-          </div>
-
-          {/* Date de naissance */}
-          <div>
-            <label className="block text-sm font-semibold text-[#14482F]">Date de naissance</label>
-            <input
-              type="date"
-              value={form.birth_date ? form.birth_date.split("T")[0] : ""}
-              onChange={(e) => handleChange("birth_date", e.target.value)}
-              className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-[#14482F] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
-            />
-          </div>
-
-          {/* Genre */}
-          <div>
-            <label className="block text-sm font-semibold text-[#14482F]">Genre</label>
-            <select
-              value={form.gender ?? ""}
-              onChange={(e) => handleChange("gender", e.target.value as any)}
-              className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-[#14482F] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
-            >
-              <option value="">— Sélectionner —</option>
-              <option value="MALE">Homme</option>
-              <option value="FEMALE">Femme</option>
-              <option value="OTHER">Autre</option>
-            </select>
-
-            {form.gender === "OTHER" && (
-              <input
-                type="text"
-                value={form.gender_other_label ?? ""}
-                onChange={(e) => handleChange("gender_other_label", e.target.value)}
-                placeholder="Précisez"
-                className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-[#14482F] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
-              />
-            )}
           </div>
 
           {/* Boutons */}

@@ -119,7 +119,6 @@ export default function ClubModal({
               <div>
                 <label className="block text-sm font-semibold text-[#14482F] flex items-center justify-between">
                   <span>Code du club</span>
-                  <span className="text-xs text-gray-500 italic">(non modifiable)</span>
                 </label>
                 <div className="relative flex items-center">
                   <input

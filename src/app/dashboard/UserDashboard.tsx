@@ -151,7 +151,7 @@ export default function UserDashboard() {
 
   // === UI identique ===
   return (
-    <main className="min-h-screen bg-[#14482F] relative">
+    <main className="min-h-screen bg-[#14482F] relative mt-[-60px] mb-6">
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(80%_60%_at_50%_-10%,rgba(91,227,125,.18),transparent_60%)]" />
 
       <div className="mx-auto max-w-6xl px-6 py-10">
@@ -362,7 +362,7 @@ export default function UserDashboard() {
         <OrdersTable orders={data.orders} />
 
         {/* === Support === */}
-        <section className="mt-8 rounded-2xl border border-[#29be4f]/20 bg-[#14482F] p-6 text-white">
+        <section className="mt-20 rounded-2xl border border-[#29be4f]/20 bg-[#14482F] p-6 text-white">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <div className="text-lg font-extrabold">
               Besoin d’aide, d’une facture ou d’un support ?
