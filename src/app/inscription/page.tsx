@@ -1,24 +1,28 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { supabase } from "lib/supabaseClient";
-import { Eye, EyeOff } from "lucide-react"; // 👁️ import des icônes
+import { Eye, EyeOff } from "lucide-react";
+import { addClub } from "lib/supabaseQueries";
 
 export default function InscriptionPage() {
+  const router = useRouter();
+
   const [form, setForm] = useState({
     type: "",
-    nomClub: "",
-    nomResponsable: "",
-    prenomResponsable: "",
+    clubName: "",
+    lastName: "",
+    firstName: "",
     email: "",
     password: "",
     confirmPassword: "",
     tel: "",
     siret: "",
     siren: "",
-    adresse: "",
-    ville: "",
-    codePostal: "",
+    address: "",
+    city: "",
+    postalCode: "",
     cgu: false,
   });
 
@@ -27,13 +31,15 @@ export default function InscriptionPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
+  // 🔹 Mise à jour des champs
   const update = (k: keyof typeof form, v: typeof form[typeof k]) =>
     setForm((f) => ({ ...f, [k]: v }));
 
+  // 🔹 Validation basique côté front
   const validate = () => {
     if (
-      !form.prenomResponsable ||
-      !form.nomResponsable ||
+      !form.firstName ||
+      !form.lastName ||
       !form.email ||
       !form.password ||
       !form.confirmPassword
@@ -52,6 +58,7 @@ export default function InscriptionPage() {
     return true;
   };
 
+  // 🔹 Soumission du formulaire
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
@@ -59,16 +66,17 @@ export default function InscriptionPage() {
     setLoading(true);
 
     try {
+      // 1️⃣ Création du compte Auth
       const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
         email: form.email,
         password: form.password,
         options: {
           data: {
-            type: form.type,
-            nomClub: form.nomClub,
-            nomResponsable: form.nomResponsable,
-            prenomResponsable: form.prenomResponsable,
-            tel: form.tel,
+            account_type: form.type,
+            club_name: form.clubName,
+            first_name: form.firstName,
+            last_name: form.lastName,
+            phone: form.tel,
           },
         },
       });
@@ -86,9 +94,13 @@ export default function InscriptionPage() {
         return;
       }
 
+      // 2️⃣ Création du profil utilisateur
       const { error: insertError } = await supabase.from("users").insert({
         id: userId,
         email: form.email,
+        first_name: form.firstName,
+        last_name: form.lastName,
+        phone_number: form.tel || null,
         is_active: true,
         is_child: false,
       });
@@ -99,9 +111,56 @@ export default function InscriptionPage() {
         return;
       }
 
-      window.location.href = "/dashboard";
+      if (insertError) {
+        console.error("❌ Erreur ajout user:", insertError);
+        setError("Compte créé, mais l’ajout du profil utilisateur a échoué.");
+        setLoading(false);
+        return;
+      }
+
+      // 3️⃣ Création du rôle admin lié à cet utilisateur
+      const { data: admin, error: adminError } = await supabase
+        .from("admins")
+        .insert([{ user_id: userId }])
+        .select()
+        .single();
+
+      if (adminError || !admin) {
+        console.error("❌ Erreur création admin:", adminError);
+        setError("Erreur lors de la création du rôle administrateur.");
+        setLoading(false);
+        return;
+      }
+
+      // 4️⃣ Création du club et association au président
+      try {
+        await addClub(userId, {
+          name: form.clubName,
+          address: form.address || null,
+          postal_code: form.postalCode || null,
+          city: form.city || null,
+          country: "France",
+          phone_number: form.tel || null,
+          email: form.email,
+          siret_number: form.siret || null,
+          siren_number: form.siren || null,
+          id: "",
+          created_by: "",
+          code: null,
+          created_at: "",
+          updated_at: ""
+        });
+      } catch (clubErr) {
+        console.error("❌ Erreur création club:", clubErr);
+        setError("Le compte a été créé mais le club n’a pas pu être ajouté.");
+        setLoading(false);
+        return;
+      }
+
+      // 5️⃣ Redirection vers le tableau de bord
+      router.push("/dashboard");
     } catch (err) {
-      console.error(err);
+      console.error("❌ Erreur inattendue:", err);
       setError("Erreur inattendue lors de l’inscription.");
     } finally {
       setLoading(false);
@@ -141,8 +200,8 @@ export default function InscriptionPage() {
               className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
               type="text"
               required
-              value={form.nomClub}
-              onChange={(e) => update("nomClub", e.target.value)}
+              value={form.clubName}
+              onChange={(e) => update("clubName", e.target.value)}
               placeholder={
                 form.type === "association"
                   ? "Ex : Amicale des parents, Les Pitchouns..."
@@ -159,8 +218,8 @@ export default function InscriptionPage() {
                 className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
                 type="text"
                 required
-                value={form.nomResponsable}
-                onChange={(e) => update("nomResponsable", e.target.value)}
+                value={form.lastName}
+                onChange={(e) => update("lastName", e.target.value)}
                 placeholder="Nom"
               />
             </label>
@@ -170,8 +229,8 @@ export default function InscriptionPage() {
                 className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
                 type="text"
                 required
-                value={form.prenomResponsable}
-                onChange={(e) => update("prenomResponsable", e.target.value)}
+                value={form.firstName}
+                onChange={(e) => update("firstName", e.target.value)}
                 placeholder="Prénom"
               />
             </label>
@@ -208,9 +267,12 @@ export default function InscriptionPage() {
                 onClick={() => setShowPassword(!showPassword)}
                 className="absolute right-3 top-[38px] text-gray-500 hover:text-[#14482F]"
                 tabIndex={-1}
-                aria-label={showPassword ? "Masquer le mot de passe" : "Afficher le mot de passe"}
               >
-                {showPassword ? <EyeOff className="h-5 w-5 mt-1 cursor-pointer" /> : <Eye className="h-5 w-5 mt-1 cursor-pointer" />}
+                {showPassword ? (
+                  <EyeOff className="h-5 w-5 mt-1 cursor-pointer" />
+                ) : (
+                  <Eye className="h-5 w-5 mt-1 cursor-pointer" />
+                )}
               </button>
             </div>
 
@@ -230,9 +292,12 @@ export default function InscriptionPage() {
                 onClick={() => setShowConfirm(!showConfirm)}
                 className="absolute right-3 top-[38px] text-gray-500 hover:text-[#14482F]"
                 tabIndex={-1}
-                aria-label={showConfirm ? "Masquer la confirmation" : "Afficher la confirmation"}
               >
-                {showConfirm ? <EyeOff className="h-5 w-5 mt-1 cursor-pointer" /> : <Eye className="h-5 w-5 mt-1 cursor-pointer" />}
+                {showConfirm ? (
+                  <EyeOff className="h-5 w-5 mt-1 cursor-pointer" />
+                ) : (
+                  <Eye className="h-5 w-5 mt-1 cursor-pointer" />
+                )}
               </button>
             </div>
           </div>
@@ -266,18 +331,17 @@ export default function InscriptionPage() {
             </span>
           </label>
 
-          {/* Erreur */}
+          {/* Message d'erreur */}
           {error && <div className="text-red-600 font-semibold text-center">{error}</div>}
 
-          {/* Bouton inscription */}
+          {/* Bouton d’inscription */}
           <button
             type="submit"
             disabled={loading}
-            className={`mt-4 px-8 py-3 rounded-lg font-bold text-lg shadow cursor-pointer transition ${
-              loading
+            className={`mt-4 px-8 py-3 rounded-lg font-bold text-lg shadow cursor-pointer transition ${loading
                 ? "bg-gray-400 cursor-not-allowed text-[#14482F]"
                 : "bg-[#29be4f] hover:bg-[#68FB7A] text-[#14482F]"
-            }`}
+              }`}
           >
             {loading ? "Création du compte..." : "Créer mon compte"}
           </button>
