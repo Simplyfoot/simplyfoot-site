@@ -240,3 +240,17 @@ export async function addClub(
 
   return newClub;
 }
+
+// 🔴 Supprimer un club (cascade sur les relations)
+export async function deleteClub(clubId: string) {
+  const { error } = await supabase.from("clubs").delete().eq("id", clubId);
+  if (error) throw error;
+}
+
+// 🔴 Supprimer le compte utilisateur (table public.users)
+// ⚠️ Ne supprime PAS l’utilisateur Auth.
+export async function deleteUserAccountRow(userId: string) {
+  const { error } = await supabase.from("users").delete().eq("id", userId);
+  if (error) throw error;
+}
+

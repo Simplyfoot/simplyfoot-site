@@ -108,7 +108,7 @@ export default function ClubModal({
                 type="text"
                 value={form.name ?? ""}
                 onChange={(e) => handleChange("name", e.target.value)}
-                placeholder="Ex : FC Provence"
+                placeholder="Ex : Olympique du Café du Coin"
                 required
                 className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm
                 text-[#14482F] placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
@@ -117,7 +117,7 @@ export default function ClubModal({
 
             {mode === "edit" && (
               <div>
-                <label className="block text-sm font-semibold text-[#14482F] flex items-center justify-between">
+                <label className="block text-sm font-semibold text-[#14482F] items-center justify-between">
                   <span>Code du club</span>
                 </label>
                 <div className="relative flex items-center">
@@ -159,7 +159,7 @@ export default function ClubModal({
               type="text"
               value={form.address ?? ""}
               onChange={(e) => handleChange("address", e.target.value)}
-              placeholder="10 rue du Foot"
+              placeholder="10 rue du Stade"
               className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm 
               text-[#14482F] placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
             />
@@ -173,7 +173,7 @@ export default function ClubModal({
                 type="text"
                 value={form.postal_code ?? ""}
                 onChange={(e) => handleChange("postal_code", e.target.value)}
-                placeholder="75001"
+                placeholder="83000"
                 className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm 
                 text-[#14482F] placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
               />
@@ -184,7 +184,7 @@ export default function ClubModal({
                 type="text"
                 value={form.city ?? ""}
                 onChange={(e) => handleChange("city", e.target.value)}
-                placeholder="Marseille"
+                placeholder="Trifouillis-les-Buts"
                 className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm 
                 text-[#14482F] placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
               />
@@ -223,7 +223,7 @@ export default function ClubModal({
                 type="email"
                 value={form.email ?? ""}
                 onChange={(e) => handleChange("email", e.target.value)}
-                placeholder="contact@club.fr"
+                placeholder="contact@monclub.fr"
                 className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm 
                 text-[#14482F] placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
               />

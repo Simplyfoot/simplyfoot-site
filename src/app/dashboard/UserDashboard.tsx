@@ -23,12 +23,22 @@ import {
   Plus,
   Clipboard,
   Check,
+  Trash,
 } from "lucide-react";
 import EditUserModal from "components/modals/EditUserModal";
 import { Club } from "app/_types/Club";
 import ClubModal from "components/modals/ClubModal";
+import ConfirmModal from "components/modals/ConfirmModal";
+import { deleteClub, deleteUserAccountRow } from "lib/supabaseQueries";
+import { useRouter } from "next/navigation";
+
 
 export default function UserDashboard() {
+  const router = useRouter();
+
+  const [confirmDeleteUser, setConfirmDeleteUser] = useState(false);
+  const [confirmDeleteClub, setConfirmDeleteClub] = useState(false);
+
   const { data, loading } = useDashboard();
   const [editUserModalOpen, setEditUserModalOpen] = useState(false);
   const [editClubModalOpen, setEditClubModalOpen] = useState(false);
@@ -149,6 +159,46 @@ export default function UserDashboard() {
     setAddClubModalOpen(false);
   };
 
+  const handleConfirmDeleteClub = async () => {
+    if (!selectedClub) return;
+    try {
+      await deleteClub(selectedClub);
+      setClubs((prev) => prev.filter((c) => c.club_id !== selectedClub));
+      setSelectedClub(null);
+      setClubData(null);
+      alert("✅ Le club a été supprimé.");
+    } catch (e) {
+      console.error(e);
+      alert("❌ Erreur lors de la suppression du club.");
+    } finally {
+      setConfirmDeleteClub(false);
+    }
+  };
+
+  const handleConfirmDeleteUser = async () => {
+    try {
+      if (!userData?.id) throw new Error("User ID manquant.");
+
+      // ✅ Un seul appel : suppression Auth + profil RGPD
+      await fetch("/api/admin/delete-user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId: userData.id }),
+      });
+
+      alert("✅ Votre compte a été supprimé définitivement.");
+      await supabase.auth.signOut();
+      router.push("/");
+    } catch (e) {
+      console.error(e);
+      alert("❌ Erreur lors de la suppression du compte.");
+    } finally {
+      setConfirmDeleteUser(false);
+    }
+  };
+
+
+
   // === UI identique ===
   return (
     <main className="min-h-screen bg-[#14482F] relative mt-[-60px] mb-6">
@@ -186,14 +236,25 @@ export default function UserDashboard() {
             </div>
           </div>
 
-          <button
-            onClick={() => setEditUserModalOpen(true)}
-            title="Modifier mes informations"
-            className="cursor-pointer inline-flex items-center justify-center gap-2 rounded-full border border-[#29be4f]/50 bg-[#29be4f]/10 px-5 py-2 text-sm font-semibold text-[#29be4f] hover:bg-[#29be4f]/20 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 shadow-sm"
-          >
-            <Pencil className="h-4 w-4" />
-            Modifier
-          </button>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setEditUserModalOpen(true)}
+              title="Modifier mes informations"
+              className="cursor-pointer inline-flex items-center justify-center gap-2 rounded-full border border-[#29be4f]/50 bg-[#29be4f]/10 px-5 py-2 text-sm font-semibold text-[#29be4f] hover:bg-[#29be4f]/20 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 shadow-sm"
+            >
+              <Pencil className="h-4 w-4" />
+              Modifier
+            </button>
+
+            <button
+              onClick={() => setConfirmDeleteUser(true)}
+              className="cursor-pointer inline-flex items-center justify-center gap-2 rounded-full border border-red-400/60 bg-red-50 px-4 py-2 text-sm font-semibold text-red-600 hover:bg-red-100 transition"
+              title="Supprimer mon compte"
+            >
+              <Trash className="h-4 w-4" /> Supprimer mon compte
+            </button>
+          </div>
+
         </section>
 
         {/* === Clubs === */}
@@ -286,7 +347,18 @@ export default function UserDashboard() {
               <Pencil className="h-4 w-4" />
               Modifier
             </button>
+
+            {selectedClub && (
+              <button
+                onClick={() => setConfirmDeleteClub(true)}
+                className="cursor-pointer inline-flex items-center justify-center gap-2 rounded-full border border-red-400/60 bg-red-50 px-5 py-2 text-sm font-semibold text-red-600 hover:bg-red-100 transition"
+                title="Supprimer ce club"
+              >
+                <Trash className="h-4 w-4" /> Supprimer le club
+              </button>
+            )}
           </div>
+
         </section>
 
         {/* === Abonnement / commandes / accès === */}
@@ -404,6 +476,27 @@ export default function UserDashboard() {
         onSave={handleAddClub}
         onClose={() => setAddClubModalOpen(false)}
       />
+
+      <ConfirmModal
+        isOpen={confirmDeleteClub}
+        title="Supprimer ce club"
+        message="Cette action est irréversible. Toutes les équipes, événements et liens associés à ce club seront supprimés."
+        confirmLabel="Supprimer le club"
+        confirmTone="danger"
+        onConfirm={handleConfirmDeleteClub}
+        onClose={() => setConfirmDeleteClub(false)}
+      />
+
+      <ConfirmModal
+        isOpen={confirmDeleteUser}
+        title="Supprimer mon compte"
+        message="Cette action est irréversible. Votre compte et toutes vos données personnelles seront supprimés."
+        confirmLabel="Supprimer définitivement"
+        confirmTone="danger"
+        onConfirm={handleConfirmDeleteUser}
+        onClose={() => setConfirmDeleteUser(false)}
+      />
+
     </main>
   );
 }
