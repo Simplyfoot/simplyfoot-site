@@ -36,8 +36,8 @@ export default function ConfirmModal({
         role="dialog"
         aria-modal="true"
       >
-        <h2 className="text-xl font-extrabold text-[#14482F] mb-2">{title}</h2>
-        <p className="text-sm text-gray-700 mb-5">{message}</p>
+        <h2 className="text-center text-xl font-extrabold text-[#14482F] mb-6">{title}</h2>
+        <p className="text-sm text-gray-700 mb-8">{message}</p>
 
         <div className="flex justify-end gap-3">
           <button onClick={onClose} className="cursor-pointer text-sm font-semibold text-gray-600 hover:text-gray-800">

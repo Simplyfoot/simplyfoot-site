@@ -61,7 +61,7 @@ export default function EditUserModal({
         transition={{ duration: 0.25 }}
         className="w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl overflow-y-auto max-h-[90vh]"
       >
-        <h2 className="text-xl font-extrabold text-[#14482F] mb-4 text-center">
+        <h2 className="text-2xl font-extrabold text-[#14482F] mb-4 text-center">
           Modifier mes informations
         </h2>
 

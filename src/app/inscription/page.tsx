@@ -176,7 +176,7 @@ export default function InscriptionPage() {
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
           {/* Type de compte */}
-          <label className="font-normal text-[#14482F] ">
+          <label className="text-sm text-[#14482F] ">
             Vous êtes : <span className="text-red-500">*</span>
             <select
               className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
@@ -191,7 +191,7 @@ export default function InscriptionPage() {
           </label>
 
           {/* Nom du club */}
-          <label className="font-normal text-[#14482F]">
+          <label className="text-sm text-[#14482F]">
             {form.type === "club"
               ? "Nom du Club "
               : "Nom de l’association / amicale "}
@@ -212,7 +212,7 @@ export default function InscriptionPage() {
 
           {/* Nom / Prénom */}
           <div className="flex gap-3">
-            <label className="font-normal text-[#14482F] flex-1">
+            <label className="text-sm text-[#14482F] flex-1">
               Nom du responsable <span className="text-red-500">*</span>
               <input
                 className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
@@ -220,10 +220,10 @@ export default function InscriptionPage() {
                 required
                 value={form.lastName}
                 onChange={(e) => update("lastName", e.target.value)}
-                placeholder="Nom"
+                placeholder="Dubois"
               />
             </label>
-            <label className="font-normal text-[#14482F] flex-1">
+            <label className="text-sm text-[#14482F] flex-1">
               Prénom du responsable <span className="text-red-500">*</span>
               <input
                 className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
@@ -231,32 +231,41 @@ export default function InscriptionPage() {
                 required
                 value={form.firstName}
                 onChange={(e) => update("firstName", e.target.value)}
-                placeholder="Prénom"
+                placeholder="Alex"
               />
             </label>
           </div>
 
-          {/* Email */}
-          <label className="font-normal text-[#14482F]">
-            Email <span className="text-red-500">*</span>
-            <input
-              className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
-              type="email"
-              required
-              value={form.email}
-              onChange={(e) => update("email", e.target.value)}
-              placeholder="contact@monclub.fr"
-            />
-          </label>
-            {/* Info mot de passe */}
-            <div className="text-xs text-gray-500 mb-2">
-            Au moins 8 caractères, et pas “1234foot” 😅
-            </div>
+          <div className="flex gap-3">
+            {/* Email */}
+            <label className="text-sm text-[#14482F] flex-1 relative">
+              Email du responsable <span className="text-red-500">*</span>
+              <input
+                className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
+                type="email"
+                required
+                value={form.email}
+                onChange={(e) => update("email", e.target.value)}
+                placeholder="monadresse@mail.fr"
+              />
+            </label>
+            {/* Téléphone */}
+            <label className="text-sm text-[#14482F] flex-1 relative">
+              Téléphone du responsable
+              <input
+                className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
+                type="tel"
+                value={form.tel}
+                onChange={(e) => update("tel", e.target.value)}
+                placeholder="06 12 34 56 78"
+              />
+            </label>
+          </div>
 
           {/* Mot de passe + Confirmation avec œils 👁️ */}
           <div className="flex gap-3">
             {/* Mot de passe */}
-            <div className="font-normal text-[#14482F] flex-1 relative">
+            <div className="text-sm text-[#14482F] flex-1 relative">
               Mot de passe <span className="text-red-500">*</span>
               <input
                 className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100 pr-10"
@@ -273,15 +282,15 @@ export default function InscriptionPage() {
                 tabIndex={-1}
               >
                 {showPassword ? (
-                  <EyeOff className="h-5 w-5 mt-1 cursor-pointer" />
+                  <EyeOff className="h-5 w-5 cursor-pointer" />
                 ) : (
-                  <Eye className="h-5 w-5 mt-1 cursor-pointer" />
+                  <Eye className="h-5 w-5 cursor-pointer" />
                 )}
               </button>
             </div>
 
             {/* Confirmation */}
-            <div className="font-normal text-[#14482F] flex-1 relative">
+            <div className="text-sm text-[#14482F] flex-1 relative">
               Confirmation <span className="text-red-500">*</span>
               <input
                 className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100 pr-10"
@@ -298,25 +307,15 @@ export default function InscriptionPage() {
                 tabIndex={-1}
               >
                 {showConfirm ? (
-                  <EyeOff className="h-5 w-5 mt-1 cursor-pointer" />
+                  <EyeOff className="h-5 w-5 cursor-pointer" />
                 ) : (
-                  <Eye className="h-5 w-5 mt-1 cursor-pointer" />
+                  <Eye className="h-5 w-5 cursor-pointer" />
                 )}
               </button>
             </div>
           </div>
 
-          {/* Téléphone */}
-          <label className="font-normal text-[#14482F]">
-            Téléphone (optionnel)
-            <input
-              className="block mt-2 w-full px-3 py-2 rounded border border-gray-200 bg-gray-100"
-              type="tel"
-              value={form.tel}
-              onChange={(e) => update("tel", e.target.value)}
-              placeholder="06 12 34 56 78"
-            />
-          </label>
+
 
           {/* CGU */}
           <label className="flex items-center gap-2 pt-4 cursor-pointer">
@@ -330,28 +329,28 @@ export default function InscriptionPage() {
             <span className="text-[#14482F] text-sm">
               J’ai lu et j’accepte les{" "}
               <a href="/cgu" target="_blank" className="underline hover:text-[#29be4f]">
-                conditions générales
-              </a>
+                conditions générales d’utilisation
+              </a>. <span className="text-red-500">*</span>
             </span>
           </label>
 
           {/* Message d'erreur */}
-          {error && <div className="text-red-600 font-no rmal text-center">{error}</div>}
+          {error && <div className="text-red-600 font-sm text-center">{error}</div>}
 
           {/* Bouton d’inscription */}
           <button
             type="submit"
             disabled={loading}
             className={`mt-4 px-8 py-3 rounded-lg font-bold text-lg shadow cursor-pointer transition ${loading
-                ? "bg-gray-400 cursor-not-allowed text-[#14482F]"
-                : "bg-[#29be4f] hover:bg-[#68FB7A] text-[#14482F]"
+              ? "bg-gray-400 cursor-not-allowed text-[#14482F]"
+              : "bg-[#29be4f] hover:bg-[#68FB7A] text-[#14482F]"
               }`}
           >
             {loading ? "Création du compte..." : "Créer mon compte"}
           </button>
         </form>
 
-        <p className="text-center text-[#14482F] mt-6">
+        <p className="text-sm text-center text-[#14482F] mt-6">
           Déjà inscrit ?{" "}
           <a href="/connexion" className="underline font-bold hover:text-[#29be4f]">
             Me connecter

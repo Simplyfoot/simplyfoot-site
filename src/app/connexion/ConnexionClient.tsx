@@ -67,8 +67,8 @@ export default function ConnexionClient() {
         onSubmit={handleLogin}
         className="w-full max-w-sm bg-white/95 p-8 rounded-2xl shadow-md"
       >
-        <h1 className="text-xl font-bold mb-6 text-[#14482F] text-center">
-          Connexion à l’espace club
+        <h1 className="text-3xl font-bold mb-6 text-[#14482F] text-center">
+          Se connecter
         </h1>
 
         {/* Email */}
@@ -76,7 +76,7 @@ export default function ConnexionClient() {
           <span className="text-sm text-gray-700">Email</span>
           <input
             type="email"
-            className="mt-1 w-full rounded-md border border-gray-300 p-2 text-[#14482F] placeholder-gray-400"
+            className="text-sm mt-1 w-full rounded-md border border-gray-300 p-2 text-[#14482F] placeholder-gray-400"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Entrez votre email"
@@ -89,7 +89,7 @@ export default function ConnexionClient() {
           <span className="text-sm text-gray-700">Mot de passe</span>
           <input
             type={showPassword ? "text" : "password"}
-            className="mt-1 w-full rounded-md border border-gray-300 p-2 pr-10 text-[#14482F] placeholder-gray-400"
+            className="text-sm mt-1 w-full rounded-md border border-gray-300 p-2 pr-10 text-[#14482F] placeholder-gray-400"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Entrez votre mot de passe"
@@ -123,7 +123,7 @@ export default function ConnexionClient() {
         </button>
 
         {/* Lien inscription */}
-        <p className="text-center text-[#14482F] mt-6">
+        <p className="text-sm text-center text-[#14482F] mt-6">
           Pas encore de compte ?{" "}
           <a
             href="/inscription"

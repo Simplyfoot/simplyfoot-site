@@ -248,10 +248,11 @@ export default function UserDashboard() {
 
             <button
               onClick={() => setConfirmDeleteUser(true)}
-              className="cursor-pointer inline-flex items-center justify-center gap-2 rounded-full border border-red-400/60 bg-red-50 px-4 py-2 text-sm font-semibold text-red-600 hover:bg-red-100 transition"
-              title="Supprimer mon compte"
+              className="cursor-pointer inline-flex items-center justify-center gap-2 rounded-full border border-red-400/50 bg-red-500/10 px-5 py-2 text-sm font-semibold text-red-500 hover:bg-red-500/20 hover:border-red-500 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 shadow-sm"
+              title="Supprimer ce compte"
             >
-              <Trash className="h-4 w-4" /> Supprimer mon compte
+              <Trash className="h-4 w-4" />
+              Supprimer
             </button>
           </div>
 
@@ -351,10 +352,11 @@ export default function UserDashboard() {
             {selectedClub && (
               <button
                 onClick={() => setConfirmDeleteClub(true)}
-                className="cursor-pointer inline-flex items-center justify-center gap-2 rounded-full border border-red-400/60 bg-red-50 px-5 py-2 text-sm font-semibold text-red-600 hover:bg-red-100 transition"
+                className="cursor-pointer inline-flex items-center justify-center gap-2 rounded-full border border-red-400/50 bg-red-500/10 px-5 py-2 text-sm font-semibold text-red-500 hover:bg-red-500/20 hover:border-red-500 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 shadow-sm"
                 title="Supprimer ce club"
               >
-                <Trash className="h-4 w-4" /> Supprimer le club
+                <Trash className="h-4 w-4" />
+                Supprimer
               </button>
             )}
           </div>
@@ -491,7 +493,7 @@ export default function UserDashboard() {
         isOpen={confirmDeleteUser}
         title="Supprimer mon compte"
         message="Cette action est irréversible. Votre compte et toutes vos données personnelles seront supprimés."
-        confirmLabel="Supprimer définitivement"
+        confirmLabel="Supprimer mon compte"
         confirmTone="danger"
         onConfirm={handleConfirmDeleteUser}
         onClose={() => setConfirmDeleteUser(false)}

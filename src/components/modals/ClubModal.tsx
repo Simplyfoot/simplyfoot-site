@@ -94,7 +94,7 @@ export default function ClubModal({
         className="w-full max-w-2xl rounded-2xl bg-white p-6 shadow-lg max-h-[90vh] overflow-y-auto"
       >
         <h2 className="text-2xl font-extrabold text-[#14482F] mb-4 text-center">
-          {mode === "add" ? "Ajouter un club" : "Modifier le club"}
+          {mode === "add" ? "Ajouter un club" : `Modifier le club : ${form.name ?? ""}`}
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
