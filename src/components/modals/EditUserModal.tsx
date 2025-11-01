@@ -54,63 +54,74 @@ export default function EditUserModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 sm:px-0">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
       <motion.div
-        initial={{ opacity: 0, scale: 0.9, y: 20 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.25 }}
-        className="w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl overflow-y-auto max-h-[90vh]"
+        className="w-full max-w-2xl rounded-2xl bg-white p-6 shadow-lg max-h-[90vh] overflow-y-auto"
       >
         <h2 className="text-2xl font-extrabold text-[#14482F] mb-4 text-center">
           Modifier mes informations
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
+          {/* Nom / Prénom */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Nom */}
             <div>
-              <label className="block text-sm font-semibold text-[#14482F]">Nom <span className="text-red-500">*</span></label>
+              <label className="block text-sm font-semibold text-[#14482F]">
+                Nom <span className="text-red-500">*</span>
+              </label>
               <input
                 type="text"
                 value={form.lastname}
                 onChange={(e) => handleChange("lastname", e.target.value)}
-                className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-[#14482F] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
+                placeholder="Dupont"
                 required
+                className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm 
+                text-[#14482F] placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
               />
             </div>
-            {/* Prénom */}
             <div>
-              <label className="block text-sm font-semibold text-[#14482F]">Prénom <span className="text-red-500">*</span></label>
+              <label className="block text-sm font-semibold text-[#14482F]">
+                Prénom <span className="text-red-500">*</span>
+              </label>
               <input
                 type="text"
                 value={form.firstname}
                 onChange={(e) => handleChange("firstname", e.target.value)}
-                className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-[#14482F] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
+                placeholder="Camille"
                 required
+                className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm 
+                text-[#14482F] placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
               />
             </div>
           </div>
 
-
-          {/* Date de naissance */}
+          {/* Date de naissance / Genre */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-[#14482F]">Date de naissance</label>
+              <label className="block text-sm font-semibold text-[#14482F]">
+                Date de naissance
+              </label>
               <input
                 type="date"
                 value={form.birth_date ? form.birth_date.split("T")[0] : ""}
                 onChange={(e) => handleChange("birth_date", e.target.value)}
-                className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-[#14482F] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
+                className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm 
+                text-[#14482F] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
               />
             </div>
 
-            {/* Genre */}
             <div>
-              <label className="block text-sm font-semibold text-[#14482F]">Genre</label>
+              <label className="block text-sm font-semibold text-[#14482F]">
+                Genre
+              </label>
               <select
                 value={form.gender ?? ""}
                 onChange={(e) => handleChange("gender", e.target.value as any)}
-                className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-[#14482F] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
+                className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm 
+                text-[#14482F] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
               >
                 <option value="">— Sélectionner —</option>
                 <option value="MALE">Homme</option>
@@ -122,9 +133,12 @@ export default function EditUserModal({
                 <input
                   type="text"
                   value={form.gender_other_label ?? ""}
-                  onChange={(e) => handleChange("gender_other_label", e.target.value)}
+                  onChange={(e) =>
+                    handleChange("gender_other_label", e.target.value)
+                  }
                   placeholder="Précisez"
-                  className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-[#14482F] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
+                  className="mt-2 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm 
+                  text-[#14482F] placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
                 />
               )}
             </div>
@@ -132,30 +146,37 @@ export default function EditUserModal({
 
           {/* Email */}
           <div>
-            <label className="block text-sm font-semibold text-[#14482F]">Email <span className="text-red-500">*</span></label>
+            <label className="block text-sm font-semibold text-[#14482F]">
+              Email <span className="text-red-500">*</span>
+            </label>
             <input
               type="email"
               value={form.email}
               onChange={(e) => handleChange("email", e.target.value)}
-              className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-[#14482F] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
+              placeholder="adresse@email.com"
               required
+              className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm 
+              text-[#14482F] placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
             />
           </div>
 
           {/* Téléphone */}
           <div>
-            <label className="block text-sm font-semibold text-[#14482F]">Téléphone</label>
+            <label className="block text-sm font-semibold text-[#14482F]">
+              Téléphone
+            </label>
             <input
               type="tel"
               value={form.phone_number ?? ""}
               onChange={(e) => handleChange("phone_number", e.target.value)}
               placeholder="06 12 34 56 78"
-              className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-[#14482F] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
+              className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm 
+              text-[#14482F] placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
             />
           </div>
 
           {/* Boutons */}
-          <div className="flex justify-end gap-3 mt-6">
+          <div className="flex justify-end gap-3 pt-6">
             <button
               type="button"
               onClick={onClose}
@@ -166,7 +187,8 @@ export default function EditUserModal({
             <button
               type="submit"
               disabled={loading || !hasChanged}
-              className="cursor-pointer px-5 py-2 rounded-lg bg-[#29be4f] text-[#14482F] font-extrabold hover:bg-[#63f286] disabled:opacity-50 disabled:cursor-not-allowed"
+              className="cursor-pointer px-5 py-2 rounded-lg bg-[#29be4f] text-[#14482F] font-extrabold 
+              hover:bg-[#63f286] disabled:opacity-50 disabled:cursor-not-allowed transition"
             >
               {loading ? "Enregistrement..." : "Enregistrer"}
             </button>

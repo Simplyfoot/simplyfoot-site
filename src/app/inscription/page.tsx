@@ -168,7 +168,7 @@ export default function InscriptionPage() {
   };
 
   return (
-    <main className="mt-[-60px] w-full min-h-screen bg-[#14482F] flex flex-col items-center justify-center py-10">
+    <main className="mt-[-140px] w-full min-h-screen bg-[#14482F] flex flex-col items-center justify-center py-10">
       <div className="bg-white/95 rounded-2xl shadow-2xl px-6 py-10 max-w-xl w-full border border-[#29be4f]/10">
         <h1 className="text-3xl font-bold mb-6 text-[#14482F] text-center">
           Rejoignez la communauté <span className="text-[#29be4f]">SimplyFoot</span> !

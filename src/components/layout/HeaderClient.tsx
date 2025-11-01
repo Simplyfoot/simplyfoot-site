@@ -4,7 +4,7 @@ import { useState, useEffect, Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../assets/logos/logo_simplyfoot.png";
-import { Menu as MenuIcon, X as XIcon, ChevronDown, LogOut, User } from "lucide-react";
+import { Menu as MenuIcon, X as XIcon, ChevronDown, LogOut, User, LogIn, UserRoundPlus, Plus } from "lucide-react";
 import { Menu, Transition, Dialog } from "@headlessui/react";
 import clsx from "clsx";
 import { usePathname, useRouter } from "next/navigation";
@@ -213,16 +213,18 @@ export default function HeaderClient({
             <>
               <Link
                 href={getRoute(locale as "fr" | "en", "login")}
-                className="cursor-pointer inline-flex items-center rounded-full border border-[#29be4f] px-5 py-2 text-sm font-semibold text-[#29be4f] shadow-md hover:bg-[#29be4f]/10"
+                className="cursor-pointer gap-2 inline-flex items-center rounded-full border border-[#29be4f] px-5 py-2 text-sm font-semibold text-[#29be4f] shadow-md hover:bg-[#29be4f]/10"
                 title="Connexion à votre espace SimplyFoot"
               >
+                <LogIn className="h-4 w-4" />
                 Connexion
               </Link>
               <Link
                 href={getRoute(locale as "fr" | "en", "signup")}
-                className="cursor-pointer inline-flex animate-[pulse_6s_ease-in-out_infinite] items-center rounded-full bg-[#29be4f] px-5 py-2 text-sm font-semibold text-[#14482F] shadow-md hover:bg-[#63f286]"
+                className="cursor-pointer gap-2 inline-flex animate-[pulse_6s_ease-in-out_infinite] items-center rounded-full bg-[#29be4f] px-5 py-2 text-sm font-semibold text-[#14482F] shadow-md hover:bg-[#63f286]"
                 title="Créer un compte gratuitement sur SimplyFoot"
               >
+                <UserRoundPlus className="h-4 w-4" />
                 Créer un compte
               </Link>
             </>
@@ -233,7 +235,7 @@ export default function HeaderClient({
           type="button"
           aria-label="Ouvrir le menu mobile"
           onClick={() => setMobileMenuOpen(true)}
-          className="text-[#F8E9CA] lg:hidden"
+          className="text-[#F8E9CA] lg:hidden cursor-pointer"
         >
           <MenuIcon className="h-8 w-8" />
         </button>
@@ -258,7 +260,7 @@ export default function HeaderClient({
               <button
                 type="button"
                 aria-label="Fermer le menu mobile"
-                className="absolute top-4 right-4 text-[#F8E9CA]"
+                className="absolute top-4 right-4 text-[#F8E9CA] cursor-pointer"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <XIcon className="h-7 w-7" />
@@ -320,18 +322,20 @@ export default function HeaderClient({
                   <>
                     <Link
                       href={getRoute(locale as "fr" | "en", "login")}
-                      className="w-full rounded-full border border-[#29be4f] py-3 text-center text-lg font-semibold text-[#29be4f] shadow-md"
+                      className="w-full rounded-full gap-2 border border-[#29be4f] py-3 text-center text-lg font-semibold text-[#29be4f] shadow-md"
                       onClick={() => setMobileMenuOpen(false)}
                       title="Connexion à votre espace SimplyFoot"
                     >
+                      <LogIn className="h-4 w-4" />
                       Connexion
                     </Link>
                     <Link
                       href={getRoute(locale as "fr" | "en", "signup")}
-                      className="w-full rounded-full bg-[#29be4f] py-3 text-center text-lg font-semibold text-[#14482F] shadow-md hover:bg-[#63f286]"
+                      className="w-full rounded-full gap-2 bg-[#29be4f] py-3 text-center text-lg font-semibold text-[#14482F] shadow-md hover:bg-[#63f286]"
                       onClick={() => setMobileMenuOpen(false)}
                       title="Créer un compte SimplyFoot gratuitement"
                     >
+                      <Plus className="h-4 w-4" />
                       Créer un compte
                     </Link>
                   </>

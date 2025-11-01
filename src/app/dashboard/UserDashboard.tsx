@@ -197,9 +197,6 @@ export default function UserDashboard() {
     }
   };
 
-
-
-  // === UI identique ===
   return (
     <main className="min-h-screen bg-[#14482F] relative mt-[-60px] mb-6">
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(80%_60%_at_50%_-10%,rgba(91,227,125,.18),transparent_60%)]" />
@@ -267,8 +264,7 @@ export default function UserDashboard() {
           <Plus className="h-4 w-4" />
           Ajouter un club
         </button>
-
-        <section className="mb-10 rounded-3xl border border-[#29be4f]/20 bg-gradient-to-br from-[#1e3b2d] to-[#163224] p-6 shadow-lg backdrop-blur-md flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+        <section className="mb-8 rounded-3xl border border-[#29be4f]/20 bg-gradient-to-br from-[#1e3b2d] to-[#163224] p-6 shadow-lg backdrop-blur-md flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           <div className="flex items-center gap-5">
             <div className="grid h-16 w-16 place-items-center rounded-full bg-[#29be4f] text-[#14482F] shadow-md ring-2 ring-[#29be4f]/40">
               <ShieldCheck className="h-7 w-7" />
@@ -281,7 +277,7 @@ export default function UserDashboard() {
 
               {clubs.length > 1 ? (
                 <select
-                  className="mt-1 rounded-lg border border-[#29be4f]/30 bg-[#1d3e2e] px-3 py-2 text-sm text-[#F8E9CA]"
+                  className="mt-1 cursor-pointer rounded-lg border border-[#29be4f]/30 bg-[#1d3e2e] px-3 py-2 text-sm text-[#F8E9CA]"
                   value={selectedClub ?? ""}
                   onChange={(e) => setSelectedClub(e.target.value)}
                 >
@@ -339,10 +335,10 @@ export default function UserDashboard() {
             </div>
           )}
 
-          <div className="flex gap-3">
+          <div className="flex items-center gap-3">
             <button
               onClick={() => setEditClubModalOpen(true)}
-              title="Modifier les informations du club"
+              title="Modifier mes informations"
               className="cursor-pointer inline-flex items-center justify-center gap-2 rounded-full border border-[#29be4f]/50 bg-[#29be4f]/10 px-5 py-2 text-sm font-semibold text-[#29be4f] hover:bg-[#29be4f]/20 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 shadow-sm"
             >
               <Pencil className="h-4 w-4" />
