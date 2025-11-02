@@ -13,13 +13,13 @@ export const PRICE_IDS = {
   regional_monthly: "price_1SIxTw2SVyYOVwm9SaVGJcAG", // 14,99€/mois
   regional_yearly: "price_1SIxTw2SVyYOVwm9vBaxGGNe",  // 161,89€/an
 
-  // 💙 GRAND CLUB (151 à 300 licenciés)
-  grand_monthly: "price_1SIxV52SVyYOVwm938iZ3PZ7", // 19,99€/mois
-  grand_yearly: "price_1SIxV52SVyYOVwm9QXt1H9uC",  // 215,89€/an
+  // 💙 LARGE CLUB (151 à 300 licenciés)
+  large_monthly: "price_1SIxV52SVyYOVwm938iZ3PZ7", // 19,99€/mois
+  large_yearly: "price_1SIxV52SVyYOVwm9QXt1H9uC",  // 215,89€/an
 
-  // 💎 MAXI CLUB (301 à 500 licenciés)
-  maxi_monthly: "price_1SIxVv2SVyYOVwm9swGT5O6f", // 29,99€/mois
-  maxi_yearly: "price_1SIxVc2SVyYOVwm9t7tKcozO",  // 323,89€/an
+  // 💎 MAX CLUB (301 à 500 licenciés)
+  max_monthly: "price_1SIxVv2SVyYOVwm9swGT5O6f", // 29,99€/mois
+  max_yearly: "price_1SIxVc2SVyYOVwm9t7tKcozO",  // 323,89€/an
 } as const;
 
 export const PLANS_DETAILS = {

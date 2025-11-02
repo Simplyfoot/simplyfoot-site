@@ -6,4 +6,8 @@ export type Subscription = {
   seats?: { used: number; quota: number };
   renewsAutomatically?: boolean;
   nextInvoice?: { date: string; amount: number } | null;
+  remainingDays?: number;
+  progress?: number;
+  customer_email?: string;
+  stripe_subscription_id?: string;
 };

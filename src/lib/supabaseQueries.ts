@@ -2,6 +2,8 @@ import { User } from "app/_types/User";
 import { supabase } from "./supabaseClient";
 import { Club } from "app/_types/Club";
 
+let lastAuthUpdate = 0;
+
 /* =========================================================================
    🔹 RÉCUPÉRER LES INFOS DE L’UTILISATEUR
    ========================================================================= */
@@ -31,31 +33,87 @@ export async function getUserProfile(userId: string): Promise<User> {
 }
 
 /* =========================================================================
-   🔹 METTRE À JOUR UN UTILISATEUR
+   🔹 METTRE À JOUR UN UTILISATEUR 
    ========================================================================= */
-export async function updateUser(userId: string, updates: User) {
-  const { data, error } = await supabase
-    .from("users")
-    .update({
-      first_name: updates.firstname,
-      last_name: updates.lastname,
-      email: updates.email,
-      phone_number: updates.phone_number ?? null,
-      birth_date: updates.birth_date ?? null,
-      gender: updates.gender ?? null,
-      gender_other_label: updates.gender_other_label ?? null,
-      updated_at: new Date().toISOString(),
-    })
-    .eq("id", userId)
-    .select()
-    .single();
-
-  if (error) {
-    console.error("❌ Erreur update user:", error);
-    throw error;
+export async function updateUser(
+  userId: string,
+  formData: {
+    firstname?: string;
+    lastname?: string;
+    email?: string;
+    phone_number?: string | null;
+    birth_date?: string | null;
+    gender?: string | null;
+    gender_other_label?: string | null;
   }
+) {
+  try {
+    const { data: authData } = await supabase.auth.getUser();
+    const currentEmail = authData?.user?.email ?? "";
+    const newEmail = formData.email?.trim().toLowerCase() ?? "";
 
-  return data;
+    // ✅ Vérifie le format email (avant de contacter Supabase)
+    const isValidEmail = (email: string) =>
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    // === 1️⃣ Si l’email change → update côté Auth
+    if (newEmail && newEmail !== currentEmail) {
+      if (!isValidEmail(newEmail)) {
+        console.warn("⚠️ Format d’adresse email invalide :", newEmail);
+        return { error: "invalid_email" };
+      }
+
+      const now = Date.now();
+      if (now - lastAuthUpdate < 60000) {
+        console.warn("⏳ Attends quelques secondes avant de modifier l’email à nouveau.");
+        return { error: "cooldown" };
+      }
+      lastAuthUpdate = now;
+
+      const { error: authError } = await supabase.auth.updateUser({
+        email: newEmail,
+      });
+
+      if (authError) {
+        console.error("❌ Erreur mise à jour email Auth :", authError);
+
+        const msg = authError.message?.toLowerCase() ?? "";
+
+        if (msg.includes("invalid")) return { error: "invalid_email" };
+        if (msg.includes("already been registered")) return { error: "email_already_used" };
+        if (msg.includes("rate limit")) return { error: "cooldown" };
+
+        return { error: "unknown_error", details: authError };
+      }
+
+      console.log("✅ Email mis à jour dans Supabase Auth :", newEmail);
+    }
+
+    // === 2️⃣ Met à jour le profil dans la table USERS
+    const { error: userError } = await supabase
+      .from("users")
+      .update({
+        first_name: formData.firstname ?? null,
+        last_name: formData.lastname ?? null,
+        phone_number: formData.phone_number ?? null,
+        birth_date: formData.birth_date ?? null,
+        gender: formData.gender ?? null,
+        gender_other_label: formData.gender_other_label ?? null,
+        updated_at: new Date().toISOString(),
+      })
+      .eq("id", userId);
+
+    if (userError) {
+      console.error("❌ Erreur mise à jour profil :", userError);
+      return { error: "db_error", details: userError };
+    }
+
+    console.log("✅ Profil utilisateur mis à jour avec succès.");
+    return { success: true };
+  } catch (err) {
+    console.error("❌ Erreur globale updateUser :", err);
+    return { error: "unexpected", details: err };
+  }
 }
 
 /* =========================================================================
@@ -152,7 +210,6 @@ export async function getClubDetails(clubId: string): Promise<Club | null> {
     created_at: data.created_at,
     updated_at: data.updated_at,
   };
-
 }
 
 /* =========================================================================
@@ -193,11 +250,7 @@ export async function updateClub(clubId: string, updates: Club) {
 /* =========================================================================
    🔹 AJOUTER UN CLUB + L’ASSOCIER AU PRÉSIDENT CONNECTÉ
    ========================================================================= */
-export async function addClub(
-  userId: string,
-  clubData: Club
-): Promise<Club> {
-  // 1️⃣ Créer le club directement lié à l’utilisateur (plus à un admin)
+export async function addClub(userId: string, clubData: Club): Promise<Club> {
   const { data: newClub, error: clubError } = await supabase
     .from("clubs")
     .insert([
@@ -216,8 +269,7 @@ export async function addClub(
         vat_number: clubData.vat_number ?? null,
         website: clubData.website ?? null,
         webshop: clubData.webshop ?? null,
-        required_registration_fields:
-          clubData.required_registration_fields ?? [],
+        required_registration_fields: clubData.required_registration_fields ?? [],
       },
     ])
     .select()
@@ -228,7 +280,6 @@ export async function addClub(
     throw new Error("Erreur lors de la création du club.");
   }
 
-  // 2️⃣ Associer le président à ce club
   const { error: linkError } = await supabase
     .from("user_club_presidents")
     .insert([{ user_id: userId, club_id: newClub.id }]);
@@ -241,16 +292,68 @@ export async function addClub(
   return newClub;
 }
 
-// 🔴 Supprimer un club (cascade sur les relations)
+/* =========================================================================
+   🔹 SUPPRESSION D’UN CLUB
+   ========================================================================= */
 export async function deleteClub(clubId: string) {
   const { error } = await supabase.from("clubs").delete().eq("id", clubId);
   if (error) throw error;
 }
 
-// 🔴 Supprimer le compte utilisateur (table public.users)
-// ⚠️ Ne supprime PAS l’utilisateur Auth.
+/* =========================================================================
+   🔹 SUPPRESSION DU COMPTE UTILISATEUR (table public.users)
+   ⚠️ Ne supprime PAS l’utilisateur Auth.
+   ========================================================================= */
 export async function deleteUserAccountRow(userId: string) {
   const { error } = await supabase.from("users").delete().eq("id", userId);
   if (error) throw error;
 }
 
+/* =========================================================================
+   🔹 RÉCUPÉRER L’ABONNEMENT ACTIF D’UN CLUB
+   ========================================================================= */
+export async function getClubActiveSubscription(club_id: string) {
+  type PlanEnum = "LITTLE" | "LOCAL" | "REGIONAL" | "LARGE" | "MAX" | "DISTRICT";
+
+  type SubRow = {
+    id: string;
+    plan: PlanEnum;
+    start_date: string;
+    end_date: string;
+    created_at: string;
+  };
+
+  type Row = {
+    created_at: string;
+    subscriptions: SubRow | SubRow[] | null;
+  };
+
+  const { data, error } = await supabase
+    .from("club_subscriptions")
+    .select(`
+      created_at,
+      subscriptions:subscription_id (
+        id, plan, start_date, end_date, created_at
+      )
+    `)
+    .eq("club_id", club_id)
+    .order("created_at", { ascending: false })
+    .limit(1);
+
+  if (error) throw error;
+  if (!data || data.length === 0) return null;
+
+  const row = data[0] as Row;
+  const sub: SubRow | undefined = Array.isArray(row.subscriptions)
+    ? row.subscriptions[0]
+    : row.subscriptions ?? undefined;
+
+  if (!sub) return null;
+
+  const start = String(sub.start_date);
+  const end = String(sub.end_date);
+  const today = new Date().toISOString().slice(0, 10);
+  const active = start <= today && today <= end;
+
+  return { id: sub.id, plan: sub.plan, start, end, active };
+}

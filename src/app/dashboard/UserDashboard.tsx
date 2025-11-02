@@ -29,8 +29,10 @@ import EditUserModal from "components/modals/EditUserModal";
 import { Club } from "app/_types/Club";
 import ClubModal from "components/modals/ClubModal";
 import ConfirmModal from "components/modals/ConfirmModal";
-import { deleteClub, deleteUserAccountRow } from "lib/supabaseQueries";
+import { deleteClub } from "lib/supabaseQueries";
 import { useRouter } from "next/navigation";
+import { useSubscriptionData } from "app/hooks/useSubscriptionData";
+import { PLAN_NAMES } from "lib/plans";
 
 
 export default function UserDashboard() {
@@ -45,6 +47,7 @@ export default function UserDashboard() {
   const [clubs, setClubs] = useState<{ club_id: string; club_name: string }[]>([]);
   const [selectedClub, setSelectedClub] = useState<string | null>(null);
   const [addClubModalOpen, setAddClubModalOpen] = useState(false);
+  const [showCancelModal, setShowCancelModal] = useState(false);
   const [copied, setCopied] = useState(false);
 
   const [userData, setUserData] = useState<{
@@ -54,6 +57,9 @@ export default function UserDashboard() {
     email: string;
   } | null>(null);
   const [clubData, setClubData] = useState<Club | null>(null);
+
+  const { subscription, orders, loading: subLoading } = useSubscriptionData(selectedClub);
+
 
   // === Charger utilisateur & clubs ===
   useEffect(() => {
@@ -121,9 +127,6 @@ export default function UserDashboard() {
       </main>
     );
 
-  const { subscription: sub } = data;
-  const lastOrderDate = data.orders[0]?.date;
-
   // === Gestion sauvegardes ===
   const handleEditUser = async (form: {
     firstname: string;
@@ -159,43 +162,28 @@ export default function UserDashboard() {
     setAddClubModalOpen(false);
   };
 
-  const handleConfirmDeleteClub = async () => {
-    if (!selectedClub) return;
-    try {
-      await deleteClub(selectedClub);
-      setClubs((prev) => prev.filter((c) => c.club_id !== selectedClub));
-      setSelectedClub(null);
-      setClubData(null);
-      alert("✅ Le club a été supprimé.");
-    } catch (e) {
-      console.error(e);
-      alert("❌ Erreur lors de la suppression du club.");
-    } finally {
-      setConfirmDeleteClub(false);
-    }
-  };
+  async function handleCancelSubscription() {
+    if (!subscription) return;
 
-  const handleConfirmDeleteUser = async () => {
     try {
-      if (!userData?.id) throw new Error("User ID manquant.");
-
-      // ✅ Un seul appel : suppression Auth + profil RGPD
-      await fetch("/api/admin/delete-user", {
+      const res = await fetch("/api/subscription/cancel", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ userId: userData.id }),
+        body: JSON.stringify({ subscriptionId: subscription.stripe_subscription_id }),
       });
 
-      alert("✅ Votre compte a été supprimé définitivement.");
-      await supabase.auth.signOut();
-      router.push("/");
-    } catch (e) {
-      console.error(e);
-      alert("❌ Erreur lors de la suppression du compte.");
-    } finally {
-      setConfirmDeleteUser(false);
+      const { success, error } = await res.json();
+      if (error) throw new Error(error);
+
+      alert("Votre essai a été annulé avec succès.");
+      setShowCancelModal(false);
+      // Optionnel : refetch dashboard / rediriger
+    } catch (err) {
+      alert("Erreur lors de l’annulation de l’essai.");
+      console.error(err);
     }
-  };
+  }
+
 
   return (
     <main className="min-h-screen bg-[#14482F] relative mt-[-60px] mb-6">
@@ -242,15 +230,6 @@ export default function UserDashboard() {
               <Pencil className="h-4 w-4" />
               Modifier
             </button>
-
-            <button
-              onClick={() => setConfirmDeleteUser(true)}
-              className="cursor-pointer inline-flex items-center justify-center gap-2 rounded-full border border-red-400/50 bg-red-500/10 px-5 py-2 text-sm font-semibold text-red-500 hover:bg-red-500/20 hover:border-red-500 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 shadow-sm"
-              title="Supprimer ce compte"
-            >
-              <Trash className="h-4 w-4" />
-              Supprimer
-            </button>
           </div>
 
         </section>
@@ -296,7 +275,7 @@ export default function UserDashboard() {
             </div>
           </div>
 
-          {selectedClub && (clubData?.code || clubData?.name) && (
+          {subscription && selectedClub && (clubData?.code || clubData?.name) && (
             <div className="mt-4 sm:mt-0 sm:text-left">
               <h2 className="text-sm font-bold uppercase tracking-wide mb-2">
                 Code club
@@ -344,92 +323,111 @@ export default function UserDashboard() {
               <Pencil className="h-4 w-4" />
               Modifier
             </button>
-
-            {selectedClub && (
-              <button
-                onClick={() => setConfirmDeleteClub(true)}
-                className="cursor-pointer inline-flex items-center justify-center gap-2 rounded-full border border-red-400/50 bg-red-500/10 px-5 py-2 text-sm font-semibold text-red-500 hover:bg-red-500/20 hover:border-red-500 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 shadow-sm"
-                title="Supprimer ce club"
-              >
-                <Trash className="h-4 w-4" />
-                Supprimer
-              </button>
-            )}
           </div>
 
         </section>
 
         {/* === Abonnement / commandes / accès === */}
-        <section className="grid gap-6 lg:grid-cols-3">
-          <div className="rounded-2xl border border-[#29be4f]/20 bg-[#232729] p-6 text-white">
-            <div className="mb-3 flex items-center gap-2">
-              <Crown className="h-5 w-5 text-[#29be4f]" />
-              <span className="text-sm font-bold text-[#F8E9CA]/70 uppercase tracking-wide">
-                Mon abonnement
-              </span>
-              <span
-                className={`ml-auto inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-bold ${sub.active
-                  ? "bg-emerald-100 text-emerald-700"
-                  : "bg-rose-100 text-rose-700"
-                  }`}
-              >
-                {sub.active ? "Actif" : "Inactif"}
-              </span>
-            </div>
-
-            <div className="text-2xl font-extrabold">{sub.plan}</div>
-            <div className="mt-1 text-sm text-white/80">
-              Du <strong>{formatDate(sub.start)}</strong> au{" "}
-              <strong>{formatDate(sub.end)}</strong>
-            </div>
-
-            <div className="mt-5">
-              <RingCountdown start={sub.start} end={sub.end} />
-            </div>
-
-            {sub.seats && (
-              <div className="mt-6">
-                <SeatUsage used={sub.seats.used} quota={sub.seats.quota} />
+        {subscription ? (
+          <section className="grid gap-6 lg:grid-cols-3">
+            <div className="rounded-2xl border border-[#29be4f]/20 bg-[#232729] p-6 text-white">
+              <div className="mb-3 flex items-center gap-2">
+                <Crown className="h-5 w-5 text-[#29be4f]" />
+                <span className="text-sm font-bold text-[#F8E9CA]/70 uppercase tracking-wide">
+                  Mon abonnement
+                </span>
+                <span
+                  className={`ml-auto inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-bold ${subscription.active
+                    ? "bg-emerald-100 text-emerald-700"
+                    : "bg-rose-100 text-rose-700"
+                    }`}
+                >
+                  {subscription.active ? "Actif" : "Inactif"}
+                </span>
               </div>
-            )}
-          </div>
 
-          <div className="rounded-2xl border border-[#29be4f]/20 bg-[#F8E9CA] p-6">
-            <div className="mb-3 flex items-center gap-2 text-[#14482F]">
-              <ShoppingCart className="h-5 w-5" />
-              <span className="text-sm font-bold uppercase tracking-wide">
-                Mes commandes
-              </span>
-            </div>
-            <div className="text-4xl font-extrabold text-[#14482F]">
-              {data.orders.length}
-            </div>
-            <div className="text-sm text-[#14482F]/80">
-              Dernier achat :{" "}
-              <strong>{lastOrderDate ? formatDate(lastOrderDate) : "—"}</strong>
-            </div>
-          </div>
+              <div className="text-2xl font-extrabold">
+                {PLAN_NAMES[subscription.plan] ?? subscription.plan}
+              </div>
+              <div className="mt-1 text-sm text-white/80">
+                Du <strong>{formatDate(subscription.start)}</strong> au{" "}
+                <strong>{formatDate(subscription.end)}</strong>
+              </div>
 
-          <div className="rounded-2xl border border-[#29be4f]/20 bg-[#1d3e2e]/70 p-6 text-white">
-            <div className="mb-3 flex items-center gap-2">
-              <ShieldCheck className="h-5 w-5 text-[#29be4f]" />
-              <span className="text-sm font-bold uppercase tracking-wide">
-                Accès & statut
-              </span>
+              <div className="mt-5">
+                <RingCountdown start={subscription.start} end={subscription.end} />
+              </div>
+              <div className="mt-5 text-center">
+                <p className="text-xs text-white/50">
+                  Vous pouvez annuler votre essai à tout moment.
+                </p>
+                <button
+                  onClick={() => setShowCancelModal(true)}
+                  className="mt-2 cursor-pointer text-xs text-white/50 font-semibold hover:text-emerald-700 underline underline-offset-2 transition-colors"
+                >
+                  Annuler ma période d’essai
+                </button>
+              </div>
+
             </div>
 
-            <div className="text-3xl font-extrabold">
-              {sub.active ? "Accès actif" : "Accès suspendu"}
+            <div className="rounded-2xl border border-[#29be4f]/20 bg-[#F8E9CA] p-6">
+              <div className="mb-3 flex items-center gap-2 text-[#14482F]">
+                <ShoppingCart className="h-5 w-5" />
+                <span className="text-sm font-bold uppercase tracking-wide">
+                  Mes commandes
+                </span>
+              </div>
+              <div className="text-4xl font-extrabold text-[#14482F]">
+                {orders.length}
+              </div>
+              <div className="text-sm text-[#14482F]/80">
+                Dernier achat :{" "}
+                <strong>
+                  {orders[0]?.date ? formatDate(orders[0].date) : "—"}
+                </strong>
+              </div>
             </div>
-            <p className="mt-2 text-sm text-white/80">
-              {sub.active
-                ? "Profitez de toutes les fonctionnalités SimplyFoot."
-                : "Renouvelez pour réactiver votre accès."}
+
+            <div className="rounded-2xl border border-[#29be4f]/20 bg-[#1d3e2e]/70 p-6 text-white">
+              <div className="mb-3 flex items-center gap-2">
+                <ShieldCheck className="h-5 w-5 text-[#29be4f]" />
+                <span className="text-sm font-bold uppercase tracking-wide">
+                  Accès & statut
+                </span>
+              </div>
+
+              <div className="text-3xl font-extrabold">
+                {subscription.active ? "Accès actif" : "Accès suspendu"}
+              </div>
+              <p className="mt-2 text-sm text-white/80">
+                {subscription.active
+                  ? "Profitez de toutes les fonctionnalités SimplyFoot."
+                  : "Renouvelez pour réactiver votre accès."}
+              </p>
+            </div>
+          </section>
+        ) : (
+          <div className="flex flex-col items-center justify-center text-center mt-10 space-y-4">
+            <p className="text-white/80 text-lg">
+              Aucun abonnement actif pour le club <strong>{clubData?.name}</strong>.
             </p>
+            <p className="text-[#F8E9CA]/70 text-sm max-w-md">
+              Souscrivez à l’une de nos formules SimplyFoot pour débloquer toutes les
+              fonctionnalités et gérer votre club en toute simplicité.
+            </p>
+            <a
+              href="/offres"
+              className="inline-flex items-center justify-center rounded-full border border-[#29be4f]/50 bg-[#29be4f]/10 px-6 py-2 text-sm font-semibold text-[#29be4f] hover:bg-[#29be4f]/20 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 shadow-sm"
+            >
+              Voir les formules
+            </a>
           </div>
-        </section>
+        )}
 
-        <OrdersTable orders={data.orders} />
+
+
+        <OrdersTable orders={orders} />
 
         {/* === Support === */}
         <section className="mt-20 rounded-2xl border border-[#29be4f]/20 bg-[#14482F] p-6 text-white">
@@ -476,24 +474,15 @@ export default function UserDashboard() {
       />
 
       <ConfirmModal
-        isOpen={confirmDeleteClub}
-        title="Supprimer ce club"
-        message="Cette action est irréversible. Toutes les équipes, événements et liens associés à ce club seront supprimés."
-        confirmLabel="Supprimer le club"
+        isOpen={showCancelModal}
+        title="Annuler la période d’essai"
+        message="Êtes-vous sûr de vouloir annuler votre période d’essai ? Vous perdrez l’accès immédiatement."
+        confirmLabel="Annuler la période d’essai"
         confirmTone="danger"
-        onConfirm={handleConfirmDeleteClub}
-        onClose={() => setConfirmDeleteClub(false)}
+        onConfirm={handleCancelSubscription}
+        onClose={() => setShowCancelModal(false)}
       />
 
-      <ConfirmModal
-        isOpen={confirmDeleteUser}
-        title="Supprimer mon compte"
-        message="Cette action est irréversible. Votre compte et toutes vos données personnelles seront supprimés."
-        confirmLabel="Supprimer mon compte"
-        confirmTone="danger"
-        onConfirm={handleConfirmDeleteUser}
-        onClose={() => setConfirmDeleteUser(false)}
-      />
 
     </main>
   );

@@ -70,15 +70,6 @@ export default function InscriptionPage() {
       const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
         email: form.email,
         password: form.password,
-        options: {
-          data: {
-            account_type: form.type,
-            club_name: form.clubName,
-            first_name: form.firstName,
-            last_name: form.lastName,
-            phone: form.tel,
-          },
-        },
       });
 
       if (signUpError) {

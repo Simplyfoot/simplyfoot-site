@@ -1,8 +1,20 @@
+import { PlanEnum } from "./Plan";
+
 export type Order = {
   id: string;
   date: string;
   amount: number;
-  plan: string;
-  status: "Payé" | "En attente" | "Échoué";
+  plan: PlanEnum;
+  status: statusEnum;
   invoiceUrl?: string;
 };
+
+export enum statusEnum {
+  Paid = "Payé",
+  Pending = "En attente",
+  Failed = "Échoué",
+}
+
+export type Billing = "monthly" | "yearly";
+
+export { PlanEnum };

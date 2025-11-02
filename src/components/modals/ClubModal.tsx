@@ -5,6 +5,9 @@ import { useEffect, useState } from "react";
 import { Club } from "app/_types/Club";
 import { Clipboard, Check } from "lucide-react";
 import { addClub, updateClub } from "lib/supabaseQueries";
+import { DangerZone } from "components/DangerZone";
+import ConfirmModal from "./ConfirmModal";
+import { supabase } from "lib/supabaseClient";
 
 export type ClubModalProps = {
   isOpen: boolean;
@@ -50,6 +53,32 @@ export default function ClubModal({
   const [loading, setLoading] = useState(false);
   const [copied, setCopied] = useState(false);
   const [hasChanged, setHasChanged] = useState(false);
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+
+  async function handleDeleteClub() {
+    if (!clubId) return alert("Aucun club sélectionné.");
+
+    try {
+      // 1️⃣ Supprime le club dans Supabase (cascade supprimera les liens)
+      const { error } = await supabase
+        .from("clubs")
+        .delete()
+        .eq("id", clubId);
+
+      if (error) throw error;
+
+      // 2️⃣ Feedback UX
+      alert("✅ Le club a été supprimé avec succès.");
+      setShowDeleteConfirm(false);
+
+      // 3️⃣ Optionnel : refresh ou redirection
+      window.location.reload();
+    } catch (err) {
+      console.error("❌ Erreur lors de la suppression du club :", err);
+      alert("Une erreur est survenue pendant la suppression.");
+    }
+  }
+
 
   useEffect(() => {
     if (clubData) setForm((prev) => ({ ...prev, ...clubData }));
@@ -65,6 +94,7 @@ export default function ClubModal({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+
 
     try {
       let result;
@@ -84,7 +114,6 @@ export default function ClubModal({
       setLoading(false);
     }
   };
-
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
       <motion.div
@@ -304,10 +333,26 @@ export default function ClubModal({
               {loading
                 ? "Enregistrement..."
                 : mode === "add"
-                ? "Ajouter le club"
-                : "Enregistrer"}
+                  ? "Ajouter le club"
+                  : "Enregistrer"}
             </button>
           </div>
+          <DangerZone
+            title="Supprimer le club"
+            message={`Toutes les données liées au club ${form.name} seront effacées de façon permanente.`}
+            onDelete={() => setShowDeleteConfirm(true)}
+          />
+
+          <ConfirmModal
+            isOpen={showDeleteConfirm}
+            title="Confirmer la suppression"
+            message={`Souhaitez-vous vraiment supprimer le club ${form.name} ? Cette action est irréversible.`}
+            confirmLabel="Oui, supprimer le club"
+            confirmTone="danger"
+            onConfirm={handleDeleteClub}
+            onClose={() => setShowDeleteConfirm(false)}
+          />
+
         </form>
       </motion.div>
     </div>
