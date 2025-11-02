@@ -2,8 +2,6 @@ import { User } from "app/_types/User";
 import { supabase } from "./supabaseClient";
 import { Club } from "app/_types/Club";
 
-let lastAuthUpdate = 0;
-
 /* =========================================================================
    🔹 RÉCUPÉRER LES INFOS DE L’UTILISATEUR
    ========================================================================= */
@@ -61,29 +59,6 @@ export async function updateUser(
       if (!isValidEmail(newEmail)) {
         console.warn("⚠️ Format d’adresse email invalide :", newEmail);
         return { error: "invalid_email" };
-      }
-
-      const now = Date.now();
-      if (now - lastAuthUpdate < 60000) {
-        console.warn("⏳ Attends quelques secondes avant de modifier l’email à nouveau.");
-        return { error: "cooldown" };
-      }
-      lastAuthUpdate = now;
-
-      const { error: authError } = await supabase.auth.updateUser({
-        email: newEmail,
-      });
-
-      if (authError) {
-        console.error("❌ Erreur mise à jour email Auth :", authError);
-
-        const msg = authError.message?.toLowerCase() ?? "";
-
-        if (msg.includes("invalid")) return { error: "invalid_email" };
-        if (msg.includes("already been registered")) return { error: "email_already_used" };
-        if (msg.includes("rate limit")) return { error: "cooldown" };
-
-        return { error: "unknown_error", details: authError };
       }
 
       console.log("✅ Email mis à jour dans Supabase Auth :", newEmail);
