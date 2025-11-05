@@ -45,7 +45,7 @@ export default function HeaderClient({
     localStorage.removeItem(AUTH_KEY);
     try {
       window.dispatchEvent(new StorageEvent("storage", { key: AUTH_KEY, newValue: null }));
-    } catch {}
+    } catch { }
     router.push(getRoute(locale as "fr" | "en", "signup"));
   };
 
@@ -115,7 +115,7 @@ export default function HeaderClient({
           </li>
           <li className="relative">
             <Menu as="div" className="relative inline-block text-left">
-              <Menu.Button className="flex items-center hover:text-[#29be4f]" aria-haspopup="true">
+              <Menu.Button className="flex cursor-pointer items-center hover:text-[#29be4f]" aria-haspopup="true">
                 {dict.solutions}
                 <ChevronDown className="ml-1 h-5 w-5" />
               </Menu.Button>
@@ -141,7 +141,7 @@ export default function HeaderClient({
                   <Menu.Item>
                     <Link
                       href={getRoute(locale as "fr" | "en", "features")}
-                      className="block rounded-md px-4 py-2 text-sm hover:text-[#29be4f]"
+                      className="cursor-pointer block rounded-md px-4 py-2 text-sm hover:text-[#29be4f]"
                       title="Fonctionnalités SimplyFoot"
                     >
                       {dict.features}
@@ -192,7 +192,8 @@ export default function HeaderClient({
         </ul>
 
         {/* BOUTONS CONNEXION / DASHBOARD */}
-        <div className="hidden items-center gap-4 lg:flex">
+        {/* TODO: À décommenter quand l'application sera ouverte au public */}
+        {/* <div className="hidden items-center gap-4 lg:flex">
           {logged ? (
             <>
               <Link
@@ -230,7 +231,7 @@ export default function HeaderClient({
               </Link>
             </>
           )}
-        </div>
+        </div> */}
 
         {/* MENU BURGER MOBILE */}
         <button
@@ -301,7 +302,8 @@ export default function HeaderClient({
                   );
                 })}
 
-                {logged ? (
+                {/* TODO: À décommenter quand l'application sera ouverte au public */}
+                {/* {logged ? (
                   <>
                     <Link
                       href="/dashboard"
@@ -337,7 +339,7 @@ export default function HeaderClient({
                       Tester gratuitement
                     </Link>
                   </>
-                )}
+                )} */}
               </div>
             </Dialog.Panel>
           </div>

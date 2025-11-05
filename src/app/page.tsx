@@ -2,7 +2,6 @@ import HeroSection from "../components/home/HeroSection";
 import HomeBenefits from "../components/home/HomeBenefits";
 import SectionModules from "../components/SectionModules";
 import ClubLogosCarousel from "components/home/ClubLogosCarousel";
-import Partners from "components/home/Partners";
 
 export const metadata = {
   title: "SimplyFoot – Application de gestion pour clubs de football amateurs",
@@ -49,7 +48,7 @@ export default function Home() {
       <section id="modules" aria-label="Modules disponibles sur SimplyFoot" className="w-full">
         <SectionModules />
         <ClubLogosCarousel />
-        <Partners />
+        {/* <Partners /> */}
       </section>
 
 

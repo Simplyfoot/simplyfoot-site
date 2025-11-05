@@ -31,13 +31,13 @@ export default function NotFound() {
       <div className="flex flex-wrap gap-4 justify-center mt-4">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 rounded-xl bg-[#29be4f] px-6 py-3 font-extrabold text-[#14482F] shadow hover:bg-[#63f286] active:scale-[.98] transition"
+          className="cursor-pointer inline-flex items-center gap-2 rounded-xl bg-[#29be4f] px-6 py-3 font-extrabold text-[#14482F] shadow hover:bg-[#63f286] active:scale-[.98] transition"
         >
           Retour à l’accueil
         </Link>
         <Link
           href="/contact"
-          className="inline-flex items-center gap-2 rounded-xl border border-[#29be4f]/40 px-6 py-3 font-semibold text-[#F8E9CA] hover:border-[#29be4f] hover:text-[#29be4f] active:scale-[.98] transition"
+          className="cursor-pointer inline-flex items-center gap-2 rounded-xl border border-[#29be4f]/40 px-6 py-3 font-semibold text-[#F8E9CA] hover:border-[#29be4f] hover:text-[#29be4f] active:scale-[.98] transition"
         >
           Contacter l’équipe
         </Link>

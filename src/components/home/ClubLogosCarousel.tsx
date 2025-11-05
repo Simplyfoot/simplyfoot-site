@@ -3,6 +3,7 @@
 import Image from "next/image";
 import LogoClubCadiere from "assets/logos/logo_club_cadiere.png";
 import LogoClubStMandrier from "assets/logos/logo_club_us_st_mandrier.png";
+import LogoClubLaValette from "assets/logos/logo_club_uav_la_valette.png";
 
 export default function ClubLogosSection() {
   const CLUB_LOGOS = [
@@ -17,6 +18,12 @@ export default function ClubLogosSection() {
       alt: "Logo du club US Saint-Mandrier",
       name: "US Saint-Mandrier",
       href: "https://www.facebook.com/ussmfootball83/?locale=fr_FR",
+    },
+    {
+      src: LogoClubLaValette,
+      alt: "Logo du club UAV Football Club La Valette",
+      name: "UAV FC La Valette",
+      href: "https://www.facebook.com/uavfoot/?locale=fr_FR",
     },
   ];
 

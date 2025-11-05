@@ -74,7 +74,8 @@ const PLANS: readonly Plan[] = [
     ],
     bonus: "Le choix malin pour passer à l'action",
     badge: "Découverte",
-    cta: { label: "Commencer le mois gratuit", href: "/inscription?plan=mini" },
+    //cta: { label: "Commencer le mois gratuit", href: "/inscription?plan=mini" },
+    cta: { label: "Commencer le mois gratuit", href: "/impatient" }, //TODO: changer le lien quand l'app sera lancée
   },
   {
     key: "local",
@@ -90,7 +91,8 @@ const PLANS: readonly Plan[] = [
     ],
     bonus: "Notre plan le plus choisi",
     badge: "Meilleur choix",
-    cta: { label: "Commencer le mois gratuit", href: "/inscription?plan=local" },
+    // cta: { label: "Commencer le mois gratuit", href: "/inscription?plan=local" },
+    cta: { label: "Commencer le mois gratuit", href: "/impatient" }, //TODO: changer le lien quand l'app sera lancée
   },
   {
     key: "regional",
@@ -106,7 +108,8 @@ const PLANS: readonly Plan[] = [
     ],
     bonus: "Grandir comme les pros",
     badge: "Performance",
-    cta: { label: "Commencer le mois gratuit", href: "/inscription?plan=regional" },
+    // cta: { label: "Commencer le mois gratuit", href: "/inscription?plan=regional" },
+    cta: { label: "Commencer le mois gratuit", href: "/impatient" }, //TODO: changer le lien quand l'app sera lancée
   },
   {
     key: "grand",
@@ -121,7 +124,8 @@ const PLANS: readonly Plan[] = [
       "Priorité support",
     ],
     bonus: "Plus de limites pour le staff",
-    cta: { label: "Commencer le mois gratuit", href: "/inscription?plan=grand" },
+    // cta: { label: "Commencer le mois gratuit", href: "/inscription?plan=grand" },
+    cta: { label: "Commencer le mois gratuit", href: "/impatient" }, //TODO: changer le lien quand l'app sera lancée
   },
   {
     key: "maxi",
@@ -136,7 +140,8 @@ const PLANS: readonly Plan[] = [
       "Intégrations API (calendrier ligue)",
     ],
     bonus: "Pensé pour les clubs structurés",
-    cta: { label: "Commencer le mois gratuit", href: "/inscription?plan=maxi" },
+    // cta: { label: "Commencer le mois gratuit", href: "/inscription?plan=maxi" },
+    cta: { label: "Commencer le mois gratuit", href: "/impatient" }, //TODO: changer le lien quand l'app sera lancée
   },
   {
     key: "district",
@@ -151,7 +156,8 @@ const PLANS: readonly Plan[] = [
       "Interlocuteur dédié",
     ],
     bonus: "Pensé pour groupements et collectivités",
-    cta: { label: "Parler à un expert", href: "/contact?type=district" },
+    // cta: { label: "Parler à un expert", href: "/contact?type=district" },
+    cta: { label: "Parler à un expert", href: "/impatient" }, //TODO: changer le lien quand l'app sera lancée
   },
 ] as const;
 
@@ -223,7 +229,7 @@ export default function OffresPage() {
           <div className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#1d3e2e]/70 p-1 ring-1 ring-[#29be4f]/30">
             <button
               onClick={() => setBilling("monthly")}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition ${
+              className={`cursor-pointer px-5 py-2 rounded-full text-sm font-semibold transition ${
                 billing === "monthly" ? "bg-[#29be4f] text-[#14482F]" : "text-[#F8E9CA] hover:text-white"
               }`}
             >
@@ -231,7 +237,7 @@ export default function OffresPage() {
             </button>
             <button
               onClick={() => setBilling("yearly")}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition ${
+              className={`cursor-pointer px-5 py-2 rounded-full text-sm font-semibold transition ${
                 billing === "yearly" ? "bg-[#29be4f] text-[#14482F]" : "text-[#F8E9CA] hover:text-white"
               }`}
             >
