@@ -99,15 +99,13 @@ export async function getActivePresidentClubs(
 ): Promise<{ club_id: string; club_name: string }[]> {
   const { data, error } = await supabase
     .from("user_club_presidents")
-    .select(
-      `
+    .select(`
       club_id,
-      clubs (
+      clubs!inner (
         id,
         name
       )
-    `
-    )
+    `) // ⚠️ Si la relation s’appelle clubs_2, remplace par clubs_2!inner
     .eq("user_id", userId)
     .is("leaved_at", null);
 
@@ -116,14 +114,13 @@ export async function getActivePresidentClubs(
     return [];
   }
 
-  return (data ?? []).map((item: any) => {
-    const club = Array.isArray(item.clubs) ? item.clubs[0] : item.clubs;
-    return {
-      club_id: item.club_id,
-      club_name: club?.name ?? "Club sans nom",
-    };
-  });
+  return (data ?? []).map((item: any) => ({
+    club_id: item.club_id,
+    club_name: item.clubs?.name ?? "Club sans nom",
+  }));
 }
+
+
 
 /* =========================================================================
    🔹 RÉCUPÉRER LES DÉTAILS D’UN CLUB

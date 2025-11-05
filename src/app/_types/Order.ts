@@ -6,7 +6,7 @@ export type Order = {
   amount: number;
   plan: PlanEnum;
   status: statusEnum;
-  invoiceUrl?: string;
+  invoice?: string;
 };
 
 export enum statusEnum {

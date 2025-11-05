@@ -1,8 +1,7 @@
 "use client";
-
-import { Order } from "app/_types/Order";
-import { badgeStatus, EUR, formatDate } from "lib/utils";
 import { FileDown } from "lucide-react";
+import { badgeStatus, EUR, formatDate } from "lib/utils";
+import { Order } from "app/_types/Order";
 
 export function OrdersTable({ orders }: { orders: Order[] }) {
   if (!orders || orders.length === 0) {
@@ -26,10 +25,10 @@ export function OrdersTable({ orders }: { orders: Order[] }) {
     >
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-xl font-extrabold text-[#14482F]">
-          Historique de mes achats
-        </h2>
+        Historique de mes achats
+      </h2>
         <span className="text-xs text-[#14482F]/60">
-          {orders.length} commande{orders.length > 1 ? "s" : ""}
+        {orders.length} commande{orders.length > 1 ? "s" : ""}
         </span>
       </div>
 
@@ -46,30 +45,30 @@ export function OrdersTable({ orders }: { orders: Order[] }) {
             </tr>
           </thead>
           <tbody>
-            {orders.map((o) => (
+            {orders.map((order) => (
               <tr
-                key={o.id}
+                key={order.id}
                 className="border-t border-gray-200 hover:bg-[#F8E9CA]/30 transition-colors"
               >
                 <td className="px-4 py-2 font-mono text-xs text-[#14482F]/80">
-                  {o.id}
+                  {order.id}
                 </td>
-                <td className="px-4 py-2">{formatDate(o.date)}</td>
-                <td className="px-4 py-2 font-bold">{EUR.format(o.amount)}</td>
-                <td className="px-4 py-2">{o.plan}</td>
+                <td className="px-4 py-2">{formatDate(order.date)}</td>
+                <td className="px-4 py-2 font-bold">{EUR.format(order.amount)}</td>
+                <td className="px-4 py-2">{order.plan}</td>
                 <td className="px-4 py-2">
                   <span
                     className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold ${badgeStatus(
-                      o.status
+                      order.status
                     )}`}
                   >
-                    {o.status}
+                    {order.status}
                   </span>
                 </td>
                 <td className="px-4 py-2">
-                  {o.invoiceUrl ? (
+                  {order.invoice ? (
                     <a
-                      href={o.invoiceUrl}
+                      href={order.invoice}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-sm font-semibold text-[#14482F] underline underline-offset-2 hover:text-[#29be4f] transition-colors"

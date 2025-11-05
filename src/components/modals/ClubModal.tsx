@@ -337,11 +337,14 @@ export default function ClubModal({
                   : "Enregistrer"}
             </button>
           </div>
-          <DangerZone
-            title="Supprimer le club"
-            message={`Toutes les données liées au club ${form.name} seront effacées de façon permanente.`}
-            onDelete={() => setShowDeleteConfirm(true)}
-          />
+          
+          {mode !== "add" ?
+            <DangerZone
+              title="Supprimer le club"
+              message={`Toutes les données liées au club ${form.name} seront effacées de façon permanente.`}
+              onDelete={() => setShowDeleteConfirm(true)}
+            />
+            : null}
 
           <ConfirmModal
             isOpen={showDeleteConfirm}

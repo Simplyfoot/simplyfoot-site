@@ -16,7 +16,7 @@ export function useSubscriptionData(clubId: string | null) {
         const fetchData = async () => {
             setLoading(true);
             try {
-                // === Récupérer la dernière souscription liée au club ===
+                // === 1️⃣ Récupérer la dernière souscription liée au club ===
                 const { data: subLink, error: linkError } = await supabase
                     .from("club_subscriptions")
                     .select("subscription_id")
@@ -26,38 +26,30 @@ export function useSubscriptionData(clubId: string | null) {
                     .single();
 
                 if (linkError || !subLink) {
-                    console.warn("⚠️ Aucune souscription trouvée pour ce club.");
                     setSubscription(null);
                     setOrders([]);
                     setLoading(false);
                     return;
                 }
 
-                // === Récupérer les détails de la souscription ===
+                // === 2️⃣ Détails de la souscription ===
                 const { data: subData, error: subError } = await supabase
                     .from("subscriptions")
-                    .select("plan, start_date, end_date")
+                    .select("plan, start_date, end_date, stripe_subscription_id")
                     .eq("id", subLink.subscription_id)
                     .single();
 
                 if (subError || !subData) throw subError;
 
-                // === Calculer le temps restant ===
                 const now = new Date();
                 const start = new Date(subData.start_date);
                 const end = new Date(subData.end_date);
-
-                const totalDays = Math.ceil(
-                    (end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24)
-                );
+                const totalDays = Math.ceil((end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24));
                 const remainingDays = Math.max(
                     0,
                     Math.ceil((end.getTime() - now.getTime()) / (1000 * 60 * 60 * 24))
                 );
-                const progress = Math.min(
-                    100,
-                    ((totalDays - remainingDays) / totalDays) * 100
-                );
+                const progress = Math.min(100, ((totalDays - remainingDays) / totalDays) * 100);
 
                 setSubscription({
                     plan: subData.plan,
@@ -68,24 +60,36 @@ export function useSubscriptionData(clubId: string | null) {
                     progress,
                 });
 
-                // === (optionnel) Récupérer les commandes du club ===
-                const { data: ordersData } = await supabase
-                    .from("subscriptions")
-                    .select("id, start_date, plan, updated_at")
-                    .eq("id", subLink.subscription_id);
+                // === 3️⃣ Récupérer les factures Stripe liées à cette souscription ===
+                const res = await fetch("/api/stripe/invoices", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        stripeSubscriptionId: subData.stripe_subscription_id,
+                    }),
+                });
 
-                const formattedOrders =
-                    ordersData?.map((order) => ({
-                        id: order.id,
-                        date: order.start_date,
-                        amount: 99.99,
-                        plan: order.plan,
-                        status: statusEnum.Paid,
+                const json = await res.json();
+
+                // === 4️⃣ Formater les factures pour l’affichage ===
+                const formattedOrders: Order[] =
+                    json?.invoices?.map((invoice: any) => ({
+                        id: invoice.id,
+                        date: invoice.date,
+                        amount: invoice.amount,
+                        plan: invoice.plan,
+                        status:
+                            invoice.status === "paid"
+                                ? statusEnum.Paid
+                                : statusEnum.Pending,
+                        pdf: invoice.pdf,
                     })) ?? [];
 
                 setOrders(formattedOrders);
             } catch (err) {
                 console.error("❌ Erreur chargement abonnement :", err);
+                setSubscription(null);
+                setOrders([]);
             } finally {
                 setLoading(false);
             }
