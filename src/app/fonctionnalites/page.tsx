@@ -263,9 +263,10 @@ export default function FonctionnalitesPage() {
             <a href="/offres" className="rounded-xl bg-[#29be4f] px-8 py-4 text-lg font-extrabold text-[#14482F] shadow-xl transition hover:bg-[#63f286] active:scale-[.98]">
               Découvrir les offres
             </a>
-            <a href="/inscription" className="rounded-xl border border-[#F8E9CA]/60 px-8 py-4 text-lg font-bold text-[#F8E9CA] transition hover:border-[#29be4f] hover:text-[#29be4f] active:scale-[.98]">
+            {/* TODO: A décommenter quand l'application sera lancée */}
+            {/* <a href="/inscription" className="rounded-xl border border-[#F8E9CA]/60 px-8 py-4 text-lg font-bold text-[#F8E9CA] transition hover:border-[#29be4f] hover:text-[#29be4f] active:scale-[.98]">
               Créer un compte club
-            </a>
+            </a> */}
           </div>
         </section>
       </div>
