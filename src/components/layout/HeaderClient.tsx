@@ -4,13 +4,14 @@ import { useState, useEffect, Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../assets/logos/logo_simplyfoot.png";
-import { Menu as MenuIcon, X as XIcon, ChevronDown, LogOut, User } from "lucide-react";
+import { Menu as MenuIcon, X as XIcon, ChevronDown } from "lucide-react";
 import { Menu, Transition, Dialog } from "@headlessui/react";
 import clsx from "clsx";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { getRoute, type RouteKey } from "../../i18n/routes";
 
-const AUTH_KEY = "sf_auth";
+// TODO: À décommenter quand l'application sera ouverte au public
+// const AUTH_KEY = "sf_auth";
 
 export default function HeaderClient({
   dict,
@@ -19,12 +20,14 @@ export default function HeaderClient({
   dict: Record<string, string>;
   locale: string;
 }) {
-  const router = useRouter();
+  // TODO: À décommenter quand l'application sera ouverte au public
+  // const router = useRouter();
   const pathname = usePathname();
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [logged, setLogged] = useState(false);
+  // TODO: À décommenter quand l'application sera ouverte au public
+  // const [logged, setLogged] = useState(false);
 
   // Effet scroll : ajout d'une ombre au scroll
   useEffect(() => {
@@ -33,21 +36,23 @@ export default function HeaderClient({
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // État de connexion
-  useEffect(() => {
-    const sync = () => setLogged(!!localStorage.getItem(AUTH_KEY));
-    sync();
-    window.addEventListener("storage", sync);
-    return () => window.removeEventListener("storage", sync);
-  }, []);
+  // TODO: À décommenter quand l'application sera ouverte au public
+  // // État de connexion
+  // useEffect(() => {
+  //   const sync = () => setLogged(!!localStorage.getItem(AUTH_KEY));
+  //   sync();
+  //   window.addEventListener("storage", sync);
+  //   return () => window.removeEventListener("storage", sync);
+  // }, []);
 
-  const handleLogout = () => {
-    localStorage.removeItem(AUTH_KEY);
-    try {
-      window.dispatchEvent(new StorageEvent("storage", { key: AUTH_KEY, newValue: null }));
-    } catch { }
-    router.push(getRoute(locale as "fr" | "en", "signup"));
-  };
+  // TODO: À décommenter quand l'application sera ouverte au public
+  // const handleLogout = () => {
+  //   localStorage.removeItem(AUTH_KEY);
+  //   try {
+  //     window.dispatchEvent(new StorageEvent("storage", { key: AUTH_KEY, newValue: null }));
+  //   } catch { }
+  //   router.push(getRoute(locale as "fr" | "en", "signup"));
+  // };
 
   return (
     <header
