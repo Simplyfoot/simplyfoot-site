@@ -326,7 +326,6 @@ export default function HeaderClient({
                       onClick={() => setMobileMenuOpen(false)}
                       title="Connexion à votre espace SimplyFoot"
                     >
-                      <LogIn className="h-4 w-4" />
                       Connexion
                     </Link>
                     <Link
@@ -335,7 +334,6 @@ export default function HeaderClient({
                       onClick={() => setMobileMenuOpen(false)}
                       title="Créer un compte SimplyFoot gratuitement"
                     >
-                      <Plus className="h-4 w-4" />
                       Créer un compte
                     </Link>
                   </>

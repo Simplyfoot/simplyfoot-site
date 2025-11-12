@@ -1,5 +1,5 @@
 export enum PlanEnum {
-    MINI = "MINI",
+    LITTLE = "LITTLE",
     LOCAL = "LOCAL",
     REGIONAL = "REGIONAL",
     LARGE = "LARGE",

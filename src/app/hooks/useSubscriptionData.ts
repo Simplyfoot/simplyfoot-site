@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "lib/supabaseClient";
 import { Subscription } from "app/_types/Subscription";
-import { Order, statusEnum } from "app/_types/Order";
+import { Order, StatusEnum } from "app/_types/Order";
 
 export function useSubscriptionData(clubId: string | null) {
     const [subscription, setSubscription] = useState<Subscription | null>(null);
@@ -80,8 +80,8 @@ export function useSubscriptionData(clubId: string | null) {
                         plan: invoice.plan,
                         status:
                             invoice.status === "paid"
-                                ? statusEnum.Paid
-                                : statusEnum.Pending,
+                                ? StatusEnum.Paid
+                                : StatusEnum.Pending,
                         pdf: invoice.pdf,
                     })) ?? [];
 

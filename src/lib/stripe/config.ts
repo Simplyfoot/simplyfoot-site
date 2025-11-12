@@ -1,9 +1,9 @@
 // /lib/stripe/config.ts
 
 export const PRICE_IDS = {
-  // 🟢 MINI CLUB (1 à 30 licenciés)
-  mini_monthly: "price_1SIxRS2SVyYOVwm9aZLgOj0w", // 4,99€/mois
-  mini_yearly: "price_1SIxRS2SVyYOVwm9Yr2EB66K",  // 53,89€/an
+  // 🟢 LITTLE CLUB (1 à 30 licenciés)
+  little_monthly: "price_1SIxRS2SVyYOVwm9aZLgOj0w", // 4,99€/mois
+  little_yearly: "price_1SIxRS2SVyYOVwm9Yr2EB66K",  // 53,89€/an
 
   // 🟡 LOCAL CLUB (31 à 75 licenciés)
   local_monthly: "price_1SIxSl2SVyYOVwm9l7hxV1tI", // 9,99€/mois

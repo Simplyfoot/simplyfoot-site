@@ -1,7 +1,7 @@
 import { PlanEnum } from "app/_types/Plan";
 
 export const PLAN_NAMES: Record<string, string> = {
-    MINI: "Mini Club",
+    LITTLE: "Mini Club",
     LOCAL: "Local Club",
     REGIONAL: "Régional Club",
     LARGE: "Grand Club",
@@ -11,8 +11,8 @@ export const PLAN_NAMES: Record<string, string> = {
 
 export const PLANS = [
     {
-        key: PlanEnum.MINI,
-        nom: PLAN_NAMES.MINI,
+        key: PlanEnum.LITTLE,
+        nom: PLAN_NAMES.LITTLE,
         couleur: "from-lime-400 to-lime-600",
         cible: "1 à 30 licenciés",
         monthly: 4.99,

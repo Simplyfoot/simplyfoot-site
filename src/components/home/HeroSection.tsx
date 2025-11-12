@@ -28,7 +28,7 @@ export default function HeroSection() {
           priority
         />
         {/* Gradient ambiance */}
-        <div className="absolute inset-0 bg-[conic-gradient(at_top_left,_#63ff7c33,_transparent_50%)]" />
+        <div className="absolute inset-0 bg-[conic-gradient(at_top_left,#63ff7c33,transparent_50%)]" />
       </div>
 
       {/* Contenu principal (texte + visuel) */}

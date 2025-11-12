@@ -5,16 +5,15 @@ export type Order = {
   date: string;
   amount: number;
   plan: PlanEnum;
-  status: statusEnum;
+  status: StatusEnum;
   invoice?: string;
 };
 
-export enum statusEnum {
+export enum StatusEnum {
   Paid = "Payé",
   Pending = "En attente",
   Failed = "Échoué",
+  Canceled = "Annulé",
 }
 
 export type Billing = "monthly" | "yearly";
-
-export { PlanEnum };

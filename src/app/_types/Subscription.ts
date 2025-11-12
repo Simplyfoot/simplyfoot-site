@@ -1,5 +1,7 @@
+import { PlanEnum } from "./Plan";
+
 export type Subscription = {
-  plan: string;
+  plan: PlanEnum;
   start: string;
   end: string;
   active: boolean;
