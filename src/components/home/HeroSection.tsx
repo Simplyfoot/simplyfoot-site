@@ -74,7 +74,8 @@ export default function HeroSection() {
             transition={{ delay: 0.8, duration: 0.6, type: "spring" }}
             className="flex gap-5 mt-2 flex-wrap"
           >
-            <a
+            {/* TODO: à décommenter quand les inscriptions seront ouvertes */}
+            {/* <a
               href="/inscription"
               className="px-8 py-4 rounded-xl font-bold text-lg bg-[#29be4f] text-[#14482F] shadow-xl hover:bg-[#68FB7A] hover:scale-105 active:scale-95 focus:outline-none transition duration-150"
             >
@@ -82,7 +83,7 @@ export default function HeroSection() {
             <span className="ml-2 text-xs bg-[#F8E9CA]/80 text-[#14482F] px-2 py-1 rounded-full font-semibold align-middle animate-bounce">
                 Nouveauté 2025
               </span>
-            </a>
+            </a> */}
             <a
               href="/contact"
               className="px-8 py-4 rounded-xl font-bold text-lg border border-[#F8E9CA]/60 text-[#F8E9CA] hover:border-[#29be4f] hover:text-[#29be4f] hover:scale-105 active:scale-95 focus:outline-none transition duration-150"
