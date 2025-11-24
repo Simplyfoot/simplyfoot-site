@@ -136,7 +136,7 @@ export default function HeroSection() {
         initial={{ y: 40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1, duration: 0.8 }}
-        className="relative w-full max-w-6xl mx-auto px-4 py-6 z-30 flex flex-col sm:flex-row justify-center items-center gap-16
+        className="relative w-full max-w-6xl mx-auto px-4 py-6 z-30 mt-9 flex flex-col sm:flex-row justify-center items-center gap-16
                    bg-[#F8E9CA]/95 rounded-t-3xl shadow-2xl border-t border-[#29be4f]/20 mb-0
                    backdrop-blur-md"
         aria-label="Chiffres clés SimplyFoot"

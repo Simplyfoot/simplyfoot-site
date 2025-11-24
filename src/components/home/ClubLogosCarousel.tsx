@@ -19,12 +19,6 @@ export default function ClubLogosSection() {
       name: "US Saint-Mandrier",
       href: "https://www.facebook.com/ussmfootball83/?locale=fr_FR",
     },
-    {
-      src: LogoClubLaValette,
-      alt: "Logo du club UAV Football Club La Valette",
-      name: "UAV FC La Valette",
-      href: "https://www.facebook.com/uavfoot/?locale=fr_FR",
-    },
   ];
 
   return (
