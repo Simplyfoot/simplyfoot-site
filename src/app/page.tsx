@@ -1,3 +1,4 @@
+import Partners from "components/home/Partners";
 import HeroSection from "../components/home/HeroSection";
 import HomeBenefits from "../components/home/HomeBenefits";
 import SectionModules from "../components/SectionModules";
@@ -48,7 +49,7 @@ export default function Home() {
       <section id="modules" aria-label="Modules disponibles sur SimplyFoot" className="w-full">
         <SectionModules />
         <ClubLogosCarousel />
-        {/* <Partners /> */}
+        <Partners />
       </section>
 
 

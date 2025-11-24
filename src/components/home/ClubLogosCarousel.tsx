@@ -3,7 +3,6 @@
 import Image from "next/image";
 import LogoClubCadiere from "assets/logos/logo_club_cadiere.png";
 import LogoClubStMandrier from "assets/logos/logo_club_us_st_mandrier.png";
-import LogoClubLaValette from "assets/logos/logo_club_uav_la_valette.png";
 
 export default function ClubLogosSection() {
   const CLUB_LOGOS = [
