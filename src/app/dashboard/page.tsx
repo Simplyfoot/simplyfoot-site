@@ -1,6 +1,12 @@
 import TemporaryPage from "app/impatient/page";
 
-export default TemporaryPage;
+export default function UserDashboard() {
+  return (
+    <main>
+      <TemporaryPage />
+    </main>
+  );
+}
 
 // "use client";
 
