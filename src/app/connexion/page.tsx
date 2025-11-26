@@ -1,12 +1,6 @@
 import TemporaryPage from "app/impatient/page";
 
-export default function ConnexionPage() {
-  return (
-    <main>
-      <TemporaryPage />
-    </main>
-  );
-}
+export default TemporaryPage;
 
 
 // TODO: réactiver la page de connexion plus tard
