@@ -9,7 +9,7 @@ export const metadata = {
         "Notre application n’est pas encore ouverte au public, mais restez connectés… le coup d’envoi approche !",
 };
 
-export default function TemporaryFormulaPage() {
+export default function TemporaryPage() {
     return (
          <main className="flex flex-col items-center justify-start min-h-screen bg-[#14482F] text-center px-6 pt-0 lg:pt-0 pb-10">
             <Image
