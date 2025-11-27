@@ -2,7 +2,6 @@ import TemporaryPage from "app/impatient/page";
 
 export default TemporaryPage;
 
-
 // TODO: réactiver la page de connexion plus tard
 // "use client";
 // import { useEffect, useState } from "react";
