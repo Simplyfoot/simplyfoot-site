@@ -266,7 +266,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="inline-flex items-center gap-2 rounded-xl bg-[#29be4f] px-6 py-3 font-extrabold text-[#14482F] shadow hover:bg-[#63f286] disabled:opacity-70"
+                  className="inline-flex cursor-pointer items-center gap-2 rounded-xl bg-[#29be4f] px-6 py-3 font-extrabold text-[#14482F] shadow hover:bg-[#63f286] disabled:opacity-70"
                 >
                   {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : <Send className="h-5 w-5" />}
                   Envoyer
