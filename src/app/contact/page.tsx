@@ -129,7 +129,7 @@ export default function ContactPage() {
                 icon={<Mail className="h-5 w-5 text-[#29be4f]" />}
                 label="Email"
                 value={
-                  <a className="font-semibold hover:underline" href="mailto:contact@simplyfoot.com">
+                  <a className="font-semibold hover:underline" href="mailto:contact@simplyfoot.fr">
                     contact@simplyfoot.fr
                   </a>
                 }
