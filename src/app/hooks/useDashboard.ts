@@ -1,32 +1,33 @@
 "use client";
 import { useEffect, useState } from "react";
-import { supabase } from "lib/supabaseClient";
+import { useAuth } from "lib/AuthProvider";
+import { getUserProfile } from "lib/supabaseQueries";
 import { Dashboard } from "app/_types/Dashboard";
 
 export function useDashboard() {
+  const { user } = useAuth();
   const [data, setData] = useState<Dashboard | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
       try {
-        const { data: userData, error } = await supabase.auth.getUser();
-        if (error || !userData?.user) {
+        if (!user?.id) {
           setData(null);
           setLoading(false);
           return;
         }
 
-        const meta = userData.user.user_metadata ?? {};
-        const email = userData.user.email ?? "—";
+        // Récupérer le profil complet depuis la DB
+        const profile = await getUserProfile(user.id);
 
         setData({
-          firstname: meta.prenomResponsable ?? "Prénom",
-          lastname: meta.nomResponsable ?? "Nom",
-          email,
-          club: meta.nomClub ?? "Mon club",
+          firstname: profile.firstname ?? "Prénom",
+          lastname: profile.lastname ?? "Nom",
+          email: user.email ?? "—",
+          club: "Mon club", // TODO: récupérer depuis getActivePresidentClubs si besoin
           subscription: {
-            plan: "Maxi Club",
+            plan: "MAX" as any, // TODO: récupérer depuis getClubActiveSubscription
             start: "2024-07-01T00:00:00Z",
             end: "2026-07-01T00:00:00Z",
             active: true,
@@ -34,24 +35,16 @@ export function useDashboard() {
             renewsAutomatically: true,
             nextInvoice: { date: "2025-07-01T00:00:00Z", amount: 99.99 },
           },
-          orders: [
-            {
-              id: "CMD202407012350",
-              date: "2024-07-01T10:12:00Z",
-              amount: 99.99,
-              plan: "Maxi Club",
-              status: "Payé",
-              invoiceUrl: "/api/invoices/CMD202407012350",
-            },
-          ],
+          orders: [], // TODO: récupérer depuis useSubscriptionData si besoin
         });
       } catch (err) {
         console.error(err);
+        setData(null);
       } finally {
         setLoading(false);
       }
     })();
-  }, []);
+  }, [user]);
 
   return { data, loading };
 }

@@ -6,6 +6,7 @@ import { supabase } from "./supabaseClient";
 type User = {
   id: string;
   email: string | null;
+  
 } | null;
 
 type AuthContextType = {

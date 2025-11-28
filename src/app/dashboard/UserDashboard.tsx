@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { supabase } from "lib/supabaseClient";
+import { useAuth } from "lib/AuthProvider";
 import {
   getActivePresidentClubs,
   getUserProfile,
@@ -33,14 +33,9 @@ import {
 
 export default function UserDashboard() {
   const router = useRouter();
+  const { user, loading: authLoading } = useAuth();
   const { data, loading } = useDashboard();
 
-  const [userData, setUserData] = useState<{
-    id?: string;
-    firstname: string;
-    lastname: string;
-    email: string;
-  } | null>(null);
   const [clubs, setClubs] = useState<{ club_id: string; club_name: string }[]>([]);
   const [selectedClub, setSelectedClub] = useState<string | null>(null);
   const [clubData, setClubData] = useState<Club | null>(null);
@@ -53,31 +48,26 @@ export default function UserDashboard() {
 
   const { subscription, orders } = useSubscriptionData(selectedClub);
 
-  // === CHARGEMENT UTILISATEUR + CLUBS ===
-useEffect(() => {
-  const fetchUserAndClubs = async () => {
-    const { data: authData } = await supabase.auth.getUser();
-    const userId = authData?.user?.id;
-    if (!userId) return;
+  // === CHARGEMENT CLUBS ===
+  useEffect(() => {
+    const fetchClubs = async () => {
+      if (!user?.id) return;
 
-    const profile = await getUserProfile(userId);
-    setUserData({ ...profile, id: userId });
+      const clubsList = await getActivePresidentClubs(user.id);
 
-    const clubsList = await getActivePresidentClubs(userId);
+      const sortedClubs = [...clubsList].sort((a, b) =>
+        a.club_name.localeCompare(b.club_name, "fr", { sensitivity: "base" })
+      );
 
-    const sortedClubs = [...clubsList].sort((a, b) =>
-      a.club_name.localeCompare(b.club_name, "fr", { sensitivity: "base" })
-    );
+      setClubs(sortedClubs);
 
-    setClubs(sortedClubs);
+      if (sortedClubs.length === 1) {
+        setSelectedClub(sortedClubs[0].club_id);
+      }
+    };
 
-    if (sortedClubs.length === 1) {
-      setSelectedClub(sortedClubs[0].club_id);
-    }
-  };
-
-  fetchUserAndClubs();
-}, []);
+    fetchClubs();
+  }, [user]);
 
 
   useEffect(() => {
@@ -102,10 +92,13 @@ useEffect(() => {
 
   // === REDIRECTION SI PAS CONNECTÉ ===
   useEffect(() => {
-    if (!loading && !data) router.push("/");
-  }, [data, loading, router]);
+    // Attendre que l'auth soit chargé avant de rediriger
+    if (!authLoading && !user) {
+      router.push("/connexion");
+    }
+  }, [user, authLoading, router]);
 
-  if (loading || !userData)
+  if (authLoading || loading || !data)
     return (
       <main className="min-h-screen bg-[#14482F] flex items-center justify-center text-white">
         Chargement du tableau de bord...
@@ -118,10 +111,11 @@ useEffect(() => {
     lastname: string;
     email: string;
   }) => {
-    if (!userData?.id) return;
+    if (!user?.id) return;
     try {
-      await updateUser(userData.id, form);
-      setUserData({ ...userData, ...form });
+      await updateUser(user.id, form);
+      // Recharger les données après mise à jour
+      window.location.reload();
     } catch (err) {
       console.error("❌ Erreur mise à jour utilisateur :", err);
     } finally {
@@ -175,7 +169,7 @@ useEffect(() => {
         {/* === HEADER === */}
         <header className="text-center mb-10">
           <h1 className="text-3xl font-extrabold text-white mb-2">
-            Bonjour {userData.firstname} 👋🏼
+            Bonjour {data.firstname} 👋🏼
           </h1>
           <p className="text-sm text-white/70">
             Bienvenue sur votre espace personnel. Gérez votre compte, vos clubs et vos abonnements SimplyFoot.
@@ -194,9 +188,9 @@ useEffect(() => {
             <div>
               <h2 className="text-sm font-bold uppercase tracking-wide mb-2">Mes informations</h2>
               <p className="mt-1 text-xl font-extrabold text-white leading-tight">
-                {userData.firstname} {userData.lastname}
+                {data.firstname} {data.lastname}
               </p>
-              <p className="text-sm text-[#F8E9CA]/60">{userData.email}</p>
+              <p className="text-sm text-[#F8E9CA]/60">{data.email}</p>
             </div>
           </div>
           <button

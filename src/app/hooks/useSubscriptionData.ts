@@ -23,7 +23,7 @@ export function useSubscriptionData(clubId: string | null) {
                     .eq("club_id", clubId)
                     .order("created_at", { ascending: false })
                     .limit(1)
-                    .single();
+                    .maybeSingle();
 
                 if (linkError || !subLink) {
                     setSubscription(null);

@@ -67,7 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="fr" className={inter.variable}>
+    <html lang="fr" className={inter.variable} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -75,7 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
 
-      <body className={`${inter.className} min-h-dvh flex flex-col bg-[#14482F] text-white antialiased`}>
+      <body className={`${inter.className} min-h-dvh flex flex-col bg-[#14482F] text-white antialiased`} suppressHydrationWarning>
         <div aria-hidden className="fixed inset-0 -z-10 bg-[#14482F]" />
         <AuthProvider>
           <Navbar locale="fr" />

@@ -9,7 +9,7 @@ import { Menu, Transition, Dialog } from "@headlessui/react";
 import clsx from "clsx";
 import { usePathname, useRouter } from "next/navigation";
 import { getRoute, type RouteKey } from "../../i18n/routes";
-import { supabase } from "lib/supabaseClient";
+import { useAuth } from "lib/AuthProvider";
 
 const AUTH_KEY = "sf_auth";
 
@@ -22,10 +22,10 @@ export default function HeaderClient({
 }) {
   const router = useRouter();
   const pathname = usePathname();
+  const { user, signOut } = useAuth();
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [logged, setLogged] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 80);
@@ -33,25 +33,12 @@ export default function HeaderClient({
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    supabase.auth.getUser().then(({ data }) => {
-      setLogged(!!data.user);
-    });
-
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
-      setLogged(!!session?.user);
-    });
-
-    return () => {
-      listener.subscription.unsubscribe();
-    };
-  }, []);
+  const logged = !!user;
 
   const handleLogout = async () => {
     localStorage.removeItem(AUTH_KEY);
     try {
-      await supabase.auth.signOut();
-      setLogged(false);
+      await signOut();
       router.push("/connexion");
     } catch {
     }
