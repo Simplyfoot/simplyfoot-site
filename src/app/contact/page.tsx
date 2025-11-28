@@ -317,7 +317,7 @@ export default function ContactPage() {
                   { initials: "RP", name: "Romain Pennacchio", role: "Fondateur – Associé" },
                   { initials: "JC", name: "Jean Carboni", role: "Développeur Expert · Associé" },
                 ].map((member) => (
-                  <div key={member.name} className="flex flex-col items-center w-[160px]">
+                  <div key={member.name} className="flex flex-col items-center w-40">
                     <div className="grid h-16 w-16 place-items-center rounded-full bg-[#29be4f] text-2xl font-extrabold text-[#14482F] shadow">
                       {member.initials}
                     </div>
@@ -333,7 +333,7 @@ export default function ContactPage() {
                   { initials: "VR", name: "Vanessa Rolland", role: "Développeuse Experte · Associée" },
                   { initials: "HP", name: "Hugo Pecorella", role: "Tech & Cybersécurité · Associé" },
                 ].map((member) => (
-                  <div key={member.name} className="flex flex-col items-center w-[160px]">
+                  <div key={member.name} className="flex flex-col items-center w-40">
                     <div className="grid h-16 w-16 place-items-center rounded-full bg-[#29be4f] text-2xl font-extrabold text-[#14482F] shadow">
                       {member.initials}
                     </div>

@@ -80,7 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AuthProvider>
           <Navbar locale="fr" />
 
-          <main id="main-content" className="flex-grow w-full pt-20 lg:pt-24">
+          <main id="main-content" className="grow w-full pt-20 lg:pt-24">
             {children}
           </main>
 

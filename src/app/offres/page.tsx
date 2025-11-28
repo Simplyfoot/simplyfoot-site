@@ -171,7 +171,7 @@ export default function OffresPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               viewport={{ once: true }}
-              className={`relative rounded-3xl border-2 bg-gradient-to-br ${offre.couleur} p-[2px] shadow-xl`}
+              className={`relative rounded-3xl border-2 bg-linear-to-br ${offre.couleur} p-0.5 shadow-xl`}
             >
 
               {/* Badge */}

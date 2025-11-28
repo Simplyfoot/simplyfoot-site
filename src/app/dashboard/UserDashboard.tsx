@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "lib/AuthProvider";
 import {
   getActivePresidentClubs,
-  getUserProfile,
   getClubDetails,
   updateUser,
   updateClub,
@@ -47,6 +46,8 @@ export default function UserDashboard() {
   const [copied, setCopied] = useState(false);
 
   const { subscription, orders } = useSubscriptionData(selectedClub);
+
+  const userData = { firstname: '', lastname: '', email: '', id: undefined }; // Initialize userData with required properties
 
   // === CHARGEMENT CLUBS ===
   useEffect(() => {
