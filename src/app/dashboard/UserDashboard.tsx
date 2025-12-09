@@ -47,7 +47,14 @@ export default function UserDashboard() {
 
   const { subscription, orders } = useSubscriptionData(selectedClub);
 
-  const userData = { firstname: '', lastname: '', email: '', id: undefined }; // Initialize userData with required properties
+  const userData = {
+    firstname: data?.firstname || '',
+    lastname: data?.lastname || '',
+    email: data?.email || '',
+    gender: data?.gender || null,
+    gender_other_label: data?.gender_other_label || null,
+    id: user?.id || undefined,
+  };
 
   // === CHARGEMENT CLUBS ===
   useEffect(() => {
@@ -170,7 +177,7 @@ export default function UserDashboard() {
         {/* === HEADER === */}
         <header className="text-center mb-10">
           <h1 className="text-3xl font-extrabold text-white mb-2">
-            Bonjour {data.firstname} 👋🏼
+            Bonjour {data?.gender === "FEMALE" ? "Présidente" : "Président"} {data.firstname} 👋🏼
           </h1>
           <p className="text-sm text-white/70">
             Bienvenue sur votre espace personnel. Gérez votre compte, vos clubs et vos abonnements SimplyFoot.
@@ -252,7 +259,7 @@ export default function UserDashboard() {
                     setCopied(true);
                     setTimeout(() => setCopied(false), 1500);
                   }}
-                  className="flex items-center gap-1 text-[#29be4f] hover:text-[#63f286] text-xs font-semibold transition"
+                  className="cursor-pointer flex items-center gap-1 text-[#29be4f] hover:text-[#63f286] text-xs font-semibold transition"
                 >
                   {copied ? (
                     <>

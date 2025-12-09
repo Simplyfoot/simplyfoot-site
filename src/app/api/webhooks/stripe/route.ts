@@ -61,27 +61,38 @@ export async function POST(req: Request) {
           break;
         }
 
+
         // === DATES ===
         const startTimestamp =
           sub.current_period_start || sub.start_date || Math.floor(Date.now() / 1000);
         let endTimestamp = sub.current_period_end;
-
+        const interval = sub.items?.data?.[0]?.plan?.interval;
         if (!endTimestamp) {
-          const interval = sub.items?.data?.[0]?.plan?.interval;
           if (interval === "year") endTimestamp = startTimestamp + 365 * 24 * 3600;
           else if (interval === "month") endTimestamp = startTimestamp + 30 * 24 * 3600;
           else endTimestamp = startTimestamp + 30 * 24 * 3600;
         }
-
         const start = new Date(startTimestamp * 1000);
-        const end = new Date(endTimestamp * 1000);
+        let end = new Date(endTimestamp * 1000);
 
-        // 🧪 ajoute 30 jours de période d’essai
-        const trialDays = 30;
-        const adjustedEnd = new Date(end);
-        adjustedEnd.setDate(adjustedEnd.getDate() + trialDays);
+        // === VÉRIFIE SI LE CLUB A DÉJÀ EU UNE SOUSCRIPTION ===
+        const { data: previousSubs, error: prevErr } = await supabaseAdmin
+          .from("club_subscriptions")
+          .select("id")
+          .eq("club_id", club_id)
+          .limit(1);
+        if (prevErr) console.error("Erreur vérif souscription club:", prevErr);
 
-        // === VÉRIFIE SI UN ABONNEMENT EXISTE DÉJÀ ===
+        // Si le club n'a jamais eu de souscription et que l'abonnement est mensuel, accorde 1 mois gratuit
+        let finalStart = new Date(start);
+        let finalEnd = new Date(end);
+        if ((!previousSubs || previousSubs.length === 0) && interval === "month") {
+          finalEnd = new Date(finalEnd.getTime() + 30 * 24 * 3600 * 1000);
+          console.log("✅ Mois gratuit accordé au club pour la première souscription mensuelle");
+        }
+        // Si le club a déjà eu une souscription ou que l'abonnement est annuel, pas de mois gratuit
+
+        // === VÉRIFIE SI UN ABONNEMENT EXISTE DÉJÀ (pour décaler si chevauchement) ===
         const { data: existingSubs, error: checkErr } = await supabaseAdmin
           .from("club_subscriptions")
           .select(`subscriptions!inner(id, end_date)`)
@@ -89,18 +100,13 @@ export async function POST(req: Request) {
           .order("created_at", { ascending: false })
           .limit(1)
           .returns<ExistingSubscription[]>();
-
         if (checkErr) console.error("Erreur vérif abonnement existant:", checkErr);
-
-        let finalStart = new Date(start);
-        let finalEnd = new Date(adjustedEnd);
-
         if (existingSubs && existingSubs.length > 0) {
           const lastEndDate = new Date(existingSubs[0].subscriptions.end_date);
           if (lastEndDate > new Date()) {
             // 🔹 chevauchement → décale à la suite
             finalStart = new Date(lastEndDate.getTime() + 24 * 3600 * 1000);
-            const durationMs = end.getTime() - start.getTime();
+            const durationMs = finalEnd.getTime() - finalStart.getTime();
             finalEnd = new Date(finalStart.getTime() + durationMs);
             console.log(
               `↪️ Abonnement décalé après le précédent (${lastEndDate

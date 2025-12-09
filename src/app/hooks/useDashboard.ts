@@ -26,6 +26,7 @@ export function useDashboard() {
           lastname: profile.lastname ?? "Nom",
           email: user.email ?? "—",
           club: "Mon club", // TODO: récupérer depuis getActivePresidentClubs si besoin
+          gender: profile.gender ?? null,
           subscription: {
             plan: "MAX" as any, // TODO: récupérer depuis getClubActiveSubscription
             start: "2024-07-01T00:00:00Z",
@@ -36,7 +37,7 @@ export function useDashboard() {
             nextInvoice: { date: "2025-07-01T00:00:00Z", amount: 99.99 },
           },
           orders: [], // TODO: récupérer depuis useSubscriptionData si besoin
-        });
+        } as Dashboard);
       } catch (err) {
         console.error(err);
         setData(null);
