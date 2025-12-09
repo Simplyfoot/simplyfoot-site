@@ -3,23 +3,23 @@
 export const PRICE_IDS = {
   // 🟢 LITTLE CLUB (1 à 30 licenciés)
   little_monthly: "price_1SIxRS2SVyYOVwm9aZLgOj0w", // 4,99€/mois
-  little_yearly: "price_1SIxRS2SVyYOVwm9Yr2EB66K",  // 53,89€/an
+  little_yearly: "price_1Sblya2SVyYOVwm9gwQnSlcC",  // 53,89€/an
 
   // 🟡 LOCAL CLUB (31 à 75 licenciés)
   local_monthly: "price_1SIxSl2SVyYOVwm9l7hxV1tI", // 9,99€/mois
-  local_yearly: "price_1SIxSk2SVyYOVwm9OfcvCMNO",  // 107,89€/an
+  local_yearly: "price_1SblzV2SVyYOVwm9zMFCLasG",  // 107,89€/an
 
   // 💚 RÉGIONAL CLUB (76 à 150 licenciés)
   regional_monthly: "price_1SIxTw2SVyYOVwm9SaVGJcAG", // 14,99€/mois
-  regional_yearly: "price_1SIxTw2SVyYOVwm9vBaxGGNe",  // 161,89€/an
+  regional_yearly: "price_1Sbm0B2SVyYOVwm91unTPjcy",  // 161,89€/an
 
   // 💙 LARGE CLUB (151 à 300 licenciés)
   large_monthly: "price_1SIxV52SVyYOVwm938iZ3PZ7", // 19,99€/mois
-  large_yearly: "price_1SIxV52SVyYOVwm9QXt1H9uC",  // 215,89€/an
+  large_yearly: "price_1Sbm0z2SVyYOVwm9SYjrC3FI",  // 215,89€/an
 
   // 💎 MAX CLUB (301 à 500 licenciés)
   max_monthly: "price_1SIxVv2SVyYOVwm9swGT5O6f", // 29,99€/mois
-  max_yearly: "price_1SIxVc2SVyYOVwm9t7tKcozO",  // 323,89€/an
+  max_yearly: "price_1Sblul2SVyYOVwm9enKVQiBD",  // 323,89€/an
 } as const;
 
 export const PLANS_DETAILS = {

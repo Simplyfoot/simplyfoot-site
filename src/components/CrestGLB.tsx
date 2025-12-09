@@ -114,4 +114,4 @@ export default function CrestGLB({ src, size = 140, padding = 1.2 }: Props) {
   );
 }
 
-useGLTF.preload("/models/blasons/bronze.glb");
+useGLTF.preload("/blasons/bronze.glb");

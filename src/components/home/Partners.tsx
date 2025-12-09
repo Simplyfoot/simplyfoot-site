@@ -1,5 +1,4 @@
 import Image from "next/image";
-import LogoComOn from "assets/logos/logo_com_on.png";
 
 export default function Partners() {
   return (
@@ -22,13 +21,6 @@ export default function Partners() {
             title="Visiter le site de l’Agence Com’On"
             className="group flex flex-col items-center transition-transform duration-300 hover:-translate-y-1"
           >
-            <Image
-              src={LogoComOn}
-              alt="Logo Agence Com'On"
-              height={120}
-              className="object-contain transition-transform duration-300 group-hover:scale-105 group-hover:opacity-90"
-              priority
-            />
           </a>
         </div>
       </div>

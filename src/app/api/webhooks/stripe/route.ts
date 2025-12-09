@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { createClient } from "@supabase/supabase-js";
-import { PlanEnum } from "app/_types/Order";
+import { PlanEnum } from "app/_types/Plan";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: "2023-10-16",
@@ -33,6 +33,8 @@ export async function POST(req: Request) {
     return new NextResponse(`Webhook error: ${msg}`, { status: 400 });
   }
 
+  // Ajout d'un log général pour chaque événement reçu
+  console.log(`🔔 Stripe webhook reçu: ${event.type}`);
   try {
     switch (event.type) {
       // ==========================================================
@@ -41,6 +43,9 @@ export async function POST(req: Request) {
       case "customer.subscription.created":
       case "customer.subscription.updated": {
         const sub = event.data.object as Stripe.Subscription;
+
+        // Log complet des métadonnées reçues
+        console.log("📦 Subscription metadata:", sub.metadata);
 
         const club_id = (sub.metadata?.club_id || "").trim();
         const planKey = (sub.metadata?.planKey || "").trim().toUpperCase() as PlanEnum;
@@ -106,15 +111,22 @@ export async function POST(req: Request) {
         }
 
         // === INSERTION ABONNEMENT ===
-        const { data: subRow, error: subErr } = await supabaseAdmin
-          .from("subscriptions")
-          .insert({
-            plan: planKey,
-            start_date: finalStart.toISOString().slice(0, 10),
-            end_date: finalEnd.toISOString().slice(0, 10),
-          })
-          .select()
-          .single();
+        console.log("🔗 Insertion abonnement:", {
+          plan: planKey,
+          start_date: finalStart.toISOString().slice(0, 10),
+          end_date: finalEnd.toISOString().slice(0, 10),
+            stripe_subscription_id: sub.id,
+        });
+          const { data: subRow, error: subErr } = await supabaseAdmin
+            .from("subscriptions")
+            .insert({
+              plan: planKey,
+              start_date: finalStart.toISOString().slice(0, 10),
+              end_date: finalEnd.toISOString().slice(0, 10),
+              stripe_subscription_id: sub.id,
+            })
+            .select()
+            .single();
 
         if (subErr || !subRow) {
           console.error("❌ insert SUBSCRIPTIONS error:", subErr);
@@ -122,6 +134,10 @@ export async function POST(req: Request) {
         }
 
         // === LIEN CLUB → ABONNEMENT ===
+        console.log("🔗 Lien club → abonnement:", {
+          club_id,
+          subscription_id: subRow.id,
+        });
         const { error: linkErr } = await supabaseAdmin
           .from("club_subscriptions")
           .insert({
