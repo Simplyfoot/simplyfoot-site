@@ -138,8 +138,8 @@ export default function ContactPage() {
                 icon={<Phone className="h-5 w-5 text-[#29be4f]" />}
                 label="Téléphone"
                 value={
-                  <a className="font-semibold hover:underline" href="tel:+33682845641">
-                    +33 6 82 84 56 41
+                  <a className="font-semibold hover:underline" href="tel:+33699948866">
+                    +33 6 99 94 88 66
                   </a>
                 }
               />
@@ -331,7 +331,7 @@ export default function ContactPage() {
               <div className="flex justify-center gap-12">
                 {[
                   { initials: "VR", name: "Vanessa Rolland", role: "Développeuse Experte · Associée" },
-                  { initials: "HP", name: "Hugo Pecorella", role: "Tech & Cybersécurité · Associé" },
+                  { initials: "DA", name: "Damien Alfaia", role: "Développeur Expert · Associé" },
                 ].map((member) => (
                   <div key={member.name} className="flex flex-col items-center w-40">
                     <div className="grid h-16 w-16 place-items-center rounded-full bg-[#29be4f] text-2xl font-extrabold text-[#14482F] shadow">

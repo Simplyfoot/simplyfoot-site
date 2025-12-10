@@ -76,7 +76,7 @@ export default function GestionEquipePage() {
       {/* halo de fond discret */}
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(80%_60%_at_50%_-10%,rgba(91,227,125,.18),transparent_60%)]" />
 
-      <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col gap-16">
+      <div className="max-w-7xl mx-auto px-6 -mt-4 pb-16 flex flex-col gap-16">
         {/* HERO */}
         <section className="flex flex-col md:flex-row gap-10 items-center">
           <div className="flex-1">

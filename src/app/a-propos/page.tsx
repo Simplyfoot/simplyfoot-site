@@ -2,13 +2,13 @@ import Image from "next/image";
 import { Users2, ShieldCheck, Sparkles, Heart } from "lucide-react";
 import Romain from "assets/team/Romain.png"
 import Jean from "assets/team/Jean.png"
-import Hugo from "assets/team/Hugo.png"
+import Damien from "assets/images/3.jpg"
 import Vanessa from "assets/team/Vanessa.jpeg"
 import Jeremy from "assets/images/3.jpg"
 
 export default function AboutPage() {
   return (
-    <main className="w-full min-h-screen bg-[#14482F] py-14 px-2">
+    <main className="w-full min-h-screen bg-[#14482F] -mt-4 pb-16 ">
       <div className="max-w-4xl mx-auto bg-white/95 shadow-2xl rounded-3xl px-6 py-12 border border-[#29be4f]/10">
         <h1 className="text-4xl md:text-5xl font-extrabold text-[#29be4f] mb-3 text-center">
           À propos de SimplyFoot
@@ -43,7 +43,7 @@ export default function AboutPage() {
           <div className="col-span-full flex justify-center gap-16">
             {[
               { src: Vanessa, alt: "Vanessa Rolland", name: "Vanessa Rolland", role: "Développeur Expert · Associée" },
-              { src: Hugo, alt: "Hugo Pecorella", name: "Hugo Pecorella", role: "Tech & Cybersécurité · Associé" },
+              { src: Damien, alt: "Damien Alfaia", name: "Damien Alfaia", role: "Développeur Expert · Associé" },
             ].map((person) => (
               <div key={person.name} className="flex flex-col items-center">
                 <div className="w-[120px] aspect-square overflow-hidden rounded-full border-4 border-[#29be4f]/60 shadow">
@@ -69,7 +69,7 @@ export default function AboutPage() {
               SimplyFoot, c’est d’abord une histoire de rencontres et de passions croisées. Sur un terrain de Provence, <strong>Romain</strong> et <strong>Jérémy</strong> partagent le même rêve : redonner du temps et de l’énergie à tous ces bénévoles, éducateurs, parents et jeunes qui font vivre le football amateur en France.
             </p>
             <p className="mb-4">
-              Mais très vite, ils sont rejoints par <strong>Jean</strong>, <strong>Vanessa</strong> et <strong>Hugo</strong>, qui partagent la même conviction : <span className="font-semibold text-[#29be4f]">un club, ce n’est pas qu’un tableau de scores ou une feuille Excel : c’est une famille, un foyer de valeurs et de passions.</span>
+              Mais très vite, ils sont rejoints par <strong>Jean</strong>, <strong>Vanessa</strong> et <strong>Damien</strong>, qui partagent la même conviction : <span className="font-semibold text-[#29be4f]">un club, ce n’est pas qu’un tableau de scores ou une feuille Excel : c’est une famille, un foyer de valeurs et de passions.</span>
             </p>
             <p className="mb-4">
               Ensemble, ils écoutent les clubs, échangent sur les frustrations, imaginent la plateforme idéale… et découvrent que la clé, c’est l’humain : rendre simple ce qui est compliqué, créer du lien, valoriser chaque bénévole.

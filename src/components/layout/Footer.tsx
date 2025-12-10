@@ -19,7 +19,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid gap-10 md:grid-cols-3">
         {/* Bloc société */}
         <section className="space-y-4">
-          <h3 className="text-xl font-extrabold text-simply-green">
+          <h3 className="text-xl font-extrabold text-simply-green text-[#29be4f]">
             SimplyFoot — SAS
           </h3>
           <p className="text-sm leading-relaxed">
@@ -32,10 +32,10 @@ export default function Footer() {
               <MapPin size={16} /> 60 rue François 1er, 75008 Paris
             </span>
             <span className="flex items-start gap-2">
-              <Phone size={16} /><a className="font-semibold hover:underline" href="tel:+33682845641">+33 6 82 84 56 41</a>
+              <Phone size={16} /><a className="font-semibold text-[#29be4f] hover:text-[#ffffff]" href="tel:+33699948866">06 99 94 88 66</a>
             </span>
             <span className="flex items-start gap-2">
-              <Mail size={16} /><a className="font-semibold hover:underline" href="mailto:contact@simplyfoot.fr">contact@simplyfoot.fr</a>
+              <Mail size={16} /><a className="font-semibold text-[#29be4f] hover:text-[#ffffff]" href="mailto:contact@simplyfoot.fr">contact@simplyfoot.fr</a>
             </span>
           </address>
         </section>
@@ -48,7 +48,7 @@ export default function Footer() {
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className="text-sm hover:text-simply-green transition-colors"
+                  className="text-sm text-[#ffffff] hover:text-[#29be4f] transition-colors hover:underline"
                 >
                   {l.label}
                 </Link>
@@ -68,7 +68,7 @@ export default function Footer() {
             <Link
               href="https://www.facebook.com/profile.php?id=61580681960537"
               aria-label="Facebook"
-              className="hover:text-simply-green transition-colors"
+              className="text-[#29be4f] hover:text-[#ffffff] transition-colors"
             >
               <Facebook size={20} />
             </Link>
@@ -82,14 +82,14 @@ export default function Footer() {
             <Link
               href="https://www.linkedin.com/in/simply-foot-40a883372/"
               aria-label="LinkedIn"
-              className="hover:text-simply-green transition-colors"
+              className="text-[#29be4f] hover:text-[#ffffff] transition-colors"
             >
               <Linkedin size={20} />
             </Link>
                         <Link
               href="https://www.instagram.com/simply.foot/"
               aria-label="Instagram"
-              className="hover:text-simply-green transition-colors"
+              className="text-[#29be4f] hover:text-[#ffffff] transition-colors"
             >
               <Instagram size={20} />
             </Link>

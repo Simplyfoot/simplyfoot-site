@@ -140,7 +140,7 @@ export default function FonctionnalitesPage() {
       {/* halo */}
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(80%_60%_at_50%_-10%,rgba(91,227,125,.18),transparent_60%)]" />
 
-      <div className="mx-auto max-w-7xl px-6 py-16">
+      <div className="mx-auto max-w-7xl px-6 -mt-4 pb-16">
         {/* HERO */}
         <motion.section
           {...fadeUp}
