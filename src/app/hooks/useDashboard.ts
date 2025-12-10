@@ -28,7 +28,7 @@ export function useDashboard() {
           club: "Mon club", // TODO: récupérer depuis getActivePresidentClubs si besoin
           gender: profile.gender ?? null,
           subscription: {
-            plan: "MAX" as any, // TODO: récupérer depuis getClubActiveSubscription
+            plan: "MAX" as const, // Specify a different type instead of any
             start: "2024-07-01T00:00:00Z",
             end: "2026-07-01T00:00:00Z",
             active: true,

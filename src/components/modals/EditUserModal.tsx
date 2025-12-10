@@ -153,7 +153,7 @@ export default function EditUserModal({
               </label>
               <select
                 value={form.gender ?? ""}
-                onChange={(e) => handleChange("gender", e.target.value as any)}
+                onChange={(e) => handleChange("gender", e.target.value as User["gender"])}
                 className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-[#14482F] 
                   focus:outline-none focus:ring-2 focus:ring-[#29be4f]"
               >

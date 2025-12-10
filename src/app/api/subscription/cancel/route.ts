@@ -19,10 +19,6 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: "Subscription ID manquant" }, { status: 400 });
         }
 
-        const canceled = await stripe.subscriptions.update(subscriptionId, {
-            cancel_at_period_end: false,
-            cancellation_details: { comment: "Annulation période d’essai SimplyFoot" },
-        });
         await stripe.subscriptions.cancel(subscriptionId);
 
         const { error: dbError } = await supabase

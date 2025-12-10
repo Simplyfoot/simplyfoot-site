@@ -143,7 +143,7 @@ export default function UserDashboard() {
     }
   };
 
-  const handleAddClub = (clubData: any) => {
+  const handleAddClub = (clubData: { name: string; code: string }) => {
     console.log("🏗️ Nouveau club :", clubData);
     setAddClubModalOpen(false);
   };
@@ -156,7 +156,7 @@ export default function UserDashboard() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ subscriptionId: subscription.stripe_subscription_id }),
       });
-      const { success, error } = await res.json();
+      const { error } = await res.json();
       if (error) throw new Error(error);
       alert("Votre essai a été annulé avec succès.");
     } catch (err) {

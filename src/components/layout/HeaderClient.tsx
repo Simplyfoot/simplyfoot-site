@@ -4,7 +4,7 @@ import { useState, useEffect, Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../assets/logos/logo_simplyfoot.png";
-import { Menu as MenuIcon, X as XIcon, ChevronDown, LogOut, User, LogIn, UserRoundPlus, Plus } from "lucide-react";
+import { Menu as MenuIcon, X as XIcon, ChevronDown, LogOut, User, LogIn, UserRoundPlus } from "lucide-react";
 import { Menu, Transition, Dialog } from "@headlessui/react";
 import clsx from "clsx";
 import { usePathname, useRouter } from "next/navigation";

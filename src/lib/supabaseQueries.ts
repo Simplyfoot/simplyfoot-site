@@ -114,7 +114,7 @@ export async function getActivePresidentClubs(
     return [];
   }
 
-  return (data ?? []).map((item: any) => ({
+  return (data ?? []).map((item: { club_id: string; clubs: { name: string } }) => ({
     club_id: item.club_id,
     club_name: item.clubs?.name ?? "Club sans nom",
   }));

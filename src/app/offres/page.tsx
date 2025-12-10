@@ -54,7 +54,6 @@ type ClubPresidentRow = {
 
 export default function OffresPage() {
   const [billing, setBilling] = useState<Billing>("monthly");
-  const [email, setEmail] = useState("");
   const [clubs, setClubs] = useState<{ id: string; name: string }[]>([]);
   const [selectedClub, setSelectedClub] = useState<string | null>(null);
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);

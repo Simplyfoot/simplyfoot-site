@@ -73,7 +73,7 @@ export async function POST(req: Request) {
           else endTimestamp = startTimestamp + 30 * 24 * 3600;
         }
         const start = new Date(startTimestamp * 1000);
-        let end = new Date(endTimestamp * 1000);
+        const end = new Date(endTimestamp * 1000);
 
         // === VÉRIFIE SI LE CLUB A DÉJÀ EU UNE SOUSCRIPTION ===
         const { data: previousSubs, error: prevErr } = await supabaseAdmin

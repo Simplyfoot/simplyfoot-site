@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Partners() {
   return (
     <section className="w-full bg-[#F7F6F3] py-12 border-t border-[#14482F]/10 relative">

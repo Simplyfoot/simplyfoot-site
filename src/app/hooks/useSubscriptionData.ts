@@ -73,7 +73,7 @@ export function useSubscriptionData(clubId: string | null) {
 
                 // === 4️⃣ Formater les factures pour l’affichage ===
                 const formattedOrders: Order[] =
-                    json?.invoices?.map((invoice: any) => ({
+                    json?.invoices?.map((invoice: { id: string; date: string; amount: number; plan: string; status: string; pdf: string; }) => ({
                         id: invoice.id,
                         date: invoice.date,
                         amount: invoice.amount,

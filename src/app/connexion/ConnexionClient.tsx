@@ -62,7 +62,7 @@ export default function ConnexionClient() {
   }
 
   return (
-    <main className="mt-[-80px] w-full min-h-[60vh] bg-[#14482F] flex flex-col items-center justify-start pt-10 lg:pt-16">
+    <main className="-mt-20 w-full min-h-[60vh] bg-[#14482F] flex flex-col items-center justify-start pt-10 lg:pt-16">
       <form
         onSubmit={handleLogin}
         className="w-full max-w-sm bg-white/95 p-8 rounded-2xl shadow-md"
@@ -129,7 +129,7 @@ export default function ConnexionClient() {
             href="/inscription"
             className="underline font-bold hover:text-[#29be4f]"
           >
-            S'inscrire
+            S&apos;inscrire
           </a>
         </p>
       </form>
