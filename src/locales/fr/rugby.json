@@ -1,0 +1,285 @@
+{
+  "hero": {
+    "accent": "SimplyRugby",
+    "title": "En avant. Gérez votre club avec la puissance du pack.",
+    "subtitle": "Effectifs, compos, convocations, résultats. Tout le club dans un seul outil.",
+    "subtitleHighlight": "SimplyRugby est bâti pour encaisser : robuste, direct, sans fioritures. Comme votre première ligne.",
+    "statline": "Robuste. Direct. Engagé."
+  },
+  "manifest": {
+    "eyebrow": "L'esprit du pack",
+    "phrase": "On ne lâche rien. Ni sur le terrain, ni dans la gestion.",
+    "statement": "Le rugby, c'est du combat collectif. De la boue, de la sueur, et un vestiaire qui se serre les coudes. Derrière chaque mêlée qui pousse droit, il y a un club qui tourne. SimplyRugby porte le même engagement — pour que vos bénévoles passent moins de temps sur la paperasse et plus dans la troisième mi-temps."
+  },
+  "benefits": {
+    "title": "Pourquoi SimplyRugby renforce votre club",
+    "items": [
+      {
+        "title": "Solide comme votre pack",
+        "description": "Un outil aussi fiable que vos avants. Pas de bugs, pas de crash — SimplyRugby tient le choc toute une saison, comme votre 3e ligne au fond des rucks.",
+        "icon": "ShieldCheck"
+      },
+      {
+        "title": "Moins de paperasse, plus de 3e mi-temps",
+        "description": "Licences FFR, feuilles officielles, convocations automatiques : tout est géré. Vous gardez l'énergie pour ce qui compte — et pour la troisième mi-temps.",
+        "icon": "AlarmClock"
+      },
+      {
+        "title": "Le vestiaire toujours soudé",
+        "description": "Messagerie, planning collectif, engagement des familles : SimplyRugby maintient la cohésion du pack même hors du terrain. Le vestiaire ne se vide pas entre les matchs.",
+        "icon": "Users"
+      },
+      {
+        "title": "Crédible face à la FFR",
+        "description": "Dossiers complets, suivi de saison, communication professionnelle : présentez votre club avec fierté auprès de la FFR, des sponsors et des collectivités.",
+        "icon": "Trophy"
+      }
+    ]
+  },
+  "modules": {
+    "title": "Les modules essentiels SimplyRugby",
+    "titleAccent": "modules essentiels",
+    "items": [
+      {
+        "title": "Gestion du club",
+        "description": "Président, staff, coachs et joueurs : centralisez la gestion de votre club dans un espace sécurisé.",
+        "icon": "ShieldCheck"
+      },
+      {
+        "title": "Planification & convocations",
+        "description": "Organisez matchs, entraînements, tournois et troisièmes mi-temps avec rappels automatiques.",
+        "icon": "CalendarDays"
+      },
+      {
+        "title": "Feuilles de match",
+        "description": "Générez vos feuilles officielles, gérez les remplacements et gardez un historique complet.",
+        "icon": "LayoutDashboard"
+      },
+      {
+        "title": "Statistiques & suivi",
+        "description": "Suivez la progression de chaque joueur, présences, essais, plaquages et performances collectives.",
+        "icon": "BarChart3"
+      },
+      {
+        "title": "Documents & licences",
+        "description": "Scannez et classez licences FFR, certificats médicaux, cartes d'identité. Zéro papier.",
+        "icon": "FileText"
+      },
+      {
+        "title": "Communication club & familles",
+        "description": "Messagerie interne, notifications, gestion de l'école de rugby et communication avec les parents.",
+        "icon": "MessageCircle"
+      },
+      {
+        "title": "Compositions & tactiques",
+        "description": "Placez vos avants et arrières en drag & drop, préparez vos combinaisons et partagez les compositions.",
+        "icon": "Users"
+      },
+      {
+        "title": "Vidéo & analyse (bientôt)",
+        "description": "Analyse vidéo des matchs, suivi des phases de jeu, dashboards pour le staff technique.",
+        "icon": "Video"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "authorName": "Marc D.",
+      "authorRole": "Président RC Grasse",
+      "quote": "SimplyRugby a transformé notre organisation. Les convocations se font en un clic, le suivi des licences est enfin simplifié.",
+      "avatarUrl": null
+    },
+    {
+      "authorName": "Nathalie P.",
+      "authorRole": "Responsable école de rugby",
+      "quote": "L'outil parfait pour gérer notre école de rugby. Les parents sont informés en temps réel, c'est un vrai gain de sérénité.",
+      "avatarUrl": null
+    },
+    {
+      "authorName": "Julien B.",
+      "authorRole": "Coach Fédérale 3",
+      "quote": "Enfin un outil pensé pour le rugby amateur. La gestion des compositions et le suivi des joueurs sont devenus un plaisir.",
+      "avatarUrl": null
+    }
+  ],
+  "partners": {
+    "subtitle": "Ils nous accompagnent dans le développement de SimplyRugby et partagent nos valeurs de solidarité et d'engagement."
+  },
+  "clubLogos": {
+    "subtitle": "Des clubs engagés dans l'aventure SimplyRugby, testant nos solutions sur le terrain."
+  },
+  "meta": {
+    "title": "SimplyRugby — Gestion de club de rugby amateur",
+    "description": "Gérez votre club de rugby comme un pack soudé avec SimplyRugby : effectifs, calendrier, compositions, communication et documents."
+  },
+  "fonctionnalites": {
+    "heroTag": "Conçu avec des clubs fédéraux",
+    "heroTitle": "Toutes les fonctionnalités pour organiser votre club en pack",
+    "heroSubtitle": "SimplyRugby centralise la gestion de votre club pour que chaque bénévole, coach et dirigeant se concentre sur l'essentiel : le terrain.",
+    "sectionTitle": "Ce que vous faites en 5 minutes, pas en 5 jours",
+    "impactTitle": "L'impact concret pour votre club",
+    "ctaTitle": "Moins de paperasse. Plus de rugby.",
+    "ctaSubtitle": "Adoptez les fonctionnalités qui libèrent coachs et bénévoles, et qui soudent le pack semaine après semaine.",
+    "features": [
+      {
+        "title": "Covoiturage & déplacements matchs",
+        "desc": "Organisez les trajets en déplacement en un clic. Charte de covoiturage signée, places visibles, rappel automatique avant le match.",
+        "tag": "Logistique",
+        "icon": "Bus"
+      },
+      {
+        "title": "Inscription autonome des licenciés FFR",
+        "desc": "Fini la saisie manuelle : chaque membre crée son compte et rejoint automatiquement le club et sa catégorie (seniors, juniors, école de rugby).",
+        "tag": "Gain de temps",
+        "icon": "ShieldCheck"
+      },
+      {
+        "title": "Licences, certificats médicaux, homologations FFR",
+        "desc": "Vue centralisée par joueur : statut de licence FFR, validité du certificat médical, homologations en cours.",
+        "tag": "Suivi",
+        "icon": "FileText"
+      },
+      {
+        "title": "Convocations & calendrier fédéral",
+        "desc": "Créez des convocations ciblées par équipe ou catégorie. Intégration du calendrier fédéral, rappels automatiques, documents joints.",
+        "tag": "Organisation",
+        "icon": "CalendarDays"
+      },
+      {
+        "title": "Messagerie staff ↔ joueurs & école de rugby",
+        "desc": "Discussions privées ou collectives, pièces jointes, mentions @joueur. Un canal unique pour le staff, les parents et l'école de rugby.",
+        "tag": "Communication",
+        "icon": "MessageCircle"
+      },
+      {
+        "title": "Compositions avants/arrières en drag & drop",
+        "desc": "Placez vos avants et arrières sur un terrain interactif. Enregistrez vos combinaisons, dupliquez, partagez avec le staff.",
+        "tag": "Tactique",
+        "icon": "Users"
+      },
+      {
+        "title": "Stats : essais, plaquages, cartons, présences",
+        "desc": "Suivez les statistiques individuelles (essais, plaquages, cartons jaune/rouge) et l'assiduité aux entraînements. Visualisez la progression.",
+        "tag": "Performance",
+        "icon": "BarChart3"
+      },
+      {
+        "title": "Badges & progression par joueur",
+        "desc": "Récompensez la régularité et les performances : badges visibles par les joueurs, leurs parents et l'ensemble du club.",
+        "tag": "Motivation",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "GPS terrain & météo avant match",
+        "desc": "Lien direct vers l'itinéraire du terrain adverse, conditions météo locales, point de rassemblement clair pour tout le pack.",
+        "tag": "Confort",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Anniversaires & vacances scolaires",
+        "desc": "Calendrier intelligent : anniversaires des joueurs et congés scolaires par zone académique pour anticiper les absences.",
+        "tag": "Cohésion",
+        "icon": "Gift"
+      },
+      {
+        "title": "Notifications qui n'oublient rien",
+        "desc": "Système de notification avancé : relances intelligentes, résumés quotidiens, silence nocturne pour ne déranger personne après le coup de sifflet.",
+        "tag": "Rappels",
+        "icon": "BellRing"
+      }
+    ],
+    "rolesImpact": [
+      {
+        "role": "Président",
+        "items": [
+          "Vue d'ensemble du club : effectifs, licences FFR, conformité fédérale",
+          "Communication officielle vers toutes les équipes et l'école de rugby",
+          "Suivi des documents administratifs et homologations FFR"
+        ]
+      },
+      {
+        "role": "Coach",
+        "items": [
+          "Convocations et compositions avants/arrières en quelques minutes",
+          "Suivi individuel : présences, essais, plaquages, progression technique",
+          "Messagerie directe avec le pack, zéro groupe WhatsApp incontrôlable"
+        ]
+      },
+      {
+        "role": "Parent",
+        "items": [
+          "Informé en temps réel des convocations, horaires et terrains de match",
+          "Covoiturage organisé avec charte de responsabilité signée",
+          "Suivi des badges et de la progression de son enfant à l'école de rugby"
+        ]
+      },
+      {
+        "role": "Joueur",
+        "items": [
+          "Notifications push pour ne jamais rater une convocation ou un entraînement",
+          "Classement, badges et objectifs personnels visibles dans l'appli",
+          "Accès à ses stats de saison : essais, plaquages, présences, évaluations"
+        ]
+      }
+    ],
+    "meta": {
+      "title": "Fonctionnalités SimplyRugby",
+      "description": "Découvrez toutes les fonctionnalités SimplyRugby : gestion FFR, convocations, compositions avants/arrières, stats essais/plaquages, covoiturage et messagerie. Conçu avec des clubs fédéraux."
+    }
+  },
+  "offres": {
+    "heroTitle": "Choisissez l'offre qui fait gagner du temps",
+    "heroSubtitle": "Toutes les fonctionnalités, sans limites cachées.",
+    "trialTitle": "1 mois gratuit, sans stress",
+    "trialItem1": "Testez SimplyRugby gratuitement pendant 30 jours.",
+    "trialItem2": "À la fin de l'essai : annulez en un clic, ou laissez l'abonnement démarrer automatiquement.",
+    "trialItem3": "Le plan est déterminé par le nombre de licenciés actifs présents dans l'app au moment de la bascule.",
+    "appTitle": "Téléchargez l'application SimplyRugby",
+    "appComingSoon": "Bientôt disponible sur tous vos appareils !",
+    "meta": {
+      "title": "Offres SimplyRugby",
+      "description": "Découvrez les offres SimplyRugby pour votre club de rugby amateur. 1 mois gratuit, sans engagement, sans limites cachées. Conçu pour les clubs fédéraux."
+    }
+  },
+  "gestionClub": {
+    "heroTag": "Conçu avec les clubs amateurs",
+    "heroTitle": "SimplyRugby – la gestion de club qui soude le pack et fait gagner du temps",
+    "heroSubtitle": "Centralisez effectifs, calendrier fédéral, licences FFR et suivi des joueurs. Un seul outil pour tout votre club.",
+    "heroPoint1": "🏅 Structurez votre club : équipes, catégories, rôles",
+    "heroPoint2": "📋 Feuilles de match officielles générées en un clic",
+    "heroPoint3": "🧠 Suivi & progression : essais, plaquages, évaluations, blasons",
+    "heroPoint4": "🔐 Licences FFR & certificats médicaux centralisés",
+    "divisionsTitle": "Classement & progression : les 6 divisions",
+    "divisionsSubtitle": "De Bronze à Master, motivez vos joueurs avec des objectifs concrets et un système de progression gamifié adapté au rugby.",
+    "modulesTitle": "Tout pour gérer votre club de A à Z",
+    "dashboardTitle": "Un dashboard ultra‑puissant, pensé pour l'action",
+    "dashboardPoint1": "👥 Effectif complet, absences/blessures, moyenne d'âge",
+    "dashboardPoint2": "📊 Résultats, séries, courbes de progression collective",
+    "dashboardPoint3": "🏆 Top 3 joueurs en progression, meilleur marqueur du mois",
+    "dashboardPoint4": "💡 Actions rapides coach : évaluer, conseiller, commenter…",
+    "ctaTitle": "Prêt à faire passer votre club dans une nouvelle dimension ?",
+    "cta1Label": "Tester SimplyRugby gratuitement",
+    "imageAlt": "Interface de gestion SimplyRugby",
+    "meta": {
+      "title": "Gestion de club – SimplyRugby",
+      "description": "Gérez votre club de rugby amateur comme un pack uni avec SimplyRugby : effectifs, licences FFR, feuilles de match, statistiques essais/plaquages et progression centralisés."
+    }
+  },
+  "gestionEquipe": {
+    "heroTag": "Pour les équipes ambitieuses",
+    "heroTitle": "Gérez votre équipe comme jamais : simple, fun, efficace",
+    "heroSubtitle": "Préparez vos mêlées, organisez le pack et progressez ensemble. Des outils pros pensés pour la cohésion du vestiaire et le plaisir du jeu.",
+    "heroPoint1": "✅ Création d'équipe express & invitations",
+    "heroPoint2": "✅ Calendrier et disponibilités en un clic",
+    "heroPoint3": "✅ Classements ludiques & badges de progression",
+    "heroPoint4": "✅ Covoiturage + messagerie intégrée",
+    "divisionsTitle": "Progresser, se challenger, s'amuser ensemble",
+    "modulesTitle": "Simplifiez-vous la vie avec SimplyRugby",
+    "ctaTitle": "Prêts à donner un nouvel élan à votre équipe ?",
+    "imageAlt": "Gestion d'équipe SimplyRugby",
+    "meta": {
+      "title": "Gestion d'équipe – SimplyRugby",
+      "description": "Créez votre équipe de rugby, gérez les disponibilités, partagez les compositions avants/arrières et progressez ensemble avec SimplyRugby."
+    }
+  }
+}

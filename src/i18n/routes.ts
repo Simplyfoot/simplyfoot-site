@@ -1,45 +1,102 @@
-export const ROUTES = {
+import type { BrandId } from '../lib/config/brands';
+
+/**
+ * Platform-level routes (not brand-specific).
+ */
+export const PLATFORM_ROUTES = {
   fr: {
-    home: "/",
-    about: "/a-propos",
-    admin: "/admin",
-    blog: "/blog",
-    cgu: "/cgu",
-    cgv: "/cgv",
-    club: "/gestion-club",
-    team: "/gestion-equipe",
-    features: "/fonctionnalites",
-    offers: "/offres",
-    contact: "/contact",
-    login: "/connexion",
-    signup: "/inscription",
-    dashboard: "/dashboard",
-    privacy: "/confidentialite",
-    legal: "/mentions-legales",
+    home: '/',
+    about: '/a-propos',
+    blog: '/blog',
+    cgu: '/cgu',
+    cgv: '/cgv',
+    contact: '/contact',
+    privacy: '/confidentialite',
+    legal: '/mentions-legales',
   },
   en: {
-    home: "/en",
-    about: "/en/about",
-    admin: "/en/admin",
-    blog: "/en/blog",
-    cgu: "/en/terms",
-    cgv: "/en/sales-terms",
-    club: "/en/club-management",
-    team: "/en/team-management",
-    features: "/en/features",
-    offers: "/en/offers",
-    contact: "/en/contact",
-    login: "/en/sign-in",
-    signup: "/en/sign-up",
-    dashboard: "/en/dashboard",
-    privacy: "/en/privacy",
-    legal: "/en/legal-notices",
+    home: '/',
+    about: '/a-propos',
+    blog: '/blog',
+    cgu: '/cgu',
+    cgv: '/cgv',
+    contact: '/contact',
+    privacy: '/confidentialite',
+    legal: '/mentions-legales',
   },
 } as const;
 
-export type Locale = keyof typeof ROUTES;
-export type RouteKey = keyof typeof ROUTES.fr;
+/**
+ * Brand-level routes (require a brand slug prefix).
+ */
+export const BRAND_ROUTES = {
+  fr: {
+    landing: '',
+    club: '/gestion-club',
+    team: '/gestion-equipe',
+    features: '/fonctionnalites',
+    offers: '/offres',
+  },
+  en: {
+    landing: '',
+    club: '/gestion-club',
+    team: '/gestion-equipe',
+    features: '/fonctionnalites',
+    offers: '/offres',
+  },
+} as const;
 
-export const getRoute = (locale: Locale, routeKey: RouteKey): string => {
-  return ROUTES[locale][routeKey] ?? "/";
-};
+export type Locale = keyof typeof PLATFORM_ROUTES;
+export type PlatformRouteKey = keyof typeof PLATFORM_ROUTES.fr;
+export type BrandRouteKey = keyof typeof BRAND_ROUTES.fr;
+
+/**
+ * Get a platform-level route path.
+ */
+export function getPlatformRoute(locale: Locale, routeKey: PlatformRouteKey): string {
+  return PLATFORM_ROUTES[locale][routeKey] ?? '/';
+}
+
+/**
+ * Get a brand-level route path (prefixed with /{brand}).
+ */
+export function getBrandRoute(locale: Locale, brand: BrandId, routeKey: BrandRouteKey): string {
+  const suffix = BRAND_ROUTES[locale][routeKey] ?? '';
+  return `/${brand}${suffix}`;
+}
+
+// Legacy combined route map for backward compatibility during migration.
+// Brand routes are resolved with "foot" as default brand.
+const LEGACY_ROUTES = {
+  fr: {
+    ...PLATFORM_ROUTES.fr,
+    home: '/',
+    club: '/foot/gestion-club',
+    team: '/foot/gestion-equipe',
+    features: '/foot/fonctionnalites',
+    offers: '/foot/offres',
+    login: '/foot',
+    signup: '/foot',
+    dashboard: '/foot',
+    admin: '/foot',
+  },
+  en: {
+    ...PLATFORM_ROUTES.en,
+    home: '/',
+    club: '/foot/gestion-club',
+    team: '/foot/gestion-equipe',
+    features: '/foot/fonctionnalites',
+    offers: '/foot/offres',
+    login: '/foot',
+    signup: '/foot',
+    dashboard: '/foot',
+    admin: '/foot',
+  },
+} as const;
+
+export type RouteKey = keyof typeof LEGACY_ROUTES.fr;
+export const ROUTES = LEGACY_ROUTES;
+
+export function getRoute(locale: Locale, routeKey: RouteKey): string {
+  return LEGACY_ROUTES[locale][routeKey] ?? '/';
+}

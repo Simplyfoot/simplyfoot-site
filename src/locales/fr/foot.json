@@ -1,0 +1,285 @@
+{
+  "hero": {
+    "accent": "SimplyFoot",
+    "title": "L'application qui fait briller votre club amateur",
+    "subtitle": "Centralisez la gestion, motivez, communiquez, gagnez du temps.",
+    "subtitleHighlight": "SimplyFoot simplifie la vie des bénévoles et dirigeants, tout en offrant une expérience unique aux joueurs et familles.",
+    "statline": "Simple. Rapide. Efficace."
+  },
+  "manifest": {
+    "eyebrow": "Notre conviction",
+    "phrase": "On ne gère pas un club. On le fait vivre.",
+    "statement": "Des centaines de bénévoles donnent leur dimanche pour que quelque chose de rare existe encore : un club de quartier, une identité locale, un terrain qui rassemble. SimplyFoot est fait pour eux — pour leur redonner du temps, de l'énergie et de la fierté."
+  },
+  "benefits": {
+    "title": "Pourquoi SimplyFoot transforme votre club",
+    "items": [
+      {
+        "title": "Terrain en premier",
+        "description": "SimplyFoot s'adapte à votre rythme, pas l'inverse. 10 minutes pour démarrer, zéro formation — pensé pour les bénévoles qui gèrent leur club depuis un parking ou un terrain boueux.",
+        "icon": "Compass"
+      },
+      {
+        "title": "3h gagnées chaque semaine",
+        "description": "Convocations, feuilles de match, rappels de présence : tout s'automatise. Vous récupérez du temps pour ce qui compte vraiment — votre équipe.",
+        "icon": "AlarmClock"
+      },
+      {
+        "title": "Le club qui rassemble",
+        "description": "Joueurs, familles, bénévoles : SimplyFoot crée du lien au-delà du terrain. Chaque membre se sent valorisé, informé, connecté à la vie du club.",
+        "icon": "Users"
+      },
+      {
+        "title": "L'image d'un grand club",
+        "description": "Communication soignée, documents impeccables, présence digitale forte : votre club inspire confiance auprès de la mairie, des parents et des sponsors locaux.",
+        "icon": "Star"
+      }
+    ]
+  },
+  "modules": {
+    "title": "Les modules essentiels SimplyFoot",
+    "titleAccent": "modules essentiels",
+    "items": [
+      {
+        "title": "Gestion du club",
+        "description": "Président, staff, coach et joueurs : centralisez la gestion et la communication dans un espace sécurisé.",
+        "icon": "ShieldCheck"
+      },
+      {
+        "title": "Planification & convocations",
+        "description": "Organisez tous les matchs, entraînements et événements, avec rappels et notifications automatiques.",
+        "icon": "CalendarDays"
+      },
+      {
+        "title": "Feuilles de match",
+        "description": "Générez vos feuilles officielles, signatures numériques, et gardez un historique complet accessible partout.",
+        "icon": "LayoutDashboard"
+      },
+      {
+        "title": "Statistiques & IA",
+        "description": "Analysez la progression de chaque joueur, suivez les présences, blessures, scores et bénéficiez de conseils IA.",
+        "icon": "BarChart3"
+      },
+      {
+        "title": "Scan & classement de documents",
+        "description": "Scannez et classez licences, certificats, cartes d'identité : zéro papier, zéro stress administratif.",
+        "icon": "FileText"
+      },
+      {
+        "title": "Communication clubs & familles",
+        "description": "Messagerie interne, notifications instantanées, validation des présences et informations santé.",
+        "icon": "MessageCircle"
+      },
+      {
+        "title": "Compositions visuelles",
+        "description": "Construisez vos équipes et tactiques en drag & drop sur terrain digital, partagez les compos.",
+        "icon": "Users"
+      },
+      {
+        "title": "Vidéo & IA coach (bientôt)",
+        "description": "Analyse vidéo automatisée, suivi IA, dashboards pour coachs et joueurs.",
+        "icon": "Video"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "authorName": "Karim M.",
+      "authorRole": "Président US Montauroux",
+      "quote": "SimplyFoot a révolutionné la gestion de notre club : moins de stress, plus de cohésion ! Les bénévoles sont conquis.",
+      "avatarUrl": "/avatars/karim.png"
+    },
+    {
+      "authorName": "Sophie R.",
+      "authorRole": "Coach Féminines FC Toulon",
+      "quote": "La planification des entraînements et le suivi des joueuses sont devenus un jeu d'enfant. Enfin une appli pensée pour l'amateur !",
+      "avatarUrl": "/avatars/sophie.png"
+    },
+    {
+      "authorName": "Lucas T.",
+      "authorRole": "Parent et dirigeant AS La Seyne",
+      "quote": "Simple, rapide, et tellement pratique pour toute la famille. L'essayer, c'est l'adopter.",
+      "avatarUrl": "/avatars/lucas.png"
+    }
+  ],
+  "partners": {
+    "subtitle": "Ils nous accompagnent dans le développement de SimplyFoot et partagent nos valeurs d'innovation, de proximité et d'humain au cœur du jeu."
+  },
+  "clubLogos": {
+    "subtitle": "Des clubs engagés dans l'aventure SimplyFoot, testant nos solutions sur le terrain."
+  },
+  "meta": {
+    "title": "SimplyFoot — Gestion de club de football amateur",
+    "description": "Gérez votre club de football amateur comme un pro avec SimplyFoot : calendrier, compositions, statistiques, communication et documents en ligne."
+  },
+  "fonctionnalites": {
+    "heroTag": "Conçu avec des coachs & des parents",
+    "heroTitle": "Toutes les fonctionnalités pour simplifier et motiver",
+    "heroSubtitle": "SimplyFoot centralise l'organisation, les échanges et la progression sportive. Moins d'administratif, plus de football.",
+    "sectionTitle": "Ce que vous faites en 5 minutes, pas en 5 jours",
+    "impactTitle": "L'impact concret pour votre club",
+    "ctaTitle": "Moins d'organisation. Plus de football.",
+    "ctaSubtitle": "Adoptez les fonctionnalités qui libèrent coachs et bénévoles, et qui motivent les joueurs semaine après semaine.",
+    "features": [
+      {
+        "title": "Demandes de transport responsables",
+        "desc": "Organisez les trajets en un clic avec une charte parent signée. Engagement de responsabilité, visibilité des places, rappel automatique.",
+        "tag": "Logistique",
+        "icon": "Bus"
+      },
+      {
+        "title": "Inscription autonome des licenciés",
+        "desc": "Fini l'ajout manuel : chaque adhérent crée son compte et rejoint automatiquement le club et sa catégorie.",
+        "tag": "Gain de temps",
+        "icon": "ShieldCheck"
+      },
+      {
+        "title": "Licences, visites médicales & équipements",
+        "desc": "Vue centralisée par joueur : statut de licence, date de visite médicale, dotation d'équipement.",
+        "tag": "Suivi",
+        "icon": "FileText"
+      },
+      {
+        "title": "Création d'évènement ciblée",
+        "desc": "Choisissez précisément les équipes ou joueurs concernés. Disponibilités, rappels, documents liés.",
+        "tag": "Organisation",
+        "icon": "CalendarDays"
+      },
+      {
+        "title": "Messagerie coach ↔ joueur/équipe",
+        "desc": "Discussions privées ou d'équipe, pièces jointes, mentions @joueur, tout au même endroit.",
+        "tag": "Communication",
+        "icon": "MessageCircle"
+      },
+      {
+        "title": "Compo par glisser‑déposer",
+        "desc": "Alignez vos joueurs sur un terrain interactif. Enregistrez, dupliquez, partagez.",
+        "tag": "Tactique",
+        "icon": "Users"
+      },
+      {
+        "title": "Stats & cotation Technique/Mental",
+        "desc": "Évaluez chaque joueur (technique, mental, assiduité). Visualisez la progression et classements.",
+        "tag": "Performance",
+        "icon": "BarChart3"
+      },
+      {
+        "title": "Badges de progression",
+        "desc": "Récompensez la présence et les évaluations : badges visibles par les joueurs et leurs parents.",
+        "tag": "Motivation",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "GPS & météo en temps réel",
+        "desc": "Lien direct vers l'itinéraire, conditions météo locales, point de rendez‑vous clair.",
+        "tag": "Confort",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Anniversaires & vacances scolaires",
+        "desc": "Calendrier intelligent : anniversaires de l'équipe et vacances (zones académiques).",
+        "tag": "Cohésion",
+        "icon": "Gift"
+      },
+      {
+        "title": "Notifications qui n'oublient rien",
+        "desc": "Système de notification avancé : relances intelligentes, résumés quotidiens, silence nocturne.",
+        "tag": "Rappels",
+        "icon": "BellRing"
+      }
+    ],
+    "rolesImpact": [
+      {
+        "role": "Président",
+        "items": [
+          "Vue d'ensemble du club en un coup d'œil : effectifs, licences, finances",
+          "Communication officielle vers toutes les équipes en un clic",
+          "Suivi des documents administratifs et conformité FFF"
+        ]
+      },
+      {
+        "role": "Coach",
+        "items": [
+          "Convocations et compositions en quelques minutes avant le match",
+          "Évaluation individuelle et progression technique suivie semaine après semaine",
+          "Messagerie directe avec les joueurs et les familles, zéro WhatsApp"
+        ]
+      },
+      {
+        "role": "Parent",
+        "items": [
+          "Informé en temps réel des convocations, horaires et lieux de match",
+          "Covoiturage organisé simplement avec une charte signée",
+          "Suivi de la progression et des badges de son enfant"
+        ]
+      },
+      {
+        "role": "Joueur",
+        "items": [
+          "Notifications push pour ne jamais rater une convocation",
+          "Classement, badges et objectifs personnels visibles dans l'appli",
+          "Accès à ses stats, évaluations et historique de saison"
+        ]
+      }
+    ],
+    "meta": {
+      "title": "Fonctionnalités SimplyFoot",
+      "description": "Découvrez toutes les fonctionnalités SimplyFoot : transport, licences, compositions, stats, badges, messagerie et bien plus. Conçu avec des coachs et des parents de clubs amateurs."
+    }
+  },
+  "offres": {
+    "heroTitle": "Choisissez l'offre qui fait gagner du temps",
+    "heroSubtitle": "Toutes les fonctionnalités, sans limites cachées.",
+    "trialTitle": "1 mois gratuit, sans stress",
+    "trialItem1": "Testez SimplyFoot gratuitement pendant 30 jours.",
+    "trialItem2": "À la fin de l'essai : annulez en un clic, ou laissez l'abonnement démarrer automatiquement.",
+    "trialItem3": "Le plan est déterminé par le nombre de licenciés actifs présents dans l'app au moment de la bascule.",
+    "appTitle": "Téléchargez l'application SimplyFoot",
+    "appComingSoon": "Bientôt disponible sur tous vos appareils !",
+    "meta": {
+      "title": "Offres SimplyFoot",
+      "description": "Découvrez les offres SimplyFoot pour votre club de football amateur. 1 mois gratuit, sans engagement, sans limites cachées."
+    }
+  },
+  "gestionClub": {
+    "heroTag": "Conçu avec les clubs amateurs",
+    "heroTitle": "SimplyFoot – la gestion de club qui motive et fait gagner du temps",
+    "heroSubtitle": "Centralisez effectifs, calendrier, documents et suivi des joueurs. Un seul outil pour tout votre club.",
+    "heroPoint1": "🏅 Structurez votre club : équipes, catégories, rôles",
+    "heroPoint2": "📋 Feuilles de match automatisées en un clic",
+    "heroPoint3": "🧠 IA & progression : évaluations, blasons, objectifs",
+    "heroPoint4": "🔐 Documents & licences, tout centralisé et sécurisé",
+    "divisionsTitle": "Classement & progression : les 6 divisions",
+    "divisionsSubtitle": "De Bronze à Master, motivez vos joueurs avec des objectifs concrets et un système de progression gamifié.",
+    "modulesTitle": "Tout pour gérer votre club de A à Z",
+    "dashboardTitle": "Un dashboard ultra‑puissant, pensé pour l'action",
+    "dashboardPoint1": "👥 Effectif complet, absences/blessures, moyenne d'âge",
+    "dashboardPoint2": "📊 Résultats, séries, courbes de progression",
+    "dashboardPoint3": "🏆 Top 3 joueurs en progression, joueur du mois",
+    "dashboardPoint4": "💡 Actions rapides coach : évaluer, conseiller, commenter…",
+    "ctaTitle": "Prêt à faire passer votre club dans une nouvelle dimension ?",
+    "cta1Label": "Tester SimplyFoot gratuitement",
+    "imageAlt": "Interface de gestion SimplyFoot",
+    "meta": {
+      "title": "Gestion de club – SimplyFoot",
+      "description": "Gérez votre club de football amateur de A à Z avec SimplyFoot : effectifs, licences, feuilles de match, statistiques et progression des joueurs centralisés en un seul outil."
+    }
+  },
+  "gestionEquipe": {
+    "heroTag": "Pour les équipes ambitieuses",
+    "heroTitle": "Gérez votre équipe comme jamais : simple, fun, efficace",
+    "heroSubtitle": "Planifiez, communiquez et progressez ensemble. Des outils pro, pensés pour le plaisir du jeu et la cohésion.",
+    "heroPoint1": "✅ Création d'équipe express & invitations",
+    "heroPoint2": "✅ Calendrier et disponibilités en un clic",
+    "heroPoint3": "✅ Classements ludiques & badges de progression",
+    "heroPoint4": "✅ Covoiturage + messagerie intégrée",
+    "divisionsTitle": "Progresser, se challenger, s'amuser ensemble",
+    "modulesTitle": "Simplifiez-vous la vie avec SimplyFoot",
+    "ctaTitle": "Prêts à donner un nouvel élan à votre équipe ?",
+    "imageAlt": "Gestion d'équipe SimplyFoot",
+    "meta": {
+      "title": "Gestion d'équipe – SimplyFoot",
+      "description": "Créez votre équipe, gérez les disponibilités, partagez les compos et progressez ensemble avec SimplyFoot. L'outil pensé pour les équipes de football amateur."
+    }
+  }
+}

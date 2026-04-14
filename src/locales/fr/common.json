@@ -1,4 +1,60 @@
 {
-  "welcome": "Bienvenue sur SimplyFoot ⚽",
-  "description": "Découvrez nos solutions pour les clubs de football amateur."
+  "nav": {
+    "club": "Gestion club",
+    "team": "Gestion équipe",
+    "solutions": "Solutions",
+    "offers": "Offres",
+    "features": "Fonctionnalités",
+    "blog": "Blog",
+    "about": "À propos",
+    "contact": "Contact",
+    "headerCta": "Démo gratuite",
+    "skipToContent": "Aller au contenu principal",
+    "openMenu": "Ouvrir le menu mobile",
+    "closeMenu": "Fermer le menu mobile"
+  },
+  "footer": {
+    "legalTitle": "Informations légales",
+    "legalLinks": {
+      "mentions": "Mentions légales",
+      "cgu": "CGU",
+      "cgv": "CGV",
+      "privacy": "Politique de confidentialité",
+      "cookies": "Gestion des cookies",
+      "contact": "Nous contacter"
+    },
+    "socialTitle": "Restez connectés",
+    "socialSubtitle": "Suivez nos dernières actualités, mises à jour et conseils de gestion de club.",
+    "copyright": "Tous droits réservés.",
+    "tagline": "Conçu avec passion pour les clubs amateurs."
+  },
+  "cta": {
+    "requestDemo": "Demander une démo",
+    "discoverOffers": "Découvrir les offres",
+    "contactUs": "Nous contacter",
+    "backToHome": "Retour à l'accueil",
+    "contactTeam": "Contacter l'équipe"
+  },
+  "stats": {
+    "dedicatedAmateur": "dédié aux clubs amateurs",
+    "hundredPercent": "100 %"
+  },
+  "errors": {
+    "pageNotFound": "404",
+    "pageNotFoundTitle": "Oups... cette page a été remplacée à la mi-temps",
+    "pageNotFoundMessage": "Pas de panique ! Même les meilleurs ratent parfois une passe. Reviens à l'accueil et reprends le match.",
+    "genericError": "Une erreur est survenue",
+    "genericErrorMessage": "Quelque chose s'est mal passé. Veuillez réessayer.",
+    "retry": "Réessayer"
+  },
+  "platform": {
+    "name": "Simply",
+    "tagline": "La plateforme qui simplifie la vie des clubs amateurs"
+  },
+  "sections": {
+    "testimonialsTitle": "Ils témoignent",
+    "partnersTitle": "Nos partenaires",
+    "clubLogosTitle": "Ils nous font confiance",
+    "faqTitle": "Questions fréquentes"
+  }
 }

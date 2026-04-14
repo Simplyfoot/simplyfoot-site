@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'RESULT=$(grep -rn \"bg-\\[#\\|text-\\[#\\|border-\\[#\" components/ app/ --include=\"*.tsx\" 2>/dev/null | grep -v node_modules | grep -v .next | head -5); if [ -n \"$RESULT\" ]; then echo \"{\\\"decision\\\": \\\"block\\\", \\\"reason\\\": \\\"COULEUR HARDCODÉE DÉTECTÉE. Utilise var(--brand-*) à la place. Fichiers : $RESULT\\\"}\"; else echo \"{\\\"decision\\\": \\\"approve\\\"}\"; fi'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'cd \"$CLAUDE_PROJECT_DIR\" && npm run build 2>&1 | tail -5; if [ $? -ne 0 ]; then echo \"{\\\"decision\\\": \\\"block\\\", \\\"reason\\\": \\\"Le build échoue. Corrige les erreurs avant de terminer.\\\"}\"; else echo \"{\\\"decision\\\": \\\"approve\\\"}\"; fi'"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
-import { Suspense, useEffect, useLayoutEffect, useRef, useState } from "react";
-import * as THREE from "three";
-import { useGLTF } from "@react-three/drei";
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { Environment } from '@react-three/drei';
+import { Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import * as THREE from 'three';
+import { useGLTF } from '@react-three/drei';
 
 type Props = {
-  src: string;      // chemin du .glb dans /public
-  size?: number;    // taille (px) du canvas carré
+  src: string; // chemin du .glb dans /public
+  size?: number; // taille (px) du canvas carré
   padding?: number; // marge de cadrage (1 = bord, 1.2 = 20% de marge)
 };
 
@@ -28,7 +28,7 @@ function fitToView(group: THREE.Group, camera: THREE.PerspectiveCamera, padding 
   // 3) on recule la caméra pour tout voir (en tenant compte du fov & de l’aspect)
   const maxSize = Math.max(size.x, size.y, size.z);
   const halfFovY = THREE.MathUtils.degToRad(camera.fov / 2);
-  const fitHeightDistance = (maxSize / 2) / Math.tan(halfFovY);
+  const fitHeightDistance = maxSize / 2 / Math.tan(halfFovY);
   const fitWidthDistance = fitHeightDistance / camera.aspect;
   const distance = Math.max(fitHeightDistance, fitWidthDistance) * padding;
 
@@ -66,12 +66,12 @@ function Model({ src, padding = 1.2 }: { src: string; padding?: number }) {
 
   // respect de prefers-reduced-motion
   useEffect(() => {
-    const mq = window.matchMedia?.("(prefers-reduced-motion: reduce)");
+    const mq = window.matchMedia?.('(prefers-reduced-motion: reduce)');
     if (mq) {
       setReduced(mq.matches);
       const cb = (e: MediaQueryListEvent) => setReduced(e.matches);
-      mq.addEventListener("change", cb);
-      return () => mq.removeEventListener("change", cb);
+      mq.addEventListener('change', cb);
+      return () => mq.removeEventListener('change', cb);
     }
   }, []);
 
@@ -83,7 +83,10 @@ function Model({ src, padding = 1.2 }: { src: string; padding?: number }) {
   return (
     <group
       ref={group}
-      onPointerOver={(e) => { e.stopPropagation(); setHovered(true); }}
+      onPointerOver={(e) => {
+        e.stopPropagation();
+        setHovered(true);
+      }}
       onPointerOut={() => setHovered(false)}
       dispose={null}
     >
@@ -96,7 +99,7 @@ export default function CrestGLB({ src, size = 140, padding = 1.2 }: Props) {
   return (
     <div
       style={{ width: size, height: size }}
-      className="rounded-2xl bg-[#1f2f27] ring-1 ring-[#29be4f]/25 shadow-[0_10px_30px_rgba(0,0,0,.25)] overflow-hidden"
+      className="rounded-2xl bg-[var(--brand-surface)] ring-1 ring-[var(--brand-ring)] shadow-[0_10px_30px_rgba(0,0,0,.25)] overflow-hidden"
     >
       <Canvas
         dpr={[1, 2]}
@@ -113,5 +116,3 @@ export default function CrestGLB({ src, size = 140, padding = 1.2 }: Props) {
     </div>
   );
 }
-
-useGLTF.preload("/models/blasons/bronze.glb");

@@ -1,0 +1,285 @@
+{
+  "hero": {
+    "accent": "SimplyHandball",
+    "title": "Votre club mérite la même intensité dans sa gestion que sur le parquet.",
+    "subtitle": "Organisez, communiquez, fédérez. Du plateau aux vestiaires.",
+    "subtitleHighlight": "SimplyHandball centralise la gestion de votre club pour que chaque bénévole, coach et dirigeant gagne en efficacité et en sérénité.",
+    "statline": "Dynamique. Rapide. Efficace."
+  },
+  "manifest": {
+    "eyebrow": "Notre conviction",
+    "phrase": "Sept secondes pour scorer. Pas pour gérer votre club.",
+    "statement": "Le handball ne tolère pas la lenteur. Chaque seconde sur le parquet est une décision. SimplyHandball suit ce rythme — pour que chaque minute hors de la salle soit consacrée au jeu, et non à l'administratif."
+  },
+  "benefits": {
+    "title": "Pourquoi SimplyHandball dynamise votre club",
+    "items": [
+      {
+        "title": "Aussi rapide que vos contre-attaques",
+        "description": "Interface instantanée, disponible partout, sans chargement inutile. SimplyHandball suit le rythme intense d'un club de handball — pas celui d'un logiciel de gestion traditionnel.",
+        "icon": "Zap"
+      },
+      {
+        "title": "Chaque minute sur le bon crédit",
+        "description": "Plateaux, créneaux salle, convocations en masse : tout s'organise en quelques secondes. Moins de temps sur l'admin, plus de temps pour préparer les matchs.",
+        "icon": "AlarmClock"
+      },
+      {
+        "title": "L'intensité du parquet dans l'organisation",
+        "description": "Valorisez l'engagement de vos handballeurs, dynamisez la communication et renforcez la cohésion avec des outils pensés pour des équipes qui donnent tout.",
+        "icon": "Activity"
+      },
+      {
+        "title": "À la hauteur de la FFHB",
+        "description": "Licences FFHB, statistiques avancées, présentation soignée : votre club fait jeu égal avec les structures professionnelles auprès de la fédération et de vos partenaires.",
+        "icon": "Trophy"
+      }
+    ]
+  },
+  "modules": {
+    "title": "Les modules essentiels SimplyHandball",
+    "titleAccent": "modules essentiels",
+    "items": [
+      {
+        "title": "Gestion du club",
+        "description": "Président, staff, coachs et joueurs : centralisez la gestion de votre club en salle dans un espace sécurisé.",
+        "icon": "ShieldCheck"
+      },
+      {
+        "title": "Planification & convocations",
+        "description": "Organisez matchs, entraînements, plateaux et tournois avec rappels et notifications automatiques.",
+        "icon": "CalendarDays"
+      },
+      {
+        "title": "Feuilles de match",
+        "description": "Générez vos feuilles de match officielles, gérez les changements et conservez l'historique complet.",
+        "icon": "LayoutDashboard"
+      },
+      {
+        "title": "Statistiques & suivi",
+        "description": "Suivez buts, arrêts, fautes, temps de jeu et progression individuelle de chaque handballeur.",
+        "icon": "BarChart3"
+      },
+      {
+        "title": "Documents & licences",
+        "description": "Scannez et classez licences FFHB, certificats médicaux, cartes d'identité. Zéro papier, zéro stress.",
+        "icon": "FileText"
+      },
+      {
+        "title": "Communication club & familles",
+        "description": "Messagerie interne, notifications instantanées, informations santé et gestion des créneaux salle.",
+        "icon": "MessageCircle"
+      },
+      {
+        "title": "Compositions visuelles",
+        "description": "Placez vos ailiers, pivots et arrières en drag & drop sur parquet digital, partagez les compositions.",
+        "icon": "Users"
+      },
+      {
+        "title": "Vidéo & analyse (bientôt)",
+        "description": "Analyse vidéo des matchs, suivi des contre-attaques, dashboards pour les coachs.",
+        "icon": "Video"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "authorName": "Émilie V.",
+      "authorRole": "Présidente HBC Fréjus",
+      "quote": "SimplyHandball a simplifié toute notre organisation. Les plateaux de jeunes sont gérés en quelques clics.",
+      "avatarUrl": null
+    },
+    {
+      "authorName": "Thomas G.",
+      "authorRole": "Coach N3 Masculine",
+      "quote": "Le suivi des stats individuelles et la gestion des compositions ont changé notre préparation de match.",
+      "avatarUrl": null
+    },
+    {
+      "authorName": "Céline M.",
+      "authorRole": "Parent et bénévole",
+      "quote": "Enfin une appli claire pour suivre les matchs de ma fille. Convocations, résultats, tout est là.",
+      "avatarUrl": null
+    }
+  ],
+  "partners": {
+    "subtitle": "Ils nous accompagnent dans le développement de SimplyHandball et partagent nos valeurs de dynamisme et de proximité."
+  },
+  "clubLogos": {
+    "subtitle": "Des clubs engagés dans l'aventure SimplyHandball, testant nos solutions sur le terrain."
+  },
+  "meta": {
+    "title": "SimplyHandball — Gestion de club de handball amateur",
+    "description": "Votre club mérite la même intensité dans sa gestion que sur le parquet. SimplyHandball centralise effectifs, calendrier et communication."
+  },
+  "fonctionnalites": {
+    "heroTag": "Conçu avec des coachs & des bénévoles",
+    "heroTitle": "Toutes les fonctionnalités pour dynamiser votre club",
+    "heroSubtitle": "SimplyHandball centralise votre club pour que vos séances, convocations et licences ne soient plus une source de stress.",
+    "sectionTitle": "Ce que vous faites en 5 minutes, pas en 5 jours",
+    "impactTitle": "L'impact concret pour votre club",
+    "ctaTitle": "Moins d'organisation. Plus de handball.",
+    "ctaSubtitle": "Adoptez les fonctionnalités qui libèrent coachs et bénévoles, et qui donnent envie à chaque handballeur de revenir sur le parquet.",
+    "features": [
+      {
+        "title": "Déplacements & covoiturage plateaux",
+        "desc": "Organisez les déplacements pour vos plateaux et matchs extérieurs. Charte de covoiturage signée, places disponibles en un coup d'œil, rappel automatique.",
+        "tag": "Logistique",
+        "icon": "Bus"
+      },
+      {
+        "title": "Inscription & licences FFHB",
+        "desc": "Fini la saisie manuelle : chaque licencié crée son compte et rejoint automatiquement le club et sa catégorie (seniors, jeunes, école de handball).",
+        "tag": "Gain de temps",
+        "icon": "ShieldCheck"
+      },
+      {
+        "title": "Licences, certificats, créneaux salle",
+        "desc": "Vue centralisée par joueur : statut de licence FFHB, validité du certificat médical, attribution des créneaux de salle.",
+        "tag": "Suivi",
+        "icon": "FileText"
+      },
+      {
+        "title": "Convocations & planification plateaux",
+        "desc": "Créez des convocations ciblées par équipe ou catégorie. Planification des plateaux jeunes, rappels automatiques, documents joints.",
+        "tag": "Organisation",
+        "icon": "CalendarDays"
+      },
+      {
+        "title": "Messagerie staff ↔ handballeurs",
+        "desc": "Discussions privées ou collectives, pièces jointes, mentions @joueur. Un seul canal pour le staff, les parents et les handballeurs.",
+        "tag": "Communication",
+        "icon": "MessageCircle"
+      },
+      {
+        "title": "Compositions visuelles sur parquet digital",
+        "desc": "Positionnez ailiers, pivots et arrières sur un parquet interactif. Enregistrez vos systèmes défensifs et offensifs, dupliquez, partagez.",
+        "tag": "Tactique",
+        "icon": "Users"
+      },
+      {
+        "title": "Stats : buts, arrêts, fautes, temps de jeu",
+        "desc": "Suivez les statistiques individuelles (buts, arrêts gardien, fautes, temps de jeu) et l'assiduité aux entraînements. Visualisez la progression.",
+        "tag": "Performance",
+        "icon": "BarChart3"
+      },
+      {
+        "title": "Badges de progression & défis hebdo",
+        "desc": "Récompensez la régularité et les performances : badges et défis hebdomadaires visibles par les joueurs, leurs parents et tout le club.",
+        "tag": "Motivation",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Adresse salle & météo avant plateau",
+        "desc": "Lien direct vers l'adresse de la salle, conditions météo pour les trajets, point de rassemblement clair avant chaque plateau.",
+        "tag": "Confort",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Anniversaires & vacances scolaires",
+        "desc": "Calendrier intelligent : anniversaires des joueurs et congés scolaires par zone académique pour anticiper les absences et organiser les plateaux.",
+        "tag": "Cohésion",
+        "icon": "Gift"
+      },
+      {
+        "title": "Notifications qui n'oublient rien",
+        "desc": "Système de notification avancé : relances intelligentes, résumés quotidiens, silence nocturne pour ne pas déranger après l'entraînement.",
+        "tag": "Rappels",
+        "icon": "BellRing"
+      }
+    ],
+    "rolesImpact": [
+      {
+        "role": "Président",
+        "items": [
+          "Vue d'ensemble du club : effectifs, licences FFHB, créneaux salle",
+          "Communication officielle vers toutes les équipes et l'école de handball",
+          "Suivi des documents administratifs et conformité FFHB"
+        ]
+      },
+      {
+        "role": "Coach",
+        "items": [
+          "Convocations et compositions de parquet en quelques minutes avant le match",
+          "Suivi individuel : buts, arrêts, fautes, présences, progression technique",
+          "Messagerie directe avec les handballeurs, sans groupe WhatsApp incontrôlable"
+        ]
+      },
+      {
+        "role": "Parent",
+        "items": [
+          "Informé en temps réel des convocations, horaires et salles de match",
+          "Covoiturage organisé simplement avec charte de responsabilité signée",
+          "Suivi des badges, défis et progression de son enfant sur le parquet"
+        ]
+      },
+      {
+        "role": "Joueur",
+        "items": [
+          "Notifications push pour ne jamais rater un plateau ou une convocation",
+          "Classement, badges, défis hebdo et objectifs personnels dans l'appli",
+          "Accès à ses stats de saison : buts, temps de jeu, présences, évaluations"
+        ]
+      }
+    ],
+    "meta": {
+      "title": "Fonctionnalités SimplyHandball",
+      "description": "Découvrez toutes les fonctionnalités SimplyHandball : gestion FFHB, convocations plateaux, compositions parquet, stats buts/arrêts, covoiturage et messagerie. Conçu avec des coachs et des bénévoles."
+    }
+  },
+  "offres": {
+    "heroTitle": "Choisissez l'offre qui fait gagner du temps",
+    "heroSubtitle": "Toutes les fonctionnalités, sans limites cachées.",
+    "trialTitle": "1 mois gratuit, sans stress",
+    "trialItem1": "Testez SimplyHandball gratuitement pendant 30 jours.",
+    "trialItem2": "À la fin de l'essai : annulez en un clic, ou laissez l'abonnement démarrer automatiquement.",
+    "trialItem3": "Le plan est déterminé par le nombre de licenciés actifs présents dans l'app au moment de la bascule.",
+    "appTitle": "Téléchargez l'application SimplyHandball",
+    "appComingSoon": "Bientôt disponible sur tous vos appareils !",
+    "meta": {
+      "title": "Offres SimplyHandball",
+      "description": "Découvrez les offres SimplyHandball pour votre club de handball amateur. 1 mois gratuit, sans engagement, sans limites cachées. Conçu pour les clubs FFHB."
+    }
+  },
+  "gestionClub": {
+    "heroTag": "Conçu avec les clubs amateurs",
+    "heroTitle": "SimplyHandball – la gestion de club qui dynamise et fait gagner du temps",
+    "heroSubtitle": "Centralisez effectifs, calendrier de salle, licences FFHB et suivi des joueurs. Un seul outil pour tout votre club.",
+    "heroPoint1": "🏅 Structurez votre club : équipes, catégories, rôles",
+    "heroPoint2": "📋 Feuilles de match officielles générées en un clic",
+    "heroPoint3": "🧠 Suivi & progression : buts, arrêts, évaluations, blasons",
+    "heroPoint4": "🔐 Licences FFHB & certificats médicaux centralisés",
+    "divisionsTitle": "Classement & progression : les 6 divisions",
+    "divisionsSubtitle": "De Bronze à Master, motivez vos handballeurs avec des objectifs concrets et un système de progression gamifié adapté au handball.",
+    "modulesTitle": "Tout pour gérer votre club de A à Z",
+    "dashboardTitle": "Un dashboard ultra‑puissant, pensé pour l'action",
+    "dashboardPoint1": "👥 Effectif complet, absences/blessures, moyenne d'âge",
+    "dashboardPoint2": "📊 Résultats, séries, courbes de progression collective",
+    "dashboardPoint3": "🏆 Top 3 joueurs en progression, meilleur buteur du mois",
+    "dashboardPoint4": "💡 Actions rapides coach : évaluer, conseiller, commenter…",
+    "ctaTitle": "Prêt à faire passer votre club dans une nouvelle dimension ?",
+    "cta1Label": "Tester SimplyHandball gratuitement",
+    "imageAlt": "Interface de gestion SimplyHandball",
+    "meta": {
+      "title": "Gestion de club – SimplyHandball",
+      "description": "Gérez votre club de handball amateur avec SimplyHandball : effectifs, licences FFHB, planification salle, feuilles de match, statistiques et progression centralisés en un seul outil."
+    }
+  },
+  "gestionEquipe": {
+    "heroTag": "Pour les équipes ambitieuses",
+    "heroTitle": "Gérez votre équipe comme jamais : simple, fun, efficace",
+    "heroSubtitle": "Préparez vos séances, organisez vos plateaux et progressez ensemble sur le parquet. Des outils pros pensés pour l'intensité et la cohésion de votre salle.",
+    "heroPoint1": "✅ Création d'équipe express & invitations",
+    "heroPoint2": "✅ Calendrier et disponibilités en un clic",
+    "heroPoint3": "✅ Classements ludiques & badges de progression",
+    "heroPoint4": "✅ Covoiturage + messagerie intégrée",
+    "divisionsTitle": "Progresser, se challenger, s'amuser ensemble",
+    "modulesTitle": "Simplifiez-vous la vie avec SimplyHandball",
+    "ctaTitle": "Prêts à donner un nouvel élan à votre équipe ?",
+    "imageAlt": "Gestion d'équipe SimplyHandball",
+    "meta": {
+      "title": "Gestion d'équipe – SimplyHandball",
+      "description": "Créez votre équipe de handball, gérez les disponibilités, planifiez vos plateaux et progressez ensemble avec SimplyHandball. L'outil pensé pour le parquet amateur."
+    }
+  }
+}

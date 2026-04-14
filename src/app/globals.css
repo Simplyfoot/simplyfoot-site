@@ -1,35 +1,141 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
+/* ================================================================
+   TOKENS PLATEFORME — neutres, invariants par marque.
+   Les tokens de marque (--brand-*) sont generes depuis TypeScript
+   et injectes dans le <head> par le root layout.
+   ================================================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Familles de polices */
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-display); /* Space Grotesk — titres héro et grands formats */
+
+  /* Surfaces neutres */
+  --color-surface-dark: #232729;
+  --color-surface-card: #f7f6f3;
+  --color-surface-input-border: #dad7cf;
+
+  /* Textes neutres */
+  --color-text-beige: #f8e9ca;
+  --color-text-white: #ffffff;
+  --color-text-dark: #14482f;
+  --color-text-muted: #5f6b61;
+
+  /* ── PALETTE PLATEFORME (contexte hors marque) ─────────────────────
+     Fond neutre quasi-noir avec légère teinte froide.
+     Distinct du vert foot (#14482F) et de l'indigo handball (#1E1B4B).
+     Utilisé sur la homepage, les pages légales, les pages plateforme.
+  ────────────────────────────────────────────────────────────────── */
+  --color-platform-bg: #0b0c11;
+  --color-platform-surface: #13151c;
+  --color-platform-border: rgba(255, 255, 255, 0.07);
+  --color-platform-muted: rgba(255, 255, 255, 0.40);
+
+  /* ── RYTHME VERTICAL — 4 valeurs canoniques ───────────────────────
+     Utiliser ces tokens pour les paddings de section.
+     Ne pas inventer d'autres valeurs ad hoc.
+     xs : sections compactes (bandeaux, stats)
+     sm : sections internes (features, témoignages)
+     md : sections principales (hero sous-page)
+     lg : sections signature (hero landing)
+  ────────────────────────────────────────────────────────────────── */
+  --space-section-xs: 3rem;    /* 48px */
+  --space-section-sm: 5rem;    /* 80px */
+  --space-section-md: 7rem;    /* 112px */
+  --space-section-lg: 10rem;   /* 160px */
+
+  /* ── MOTION SYSTEM — tokens d'animation cohérents ─────────────────
+     Toutes les animations doivent utiliser ces valeurs.
+     Ne pas hardcoder de durées ou d'easings directement.
+  ────────────────────────────────────────────────────────────────── */
+  --duration-instant: 100ms;
+  --duration-fast: 180ms;
+  --duration-base: 300ms;
+  --duration-slow: 480ms;
+  --duration-enter: 550ms;
+
+  --ease-standard:   cubic-bezier(0.4, 0, 0.2, 1);   /* interactions générales */
+  --ease-decelerate: cubic-bezier(0, 0, 0.2, 1);     /* entrées dans la vue */
+  --ease-accelerate: cubic-bezier(0.4, 0, 1, 1);     /* sorties de la vue */
+  --ease-spring:     cubic-bezier(0.34, 1.56, 0.64, 1); /* rebond */
 }
 
+/* Platform homepage — neutral dark colors (no brand context) */
+[data-brand="platform"] {
+  --brand-bg: #0b0c11;
+  --brand-bg-alt: #08080c;
+  --brand-surface: #13151c;
+  --brand-cta: #ffffff;
+  --brand-cta-hover: #e0e0e0;
+  --brand-cta-text: #0b0c11;
+  --brand-border: rgba(255, 255, 255, 0.07);
+  --brand-ring: rgba(255, 255, 255, 0.15);
+  --brand-primary-500: #ffffff;
+  --brand-accent-500: #ffffff;
+}
+
+/* ================================================================
+   TAILWIND V4 THEME INLINE — expose les tokens comme utilitaires.
+   Permet : bg-brand-bg, text-brand-cta, border-brand-border, etc.
+   Les --brand-* sont definies par le <style> genere dans le layout.
+   ================================================================ */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Primary scale : bg-brand-primary-50 ... bg-brand-primary-950 */
+  --color-brand-primary-50: var(--brand-primary-50);
+  --color-brand-primary-100: var(--brand-primary-100);
+  --color-brand-primary-200: var(--brand-primary-200);
+  --color-brand-primary-300: var(--brand-primary-300);
+  --color-brand-primary-400: var(--brand-primary-400);
+  --color-brand-primary-500: var(--brand-primary-500);
+  --color-brand-primary-600: var(--brand-primary-600);
+  --color-brand-primary-700: var(--brand-primary-700);
+  --color-brand-primary-800: var(--brand-primary-800);
+  --color-brand-primary-900: var(--brand-primary-900);
+  --color-brand-primary-950: var(--brand-primary-950);
+
+  /* Accent scale : bg-brand-accent-50 ... bg-brand-accent-950 */
+  --color-brand-accent-50: var(--brand-accent-50);
+  --color-brand-accent-100: var(--brand-accent-100);
+  --color-brand-accent-200: var(--brand-accent-200);
+  --color-brand-accent-300: var(--brand-accent-300);
+  --color-brand-accent-400: var(--brand-accent-400);
+  --color-brand-accent-500: var(--brand-accent-500);
+  --color-brand-accent-600: var(--brand-accent-600);
+  --color-brand-accent-700: var(--brand-accent-700);
+  --color-brand-accent-800: var(--brand-accent-800);
+  --color-brand-accent-900: var(--brand-accent-900);
+  --color-brand-accent-950: var(--brand-accent-950);
+
+  /* Semantic tokens : bg-brand-bg, text-brand-cta, border-brand-border, etc. */
+  --color-brand-bg: var(--brand-bg);
+  --color-brand-bg-alt: var(--brand-bg-alt);
+  --color-brand-surface: var(--brand-surface);
+  --color-brand-cta: var(--brand-cta);
+  --color-brand-cta-hover: var(--brand-cta-hover);
+  --color-brand-cta-text: var(--brand-cta-text);
+  --color-brand-border: var(--brand-border);
+  --color-brand-ring: var(--brand-ring);
+
+  /* Surfaces neutres */
+  --color-surface-dark: var(--color-surface-dark);
+  --color-surface-card: var(--color-surface-card);
+
+  /* Textes neutres */
+  --color-text-beige: var(--color-text-beige);
+  --color-text-dark: var(--color-text-dark);
+  --color-text-muted: var(--color-text-muted);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-display);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
+/* ================================================================
+   ANIMATIONS
+   ================================================================ */
 @keyframes marquee {
   0% {
     transform: translateX(0);
   }
-
   100% {
     transform: translateX(-50%);
   }
@@ -46,17 +152,85 @@ body {
 
   @keyframes pulse-ring {
     0% {
-      box-shadow: 0 0 0 0 #29be4f44;
+      box-shadow: 0 0 0 0 var(--brand-ring);
     }
-
     70% {
-      box-shadow: 0 0 0 15px #29be4f11;
+      box-shadow: 0 0 0 15px transparent;
     }
-
     100% {
-      box-shadow: 0 0 0 0 #29be4f00;
+      box-shadow: 0 0 0 0 transparent;
     }
   }
+
+  .brand-halo {
+    background: radial-gradient(
+      80% 60% at 50% -10%,
+      color-mix(in srgb, var(--brand-cta) 16%, transparent),
+      transparent 60%
+    );
+  }
+}
+
+/* CTA gradient animation */
+.cta-gradient {
+  background: linear-gradient(135deg, rgba(27, 94, 46, 0.12), rgba(139, 26, 26, 0.12), rgba(26, 35, 126, 0.12));
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease-in-out infinite;
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-gradient { animation: none; }
+}
+
+/* Simmo mascot tentacle wave animation */
+@keyframes simmo-wave {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(5deg); }
+}
+
+.simmo-t { transform-origin: top center; animation: simmo-wave 2.5s ease-in-out infinite; }
+.simmo-t1 { animation-delay: 0s; }
+.simmo-t2 { animation-delay: 0.15s; }
+.simmo-t3 { animation-delay: 0.3s; }
+.simmo-t4 { animation-delay: 0.45s; }
+.simmo-t5 { animation-delay: 0.6s; }
+.simmo-t6 { animation-delay: 0.75s; }
+
+.simmo-mascot { animation: simmo-float 3s ease-in-out infinite; }
+@keyframes simmo-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .simmo-t { animation: none; }
+  .simmo-mascot { animation: none; }
+}
+
+/* Admin input styles */
+.admin-input {
+  width: 100%;
+  border-radius: 0.5rem;
+  background-color: #09090B;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.625rem 0.875rem;
+  font-size: 0.875rem;
+  color: white;
+}
+.admin-input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.admin-input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+.admin-input:disabled {
+  opacity: 0.4;
 }
 
 @keyframes slideDown {
@@ -64,7 +238,6 @@ body {
     opacity: 0;
     transform: translateY(-10px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -75,41 +248,73 @@ body {
   animation: slideDown 0.3s ease-out forwards;
 }
 
-/* === Champs de formulaire SimplyFoot === */
-.form-input,
-.form-textarea {
-  @apply w-full rounded-lg border border-[#DAD7CF] bg-[#F7F6F3] text-[#14482F] placeholder:text-[#5f6b61] px-3 py-2 outline-none focus:ring-2 focus:ring-[#29be4f] focus:bg-white focus:border-[#29be4f];
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-slideDown,
+  .pulse {
+    animation: none;
+  }
+
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
 
-/* ===== Legal content styling (headings, text, links) ===== */
+/* ================================================================
+   FORMULAIRES
+   ================================================================ */
+.form-input,
+.form-textarea {
+  @apply w-full rounded-lg border px-3 py-2 outline-none transition-colors;
+  border-color: var(--color-surface-input-border);
+  background-color: var(--color-surface-card);
+  color: var(--color-text-dark);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--brand-cta);
+  background-color: white;
+  box-shadow: 0 0 0 2px var(--brand-ring);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+/* ================================================================
+   CONTENU LEGAL
+   ================================================================ */
 @layer components {
   .legal h2 {
     @apply mt-10 mb-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100;
     position: relative;
     padding-left: 0.75rem;
-    /* space for accent */
   }
 
-  /* Emerald accent bar on the left of h2 */
   .legal h2::before {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     top: 0.5em;
     width: 6px;
     height: 0.9em;
-    background-color: rgb(16 185 129);
-    /* emerald-500 */
+    background-color: var(--brand-cta);
     border-radius: 9999px;
   }
 
-  /* First heading doesn’t need a big top margin */
   .legal h2:first-child {
     @apply mt-0;
   }
 
   .legal h3 {
-    @apply mt-5 text-lg font-semibold text-[#14482F] dark:text-emerald-400;
+    @apply mt-5 text-lg font-semibold;
+    color: var(--color-text-dark);
   }
 
   .legal p {
@@ -117,7 +322,12 @@ body {
   }
 
   .legal a {
-    @apply decoration-emerald-300 underline-offset-4 hover:text-emerald-700 dark:hover:text-emerald-300;
+    @apply underline-offset-4;
+    text-decoration-color: var(--brand-accent);
+  }
+
+  .legal a:hover {
+    color: var(--brand-cta);
   }
 
   .legal ul {
