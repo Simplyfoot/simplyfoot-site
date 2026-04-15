@@ -21,7 +21,7 @@ export function AdminSidebar({ onLogout }: { onLogout: () => void }) {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden lg:flex lg:flex-col w-[260px] bg-[#09090B] border-r border-white/6 h-screen sticky top-0">
+    <aside className="hidden lg:flex lg:flex-col w-[260px] bg-[var(--admin-bg)] border-r border-white/6 h-screen sticky top-0">
       <div className="px-5 py-5 border-b border-white/6">
         <Link href="/admin/dashboard" className="text-lg font-bold text-white">
           Simply <span className="text-white/40 font-normal text-sm">Admin</span>

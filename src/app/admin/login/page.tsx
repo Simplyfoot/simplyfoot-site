@@ -36,7 +36,7 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#09090B] px-4">
+    <div className="min-h-screen flex items-center justify-center bg-[var(--admin-bg)] px-4">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <div className="mx-auto w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4">
@@ -53,7 +53,7 @@ export default function AdminLoginPage() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 w-full rounded-lg bg-[#111113] border border-white/10 px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-white/30"
+              className="mt-1 w-full rounded-lg bg-[var(--admin-surface)] border border-white/10 px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-white/30"
               placeholder="admin@simply.fr"
               required
             />
@@ -64,7 +64,7 @@ export default function AdminLoginPage() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 w-full rounded-lg bg-[#111113] border border-white/10 px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-white/30"
+              className="mt-1 w-full rounded-lg bg-[var(--admin-surface)] border border-white/10 px-4 py-3 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-white/30"
               placeholder="••••••••"
               required
             />
@@ -77,7 +77,7 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-lg bg-white py-3 text-sm font-bold text-[#09090B] hover:bg-white/90 disabled:opacity-50 transition-colors cursor-pointer"
+            className="w-full rounded-lg bg-white py-3 text-sm font-bold text-[var(--admin-bg)] hover:bg-white/90 disabled:opacity-50 transition-colors cursor-pointer"
           >
             {loading ? 'Connexion...' : 'Se connecter'}
           </button>

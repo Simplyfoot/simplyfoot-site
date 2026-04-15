@@ -1,5 +1,13 @@
 import type { BlogArticle, BlogFilters } from './types';
 
+/**
+ * Filtre les articles de blog par marque, categorie, region et recherche textuelle.
+ * Les resultats sont tries par date de publication decroissante.
+ * @param articles - Liste complete des articles
+ * @param brand - Identifiant de la marque pour filtrer
+ * @param filters - Criteres de filtrage (search, category, region, department)
+ * @returns Articles filtres et tries
+ */
 export function filterArticles(
   articles: BlogArticle[],
   brand: string,
@@ -34,6 +42,13 @@ export function filterArticles(
   return result;
 }
 
+/**
+ * Pagine un tableau d'articles et retourne la tranche correspondante.
+ * @param articles - Liste des articles a paginer
+ * @param page - Numero de la page courante (commence a 1)
+ * @param perPage - Nombre d'articles par page (defaut : 12)
+ * @returns Objet contenant les articles de la page, le total de pages et d'articles
+ */
 export function paginateArticles(articles: BlogArticle[], page: number, perPage: number = 12) {
   const start = (page - 1) * perPage;
   return {

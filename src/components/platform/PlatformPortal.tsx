@@ -97,7 +97,7 @@ export function PlatformPortal({ brands }: PlatformPortalProps) {
     <div ref={containerRef} className="min-h-screen bg-[var(--color-platform-bg)]">
 
       {/* ── Hero with 3D background ── */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section aria-label="Hero plateforme" className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Starfield — absolute, only in hero */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <SceneErrorBoundary>
@@ -226,7 +226,7 @@ export function PlatformPortal({ brands }: PlatformPortalProps) {
       </section>
 
       {/* ── CTA final with animated gradient ── */}
-      <section className="cta-section border-t border-[var(--color-platform-border)] cta-gradient">
+      <section aria-label="Appel a l'action" className="cta-section border-t border-[var(--color-platform-border)] cta-gradient">
         <div className="mx-auto max-w-2xl px-4 py-28 text-center sm:px-6 lg:px-8">
           <h2 className="cta-title text-3xl font-extrabold text-white md:text-5xl">
             Prêt à transformer votre club ?

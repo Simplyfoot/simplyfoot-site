@@ -30,7 +30,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#09090B] flex items-center justify-center">
+      <div className="min-h-screen bg-[var(--admin-bg)] flex items-center justify-center">
         <div className="h-8 w-8 animate-spin rounded-full border-2 border-white/20 border-t-white" />
       </div>
     );
@@ -46,7 +46,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   }
 
   return (
-    <div className="flex min-h-screen bg-[#09090B] text-white">
+    <div className="flex min-h-screen bg-[var(--admin-bg)] text-white">
       <AdminSidebar onLogout={handleLogout} />
 
       {/* Mobile sidebar overlay */}

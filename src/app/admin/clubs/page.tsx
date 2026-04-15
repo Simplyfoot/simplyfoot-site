@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { Eye } from 'lucide-react';
+import { getBrandConfig } from 'lib/config/brands';
 
 const CLUBS = [
   { id: 'c1', name: 'FC Gardanne', sport: 'foot', city: 'Gardanne', licencies: 210, equipes: 12, plan: 'regional', status: 'active', createdAt: '2024-01-15' },
@@ -17,7 +18,11 @@ const CLUBS = [
   { id: 'c10', name: 'FC Rennes Amateur', sport: 'foot', city: 'Rennes', licencies: 170, equipes: 9, plan: 'regional', status: 'active', createdAt: '2023-11-01' },
 ];
 
-const BRAND_COLORS: Record<string, string> = { foot: '#1B5E20', rugby: '#8B1A1A', handball: '#1A237E' };
+const BRAND_COLORS: Record<string, string> = {
+  foot: getBrandConfig('foot').theme.primary[500],
+  rugby: getBrandConfig('rugby').theme.primary[500],
+  handball: getBrandConfig('handball').theme.primary[500],
+};
 const STATUS_STYLES: Record<string, string> = {
   active: 'bg-emerald-400/15 text-emerald-400',
   blocked: 'bg-red-400/15 text-red-400',
@@ -43,9 +48,9 @@ export default function AdminClubsPage() {
 
       <div className="flex flex-wrap gap-3">
         <input type="text" placeholder="Rechercher..." value={filter} onChange={(e) => setFilter(e.target.value)}
-          className="rounded-lg bg-[#111113] border border-white/10 px-4 py-2 text-sm text-white placeholder:text-white/30 focus:outline-none" />
+          className="rounded-lg bg-[var(--admin-surface)] border border-white/10 px-4 py-2 text-sm text-white placeholder:text-white/30 focus:outline-none" />
         <select value={sportFilter} onChange={(e) => setSportFilter(e.target.value)}
-          className="rounded-lg bg-[#111113] border border-white/10 px-3 py-2 text-sm text-white focus:outline-none">
+          className="rounded-lg bg-[var(--admin-surface)] border border-white/10 px-3 py-2 text-sm text-white focus:outline-none">
           <option value="">Tous sports</option>
           <option value="foot">Football</option>
           <option value="rugby">Rugby</option>
@@ -53,7 +58,7 @@ export default function AdminClubsPage() {
         </select>
       </div>
 
-      <div className="rounded-xl border border-white/6 bg-[#111113] overflow-x-auto">
+      <div className="rounded-xl border border-white/6 bg-[var(--admin-surface)] overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-white/6 text-white/40 text-xs uppercase tracking-wide">

@@ -19,7 +19,7 @@ export default function AdminBlogNewPage() {
         <h1 className="text-2xl font-bold">Nouvel article</h1>
       </div>
 
-      <div className="space-y-5 rounded-xl border border-white/6 bg-[#111113] p-6">
+      <div className="space-y-5 rounded-xl border border-white/6 bg-[var(--admin-surface)] p-6">
         <Field label="Titre">
           <input type="text" className="admin-input" placeholder="Titre de l'article" />
         </Field>
@@ -62,7 +62,7 @@ export default function AdminBlogNewPage() {
         </div>
 
         <div className="flex gap-3 pt-4 border-t border-white/6">
-          <button className="rounded-lg bg-white px-5 py-2.5 text-sm font-bold text-[#09090B] hover:bg-white/90 transition-colors cursor-pointer">
+          <button className="rounded-lg bg-white px-5 py-2.5 text-sm font-bold text-[var(--admin-bg)] hover:bg-white/90 transition-colors cursor-pointer">
             Publier
           </button>
           <button className="rounded-lg border border-white/10 px-5 py-2.5 text-sm font-medium text-white/60 hover:text-white hover:border-white/20 transition-colors cursor-pointer">

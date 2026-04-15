@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import { ArrowLeft, Ban, KeyRound, Trash2 } from 'lucide-react';
 
@@ -14,7 +12,7 @@ export default function AdminUserDetailPage() {
         <span className="rounded-full bg-emerald-400/15 text-emerald-400 px-2.5 py-0.5 text-xs font-medium">Actif</span>
       </div>
 
-      <div className="rounded-xl border border-white/6 bg-[#111113] p-5 space-y-4">
+      <div className="rounded-xl border border-white/6 bg-[var(--admin-surface)] p-5 space-y-4">
         <h3 className="text-sm font-bold text-white/70 uppercase tracking-wide">Profil</h3>
         <dl className="space-y-2 text-sm">
           <div className="flex justify-between"><dt className="text-white/40">Email</dt><dd className="text-white">marc@fcgardanne.fr</dd></div>

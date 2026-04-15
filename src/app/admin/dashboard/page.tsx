@@ -1,7 +1,6 @@
-'use client';
-
 import { Building, Users, CreditCard, TrendingUp } from 'lucide-react';
 import { StatCard } from 'components/admin/StatCard';
+import { getBrandConfig } from 'lib/config/brands';
 
 const STATS = {
   totalClubs: 487, totalLicencies: 24350, activeSubscriptions: 312, revenueMonth: 4280,
@@ -25,7 +24,11 @@ const STATS = {
   ],
 };
 
-const SPORT_COLORS = { foot: '#1B5E20', rugby: '#8B1A1A', handball: '#1A237E' };
+const SPORT_COLORS = {
+  foot: getBrandConfig('foot').theme.primary[500],
+  rugby: getBrandConfig('rugby').theme.primary[500],
+  handball: getBrandConfig('handball').theme.primary[500],
+};
 
 export default function AdminDashboard() {
   return (
@@ -45,7 +48,7 @@ export default function AdminDashboard() {
         {(['foot', 'rugby', 'handball'] as const).map((sport) => (
           <div
             key={sport}
-            className="rounded-xl border border-white/6 bg-[#111113] p-5"
+            className="rounded-xl border border-white/6 bg-[var(--admin-surface)] p-5"
             style={{ borderLeftColor: SPORT_COLORS[sport], borderLeftWidth: 3 }}
           >
             <h3 className="text-sm font-bold" style={{ color: SPORT_COLORS[sport] }}>
@@ -68,7 +71,7 @@ export default function AdminDashboard() {
       {/* Two columns: Top regions + Recent activity */}
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         {/* Top regions */}
-        <div className="rounded-xl border border-white/6 bg-[#111113] p-5">
+        <div className="rounded-xl border border-white/6 bg-[var(--admin-surface)] p-5">
           <h3 className="text-sm font-bold text-white mb-4">Top régions</h3>
           <div className="space-y-3">
             {STATS.topRegions.map((r, i) => (
@@ -90,7 +93,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* Recent activity */}
-        <div className="rounded-xl border border-white/6 bg-[#111113] p-5">
+        <div className="rounded-xl border border-white/6 bg-[var(--admin-surface)] p-5">
           <h3 className="text-sm font-bold text-white mb-4">Activité récente</h3>
           <div className="space-y-3">
             {STATS.recentActivity.map((log, i) => (

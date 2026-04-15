@@ -106,15 +106,30 @@ const BRANDS: Record<BrandId, BrandConfig> = {
   handball: handballConfig,
 };
 
+/**
+ * Recupere la configuration d'une marque par son identifiant.
+ * Retourne la marque par defaut (foot) si l'identifiant est invalide.
+ * @param id - Identifiant de la marque (foot, rugby, handball)
+ * @returns La configuration complete de la marque
+ */
 export function getBrandConfig(id: string): BrandConfig {
   if (id in BRANDS) return BRANDS[id as BrandId];
   return BRANDS[DEFAULT_BRAND];
 }
 
+/**
+ * Type guard qui verifie si une chaine correspond a un identifiant de marque valide.
+ * @param id - Chaine a verifier
+ * @returns `true` si l'identifiant est un BrandId valide
+ */
 export function isValidBrand(id: string): id is BrandId {
   return BRAND_IDS.includes(id as BrandId);
 }
 
+/**
+ * Retourne la liste de toutes les configurations de marques disponibles.
+ * @returns Tableau de BrandConfig pour chaque marque (foot, rugby, handball)
+ */
 export function getAllBrands(): BrandConfig[] {
   return BRAND_IDS.map((id) => BRANDS[id]);
 }

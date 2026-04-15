@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import { ArrowLeft, Ban, Trash2 } from 'lucide-react';
 
@@ -15,7 +13,7 @@ export default function AdminClubDetailPage() {
       </div>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        <div className="rounded-xl border border-white/6 bg-[#111113] p-5 space-y-4">
+        <div className="rounded-xl border border-white/6 bg-[var(--admin-surface)] p-5 space-y-4">
           <h3 className="text-sm font-bold text-white/70 uppercase tracking-wide">Informations</h3>
           <dl className="space-y-2 text-sm">
             <div className="flex justify-between"><dt className="text-white/40">Sport</dt><dd className="text-white">Football</dd></div>
@@ -27,7 +25,7 @@ export default function AdminClubDetailPage() {
           </dl>
         </div>
 
-        <div className="rounded-xl border border-white/6 bg-[#111113] p-5 space-y-4">
+        <div className="rounded-xl border border-white/6 bg-[var(--admin-surface)] p-5 space-y-4">
           <h3 className="text-sm font-bold text-white/70 uppercase tracking-wide">Statistiques</h3>
           <dl className="space-y-2 text-sm">
             <div className="flex justify-between"><dt className="text-white/40">Licenciés</dt><dd className="text-white font-bold text-lg">210</dd></div>

@@ -152,7 +152,7 @@ export default function BlogPage() {
 
         {/* FEATURED */}
         {featured && (
-          <section className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 items-stretch">
+          <section aria-label="Article a la une" className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 items-stretch">
             <article className="relative overflow-hidden rounded-3xl border border-[var(--brand-cta)]/20 bg-[var(--color-surface-dark)] shadow-lg">
               <Link href={`/blog/${featured.slug}`} className="group block h-full">
                 <div className="relative h-64 w-full md:h-full">
@@ -231,7 +231,7 @@ export default function BlogPage() {
         )}
 
         {/* GRID */}
-        <section className="mt-12">
+        <section aria-label="Tous les articles" className="mt-12">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {others.map((blog) => (
               <article
@@ -284,7 +284,7 @@ export default function BlogPage() {
         </section>
 
         {/* NEWSLETTER */}
-        <section className="mt-16 rounded-3xl border border-[var(--brand-cta)]/20 bg-[var(--brand-surface)]/60 p-8 text-center">
+        <section aria-label="Inscription newsletter" className="mt-16 rounded-3xl border border-[var(--brand-cta)]/20 bg-[var(--brand-surface)]/60 p-8 text-center">
           <h3 className="text-2xl font-extrabold text-white">
             Recevez nos conseils directement dans votre boîte mail
           </h3>

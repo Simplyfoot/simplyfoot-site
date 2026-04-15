@@ -92,7 +92,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <section className="mb-12">
+        <section aria-label="Notre histoire" className="mb-12">
           <h2 className="text-2xl font-bold text-[var(--brand-bg)] mb-4 text-center">
             Notre histoire
           </h2>
@@ -132,7 +132,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="mb-12 text-[var(--color-text-dark)]">
+        <section aria-label="Nos engagements" className="mb-12 text-[var(--color-text-dark)]">
           <h2 className="text-2xl font-bold text-[var(--brand-bg)] mb-6 text-center">
             Nos engagements
           </h2>
@@ -175,7 +175,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="flex flex-col items-center mt-8">
+        <section aria-label="Nous contacter" className="flex flex-col items-center mt-8">
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--brand-cta)] mb-3 text-center">
             Envie de faire grandir votre club avec une équipe passionnée ?
           </h2>

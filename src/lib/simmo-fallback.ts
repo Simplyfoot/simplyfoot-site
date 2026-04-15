@@ -44,6 +44,12 @@ const fallbackRules: FallbackRule[] = [
 
 const defaultFallback = "Je suis encore en apprentissage sur ce sujet \uD83D\uDC19 Pour une r\u00e9ponse d\u00e9taill\u00e9e, visite notre [page contact](/contact) ou explore les pages de ton sport !";
 
+/**
+ * Retourne une reponse pre-programmee lorsque l'API Anthropic est indisponible.
+ * Cherche des mots-cles dans le message utilisateur pour fournir une reponse pertinente.
+ * @param userMessage - Message de l'utilisateur a analyser
+ * @returns Reponse de repli correspondante ou message par defaut
+ */
 export function getFallbackResponse(userMessage: string): string {
   const lower = userMessage.toLowerCase();
   for (const rule of fallbackRules) {

@@ -2,6 +2,9 @@ import 'server-only';
 
 type Section = 'common' | 'foot' | 'rugby' | 'handball';
 
+// i18n dictionaries are deeply nested heterogeneous JSON;
+// consumers access properties dynamically (dict.hero.title).
+// Proper typing requires generating types from JSON schemas (future improvement).
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Dictionary = Record<string, any>;
 
@@ -12,6 +15,13 @@ const dictionaries: Record<string, () => Promise<Dictionary>> = {
   'fr:handball': () => import('../../locales/fr/handball.json').then((m) => m.default),
 };
 
+/**
+ * Charge un dictionnaire i18n pour une locale et une section donnees.
+ * Retourne le dictionnaire commun francais par defaut si la cle est introuvable.
+ * @param locale - Langue cible ('fr' ou 'en')
+ * @param section - Section du dictionnaire (common, foot, rugby, handball)
+ * @returns Le dictionnaire de traductions
+ */
 export async function getDictionary(
   locale: 'fr' | 'en' = 'fr',
   section: Section = 'common',

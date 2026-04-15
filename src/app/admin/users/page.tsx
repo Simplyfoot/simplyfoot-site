@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { Eye } from 'lucide-react';
+import { getBrandConfig } from 'lib/config/brands';
 
 const USERS = [
   { id: 'u1', name: 'Marc Durand', email: 'marc@fcgardanne.fr', role: 'Président', club: 'FC Gardanne', sport: 'foot', status: 'active', lastLogin: '2025-04-14' },
@@ -15,7 +16,11 @@ const USERS = [
   { id: 'u8', name: 'Thomas Girard', email: 'thomas@hbcstrasbourg.fr', role: 'Coach', club: 'HBC Strasbourg', sport: 'handball', status: 'active', lastLogin: '2025-04-10' },
 ];
 
-const BRAND_COLORS: Record<string, string> = { foot: '#1B5E20', rugby: '#8B1A1A', handball: '#1A237E' };
+const BRAND_COLORS: Record<string, string> = {
+  foot: getBrandConfig('foot').theme.primary[500],
+  rugby: getBrandConfig('rugby').theme.primary[500],
+  handball: getBrandConfig('handball').theme.primary[500],
+};
 const STATUS_STYLES: Record<string, string> = {
   active: 'bg-emerald-400/15 text-emerald-400',
   blocked: 'bg-red-400/15 text-red-400',
@@ -40,9 +45,9 @@ export default function AdminUsersPage() {
 
       <div className="flex flex-wrap gap-3">
         <input type="text" placeholder="Rechercher..." value={filter} onChange={(e) => setFilter(e.target.value)}
-          className="rounded-lg bg-[#111113] border border-white/10 px-4 py-2 text-sm text-white placeholder:text-white/30 focus:outline-none" />
+          className="rounded-lg bg-[var(--admin-surface)] border border-white/10 px-4 py-2 text-sm text-white placeholder:text-white/30 focus:outline-none" />
         <select value={sportFilter} onChange={(e) => setSportFilter(e.target.value)}
-          className="rounded-lg bg-[#111113] border border-white/10 px-3 py-2 text-sm text-white focus:outline-none">
+          className="rounded-lg bg-[var(--admin-surface)] border border-white/10 px-3 py-2 text-sm text-white focus:outline-none">
           <option value="">Tous sports</option>
           <option value="foot">Football</option>
           <option value="rugby">Rugby</option>
@@ -50,7 +55,7 @@ export default function AdminUsersPage() {
         </select>
       </div>
 
-      <div className="rounded-xl border border-white/6 bg-[#111113] overflow-x-auto">
+      <div className="rounded-xl border border-white/6 bg-[var(--admin-surface)] overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-white/6 text-white/40 text-xs uppercase tracking-wide">

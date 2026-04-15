@@ -1,5 +1,3 @@
-'use client';
-
 interface ManifestContent {
   eyebrow: string;
   phrase: string;

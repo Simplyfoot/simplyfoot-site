@@ -13,7 +13,7 @@ interface StatCardProps {
 
 export function StatCard({ title, value, trend, trendUp, icon: Icon, className, color }: StatCardProps) {
   return (
-    <div className={cn('rounded-xl border border-white/6 bg-[#111113] p-5', className)}>
+    <div className={cn('rounded-xl border border-white/6 bg-[var(--admin-surface)] p-5', className)}>
       <div className="flex items-start justify-between">
         <div>
           <p className="text-xs font-medium text-white/40 uppercase tracking-wide">{title}</p>

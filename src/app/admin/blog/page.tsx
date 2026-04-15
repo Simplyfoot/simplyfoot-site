@@ -36,7 +36,7 @@ export default function AdminBlogPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold">Gestion du blog</h1>
-        <Link href="/admin/blog/new" className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-bold text-[#09090B] hover:bg-white/90 transition-colors">
+        <Link href="/admin/blog/new" className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-bold text-[var(--admin-bg)] hover:bg-white/90 transition-colors">
           <Plus className="h-4 w-4" /> Nouvel article
         </Link>
       </div>
@@ -45,10 +45,10 @@ export default function AdminBlogPage() {
         <input
           type="text" placeholder="Rechercher..."
           value={filter} onChange={(e) => setFilter(e.target.value)}
-          className="rounded-lg bg-[#111113] border border-white/10 px-4 py-2 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-white/20"
+          className="rounded-lg bg-[var(--admin-surface)] border border-white/10 px-4 py-2 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-white/20"
         />
         <select value={sportFilter} onChange={(e) => setSportFilter(e.target.value)}
-          className="rounded-lg bg-[#111113] border border-white/10 px-3 py-2 text-sm text-white focus:outline-none">
+          className="rounded-lg bg-[var(--admin-surface)] border border-white/10 px-3 py-2 text-sm text-white focus:outline-none">
           <option value="">Tous sports</option>
           <option value="foot">Football</option>
           <option value="rugby">Rugby</option>
@@ -56,7 +56,7 @@ export default function AdminBlogPage() {
         </select>
       </div>
 
-      <div className="rounded-xl border border-white/6 bg-[#111113] overflow-x-auto">
+      <div className="rounded-xl border border-white/6 bg-[var(--admin-surface)] overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-white/6 text-white/40 text-xs uppercase tracking-wide">

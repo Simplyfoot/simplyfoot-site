@@ -4,7 +4,12 @@ import { getFallbackResponse } from 'lib/simmo-fallback';
 
 export async function POST(request: NextRequest) {
   try {
-    const { messages, brand, page } = await request.json();
+    const body = await request.json();
+    const { messages, brand, page } = body;
+
+    if (!Array.isArray(messages) || messages.length === 0) {
+      return NextResponse.json({ error: 'Invalid messages' }, { status: 400 });
+    }
 
     const lastUserMsg = messages[messages.length - 1]?.content || '';
 

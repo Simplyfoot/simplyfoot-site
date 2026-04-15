@@ -1,22 +1,10 @@
 'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Mail, MapPin, Phone, Facebook, Linkedin, Instagram } from 'lucide-react';
 import SimoImg from 'assets/images/SIMO.png';
-
-const COMPANY = {
-  legalName: 'SimplyFoot SAS',
-  email: 'contact@simplyfoot.fr',
-  phone: '+33 6 82 84 56 41',
-  phoneTel: '+33682845641',
-  address: '60 rue Francois 1er, 75008 Paris',
-  capital: '1 000',
-  rcs: '991 139 171 R.C.S Paris',
-  tva: 'FR 89 991139171',
-  facebook: 'https://www.facebook.com/profile.php?id=61580681960537',
-  linkedin: 'https://www.linkedin.com/in/simply-foot-40a883372/',
-  instagram: 'https://www.instagram.com/simply.foot/',
-};
+import { company } from 'lib/config/company';
 
 interface FooterDict {
   legalTitle: string;
@@ -49,29 +37,29 @@ export default function Footer({ dict }: { dict: FooterDict }) {
   return (
     <footer className="w-full bg-[var(--brand-bg-alt)] text-[var(--color-text-beige)]/90 border-t border-[var(--brand-border)] pt-16 pb-10">
       <div className="max-w-7xl mx-auto px-6 grid gap-10 md:grid-cols-3">
-        <section className="space-y-4">
-          <h3 className="text-xl font-extrabold text-[var(--brand-cta)]">{COMPANY.legalName}</h3>
+        <section aria-label="Coordonnees" className="space-y-4">
+          <h3 className="text-xl font-extrabold text-[var(--brand-cta)]">{company.legalName}</h3>
           <p className="text-sm leading-relaxed">
-            Capital social : {COMPANY.capital} €
+            Capital social : {company.legal.capitalSocial} €
             <br />
-            RCS : {COMPANY.rcs}
+            RCS : {company.legal.rcs}
             <br />
-            N° TVA : {COMPANY.tva}
+            N° TVA : {company.legal.tva}
           </p>
           <address className="not-italic text-sm flex flex-col gap-2">
             <span className="flex items-start gap-2">
-              <MapPin size={16} aria-hidden="true" /> {COMPANY.address}
+              <MapPin size={16} aria-hidden="true" /> {company.address.full}
             </span>
             <span className="flex items-start gap-2">
               <Phone size={16} aria-hidden="true" />
-              <a className="font-semibold hover:underline" href={`tel:${COMPANY.phoneTel}`}>
-                {COMPANY.phone}
+              <a className="font-semibold hover:underline" href={`tel:${company.phone.replace(/\s/g, '')}`}>
+                {company.phone}
               </a>
             </span>
             <span className="flex items-start gap-2">
               <Mail size={16} aria-hidden="true" />
-              <a className="font-semibold hover:underline" href={`mailto:${COMPANY.email}`}>
-                {COMPANY.email}
+              <a className="font-semibold hover:underline" href={`mailto:${company.email}`}>
+                {company.email}
               </a>
             </span>
           </address>
@@ -93,12 +81,12 @@ export default function Footer({ dict }: { dict: FooterDict }) {
           </ul>
         </nav>
 
-        <section className="space-y-4">
+        <section aria-label="Reseaux sociaux" className="space-y-4">
           <h4 className="text-lg font-semibold mb-2">{dict.socialTitle}</h4>
           <p className="text-sm">{dict.socialSubtitle}</p>
           <div className="flex gap-4">
             <Link
-              href={COMPANY.facebook}
+              href={company.socials.facebook}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
@@ -107,7 +95,7 @@ export default function Footer({ dict }: { dict: FooterDict }) {
               <Facebook size={20} />
             </Link>
             <Link
-              href={COMPANY.linkedin}
+              href={company.socials.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -116,7 +104,7 @@ export default function Footer({ dict }: { dict: FooterDict }) {
               <Linkedin size={20} />
             </Link>
             <Link
-              href={COMPANY.instagram}
+              href={company.socials.instagram}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -133,7 +121,7 @@ export default function Footer({ dict }: { dict: FooterDict }) {
           <Image src={SimoImg} alt="Simmo, mascotte Simply" width={48} height={48} className="rounded-full" />
           <span className="font-bold text-sm text-white/80">Simply</span>
         </div>
-        © {year} {COMPANY.legalName} – {dict.copyright} <br className="md:hidden" />
+        © {year} {company.legalName} – {dict.copyright} <br className="md:hidden" />
         {dict.tagline}
       </div>
     </footer>
