@@ -33,11 +33,11 @@ export function BrandManifest({ manifest }: BrandManifestProps) {
           {manifest.eyebrow}
         </p>
 
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-8">
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-brand-text leading-[1.1] tracking-tight mb-8">
           {manifest.phrase}
         </h2>
 
-        <p className="text-base md:text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base md:text-lg text-brand-text-muted max-w-2xl mx-auto leading-relaxed">
           {manifest.statement}
         </p>
       </div>

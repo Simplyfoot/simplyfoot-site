@@ -108,14 +108,14 @@ export function BrandGestionClub({ brand, content }: BrandGestionClubProps) {
               <span className="h-2 w-2 rounded-full bg-[var(--brand-cta)] animate-pulse" />
               {content.heroTag}
             </span>
-            <h1 className="mt-4 text-4xl md:text-6xl font-extrabold text-white leading-tight">
+            <h1 className="mt-4 text-4xl md:text-6xl font-extrabold text-brand-text leading-tight">
               <span className="text-[var(--brand-cta)]">{titlePrefix}</span>
               {titleSuffix ? <> – {titleSuffix}</> : null}
             </h1>
             <p className="text-[var(--color-text-beige)] text-lg md:text-xl mt-4 font-medium">
               {content.heroSubtitle}
             </p>
-            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-white/90 text-base">
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-brand-text text-base">
               {content.heroPoints.map((point) => (
                 <li key={point}>{point}</li>
               ))}
@@ -201,7 +201,7 @@ export function BrandGestionClub({ brand, content }: BrandGestionClubProps) {
           <h2 id="dashboard-title" className="text-3xl md:text-4xl font-bold text-[var(--brand-cta)] mb-6 text-center">
             {content.dashboardTitle}
           </h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-base text-white/90">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-base text-brand-text">
             {content.dashboardPoints.map((point) => (
               <li key={point}>{point}</li>
             ))}

@@ -54,7 +54,7 @@ export function BlogFiltersBar() {
           placeholder="Rechercher un article..."
           defaultValue={search}
           onChange={(e) => setParam('search', e.target.value)}
-          className="w-full rounded-xl bg-[var(--brand-surface)]/50 border border-[var(--brand-border)] pl-11 pr-4 py-3 text-sm text-white placeholder:text-[var(--color-text-beige)]/40 focus:outline-none focus:border-[var(--brand-cta)]/50"
+          className="w-full rounded-xl bg-[var(--brand-surface)]/50 border border-[var(--brand-border)] pl-11 pr-4 py-3 text-sm text-brand-text placeholder:text-[var(--color-text-beige)]/40 focus:outline-none focus:border-[var(--brand-cta)]/50"
         />
       </div>
 
@@ -63,7 +63,7 @@ export function BlogFiltersBar() {
         <select
           value={category}
           onChange={(e) => setParam('category', e.target.value)}
-          className="rounded-lg bg-[var(--brand-surface)]/50 border border-[var(--brand-border)] px-3 py-2 text-sm text-white focus:outline-none focus:border-[var(--brand-cta)]/50"
+          className="rounded-lg bg-[var(--brand-surface)]/50 border border-[var(--brand-border)] px-3 py-2 text-sm text-brand-text focus:outline-none focus:border-[var(--brand-cta)]/50"
         >
           <option value="">Toutes catégories</option>
           {Object.entries(categoryLabels).map(([k, v]) => (
@@ -74,7 +74,7 @@ export function BlogFiltersBar() {
         <select
           value={region}
           onChange={(e) => setParam('region', e.target.value)}
-          className="rounded-lg bg-[var(--brand-surface)]/50 border border-[var(--brand-border)] px-3 py-2 text-sm text-white focus:outline-none focus:border-[var(--brand-cta)]/50"
+          className="rounded-lg bg-[var(--brand-surface)]/50 border border-[var(--brand-border)] px-3 py-2 text-sm text-brand-text focus:outline-none focus:border-[var(--brand-cta)]/50"
         >
           <option value="">Toutes régions</option>
           {regions.map((r) => (
@@ -86,7 +86,7 @@ export function BlogFiltersBar() {
           value={department}
           onChange={(e) => setParam('department', e.target.value)}
           disabled={!region}
-          className="rounded-lg bg-[var(--brand-surface)]/50 border border-[var(--brand-border)] px-3 py-2 text-sm text-white disabled:opacity-40 focus:outline-none focus:border-[var(--brand-cta)]/50"
+          className="rounded-lg bg-[var(--brand-surface)]/50 border border-[var(--brand-border)] px-3 py-2 text-sm text-brand-text disabled:opacity-40 focus:outline-none focus:border-[var(--brand-cta)]/50"
         >
           <option value="">Tous départements</option>
           {departments.map((d) => (
@@ -111,7 +111,7 @@ export function BlogFiltersBar() {
           ))}
           <button
             onClick={clearAll}
-            className="text-xs text-[var(--color-text-beige)]/40 hover:text-white transition-colors cursor-pointer"
+            className="text-xs text-[var(--color-text-beige)]/40 hover:text-brand-cta transition-colors cursor-pointer"
           >
             Effacer tout
           </button>

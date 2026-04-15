@@ -37,10 +37,10 @@ function MobileLink({
       href={href}
       onClick={onClick}
       className={clsx(
-        'block py-2 text-lg font-medium transition-colors',
+        'block py-2.5 text-lg font-medium transition-colors',
         active
           ? 'text-[var(--brand-cta)]'
-          : 'text-[var(--color-text-beige)] hover:text-[var(--brand-cta)]',
+          : 'text-[var(--brand-text)] hover:text-[var(--brand-cta)]',
       )}
     >
       {children}
@@ -93,7 +93,7 @@ export function HeaderMobileMenu({
 
             {/* Header du panel */}
             <div className="flex items-center justify-between px-6 py-5 border-b border-[var(--brand-border)]">
-              <span className="text-lg font-bold text-[var(--color-text-beige)]">
+              <span className="text-lg font-bold text-[var(--brand-text)]">
                 Simply
                 {isBrandContext && (
                   <span className="text-[var(--brand-cta)]">{brandConfig!.suffix}</span>
@@ -102,7 +102,7 @@ export function HeaderMobileMenu({
               <button
                 type="button"
                 aria-label="Fermer le menu"
-                className="rounded-lg p-1.5 text-[var(--color-text-beige)]/60 hover:text-[var(--color-text-beige)] transition-colors"
+                className="rounded-lg p-1.5 text-[var(--brand-text-muted)] hover:text-[var(--brand-text)] transition-colors"
                 onClick={close}
               >
                 <XIcon className="h-6 w-6" />
@@ -132,9 +132,9 @@ export function HeaderMobileMenu({
                     FAQ
                   </MobileLink>
 
-                  {/* Separator + back to Simply */}
+                  {/* Separator + changer de sport */}
                   <div className="pt-4 mt-4 border-t border-[var(--brand-border)]">
-                    <p className="text-xs font-medium uppercase tracking-wider text-[var(--color-text-beige)]/40 mb-3">
+                    <p className="text-xs font-medium uppercase tracking-wider text-[var(--brand-text-muted)] mb-3">
                       Changer de sport
                     </p>
                     {getAllBrands()
@@ -144,7 +144,7 @@ export function HeaderMobileMenu({
                           key={brand.id}
                           href={`/${brand.slug}`}
                           data-brand={brand.id}
-                          className="block py-1.5 text-sm text-[var(--color-text-beige)]/60 hover:text-[var(--brand-cta)] transition-colors"
+                          className="block py-1.5 text-sm text-[var(--brand-text-muted)] hover:text-[var(--brand-cta)] transition-colors"
                           onClick={close}
                         >
                           Simply<span className="font-semibold text-[var(--brand-cta)]">{brand.suffix}</span>
@@ -152,7 +152,7 @@ export function HeaderMobileMenu({
                       ))}
                     <Link
                       href="/"
-                      className="block py-1.5 text-sm text-[var(--color-text-beige)]/40 hover:text-[var(--color-text-beige)] transition-colors"
+                      className="block py-1.5 text-sm text-[var(--brand-text-muted)] hover:text-[var(--brand-text)] transition-colors"
                       onClick={close}
                     >
                       &larr; Accueil Simply
@@ -166,7 +166,7 @@ export function HeaderMobileMenu({
                       key={brand.id}
                       href={`/${brand.slug}`}
                       data-brand={brand.id}
-                      className="block py-2 text-lg font-medium text-[var(--color-text-beige)] hover:text-[var(--brand-cta)] transition-colors"
+                      className="block py-2.5 text-lg font-medium text-[var(--brand-text)] hover:text-[var(--brand-cta)] transition-colors"
                       onClick={close}
                     >
                       Simply<span className="font-bold text-[var(--brand-cta)]">{brand.suffix}</span>

@@ -20,7 +20,7 @@ export function BrandFonctionnalites({ brand, content }: BrandFonctionnalitesPro
             <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--brand-cta)]" />
             {content.heroTag}
           </span>
-          <h1 id="fonc-hero-title" className="mt-4 text-4xl md:text-6xl font-extrabold text-white leading-tight">
+          <h1 id="fonc-hero-title" className="mt-4 text-4xl md:text-6xl font-extrabold text-brand-text leading-tight">
             {content.heroTitle}
           </h1>
           <p className="mx-auto mt-4 max-w-3xl text-lg md:text-xl font-medium text-[var(--color-text-beige)]">
@@ -52,7 +52,7 @@ export function BrandFonctionnalites({ brand, content }: BrandFonctionnalitesPro
 
         {/* CTA final */}
         <section aria-labelledby="fonc-cta-title" className="mt-16 text-center">
-          <h2 id="fonc-cta-title" className="text-3xl md:text-4xl font-extrabold text-white">{content.ctaTitle}</h2>
+          <h2 id="fonc-cta-title" className="text-3xl md:text-4xl font-extrabold text-brand-text">{content.ctaTitle}</h2>
           <p className="mx-auto mt-2 max-w-2xl text-[var(--color-text-beige)]">
             {content.ctaSubtitle}
           </p>

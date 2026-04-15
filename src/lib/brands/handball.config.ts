@@ -23,27 +23,29 @@ export const handballConfig: BrandConfig = {
       950: '#13112E',
     },
     accent: {
-      50: '#FFF7ED',
-      100: '#FFEDD5',
-      200: '#FED7AA',
-      300: '#FDBA74',
-      400: '#FB923C',
-      500: '#F97316', // orange vif CTA
-      600: '#EA580C',
-      700: '#C2410C',
-      800: '#9A3412',
-      900: '#7C2D12',
-      950: '#431407',
+      50: '#EEF2FF',
+      100: '#E0E7FF',
+      200: '#C7D2FE',
+      300: '#A5B4FC',
+      400: '#818CF8',
+      500: '#1A237E', // bleu nuit — identite SimplyHandball
+      600: '#151B6B',
+      700: '#101458',
+      800: '#0B0E45',
+      900: '#070A33',
+      950: '#040620',
     },
     semantic: {
-      bg: '#1E1B4B',    // primary.900
-      bgAlt: '#13112E', // primary.950
-      surface: '#2E2A6E',
-      cta: '#F97316',        // accent.500 — orange vif
-      ctaHover: '#FB923C',   // accent.400
-      ctaText: '#1E1B4B',    // 9.2:1 ✅ sur cta
-      border: 'rgba(249, 115, 22, 0.2)',
-      ring: 'rgba(249, 115, 22, 0.4)',
+      bg: '#F8E9CA', // beige Simply — fond principal
+      bgAlt: '#F0DDB4', // beige fonce — sections alternees
+      surface: '#FFF5E4', // creme clair — cartes
+      cta: '#1A237E', // bleu nuit — CTA
+      ctaHover: '#151B6B', // bleu plus fonce — hover
+      ctaText: '#FFFFFF', // blanc sur CTA bleu — contraste 12:1
+      border: '#E0D0B0', // beige bordure
+      ring: 'rgba(26, 35, 126, 0.4)',
+      text: '#1A1814', // noir chaud
+      textMuted: '#6B5D4B', // taupe fonce (ratio 5.8:1)
     },
   },
   meta: {

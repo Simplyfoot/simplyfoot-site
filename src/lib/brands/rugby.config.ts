@@ -36,14 +36,16 @@ export const rugbyConfig: BrandConfig = {
       950: '#342408',
     },
     semantic: {
-      bg: '#380E0B',    // primary.900
-      bgAlt: '#1C0705', // primary.950
-      surface: '#501510',
-      cta: '#D4A66A',        // accent.400 — sable doré
-      ctaHover: '#EBBF72',   // accent.300
-      ctaText: '#380E0B',    // 8.1:1 ✅ sur cta
-      border: 'rgba(212, 166, 106, 0.2)',
-      ring: 'rgba(212, 166, 106, 0.4)',
+      bg: '#F8E9CA', // beige Simply — fond principal
+      bgAlt: '#F0DDB4', // beige fonce — sections alternees
+      surface: '#FFF5E4', // creme clair — cartes
+      cta: '#A8332A', // primary.500 — terracotta CTA
+      ctaHover: '#8B2620', // primary.600 — hover
+      ctaText: '#FFFFFF', // blanc sur CTA rouge — contraste 7.5:1
+      border: '#E0D0B0', // beige bordure
+      ring: 'rgba(168, 51, 42, 0.4)',
+      text: '#1A1814', // noir chaud
+      textMuted: '#6B5D4B', // taupe fonce (ratio 5.8:1)
     },
   },
   meta: {

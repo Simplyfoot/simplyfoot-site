@@ -64,7 +64,7 @@ export function PricingCalculator({ brandName: _brandName, trialTitle, trialItem
     <div className="mt-12 space-y-10">
       {/* Step 1: Club size selector */}
       <div>
-        <h2 className="text-2xl font-bold text-white text-center mb-6">
+        <h2 className="text-2xl font-bold text-brand-text text-center mb-6">
           Combien de licenciés dans votre club ?
         </h2>
         <div className="grid grid-cols-2 gap-3 md:grid-cols-5">
@@ -84,16 +84,16 @@ export function PricingCalculator({ brandName: _brandName, trialTitle, trialItem
                 <size.Icon
                   className={cn(
                     'h-7 w-7 transition-colors',
-                    isActive ? 'text-[var(--brand-cta)]' : 'text-white/40 group-hover:text-white/60',
+                    isActive ? 'text-[var(--brand-cta)]' : 'text-brand-text-muted group-hover:text-brand-text',
                   )}
                   strokeWidth={1.5}
                 />
-                <span className={cn('text-sm font-bold', isActive ? 'text-white' : 'text-white/70')}>
+                <span className={cn('text-sm font-bold', isActive ? 'text-brand-text' : 'text-brand-text-muted')}>
                   {size.label}
                 </span>
                 <span className="text-[11px] text-[var(--color-text-beige)]/70">{size.range}</span>
                 {size.monthly && (
-                  <span className={cn('text-xs font-semibold', isActive ? 'text-[var(--brand-cta)]' : 'text-white/40')}>
+                  <span className={cn('text-xs font-semibold', isActive ? 'text-[var(--brand-cta)]' : 'text-brand-text-muted')}>
                     dès {eur.format(size.monthly)}/mois
                   </span>
                 )}
@@ -118,7 +118,7 @@ export function PricingCalculator({ brandName: _brandName, trialTitle, trialItem
                   'cursor-pointer px-5 py-2 rounded-full text-sm font-semibold transition-all',
                   !isAnnual
                     ? 'bg-[var(--brand-cta)] text-[var(--brand-bg)]'
-                    : 'text-[var(--color-text-beige)] hover:text-white',
+                    : 'text-[var(--color-text-beige)] hover:text-brand-cta',
                 )}
               >
                 Mensuel
@@ -129,7 +129,7 @@ export function PricingCalculator({ brandName: _brandName, trialTitle, trialItem
                   'cursor-pointer px-5 py-2 rounded-full text-sm font-semibold transition-all',
                   isAnnual
                     ? 'bg-[var(--brand-cta)] text-[var(--brand-bg)]'
-                    : 'text-[var(--color-text-beige)] hover:text-white',
+                    : 'text-[var(--color-text-beige)] hover:text-brand-cta',
                 )}
               >
                 Annuel <span className="ml-1 text-xs opacity-80">(-10%)</span>
@@ -179,7 +179,7 @@ export function PricingCalculator({ brandName: _brandName, trialTitle, trialItem
 
           {/* Reassurance */}
           <div className="mt-6 rounded-2xl border border-[var(--brand-cta)]/30 bg-[var(--brand-surface)]/70 p-5 text-left">
-            <p className="text-white font-extrabold">{trialTitle} ✨</p>
+            <p className="text-brand-text font-extrabold">{trialTitle} ✨</p>
             <ul className="mt-2 list-inside list-disc space-y-1 text-sm text-[var(--color-text-beige)]">
               {trialItems.map((item) => (
                 <li key={item}>{item}</li>

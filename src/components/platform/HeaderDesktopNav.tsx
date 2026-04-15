@@ -31,7 +31,7 @@ function NavLink({
         href={href}
         className={clsx(
           'text-sm transition-colors hover:text-[var(--brand-cta)]',
-          active ? 'text-[var(--brand-cta)]' : 'text-[var(--color-text-beige)]/80',
+          active ? 'text-[var(--brand-cta)]' : 'text-[var(--brand-text)]/80',
         )}
       >
         {children}

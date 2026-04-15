@@ -37,7 +37,7 @@ export function BrandOffres({ brand, content }: BrandOffresProps) {
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* Hero */}
         <div className="text-center">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-brand-text leading-tight">
             {content.heroTitle}
           </h1>
           <p className="mt-4 text-[var(--color-text-beige)] text-lg md:text-xl font-medium">
@@ -81,7 +81,7 @@ export function BrandOffres({ brand, content }: BrandOffresProps) {
           <div className="mx-auto max-w-3xl divide-y divide-[var(--brand-cta)]/20 rounded-2xl border border-[var(--brand-cta)]/20 bg-[var(--brand-surface)]/50">
             {FAQ.map((f, i) => (
               <details key={i} className="group px-5 py-4">
-                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-white">
+                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-brand-text">
                   {f.q}
                   <ChevronDown className="h-5 w-5 text-[var(--brand-cta)] transition-transform group-open:rotate-180" />
                 </summary>

@@ -68,7 +68,7 @@ export function BrandFonctionnalitesList({
                     )}
                   </div>
                   <div>
-                    <h3 className="text-lg font-extrabold text-white">{f.title}</h3>
+                    <h3 className="text-lg font-extrabold text-brand-text">{f.title}</h3>
                     <p className="mt-1 text-sm text-[var(--color-text-beige)]">{f.desc}</p>
                   </div>
                 </div>
@@ -95,7 +95,7 @@ export function BrandFonctionnalitesList({
               key={b.role}
               className="rounded-2xl border border-[var(--brand-cta)]/15 bg-[var(--color-surface-dark)] p-6 text-[var(--color-text-beige)] shadow"
             >
-              <h3 className="text-white mb-2 font-extrabold">{b.role}</h3>
+              <h3 className="text-brand-text mb-2 font-extrabold">{b.role}</h3>
               <ul className="space-y-2">
                 {b.items.map((t) => (
                   <li key={t} className="flex gap-2">

@@ -55,7 +55,7 @@ export function BrandBenefits({ title, benefits, className }: BrandBenefitsProps
     >
       <h2
         id="brand-benefits-title"
-        className="text-3xl md:text-4xl font-extrabold text-white text-center mt-10 mb-10 drop-shadow"
+        className="text-3xl md:text-4xl font-extrabold text-brand-text text-center mt-10 mb-10"
       >
         {title}
       </h2>
@@ -72,7 +72,7 @@ export function BrandBenefits({ title, benefits, className }: BrandBenefitsProps
               <div className="mb-3" aria-hidden="true">
                 <Icon className="w-10 h-10 text-[var(--brand-cta)]" strokeWidth={1.5} />
               </div>
-              <h3 className="text-xl font-extrabold text-white mb-2 drop-shadow">{b.title}</h3>
+              <h3 className="text-xl font-extrabold text-brand-text mb-2">{b.title}</h3>
               <p className="text-base text-[var(--color-text-beige)] font-medium">
                 {b.description}
               </p>

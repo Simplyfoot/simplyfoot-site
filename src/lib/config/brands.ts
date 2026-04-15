@@ -58,6 +58,10 @@ export interface BrandTheme {
     border: string;
     /** Ring de focus */
     ring: string;
+    /** Couleur du texte principal sur le fond de la marque */
+    text: string;
+    /** Couleur du texte secondaire/muted sur le fond de la marque */
+    textMuted: string;
   };
 }
 

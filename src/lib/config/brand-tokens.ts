@@ -23,6 +23,8 @@ const SEMANTIC_TO_CSS: Record<keyof BrandTheme['semantic'], string> = {
   ctaText: '--brand-cta-text',
   border: '--brand-border',
   ring: '--brand-ring',
+  text: '--brand-text',
+  textMuted: '--brand-text-muted',
 };
 
 function semanticToCSS(semantic: BrandTheme['semantic']): string {

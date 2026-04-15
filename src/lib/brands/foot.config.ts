@@ -36,14 +36,16 @@ export const footConfig: BrandConfig = {
       950: '#073717',
     },
     semantic: {
-      bg: '#14482F', // primary.800
-      bgAlt: '#0b1a12', // plus sombre que primary.900
-      surface: '#1d3e2e', // entre primary.800 et primary.700
-      cta: '#29be4f', // accent.500
-      ctaHover: '#63f286', // accent.300
-      ctaText: '#14482F', // primary.800 — contraste 7.2:1 sur cta
-      border: 'rgba(41, 190, 79, 0.2)',
+      bg: '#F8E9CA', // beige Simply — fond principal
+      bgAlt: '#F0DDB4', // beige fonce — sections alternees
+      surface: '#FFF5E4', // creme clair — cartes
+      cta: '#29be4f', // accent.500 — vert CTA
+      ctaHover: '#22a344', // accent.600 — hover plus fonce
+      ctaText: '#FFFFFF', // blanc sur CTA vert — contraste 4.6:1
+      border: '#E0D0B0', // beige bordure
       ring: 'rgba(41, 190, 79, 0.4)',
+      text: '#1A1814', // noir chaud — texte principal sur beige
+      textMuted: '#6B5D4B', // taupe fonce — texte secondaire (ratio 5.8:1 sur #F8E9CA)
     },
   },
   meta: {

@@ -37,7 +37,7 @@ export function BlogCard({ article, brandSlug }: BlogCardProps) {
           </span>
         </div>
 
-        <h3 className="text-base font-bold text-white leading-snug line-clamp-2">
+        <h3 className="text-base font-bold text-brand-text leading-snug line-clamp-2">
           {article.title}
         </h3>
 

@@ -60,7 +60,7 @@ export function BrandTestimonials({ title, testimonials, className }: BrandTesti
                 </span>
               )}
               <div>
-                <div className="text-sm font-bold text-white">{t.authorName}</div>
+                <div className="text-sm font-bold text-brand-text">{t.authorName}</div>
                 <div className="text-xs text-[var(--brand-cta)] font-semibold">{t.authorRole}</div>
               </div>
             </div>

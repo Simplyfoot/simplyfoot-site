@@ -73,14 +73,14 @@ export function BrandGestionEquipe({ brand, content }: BrandGestionEquipeProps) 
               <span className="h-2 w-2 rounded-full bg-[var(--brand-cta)] animate-pulse" />
               {content.heroTag}
             </span>
-            <h1 className="mt-4 text-4xl md:text-6xl font-extrabold text-white leading-tight">
+            <h1 className="mt-4 text-4xl md:text-6xl font-extrabold text-brand-text leading-tight">
               Gérez votre <span className="text-[var(--brand-cta)]">équipe</span>{' '}
               {content.heroTitle.replace('Gérez votre équipe', '').trim()}
             </h1>
             <p className="text-[var(--color-text-beige)] text-lg md:text-xl mt-4 font-medium">
               {content.heroSubtitle}
             </p>
-            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-white/90 text-base">
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-brand-text text-base">
               {content.heroPoints.map((point) => (
                 <li key={point}>{point}</li>
               ))}
@@ -136,7 +136,7 @@ export function BrandGestionEquipe({ brand, content }: BrandGestionEquipeProps) 
                   </noscript>
                   <CrestGLB src={d.model} />
                 </div>
-                <h3 className="text-xl font-bold text-white mt-3 mb-1">{d.nom}</h3>
+                <h3 className="text-xl font-bold text-brand-text mt-3 mb-1">{d.nom}</h3>
                 <p className="text-sm text-[var(--color-text-beige)] text-center">{d.desc}</p>
               </article>
             ))}
@@ -172,7 +172,7 @@ export function BrandGestionEquipe({ brand, content }: BrandGestionEquipeProps) 
           aria-labelledby="how-title"
           className="bg-[var(--brand-surface)]/60 rounded-2xl border border-[var(--brand-cta)]/20 p-8"
         >
-          <h2 id="how-title" className="text-3xl font-bold text-white text-center mb-6">
+          <h2 id="how-title" className="text-3xl font-bold text-brand-text text-center mb-6">
             Comment ça marche ?
           </h2>
           <ol className="grid grid-cols-1 md:grid-cols-3 gap-6 text-[var(--color-text-beige)]">

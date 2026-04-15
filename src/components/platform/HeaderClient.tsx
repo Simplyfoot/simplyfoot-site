@@ -9,7 +9,6 @@ import { usePathname } from 'next/navigation';
 import { getBrandConfig } from 'lib/config/brands';
 import { HEADER_SCROLL_THRESHOLD } from 'lib/constants';
 import type { BrandId } from 'lib/config/brands';
-import { HeaderDesktopNav } from './HeaderDesktopNav';
 import { HeaderMobileMenu } from './HeaderMobileMenu';
 
 export default function HeaderClient({
@@ -59,7 +58,7 @@ export default function HeaderClient({
 
       <nav
         aria-label={isBrandContext ? `Navigation ${brandConfig!.name}` : 'Navigation Simply'}
-        className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 lg:py-6"
+        className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 lg:py-5"
       >
         {/* Logo */}
         <Link
@@ -67,44 +66,37 @@ export default function HeaderClient({
           className="flex items-center gap-3"
           aria-label={isBrandContext ? `Page d'accueil ${brandConfig!.name}` : "Page d'accueil Simply"}
         >
-          <span className="text-2xl font-bold text-[var(--color-text-beige)]">
+          <span className={clsx('text-2xl font-bold', isBrandContext ? 'text-[var(--brand-text)]' : 'text-[var(--color-text-beige)]')}>
             Simply
             {isBrandContext && <span className="text-[var(--brand-cta)]">{brandConfig!.suffix}</span>}
           </span>
         </Link>
 
-        {/* Desktop nav */}
-        <HeaderDesktopNav
-          isBrandContext={isBrandContext}
-          currentBrand={currentBrand}
-          brandConfig={brandConfig}
-          pathname={pathname}
-          dict={dict}
-          locale={locale}
-        />
+        {/* CTA + Burger */}
+        <div className="flex items-center gap-3">
+          <Link
+            href="/contact"
+            className="hidden sm:inline-flex items-center rounded-lg bg-[var(--brand-cta)] px-4 py-2 text-sm font-bold text-[var(--brand-cta-text)] transition-colors hover:bg-[var(--brand-cta-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-cta)]/60"
+          >
+            {dict.headerCta ?? 'D\u00e9mo gratuite'}
+          </Link>
 
-        {/* CTA desktop */}
-        <Link
-          href="/contact"
-          className="hidden lg:inline-flex items-center rounded-lg bg-[var(--brand-cta)] px-4 py-2 text-sm font-bold text-[var(--brand-cta-text)] transition-colors hover:bg-[var(--brand-cta-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-cta)]/60"
-        >
-          {dict.headerCta ?? 'Démo gratuite'}
-        </Link>
-
-        {/* Burger — toujours visible pour acceder au menu complet */}
-        <button
-          type="button"
-          aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
-          aria-expanded={mobileMenuOpen}
-          aria-controls="mobile-menu"
-          onClick={() => setMobileMenuOpen(true)}
-          className="rounded p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-text-beige)]/60 text-[var(--color-text-beige)] hover:text-[var(--brand-cta)] transition-colors"
-        >
-          <MenuIcon className="h-6 w-6" />
-        </button>
+          <button
+            type="button"
+            aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
+            onClick={() => setMobileMenuOpen(true)}
+            className={clsx(
+              'rounded p-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-cta)]/60 hover:text-[var(--brand-cta)] transition-colors',
+              isBrandContext ? 'text-[var(--brand-text)]' : 'text-[var(--color-text-beige)]',
+            )}
+          >
+            <MenuIcon className="h-6 w-6" />
+          </button>
+        </div>
       </nav>
 
-      {/* Mobile overlay */}
       <HeaderMobileMenu
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}

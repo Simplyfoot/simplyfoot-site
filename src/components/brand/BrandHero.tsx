@@ -64,10 +64,10 @@ export function BrandHero({
       {layout === 'center' ? (
         /* RUGBY: Texte centre, imposant, illustration en dessous */
         <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center pt-32 pb-16">
-          <h1 className="font-display text-white font-extrabold text-4xl md:text-6xl lg:text-7xl mb-6 drop-shadow-xl leading-tight">
+          <h1 className="font-display text-brand-text font-extrabold text-4xl md:text-6xl lg:text-7xl mb-6 leading-tight">
             {title}
           </h1>
-          <div className="mb-6 text-white/85 text-lg md:text-2xl font-medium max-w-2xl mx-auto">
+          <div className="mb-6 text-brand-text text-lg md:text-2xl font-medium max-w-2xl mx-auto">
             {subtitle}
           </div>
           {actions.length > 0 && (
@@ -103,10 +103,10 @@ export function BrandHero({
             </div>
           )}
           <div className="flex-1 flex flex-col items-start text-left gap-5">
-            <h1 className="font-display text-white font-extrabold text-4xl md:text-6xl mb-3 drop-shadow-xl leading-tight">
+            <h1 className="font-display text-brand-text font-extrabold text-4xl md:text-6xl mb-3 leading-tight">
               {title}
             </h1>
-            <div className="mb-3 text-white/85 text-lg md:text-2xl font-medium max-w-xl">
+            <div className="mb-3 text-brand-text text-lg md:text-2xl font-medium max-w-xl">
               {subtitle}
             </div>
             {actions.length > 0 && (
@@ -133,10 +133,10 @@ export function BrandHero({
         /* FOOT (default): Texte a gauche, illustration a droite */
         <div className="relative z-10 w-full max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-14 pt-32 pb-24">
           <div className="flex-1 flex flex-col items-start text-left gap-5">
-            <h1 className="font-display text-white font-extrabold text-4xl md:text-6xl mb-3 drop-shadow-xl leading-tight">
+            <h1 className="font-display text-brand-text font-extrabold text-4xl md:text-6xl mb-3 leading-tight">
               {title}
             </h1>
-            <div className="mb-3 text-white/85 text-lg md:text-2xl font-medium max-w-xl">
+            <div className="mb-3 text-brand-text text-lg md:text-2xl font-medium max-w-xl">
               {subtitle}
             </div>
             {actions.length > 0 && (

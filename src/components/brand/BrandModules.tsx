@@ -47,7 +47,7 @@ export function BrandModules({ title, modules, className }: BrandModulesProps) {
       <div className="max-w-7xl mx-auto px-6">
         <h2
           id="brand-modules-title"
-          className="text-3xl md:text-5xl font-extrabold text-center mb-12 text-white"
+          className="text-3xl md:text-5xl font-extrabold text-center mb-12 text-brand-text"
         >
           {title}
         </h2>
@@ -63,10 +63,10 @@ export function BrandModules({ title, modules, className }: BrandModulesProps) {
                 <span aria-hidden="true" className="mb-4">
                   <Icon size={36} className="text-[var(--brand-cta)]" strokeWidth={1.5} />
                 </span>
-                <h3 className="text-base font-extrabold text-white mb-2">
+                <h3 className="text-base font-extrabold text-brand-text mb-2">
                   {m.title}
                 </h3>
-                <p className="text-sm text-white/60 font-medium leading-relaxed">
+                <p className="text-sm text-brand-text-muted font-medium leading-relaxed">
                   {m.description}
                 </p>
               </li>
