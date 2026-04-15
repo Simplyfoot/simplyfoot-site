@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
+import { SIMO_MAX_HISTORY, SIMO_GREETING_DELAY_MS } from 'lib/constants';
 
 interface Message {
   id: string;
@@ -16,6 +17,7 @@ const SUGGESTIONS_BY_PATH: Array<{ match: (p: string) => boolean; items: string[
   { match: (p) => p.startsWith('/foot') && !p.includes('/blog'), items: ['Fonctionnalit\u00e9s foot ?', 'G\u00e9rer mes convocations ?', 'Tarif pour mon club ?', 'D\u00e9mo SimplyFoot'] },
   { match: (p) => p.startsWith('/rugby') && !p.includes('/blog'), items: ['Fonctionnalit\u00e9s rugby ?', 'Compositions XV ?', 'Tarif pour mon club ?', 'D\u00e9mo SimplyRugby'] },
   { match: (p) => p.startsWith('/handball') && !p.includes('/blog'), items: ['Fonctionnalit\u00e9s handball ?', 'Cr\u00e9neaux gymnase ?', 'Tarif pour mon club ?', 'D\u00e9mo SimplyHandball'] },
+  { match: (p) => p.includes('/faq'), items: ['Comment cr\u00e9er mon compte ?', 'Comment rejoindre mon club ?', 'Comment envoyer des convocations ?', 'Parents s\u00e9par\u00e9s : comment faire ?'] },
   { match: (p) => p.includes('/blog'), items: ['Derniers articles ?', 'Filtrer par r\u00e9gion ?', 'Conseils pour mon club'] },
   { match: () => true, items: ['Qu\'est-ce que Simply ?', 'Combien \u00e7a co\u00fbte ?', 'Demander une d\u00e9mo'] },
 ];
@@ -46,7 +48,7 @@ export function useSimmoChat() {
   useEffect(() => {
     if (dismissed || isOpen) return;
     if (sessionStorage.getItem('simmo_greeted')) return;
-    const t = setTimeout(() => { setShowGreeting(true); sessionStorage.setItem('simmo_greeted', '1'); }, 3000);
+    const t = setTimeout(() => { setShowGreeting(true); sessionStorage.setItem('simmo_greeted', '1'); }, SIMO_GREETING_DELAY_MS);
     return () => clearTimeout(t);
   }, [dismissed, isOpen]);
 
@@ -54,13 +56,18 @@ export function useSimmoChat() {
   useEffect(() => {
     const stored = sessionStorage.getItem('simmo_messages');
     if (stored) {
-      try { setMessages(JSON.parse(stored)); setHasInteracted(true); } catch { /* ignore */ }
+      try {
+        setMessages(JSON.parse(stored));
+        setHasInteracted(true);
+      } catch {
+        // Corrupted sessionStorage data — start fresh
+      }
     }
   }, []);
 
   // Save messages
   useEffect(() => {
-    if (messages.length > 0) sessionStorage.setItem('simmo_messages', JSON.stringify(messages.slice(-50)));
+    if (messages.length > 0) sessionStorage.setItem('simmo_messages', JSON.stringify(messages.slice(-SIMO_MAX_HISTORY)));
   }, [messages]);
 
   // Auto scroll
@@ -72,7 +79,7 @@ export function useSimmoChat() {
     setIsOpen(true);
     setShowGreeting(false);
     if (messages.length === 0) {
-      setMessages([{ id: 'welcome', role: 'assistant', content: "Salut ! Je suis Simmo, le poulpe de Simply \uD83D\uDC19 Comment puis-je t'aider ?" }]);
+      setMessages([{ id: 'welcome', role: 'assistant', content: "Salut ! Je suis Simo, le poulpe de Simply \uD83D\uDC19 Comment puis-je t'aider ?" }]);
     }
   }
 
@@ -101,6 +108,7 @@ export function useSimmoChat() {
       const assistantMsg: Message = { id: `a-${Date.now()}`, role: 'assistant', content: data.message || "D\u00e9sol\u00e9, je n'ai pas pu r\u00e9pondre." };
       setMessages((prev) => [...prev, assistantMsg]);
     } catch {
+      // Network error or API failure — show friendly message to user
       setMessages((prev) => [...prev, { id: `e-${Date.now()}`, role: 'assistant', content: "Oups ! Probl\u00e8me de connexion \uD83D\uDC19 R\u00e9essaie !" }]);
     } finally {
       setLoading(false);

@@ -7,6 +7,7 @@ import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 
 import { getBrandConfig } from 'lib/config/brands';
+import { HEADER_SCROLL_THRESHOLD } from 'lib/constants';
 import type { BrandId } from 'lib/config/brands';
 import { HeaderDesktopNav } from './HeaderDesktopNav';
 import { HeaderMobileMenu } from './HeaderMobileMenu';
@@ -23,7 +24,7 @@ export default function HeaderClient({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 80);
+    const onScroll = () => setIsScrolled(window.scrollY > HEADER_SCROLL_THRESHOLD);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -90,16 +91,16 @@ export default function HeaderClient({
           {dict.headerCta ?? 'Démo gratuite'}
         </Link>
 
-        {/* Burger mobile */}
+        {/* Burger — toujours visible pour acceder au menu complet */}
         <button
           type="button"
-          aria-label={mobileMenuOpen ? 'Fermer le menu mobile' : 'Ouvrir le menu mobile'}
+          aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
           aria-expanded={mobileMenuOpen}
           aria-controls="mobile-menu"
           onClick={() => setMobileMenuOpen(true)}
-          className="rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-text-beige)]/60 text-[var(--color-text-beige)] lg:hidden"
+          className="rounded p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-text-beige)]/60 text-[var(--color-text-beige)] hover:text-[var(--brand-cta)] transition-colors"
         >
-          <MenuIcon className="h-8 w-8" />
+          <MenuIcon className="h-6 w-6" />
         </button>
       </nav>
 

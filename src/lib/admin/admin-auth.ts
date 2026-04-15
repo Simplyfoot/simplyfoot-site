@@ -29,6 +29,7 @@ export function getStoredAuth(): AdminUser | null {
     if (!stored) return null;
     return JSON.parse(stored) as AdminUser;
   } catch {
+    // Corrupted localStorage data — return unauthenticated
     return null;
   }
 }

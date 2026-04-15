@@ -58,7 +58,7 @@ export function SimmoChat() {
               <button onClick={() => chat.setShowGreeting(false)} className="absolute top-1 right-2 text-gray-400 hover:text-gray-600 cursor-pointer" aria-label="Fermer">
                 <X className="h-3 w-3" />
               </button>
-              <p className="pr-4">Salut ! Je suis Simmo &#x1f419; Besoin d&apos;un coup de tentacule ?</p>
+              <p className="pr-4">Salut ! Je suis Simo &#x1f419; Besoin d&apos;un coup de tentacule ?</p>
               <button onClick={chat.openChat} className="mt-2 rounded-lg bg-[var(--brand-cta,#2563EB)] px-3 py-1.5 text-xs font-bold text-white hover:opacity-90 cursor-pointer">
                 Discuter
               </button>
@@ -68,7 +68,7 @@ export function SimmoChat() {
           <button
             onClick={chat.openChat}
             className="group relative rounded-full bg-[var(--admin-surface)] border border-white/10 p-2 shadow-xl hover:scale-110 transition-transform cursor-pointer"
-            aria-label="Ouvrir le chat Simmo"
+            aria-label="Ouvrir le chat Simo"
           >
             <Simmo size="sm" emotion="idle" variant={variant} />
             <span className="absolute bottom-1 right-1 h-3 w-3 rounded-full bg-emerald-400 border-2 border-[var(--admin-surface)]" />

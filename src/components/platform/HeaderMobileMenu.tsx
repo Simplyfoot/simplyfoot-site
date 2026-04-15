@@ -9,7 +9,6 @@ import clsx from 'clsx';
 import { getRoute } from 'i18n/routes';
 import { getAllBrands } from 'lib/config/brands';
 import type { BrandId, BrandConfig } from 'lib/config/brands';
-import { BrandSwitcher } from 'components/platform/BrandSwitcher';
 
 interface HeaderMobileMenuProps {
   open: boolean;
@@ -20,6 +19,33 @@ interface HeaderMobileMenuProps {
   pathname: string;
   dict: Record<string, string>;
   locale: string;
+}
+
+function MobileLink({
+  href,
+  active,
+  onClick,
+  children,
+}: {
+  href: string;
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <Link
+      href={href}
+      onClick={onClick}
+      className={clsx(
+        'block py-2 text-lg font-medium transition-colors',
+        active
+          ? 'text-[var(--brand-cta)]'
+          : 'text-[var(--color-text-beige)] hover:text-[var(--brand-cta)]',
+      )}
+    >
+      {children}
+    </Link>
+  );
 }
 
 export function HeaderMobileMenu({
@@ -36,110 +62,102 @@ export function HeaderMobileMenu({
 
   return (
     <Transition show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-50 lg:hidden" onClose={onClose}>
+      <Dialog as="div" className="relative z-50" onClose={onClose}>
+        {/* Backdrop */}
         <Transition.Child
           as={Fragment}
-          enter="transition-opacity ease-linear duration-200"
+          enter="transition-opacity duration-300"
           enterFrom="opacity-0"
           enterTo="opacity-100"
-          leave="transition-opacity ease-linear duration-150"
+          leave="transition-opacity duration-200"
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-[var(--brand-bg)]/90 backdrop-blur" />
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm" />
         </Transition.Child>
 
-        <div className="fixed inset-0 flex items-center justify-center">
-          <Dialog.Panel
-            id="mobile-menu"
-            className="relative mx-6 w-full max-w-md rounded-2xl border border-[var(--brand-border)] bg-[var(--color-surface-dark)]/95 p-8 backdrop-blur"
-          >
+        {/* Slide-in panel from right */}
+        <Transition.Child
+          as={Fragment}
+          enter="transition-transform duration-300 ease-out"
+          enterFrom="translate-x-full"
+          enterTo="translate-x-0"
+          leave="transition-transform duration-200 ease-in"
+          leaveFrom="translate-x-0"
+          leaveTo="translate-x-full"
+        >
+          <Dialog.Panel className="fixed inset-y-0 right-0 w-full max-w-sm bg-[var(--brand-bg)] border-l border-[var(--brand-border)] shadow-2xl">
             <Dialog.Title className="sr-only">
               {isBrandContext ? `Menu ${brandConfig!.name}` : 'Menu Simply'}
             </Dialog.Title>
 
-            <button
-              type="button"
-              aria-label="Fermer le menu mobile"
-              className="absolute top-4 right-4 rounded text-[var(--color-text-beige)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-text-beige)]/60"
-              onClick={close}
-            >
-              <XIcon className="h-7 w-7" />
-            </button>
+            {/* Header du panel */}
+            <div className="flex items-center justify-between px-6 py-5 border-b border-[var(--brand-border)]">
+              <span className="text-lg font-bold text-[var(--color-text-beige)]">
+                Simply
+                {isBrandContext && (
+                  <span className="text-[var(--brand-cta)]">{brandConfig!.suffix}</span>
+                )}
+              </span>
+              <button
+                type="button"
+                aria-label="Fermer le menu"
+                className="rounded-lg p-1.5 text-[var(--color-text-beige)]/60 hover:text-[var(--color-text-beige)] transition-colors"
+                onClick={close}
+              >
+                <XIcon className="h-6 w-6" />
+              </button>
+            </div>
 
-            <div className="flex flex-col items-center gap-6">
+            {/* Navigation */}
+            <nav className="px-6 py-6 space-y-1">
               {isBrandContext ? (
                 <>
-                  <Link
-                    href={`/${currentBrand}/gestion-club`}
-                    className={clsx(
-                      'text-2xl font-bold transition-all',
-                      pathname.includes('/gestion-club')
-                        ? 'text-[var(--brand-cta)]'
-                        : 'text-[var(--color-text-beige)] hover:text-[var(--brand-cta)]',
-                    )}
-                    onClick={close}
-                    title={`Gestion de club \u2013 ${brandConfig!.name}`}
-                  >
-                    {dict.club}
-                  </Link>
-                  <Link
-                    href={`/${currentBrand}/gestion-equipe`}
-                    className={clsx(
-                      'text-2xl font-bold transition-all',
-                      pathname.includes('/gestion-equipe')
-                        ? 'text-[var(--brand-cta)]'
-                        : 'text-[var(--color-text-beige)] hover:text-[var(--brand-cta)]',
-                    )}
-                    onClick={close}
-                    title={`Gestion d\u2019\u00e9quipe \u2013 ${brandConfig!.name}`}
-                  >
-                    {dict.team}
-                  </Link>
-                  <Link
-                    href={`/${currentBrand}/offres`}
-                    className={clsx(
-                      'text-2xl font-bold transition-all',
-                      pathname.includes('/offres')
-                        ? 'text-[var(--brand-cta)]'
-                        : 'text-[var(--color-text-beige)] hover:text-[var(--brand-cta)]',
-                    )}
-                    onClick={close}
-                  >
-                    {dict.offers}
-                  </Link>
-                  <Link
-                    href={`/${currentBrand}/fonctionnalites`}
-                    className={clsx(
-                      'text-2xl font-bold transition-all',
-                      pathname.includes('/fonctionnalites')
-                        ? 'text-[var(--brand-cta)]'
-                        : 'text-[var(--color-text-beige)] hover:text-[var(--brand-cta)]',
-                    )}
-                    onClick={close}
-                  >
-                    {dict.features}
-                  </Link>
-                  <Link
-                    href={`/${currentBrand}/blog`}
-                    className={clsx(
-                      'text-2xl font-bold transition-all',
-                      pathname.includes('/blog')
-                        ? 'text-[var(--brand-cta)]'
-                        : 'text-[var(--color-text-beige)] hover:text-[var(--brand-cta)]',
-                    )}
-                    onClick={close}
-                  >
-                    Actualit&eacute;s
-                  </Link>
-                  <BrandSwitcher currentBrand={currentBrand ?? undefined} className="mt-2" />
-                  <Link
-                    href="/"
-                    className="text-base text-[var(--color-text-beige)]/60 transition-colors hover:text-[var(--color-text-beige)]"
-                    onClick={close}
-                  >
-                    &larr; Simply
-                  </Link>
+                  <MobileLink href={`/${currentBrand}/fonctionnalites`} active={pathname.includes('/fonctionnalites')} onClick={close}>
+                    Fonctionnalit&eacute;s
+                  </MobileLink>
+                  <MobileLink href={`/${currentBrand}/offres`} active={pathname.includes('/offres')} onClick={close}>
+                    Offres
+                  </MobileLink>
+                  <MobileLink href={`/${currentBrand}/gestion-club`} active={pathname.includes('/gestion-club')} onClick={close}>
+                    Gestion de club
+                  </MobileLink>
+                  <MobileLink href={`/${currentBrand}/gestion-equipe`} active={pathname.includes('/gestion-equipe')} onClick={close}>
+                    Gestion d&apos;&eacute;quipe
+                  </MobileLink>
+                  <MobileLink href={`/${currentBrand}/blog`} active={pathname.includes('/blog')} onClick={close}>
+                    Blog
+                  </MobileLink>
+                  <MobileLink href={`/${currentBrand}/faq`} active={pathname.includes('/faq')} onClick={close}>
+                    FAQ
+                  </MobileLink>
+
+                  {/* Separator + back to Simply */}
+                  <div className="pt-4 mt-4 border-t border-[var(--brand-border)]">
+                    <p className="text-xs font-medium uppercase tracking-wider text-[var(--color-text-beige)]/40 mb-3">
+                      Changer de sport
+                    </p>
+                    {getAllBrands()
+                      .filter((b) => b.id !== currentBrand)
+                      .map((brand) => (
+                        <Link
+                          key={brand.id}
+                          href={`/${brand.slug}`}
+                          data-brand={brand.id}
+                          className="block py-1.5 text-sm text-[var(--color-text-beige)]/60 hover:text-[var(--brand-cta)] transition-colors"
+                          onClick={close}
+                        >
+                          Simply<span className="font-semibold text-[var(--brand-cta)]">{brand.suffix}</span>
+                        </Link>
+                      ))}
+                    <Link
+                      href="/"
+                      className="block py-1.5 text-sm text-[var(--color-text-beige)]/40 hover:text-[var(--color-text-beige)] transition-colors"
+                      onClick={close}
+                    >
+                      &larr; Accueil Simply
+                    </Link>
+                  </div>
                 </>
               ) : (
                 <>
@@ -148,50 +166,37 @@ export function HeaderMobileMenu({
                       key={brand.id}
                       href={`/${brand.slug}`}
                       data-brand={brand.id}
-                      aria-current={pathname === `/${brand.slug}` ? 'page' : undefined}
-                      className="text-2xl font-bold transition-all text-[var(--color-text-beige)] hover:text-[var(--brand-cta)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-cta)]/60 rounded"
+                      className="block py-2 text-lg font-medium text-[var(--color-text-beige)] hover:text-[var(--brand-cta)] transition-colors"
                       onClick={close}
                     >
-                      Simply<span className="text-[var(--brand-cta)] font-extrabold">{brand.suffix}</span>
+                      Simply<span className="font-bold text-[var(--brand-cta)]">{brand.suffix}</span>
                     </Link>
                   ))}
-                  <Link
-                    href={getRoute(locale as 'fr' | 'en', 'about')}
-                    className={clsx(
-                      'text-2xl font-bold transition-all',
-                      pathname.startsWith('/a-propos')
-                        ? 'text-[var(--brand-cta)]'
-                        : 'text-[var(--color-text-beige)] hover:text-[var(--brand-cta)]',
-                    )}
-                    onClick={close}
-                  >
-                    {dict.about}
-                  </Link>
-                  <Link
-                    href={getRoute(locale as 'fr' | 'en', 'contact')}
-                    className={clsx(
-                      'text-2xl font-bold transition-all',
-                      pathname.startsWith('/contact')
-                        ? 'text-[var(--brand-cta)]'
-                        : 'text-[var(--color-text-beige)] hover:text-[var(--brand-cta)]',
-                    )}
-                    onClick={close}
-                  >
-                    {dict.contact}
-                  </Link>
+
+                  <div className="pt-4 mt-4 border-t border-[var(--brand-border)]">
+                    <MobileLink href={getRoute(locale as 'fr' | 'en', 'about')} active={pathname.startsWith('/a-propos')} onClick={close}>
+                      {dict.about}
+                    </MobileLink>
+                    <MobileLink href={getRoute(locale as 'fr' | 'en', 'contact')} active={pathname.startsWith('/contact')} onClick={close}>
+                      {dict.contact}
+                    </MobileLink>
+                  </div>
                 </>
               )}
+            </nav>
 
+            {/* CTA en bas */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-[var(--brand-border)]">
               <Link
                 href="/contact"
-                className="mt-2 block w-full rounded-xl bg-[var(--brand-cta)] py-3.5 text-center text-base font-extrabold text-[var(--brand-cta-text)] transition-colors hover:bg-[var(--brand-cta-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-cta)]/60"
+                className="block w-full rounded-xl bg-[var(--brand-cta)] py-3 text-center text-sm font-bold text-[var(--brand-cta-text)] transition-colors hover:opacity-90"
                 onClick={close}
               >
-                {dict.headerCta ?? 'D\u00e9mo gratuite'} &rarr;
+                {dict.headerCta ?? 'D\u00e9mo gratuite'}
               </Link>
             </div>
           </Dialog.Panel>
-        </div>
+        </Transition.Child>
       </Dialog>
     </Transition>
   );

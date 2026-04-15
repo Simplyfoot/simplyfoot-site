@@ -39,7 +39,7 @@ function FootIllustration() {
     <div className="relative w-[280px] h-[320px] md:w-[350px] md:h-[400px]">
       <Image
         src={SimoFootball}
-        alt="Simmo, la mascotte SimplyFoot, en action avec un ballon"
+        alt="Simo, la mascotte SimplyFoot, en action avec un ballon"
         fill
         className="object-contain drop-shadow-2xl"
         priority

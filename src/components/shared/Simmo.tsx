@@ -61,7 +61,7 @@ export function Simmo({ size = 'md', emotion = 'idle', variant = 'ecosystem', me
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         style={{ width: dim, height: dim }}
-        aria-label="Simmo, la mascotte Simply"
+        aria-label="Simo, la mascotte Simply"
         role="img"
       >
         <defs>

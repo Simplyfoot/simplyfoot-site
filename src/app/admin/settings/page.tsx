@@ -6,12 +6,12 @@ export default function AdminSettingsPage() {
       <div className="rounded-xl border border-white/6 bg-[var(--admin-surface)] p-5 space-y-4">
         <h3 className="text-sm font-bold text-white/70 uppercase tracking-wide">Compte administrateur</h3>
         <div>
-          <label className="text-xs font-medium text-white/50 uppercase tracking-wide mb-1.5 block">Nom</label>
-          <input type="text" className="admin-input" defaultValue="Admin Simply" />
+          <label htmlFor="settings-name" className="text-xs font-medium text-white/50 uppercase tracking-wide mb-1.5 block">Nom</label>
+          <input id="settings-name" type="text" className="admin-input" defaultValue="Admin Simply" />
         </div>
         <div>
-          <label className="text-xs font-medium text-white/50 uppercase tracking-wide mb-1.5 block">Email</label>
-          <input type="email" className="admin-input" defaultValue="admin@simply.fr" disabled />
+          <label htmlFor="settings-email" className="text-xs font-medium text-white/50 uppercase tracking-wide mb-1.5 block">Email</label>
+          <input id="settings-email" type="email" className="admin-input" defaultValue="admin@simply.fr" disabled />
         </div>
         <button className="rounded-lg bg-white px-5 py-2.5 text-sm font-bold text-[var(--admin-bg)] hover:bg-white/90 transition-colors cursor-pointer">
           Enregistrer

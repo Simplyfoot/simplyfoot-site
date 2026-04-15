@@ -29,9 +29,9 @@
   --color-text-muted: #5f6b61;
 
   /* ── PALETTE PLATEFORME (contexte hors marque) ─────────────────────
-     Fond neutre quasi-noir avec légère teinte froide.
+     Fond neutre quasi-noir avec legere teinte froide.
      Distinct du vert foot (#14482F) et de l'indigo handball (#1E1B4B).
-     Utilisé sur la homepage, les pages légales, les pages plateforme.
+     Utilise sur la homepage, les pages legales, les pages plateforme.
   ────────────────────────────────────────────────────────────────── */
   --color-platform-bg: #0b0c11;
   --color-platform-surface: #13151c;

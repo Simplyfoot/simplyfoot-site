@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { SIMMO_SYSTEM_PROMPT } from 'lib/simmo-system-prompt';
 import { getFallbackResponse } from 'lib/simmo-fallback';
+import { SIMO_API_CONTEXT_SIZE } from 'lib/constants';
 
 export async function POST(request: NextRequest) {
   try {
@@ -25,7 +26,7 @@ export async function POST(request: NextRequest) {
       SIMMO_SYSTEM_PROMPT +
       `\n\nCONTEXTE ACTUEL :\n- Page : ${page || '/'}\n- Sport actif : ${brand || 'aucun (homepage)'}\n- Adapte tes réponses à ce contexte.`;
 
-    const apiMessages = messages.slice(-10).map((m: { role: string; content: string }) => ({
+    const apiMessages = messages.slice(-SIMO_API_CONTEXT_SIZE).map((m: { role: string; content: string }) => ({
       role: m.role,
       content: m.content,
     }));
@@ -56,9 +57,12 @@ export async function POST(request: NextRequest) {
     const assistantMessage = data.content?.[0]?.text || getFallbackResponse(lastUserMsg);
 
     return NextResponse.json({ message: assistantMessage });
-  } catch {
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Unknown error';
+    // Production: replace with monitoring service (Sentry, LogRocket, etc.)
+    console.error(`[SimmoChat] API error: ${message}`);
     return NextResponse.json({
-      message: "Oups ! Simmo a un petit souci technique \uD83D\uDC19 Réessaie dans un instant !",
+      message: "Oups ! Simo a un petit souci technique \uD83D\uDC19 R\u00e9essaie dans un instant !",
       fallback: true,
     });
   }

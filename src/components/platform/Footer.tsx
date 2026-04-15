@@ -118,7 +118,7 @@ export default function Footer({ dict }: { dict: FooterDict }) {
 
       <div className="mt-12 border-t border-white/10 pt-6 text-center text-xs text-white/60">
         <div className="flex items-center justify-center gap-3 mb-2">
-          <Image src={SimoImg} alt="Simmo, mascotte Simply" width={48} height={48} className="rounded-full" />
+          <Image src={SimoImg} alt="Simo, mascotte Simply" width={48} height={48} className="rounded-full" />
           <span className="font-bold text-sm text-white/80">Simply</span>
         </div>
         © {year} {company.legalName} – {dict.copyright} <br className="md:hidden" />
