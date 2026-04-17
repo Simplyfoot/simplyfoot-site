@@ -1,0 +1,37 @@
+/* Brand CSS custom properties — activated via data-brand attribute */
+
+:root {
+    /* Simply holding */
+    --simply-black: #000000;
+    --simply-beige: #f8e9ca;
+    --simply-blue: #151b6b;
+    --simply-text-muted: #6b5d4b;
+
+    /* Default brand (foot) */
+    --brand-primary: #567e66;
+    --brand-primary-dark: #3d5c4a;
+    --brand-primary-light: #7a9e8a;
+    --brand-surface-dark: #1a2e22;
+    --brand-bg: #f8e9ca;
+}
+
+[data-brand='foot'] {
+    --brand-primary: #567e66;
+    --brand-primary-dark: #3d5c4a;
+    --brand-primary-light: #7a9e8a;
+    --brand-surface-dark: #1a2e22;
+}
+
+[data-brand='rugby'] {
+    --brand-primary: #8b1a1a;
+    --brand-primary-dark: #5c1010;
+    --brand-primary-light: #c04040;
+    --brand-surface-dark: #2a1010;
+}
+
+[data-brand='handball'] {
+    --brand-primary: #1a237e;
+    --brand-primary-dark: #0d1252;
+    --brand-primary-light: #3f51b5;
+    --brand-surface-dark: #0a0e2a;
+}

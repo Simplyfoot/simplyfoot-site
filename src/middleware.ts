@@ -1,28 +1,9 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
+import createMiddleware from 'next-intl/middleware';
 
-export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+import { routing } from '@/lib/i18n/routing';
 
-  // Ignorer les fichiers statiques et API
-  if (
-    pathname.startsWith("/_next") ||
-    pathname.includes(".") ||
-    pathname.startsWith("/api")
-  ) {
-    return;
-  }
+export default createMiddleware(routing);
 
-  // Rediriger /fr/... vers /...
-  if (pathname.startsWith("/fr")) {
-    return NextResponse.redirect(new URL(pathname.replace(/^\/fr/, ""), request.url));
-  }
-
-  // Rediriger / vers /en si la langue du navigateur est anglaise
-  if (pathname === "/") {
-    const lang = request.headers.get("accept-language")?.split(",")[0];
-    if (lang && lang.startsWith("en")) {
-      return NextResponse.redirect(new URL("/en", request.url));
-    }
-  }
-}
+export const config = {
+    matcher: '/((?!api|trpc|_next|_vercel|.*\\..*).*)',
+};
