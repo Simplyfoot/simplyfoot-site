@@ -3,11 +3,10 @@
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { Bloom, EffectComposer } from '@react-three/postprocessing';
-// TODO landing-nav: réactiver le routeur Next pour la navigation vers les sous-marques.
-// import { useRouter } from 'next/navigation';
-// import { useCallback } from 'react';
+import { useCallback } from 'react';
 import { TOUCH } from 'three';
 
+import { useRouter } from '@/i18n/navigation';
 import { useBrandColor, useRootColor } from '@/lib/brand';
 import { useDeviceConfig } from '@/lib/hooks/use-device-config';
 import { useReducedMotion } from '@/lib/hooks/use-reduced-motion';
@@ -19,23 +18,16 @@ import { Planet } from './Planet';
 import { SimplyLogo3D } from './SimplyLogo3D';
 import { Starfield } from './Starfield';
 
-// TODO landing-nav: planètes désactivées (cliquables → no-op).
-// Réactiver onClick={() => navigateTo('/foot' | '/rugby' | '/handball')} à la reconnexion.
-const noop = () => {};
-
 function Scene() {
     const config = useDeviceConfig();
     const rugbyPrimary = useBrandColor('rugby');
     const handballPrimary = useBrandColor('handball');
     const ambientWarm = useRootColor('--secondary');
+    const router = useRouter();
 
-    // const router = useRouter();
-    // const navigateTo = useCallback(
-    //     (path: string) => {
-    //         router.push(path);
-    //     },
-    //     [router],
-    // );
+    const goToFoot = useCallback(() => router.push('/foot'), [router]);
+    const goToRugby = useCallback(() => router.push('/rugby'), [router]);
+    const goToHandball = useCallback(() => router.push('/handball'), [router]);
 
     return (
         <>
@@ -77,7 +69,7 @@ function Scene() {
                     scale={config.planetScale.foot}
                     labelFontSize={config.labelFontSize}
                     isTouchDevice={config.isTouchDevice}
-                    onClick={noop}
+                    onClick={goToFoot}
                 />
             </OrbitingGroup>
             <OrbitingGroup {...config.planetOrbits.rugby}>
@@ -89,7 +81,7 @@ function Scene() {
                     sphereSegments={config.sphereSegments}
                     labelFontSize={config.labelFontSize}
                     isTouchDevice={config.isTouchDevice}
-                    onClick={noop}
+                    onClick={goToRugby}
                 />
             </OrbitingGroup>
             <OrbitingGroup {...config.planetOrbits.handball}>
@@ -101,7 +93,7 @@ function Scene() {
                     sphereSegments={config.sphereSegments}
                     labelFontSize={config.labelFontSize}
                     isTouchDevice={config.isTouchDevice}
-                    onClick={noop}
+                    onClick={goToHandball}
                 />
             </OrbitingGroup>
 

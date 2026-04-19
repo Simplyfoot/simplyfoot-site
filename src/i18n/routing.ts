@@ -6,6 +6,26 @@ export const routing = defineRouting({
     localePrefix: 'as-needed',
     pathnames: {
         '/': '/',
+        '/foot': '/foot',
+        '/rugby': '/rugby',
+        '/handball': '/handball',
+        // Brand-scoped legal pages. The content is shared across brands but the
+        // URL stays in the user's current navigation theme.
+        '/foot/legal/mentions-legales': '/foot/legal/mentions-legales',
+        '/foot/legal/cgu': '/foot/legal/cgu',
+        '/foot/legal/cgv': '/foot/legal/cgv',
+        '/foot/legal/privacy': '/foot/legal/privacy',
+        '/foot/legal/cookies': '/foot/legal/cookies',
+        '/rugby/legal/mentions-legales': '/rugby/legal/mentions-legales',
+        '/rugby/legal/cgu': '/rugby/legal/cgu',
+        '/rugby/legal/cgv': '/rugby/legal/cgv',
+        '/rugby/legal/privacy': '/rugby/legal/privacy',
+        '/rugby/legal/cookies': '/rugby/legal/cookies',
+        '/handball/legal/mentions-legales': '/handball/legal/mentions-legales',
+        '/handball/legal/cgu': '/handball/legal/cgu',
+        '/handball/legal/cgv': '/handball/legal/cgv',
+        '/handball/legal/privacy': '/handball/legal/privacy',
+        '/handball/legal/cookies': '/handball/legal/cookies',
     },
 });
 

@@ -1,0 +1,88 @@
+/**
+ * SimplyRugby brand palette. Only the primary scale + derived harmonies
+ * are declared here — all other tokens inherit from :root (default.css).
+ *
+ * Harmonies (complementary / analogous / triadic) are derived from the
+ * primary #8b1a1a via the Material color tool. They are scoped to rugby
+ * because the relationships only make visual sense relative to this primary.
+ */
+
+[data-brand='rugby'] {
+    /* Primary scale — P at 900 */
+    --primary-50: rgb(248 232 235);
+    --primary-100: rgb(239 199 203);
+    --primary-200: rgb(213 144 145);
+    --primary-300: rgb(194 103 105);
+    --primary-400: rgb(199 72 72);
+    --primary-500: rgb(199 55 48);
+    --primary-600: rgb(185 47 47);
+    --primary-700: rgb(168 39 41);
+    --primary-800: rgb(155 33 35);
+    --primary-900: rgb(139 26 26);
+    --primary: var(--primary-900);
+
+    /* Complementary (teal — opposite on color wheel) — P at 800 */
+    --complementary-50: rgb(225 248 248);
+    --complementary-100: rgb(181 238 237);
+    --complementary-200: rgb(134 227 226);
+    --complementary-300: rgb(88 215 217);
+    --complementary-400: rgb(55 206 210);
+    --complementary-500: rgb(30 198 205);
+    --complementary-600: rgb(28 181 187);
+    --complementary-700: rgb(28 159 162);
+    --complementary-800: rgb(26 139 139);
+    --complementary-900: rgb(22 103 98);
+    --complementary: var(--complementary-800);
+
+    /* Analogous 1 (pink — +30° on color wheel) — P at 900 */
+    --analogous-1-50: rgb(252 229 237);
+    --analogous-1-100: rgb(249 189 209);
+    --analogous-1-200: rgb(246 146 179);
+    --analogous-1-300: rgb(243 103 149);
+    --analogous-1-400: rgb(239 72 126);
+    --analogous-1-500: rgb(237 44 103);
+    --analogous-1-600: rgb(220 40 100);
+    --analogous-1-700: rgb(198 37 95);
+    --analogous-1-800: rgb(176 33 91);
+    --analogous-1-900: rgb(139 26 82);
+    --analogous-1: var(--analogous-1-900);
+
+    /* Analogous 2 (brown — −30° on color wheel) — P at 500 */
+    --analogous-2-50: rgb(255 230 185);
+    --analogous-2-100: rgb(248 197 155);
+    --analogous-2-200: rgb(219 164 120);
+    --analogous-2-300: rgb(187 132 83);
+    --analogous-2-400: rgb(163 107 55);
+    --analogous-2-500: rgb(139 82 26);
+    --analogous-2-600: rgb(128 73 20);
+    --analogous-2-700: rgb(112 60 11);
+    --analogous-2-800: rgb(99 46 6);
+    --analogous-2-900: rgb(84 31 0);
+    --analogous-2: var(--analogous-2-500);
+
+    /* Triadic 1 (olive — +120°) — P at 800 */
+    --triadic-1-50: rgb(246 248 229);
+    --triadic-1-100: rgb(233 237 190);
+    --triadic-1-200: rgb(219 227 148);
+    --triadic-1-300: rgb(204 215 107);
+    --triadic-1-400: rgb(194 207 77);
+    --triadic-1-500: rgb(184 200 45);
+    --triadic-1-600: rgb(172 183 39);
+    --triadic-1-700: rgb(156 162 32);
+    --triadic-1-800: rgb(139 139 26);
+    --triadic-1-900: rgb(111 102 15);
+    --triadic-1: var(--triadic-1-800);
+
+    /* Triadic 2 (green — −120°) — P at 700 */
+    --triadic-2-50: rgb(230 245 230);
+    --triadic-2-100: rgb(196 229 193);
+    --triadic-2-200: rgb(158 212 154);
+    --triadic-2-300: rgb(118 197 112);
+    --triadic-2-400: rgb(86 184 81);
+    --triadic-2-500: rgb(51 172 47);
+    --triadic-2-600: rgb(41 157 38);
+    --triadic-2-700: rgb(26 139 26);
+    --triadic-2-800: rgb(5 122 13);
+    --triadic-2-900: rgb(0 92 0);
+    --triadic-2: var(--triadic-2-700);
+}

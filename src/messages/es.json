@@ -38,5 +38,26 @@
         "handball": {
             "sport": "Balonmano amateur"
         }
+    },
+    "Footer": {
+        "tagline": "Creado con ❤️ para los clubes amateurs",
+        "sections": {
+            "legal": "Legal",
+            "contact": "Contacto",
+            "socials": "Síguenos"
+        },
+        "links": {
+            "mentionsLegales": "Aviso legal",
+            "cgu": "Condiciones de uso",
+            "cgv": "Condiciones de venta",
+            "privacy": "Política de privacidad",
+            "cookies": "Gestión de cookies"
+        },
+        "copyright": "© {year} SIMPLY. Todos los derechos reservados.",
+        "socialLabel": {
+            "facebook": "Seguir en Facebook",
+            "linkedin": "Seguir en LinkedIn",
+            "instagram": "Seguir en Instagram"
+        }
     }
 }

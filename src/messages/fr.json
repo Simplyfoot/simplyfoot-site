@@ -38,5 +38,26 @@
         "handball": {
             "sport": "Handball amateur"
         }
+    },
+    "Footer": {
+        "tagline": "Conçu avec ❤️ pour les clubs amateurs",
+        "sections": {
+            "legal": "Légal",
+            "contact": "Contact",
+            "socials": "Suivez-nous"
+        },
+        "links": {
+            "mentionsLegales": "Mentions légales",
+            "cgu": "CGU",
+            "cgv": "CGV",
+            "privacy": "Politique de confidentialité",
+            "cookies": "Gestion des cookies"
+        },
+        "copyright": "© {year} SIMPLY. Tous droits réservés.",
+        "socialLabel": {
+            "facebook": "Suivre sur Facebook",
+            "linkedin": "Suivre sur LinkedIn",
+            "instagram": "Suivre sur Instagram"
+        }
     }
 }

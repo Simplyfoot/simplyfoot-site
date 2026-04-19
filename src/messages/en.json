@@ -38,5 +38,26 @@
         "handball": {
             "sport": "Amateur handball"
         }
+    },
+    "Footer": {
+        "tagline": "Crafted with ❤️ for amateur clubs",
+        "sections": {
+            "legal": "Legal",
+            "contact": "Contact",
+            "socials": "Follow us"
+        },
+        "links": {
+            "mentionsLegales": "Legal notice",
+            "cgu": "Terms of use",
+            "cgv": "Terms of sale",
+            "privacy": "Privacy policy",
+            "cookies": "Cookie settings"
+        },
+        "copyright": "© {year} SIMPLY. All rights reserved.",
+        "socialLabel": {
+            "facebook": "Follow on Facebook",
+            "linkedin": "Follow on LinkedIn",
+            "instagram": "Follow on Instagram"
+        }
     }
 }
