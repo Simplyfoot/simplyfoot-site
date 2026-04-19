@@ -99,7 +99,9 @@ function displayDirectoryStatistics(perDirArray, totalCodeLines) {
 }
 
 function displaySeparateStatistics(separateStats) {
-    if (!separateStats || separateStats.length === 0) return;
+    if (!separateStats || separateStats.length === 0) {
+        return;
+    }
 
     console.log('');
     console.log('SEPARATE DIRECTORIES (not included in global totals)');

@@ -3,7 +3,9 @@ const fs = require('fs');
 const CONSOLE_RE = /^\s*console\.(log|warn|error|info|debug)\s*\([^)]*\)\s*;?\s*$/;
 
 function shouldExcludeLine(trimmed) {
-    if (trimmed.length === 0) return true;
+    if (trimmed.length === 0) {
+        return true;
+    }
     if (
         trimmed.startsWith('//') ||
         trimmed.startsWith('/*') ||
@@ -33,11 +35,15 @@ function countLines(filePath) {
             continue;
         }
         if (inBlockComment) {
-            if (trimmed.includes('*/')) inBlockComment = false;
+            if (trimmed.includes('*/')) {
+                inBlockComment = false;
+            }
             continue;
         }
 
-        if (shouldExcludeLine(trimmed)) continue;
+        if (shouldExcludeLine(trimmed)) {
+            continue;
+        }
         codeLines++;
     }
 
