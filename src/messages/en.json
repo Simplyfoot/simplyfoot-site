@@ -1,0 +1,42 @@
+{
+    "Common": {
+        "brand": "SIMPLY",
+        "tagline": "The amateur sports ecosystem",
+        "cta": {
+            "demo": "Request a demo"
+        }
+    },
+    "HomePage": {
+        "meta": {
+            "title": "SIMPLY — The amateur sports ecosystem",
+            "description": "Digital platform to manage amateur sports clubs in France. Football, Rugby, Handball."
+        },
+        "hero": {
+            "subtitle": "Choose your sport",
+            "explore": "Explore"
+        }
+    },
+    "Errors": {
+        "generic": {
+            "title": "Oops",
+            "description": "Something went wrong.",
+            "retry": "Try again"
+        },
+        "notFound": {
+            "title": "404",
+            "description": "Page not found",
+            "backHome": "Back to home"
+        }
+    },
+    "Brands": {
+        "foot": {
+            "sport": "Amateur football"
+        },
+        "rugby": {
+            "sport": "Amateur rugby"
+        },
+        "handball": {
+            "sport": "Amateur handball"
+        }
+    }
+}

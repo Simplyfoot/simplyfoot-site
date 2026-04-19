@@ -1,0 +1,42 @@
+{
+    "Common": {
+        "brand": "SIMPLY",
+        "tagline": "L'écosystème du sport amateur",
+        "cta": {
+            "demo": "Demander une démo"
+        }
+    },
+    "HomePage": {
+        "meta": {
+            "title": "SIMPLY — L'écosystème du sport amateur",
+            "description": "Plateforme digitale pour la gestion de clubs sportifs amateurs en France. Football, Rugby, Handball."
+        },
+        "hero": {
+            "subtitle": "Choisissez votre sport",
+            "explore": "Explorer"
+        }
+    },
+    "Errors": {
+        "generic": {
+            "title": "Oops",
+            "description": "Une erreur est survenue.",
+            "retry": "Réessayer"
+        },
+        "notFound": {
+            "title": "404",
+            "description": "Page introuvable",
+            "backHome": "Retour à l'accueil"
+        }
+    },
+    "Brands": {
+        "foot": {
+            "sport": "Football amateur"
+        },
+        "rugby": {
+            "sport": "Rugby amateur"
+        },
+        "handball": {
+            "sport": "Handball amateur"
+        }
+    }
+}

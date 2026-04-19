@@ -1,20 +1,17 @@
 'use client';
 
-// TODO i18n: useTranslations('common'), useTranslations('home') — réactiver à la reconstruction.
-// import { useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 // TODO Tailwind/shadcn: réactiver buttonVariants + cn à la reconstruction.
 // import { buttonVariants } from '@/components/ui/button';
 // import { cn } from '@/lib/utils';
-
 // TODO i18n: réactiver Link localisé à la reconstruction.
-// import { Link } from '@/lib/i18n/routing';
-
+// import { Link } from '@/i18n/navigation';
 import { useMediaQuery } from '@/lib/hooks/use-media-query';
 
 export function HomepageOverlay() {
-    // const tc = useTranslations('common');
-    // const t = useTranslations('home');
+    const tc = useTranslations('Common');
+    const t = useTranslations('HomePage');
     const isLandscapeMobile = useMediaQuery('(max-height: 500px) and (orientation: landscape)');
 
     // TODO Tailwind: className={cn('pointer-events-none absolute inset-0 z-10 flex flex-col items-center justify-between', isLandscapeMobile ? 'py-4' : 'py-(--space-section-y)')}
@@ -22,18 +19,18 @@ export function HomepageOverlay() {
         <div>
             {/* TODO Tailwind: className="px-(--space-section-x) text-center" */}
             <header>
-                {/* TODO Tailwind: className="sr-only" — TODO i18n: tc('brand') */}
-                <h1>SIMPLY</h1>
+                {/* TODO Tailwind: className="sr-only" */}
+                <h1>{tc('brand')}</h1>
                 {!isLandscapeMobile && (
-                    // TODO Tailwind: className="text-small-fluid text-simply-beige/60" — TODO i18n: tc('tagline')
-                    <p>L&apos;écosystème du sport amateur</p>
+                    // TODO Tailwind: className="text-small-fluid text-simply-beige/60"
+                    <p>{tc('tagline')}</p>
                 )}
             </header>
 
             {/* TODO Tailwind: className={cn('max-w-150 px-(--space-section-x) text-center', isLandscapeMobile && 'max-w-full')} */}
             <div>
-                {/* TODO Tailwind: className={cn('text-body-fluid animate-fade-in text-simply-beige/80', isLandscapeMobile && 'text-small-fluid')} — TODO i18n: t('hero.subtitle') */}
-                <p>Choisissez votre sport</p>
+                {/* TODO Tailwind: className={cn('text-body-fluid animate-fade-in text-simply-beige/80', isLandscapeMobile && 'text-small-fluid')} */}
+                <p>{t('hero.subtitle')}</p>
 
                 {/* TODO Tailwind: className={cn('pointer-events-auto flex flex-col gap-3 sm:flex-row sm:justify-center', isLandscapeMobile ? 'mt-3' : 'mt-6')} */}
                 <div>

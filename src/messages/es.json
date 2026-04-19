@@ -1,0 +1,42 @@
+{
+    "Common": {
+        "brand": "SIMPLY",
+        "tagline": "El ecosistema del deporte amateur",
+        "cta": {
+            "demo": "Solicitar una demo"
+        }
+    },
+    "HomePage": {
+        "meta": {
+            "title": "SIMPLY — El ecosistema del deporte amateur",
+            "description": "Plataforma digital para la gestión de clubes deportivos amateurs en Francia. Fútbol, Rugby, Balonmano."
+        },
+        "hero": {
+            "subtitle": "Elige tu deporte",
+            "explore": "Explorar"
+        }
+    },
+    "Errors": {
+        "generic": {
+            "title": "Ups",
+            "description": "Se produjo un error.",
+            "retry": "Reintentar"
+        },
+        "notFound": {
+            "title": "404",
+            "description": "Página no encontrada",
+            "backHome": "Volver al inicio"
+        }
+    },
+    "Brands": {
+        "foot": {
+            "sport": "Fútbol amateur"
+        },
+        "rugby": {
+            "sport": "Rugby amateur"
+        },
+        "handball": {
+            "sport": "Balonmano amateur"
+        }
+    }
+}
