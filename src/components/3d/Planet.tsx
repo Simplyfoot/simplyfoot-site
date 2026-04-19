@@ -7,10 +7,8 @@ import type { Mesh } from 'three';
 import { Vector3 } from 'three';
 
 import { SIMPLY_COLORS } from '@/lib/constants';
-import type { BrandSlug } from '@/types/brand';
 
 interface PlanetProps {
-    brandSlug: BrandSlug;
     label: string;
     color: string;
     position: [number, number, number];

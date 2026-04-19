@@ -1,13 +1,14 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+// TODO i18n: useTranslations('home' | 'common' | 'brands') — réactiver à la reconstruction.
+// import { useTranslations } from 'next-intl';
 
 import { BRAND_COLORS } from '@/lib/constants';
 
 export function GalaxyFallback() {
-    const t = useTranslations('home');
-    const tc = useTranslations('common');
-    const tb = useTranslations('brands');
+    // const t = useTranslations('home');
+    // const tc = useTranslations('common');
+    // const tb = useTranslations('brands');
 
     return (
         <div className="relative flex min-h-svh w-full flex-col items-center justify-center overflow-hidden bg-simply-black px-(--space-section-x)">
@@ -30,10 +31,12 @@ export function GalaxyFallback() {
 
             {/* Logo */}
             <h1 className="relative z-10 font-display text-display leading-tight font-bold text-simply-beige">
-                {tc('brand')}
+                {/* TODO i18n: tc('brand') */}
+                SIMPLY
             </h1>
             <p className="text-body-fluid relative z-10 mt-4 text-simply-beige/70">
-                {t('hero.subtitle')}
+                {/* TODO i18n: t('hero.subtitle') */}
+                Choisissez votre sport
             </p>
 
             {/* Static planet representations */}
@@ -46,7 +49,10 @@ export function GalaxyFallback() {
                             boxShadow: `0 10px 15px -3px ${BRAND_COLORS.foot.primary}4D`,
                         }}
                     />
-                    <span className="text-caption text-simply-beige/60">{tb('foot.sport')}</span>
+                    <span className="text-caption text-simply-beige/60">
+                        {/* TODO i18n: tb('foot.sport') */}
+                        Football amateur
+                    </span>
                 </div>
                 <div className="flex flex-col items-center gap-2">
                     <div
@@ -56,7 +62,10 @@ export function GalaxyFallback() {
                             boxShadow: `0 10px 15px -3px ${BRAND_COLORS.rugby.primary}4D`,
                         }}
                     />
-                    <span className="text-caption text-simply-beige/60">{tb('rugby.sport')}</span>
+                    <span className="text-caption text-simply-beige/60">
+                        {/* TODO i18n: tb('rugby.sport') */}
+                        Rugby amateur
+                    </span>
                 </div>
                 <div className="flex flex-col items-center gap-2">
                     <div
@@ -67,7 +76,8 @@ export function GalaxyFallback() {
                         }}
                     />
                     <span className="text-caption text-simply-beige/60">
-                        {tb('handball.sport')}
+                        {/* TODO i18n: tb('handball.sport') */}
+                        Handball amateur
                     </span>
                 </div>
             </div>

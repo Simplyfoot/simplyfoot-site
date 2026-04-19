@@ -102,29 +102,9 @@ const eslintConfig = [
                             group: ['../config/*', '../../config/*', '../../../config/*'],
                             message: "Utilise '@/config/*' au lieu d'un import relatif.",
                         },
-                        {
-                            group: ['../content/*', '../../content/*', '../../../content/*'],
-                            message: "Utilise '@/content/*' au lieu d'un import relatif.",
-                        },
-                        {
-                            group: ['../types/*', '../../types/*', '../../../types/*'],
-                            message: "Utilise '@/types/*' au lieu d'un import relatif.",
-                        },
-                        {
-                            group: ['../messages/*', '../../messages/*', '../../../messages/*'],
-                            message: "Utilise '@/messages/*' au lieu d'un import relatif.",
-                        },
                     ],
                 },
             ],
-        },
-    },
-
-    {
-        files: ['src/components/ui/**/*.tsx'],
-        rules: {
-            'jsx-a11y/label-has-associated-control': 'off',
-            'jsx-a11y/heading-has-content': 'off',
         },
     },
 ];

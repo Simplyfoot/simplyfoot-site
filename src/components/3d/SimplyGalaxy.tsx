@@ -3,8 +3,9 @@
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { Bloom, EffectComposer } from '@react-three/postprocessing';
-import { useRouter } from 'next/navigation';
-import { useCallback } from 'react';
+// TODO landing-nav: réactiver le routeur Next pour la navigation vers les sous-marques.
+// import { useRouter } from 'next/navigation';
+// import { useCallback } from 'react';
 import { TOUCH } from 'three';
 
 import { BRAND_COLORS, SIMPLY_COLORS } from '@/lib/constants';
@@ -18,16 +19,20 @@ import { Planet } from './Planet';
 import { SimplyLogo3D } from './SimplyLogo3D';
 import { Starfield } from './Starfield';
 
+// TODO landing-nav: planètes désactivées (cliquables → no-op).
+// Réactiver onClick={() => navigateTo('/foot' | '/rugby' | '/handball')} à la reconnexion.
+const noop = () => {};
+
 function Scene() {
-    const router = useRouter();
     const config = useDeviceConfig();
 
-    const navigateTo = useCallback(
-        (path: string) => {
-            router.push(path);
-        },
-        [router],
-    );
+    // const router = useRouter();
+    // const navigateTo = useCallback(
+    //     (path: string) => {
+    //         router.push(path);
+    //     },
+    //     [router],
+    // );
 
     return (
         <>
@@ -69,12 +74,11 @@ function Scene() {
                     scale={config.planetScale.foot}
                     labelFontSize={config.labelFontSize}
                     isTouchDevice={config.isTouchDevice}
-                    onClick={() => navigateTo('/foot')}
+                    onClick={noop}
                 />
             </OrbitingGroup>
             <OrbitingGroup {...config.planetOrbits.rugby}>
                 <Planet
-                    brandSlug="rugby"
                     label="Rugby"
                     color={BRAND_COLORS.rugby.primary}
                     position={[0, 0, 0]}
@@ -82,12 +86,11 @@ function Scene() {
                     sphereSegments={config.sphereSegments}
                     labelFontSize={config.labelFontSize}
                     isTouchDevice={config.isTouchDevice}
-                    onClick={() => navigateTo('/rugby')}
+                    onClick={noop}
                 />
             </OrbitingGroup>
             <OrbitingGroup {...config.planetOrbits.handball}>
                 <Planet
-                    brandSlug="handball"
                     label="Handball"
                     color={BRAND_COLORS.handball.primary}
                     position={[0, 0, 0]}
@@ -95,7 +98,7 @@ function Scene() {
                     sphereSegments={config.sphereSegments}
                     labelFontSize={config.labelFontSize}
                     isTouchDevice={config.isTouchDevice}
-                    onClick={() => navigateTo('/handball')}
+                    onClick={noop}
                 />
             </OrbitingGroup>
 
