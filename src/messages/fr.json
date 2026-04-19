@@ -28,6 +28,14 @@
             "backHome": "Retour à l'accueil"
         }
     },
+    "Header": {
+        "nav": {
+            "label": "Navigation principale",
+            "about": "À propos",
+            "contact": "Contact"
+        },
+        "logoAlt": "Logo {brand}"
+    },
     "Brands": {
         "foot": {
             "sport": "Football amateur"

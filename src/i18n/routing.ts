@@ -11,6 +11,9 @@ export const routing = defineRouting({
         '/handball': '/handball',
         // Brand-scoped contact + legal pages. Content is shared across brands
         // but the URL stays in the user's current navigation theme.
+        '/foot/about': '/foot/about',
+        '/rugby/about': '/rugby/about',
+        '/handball/about': '/handball/about',
         '/foot/contact': '/foot/contact',
         '/rugby/contact': '/rugby/contact',
         '/handball/contact': '/handball/contact',
