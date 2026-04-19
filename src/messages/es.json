@@ -40,20 +40,25 @@
         }
     },
     "Footer": {
-        "tagline": "Creado con ❤️ para los clubes amateurs",
         "sections": {
-            "legal": "Legal",
-            "contact": "Contacto",
-            "socials": "Síguenos"
+            "legal": "Información legal",
+            "socials": "Sigue conectado"
         },
         "links": {
             "mentionsLegales": "Aviso legal",
             "cgu": "Condiciones de uso",
             "cgv": "Condiciones de venta",
             "privacy": "Política de privacidad",
-            "cookies": "Gestión de cookies"
+            "cookies": "Gestión de cookies",
+            "contact": "Contáctanos"
         },
-        "copyright": "© {year} SIMPLY. Todos los derechos reservados.",
+        "company": {
+            "capital": "Capital social: {capital}",
+            "rcs": "RCS: {rcs}",
+            "tva": "N° IVA: {tva}"
+        },
+        "socialsDescription": "Sigue nuestras últimas novedades, actualizaciones y consejos de gestión de clubes.",
+        "copyright": "© {year} {brand} – Todos los derechos reservados. Creado con ❤️ para los clubes amateurs.",
         "socialLabel": {
             "facebook": "Seguir en Facebook",
             "linkedin": "Seguir en LinkedIn",

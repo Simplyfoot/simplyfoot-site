@@ -6,9 +6,9 @@ import type { BrandSlug } from '@/lib/brand';
  */
 export const SIMPLY_LEGAL = {
     entity: 'SAS',
-    capital: '2 000€',
-    siret: '991 139 171',
-    tva: 'FR89991139171',
+    capital: '2 000 €',
+    rcs: '991 139 171 R.C.S Paris',
+    tva: 'FR 89 991139171',
     address: '60 rue François 1er, 75008 Paris',
 } as const;
 

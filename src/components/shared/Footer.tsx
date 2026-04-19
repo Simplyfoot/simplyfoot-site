@@ -24,6 +24,7 @@ export async function Footer({ brand }: FooterProps) {
         { href: `/${brand}/legal/cgv`, label: t('links.cgv') },
         { href: `/${brand}/legal/privacy`, label: t('links.privacy') },
         { href: `/${brand}/legal/cookies`, label: t('links.cookies') },
+        { href: `/${brand}/contact`, label: t('links.contact') },
     ] as const;
 
     const socials = [
@@ -39,12 +40,44 @@ export async function Footer({ brand }: FooterProps) {
     return (
         <footer className="bg-primary-700 text-primary-foreground">
             <div className="mx-auto max-w-7xl px-6 py-12 md:px-12 md:py-16">
-                <div className="grid gap-10 md:grid-cols-4">
-                    <div className="space-y-3">
-                        <p className="text-lg font-semibold">{brandMeta.label}</p>
-                        <p className="text-primary-foreground/80 text-sm">{t('tagline')}</p>
+                <div className="grid gap-10 md:grid-cols-3">
+                    {/* Column 1 — Company identity + contact */}
+                    <div className="space-y-5 text-sm">
+                        <p className="text-lg font-semibold">
+                            {brandMeta.label} — {SIMPLY_LEGAL.entity}
+                        </p>
+                        <ul className="text-primary-foreground/90 space-y-1">
+                            <li>{t('company.capital', { capital: SIMPLY_LEGAL.capital })}</li>
+                            <li>{t('company.rcs', { rcs: SIMPLY_LEGAL.rcs })}</li>
+                            <li>{t('company.tva', { tva: SIMPLY_LEGAL.tva })}</li>
+                        </ul>
+                        <ul className="text-primary-foreground/90 space-y-2">
+                            <li className="flex items-start gap-2">
+                                <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+                                <span>{SIMPLY_LEGAL.address}</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                                <Phone className="size-4 shrink-0" aria-hidden="true" />
+                                <a
+                                    href={`tel:${contact.phone.replace(/\s/g, '')}`}
+                                    className="hover:text-primary-foreground transition-colors hover:underline"
+                                >
+                                    {contact.phone}
+                                </a>
+                            </li>
+                            <li className="flex items-center gap-2">
+                                <Mail className="size-4 shrink-0" aria-hidden="true" />
+                                <a
+                                    href={`mailto:${contact.email}`}
+                                    className="hover:text-primary-foreground transition-colors hover:underline"
+                                >
+                                    {contact.email}
+                                </a>
+                            </li>
+                        </ul>
                     </div>
 
+                    {/* Column 2 — Legal menu */}
                     <nav aria-label={t('sections.legal')}>
                         <h2 className="mb-3 text-sm font-semibold">{t('sections.legal')}</h2>
                         <ul className="space-y-2 text-sm">
@@ -61,37 +94,13 @@ export async function Footer({ brand }: FooterProps) {
                         </ul>
                     </nav>
 
-                    <div>
-                        <h2 className="mb-3 text-sm font-semibold">{t('sections.contact')}</h2>
-                        <ul className="text-primary-foreground/90 space-y-2 text-sm">
-                            <li className="flex items-center gap-2">
-                                <Mail className="size-4 shrink-0" aria-hidden="true" />
-                                <a
-                                    href={`mailto:${contact.email}`}
-                                    className="hover:text-primary-foreground transition-colors hover:underline"
-                                >
-                                    {contact.email}
-                                </a>
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <Phone className="size-4 shrink-0" aria-hidden="true" />
-                                <a
-                                    href={`tel:${contact.phone.replace(/\s/g, '')}`}
-                                    className="hover:text-primary-foreground transition-colors hover:underline"
-                                >
-                                    {contact.phone}
-                                </a>
-                            </li>
-                            <li className="flex items-start gap-2">
-                                <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
-                                <span>{SIMPLY_LEGAL.address}</span>
-                            </li>
-                        </ul>
-                    </div>
-
+                    {/* Column 3 — Socials */}
                     <div>
                         <h2 className="mb-3 text-sm font-semibold">{t('sections.socials')}</h2>
-                        <div className="flex gap-2">
+                        <p className="text-primary-foreground/80 text-sm">
+                            {t('socialsDescription')}
+                        </p>
+                        <div className="mt-4 flex gap-2">
                             {socials.map(({ href, label, Icon }) =>
                                 href ? (
                                     <Button
@@ -114,13 +123,9 @@ export async function Footer({ brand }: FooterProps) {
 
                 <Separator className="bg-primary-foreground/20 my-8" />
 
-                <div className="text-primary-foreground/70 flex flex-col items-start justify-between gap-3 text-xs md:flex-row md:items-center">
-                    <p>
-                        {SIMPLY_LEGAL.entity} · Capital {SIMPLY_LEGAL.capital} · SIRET{' '}
-                        {SIMPLY_LEGAL.siret} · TVA {SIMPLY_LEGAL.tva}
-                    </p>
-                    <p>{t('copyright', { year })}</p>
-                </div>
+                <p className="text-primary-foreground/70 text-center text-xs">
+                    {t('copyright', { year, brand: brandMeta.label })}
+                </p>
             </div>
         </footer>
     );
