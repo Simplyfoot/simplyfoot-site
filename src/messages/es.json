@@ -1,0 +1,78 @@
+{
+    "Common": {
+        "brand": "SIMPLY",
+        "tagline": "El ecosistema del deporte amateur",
+        "cta": {
+            "demo": "Solicitar una demo"
+        }
+    },
+    "HomePage": {
+        "meta": {
+            "title": "SIMPLY — El ecosistema del deporte amateur",
+            "description": "Plataforma digital para la gestión de clubes deportivos amateurs en Francia. Fútbol, Rugby, Balonmano."
+        },
+        "hero": {
+            "subtitle": "Elige tu deporte",
+            "explore": "Explorar"
+        }
+    },
+    "Errors": {
+        "generic": {
+            "title": "Ups",
+            "description": "Se produjo un error.",
+            "retry": "Reintentar"
+        },
+        "notFound": {
+            "title": "404",
+            "heading": "Ups... esta página fue sustituida al descanso {emoji}",
+            "description": "¡No te preocupes! Hasta los mejores fallan un pase a veces. Vuelve al inicio y retoma el partido con {brand}.",
+            "backHome": "Volver al inicio",
+            "contactTeam": "Contactar al equipo"
+        }
+    },
+    "Header": {
+        "nav": {
+            "label": "Navegación principal",
+            "about": "Acerca de",
+            "contact": "Contacto"
+        },
+        "logoAlt": "Logo de {brand}"
+    },
+    "Brands": {
+        "foot": {
+            "sport": "Fútbol amateur"
+        },
+        "rugby": {
+            "sport": "Rugby amateur"
+        },
+        "handball": {
+            "sport": "Balonmano amateur"
+        }
+    },
+    "Footer": {
+        "sections": {
+            "legal": "Información legal",
+            "socials": "Sigue conectado"
+        },
+        "links": {
+            "mentionsLegales": "Aviso legal",
+            "cgu": "Condiciones de uso",
+            "cgv": "Condiciones de venta",
+            "privacy": "Política de privacidad",
+            "cookies": "Gestión de cookies",
+            "contact": "Contáctanos"
+        },
+        "company": {
+            "capital": "Capital social: {capital}",
+            "rcs": "RCS: {rcs}",
+            "tva": "N° IVA: {tva}"
+        },
+        "socialsDescription": "Sigue nuestras últimas novedades, actualizaciones y consejos de gestión de clubes.",
+        "copyright": "© {year} {brand} – Todos los derechos reservados. Creado con ❤️ para los clubes amateurs.",
+        "socialLabel": {
+            "facebook": "Seguir en Facebook",
+            "linkedin": "Seguir en LinkedIn",
+            "instagram": "Seguir en Instagram"
+        }
+    }
+}

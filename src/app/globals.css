@@ -1,12 +1,17 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
-@import 'shadcn/tailwind.css';
-@import '../lib/brand/tokens.css';
+
+/* Brand palettes — default is :root (acts as fallback for the landing page),
+   each brand overrides only the primary scale via [data-brand="<slug>"]. */
+@import '../styles/themes/default.css';
+@import '../styles/themes/foot.css';
+@import '../styles/themes/rugby.css';
+@import '../styles/themes/handball.css';
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-    /* shadcn semantic tokens */
+    /* ================= shadcn semantic ================= */
     --color-background: var(--background);
     --color-foreground: var(--foreground);
     --color-card: var(--card);
@@ -22,14 +27,212 @@
     --color-accent: var(--accent);
     --color-accent-foreground: var(--accent-foreground);
     --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
     --color-border: var(--border);
     --color-input: var(--input);
     --color-ring: var(--ring);
-    --color-chart-1: var(--chart-1);
-    --color-chart-2: var(--chart-2);
-    --color-chart-3: var(--chart-3);
-    --color-chart-4: var(--chart-4);
-    --color-chart-5: var(--chart-5);
+
+    /* ================= Primary scale ================= */
+    --color-primary-50: var(--primary-50);
+    --color-primary-100: var(--primary-100);
+    --color-primary-200: var(--primary-200);
+    --color-primary-300: var(--primary-300);
+    --color-primary-400: var(--primary-400);
+    --color-primary-500: var(--primary-500);
+    --color-primary-600: var(--primary-600);
+    --color-primary-700: var(--primary-700);
+    --color-primary-800: var(--primary-800);
+    --color-primary-900: var(--primary-900);
+
+    /* ================= Secondary scale ================= */
+    --color-secondary-50: var(--secondary-50);
+    --color-secondary-100: var(--secondary-100);
+    --color-secondary-200: var(--secondary-200);
+    --color-secondary-300: var(--secondary-300);
+    --color-secondary-400: var(--secondary-400);
+    --color-secondary-500: var(--secondary-500);
+    --color-secondary-600: var(--secondary-600);
+    --color-secondary-700: var(--secondary-700);
+    --color-secondary-800: var(--secondary-800);
+    --color-secondary-900: var(--secondary-900);
+
+    /* ================= Error scale ================= */
+    --color-error-0: var(--error-0);
+    --color-error-50: var(--error-50);
+    --color-error-100: var(--error-100);
+    --color-error-200: var(--error-200);
+    --color-error-300: var(--error-300);
+    --color-error-400: var(--error-400);
+    --color-error-500: var(--error-500);
+    --color-error-600: var(--error-600);
+    --color-error-700: var(--error-700);
+    --color-error-800: var(--error-800);
+    --color-error-900: var(--error-900);
+    --color-error-950: var(--error-950);
+
+    /* ================= Success scale ================= */
+    --color-success-0: var(--success-0);
+    --color-success-50: var(--success-50);
+    --color-success-100: var(--success-100);
+    --color-success-200: var(--success-200);
+    --color-success-300: var(--success-300);
+    --color-success-400: var(--success-400);
+    --color-success-500: var(--success-500);
+    --color-success-600: var(--success-600);
+    --color-success-700: var(--success-700);
+    --color-success-800: var(--success-800);
+    --color-success-900: var(--success-900);
+    --color-success-950: var(--success-950);
+
+    /* ================= Warning scale ================= */
+    --color-warning-0: var(--warning-0);
+    --color-warning-50: var(--warning-50);
+    --color-warning-100: var(--warning-100);
+    --color-warning-200: var(--warning-200);
+    --color-warning-300: var(--warning-300);
+    --color-warning-400: var(--warning-400);
+    --color-warning-500: var(--warning-500);
+    --color-warning-600: var(--warning-600);
+    --color-warning-700: var(--warning-700);
+    --color-warning-800: var(--warning-800);
+    --color-warning-900: var(--warning-900);
+    --color-warning-950: var(--warning-950);
+
+    /* ================= Info scale ================= */
+    --color-info-0: var(--info-0);
+    --color-info-50: var(--info-50);
+    --color-info-100: var(--info-100);
+    --color-info-200: var(--info-200);
+    --color-info-300: var(--info-300);
+    --color-info-400: var(--info-400);
+    --color-info-500: var(--info-500);
+    --color-info-600: var(--info-600);
+    --color-info-700: var(--info-700);
+    --color-info-800: var(--info-800);
+    --color-info-900: var(--info-900);
+    --color-info-950: var(--info-950);
+
+    /* ================= Typography scale ================= */
+    --color-typography-0: var(--typography-0);
+    --color-typography-50: var(--typography-50);
+    --color-typography-100: var(--typography-100);
+    --color-typography-200: var(--typography-200);
+    --color-typography-300: var(--typography-300);
+    --color-typography-400: var(--typography-400);
+    --color-typography-500: var(--typography-500);
+    --color-typography-600: var(--typography-600);
+    --color-typography-700: var(--typography-700);
+    --color-typography-800: var(--typography-800);
+    --color-typography-900: var(--typography-900);
+    --color-typography-950: var(--typography-950);
+
+    /* ================= Outline scale ================= */
+    --color-outline-0: var(--outline-0);
+    --color-outline-50: var(--outline-50);
+    --color-outline-100: var(--outline-100);
+    --color-outline-200: var(--outline-200);
+    --color-outline-300: var(--outline-300);
+    --color-outline-400: var(--outline-400);
+    --color-outline-500: var(--outline-500);
+    --color-outline-600: var(--outline-600);
+    --color-outline-700: var(--outline-700);
+    --color-outline-800: var(--outline-800);
+    --color-outline-900: var(--outline-900);
+    --color-outline-950: var(--outline-950);
+
+    /* ================= Background scale ================= */
+    --color-background-0: var(--background-0);
+    --color-background-50: var(--background-50);
+    --color-background-100: var(--background-100);
+    --color-background-200: var(--background-200);
+    --color-background-300: var(--background-300);
+    --color-background-400: var(--background-400);
+    --color-background-500: var(--background-500);
+    --color-background-600: var(--background-600);
+    --color-background-700: var(--background-700);
+    --color-background-800: var(--background-800);
+    --color-background-900: var(--background-900);
+    --color-background-950: var(--background-950);
+    --color-background-error: var(--background-error);
+    --color-background-warning: var(--background-warning);
+    --color-background-success: var(--background-success);
+    --color-background-muted: var(--background-muted);
+    --color-background-info: var(--background-info);
+
+    /* ================= Indicators ================= */
+    --color-indicator-primary: var(--indicator-primary);
+    --color-indicator-info: var(--indicator-info);
+    --color-indicator-error: var(--indicator-error);
+
+    /* ================= Brand harmonies (handball only for now) ================= */
+    --color-complementary: var(--complementary);
+    --color-analogous-1: var(--analogous-1);
+    --color-analogous-2: var(--analogous-2);
+    --color-triadic-1: var(--triadic-1);
+    --color-triadic-2: var(--triadic-2);
+
+    --color-complementary-50: var(--complementary-50);
+    --color-complementary-100: var(--complementary-100);
+    --color-complementary-200: var(--complementary-200);
+    --color-complementary-300: var(--complementary-300);
+    --color-complementary-400: var(--complementary-400);
+    --color-complementary-500: var(--complementary-500);
+    --color-complementary-600: var(--complementary-600);
+    --color-complementary-700: var(--complementary-700);
+    --color-complementary-800: var(--complementary-800);
+    --color-complementary-900: var(--complementary-900);
+
+    --color-analogous-1-50: var(--analogous-1-50);
+    --color-analogous-1-100: var(--analogous-1-100);
+    --color-analogous-1-200: var(--analogous-1-200);
+    --color-analogous-1-300: var(--analogous-1-300);
+    --color-analogous-1-400: var(--analogous-1-400);
+    --color-analogous-1-500: var(--analogous-1-500);
+    --color-analogous-1-600: var(--analogous-1-600);
+    --color-analogous-1-700: var(--analogous-1-700);
+    --color-analogous-1-800: var(--analogous-1-800);
+    --color-analogous-1-900: var(--analogous-1-900);
+
+    --color-analogous-2-50: var(--analogous-2-50);
+    --color-analogous-2-100: var(--analogous-2-100);
+    --color-analogous-2-200: var(--analogous-2-200);
+    --color-analogous-2-300: var(--analogous-2-300);
+    --color-analogous-2-400: var(--analogous-2-400);
+    --color-analogous-2-500: var(--analogous-2-500);
+    --color-analogous-2-600: var(--analogous-2-600);
+    --color-analogous-2-700: var(--analogous-2-700);
+    --color-analogous-2-800: var(--analogous-2-800);
+    --color-analogous-2-900: var(--analogous-2-900);
+
+    --color-triadic-1-50: var(--triadic-1-50);
+    --color-triadic-1-100: var(--triadic-1-100);
+    --color-triadic-1-200: var(--triadic-1-200);
+    --color-triadic-1-300: var(--triadic-1-300);
+    --color-triadic-1-400: var(--triadic-1-400);
+    --color-triadic-1-500: var(--triadic-1-500);
+    --color-triadic-1-600: var(--triadic-1-600);
+    --color-triadic-1-700: var(--triadic-1-700);
+    --color-triadic-1-800: var(--triadic-1-800);
+    --color-triadic-1-900: var(--triadic-1-900);
+
+    --color-triadic-2-50: var(--triadic-2-50);
+    --color-triadic-2-100: var(--triadic-2-100);
+    --color-triadic-2-200: var(--triadic-2-200);
+    --color-triadic-2-300: var(--triadic-2-300);
+    --color-triadic-2-400: var(--triadic-2-400);
+    --color-triadic-2-500: var(--triadic-2-500);
+    --color-triadic-2-600: var(--triadic-2-600);
+    --color-triadic-2-700: var(--triadic-2-700);
+    --color-triadic-2-800: var(--triadic-2-800);
+    --color-triadic-2-900: var(--triadic-2-900);
+
+    /* ================= Radius ================= */
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+
+    /* ================= Sidebar ================= */
     --color-sidebar: var(--sidebar);
     --color-sidebar-foreground: var(--sidebar-foreground);
     --color-sidebar-primary: var(--sidebar-primary);
@@ -38,257 +241,27 @@
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-ring: var(--sidebar-ring);
-
-    /* Brand tokens — dynamic via data-brand attribute */
-    --color-brand-primary: var(--brand-primary);
-    --color-brand-primary-dark: var(--brand-primary-dark);
-    --color-brand-primary-light: var(--brand-primary-light);
-    --color-brand-surface-dark: var(--brand-surface-dark);
-    --color-brand-bg: var(--brand-bg);
-
-    /* Simply holding tokens */
-    --color-simply-black: var(--simply-black);
-    --color-simply-beige: var(--simply-beige);
-    --color-simply-blue: var(--simply-blue);
-    --color-simply-text-muted: var(--simply-text-muted);
-
-    /* Fonts */
-    --font-sans: var(--font-inter);
-    --font-display: var(--font-poppins);
-    --font-mono: var(--font-geist-mono);
-
-    /* Fluid typography — min @ 375px, max @ 1536px */
-    --text-display: clamp(2.25rem, 1.5rem + 3.2vw, 4.5rem);
-    --text-h1: clamp(1.875rem, 1.3rem + 2.4vw, 3.5rem);
-    --text-h2: clamp(1.5rem, 1.1rem + 1.7vw, 2.5rem);
-    --text-h3: clamp(1.25rem, 1rem + 1.1vw, 1.875rem);
-    --text-h4: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);
-    --text-body: clamp(0.9375rem, 0.875rem + 0.25vw, 1.125rem);
-    --text-small: clamp(0.8125rem, 0.775rem + 0.15vw, 0.9375rem);
-    --text-caption: clamp(0.6875rem, 0.66rem + 0.1vw, 0.8125rem);
-
-    /* Fluid spacing */
-    --space-section-y: clamp(3rem, 2rem + 4vw, 7rem);
-    --space-section-x: clamp(1rem, 0.5rem + 2vw, 2rem);
-    --space-block: clamp(1.5rem, 1rem + 2vw, 4rem);
-    --space-element: clamp(0.75rem, 0.5rem + 1vw, 1.5rem);
-    --space-inline: clamp(0.5rem, 0.25rem + 0.5vw, 1rem);
-
-    /* Container */
-    --container-max: 1400px;
-    --container-padding: clamp(1rem, 0.5rem + 2vw, 2rem);
-
-    /* Radius scale */
-    --radius-sm: calc(var(--radius) * 0.6);
-    --radius-md: calc(var(--radius) * 0.8);
-    --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius) * 1.4);
-    --radius-2xl: calc(var(--radius) * 1.8);
-    --radius-3xl: calc(var(--radius) * 2.2);
-    --radius-4xl: calc(var(--radius) * 2.6);
-
-    /* Custom animations */
-    --animate-float: float 6s ease-in-out infinite;
-    --animate-float-3d: float3d 8s ease-in-out infinite;
-    --animate-fade-in: fadeIn 0.5s ease-out;
-    --animate-marquee: marquee 30s linear infinite;
-}
-
-/* SIMPLY design system — light theme (default) */
-:root {
-    --background: #f8e9ca;
-    --foreground: #000000;
-    --card: #f8e9ca;
-    --card-foreground: #000000;
-    --popover: #f8e9ca;
-    --popover-foreground: #000000;
-    --primary: #151b6b;
-    --primary-foreground: #f8e9ca;
-    --secondary: #f0ddb5;
-    --secondary-foreground: #1a1a1a;
-    --muted: #efe0c2;
-    --muted-foreground: #6b5d4b;
-    --accent: #f0ddb5;
-    --accent-foreground: #1a1a1a;
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: #d9c9a5;
-    --input: #d9c9a5;
-    --ring: #151b6b;
-    --chart-1: #567e66;
-    --chart-2: #8b1a1a;
-    --chart-3: #1a237e;
-    --chart-4: #151b6b;
-    --chart-5: #6b5d4b;
-    --radius: 0.625rem;
-    --sidebar: #f0ddb5;
-    --sidebar-foreground: #000000;
-    --sidebar-primary: #151b6b;
-    --sidebar-primary-foreground: #f8e9ca;
-    --sidebar-accent: #efe0c2;
-    --sidebar-accent-foreground: #1a1a1a;
-    --sidebar-border: #d9c9a5;
-    --sidebar-ring: #151b6b;
-}
-
-/* Dark theme */
-.dark {
-    --background: #0a0a0a;
-    --foreground: #f8e9ca;
-    --card: #1a1a1a;
-    --card-foreground: #f8e9ca;
-    --popover: #1a1a1a;
-    --popover-foreground: #f8e9ca;
-    --primary: #f8e9ca;
-    --primary-foreground: #151b6b;
-    --secondary: #2a2a2a;
-    --secondary-foreground: #f8e9ca;
-    --muted: #2a2a2a;
-    --muted-foreground: #a09080;
-    --accent: #2a2a2a;
-    --accent-foreground: #f8e9ca;
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: rgba(248, 233, 202, 0.1);
-    --input: rgba(248, 233, 202, 0.15);
-    --ring: #f8e9ca;
-    --chart-1: #7a9e8a;
-    --chart-2: #c04040;
-    --chart-3: #3f51b5;
-    --chart-4: #f8e9ca;
-    --chart-5: #a09080;
-    --sidebar: #1a1a1a;
-    --sidebar-foreground: #f8e9ca;
-    --sidebar-primary: #f8e9ca;
-    --sidebar-primary-foreground: #151b6b;
-    --sidebar-accent: #2a2a2a;
-    --sidebar-accent-foreground: #f8e9ca;
-    --sidebar-border: rgba(248, 233, 202, 0.1);
-    --sidebar-ring: #f8e9ca;
-}
-
-@keyframes float {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-@keyframes float3d {
-    0%,
-    100% {
-        transform: translateY(0) rotateX(0deg) rotateY(0deg);
-        filter: drop-shadow(0 10px 20px rgba(248, 233, 202, 0.15));
-    }
-    25% {
-        transform: translateY(-8px) rotateX(2deg) rotateY(-3deg);
-        filter: drop-shadow(0 18px 30px rgba(248, 233, 202, 0.25));
-    }
-    50% {
-        transform: translateY(-14px) rotateX(0deg) rotateY(0deg);
-        filter: drop-shadow(0 24px 40px rgba(248, 233, 202, 0.3));
-    }
-    75% {
-        transform: translateY(-8px) rotateX(-2deg) rotateY(3deg);
-        filter: drop-shadow(0 18px 30px rgba(248, 233, 202, 0.25));
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
 }
 
 @layer base {
     * {
         @apply border-border outline-ring/50;
     }
-    html {
-        @apply font-sans;
-        overflow-x: hidden;
-        padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)
-            env(safe-area-inset-left);
-    }
     body {
-        @apply bg-background text-foreground antialiased;
-        overflow-x: hidden;
-        overflow-wrap: break-word;
-        font-feature-settings:
-            'rlig' 1,
-            'calt' 1;
-    }
-    img,
-    video,
-    svg {
-        max-width: 100%;
-        height: auto;
+        @apply bg-background text-foreground;
     }
 }
 
-@layer components {
-    .container-simply {
-        width: 100%;
-        max-width: var(--container-max);
-        margin-inline: auto;
-        padding-inline: var(--container-padding);
-    }
-    .container-narrow {
-        width: 100%;
-        max-width: 800px;
-        margin-inline: auto;
-        padding-inline: var(--container-padding);
-    }
-    .grid-auto {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
-        gap: var(--space-element);
-    }
-}
-
-@layer utilities {
-    .text-display {
-        font-size: var(--text-display);
-    }
-    .text-h1 {
-        font-size: var(--text-h1);
-    }
-    .text-h2 {
-        font-size: var(--text-h2);
-    }
-    .text-h3 {
-        font-size: var(--text-h3);
-    }
-    .text-h4 {
-        font-size: var(--text-h4);
-    }
-    .text-body-fluid {
-        font-size: var(--text-body);
-    }
-    .text-small-fluid {
-        font-size: var(--text-small);
-    }
-    .text-caption {
-        font-size: var(--text-caption);
-    }
-    .scrollbar-hidden {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        &::-webkit-scrollbar {
-            display: none;
-        }
-    }
+/* Sidebar dark variant — inactive while the project stays light-only (the
+   `.dark` class is never applied on <html>). Kept for future-proofing in case
+   a per-brand dark mode is introduced on the <Sidebar> component. */
+.dark {
+    --sidebar: hsl(240 5.9% 10%);
+    --sidebar-foreground: hsl(240 4.8% 95.9%);
+    --sidebar-primary: hsl(224.3 76.3% 48%);
+    --sidebar-primary-foreground: hsl(0 0% 100%);
+    --sidebar-accent: hsl(240 3.7% 15.9%);
+    --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+    --sidebar-border: hsl(240 3.7% 15.9%);
+    --sidebar-ring: hsl(217.2 91.2% 59.8%);
 }

@@ -3,7 +3,5 @@
     "singleQuote": true,
     "tabWidth": 4,
     "trailingComma": "all",
-    "endOfLine": "auto",
-    "plugins": ["prettier-plugin-tailwindcss"],
-    "tailwindStylesheet": "./src/app/globals.css"
+    "endOfLine": "auto"
 }

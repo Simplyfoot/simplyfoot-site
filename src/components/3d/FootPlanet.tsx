@@ -6,7 +6,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Group } from 'three';
 import { Vector3 } from 'three';
 
-import { SIMPLY_COLORS } from '@/lib/constants';
+import { useRootColor } from '@/lib/brand';
 
 const MODEL_PATH = '/images/planet-simplyfoot.glb';
 
@@ -37,6 +37,7 @@ export function FootPlanet({
     const [tapped, setTapped] = useState(false);
     const tapTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const gltf = useGLTF(MODEL_PATH);
+    const labelColor = useRootColor('--secondary');
 
     const clonedScene = useMemo(() => gltf.scene.clone(), [gltf.scene]);
     const _targetScale = useMemo(() => new Vector3(), []);
@@ -116,12 +117,7 @@ export function FootPlanet({
                 <primitive object={clonedScene} />
             </group>
             <Billboard position={[0, -1.6, 0]}>
-                <Text
-                    fontSize={labelFontSize}
-                    color={SIMPLY_COLORS.beige}
-                    anchorX="center"
-                    anchorY="middle"
-                >
+                <Text fontSize={labelFontSize} color={labelColor} anchorX="center" anchorY="middle">
                     {label}
                 </Text>
             </Billboard>

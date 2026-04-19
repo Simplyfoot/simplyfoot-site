@@ -3,31 +3,31 @@
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { Bloom, EffectComposer } from '@react-three/postprocessing';
-import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { TOUCH } from 'three';
 
-import { BRAND_COLORS, SIMPLY_COLORS } from '@/lib/constants';
+import { useRouter } from '@/i18n/navigation';
+import { useBrandColor, useRootColor } from '@/lib/brand';
 import { useDeviceConfig } from '@/lib/hooks/use-device-config';
 import { useReducedMotion } from '@/lib/hooks/use-reduced-motion';
 
 import { FootPlanet } from './FootPlanet';
-import { GalaxyFallback } from './GalaxyFallback';
+import { GalaxyReducedMotion } from './GalaxyReducedMotion';
 import { OrbitingGroup } from './OrbitingGroup';
 import { Planet } from './Planet';
 import { SimplyLogo3D } from './SimplyLogo3D';
 import { Starfield } from './Starfield';
 
 function Scene() {
-    const router = useRouter();
     const config = useDeviceConfig();
+    const rugbyPrimary = useBrandColor('rugby');
+    const handballPrimary = useBrandColor('handball');
+    const ambientWarm = useRootColor('--secondary');
+    const router = useRouter();
 
-    const navigateTo = useCallback(
-        (path: string) => {
-            router.push(path);
-        },
-        [router],
-    );
+    const goToFoot = useCallback(() => router.push('/foot'), [router]);
+    const goToRugby = useCallback(() => router.push('/rugby'), [router]);
+    const goToHandball = useCallback(() => router.push('/handball'), [router]);
 
     return (
         <>
@@ -51,12 +51,12 @@ function Scene() {
             <pointLight
                 position={[0, 0, 0]}
                 intensity={2.2}
-                color={SIMPLY_COLORS.beige}
+                color={ambientWarm}
                 distance={25}
                 decay={1.6}
             />
             <pointLight position={[10, 10, 10]} intensity={0.6} />
-            <pointLight position={[-10, -10, -10]} intensity={0.35} color={SIMPLY_COLORS.beige} />
+            <pointLight position={[-10, -10, -10]} intensity={0.35} color={ambientWarm} />
 
             <Starfield count={config.starCount} />
 
@@ -69,33 +69,31 @@ function Scene() {
                     scale={config.planetScale.foot}
                     labelFontSize={config.labelFontSize}
                     isTouchDevice={config.isTouchDevice}
-                    onClick={() => navigateTo('/foot')}
+                    onClick={goToFoot}
                 />
             </OrbitingGroup>
             <OrbitingGroup {...config.planetOrbits.rugby}>
                 <Planet
-                    brandSlug="rugby"
                     label="Rugby"
-                    color={BRAND_COLORS.rugby.primary}
+                    color={rugbyPrimary || '#000000'}
                     position={[0, 0, 0]}
                     scale={config.planetScale.rugby}
                     sphereSegments={config.sphereSegments}
                     labelFontSize={config.labelFontSize}
                     isTouchDevice={config.isTouchDevice}
-                    onClick={() => navigateTo('/rugby')}
+                    onClick={goToRugby}
                 />
             </OrbitingGroup>
             <OrbitingGroup {...config.planetOrbits.handball}>
                 <Planet
-                    brandSlug="handball"
                     label="Handball"
-                    color={BRAND_COLORS.handball.primary}
+                    color={handballPrimary || '#000000'}
                     position={[0, 0, 0]}
                     scale={config.planetScale.handball}
                     sphereSegments={config.sphereSegments}
                     labelFontSize={config.labelFontSize}
                     isTouchDevice={config.isTouchDevice}
-                    onClick={() => navigateTo('/handball')}
+                    onClick={goToHandball}
                 />
             </OrbitingGroup>
 
@@ -120,7 +118,7 @@ export default function SimplyGalaxy() {
     const config = useDeviceConfig();
 
     if (prefersReducedMotion) {
-        return <GalaxyFallback />;
+        return <GalaxyReducedMotion />;
     }
 
     return (
@@ -130,7 +128,7 @@ export default function SimplyGalaxy() {
             dpr={config.dpr}
             aria-hidden="true"
         >
-            <color attach="background" args={[SIMPLY_COLORS.black]} />
+            <color attach="background" args={['#000000']} />
             <Scene />
         </Canvas>
     );

@@ -1,23 +1,32 @@
 import type { MetadataRoute } from 'next';
 
+import { getPathname } from '@/i18n/navigation';
+import { type AppPathname, routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/constants';
-import { BRANDS } from '@/types/brand';
+
+const routes: Array<AppPathname> = ['/'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const routes = ['', '/a-propos', '/contact'];
-    const brandRoutes = BRANDS.flatMap((brand) => [
-        `/${brand}`,
-        `/${brand}/blog`,
-        `/${brand}/faq`,
-        `/${brand}/offres`,
-    ]);
+    const lastModified = new Date();
 
-    const allRoutes = [...routes, ...brandRoutes];
+    return routes.flatMap((href) =>
+        routing.locales.map((locale) => {
+            const languages: Record<string, string> = {};
+            for (const alt of routing.locales) {
+                languages[alt] = `${SITE_URL}${getPathname({ locale: alt, href })}`;
+            }
+            languages['x-default'] = `${SITE_URL}${getPathname({
+                locale: routing.defaultLocale,
+                href,
+            })}`;
 
-    return allRoutes.map((route) => ({
-        url: `${SITE_URL}${route}`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly' as const,
-        priority: route === '' ? 1 : 0.8,
-    }));
+            return {
+                url: `${SITE_URL}${getPathname({ locale, href })}`,
+                lastModified,
+                changeFrequency: 'weekly' as const,
+                priority: href === '/' ? 1 : 0.7,
+                alternates: { languages },
+            };
+        }),
+    );
 }

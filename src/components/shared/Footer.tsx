@@ -1,138 +1,131 @@
-'use client';
+import { Mail, MapPin, Phone } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
 
-import { useTranslations } from 'next-intl';
+import { FacebookIcon, InstagramIcon, LinkedinIcon } from '@/components/shared/SocialIcons';
+import { BRAND_CONTACT, SIMPLY_LEGAL } from '@/config/site';
+import { Link } from '@/i18n/navigation';
+import { BRANDS, type BrandSlug } from '@/lib/brand';
+import { Button } from '@/shadcn/button';
+import { Separator } from '@/shadcn/separator';
 
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from '@/components/ui/accordion';
-import { Separator } from '@/components/ui/separator';
-import { Link } from '@/lib/i18n/routing';
-
-interface FooterSection {
-    titleKey: string;
-    links: { labelKey: string; href: string }[];
+interface FooterProps {
+    brand: BrandSlug;
 }
 
-const FOOTER_SECTIONS: FooterSection[] = [
-    {
-        titleKey: 'footer.platform',
-        links: [
-            { labelKey: 'nav.about', href: '/a-propos' },
-            { labelKey: 'nav.contact', href: '/contact' },
-            { labelKey: 'common.cta.demo', href: '/contact' },
-        ],
-    },
-    {
-        titleKey: 'footer.sports',
-        links: [
-            { labelKey: 'brands.foot.name', href: '/foot' },
-            { labelKey: 'brands.rugby.name', href: '/rugby' },
-            { labelKey: 'brands.handball.name', href: '/handball' },
-        ],
-    },
-    {
-        titleKey: 'footer.resources',
-        links: [
-            { labelKey: 'nav.blog', href: '/foot/blog' },
-            { labelKey: 'nav.faq', href: '/foot/faq' },
-            { labelKey: 'nav.offers', href: '/foot/offres' },
-        ],
-    },
-];
-
-export function Footer() {
-    const t = useTranslations();
+export async function Footer({ brand }: FooterProps) {
+    const t = await getTranslations('Footer');
+    const brandMeta = BRANDS[brand];
+    const contact = BRAND_CONTACT[brand];
     const year = new Date().getFullYear();
 
+    const legalLinks = [
+        { href: `/${brand}/legal/mentions-legales`, label: t('links.mentionsLegales') },
+        { href: `/${brand}/legal/cgu`, label: t('links.cgu') },
+        { href: `/${brand}/legal/cgv`, label: t('links.cgv') },
+        { href: `/${brand}/legal/privacy`, label: t('links.privacy') },
+        { href: `/${brand}/legal/cookies`, label: t('links.cookies') },
+        { href: `/${brand}/contact`, label: t('links.contact') },
+    ] as const;
+
+    const socials = [
+        { href: contact.socials.facebook, label: t('socialLabel.facebook'), Icon: FacebookIcon },
+        { href: contact.socials.linkedin, label: t('socialLabel.linkedin'), Icon: LinkedinIcon },
+        {
+            href: contact.socials.instagram,
+            label: t('socialLabel.instagram'),
+            Icon: InstagramIcon,
+        },
+    ] as const;
+
     return (
-        <footer className="bg-[--simply-black] text-[--simply-beige]">
-            <div className="container-simply py-12 md:py-16">
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-                    {/* Brand column */}
-                    <div className="text-center md:col-span-2 md:text-left lg:col-span-1">
-                        <span className="font-display text-xl font-bold tracking-wider">
-                            {t('common.brand')}
-                        </span>
-                        <p className="text-small-fluid mt-4 opacity-60">{t('footer.tagline')}</p>
+        <footer className="bg-primary-800 text-primary-foreground">
+            <div className="mx-auto max-w-7xl px-6 py-12 md:px-12 md:py-16">
+                <div className="grid gap-10 md:grid-cols-3">
+                    {/* Column 1 — Company identity + contact */}
+                    <div className="space-y-5 text-sm">
+                        <p className="text-lg font-semibold">
+                            {brandMeta.label} — {SIMPLY_LEGAL.entity}
+                        </p>
+                        <ul className="text-primary-foreground/90 space-y-1">
+                            <li>{t('company.capital', { capital: SIMPLY_LEGAL.capital })}</li>
+                            <li>{t('company.rcs', { rcs: SIMPLY_LEGAL.rcs })}</li>
+                            <li>{t('company.tva', { tva: SIMPLY_LEGAL.tva })}</li>
+                        </ul>
+                        <ul className="text-primary-foreground/90 space-y-2">
+                            <li className="flex items-start gap-2">
+                                <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+                                <span>{SIMPLY_LEGAL.address}</span>
+                            </li>
+                            <li className="flex items-center gap-2">
+                                <Phone className="size-4 shrink-0" aria-hidden="true" />
+                                <a
+                                    href={`tel:${contact.phone.replace(/\s/g, '')}`}
+                                    className="hover:text-primary-foreground transition-colors hover:underline"
+                                >
+                                    {contact.phone}
+                                </a>
+                            </li>
+                            <li className="flex items-center gap-2">
+                                <Mail className="size-4 shrink-0" aria-hidden="true" />
+                                <a
+                                    href={`mailto:${contact.email}`}
+                                    className="hover:text-primary-foreground transition-colors hover:underline"
+                                >
+                                    {contact.email}
+                                </a>
+                            </li>
+                        </ul>
                     </div>
 
-                    {/* Desktop columns */}
-                    {FOOTER_SECTIONS.map((section) => (
-                        <div key={section.titleKey} className="hidden space-y-3 md:block">
-                            <h3 className="text-h4 font-semibold">{t(section.titleKey)}</h3>
-                            <ul className="space-y-2">
-                                {section.links.map((link) => (
-                                    <li key={link.labelKey}>
-                                        <Link
-                                            href={link.href}
-                                            className="text-small-fluid rounded-sm py-1 opacity-60 transition-opacity hover:opacity-100 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-                                        >
-                                            {t(link.labelKey)}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
-
-                    {/* Mobile accordions */}
-                    <div className="col-span-1 md:hidden">
-                        <Accordion>
-                            {FOOTER_SECTIONS.map((section) => (
-                                <AccordionItem key={section.titleKey} value={section.titleKey}>
-                                    <AccordionTrigger className="min-h-12 text-h4 font-semibold">
-                                        {t(section.titleKey)}
-                                    </AccordionTrigger>
-                                    <AccordionContent>
-                                        <ul className="space-y-2 pb-2">
-                                            {section.links.map((link) => (
-                                                <li key={link.labelKey}>
-                                                    <Link
-                                                        href={link.href}
-                                                        className="text-small-fluid block py-2 opacity-60 transition-opacity hover:opacity-100"
-                                                    >
-                                                        {t(link.labelKey)}
-                                                    </Link>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </AccordionContent>
-                                </AccordionItem>
+                    {/* Column 2 — Legal menu */}
+                    <nav aria-label={t('sections.legal')}>
+                        <h2 className="mb-3 text-sm font-semibold">{t('sections.legal')}</h2>
+                        <ul className="space-y-2 text-sm">
+                            {legalLinks.map((link) => (
+                                <li key={link.href}>
+                                    <Link
+                                        href={link.href}
+                                        className="text-primary-foreground/90 hover:text-primary-foreground transition-colors hover:underline"
+                                    >
+                                        {link.label}
+                                    </Link>
+                                </li>
                             ))}
-                        </Accordion>
+                        </ul>
+                    </nav>
+
+                    {/* Column 3 — Socials */}
+                    <div>
+                        <h2 className="mb-3 text-sm font-semibold">{t('sections.socials')}</h2>
+                        <p className="text-primary-foreground/80 text-sm">
+                            {t('socialsDescription')}
+                        </p>
+                        <div className="mt-4 flex gap-2">
+                            {socials.map(({ href, label, Icon }) =>
+                                href ? (
+                                    <Button
+                                        key={label}
+                                        asChild
+                                        variant="ghost"
+                                        size="icon"
+                                        aria-label={label}
+                                        className="text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                                    >
+                                        <a href={href} target="_blank" rel="noopener noreferrer">
+                                            <Icon className="size-5" aria-hidden="true" />
+                                        </a>
+                                    </Button>
+                                ) : null,
+                            )}
+                        </div>
                     </div>
                 </div>
 
-                <Separator className="my-8 opacity-10" />
+                <Separator className="bg-primary-foreground/20 my-8" />
 
-                <div className="flex flex-col items-center justify-between gap-4 text-caption opacity-50 md:flex-row">
-                    <p>
-                        &copy; {year} SIMPLY. {t('footer.rights')}
-                    </p>
-                    <div className="flex gap-1">
-                        <Link
-                            href="/cgu"
-                            className="inline-flex min-h-11 items-center rounded-lg px-2 transition-opacity hover:opacity-80 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-                        >
-                            {t('footer.terms')}
-                        </Link>
-                        <Link
-                            href="/confidentialite"
-                            className="inline-flex min-h-11 items-center rounded-lg px-2 transition-opacity hover:opacity-80 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-                        >
-                            {t('footer.privacy')}
-                        </Link>
-                        <Link
-                            href="/mentions-legales"
-                            className="inline-flex min-h-11 items-center rounded-lg px-2 transition-opacity hover:opacity-80 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-                        >
-                            {t('footer.legal')}
-                        </Link>
-                    </div>
-                </div>
+                <p className="text-primary-foreground/70 text-center text-xs">
+                    {t('copyright', { year, brand: brandMeta.label })}
+                </p>
             </div>
         </footer>
     );

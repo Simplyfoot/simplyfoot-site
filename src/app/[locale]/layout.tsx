@@ -1,35 +1,19 @@
-import type { Metadata } from 'next';
-import { Inter, Poppins } from 'next/font/google';
+import type { Viewport } from 'next';
 import { notFound } from 'next/navigation';
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { hasLocale, NextIntlClientProvider } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
-import { routing } from '@/lib/i18n/routing';
+import { routing } from '@/i18n/routing';
 
-import '../globals.css';
+export function generateStaticParams() {
+    return routing.locales.map((locale) => ({ locale }));
+}
 
-const inter = Inter({
-    subsets: ['latin'],
-    variable: '--font-inter',
-    display: 'swap',
-});
-
-const poppins = Poppins({
-    subsets: ['latin'],
-    weight: ['400', '500', '600', '700', '800'],
-    variable: '--font-poppins',
-    display: 'swap',
-});
-
-export const metadata: Metadata = {
-    title: "SIMPLY — L'écosystème du sport amateur",
-    description: 'Plateforme digitale pour la gestion de clubs sportifs amateurs en France.',
-    viewport: {
-        width: 'device-width',
-        initialScale: 1,
-        viewportFit: 'cover',
-    },
+export const viewport: Viewport = {
+    width: 'device-width',
+    initialScale: 1,
+    viewportFit: 'cover',
 };
 
 export default async function LocaleLayout({
@@ -40,17 +24,16 @@ export default async function LocaleLayout({
     params: Promise<{ locale: string }>;
 }) {
     const { locale } = await params;
-
-    if (!routing.locales.includes(locale as 'fr' | 'en')) {
+    if (!hasLocale(routing.locales, locale)) {
         notFound();
     }
 
-    const messages = await getMessages();
+    setRequestLocale(locale);
 
     return (
-        <html lang={locale} className={`${inter.variable} ${poppins.variable}`}>
-            <body className="antialiased">
-                <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        <html lang={locale} suppressHydrationWarning>
+            <body>
+                <NextIntlClientProvider>{children}</NextIntlClientProvider>
             </body>
         </html>
     );

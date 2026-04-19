@@ -19,6 +19,7 @@ const eslintConfig = [
             'out/**',
             'build/**',
             'coverage/**',
+            'scripts/**',
             'next-env.d.ts',
         ],
     },
@@ -81,7 +82,7 @@ const eslintConfig = [
                 { assert: 'either', controlComponents: ['Input', 'Select', 'Textarea'] },
             ],
 
-            // Forcer @/* pour les imports internes
+            // Enforce @/* for internal imports
             'no-restricted-imports': [
                 'error',
                 {
@@ -92,27 +93,27 @@ const eslintConfig = [
                                 '../../components/*',
                                 '../../../components/*',
                             ],
-                            message: "Utilise '@/components/*' au lieu d'un import relatif.",
+                            message: "Use '@/components/*' alias instead of relative imports.",
                         },
                         {
                             group: ['../lib/*', '../../lib/*', '../../../lib/*'],
-                            message: "Utilise '@/lib/*' au lieu d'un import relatif.",
+                            message: "Use '@/lib/*' alias instead of relative imports.",
                         },
                         {
                             group: ['../config/*', '../../config/*', '../../../config/*'],
-                            message: "Utilise '@/config/*' au lieu d'un import relatif.",
+                            message: "Use '@/config/*' alias instead of relative imports.",
                         },
                         {
-                            group: ['../content/*', '../../content/*', '../../../content/*'],
-                            message: "Utilise '@/content/*' au lieu d'un import relatif.",
-                        },
-                        {
-                            group: ['../types/*', '../../types/*', '../../../types/*'],
-                            message: "Utilise '@/types/*' au lieu d'un import relatif.",
-                        },
-                        {
-                            group: ['../messages/*', '../../messages/*', '../../../messages/*'],
-                            message: "Utilise '@/messages/*' au lieu d'un import relatif.",
+                            group: [
+                                '../shadcn/*',
+                                '../../shadcn/*',
+                                '../../../shadcn/*',
+                                '../../components/shadcn/*',
+                                '../../../components/shadcn/*',
+                                '@/components/shadcn/*',
+                            ],
+                            message:
+                                "Use '@/shadcn/*' alias instead of relative imports or '@/components/shadcn/*'.",
                         },
                     ],
                 },
@@ -120,11 +121,14 @@ const eslintConfig = [
         },
     },
 
+    // shadcn/ui: vendored code from the registry, skip strict enforcement
     {
-        files: ['src/components/ui/**/*.tsx'],
+        files: ['src/shadcn/**/*.{ts,tsx}'],
         rules: {
-            'jsx-a11y/label-has-associated-control': 'off',
-            'jsx-a11y/heading-has-content': 'off',
+            '@typescript-eslint/no-unused-vars': 'off',
+            'jsx-a11y/click-events-have-key-events': 'off',
+            'jsx-a11y/no-noninteractive-element-interactions': 'off',
+            'jsx-a11y/anchor-has-content': 'off',
         },
     },
 ];
