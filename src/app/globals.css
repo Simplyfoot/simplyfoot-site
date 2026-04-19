@@ -1,1 +1,111 @@
-/* Stack styling à reconstruire (Tailwind v4 + shadcn) — voir plan dédié. */
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+    --radius: 0.625rem;
+
+    /* ========================================
+       Tokens sémantiques shadcn (light only)
+       Valeurs issues de la palette brand :
+       - primary   = primary-700 (logo vert)
+       - secondary = secondary-50 (logo beige)
+       - accent    = secondary-300 (gold)
+       - destructive = error-500
+       - muted     = background-muted
+       - border/input = outline-200
+       - ring      = indicator-primary
+       ======================================== */
+
+    --background: rgb(255 255 255);
+    --foreground: rgb(0 0 0);
+
+    --card: rgb(255 255 255);
+    --card-foreground: rgb(0 0 0);
+
+    --popover: rgb(255 255 255);
+    --popover-foreground: rgb(0 0 0);
+
+    --primary: rgb(86 126 102);
+    --primary-foreground: rgb(254 254 255);
+
+    --secondary: rgb(248 233 202);
+    --secondary-foreground: rgb(23 23 23);
+
+    --muted: rgb(247 248 247);
+    --muted-foreground: rgb(140 140 140);
+
+    --accent: rgb(188 129 0);
+    --accent-foreground: rgb(254 254 255);
+
+    --destructive: rgb(230 53 53);
+    --destructive-foreground: rgb(254 254 255);
+
+    --border: rgb(221 220 219);
+    --input: rgb(221 220 219);
+    --ring: rgb(55 55 55);
+    --sidebar: hsl(0 0% 98%);
+    --sidebar-foreground: hsl(240 5.3% 26.1%);
+    --sidebar-primary: hsl(240 5.9% 10%);
+    --sidebar-primary-foreground: hsl(0 0% 98%);
+    --sidebar-accent: hsl(240 4.8% 95.9%);
+    --sidebar-accent-foreground: hsl(240 5.9% 10%);
+    --sidebar-border: hsl(220 13% 91%);
+    --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+.dark {
+    --sidebar: hsl(240 5.9% 10%);
+    --sidebar-foreground: hsl(240 4.8% 95.9%);
+    --sidebar-primary: hsl(224.3 76.3% 48%);
+    --sidebar-primary-foreground: hsl(0 0% 100%);
+    --sidebar-accent: hsl(240 3.7% 15.9%);
+    --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+    --sidebar-border: hsl(240 3.7% 15.9%);
+    --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}

@@ -26,11 +26,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: A
     const { locale } = await params;
     setRequestLocale(locale);
 
-    // TODO Tailwind: className="relative h-svh w-full overflow-hidden bg-simply-black"
-    // TODO Tailwind: className="absolute inset-0"
     return (
-        <main>
-            <div>
+        <main className="relative h-svh w-full overflow-hidden bg-black">
+            <div className="absolute inset-0">
                 <GalaxyScene />
             </div>
             <HomepageOverlay />

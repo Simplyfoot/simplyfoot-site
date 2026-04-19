@@ -81,7 +81,7 @@ const eslintConfig = [
                 { assert: 'either', controlComponents: ['Input', 'Select', 'Textarea'] },
             ],
 
-            // Forcer @/* pour les imports internes
+            // Enforce @/* for internal imports
             'no-restricted-imports': [
                 'error',
                 {
@@ -92,19 +92,42 @@ const eslintConfig = [
                                 '../../components/*',
                                 '../../../components/*',
                             ],
-                            message: "Utilise '@/components/*' au lieu d'un import relatif.",
+                            message: "Use '@/components/*' alias instead of relative imports.",
                         },
                         {
                             group: ['../lib/*', '../../lib/*', '../../../lib/*'],
-                            message: "Utilise '@/lib/*' au lieu d'un import relatif.",
+                            message: "Use '@/lib/*' alias instead of relative imports.",
                         },
                         {
                             group: ['../config/*', '../../config/*', '../../../config/*'],
-                            message: "Utilise '@/config/*' au lieu d'un import relatif.",
+                            message: "Use '@/config/*' alias instead of relative imports.",
+                        },
+                        {
+                            group: [
+                                '../shadcn/*',
+                                '../../shadcn/*',
+                                '../../../shadcn/*',
+                                '../../components/shadcn/*',
+                                '../../../components/shadcn/*',
+                                '@/components/shadcn/*',
+                            ],
+                            message:
+                                "Use '@/shadcn/*' alias instead of relative imports or '@/components/shadcn/*'.",
                         },
                     ],
                 },
             ],
+        },
+    },
+
+    // shadcn/ui: vendored code from the registry, skip strict enforcement
+    {
+        files: ['src/shadcn/**/*.{ts,tsx}'],
+        rules: {
+            '@typescript-eslint/no-unused-vars': 'off',
+            'jsx-a11y/click-events-have-key-events': 'off',
+            'jsx-a11y/no-noninteractive-element-interactions': 'off',
+            'jsx-a11y/anchor-has-content': 'off',
         },
     },
 ];
