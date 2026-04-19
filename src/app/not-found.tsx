@@ -13,7 +13,7 @@ import Link from 'next/link';
  */
 export default function GlobalNotFound() {
     return (
-        <html lang="fr">
+        <html lang="fr" suppressHydrationWarning>
             <body>
                 <main className="flex min-h-svh flex-col items-center justify-center bg-black px-6 md:px-12">
                     <h1 className="text-secondary-50 text-4xl font-bold md:text-6xl">404</h1>
