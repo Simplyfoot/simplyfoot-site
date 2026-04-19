@@ -24,9 +24,10 @@
         },
         "notFound": {
             "title": "404",
-            "description": "Página no encontrada",
+            "heading": "Ups... esta página fue sustituida al descanso {emoji}",
+            "description": "¡No te preocupes! Hasta los mejores fallan un pase a veces. Vuelve al inicio y retoma el partido con {brand}.",
             "backHome": "Volver al inicio",
-            "backToBrand": "Volver a {brand}"
+            "contactTeam": "Contactar al equipo"
         }
     },
     "Header": {

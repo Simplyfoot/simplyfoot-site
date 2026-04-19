@@ -24,9 +24,10 @@
         },
         "notFound": {
             "title": "404",
-            "description": "Page not found",
+            "heading": "Oops... this page got subbed off at half-time {emoji}",
+            "description": "Don't worry! Even the best miss a pass sometimes. Head back home and get back into the game with {brand}.",
             "backHome": "Back to home",
-            "backToBrand": "Back to {brand}"
+            "contactTeam": "Contact the team"
         }
     },
     "Header": {

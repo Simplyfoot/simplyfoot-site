@@ -6,4 +6,6 @@ export interface BrandMeta {
     label: string;
     /** Brand-specific part of the label, after "Simply", e.g. "Foot". Used in the Header. */
     name: string;
+    /** Sport emoji used in copy (e.g. 404 headline). */
+    emoji: string;
 }
