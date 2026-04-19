@@ -5,14 +5,28 @@ import { useLayoutEffect, useState } from 'react';
 import type { BrandSlug } from './types';
 
 /**
- * Runtime bridge between CSS-defined brand palettes (globals.css) and JS
- * contexts that cannot read CSS — primarily Three.js / WebGL.
+ * Runtime bridge between CSS-defined palette (globals.css) and JS contexts
+ * that cannot read CSS — primarily Three.js / WebGL.
  *
- * Rationale: CSS is the single source of truth. There is no TS palette to
- * mirror. This module creates hidden DOM probes (one per brand), reads their
- * computed CSS custom properties, and exposes them to JS. This removes any
- * risk of drift between CSS and TS definitions.
+ * Rationale: CSS is the single source of truth. There is no TS palette mirror.
+ * This module reads CSS custom properties via the DOM and normalizes them for
+ * consumption in JS (hex literals for Three.js `color` props, emissive, etc.).
+ *
+ * Two flavours:
+ *  - `useRootColor` / `readRootCssVar` — read from :root (default palette,
+ *    shared across all brands).
+ *  - `useBrandColor` / `readBrandCssVar` — read from a scoped `[data-brand]`
+ *    probe (used when JS needs a color for a specific brand that is not the
+ *    current route's brand, e.g. the galaxy landing showing all three brands).
  */
+
+/** Reads a CSS custom property from `:root` (the default / shared palette). */
+export function readRootCssVar(varName: `--${string}`): string {
+    if (typeof window === 'undefined') {
+        return '';
+    }
+    return getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+}
 
 const probes = new Map<BrandSlug, HTMLElement>();
 
@@ -30,10 +44,7 @@ function getProbe(slug: BrandSlug): HTMLElement {
     return el;
 }
 
-/**
- * Reads a CSS custom property scoped to a specific brand. Returns the raw CSS
- * string (e.g. 'rgb(86 126 102)'). Empty string during SSR.
- */
+/** Reads a CSS custom property scoped to a specific brand. */
 export function readBrandCssVar(slug: BrandSlug, varName: `--${string}`): string {
     if (typeof window === 'undefined') {
         return '';
@@ -62,15 +73,34 @@ export function cssColorToHex(cssColor: string): string {
     return resolved.startsWith('#') ? resolved.toLowerCase() : '#000000';
 }
 
+function computeRootHex(varName: `--${string}`): string {
+    return typeof window === 'undefined' ? '' : cssColorToHex(readRootCssVar(varName));
+}
+
+function computeBrandHex(slug: BrandSlug, varName: `--${string}`): string {
+    return typeof window === 'undefined' ? '' : cssColorToHex(readBrandCssVar(slug, varName));
+}
+
 /**
- * Hook: returns the hex value of a brand CSS variable. Empty string until the
- * first layout pass; callers should handle the transient empty state or use a
- * fallback.
+ * Hook: returns the hex value of a CSS variable from `:root`. Resolves
+ * synchronously on the first client render via lazy state init.
+ */
+export function useRootColor(varName: `--${string}`): string {
+    const [hex, setHex] = useState<string>(() => computeRootHex(varName));
+    useLayoutEffect(() => {
+        setHex(computeRootHex(varName));
+    }, [varName]);
+    return hex;
+}
+
+/**
+ * Hook: returns the hex value of a CSS variable scoped to a specific brand.
+ * Useful for rendering multiple brands side-by-side (landing galaxy).
  */
 export function useBrandColor(slug: BrandSlug, varName: `--${string}` = '--primary'): string {
-    const [hex, setHex] = useState<string>('');
+    const [hex, setHex] = useState<string>(() => computeBrandHex(slug, varName));
     useLayoutEffect(() => {
-        setHex(cssColorToHex(readBrandCssVar(slug, varName)));
+        setHex(computeBrandHex(slug, varName));
     }, [slug, varName]);
     return hex;
 }

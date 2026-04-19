@@ -8,8 +8,7 @@ import { Bloom, EffectComposer } from '@react-three/postprocessing';
 // import { useCallback } from 'react';
 import { TOUCH } from 'three';
 
-import { useBrandColor } from '@/lib/brand';
-import { SIMPLY_COLORS } from '@/lib/constants';
+import { useBrandColor, useRootColor } from '@/lib/brand';
 import { useDeviceConfig } from '@/lib/hooks/use-device-config';
 import { useReducedMotion } from '@/lib/hooks/use-reduced-motion';
 
@@ -28,6 +27,7 @@ function Scene() {
     const config = useDeviceConfig();
     const rugbyPrimary = useBrandColor('rugby');
     const handballPrimary = useBrandColor('handball');
+    const ambientWarm = useRootColor('--secondary');
 
     // const router = useRouter();
     // const navigateTo = useCallback(
@@ -59,12 +59,12 @@ function Scene() {
             <pointLight
                 position={[0, 0, 0]}
                 intensity={2.2}
-                color={SIMPLY_COLORS.beige}
+                color={ambientWarm}
                 distance={25}
                 decay={1.6}
             />
             <pointLight position={[10, 10, 10]} intensity={0.6} />
-            <pointLight position={[-10, -10, -10]} intensity={0.35} color={SIMPLY_COLORS.beige} />
+            <pointLight position={[-10, -10, -10]} intensity={0.35} color={ambientWarm} />
 
             <Starfield count={config.starCount} />
 
@@ -136,7 +136,7 @@ export default function SimplyGalaxy() {
             dpr={config.dpr}
             aria-hidden="true"
         >
-            <color attach="background" args={[SIMPLY_COLORS.black]} />
+            <color attach="background" args={['#000000']} />
             <Scene />
         </Canvas>
     );

@@ -6,7 +6,7 @@ import { useMemo, useRef } from 'react';
 import type { Group, Mesh, MeshStandardMaterial } from 'three';
 import { Vector3 } from 'three';
 
-import { SIMPLY_COLORS } from '@/lib/constants';
+import { cssColorToHex, readRootCssVar } from '@/lib/brand';
 
 const MODEL_PATH = '/images/logo-Simply3D.glb';
 
@@ -23,13 +23,14 @@ export function SimplyLogo3D({ scale = 1 }: SimplyLogo3DProps) {
     const gltf = useGLTF(MODEL_PATH);
 
     const clonedScene = useMemo(() => {
+        const emissiveHex = cssColorToHex(readRootCssVar('--secondary'));
         const scene = gltf.scene.clone();
         scene.traverse((child) => {
             const mesh = child as Mesh;
             if (mesh.isMesh) {
                 const baseMat = mesh.material as MeshStandardMaterial;
                 const mat = baseMat.clone();
-                mat.emissive?.set(SIMPLY_COLORS.beige);
+                mat.emissive?.set(emissiveHex);
                 mat.emissiveIntensity = 0.35;
                 mat.toneMapped = true;
                 mesh.material = mat;

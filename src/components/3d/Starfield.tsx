@@ -4,7 +4,7 @@ import { useFrame } from '@react-three/fiber';
 import { useMemo, useRef } from 'react';
 import type { Points as PointsType } from 'three';
 
-import { SIMPLY_COLORS } from '@/lib/constants';
+import { useRootColor } from '@/lib/brand';
 
 interface StarfieldProps {
     count?: number;
@@ -12,6 +12,7 @@ interface StarfieldProps {
 
 export function Starfield({ count = 5000 }: StarfieldProps) {
     const ref = useRef<PointsType>(null);
+    const starColor = useRootColor('--secondary');
 
     const positions = useMemo(() => {
         const pos = new Float32Array(count * 3);
@@ -47,7 +48,7 @@ export function Starfield({ count = 5000 }: StarfieldProps) {
             </bufferGeometry>
             <pointsMaterial
                 size={0.15}
-                color={SIMPLY_COLORS.beige}
+                color={starColor}
                 transparent
                 opacity={0.8}
                 sizeAttenuation

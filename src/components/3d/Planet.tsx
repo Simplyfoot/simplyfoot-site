@@ -6,7 +6,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import type { Mesh } from 'three';
 import { Vector3 } from 'three';
 
-import { SIMPLY_COLORS } from '@/lib/constants';
+import { useRootColor } from '@/lib/brand';
 
 interface PlanetProps {
     label: string;
@@ -40,6 +40,7 @@ export function Planet({
     const [hovered, setHovered] = useState(false);
     const [tapped, setTapped] = useState(false);
     const tapTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+    const labelColor = useRootColor('--secondary');
 
     const active = hovered || tapped;
 
@@ -123,12 +124,7 @@ export function Planet({
                 />
             </mesh>
             <Billboard position={[0, -1.6, 0]}>
-                <Text
-                    fontSize={labelFontSize}
-                    color={SIMPLY_COLORS.beige}
-                    anchorX="center"
-                    anchorY="middle"
-                >
+                <Text fontSize={labelFontSize} color={labelColor} anchorX="center" anchorY="middle">
                     {label}
                 </Text>
             </Billboard>
