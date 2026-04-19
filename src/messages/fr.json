@@ -25,7 +25,8 @@
         "notFound": {
             "title": "404",
             "description": "Page introuvable",
-            "backHome": "Retour à l'accueil"
+            "backHome": "Retour à l'accueil",
+            "backToBrand": "Retour à {brand}"
         }
     },
     "Header": {
