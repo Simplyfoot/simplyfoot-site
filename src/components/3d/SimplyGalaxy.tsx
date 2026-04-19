@@ -8,12 +8,13 @@ import { Bloom, EffectComposer } from '@react-three/postprocessing';
 // import { useCallback } from 'react';
 import { TOUCH } from 'three';
 
-import { BRAND_COLORS, SIMPLY_COLORS } from '@/lib/constants';
+import { useBrandColor } from '@/lib/brand';
+import { SIMPLY_COLORS } from '@/lib/constants';
 import { useDeviceConfig } from '@/lib/hooks/use-device-config';
 import { useReducedMotion } from '@/lib/hooks/use-reduced-motion';
 
 import { FootPlanet } from './FootPlanet';
-import { GalaxyFallback } from './GalaxyFallback';
+import { GalaxyReducedMotion } from './GalaxyReducedMotion';
 import { OrbitingGroup } from './OrbitingGroup';
 import { Planet } from './Planet';
 import { SimplyLogo3D } from './SimplyLogo3D';
@@ -25,6 +26,8 @@ const noop = () => {};
 
 function Scene() {
     const config = useDeviceConfig();
+    const rugbyPrimary = useBrandColor('rugby');
+    const handballPrimary = useBrandColor('handball');
 
     // const router = useRouter();
     // const navigateTo = useCallback(
@@ -80,7 +83,7 @@ function Scene() {
             <OrbitingGroup {...config.planetOrbits.rugby}>
                 <Planet
                     label="Rugby"
-                    color={BRAND_COLORS.rugby.primary}
+                    color={rugbyPrimary || '#000000'}
                     position={[0, 0, 0]}
                     scale={config.planetScale.rugby}
                     sphereSegments={config.sphereSegments}
@@ -92,7 +95,7 @@ function Scene() {
             <OrbitingGroup {...config.planetOrbits.handball}>
                 <Planet
                     label="Handball"
-                    color={BRAND_COLORS.handball.primary}
+                    color={handballPrimary || '#000000'}
                     position={[0, 0, 0]}
                     scale={config.planetScale.handball}
                     sphereSegments={config.sphereSegments}
@@ -123,7 +126,7 @@ export default function SimplyGalaxy() {
     const config = useDeviceConfig();
 
     if (prefersReducedMotion) {
-        return <GalaxyFallback />;
+        return <GalaxyReducedMotion />;
     }
 
     return (
