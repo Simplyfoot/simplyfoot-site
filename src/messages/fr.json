@@ -50,6 +50,62 @@
             "sport": "Handball amateur"
         }
     },
+    "Legal": {
+        "mentionsLegales": {
+            "meta": {
+                "title": "Mentions légales — {brand}",
+                "description": "Informations légales de {brand} : éditeur, hébergeur, propriété intellectuelle, responsabilité, données personnelles et contact."
+            },
+            "breadcrumb": {
+                "legal": "Mentions légales",
+                "updatedOn": "Mis à jour le 13-10-2025"
+            },
+            "heading": "Mentions légales",
+            "introduction": {
+                "title": "Introduction",
+                "description": "Les présentes mentions légales définissent les modalités de mise à disposition des informations et services proposés sur le site de {brand}, ainsi que les conditions d'utilisation du site par l'internaute."
+            },
+            "sections": {
+                "presentation": {
+                    "title": "1. Présentation du site",
+                    "body": "Le site www.simplyfoot.fr est édité par la société {brand} SAS, au capital social de 2 000 €, immatriculée au RCS de Paris sous le numéro 991 139 171, dont le siège social est situé au 60 rue François 1er, 75008 Paris."
+                },
+                "object": {
+                    "title": "2. Objet",
+                    "body": "Les présentes mentions légales ont pour objet de définir les modalités de mise à disposition des informations et services proposés sur le site www.simplyfoot.fr et d'en informer les utilisateurs."
+                },
+                "ip": {
+                    "title": "3. Propriété intellectuelle",
+                    "body": "L'ensemble des éléments présents sur le site (textes, images, graphismes, logo, structure, code, etc.) sont la propriété exclusive de {brand}, sauf mention contraire. Toute reproduction, représentation, modification, publication ou adaptation, totale ou partielle, de ces éléments, quel que soit le moyen ou le procédé utilisé, est interdite sans autorisation écrite préalable de {brand}."
+                },
+                "liability": {
+                    "title": "4. Responsabilité",
+                    "body": "SimplyFoot s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur son site. Toutefois, la société ne saurait être tenue responsable d'erreurs, d'omissions ou d'une indisponibilité du service. L'utilisateur reconnaît utiliser le site sous sa responsabilité exclusive."
+                },
+                "data": {
+                    "title": "5. Données personnelles",
+                    "body": "{brand} s'engage à protéger la vie privée des utilisateurs du site, conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi française « Informatique et Libertés » du 6 janvier 1978 modifiée. Les informations collectées via les formulaires font l'objet d'un traitement destiné à répondre aux demandes des utilisateurs et à leur proposer les services {brand}. Pour plus d'informations, consultez notre politique de confidentialité."
+                },
+                "links": {
+                    "title": "6. Liens hypertextes",
+                    "body": "Le site SimplyFoot peut contenir des liens vers d'autres sites. SimplyFoot n'exerce aucun contrôle sur le contenu de ces sites et décline toute responsabilité quant à leur contenu ou à leurs pratiques en matière de protection des données personnelles."
+                },
+                "law": {
+                    "title": "7. Droit applicable",
+                    "body": "Le présent site est régi par le droit français. En cas de litige, et à défaut de solution amiable, compétence exclusive est attribuée aux tribunaux du ressort de Paris."
+                },
+                "contact": {
+                    "title": "8. Contact",
+                    "body": "Pour toute question, remarque ou réclamation relative au site ou aux services de {brand}, vous pouvez nous contacter :"
+                }
+            },
+            "contactBlock": {
+                "emailLabel": "Par email",
+                "phoneLabel": "Par téléphone",
+                "addressLabel": "Par courrier"
+            }
+        }
+    },
     "Footer": {
         "sections": {
             "legal": "Informations légales",

@@ -4,7 +4,12 @@ import { getPathname } from '@/i18n/navigation';
 import { type AppPathname, routing } from '@/i18n/routing';
 import { SITE_URL } from '@/lib/constants';
 
-const routes: Array<AppPathname> = ['/'];
+const routes: Array<AppPathname> = [
+    '/',
+    '/foot/legal/mentions-legales',
+    '/rugby/legal/mentions-legales',
+    '/handball/legal/mentions-legales',
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const lastModified = new Date();
