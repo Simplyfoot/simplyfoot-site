@@ -27,7 +27,8 @@
             "heading": "Ups... esta página fue sustituida al descanso {emoji}",
             "description": "¡No te preocupes! Hasta los mejores fallan un pase a veces. Vuelve al inicio y retoma el partido con {brand}.",
             "backHome": "Volver al inicio",
-            "contactTeam": "Contactar al equipo"
+            "contactTeam": "Contactar al equipo",
+            "imageAlt": "Ilustración página no encontrada {brand}"
         }
     },
     "Header": {

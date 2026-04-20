@@ -27,7 +27,8 @@
             "heading": "Oops... this page got subbed off at half-time {emoji}",
             "description": "Don't worry! Even the best miss a pass sometimes. Head back home and get back into the game with {brand}.",
             "backHome": "Back to home",
-            "contactTeam": "Contact the team"
+            "contactTeam": "Contact the team",
+            "imageAlt": "{brand} not found illustration"
         }
     },
     "Header": {

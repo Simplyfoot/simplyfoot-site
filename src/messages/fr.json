@@ -27,7 +27,8 @@
             "heading": "Oups... cette page a été remplacée à la mi-temps {emoji}",
             "description": "Pas de panique ! Même les meilleurs ratent parfois une passe. Reviens à l'accueil et reprends le match avec {brand}.",
             "backHome": "Retour à l'accueil",
-            "contactTeam": "Contacter l'équipe"
+            "contactTeam": "Contacter l'équipe",
+            "imageAlt": "Illustration page introuvable {brand}"
         }
     },
     "Header": {
