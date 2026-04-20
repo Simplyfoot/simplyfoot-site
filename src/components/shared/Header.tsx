@@ -33,7 +33,7 @@ export function Header({ brand }: HeaderProps) {
 
     return (
         <header className="bg-primary-600 text-primary-foreground">
-            <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 md:px-12">
+            <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-6 md:px-12">
                 <Link
                     href={`/${brand}`}
                     aria-label={t('logoAlt', { brand: label })}
@@ -47,10 +47,10 @@ export function Header({ brand }: HeaderProps) {
                         priority
                         className="size-10 object-contain"
                     />
-                    <span className="text-lg font-semibold tracking-tight">
+                    <h2 className="text-2xl font-semibold">
                         <span className="text-secondary-50">Simply</span>
                         <span className="text-primary-200">{name}</span>
-                    </span>
+                    </h2>
                 </Link>
 
                 <NavigationMenu aria-label={t('nav.label')}>

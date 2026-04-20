@@ -39,7 +39,7 @@ export async function Footer({ brand }: FooterProps) {
 
     return (
         <footer className="bg-primary-800 text-primary-foreground">
-            <div className="mx-auto max-w-7xl px-6 py-12 md:px-12 md:py-16">
+            <div className="mx-auto max-w-7xl px-6 pt-12 pb-6 md:px-12 md:pt-16">
                 <div className="grid gap-10 md:grid-cols-3">
                     {/* Column 1 — Company identity + contact */}
                     <div className="space-y-5 text-sm">
