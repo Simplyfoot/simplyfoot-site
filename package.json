@@ -11,7 +11,9 @@
         "type-check": "tsc --noEmit",
         "prettier:check": "prettier --check .",
         "prettier:fix": "prettier --write .",
-        "check-all": "npm run type-check && npm run lint && npm run prettier:check",
+        "check-all": "npm run type-check && npm run lint && npm run prettier:check && npm run test",
+        "test": "vitest run",
+        "test:watch": "vitest",
         "stats": "node scripts/stats.js",
         "prepare": "husky"
     },
@@ -77,6 +79,7 @@
         "postcss": "^8.5.10",
         "prettier": "^3.8.3",
         "tailwindcss": "^4.2.2",
-        "typescript": "^5"
+        "typescript": "^5",
+        "vitest": "^4.1.4"
     }
 }

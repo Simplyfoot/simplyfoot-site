@@ -118,6 +118,15 @@ export const routing = defineRouting({
             en: '/handball/legal/cookies',
             es: '/handball/legal/cookies',
         },
+        // Blog — canonical paths identical across locales (editorial decision:
+        // category slugs and article slugs stay universal for simplicity and
+        // backlink stability). Individual article pages use plain string hrefs
+        // (`/foot/blog/my-slug`) since slugs don't localise — next-intl's
+        // middleware still prepends the locale prefix correctly.
+        '/foot/blog': '/foot/blog',
+        '/foot/blog/resultats': '/foot/blog/resultats',
+        '/foot/blog/mises-a-jour': '/foot/blog/mises-a-jour',
+        '/foot/faq': '/foot/faq',
     },
 });
 

@@ -252,6 +252,20 @@
     }
 }
 
+/* FAQ section entry animation — subtle fade + small lift. Applied through
+   Tailwind's `motion-safe:animate-[faq-fade-up_…]`, so the reduced-motion
+   guard is already enforced at the utility level. */
+@keyframes faq-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Sidebar dark variant — inactive while the project stays light-only (the
    `.dark` class is never applied on <html>). Kept for future-proofing in case
    a per-brand dark mode is introduced on the <Sidebar> component. */

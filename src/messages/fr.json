@@ -35,6 +35,8 @@
         "nav": {
             "label": "Navigation principale",
             "about": "À propos",
+            "blog": "Blog",
+            "faq": "FAQ",
             "contact": "Contact"
         },
         "logoAlt": "Logo {brand}",
@@ -113,6 +115,134 @@
                 "phoneLabel": "Par téléphone",
                 "addressLabel": "Par courrier"
             }
+        }
+    },
+    "Blog": {
+        "meta": {
+            "title": "Le média SimplyFoot — Résultats, actualités, produit",
+            "description": "L'actualité du football amateur : résultats live, journal produit SimplyFoot, guides et témoignages de clubs.",
+            "titleResultats": "Résultats & classements — SimplyFoot",
+            "descriptionResultats": "Tous les derniers résultats des clubs amateurs suivis par SimplyFoot.",
+            "titleChangelog": "Journal produit — SimplyFoot",
+            "descriptionChangelog": "Tout l'historique des versions et des nouveautés SimplyFoot."
+        },
+        "hero": {
+            "eyebrow": "Le média",
+            "title": "Le football amateur, en continu",
+            "subtitle": "Résultats, actualités locales et coulisses produit. Par et pour les clubs."
+        },
+        "categories": {
+            "label": "Catégories",
+            "all": "Tout",
+            "resultats": "Résultats & Classements",
+            "actualites": "Actualités locales",
+            "mises-a-jour": "Mises à jour produit",
+            "guides": "Guides & Conseils",
+            "temoignages": "Témoignages clubs",
+            "reglementation": "Réglementation"
+        },
+        "filters": {
+            "search": "Rechercher un article, un club, un tag…",
+            "searchPill": "Recherche",
+            "region": "Région",
+            "allRegions": "Toutes les régions",
+            "department": "Département",
+            "allDepartments": "Tous les départements",
+            "pickRegionFirst": "Choisir une région d'abord",
+            "club": "Club",
+            "clubSearch": "Chercher un club…",
+            "clubNoResults": "Aucun club trouvé",
+            "clubClear": "Retirer le club",
+            "sort": "Tri",
+            "sortRecent": "Récent",
+            "sortPopular": "Populaire",
+            "results": "{count, plural, =0 {Aucun article} =1 {1 article} other {# articles}} trouvé(s)",
+            "removeFilter": "Retirer ce filtre",
+            "clearAll": "Effacer tout"
+        },
+        "empty": {
+            "title": "Aucun article ne correspond à vos filtres",
+            "description": "Essayez d'élargir la recherche ou d'effacer un filtre — il y a peut-être un match qui mérite votre attention à côté."
+        },
+        "sidebar": {
+            "label": "Contenus complémentaires",
+            "changelog": "Dernières mises à jour",
+            "seeAll": "Voir tout",
+            "tags": "Tags populaires",
+            "regions": "Régions actives"
+        },
+        "ticker": {
+            "title": "Derniers résultats",
+            "label": "En direct",
+            "seeAll": "Voir tout"
+        },
+        "pagination": {
+            "label": "Pagination du blog",
+            "previous": "Page précédente",
+            "next": "Page suivante"
+        },
+        "readingMinutes": "{minutes, plural, =1 {1 min} other {# min}} de lecture",
+        "readFullReport": "Lire le compte-rendu",
+        "readReleaseNotes": "Lire les notes de version",
+        "article": {
+            "breadcrumb": {
+                "blog": "Blog",
+                "home": "Accueil"
+            },
+            "by": "Par {author}",
+            "updatedOn": "Mis à jour le {date}",
+            "relatedTitle": "À lire aussi",
+            "navigation": {
+                "previous": "Article précédent",
+                "next": "Article suivant"
+            },
+            "notFound": {
+                "title": "Article introuvable",
+                "description": "Cet article a peut-être été déplacé ou archivé.",
+                "backToBlog": "Retour au blog"
+            }
+        },
+        "changelogPage": {
+            "title": "Journal produit",
+            "subtitle": "Toutes les versions de SimplyFoot depuis le début. Une livraison toutes les deux semaines."
+        },
+        "resultatsPage": {
+            "title": "Résultats & Classements",
+            "subtitle": "Tous les scores des clubs suivis par SimplyFoot."
+        },
+        "share": {
+            "label": "Partager",
+            "whatsapp": "Partager sur WhatsApp",
+            "x": "Partager sur X",
+            "facebook": "Partager sur Facebook",
+            "copy": "Copier le lien",
+            "copied": "Copié !"
+        }
+    },
+    "Faq": {
+        "meta": {
+            "title": "FAQ SimplyFoot — Foire aux questions",
+            "description": "Toutes les réponses aux questions fréquentes sur SimplyFoot : inscription, clubs, convocations, événements, messagerie."
+        },
+        "hero": {
+            "title": "FAQ SimplyFoot",
+            "subtitle": "Trouvez votre réponse en quelques secondes. Tapez un mot-clé ou parcourez les catégories."
+        },
+        "search": {
+            "placeholder": "Rechercher une question…",
+            "ariaLabel": "Rechercher dans la FAQ",
+            "clearLabel": "Effacer la recherche"
+        },
+        "empty": {
+            "title": "Aucune question ne correspond à votre recherche",
+            "description": "Essayez un autre mot-clé, ou parcourez les catégories ci-dessus.",
+            "clearButton": "Effacer la recherche"
+        },
+        "questionsSuffix": "{count, plural, =1 {question} other {questions}}",
+        "footerCta": {
+            "heading": "Pas trouvé votre réponse ?",
+            "description": "Écrivez-nous directement ou demandez à Simmo — nous répondons dans la journée.",
+            "askSimmo": "Demander à Simmo"
         }
     },
     "Footer": {
