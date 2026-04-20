@@ -53,7 +53,7 @@ export function LanguageSwitcher({ variant = 'onDark' }: LanguageSwitcherProps =
                     }
                 >
                     <Globe className="size-4 shrink-0" aria-hidden="true" />
-                    <span className="font-medium leading-none">{activeLocale.toUpperCase()}</span>
+                    <span className="leading-none font-medium">{activeLocale.toUpperCase()}</span>
                     <ChevronDown className="size-3 shrink-0 opacity-70" aria-hidden="true" />
                 </Button>
             </DropdownMenuTrigger>

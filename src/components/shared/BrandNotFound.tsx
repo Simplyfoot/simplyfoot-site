@@ -30,7 +30,7 @@ export async function BrandNotFound({ brand }: BrandNotFoundProps) {
                         fill
                         priority
                         sizes="(min-width: 768px) 400px, 280px"
-                        className="rounded-xl border-4 border-primary-600 object-cover"
+                        className="border-primary-600 rounded-xl border-4 object-cover"
                     />
                 </AspectRatio>
             </div>
