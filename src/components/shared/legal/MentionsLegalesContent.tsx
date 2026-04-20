@@ -116,7 +116,7 @@ export async function MentionsLegalesContent({ brand }: MentionsLegalesContentPr
                     </p>
                 </header>
 
-                <section className="space-y-12 p-8 bg-muted/50 border-none rounded-2xl">
+                <section className="bg-muted/50 space-y-12 rounded-2xl border-none p-8">
                     {sectionKeys.map((key) => (
                         <section key={key} id={key} className="scroll-mt-24 space-y-4">
                             <h2 className="flex items-end gap-2 text-2xl font-semibold tracking-tight md:text-3xl">
