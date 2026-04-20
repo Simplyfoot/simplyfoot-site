@@ -27,7 +27,8 @@
             "heading": "Ups... esta página fue sustituida al descanso {emoji}",
             "description": "¡No te preocupes! Hasta los mejores fallan un pase a veces. Vuelve al inicio y retoma el partido con {brand}.",
             "backHome": "Volver al inicio",
-            "contactTeam": "Contactar al equipo"
+            "contactTeam": "Contactar al equipo",
+            "imageAlt": "Ilustración página no encontrada {brand}"
         }
     },
     "Header": {
@@ -36,7 +37,16 @@
             "about": "Acerca de",
             "contact": "Contacto"
         },
-        "logoAlt": "Logo de {brand}"
+        "logoAlt": "Logo de {brand}",
+        "languageSwitcher": {
+            "label": "Cambiar idioma"
+        },
+        "mobileMenu": {
+            "open": "Abrir menú",
+            "close": "Cerrar menú",
+            "title": "Navegación",
+            "languageLabel": "Idioma"
+        }
     },
     "Brands": {
         "foot": {
@@ -47,6 +57,62 @@
         },
         "handball": {
             "sport": "Balonmano amateur"
+        }
+    },
+    "Legal": {
+        "mentionsLegales": {
+            "meta": {
+                "title": "Aviso legal — {brand}",
+                "description": "Información legal de {brand}: editor, alojamiento, propiedad intelectual, responsabilidad, datos personales y contacto."
+            },
+            "breadcrumb": {
+                "legal": "Aviso legal",
+                "updatedOn": "Actualizado el 13-10-2025"
+            },
+            "heading": "Aviso legal",
+            "introduction": {
+                "title": "Introducción",
+                "description": "El presente aviso legal define las modalidades de puesta a disposición de la información y los servicios ofrecidos en el sitio de {brand}, así como las condiciones de uso aplicables a los usuarios."
+            },
+            "sections": {
+                "presentation": {
+                    "title": "1. Presentación del sitio",
+                    "body": "El sitio www.simplyfoot.fr está editado por la sociedad {brand} SAS, con un capital social de 2 000 €, inscrita en el Registro Mercantil de París con el número 991 139 171, cuyo domicilio social se encuentra en 60 rue François 1er, 75008 París."
+                },
+                "object": {
+                    "title": "2. Objeto",
+                    "body": "El presente aviso legal tiene por objeto definir las modalidades de puesta a disposición de la información y los servicios ofrecidos en el sitio www.simplyfoot.fr e informar a los usuarios al respecto."
+                },
+                "ip": {
+                    "title": "3. Propiedad intelectual",
+                    "body": "El conjunto de elementos presentes en el sitio (textos, imágenes, gráficos, logotipo, estructura, código, etc.) son propiedad exclusiva de {brand}, salvo mención en contrario. Queda prohibida toda reproducción, representación, modificación, publicación o adaptación, total o parcial, de estos elementos, por cualquier medio o procedimiento que sea, sin autorización previa por escrito de {brand}."
+                },
+                "liability": {
+                    "title": "4. Responsabilidad",
+                    "body": "SimplyFoot se esfuerza por garantizar la exactitud y la actualización de la información difundida en su sitio. No obstante, la sociedad no podrá considerarse responsable de errores, omisiones ni indisponibilidad del servicio. El usuario reconoce utilizar el sitio bajo su exclusiva responsabilidad."
+                },
+                "data": {
+                    "title": "5. Datos personales",
+                    "body": "{brand} se compromete a proteger la privacidad de los usuarios del sitio, de conformidad con el Reglamento General de Protección de Datos (RGPD) y la ley francesa «Informatique et Libertés» del 6 de enero de 1978 modificada. Los datos recopilados a través de los formularios son objeto de un tratamiento destinado a responder a las solicitudes de los usuarios y a proponerles los servicios de {brand}. Para más información, consulte nuestra política de privacidad."
+                },
+                "links": {
+                    "title": "6. Enlaces externos",
+                    "body": "El sitio SimplyFoot puede contener enlaces a otros sitios. SimplyFoot no ejerce ningún control sobre el contenido de dichos sitios y declina toda responsabilidad en cuanto a su contenido o a sus prácticas en materia de protección de datos personales."
+                },
+                "law": {
+                    "title": "7. Ley aplicable",
+                    "body": "El presente sitio se rige por la ley francesa. En caso de litigio, y a falta de resolución amistosa, se atribuye competencia exclusiva a los tribunales de la jurisdicción de París."
+                },
+                "contact": {
+                    "title": "8. Contacto",
+                    "body": "Para cualquier pregunta, observación o reclamación relativa al sitio o a los servicios de {brand}, puede contactarnos:"
+                }
+            },
+            "contactBlock": {
+                "emailLabel": "Por correo electrónico",
+                "phoneLabel": "Por teléfono",
+                "addressLabel": "Por correo postal"
+            }
         }
     },
     "Footer": {

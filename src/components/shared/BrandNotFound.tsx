@@ -1,7 +1,9 @@
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 
 import { Link } from '@/i18n/navigation';
 import { BRANDS, type BrandSlug } from '@/lib/brand';
+import { AspectRatio } from '@/shadcn/aspect-ratio';
 import { Button } from '@/shadcn/button';
 
 interface BrandNotFoundProps {
@@ -20,6 +22,18 @@ export async function BrandNotFound({ brand }: BrandNotFoundProps) {
 
     return (
         <main className="flex min-h-[60vh] flex-col items-center justify-center px-6 py-16 text-center md:px-12 md:py-24">
+            <div className="mb-6 w-[280px] md:w-[400px]">
+                <AspectRatio ratio={4 / 3}>
+                    <Image
+                        src={`/brands/${brand}/not-found.png`}
+                        alt={t('notFound.imageAlt', { brand: label })}
+                        fill
+                        priority
+                        sizes="(min-width: 768px) 400px, 280px"
+                        className="rounded-xl border-4 border-primary-600 object-cover"
+                    />
+                </AspectRatio>
+            </div>
             <p className="text-primary-400 text-6xl font-extrabold tracking-tight md:text-7xl">
                 {t('notFound.title')}
             </p>

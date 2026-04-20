@@ -27,7 +27,8 @@
             "heading": "Oops... this page got subbed off at half-time {emoji}",
             "description": "Don't worry! Even the best miss a pass sometimes. Head back home and get back into the game with {brand}.",
             "backHome": "Back to home",
-            "contactTeam": "Contact the team"
+            "contactTeam": "Contact the team",
+            "imageAlt": "{brand} not found illustration"
         }
     },
     "Header": {
@@ -36,7 +37,16 @@
             "about": "About",
             "contact": "Contact"
         },
-        "logoAlt": "{brand} logo"
+        "logoAlt": "{brand} logo",
+        "languageSwitcher": {
+            "label": "Change language"
+        },
+        "mobileMenu": {
+            "open": "Open menu",
+            "close": "Close menu",
+            "title": "Navigation",
+            "languageLabel": "Language"
+        }
     },
     "Brands": {
         "foot": {
@@ -47,6 +57,62 @@
         },
         "handball": {
             "sport": "Amateur handball"
+        }
+    },
+    "Legal": {
+        "mentionsLegales": {
+            "meta": {
+                "title": "Legal notice — {brand}",
+                "description": "Legal information for {brand}: publisher, hosting provider, intellectual property, liability, personal data and contact."
+            },
+            "breadcrumb": {
+                "legal": "Legal notice",
+                "updatedOn": "Updated on 2025-10-13"
+            },
+            "heading": "Legal notice",
+            "introduction": {
+                "title": "Introduction",
+                "description": "This legal notice sets out the terms under which information and services are made available on the {brand} website, as well as the conditions of use that apply to visitors."
+            },
+            "sections": {
+                "presentation": {
+                    "title": "1. About this site",
+                    "body": "The website www.simplyfoot.fr is published by {brand} SAS, a simplified joint-stock company with a share capital of €2,000, registered with the Paris Trade and Companies Register under number 991 139 171, whose registered office is located at 60 rue François 1er, 75008 Paris."
+                },
+                "object": {
+                    "title": "2. Purpose",
+                    "body": "The purpose of this legal notice is to set out the terms on which information and services are made available on the website www.simplyfoot.fr and to inform users accordingly."
+                },
+                "ip": {
+                    "title": "3. Intellectual property",
+                    "body": "All elements on the site (texts, images, graphics, logo, structure, code, etc.) are the exclusive property of {brand}, unless otherwise stated. Any reproduction, representation, modification, publication or adaptation, in whole or in part, of these elements, by any means or process whatsoever, is prohibited without the prior written consent of {brand}."
+                },
+                "liability": {
+                    "title": "4. Liability",
+                    "body": "SimplyFoot takes reasonable care to ensure that the information published on its site is accurate and up to date. However, the company cannot be held liable for any errors, omissions or unavailability of the service. Users acknowledge that they use the site at their own risk."
+                },
+                "data": {
+                    "title": "5. Personal data",
+                    "body": "{brand} is committed to protecting the privacy of site users in accordance with the General Data Protection Regulation (GDPR) and the French \"Informatique et Libertés\" Act of 6 January 1978, as amended. Information collected through the forms is processed to respond to user requests and to offer {brand} services. See our privacy policy for more details."
+                },
+                "links": {
+                    "title": "6. Hyperlinks",
+                    "body": "The SimplyFoot site may contain links to other sites. SimplyFoot has no control over the content of those sites and accepts no liability for their content or personal-data practices."
+                },
+                "law": {
+                    "title": "7. Applicable law",
+                    "body": "This site is governed by French law. In the event of any dispute, and failing an amicable settlement, exclusive jurisdiction is granted to the courts of Paris."
+                },
+                "contact": {
+                    "title": "8. Contact",
+                    "body": "For any question, comment or complaint relating to the site or to {brand} services, you can reach us:"
+                }
+            },
+            "contactBlock": {
+                "emailLabel": "By email",
+                "phoneLabel": "By phone",
+                "addressLabel": "By post"
+            }
         }
     },
     "Footer": {

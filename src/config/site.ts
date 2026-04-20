@@ -37,22 +37,24 @@ export const BRAND_CONTACT: Record<BrandSlug, BrandContact> = {
             instagram: 'https://instagram.com/simplyfoot',
         },
     },
+    // TODO: update with rugby-specific contact info once available
     rugby: {
-        email: 'contact@simplyrugby.fr',
+        email: 'contact@simplyfoot.fr',
         phone: '+33 6 82 84 56 41',
         socials: {
-            facebook: '',
-            linkedin: '',
-            instagram: '',
+            facebook: 'https://facebook.com/simplyfoot',
+            linkedin: 'https://linkedin.com/company/simplyfoot',
+            instagram: 'https://instagram.com/simplyfoot',
         },
     },
+    // TODO: update with handball-specific contact info once available
     handball: {
-        email: 'contact@simplyhandball.fr',
+        email: 'contact@simplyfoot.fr',
         phone: '+33 6 82 84 56 41',
         socials: {
-            facebook: '',
-            linkedin: '',
-            instagram: '',
+            facebook: 'https://facebook.com/simplyfoot',
+            linkedin: 'https://linkedin.com/company/simplyfoot',
+            instagram: 'https://instagram.com/simplyfoot',
         },
     },
 };

@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
+import { LanguageSwitcher } from '@/components/shared/LanguageSwitcher';
+import { MobileNav } from '@/components/shared/MobileNav';
 import { Link } from '@/i18n/navigation';
 import { BRANDS, type BrandSlug } from '@/lib/brand';
 import {
@@ -32,8 +34,8 @@ export function Header({ brand }: HeaderProps) {
         'text-primary-foreground bg-transparent hover:bg-primary-foreground/10 hover:text-primary-foreground focus:bg-primary-foreground/10 focus:text-primary-foreground data-[active=true]:bg-primary-foreground/10';
 
     return (
-        <header className="bg-primary-600 text-primary-foreground">
-            <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 md:px-12">
+        <header className="bg-primary-600 text-primary-foreground sticky top-0 z-30 shadow-[0_8px_24px_-8px_rgba(0,0,0,0.35)]">
+            <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-6 md:px-12">
                 <Link
                     href={`/${brand}`}
                     aria-label={t('logoAlt', { brand: label })}
@@ -47,26 +49,31 @@ export function Header({ brand }: HeaderProps) {
                         priority
                         className="size-10 object-contain"
                     />
-                    <span className="text-lg font-semibold tracking-tight">
+                    <h2 className="text-2xl font-semibold">
                         <span className="text-secondary-50">Simply</span>
                         <span className="text-primary-200">{name}</span>
-                    </span>
+                    </h2>
                 </Link>
 
-                <NavigationMenu aria-label={t('nav.label')}>
-                    <NavigationMenuList>
-                        {navItems.map((item) => (
-                            <NavigationMenuItem key={item.href}>
-                                <NavigationMenuLink
-                                    asChild
-                                    className={`${navigationMenuTriggerStyle()} ${navLinkClass}`}
-                                >
-                                    <Link href={item.href}>{item.label}</Link>
-                                </NavigationMenuLink>
-                            </NavigationMenuItem>
-                        ))}
-                    </NavigationMenuList>
-                </NavigationMenu>
+                <div className="hidden items-center gap-2 md:flex">
+                    <NavigationMenu aria-label={t('nav.label')}>
+                        <NavigationMenuList>
+                            {navItems.map((item) => (
+                                <NavigationMenuItem key={item.href}>
+                                    <NavigationMenuLink
+                                        asChild
+                                        className={`${navigationMenuTriggerStyle()} ${navLinkClass}`}
+                                    >
+                                        <Link href={item.href}>{item.label}</Link>
+                                    </NavigationMenuLink>
+                                </NavigationMenuItem>
+                            ))}
+                        </NavigationMenuList>
+                    </NavigationMenu>
+                    <LanguageSwitcher />
+                </div>
+
+                <MobileNav navItems={navItems} className="md:hidden" />
             </div>
         </header>
     );
