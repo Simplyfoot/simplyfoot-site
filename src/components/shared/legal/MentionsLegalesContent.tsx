@@ -15,10 +15,56 @@ interface MentionsLegalesContentProps {
     brand: BrandSlug;
 }
 
+async function ContactSection() {
+    const t = await getTranslations('Legal.mentionsLegales');
+    const contact = BRAND_CONTACT['foot'];
+
+    return (
+        <section id="contact-block" aria-labelledby="contact-block-title" className="mt-8">
+            <dl className="grid gap-6 md:grid-cols-3">
+                <div className="space-y-2">
+                    <dt className="text-muted-foreground flex items-center gap-2 text-sm font-medium">
+                        <Mail className="size-4" aria-hidden="true" />
+                        {t('contactBlock.emailLabel')}
+                    </dt>
+                    <dd>
+                        <a
+                            href={`mailto:${contact.email}`}
+                            className="text-primary focus-visible:ring-ring rounded-sm font-medium underline-offset-4 hover:underline focus-visible:ring-2 focus-visible:outline-none"
+                        >
+                            {contact.email}
+                        </a>
+                    </dd>
+                </div>
+                <div className="space-y-2">
+                    <dt className="text-muted-foreground flex items-center gap-2 text-sm font-medium">
+                        <Phone className="size-4" aria-hidden="true" />
+                        {t('contactBlock.phoneLabel')}
+                    </dt>
+                    <dd>
+                        <a
+                            href={`tel:${contact.phone.replace(/\s/g, '')}`}
+                            className="text-primary focus-visible:ring-ring rounded-sm font-medium underline-offset-4 hover:underline focus-visible:ring-2 focus-visible:outline-none"
+                        >
+                            {contact.phone}
+                        </a>
+                    </dd>
+                </div>
+                <div className="space-y-2">
+                    <dt className="text-muted-foreground flex items-center gap-2 text-sm font-medium">
+                        <MapPin className="size-4" aria-hidden="true" />
+                        {t('contactBlock.addressLabel')}
+                    </dt>
+                    <dd className="text-foreground text-sm">{SIMPLY_LEGAL.address}</dd>
+                </div>
+            </dl>
+        </section>
+    );
+}
+
 export async function MentionsLegalesContent({ brand }: MentionsLegalesContentProps) {
     const t = await getTranslations('Legal.mentionsLegales');
     const brandMeta = BRANDS[brand];
-    const contact = BRAND_CONTACT[brand];
 
     const sectionKeys = [
         'presentation',
@@ -55,9 +101,13 @@ export async function MentionsLegalesContent({ brand }: MentionsLegalesContentPr
                 </Breadcrumb>
 
                 <header className="mb-12 space-y-4">
-                    <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
+                    <h1 className="mb-4 text-center text-4xl font-bold tracking-tight md:text-5xl">
                         {t('heading')}
                     </h1>
+                    <div
+                        aria-hidden="true"
+                        className="bg-primary-400 mx-auto mb-16 h-2 w-[34px] rounded-full"
+                    />
                     <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
                         {t('introduction.title')}
                     </h2>
@@ -66,61 +116,22 @@ export async function MentionsLegalesContent({ brand }: MentionsLegalesContentPr
                     </p>
                 </header>
 
-                <div className="space-y-12">
+                <section className="space-y-12 p-8 bg-muted/50 border-none rounded-2xl">
                     {sectionKeys.map((key) => (
                         <section key={key} id={key} className="scroll-mt-24 space-y-4">
-                            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-                                {t(`sections.${key}.title`)}
+                            <h2 className="flex items-end gap-2 text-2xl font-semibold tracking-tight md:text-3xl">
+                                <span
+                                    aria-hidden="true"
+                                    className="bg-primary-400 h-6 w-2 shrink-0 translate-y-0.5 rounded-full"
+                                />
+                                <span>{t(`sections.${key}.title`)}</span>
                             </h2>
                             <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
                                 {t(`sections.${key}.body`, { brand: brandMeta.label })}
                             </p>
+                            {key === 'contact' && <ContactSection />}
                         </section>
                     ))}
-                </div>
-
-                <section
-                    id="contact-block"
-                    aria-labelledby="contact-block-title"
-                    className="bg-muted/40 border-border/60 rounded-2xl border p-8 mt-4 md:p-10"
-                >
-                    <dl className="grid gap-6 md:grid-cols-3">
-                        <div className="space-y-2">
-                            <dt className="text-muted-foreground flex items-center gap-2 text-sm font-medium">
-                                <Mail className="size-4" aria-hidden="true" />
-                                {t('contactBlock.emailLabel')}
-                            </dt>
-                            <dd>
-                                <a
-                                    href={`mailto:${contact.email}`}
-                                    className="text-primary focus-visible:ring-ring rounded-sm font-medium underline-offset-4 hover:underline focus-visible:ring-2 focus-visible:outline-none"
-                                >
-                                    {contact.email}
-                                </a>
-                            </dd>
-                        </div>
-                        <div className="space-y-2">
-                            <dt className="text-muted-foreground flex items-center gap-2 text-sm font-medium">
-                                <Phone className="size-4" aria-hidden="true" />
-                                {t('contactBlock.phoneLabel')}
-                            </dt>
-                            <dd>
-                                <a
-                                    href={`tel:${contact.phone.replace(/\s/g, '')}`}
-                                    className="text-primary focus-visible:ring-ring rounded-sm font-medium underline-offset-4 hover:underline focus-visible:ring-2 focus-visible:outline-none"
-                                >
-                                    {contact.phone}
-                                </a>
-                            </dd>
-                        </div>
-                        <div className="space-y-2">
-                            <dt className="text-muted-foreground flex items-center gap-2 text-sm font-medium">
-                                <MapPin className="size-4" aria-hidden="true" />
-                                {t('contactBlock.addressLabel')}
-                            </dt>
-                            <dd className="text-foreground text-sm">{SIMPLY_LEGAL.address}</dd>
-                        </div>
-                    </dl>
                 </section>
             </div>
         </article>

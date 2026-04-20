@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 import { LanguageSwitcher } from '@/components/shared/LanguageSwitcher';
+import { MobileNav } from '@/components/shared/MobileNav';
 import { Link } from '@/i18n/navigation';
 import { BRANDS, type BrandSlug } from '@/lib/brand';
 import {
@@ -54,7 +55,7 @@ export function Header({ brand }: HeaderProps) {
                     </h2>
                 </Link>
 
-                <div className="flex items-center gap-2">
+                <div className="hidden items-center gap-2 md:flex">
                     <NavigationMenu aria-label={t('nav.label')}>
                         <NavigationMenuList>
                             {navItems.map((item) => (
@@ -71,6 +72,8 @@ export function Header({ brand }: HeaderProps) {
                     </NavigationMenu>
                     <LanguageSwitcher />
                 </div>
+
+                <MobileNav navItems={navItems} className="md:hidden" />
             </div>
         </header>
     );

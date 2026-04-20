@@ -21,7 +21,11 @@ const locales = [
     { code: 'es', name: 'Español', flag: '🇪🇸' },
 ] as const;
 
-export function LanguageSwitcher() {
+interface LanguageSwitcherProps {
+    variant?: 'onDark' | 'onLight';
+}
+
+export function LanguageSwitcher({ variant = 'onDark' }: LanguageSwitcherProps = {}) {
     const t = useTranslations('Header.languageSwitcher');
     const router = useRouter();
     const pathname = usePathname();
@@ -42,7 +46,11 @@ export function LanguageSwitcher() {
                     size="sm"
                     aria-label={t('label')}
                     disabled={isPending}
-                    className="text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground focus-visible:ring-primary-foreground/60 inline-flex items-center gap-1.5 leading-none"
+                    className={
+                        variant === 'onDark'
+                            ? 'text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground focus-visible:ring-primary-foreground/60 inline-flex items-center gap-1.5 leading-none'
+                            : 'inline-flex items-center gap-1.5 leading-none'
+                    }
                 >
                     <Globe className="size-4 shrink-0" aria-hidden="true" />
                     <span className="font-medium leading-none">{activeLocale.toUpperCase()}</span>

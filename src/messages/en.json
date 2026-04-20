@@ -40,6 +40,12 @@
         "logoAlt": "{brand} logo",
         "languageSwitcher": {
             "label": "Change language"
+        },
+        "mobileMenu": {
+            "open": "Open menu",
+            "close": "Close menu",
+            "title": "Navigation",
+            "languageLabel": "Language"
         }
     },
     "Brands": {
