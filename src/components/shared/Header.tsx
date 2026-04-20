@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
+import { LanguageSwitcher } from '@/components/shared/LanguageSwitcher';
 import { Link } from '@/i18n/navigation';
 import { BRANDS, type BrandSlug } from '@/lib/brand';
 import {
@@ -53,20 +54,23 @@ export function Header({ brand }: HeaderProps) {
                     </h2>
                 </Link>
 
-                <NavigationMenu aria-label={t('nav.label')}>
-                    <NavigationMenuList>
-                        {navItems.map((item) => (
-                            <NavigationMenuItem key={item.href}>
-                                <NavigationMenuLink
-                                    asChild
-                                    className={`${navigationMenuTriggerStyle()} ${navLinkClass}`}
-                                >
-                                    <Link href={item.href}>{item.label}</Link>
-                                </NavigationMenuLink>
-                            </NavigationMenuItem>
-                        ))}
-                    </NavigationMenuList>
-                </NavigationMenu>
+                <div className="flex items-center gap-2">
+                    <NavigationMenu aria-label={t('nav.label')}>
+                        <NavigationMenuList>
+                            {navItems.map((item) => (
+                                <NavigationMenuItem key={item.href}>
+                                    <NavigationMenuLink
+                                        asChild
+                                        className={`${navigationMenuTriggerStyle()} ${navLinkClass}`}
+                                    >
+                                        <Link href={item.href}>{item.label}</Link>
+                                    </NavigationMenuLink>
+                                </NavigationMenuItem>
+                            ))}
+                        </NavigationMenuList>
+                    </NavigationMenu>
+                    <LanguageSwitcher />
+                </div>
             </div>
         </header>
     );

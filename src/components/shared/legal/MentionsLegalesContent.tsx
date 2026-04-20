@@ -34,7 +34,7 @@ export async function MentionsLegalesContent({ brand }: MentionsLegalesContentPr
     return (
         <article className="text-foreground">
             <div className="mx-auto w-full max-w-4xl px-6 py-12 md:px-8 md:py-20">
-                <Breadcrumb className="bg-muted/50 mb-8 inline-flex w-fit rounded-xl px-4 py-2">
+                <Breadcrumb className="bg-muted/50 mb-8 ml-auto block w-fit rounded-xl px-4 py-2">
                     <BreadcrumbList>
                         <BreadcrumbItem>
                             <span>{brandMeta.label}</span>

@@ -37,7 +37,10 @@
             "about": "À propos",
             "contact": "Contact"
         },
-        "logoAlt": "Logo {brand}"
+        "logoAlt": "Logo {brand}",
+        "languageSwitcher": {
+            "label": "Changer de langue"
+        }
     },
     "Brands": {
         "foot": {
