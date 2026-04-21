@@ -4,7 +4,7 @@ import { useFrame } from '@react-three/fiber';
 import { useMemo, useRef } from 'react';
 import type { Points as PointsType } from 'three';
 
-import { useRootColor } from '@/lib/brand';
+import { useRootColor } from '@/hooks/useRootColor';
 
 interface StarfieldProps {
     count?: number;

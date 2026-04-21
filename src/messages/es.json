@@ -35,7 +35,8 @@
         "nav": {
             "label": "Navegación principal",
             "about": "Acerca de",
-            "contact": "Contacto"
+            "contact": "Contacto",
+            "faq": "Ayuda"
         },
         "logoAlt": "Logo de {brand}",
         "languageSwitcher": {
@@ -115,6 +116,353 @@
             }
         }
     },
+    "FAQ": {
+        "meta": {
+            "title": "Centro de ayuda — {brand}",
+            "description": "Encuentra respuestas a las preguntas frecuentes sobre {brand}: registro, gestión de equipos, convocatorias, mensajería y mucho más."
+        },
+        "heading": "Centro de ayuda",
+        "intro": "Encuentra rápidamente respuestas a las preguntas más frecuentes sobre {brand}. ¿No encuentras lo que buscas? Contáctanos directamente.",
+        "sidebarLabel": "Categorías de la FAQ",
+        "searchPlaceholder": "Buscar una pregunta…",
+        "searchClearLabel": "Borrar búsqueda",
+        "noResults": "Ninguna pregunta coincide con tu búsqueda.",
+        "categories": {
+            "signup": {
+                "title": "Registro y cuenta",
+                "items": {
+                    "create-account": {
+                        "question": "¿Cómo creo mi cuenta {brand}?",
+                        "answer": {
+                            "p0": "Introduce tu correo electrónico y una contraseña, luego pulsa <strong>«Registrarme»</strong>. También puedes registrarte con tu cuenta de <strong>Google</strong> o <strong>Apple</strong>."
+                        }
+                    },
+                    "google-login": {
+                        "question": "El inicio de sesión con Google no funciona, ¿qué hago?",
+                        "answer": {
+                            "p0": "Para registrarte con Google, <strong>Chrome</strong> debe estar definido como navegador predeterminado en tu teléfono. Si se utiliza otro navegador (por ejemplo Opera o Samsung Internet), el inicio de sesión con Google puede fallar. En ese caso, regístrate de forma clásica con correo electrónico y contraseña."
+                        }
+                    },
+                    "join-club": {
+                        "question": "¿Cómo me uno a mi club?",
+                        "answer": {
+                            "p0": "Tras crear tu cuenta, puedes unirte a un club de tres maneras:",
+                            "l0": "<strong>Como jugador o entrenador</strong>: introduce el código de club que te facilite el presidente (o {brand} en el caso de clubes piloto).",
+                            "l1": "<strong>Como representante legal</strong>: introduce tus datos, después el código de equipo facilitado por el entrenador y la información de tu hijo/a.",
+                            "l2": "<strong>Ambos</strong>: combina los dos procesos."
+                        }
+                    },
+                    "club-code": {
+                        "question": "¿Dónde encuentro el código de club?",
+                        "answer": {
+                            "p0": "El código de club lo facilita el <strong>presidente del club</strong>. En los clubes piloto, este código lo comunica directamente el equipo de {brand}."
+                        }
+                    },
+                    "team-code": {
+                        "question": "¿Dónde encuentro el código de equipo?",
+                        "answer": {
+                            "p0": "El código de equipo aparece en la etiqueta del equipo en el panel del entrenador. El entrenador puede copiarlo con un clic y enviártelo."
+                        }
+                    },
+                    "multi-role": {
+                        "question": "¿Puedo ser entrenador, jugador y padre/madre a la vez?",
+                        "answer": {
+                            "p0": "Sí. {brand} gestiona el <strong>multi-rol</strong>. Puedes ser entrenador, jugador, madre o padre de un jugador, y cambiar entre tus perfiles con un clic sin cerrar sesión."
+                        }
+                    },
+                    "switch-profiles": {
+                        "question": "¿Cómo cambio entre mis distintos perfiles?",
+                        "answer": {
+                            "p0": "En la parte superior de la pantalla, junto a tu foto de perfil, pulsa el logotipo a la derecha. Verás todos tus roles y podrás cambiar de uno a otro al instante."
+                        }
+                    },
+                    "edit-profile": {
+                        "question": "¿Cómo modifico mis datos personales?",
+                        "answer": {
+                            "p0": "Pulsa la <strong>rueda dentada</strong> arriba a la derecha y luego <strong>«Datos personales»</strong>. Puedes cambiar tu nombre, fecha de nacimiento, correo, añadir una foto de perfil o gestionar el perfil de tu hijo/a."
+                        }
+                    },
+                    "change-password": {
+                        "question": "¿Cómo cambio mi contraseña?",
+                        "answer": {
+                            "p0": "Pulsa la <strong>rueda dentada</strong> arriba a la derecha y luego <strong>«Modificar tu contraseña»</strong>."
+                        }
+                    },
+                    "change-club": {
+                        "question": "¿Cómo cambio de club?",
+                        "answer": {
+                            "p0": "En los ajustes, pulsa <strong>«Gestionar tus roles»</strong>. Puedes abandonar tu rol actual en cualquier momento y unirte a un nuevo club con el código correspondiente."
+                        }
+                    },
+                    "deactivate-account": {
+                        "question": "¿Cómo desactivo mi cuenta?",
+                        "answer": {
+                            "p0": "Ve a los ajustes y luego a <strong>«Datos personales»</strong>. Al final de esa página encontrarás la opción para desactivar tu cuenta."
+                        }
+                    }
+                }
+            },
+            "separated-parents": {
+                "title": "Padres separados",
+                "items": {
+                    "avoid-duplicates": {
+                        "question": "Somos padres separados, ¿cómo evitamos duplicados?",
+                        "answer": {
+                            "p0": "Uno de los padres inscribe al hijo/a normalmente. El entrenador genera después un <strong>código de vinculación</strong> específico para ese niño/a desde su ficha. Este código se envía al segundo progenitor que, al registrarse, pulsa <strong>«Vincular un hijo/a»</strong> e introduce el código. El segundo progenitor queda vinculado automáticamente, sin crear duplicados."
+                        }
+                    },
+                    "share-credentials": {
+                        "question": "¿Tenemos que compartir un correo o una contraseña?",
+                        "answer": {
+                            "p0": "No. Cada padre/madre dispone de su propia cuenta independiente. No es necesario compartir credenciales."
+                        }
+                    },
+                    "generate-link-code": {
+                        "question": "¿Dónde genera el entrenador el código de vinculación?",
+                        "answer": {
+                            "p0": "El entrenador accede a la ficha del jugador mediante la pestaña <strong>«Equipos»</strong> y pulsa sobre el jugador en cuestión. En la sección «Código de vinculación» hay un botón <strong>«Generar un código»</strong>. Este código es de un solo uso."
+                        }
+                    }
+                }
+            },
+            "coach-teams": {
+                "title": "Entrenador — Gestión de equipos",
+                "items": {
+                    "create-team": {
+                        "question": "¿Cómo creo un equipo?",
+                        "answer": {
+                            "p0": "Desde tu panel, pulsa <strong>«Crear un equipo»</strong>. Indica un nombre o alias (Grupo 1, Equipo A…), selecciona la categoría y el género y valida. Se generará un código de equipo automáticamente."
+                        }
+                    },
+                    "share-team-code": {
+                        "question": "¿Cómo comparto el código de equipo?",
+                        "answer": {
+                            "p0": "El código de equipo aparece en la etiqueta de tu equipo en el panel. Púlsalo para copiarlo y envíalo a los jugadores o padres implicados."
+                        }
+                    },
+                    "second-coach": {
+                        "question": "¿Cómo me uno a un equipo como segundo entrenador?",
+                        "answer": {
+                            "p0": "Pulsa <strong>«Crear un equipo»</strong> y, en la parte inferior de la pantalla, selecciona <strong>«Unirse a un equipo como entrenador»</strong>. Introduce el código de equipo facilitado por el entrenador principal."
+                        }
+                    },
+                    "player-profiles": {
+                        "question": "¿Cómo accedo a las fichas de mis jugadores?",
+                        "answer": {
+                            "p0": "Pulsa la pestaña <strong>«Equipos»</strong> y luego el jugador deseado. Accederás a sus datos personales y a los contactos de sus representantes legales. Al tocar el correo electrónico, la aplicación propone enviar un email. Al tocar el número de teléfono, se marca automáticamente."
+                        }
+                    }
+                }
+            },
+            "coach-events": {
+                "title": "Entrenador — Eventos y convocatorias",
+                "items": {
+                    "create-event": {
+                        "question": "¿Cómo creo un evento?",
+                        "answer": {
+                            "p0": "Pulsa el botón <strong>«+»</strong> o <strong>«Crear un evento»</strong>. Indica el título, el equipo implicado, el tipo de encuentro, la fecha y la hora de inicio y fin."
+                        }
+                    },
+                    "club-wide-event": {
+                        "question": "¿Cómo envío un evento a todo el club?",
+                        "answer": {
+                            "p0": "Al crearlo, selecciona <strong>todos los equipos del club</strong>. El evento se enviará a todos los miembros. Ideal para cenas de Navidad, bingos, etc."
+                        }
+                    },
+                    "event-vs-callup": {
+                        "question": "¿Qué diferencia hay entre un evento clásico y una convocatoria?",
+                        "answer": {
+                            "p0": "Si marcas la opción <strong>«Convocatoria»</strong>, solo los jugadores que selecciones verán este evento y podrán participar. Sin esta opción (por ejemplo, un entrenamiento), todo el equipo ve el evento."
+                        }
+                    },
+                    "recurring-training": {
+                        "question": "¿Cómo creo un entrenamiento recurrente?",
+                        "answer": {
+                            "p0": "Marca <strong>«Crear un evento recurrente»</strong>. Selecciona el día y el horario (por ejemplo, martes de 17:30 a 19:30) durante un período determinado. Se creará un evento automáticamente cada semana."
+                        }
+                    },
+                    "edit-event": {
+                        "question": "¿Puedo modificar un evento tras crearlo?",
+                        "answer": {
+                            "p0": "Sí. Pulsa sobre el evento para abrir su ficha. Puedes modificar todos los elementos en cualquier momento: lugar, rival, horario, fecha, etc."
+                        }
+                    },
+                    "cancel-event": {
+                        "question": "¿Cómo cancelo un evento?",
+                        "answer": {
+                            "p0": "Puedes cancelar un evento en cualquier momento. Los jugadores seguirán viendo el evento, pero con la indicación <strong>«Cancelado»</strong> claramente visible."
+                        }
+                    },
+                    "send-callups": {
+                        "question": "¿Cómo envío las convocatorias?",
+                        "answer": {
+                            "p0": "Pulsa el contador de asistencia arriba a la derecha del evento. Desde esa pestaña, selecciona a tus jugadores uno por uno o todos a la vez y valida."
+                        }
+                    },
+                    "track-responses": {
+                        "question": "¿Cómo sigo las respuestas de los jugadores?",
+                        "answer": {
+                            "p0": "En la pestaña de asistencia verás el recuento (por ejemplo <strong>12/14</strong>) y el indicador junto a cada jugador:",
+                            "l0": "<strong>Marca verde</strong> = presente",
+                            "l1": "<strong>Cruz roja</strong> = ausente",
+                            "l2": "<strong>Cochecito</strong> = acude directamente al estadio de forma autónoma"
+                        }
+                    },
+                    "answer-for-player": {
+                        "question": "Un jugador no tiene su teléfono, ¿puedo responder por él?",
+                        "answer": {
+                            "p0": "Sí. A la derecha de la barra de búsqueda, pulsa el <strong>lápiz pequeño</strong> para pasar al modo edición. Puedes entonces validar la asistencia, la ausencia o indicar que el jugador acude directamente al estadio."
+                        }
+                    },
+                    "car-icon": {
+                        "question": "¿Qué significa el icono «cochecito»?",
+                        "answer": {
+                            "p0": "Significa que el jugador (o su padre/madre) acude <strong>directamente al estadio</strong> por sus propios medios, sin pasar por el punto de encuentro del grupo. Así el entrenador sabe que no debe esperarle en la salida."
+                        }
+                    }
+                }
+            },
+            "player": {
+                "title": "Jugador",
+                "items": {
+                    "upcoming-events": {
+                        "question": "¿Cómo veo los próximos eventos?",
+                        "answer": {
+                            "p0": "En tu página de inicio encontrarás los próximos eventos junto con tu respuesta para cada uno: presente, ausente o sin responder."
+                        }
+                    },
+                    "respond-to-callup": {
+                        "question": "¿Cómo respondo a una convocatoria?",
+                        "answer": {
+                            "p0": "Pulsa el evento y, al final de la ficha, indica <strong>«Presente»</strong> o <strong>«Ausente»</strong>. También puedes precisar si vas con el grupo o directamente al estadio."
+                        }
+                    },
+                    "edit-response": {
+                        "question": "¿Puedo modificar mi respuesta más tarde?",
+                        "answer": {
+                            "p0": "Sí, puedes modificar tu respuesta en cualquier momento."
+                        }
+                    },
+                    "transport": {
+                        "question": "¿Está disponible la función Transporte?",
+                        "answer": {
+                            "p0": "No, la función Transporte <strong>aún no está disponible</strong>. Se incluirá en una próxima actualización."
+                        }
+                    }
+                }
+            },
+            "calendar": {
+                "title": "Calendario",
+                "items": {
+                    "calendar-how-it-works": {
+                        "question": "¿Cómo funciona el calendario?",
+                        "answer": {
+                            "p0": "El calendario muestra todos los días en los que hay un evento programado. Pulsa sobre un día para ver los eventos y luego sobre un evento para consultar los detalles."
+                        }
+                    },
+                    "calendar-all-roles": {
+                        "question": "¿El calendario muestra los eventos de todos mis roles?",
+                        "answer": {
+                            "p0": "Sí. Si eres a la vez entrenador, jugador y padre/madre, el calendario agrupa <strong>todos tus eventos</strong> en un mismo lugar, sea cual sea el rol implicado."
+                        }
+                    }
+                }
+            },
+            "notifications-messaging": {
+                "title": "Notificaciones y mensajería",
+                "items": {
+                    "bell": {
+                        "question": "¿Para qué sirve la campana en la parte superior?",
+                        "answer": {
+                            "p0": "La campana funciona como en Facebook. Todas las notificaciones (aceptación de convocatoria, modificación de evento, etc.) aparecen allí, además de la notificación push en tu teléfono."
+                        }
+                    },
+                    "coach-notifications": {
+                        "question": "¿Qué notificaciones recibe un entrenador?",
+                        "answer": {
+                            "p0": "El entrenador recibe una notificación cuando un jugador acepta o rechaza una convocatoria."
+                        }
+                    },
+                    "player-notifications": {
+                        "question": "¿Qué notificaciones recibe un jugador?",
+                        "answer": {
+                            "p0": "El jugador recibe una notificación cuando el entrenador crea, modifica o cancela un evento."
+                        }
+                    },
+                    "messaging-location": {
+                        "question": "¿Dónde está la mensajería?",
+                        "answer": {
+                            "p0": "La mensajería está junto a la campana, en la parte superior de la pantalla. Pulsa el icono de abajo a la derecha para crear un nuevo mensaje."
+                        }
+                    },
+                    "coach-conversations": {
+                        "question": "¿Qué conversaciones hay disponibles para un entrenador?",
+                        "answer": {
+                            "l0": "<strong>Conversación del club</strong> — Intercambia con los demás entrenadores y el presidente.",
+                            "l1": "<strong>Entrenadores</strong> — Envía un mensaje privado a otro entrenador del club.",
+                            "l2": "<strong>Equipos</strong> — Conversa con todos los jugadores y padres de un equipo."
+                        }
+                    },
+                    "player-conversations": {
+                        "question": "¿Qué conversaciones hay disponibles para un jugador?",
+                        "answer": {
+                            "l0": "<strong>Conversación del club</strong> — Solo lectura (puedes leer los intercambios del cuerpo técnico).",
+                            "l1": "<strong>Entrenadores</strong> — Envía un mensaje privado al/los entrenador/es de tu equipo.",
+                            "l2": "<strong>Equipos</strong> — Conversa con todos los jugadores y padres de tu equipo."
+                        }
+                    },
+                    "messaging-identify": {
+                        "question": "¿Cómo sé con quién estoy hablando en la mensajería?",
+                        "answer": {
+                            "p0": "Al abrir una conversación, aparecen tanto el <strong>nombre del padre/madre</strong> como el <strong>nombre del hijo/a</strong>, lo que te permite identificar claramente a tu interlocutor. Lo mismo ocurre en las conversaciones de grupo."
+                        }
+                    },
+                    "messaging-photos": {
+                        "question": "¿Puedo enviar fotos o vídeos?",
+                        "answer": {
+                            "p0": "No, el envío de fotos y vídeos <strong>aún no está disponible</strong> en la mensajería. Esta función podría añadirse en una próxima actualización."
+                        }
+                    }
+                }
+            },
+            "upcoming": {
+                "title": "Próximas funcionalidades",
+                "items": {
+                    "upcoming-features": {
+                        "question": "¿Qué funcionalidades aún no están disponibles?",
+                        "answer": {
+                            "p0": "Las siguientes funcionalidades están en desarrollo y se desplegarán en las próximas actualizaciones:",
+                            "l0": "Los datos deportivos",
+                            "l1": "El módulo de Transporte",
+                            "l2": "El envío de fotos y vídeos en la mensajería",
+                            "l3": "La alineación del equipo",
+                            "l4": "Las evaluaciones",
+                            "l5": "El Nutri-Scan"
+                        }
+                    },
+                    "update-frequency": {
+                        "question": "¿Con qué frecuencia se publican las actualizaciones?",
+                        "answer": {
+                            "p0": "Las actualizaciones serán muy frecuentes, con un ritmo previsto de <strong>aproximadamente cada 15 días</strong>."
+                        }
+                    }
+                }
+            },
+            "contact": {
+                "title": "Contacto",
+                "items": {
+                    "contact-team": {
+                        "question": "¿Cómo contacto con el equipo de {brand}?",
+                        "answer": {
+                            "p0": "Para cualquier pregunta, sugerencia o incidencia, puedes contactarnos:",
+                            "l0": "<mail>{email}</mail>",
+                            "l1": "<tel>{phone}</tel>"
+                        }
+                    }
+                }
+            }
+        }
+    },
     "Footer": {
         "sections": {
             "legal": "Información legal",
@@ -126,7 +474,8 @@
             "cgv": "Condiciones de venta",
             "privacy": "Política de privacidad",
             "cookies": "Gestión de cookies",
-            "contact": "Contáctanos"
+            "contact": "Contáctanos",
+            "faq": "Centro de ayuda"
         },
         "company": {
             "capital": "Capital social: {capital}",

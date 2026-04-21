@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
-import { MentionsLegalesContent } from '@/components/shared/legal/MentionsLegalesContent';
+import { FaqContent } from '@/components/shared/faq/FaqContent';
 import { buildAlternates } from '@/helpers/i18n.helpers';
 import { BRANDS } from '@/utils/constants.utils';
 
@@ -13,17 +13,17 @@ export async function generateMetadata({
     params: Promise<{ locale: AppLocale }>;
 }): Promise<Metadata> {
     const { locale } = await params;
-    const t = await getTranslations({ locale, namespace: 'Legal.mentionsLegales.meta' });
-    const brandLabel = BRANDS.rugby.label;
+    const t = await getTranslations({ locale, namespace: 'FAQ.meta' });
+    const brandLabel = BRANDS.handball.label;
 
     return {
         title: t('title', { brand: brandLabel }),
         description: t('description', { brand: brandLabel }),
-        alternates: buildAlternates('/rugby/legal/mentions-legales', locale),
+        alternates: buildAlternates('/handball/faq', locale),
     };
 }
 
-export default async function RugbyMentionsLegalesPage({
+export default async function HandballFaqPage({
     params,
 }: {
     params: Promise<{ locale: AppLocale }>;
@@ -33,7 +33,7 @@ export default async function RugbyMentionsLegalesPage({
 
     return (
         <main>
-            <MentionsLegalesContent brand="rugby" />
+            <FaqContent brand="handball" />
         </main>
     );
 }

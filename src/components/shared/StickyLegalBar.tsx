@@ -4,7 +4,9 @@ import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 
 import { Link } from '@/i18n/navigation';
-import { BRANDS, type BrandSlug } from '@/lib/brand';
+import { BRANDS } from '@/utils/constants.utils';
+
+import type { BrandSlug } from '~types/brand.types';
 
 interface StickyLegalBarProps {
     brand: BrandSlug;

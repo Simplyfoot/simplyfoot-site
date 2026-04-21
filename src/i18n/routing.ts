@@ -18,30 +18,10 @@ export const routing = defineRouting({
             en: '/foot/about',
             es: '/foot/acerca-de',
         },
-        '/rugby/about': {
-            fr: '/rugby/a-propos',
-            en: '/rugby/about',
-            es: '/rugby/acerca-de',
-        },
-        '/handball/about': {
-            fr: '/handball/a-propos',
-            en: '/handball/about',
-            es: '/handball/acerca-de',
-        },
         '/foot/contact': {
             fr: '/foot/contact',
             en: '/foot/contact',
             es: '/foot/contacto',
-        },
-        '/rugby/contact': {
-            fr: '/rugby/contact',
-            en: '/rugby/contact',
-            es: '/rugby/contacto',
-        },
-        '/handball/contact': {
-            fr: '/handball/contact',
-            en: '/handball/contact',
-            es: '/handball/contacto',
         },
         '/foot/legal/mentions-legales': {
             fr: '/foot/legal/mentions-legales',
@@ -68,6 +48,22 @@ export const routing = defineRouting({
             en: '/foot/legal/cookies',
             es: '/foot/legal/cookies',
         },
+        '/foot/faq': {
+            fr: '/foot/aide',
+            en: '/foot/help',
+            es: '/foot/ayuda',
+        },
+
+        '/rugby/about': {
+            fr: '/rugby/a-propos',
+            en: '/rugby/about',
+            es: '/rugby/acerca-de',
+        },
+        '/rugby/contact': {
+            fr: '/rugby/contact',
+            en: '/rugby/contact',
+            es: '/rugby/contacto',
+        },
         '/rugby/legal/mentions-legales': {
             fr: '/rugby/legal/mentions-legales',
             en: '/rugby/legal/legal-notice',
@@ -92,6 +88,22 @@ export const routing = defineRouting({
             fr: '/rugby/legal/cookies',
             en: '/rugby/legal/cookies',
             es: '/rugby/legal/cookies',
+        },
+        '/rugby/faq': {
+            fr: '/rugby/aide',
+            en: '/rugby/help',
+            es: '/rugby/ayuda',
+        },
+
+        '/handball/about': {
+            fr: '/handball/a-propos',
+            en: '/handball/about',
+            es: '/handball/acerca-de',
+        },
+        '/handball/contact': {
+            fr: '/handball/contact',
+            en: '/handball/contact',
+            es: '/handball/contacto',
         },
         '/handball/legal/mentions-legales': {
             fr: '/handball/legal/mentions-legales',
@@ -118,8 +130,10 @@ export const routing = defineRouting({
             en: '/handball/legal/cookies',
             es: '/handball/legal/cookies',
         },
+        '/handball/faq': {
+            fr: '/handball/aide',
+            en: '/handball/help',
+            es: '/handball/ayuda',
+        },
     },
 });
-
-export type AppLocale = (typeof routing.locales)[number];
-export type AppPathname = keyof typeof routing.pathnames;

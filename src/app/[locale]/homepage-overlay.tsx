@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 
-import { useMediaQuery } from '@/lib/hooks/use-media-query';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
 
 export function HomepageOverlay() {

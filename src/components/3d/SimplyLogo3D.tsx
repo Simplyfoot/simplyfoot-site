@@ -6,7 +6,7 @@ import { useMemo, useRef } from 'react';
 import type { Group, Mesh, MeshStandardMaterial } from 'three';
 import { Vector3 } from 'three';
 
-import { cssColorToHex, readRootCssVar } from '@/lib/brand';
+import { readRootCssVar, resolveCssColorToHex } from '@/utils/cssColor.utils';
 
 const MODEL_PATH = '/images/logo-Simply3D.glb';
 
@@ -23,7 +23,7 @@ export function SimplyLogo3D({ scale = 1 }: SimplyLogo3DProps) {
     const gltf = useGLTF(MODEL_PATH);
 
     const clonedScene = useMemo(() => {
-        const emissiveHex = cssColorToHex(readRootCssVar('--secondary'));
+        const emissiveHex = resolveCssColorToHex(readRootCssVar('--secondary'));
         const scene = gltf.scene.clone();
         scene.traverse((child) => {
             const mesh = child as Mesh;
@@ -48,8 +48,8 @@ export function SimplyLogo3D({ scale = 1 }: SimplyLogo3DProps) {
         if (!innerRef.current) {
             return;
         }
-        const t = state.clock.elapsedTime;
-        const pulse = 1 + Math.sin(t * PULSE_FREQUENCY) * PULSE_AMPLITUDE;
+        const elapsedTime = state.clock.elapsedTime;
+        const pulse = 1 + Math.sin(elapsedTime * PULSE_FREQUENCY) * PULSE_AMPLITUDE;
         targetScale.copy(baseScale).multiplyScalar(pulse);
         innerRef.current.scale.copy(targetScale);
     });

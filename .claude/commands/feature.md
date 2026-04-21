@@ -71,11 +71,20 @@ Décris la fonctionnalité souhaitée avec :
 - Suffixe `Props` pour props : `MentionsLegalesContentProps`
 - Préfixe `use` pour hooks : `useBrandColor`
 
+**Noms complets — PAS D'ABRÉVIATIONS** :
+
+- INTERDIT : `el`, `ctx`, `fn`, `idx`, `tmp`, `arr`, `obj`, `res`, `req`, `btn`, `img`, `txt`, `mql`, `e` (event)
+- REMPLACER par : `element`, `canvasContext` / `renderingContext`, `callback` / `handler`, `index`, `intermediate`, `items`, `entry`, `response`, `request`, `button`, `image`, `text`, `mediaQueryList`, `event`
+- Tolérés : `i, j` dans une boucle courte, `id`, `url`, `api`, `html`, `css`, `dom` (acronymes établis)
+- Toléré UNIQUEMENT comme retour de `useTranslations()` / `getTranslations()` : `const t = useTranslations(...)` (convention next-intl universelle). `t` comme variable locale (temps, total, tmp…) reste interdit.
+- Un nom doit révéler **l'intention**, pas le type. Un nom long et clair > nom court et obscur.
+- **Raison** : le code est lu 10× plus qu'il n'est écrit. Un humain ne doit jamais avoir à déduire ce que `ctx` signifie dans le contexte.
+
 **Typage des entités** :
 
-- Types partagés dans `src/types/`
-- Types de routing : `AppLocale`, `AppPathname` depuis `@/i18n/routing`
-- Types de marque : `BrandSlug`, `BrandMeta` depuis `@/lib/brand`
+- Types partagés dans `types/` (niveau racine, alias `~types/*`)
+- Types de routing : `AppLocale`, `AppPathname` depuis `~types/i18n.types`
+- Types de marque : `BrandSlug`, `BrandMeta` depuis `~types/brand.types`
 
 **Type Guards vs Casts explicites** :
 
@@ -111,36 +120,55 @@ src/
 │   │   ├── LanguageSwitcher.tsx
 │   │   ├── MobileNav.tsx
 │   │   └── legal/
-│   ├── 3d/                          # Three.js / R3F (toujours dynamic import)
-│   ├── simmo/                       # Mascotte
-│   ├── brands/                      # Composants par marque
-│   └── blog/
+│   └── 3d/                          # Three.js / R3F (toujours dynamic import)
+│   # (à créer au besoin : simo/ mascotte, brands/ composants par marque, blog/)
 │
 ├── shadcn/                          # shadcn primitives (NE PAS MODIFIER)
 │
+├── hooks/                           # TOUS les hooks React (plat, camelCase)
+│   ├── useBrandColor.ts             # (ex : nom du fichier = nom du hook exporté)
+│   ├── useMediaQuery.ts
+│   └── ...
+├── utils/                           # Utilitaires purs — convention <context>.utils.ts
+│   ├── cssColor.utils.ts
+│   ├── brandProbe.utils.ts
+│   └── constants.utils.ts           # UN fichier unique pour les constantes partagées
+├── helpers/                         # (à créer au besoin) — logique métier réutilisable
+│   └── <context>.helpers.ts         # ex : brand.helpers.ts
+│
 ├── lib/
-│   ├── brand/                       # Brand registry, css-vars
-│   ├── i18n/                        # Helpers metadata (buildAlternates)
-│   ├── simmo/
-│   ├── hooks/
-│   ├── constants.ts                 # Couleurs partagées (pour Three.js / JS)
-│   └── utils.ts                     # cn(), helpers génériques
+│   └── utils.ts                     # cn() — helper shadcn uniquement (exception)
 │
 ├── content/                         # Données statiques (blog, faq)
 ├── config/                          # site.ts, nav, regions
 ├── messages/                        # fr.json, en.json, es.json (next-intl)
-├── types/                           # Types partagés
 ├── i18n/                            # routing.ts, navigation.ts, request.ts
 └── middleware.ts                    # next-intl middleware
+
+types/                               # AU NIVEAU RACINE (pas dans src/) — types partagés
+├── brand.types.ts                   # <domain>.types.ts
+└── i18n.types.ts
 ```
 
 **Conventions de nommage de fichiers** :
 
 - Composants : PascalCase.tsx (`Header.tsx`, `MentionsLegalesContent.tsx`)
-- Helpers : camelCase.ts (`metadata.ts`, `constants.ts`)
+- **Hooks** : camelCase, nom du fichier = nom du hook exporté (`useBrandColor.ts`, PAS `use-brand-color.ts`)
+- **Utils** : `<context>.utils.ts` (`cssColor.utils.ts`, `brandProbe.utils.ts`)
+- **Helpers** : `<context>.helpers.ts` (même convention que utils)
+- **Constantes partagées** : `constants.utils.ts` (fichier unique dans `src/utils/`, pas de segmentation par contexte)
+- **Types partagés** : `<domain>.types.ts` dans `types/` (niveau racine du repo)
 - Routes App Router : `page.tsx`, `layout.tsx`, `loading.tsx`, `error.tsx`, `not-found.tsx` (convention Next.js)
 - Segments dynamiques : `[param]`, `[...slug]`, `[locale]`
 - Groupes de route : `(group)` (sans impact sur l'URL)
+
+**Règle de placement** :
+
+- Un hook React (utilise `useState`, `useEffect`, etc.) → `src/hooks/` OBLIGATOIRE
+- Une fonction pure, sans JSX ni hooks → `src/utils/<context>.utils.ts`
+- Une fonction avec logique métier réutilisable → `src/helpers/<context>.helpers.ts`
+- JAMAIS de fourre-tout : un fichier qui exporte à la fois un hook + une fonction pure + un type partagé DOIT être splitté
+- Un fichier = une responsabilité : hook ou util ou helper, pas les trois
 
 **INTERDICTIONS** :
 
@@ -195,7 +223,7 @@ src/
 7. `@/i18n/...`
 8. `@/lib/...`
 9. `@/config/...`
-10. `@/types/...`
+10. `~types/...`
 
 **Règles** :
 
@@ -418,7 +446,7 @@ Avant de créer un nouveau composant, VÉRIFIE :
 **Quand créer un composant custom** :
 
 - Composition de plusieurs primitives shadcn avec logique métier (ex. `LanguageSwitcher`, `MobileNav`)
-- Composant propre au domaine SIMPLY / marque (ex. `SimmoMascot`, `BrandHero`)
+- Composant propre au domaine SIMPLY / marque (ex. `SimoMascot`, `BrandHero`)
 - Variante visuelle très spécifique non couverte
 
 **Processus de décision** :
@@ -671,6 +699,29 @@ export function ContactForm() {
 - Trailing commas
 - Semi-colons
 
+**Lisibilité & aération — OBLIGATOIRE** :
+
+Le code doit être lisible par un humain qui découvre le fichier. Les règles Prettier ne suffisent pas : l'aération est manuelle.
+
+- **Sauts de ligne obligatoires** entre blocs logiques dans une fonction :
+    - après un `if (early return)`
+    - entre la setup (déclarations, lectures) et la logique principale
+    - entre la logique principale et le `return`
+    - avant/après une boucle ou un `useEffect`
+- **Sauts de ligne** entre déclarations de fonctions top-level (au moins 1 ligne vide)
+- **Pas de fonctions densément packées** : si 20 lignes sans saut de ligne, c'est trop dense
+- Longueur de fonction : au-delà de ~40 lignes, questionner le découpage
+
+**Ordre d'écriture dans un fichier utils/helpers** :
+
+1. Imports
+2. Types (si co-localisés)
+3. Constantes privées au module
+4. **Exports publics** (l'API du fichier — ce que le lecteur vient chercher)
+5. Fonctions internes (helpers privés du module)
+
+Le lecteur doit voir d'abord CE QUE le fichier expose, pas comment il est implémenté.
+
 **Commentaires** :
 
 - EN FRANÇAIS dans la documentation/commentaires métier (le projet est français)
@@ -729,6 +780,9 @@ npm run check-all      # type-check + lint + prettier:check
 8. Chaque élément interactif a un focus ring visible (WCAG AA)
 9. Chaque nouvelle clé i18n existe en FR + EN + ES (sinon build cassé)
 10. Chaque nouvelle route est déclarée dans `routing.ts` (pathnames localisés) ET `sitemap.ts`
+11. Zero abréviation (`el`, `ctx`, `fn`, `mql`, `e`…) — nommage complet obligatoire
+12. Zero fourre-tout : hooks dans `src/hooks/`, utils dans `src/utils/<context>.utils.ts`, helpers dans `src/helpers/<context>.helpers.ts`, types partagés dans `types/` (racine)
+13. Code aéré : sauts de ligne entre blocs logiques, jamais plus de ~20 lignes packées
     </invariants>
     </code_standards>
 
@@ -748,7 +802,7 @@ npm run check-all      # type-check + lint + prettier:check
 
 <file_creation_order>
 
-1. Types (`src/types/`) si nouveaux
+1. Types (`types/` racine, alias `~types/*`) si nouveaux
 2. Traductions (`src/messages/{fr,en,es}.json`)
 3. Routing pathnames (`src/i18n/routing.ts`)
 4. Helpers / lib (`src/lib/`) si nouveaux

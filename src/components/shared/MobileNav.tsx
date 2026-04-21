@@ -5,7 +5,6 @@ import { useTranslations } from 'next-intl';
 
 import { LanguageSwitcher } from '@/components/shared/LanguageSwitcher';
 import { Link } from '@/i18n/navigation';
-import { type AppPathname } from '@/i18n/routing';
 import { Button } from '@/shadcn/button';
 import {
     Drawer,
@@ -17,6 +16,8 @@ import {
     DrawerTrigger,
 } from '@/shadcn/drawer';
 import { Separator } from '@/shadcn/separator';
+
+import type { AppPathname } from '~types/i18n.types';
 
 interface NavItem {
     href: AppPathname;

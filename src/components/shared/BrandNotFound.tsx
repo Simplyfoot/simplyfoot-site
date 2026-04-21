@@ -2,9 +2,11 @@ import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 
 import { Link } from '@/i18n/navigation';
-import { BRANDS, type BrandSlug } from '@/lib/brand';
 import { AspectRatio } from '@/shadcn/aspect-ratio';
 import { Button } from '@/shadcn/button';
+import { BRANDS } from '@/utils/constants.utils';
+
+import type { BrandSlug } from '~types/brand.types';
 
 interface BrandNotFoundProps {
     brand: BrandSlug;

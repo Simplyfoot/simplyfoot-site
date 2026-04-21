@@ -1,4 +1,4 @@
-import type { BrandSlug } from '@/lib/brand';
+import type { BrandSlug } from '~types/brand.types';
 
 /**
  * Legal information for the SIMPLY holding entity. Shared across all brands

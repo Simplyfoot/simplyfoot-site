@@ -35,7 +35,8 @@
         "nav": {
             "label": "Main navigation",
             "about": "About",
-            "contact": "Contact"
+            "contact": "Contact",
+            "faq": "Help"
         },
         "logoAlt": "{brand} logo",
         "languageSwitcher": {
@@ -115,6 +116,353 @@
             }
         }
     },
+    "FAQ": {
+        "meta": {
+            "title": "Help center — {brand}",
+            "description": "Find answers to frequently asked questions about {brand}: sign-up, team management, call-ups, messaging and more."
+        },
+        "heading": "Help center",
+        "intro": "Quickly find answers to the most common questions about {brand}. Still need help? Get in touch with our team.",
+        "sidebarLabel": "FAQ categories",
+        "searchPlaceholder": "Search a question…",
+        "searchClearLabel": "Clear search",
+        "noResults": "No question matches your search.",
+        "categories": {
+            "signup": {
+                "title": "Sign-up & Account",
+                "items": {
+                    "create-account": {
+                        "question": "How do I create my {brand} account?",
+                        "answer": {
+                            "p0": "Enter your email address and a password, then click <strong>“Sign up”</strong>. You can also sign up with your <strong>Google</strong> or <strong>Apple</strong> account."
+                        }
+                    },
+                    "google-login": {
+                        "question": "Google sign-in isn't working — what should I do?",
+                        "answer": {
+                            "p0": "To sign up with Google, <strong>Chrome</strong> must be set as the default browser on your phone. If another browser is used (e.g. Opera or Samsung Internet), Google sign-in may fail. In that case, sign up the classic way with an email and password."
+                        }
+                    },
+                    "join-club": {
+                        "question": "How do I join my club?",
+                        "answer": {
+                            "p0": "Once your account is created, you can join a club in three ways:",
+                            "l0": "<strong>As a player or coach</strong>: enter the club code provided by the president (or by {brand} for pilot clubs).",
+                            "l1": "<strong>As a legal guardian</strong>: enter your own details, then the team code provided by the coach, along with your child's information.",
+                            "l2": "<strong>Both</strong>: combine the two flows."
+                        }
+                    },
+                    "club-code": {
+                        "question": "Where do I find the club code?",
+                        "answer": {
+                            "p0": "The club code is provided by the <strong>club president</strong>. For pilot clubs, this code is shared directly by the {brand} team."
+                        }
+                    },
+                    "team-code": {
+                        "question": "Where do I find the team code?",
+                        "answer": {
+                            "p0": "The team code is shown on the team tag in the coach's dashboard. The coach can copy it in one click and send it to you."
+                        }
+                    },
+                    "multi-role": {
+                        "question": "Can I be coach, player and parent at the same time?",
+                        "answer": {
+                            "p0": "Yes. {brand} supports <strong>multiple roles</strong>. You can be a coach, a player, the parent of a child player, and switch between your profiles in one click without signing out."
+                        }
+                    },
+                    "switch-profiles": {
+                        "question": "How do I switch between my profiles?",
+                        "answer": {
+                            "p0": "At the top of the screen, next to your profile picture, tap the logo on the right. You'll see all your roles and can switch between them instantly."
+                        }
+                    },
+                    "edit-profile": {
+                        "question": "How do I edit my personal information?",
+                        "answer": {
+                            "p0": "Tap the <strong>gear icon</strong> in the top right, then <strong>“Personal information”</strong>. You can update your name, date of birth, email, add a profile picture, or manage your child's profile."
+                        }
+                    },
+                    "change-password": {
+                        "question": "How do I change my password?",
+                        "answer": {
+                            "p0": "Tap the <strong>gear icon</strong> in the top right, then <strong>“Change your password”</strong>."
+                        }
+                    },
+                    "change-club": {
+                        "question": "How do I change clubs?",
+                        "answer": {
+                            "p0": "In settings, tap <strong>“Manage your roles”</strong>. You can leave your current role at any time and join a new club with the matching club code."
+                        }
+                    },
+                    "deactivate-account": {
+                        "question": "How do I deactivate my account?",
+                        "answer": {
+                            "p0": "Go to settings, then <strong>“Personal information”</strong>. At the bottom of this page you'll find the option to deactivate your account."
+                        }
+                    }
+                }
+            },
+            "separated-parents": {
+                "title": "Separated parents",
+                "items": {
+                    "avoid-duplicates": {
+                        "question": "We're separated parents — how do we avoid duplicates?",
+                        "answer": {
+                            "p0": "One parent signs the child up as usual. The coach then generates a <strong>link code</strong> specific to that child from their profile. This code is sent to the second parent, who during sign-up taps <strong>“Link a child”</strong> and enters the code. The second parent is automatically linked with no duplicate created."
+                        }
+                    },
+                    "share-credentials": {
+                        "question": "Do we need to share an email or password?",
+                        "answer": {
+                            "p0": "No. Each parent has their own independent account. No credential sharing is required."
+                        }
+                    },
+                    "generate-link-code": {
+                        "question": "Where does the coach generate the link code?",
+                        "answer": {
+                            "p0": "The coach opens the player's profile via the <strong>“Teams”</strong> tab, then taps on the player. A <strong>“Generate a code”</strong> button is available in the “Link code” section. This code is single-use."
+                        }
+                    }
+                }
+            },
+            "coach-teams": {
+                "title": "Coach — Team management",
+                "items": {
+                    "create-team": {
+                        "question": "How do I create a team?",
+                        "answer": {
+                            "p0": "From your dashboard, tap <strong>“Create a team”</strong>. Enter a name or nickname (Group 1, Team A…), select the category and gender, and confirm. A team code will be generated automatically."
+                        }
+                    },
+                    "share-team-code": {
+                        "question": "How do I share the team code?",
+                        "answer": {
+                            "p0": "The team code appears on your team tag in the dashboard. Tap it to copy, then send it to the relevant players or parents."
+                        }
+                    },
+                    "second-coach": {
+                        "question": "How do I join a team as a second coach?",
+                        "answer": {
+                            "p0": "Tap <strong>“Create a team”</strong>, then at the bottom of the screen select <strong>“Join a team as a coach”</strong>. Enter the team code provided by the main coach."
+                        }
+                    },
+                    "player-profiles": {
+                        "question": "How do I access my players' profiles?",
+                        "answer": {
+                            "p0": "Tap the <strong>“Teams”</strong> tab, then the desired player. You'll see their personal information and the contact details of their legal guardians. Tapping the email opens a new email; tapping the phone number starts a call."
+                        }
+                    }
+                }
+            },
+            "coach-events": {
+                "title": "Coach — Events & Call-ups",
+                "items": {
+                    "create-event": {
+                        "question": "How do I create an event?",
+                        "answer": {
+                            "p0": "Tap the <strong>“+”</strong> button or <strong>“Create an event”</strong>. Enter the title, the team involved, the type of match, and the start and end date and time."
+                        }
+                    },
+                    "club-wide-event": {
+                        "question": "How do I send an event to the whole club?",
+                        "answer": {
+                            "p0": "When creating it, select <strong>all teams in the club</strong>. The event will be sent to every member. Perfect for Christmas dinners, bingo nights, etc."
+                        }
+                    },
+                    "event-vs-callup": {
+                        "question": "What's the difference between a regular event and a call-up?",
+                        "answer": {
+                            "p0": "If you tick the <strong>“Call-up”</strong> option, only the players you select will see this event and be able to take part. Without it (e.g. training sessions), the whole team sees the event."
+                        }
+                    },
+                    "recurring-training": {
+                        "question": "How do I create a recurring training session?",
+                        "answer": {
+                            "p0": "Tick <strong>“Create a recurring event”</strong>. Choose the day and time slots (e.g. Tuesdays 5:30 pm to 7:30 pm) over a given period. An event will be created automatically every week."
+                        }
+                    },
+                    "edit-event": {
+                        "question": "Can I edit an event after it's created?",
+                        "answer": {
+                            "p0": "Yes. Tap the event to open its details. You can change every field at any time: location, opponent, time, date, etc."
+                        }
+                    },
+                    "cancel-event": {
+                        "question": "How do I cancel an event?",
+                        "answer": {
+                            "p0": "You can cancel an event at any time. Players will still see it, but with the <strong>“Cancelled”</strong> label clearly displayed."
+                        }
+                    },
+                    "send-callups": {
+                        "question": "How do I send call-ups?",
+                        "answer": {
+                            "p0": "Tap the attendance counter in the top right of the event. From that tab, select your players one by one or all at once, then confirm."
+                        }
+                    },
+                    "track-responses": {
+                        "question": "How do I track players' responses?",
+                        "answer": {
+                            "p0": "In the attendance tab, you see the count (e.g. <strong>12/14</strong>) and the indicator next to each player:",
+                            "l0": "<strong>Green tick</strong> = present",
+                            "l1": "<strong>Red cross</strong> = absent",
+                            "l2": "<strong>Small car icon</strong> = heading straight to the venue on their own"
+                        }
+                    },
+                    "answer-for-player": {
+                        "question": "A player doesn't have their phone — can I answer for them?",
+                        "answer": {
+                            "p0": "Yes. To the right of the search bar, tap the <strong>small pencil</strong> to switch to edit mode. You can then mark the player as present, absent, or indicate that they're heading straight to the venue."
+                        }
+                    },
+                    "car-icon": {
+                        "question": "What does the “small car” icon mean?",
+                        "answer": {
+                            "p0": "It means the player (or their parent) is heading <strong>straight to the venue</strong> on their own, skipping the group meeting point. The coach knows not to wait for them at departure."
+                        }
+                    }
+                }
+            },
+            "player": {
+                "title": "Player",
+                "items": {
+                    "upcoming-events": {
+                        "question": "How do I see upcoming events?",
+                        "answer": {
+                            "p0": "On your home page, you'll find the upcoming events along with your answer for each: present, absent, or not answered."
+                        }
+                    },
+                    "respond-to-callup": {
+                        "question": "How do I respond to a call-up?",
+                        "answer": {
+                            "p0": "Tap the event, then at the bottom of the page, select <strong>“Present”</strong> or <strong>“Absent”</strong>. You can also specify whether you'll travel with the group or head straight to the venue."
+                        }
+                    },
+                    "edit-response": {
+                        "question": "Can I change my response afterwards?",
+                        "answer": {
+                            "p0": "Yes, you can update your response at any time."
+                        }
+                    },
+                    "transport": {
+                        "question": "Is the Transport feature available?",
+                        "answer": {
+                            "p0": "No, the Transport feature is <strong>not available yet</strong>. It will be added in a future update."
+                        }
+                    }
+                }
+            },
+            "calendar": {
+                "title": "Calendar",
+                "items": {
+                    "calendar-how-it-works": {
+                        "question": "How does the calendar work?",
+                        "answer": {
+                            "p0": "The calendar shows every day on which an event is scheduled. Tap a day to see the events, then tap an event to view its details."
+                        }
+                    },
+                    "calendar-all-roles": {
+                        "question": "Does the calendar show events for all my roles?",
+                        "answer": {
+                            "p0": "Yes. If you are coach, player and parent at the same time, the calendar combines <strong>all your events</strong> in one place, regardless of the role involved."
+                        }
+                    }
+                }
+            },
+            "notifications-messaging": {
+                "title": "Notifications & Messaging",
+                "items": {
+                    "bell": {
+                        "question": "What is the bell at the top of the screen for?",
+                        "answer": {
+                            "p0": "The bell works like on Facebook. Every notification (call-up acceptance, event update, etc.) shows up there, in addition to the push notification on your phone."
+                        }
+                    },
+                    "coach-notifications": {
+                        "question": "What notifications does a coach receive?",
+                        "answer": {
+                            "p0": "The coach gets a notification when a player accepts or declines a call-up."
+                        }
+                    },
+                    "player-notifications": {
+                        "question": "What notifications does a player receive?",
+                        "answer": {
+                            "p0": "The player gets a notification when the coach creates, edits or cancels an event."
+                        }
+                    },
+                    "messaging-location": {
+                        "question": "Where is the inbox?",
+                        "answer": {
+                            "p0": "The inbox is next to the bell at the top of your screen. Tap the icon in the bottom right to start a new conversation."
+                        }
+                    },
+                    "coach-conversations": {
+                        "question": "What conversations are available for a coach?",
+                        "answer": {
+                            "l0": "<strong>Club conversation</strong> — Chat with other coaches and the president.",
+                            "l1": "<strong>Coaches</strong> — Send a private message to another coach in the club.",
+                            "l2": "<strong>Teams</strong> — Chat with all players and parents of a team."
+                        }
+                    },
+                    "player-conversations": {
+                        "question": "What conversations are available for a player?",
+                        "answer": {
+                            "l0": "<strong>Club conversation</strong> — Read-only mode (you can read the staff's messages).",
+                            "l1": "<strong>Coaches</strong> — Send a private message to your team's coach(es).",
+                            "l2": "<strong>Teams</strong> — Chat with all players and parents of your team."
+                        }
+                    },
+                    "messaging-identify": {
+                        "question": "How do I know who I'm talking to in the inbox?",
+                        "answer": {
+                            "p0": "When you open a conversation, both the <strong>parent's name</strong> and the <strong>child's name</strong> are shown, so you clearly know who you're talking to. The same applies in group conversations."
+                        }
+                    },
+                    "messaging-photos": {
+                        "question": "Can I send photos or videos?",
+                        "answer": {
+                            "p0": "No, sending photos and videos is <strong>not available yet</strong> in the inbox. This feature may be added in a future update."
+                        }
+                    }
+                }
+            },
+            "upcoming": {
+                "title": "Upcoming features",
+                "items": {
+                    "upcoming-features": {
+                        "question": "Which features aren't available yet?",
+                        "answer": {
+                            "p0": "The following features are under development and will be rolled out in upcoming releases:",
+                            "l0": "Sport statistics",
+                            "l1": "The Transport module",
+                            "l2": "Sending photos and videos in the inbox",
+                            "l3": "Team line-ups",
+                            "l4": "Player evaluations",
+                            "l5": "Nutri-Scan"
+                        }
+                    },
+                    "update-frequency": {
+                        "question": "How often are updates released?",
+                        "answer": {
+                            "p0": "Updates will be very frequent, with a planned cadence of <strong>roughly every two weeks</strong>."
+                        }
+                    }
+                }
+            },
+            "contact": {
+                "title": "Contact",
+                "items": {
+                    "contact-team": {
+                        "question": "How do I contact the {brand} team?",
+                        "answer": {
+                            "p0": "For any question, suggestion or issue, you can reach us:",
+                            "l0": "<mail>{email}</mail>",
+                            "l1": "<tel>{phone}</tel>"
+                        }
+                    }
+                }
+            }
+        }
+    },
     "Footer": {
         "sections": {
             "legal": "Legal information",
@@ -126,7 +474,8 @@
             "cgv": "Terms of sale",
             "privacy": "Privacy policy",
             "cookies": "Cookie settings",
-            "contact": "Contact us"
+            "contact": "Contact us",
+            "faq": "Help center"
         },
         "company": {
             "capital": "Share capital: {capital}",

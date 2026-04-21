@@ -6,10 +6,11 @@ import { Bloom, EffectComposer } from '@react-three/postprocessing';
 import { useCallback } from 'react';
 import { TOUCH } from 'three';
 
+import { useBrandColor } from '@/hooks/useBrandColor';
+import { useDeviceConfig } from '@/hooks/useDeviceConfig';
+import { useReducedMotion } from '@/hooks/useReducedMotion';
+import { useRootColor } from '@/hooks/useRootColor';
 import { useRouter } from '@/i18n/navigation';
-import { useBrandColor, useRootColor } from '@/lib/brand';
-import { useDeviceConfig } from '@/lib/hooks/use-device-config';
-import { useReducedMotion } from '@/lib/hooks/use-reduced-motion';
 
 import { FootPlanet } from './FootPlanet';
 import { GalaxyReducedMotion } from './GalaxyReducedMotion';

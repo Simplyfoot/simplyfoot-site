@@ -2,28 +2,15 @@
 
 import { useMemo } from 'react';
 
-import type { OrbitConfig } from '@/components/3d/OrbitingGroup';
+import { useMediaQuery } from './useMediaQuery';
 
-import { useMediaQuery } from './use-media-query';
+import type { DeviceConfig } from '~types/device.types';
 
-export type DeviceTier = 'mobile-portrait' | 'mobile-landscape' | 'tablet' | 'desktop';
-
-export interface DeviceConfig {
-    tier: DeviceTier;
-    isTouchDevice: boolean;
-    cameraZ: number;
-    fov: number;
-    starCount: number;
-    sphereSegments: number;
-    bloomEnabled: boolean;
-    labelFontSize: number;
-    dpr: [number, number];
-    autoRotateSpeed: number;
-    logoScale: number;
-    planetOrbits: { foot: OrbitConfig; rugby: OrbitConfig; handball: OrbitConfig };
-    planetScale: { foot: number; rugby: number; handball: number };
-}
-
+/**
+ * Résout la configuration 3D (caméra, FOV, densité d'étoiles, orbites…) selon
+ * le profil d'appareil détecté via media queries. Centralise les arbitrages
+ * perf/qualité entre mobile portrait, mobile paysage, tablette et desktop.
+ */
 export function useDeviceConfig(): DeviceConfig {
     const isMobilePortrait = useMediaQuery('(max-width: 767px) and (orientation: portrait)');
     const isMobileLandscape = useMediaQuery(
@@ -99,7 +86,6 @@ export function useDeviceConfig(): DeviceConfig {
             };
         }
 
-        // Desktop
         return {
             tier: 'desktop',
             isTouchDevice,
