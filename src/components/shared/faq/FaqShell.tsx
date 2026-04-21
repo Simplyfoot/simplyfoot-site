@@ -78,13 +78,30 @@ export function FaqShell({ sidebarItems, categories, sidebarLabel, brand }: FaqS
         // les tags ICU (<strong>, <mail>, <tel>) : la recherche compare du
         // texte pur, pas du React. `t()` appelé sur une chaîne avec tags
         // lèverait une `FORMATTING_ERROR` faute de handlers.
+        //
+        // Strip itératif : une passe simple peut laisser des fragments après
+        // des tags imbriqués ou malformés (p. ex. `<<strong>>`). On reboucle
+        // tant que la regex trouve quelque chose à retirer — garantit un
+        // résultat stable et neutralise l'avertissement CodeQL d'incomplete
+        // sanitization. Même si le contenu n'est jamais injecté en HTML (il
+        // sert uniquement de haystack pour `.includes()`), la robustesse
+        // évite des faux positifs/négatifs de recherche.
+        const stripTags = (input: string): string => {
+            let current = input;
+            let previous: string;
+            do {
+                previous = current;
+                current = previous.replace(/<[^<>]*>/g, '');
+            } while (current !== previous);
+            return current;
+        };
+
         const translate = (key: string): string => {
             const raw = t.raw(key);
             if (typeof raw !== 'string') {
                 return '';
             }
-            return raw
-                .replace(/<\/?[a-z]+>/gi, '')
+            return stripTags(raw)
                 .replaceAll('{brand}', interpolationValues.brand)
                 .replaceAll('{email}', interpolationValues.email)
                 .replaceAll('{phone}', interpolationValues.phone);
