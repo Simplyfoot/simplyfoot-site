@@ -120,10 +120,8 @@ src/
 │   │   ├── LanguageSwitcher.tsx
 │   │   ├── MobileNav.tsx
 │   │   └── legal/
-│   ├── 3d/                          # Three.js / R3F (toujours dynamic import)
-│   ├── simmo/                       # Mascotte
-│   ├── brands/                      # Composants par marque
-│   └── blog/
+│   └── 3d/                          # Three.js / R3F (toujours dynamic import)
+│   # (à créer au besoin : simo/ mascotte, brands/ composants par marque, blog/)
 │
 ├── shadcn/                          # shadcn primitives (NE PAS MODIFIER)
 │
@@ -139,10 +137,7 @@ src/
 │   └── <context>.helpers.ts         # ex : brand.helpers.ts
 │
 ├── lib/
-│   ├── brand/                       # Brand registry (BRANDS, BRAND_SLUGS)
-│   ├── i18n/                        # Helpers metadata (buildAlternates)
-│   ├── simmo/
-│   └── utils.ts                     # cn() — helper shadcn uniquement
+│   └── utils.ts                     # cn() — helper shadcn uniquement (exception)
 │
 ├── content/                         # Données statiques (blog, faq)
 ├── config/                          # site.ts, nav, regions
@@ -451,7 +446,7 @@ Avant de créer un nouveau composant, VÉRIFIE :
 **Quand créer un composant custom** :
 
 - Composition de plusieurs primitives shadcn avec logique métier (ex. `LanguageSwitcher`, `MobileNav`)
-- Composant propre au domaine SIMPLY / marque (ex. `SimmoMascot`, `BrandHero`)
+- Composant propre au domaine SIMPLY / marque (ex. `SimoMascot`, `BrandHero`)
 - Variante visuelle très spécifique non couverte
 
 **Processus de décision** :
