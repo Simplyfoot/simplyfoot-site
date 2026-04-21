@@ -27,6 +27,7 @@ export function Header({ brand }: HeaderProps) {
 
     const navItems = [
         { href: `/${brand}/about`, label: t('nav.about') },
+        { href: `/${brand}/faq`, label: t('nav.faq') },
         { href: `/${brand}/contact`, label: t('nav.contact') },
     ] as const;
 

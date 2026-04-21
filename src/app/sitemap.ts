@@ -11,6 +11,9 @@ const routes: Array<AppPathname> = [
     '/foot/legal/mentions-legales',
     '/rugby/legal/mentions-legales',
     '/handball/legal/mentions-legales',
+    '/foot/faq',
+    '/rugby/faq',
+    '/handball/faq',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

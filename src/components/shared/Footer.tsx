@@ -26,6 +26,7 @@ export async function Footer({ brand }: FooterProps) {
         { href: `/${brand}/legal/cgv`, label: t('links.cgv') },
         { href: `/${brand}/legal/privacy`, label: t('links.privacy') },
         { href: `/${brand}/legal/cookies`, label: t('links.cookies') },
+        { href: `/${brand}/faq`, label: t('links.faq') },
         { href: `/${brand}/contact`, label: t('links.contact') },
     ] as const;
 

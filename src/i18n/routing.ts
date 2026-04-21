@@ -48,6 +48,11 @@ export const routing = defineRouting({
             en: '/foot/legal/cookies',
             es: '/foot/legal/cookies',
         },
+        '/foot/faq': {
+            fr: '/foot/aide',
+            en: '/foot/help',
+            es: '/foot/ayuda',
+        },
 
         '/rugby/about': {
             fr: '/rugby/a-propos',
@@ -84,6 +89,11 @@ export const routing = defineRouting({
             en: '/rugby/legal/cookies',
             es: '/rugby/legal/cookies',
         },
+        '/rugby/faq': {
+            fr: '/rugby/aide',
+            en: '/rugby/help',
+            es: '/rugby/ayuda',
+        },
 
         '/handball/about': {
             fr: '/handball/a-propos',
@@ -119,6 +129,11 @@ export const routing = defineRouting({
             fr: '/handball/legal/cookies',
             en: '/handball/legal/cookies',
             es: '/handball/legal/cookies',
+        },
+        '/handball/faq': {
+            fr: '/handball/aide',
+            en: '/handball/help',
+            es: '/handball/ayuda',
         },
     },
 });

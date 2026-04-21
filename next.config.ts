@@ -27,6 +27,34 @@ const nextConfig: NextConfig = {
             },
         ];
     },
+    // L'URL canonique de la FAQ est localisée (/aide, /help, /ayuda).
+    // On accepte `/faq` comme alias et on redirige en 308 vers la forme canonique
+    // pour éviter le duplicate content côté SEO.
+    async redirects() {
+        const brands = ['foot', 'rugby', 'handball'] as const;
+        const slugByLocale = { fr: 'aide', en: 'help', es: 'ayuda' } as const;
+
+        return brands.flatMap((brand) => [
+            {
+                source: `/${brand}/faq`,
+                destination: `/${brand}/${slugByLocale.fr}`,
+                locale: false,
+                permanent: true,
+            },
+            {
+                source: `/en/${brand}/faq`,
+                destination: `/en/${brand}/${slugByLocale.en}`,
+                locale: false,
+                permanent: true,
+            },
+            {
+                source: `/es/${brand}/faq`,
+                destination: `/es/${brand}/${slugByLocale.es}`,
+                locale: false,
+                permanent: true,
+            },
+        ]);
+    },
 };
 
 export default withNextIntl(nextConfig);
