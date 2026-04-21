@@ -5,7 +5,6 @@ import { useLocale, useTranslations } from 'next-intl';
 import { useTransition } from 'react';
 
 import { usePathname, useRouter } from '@/i18n/navigation';
-import { type AppLocale } from '@/i18n/routing';
 import { Button } from '@/shadcn/button';
 import {
     DropdownMenu,
@@ -14,6 +13,8 @@ import {
     DropdownMenuRadioItem,
     DropdownMenuTrigger,
 } from '@/shadcn/dropdown-menu';
+
+import type { AppLocale } from '~types/i18n.types';
 
 const locales = [
     { code: 'fr', name: 'Français', flag: '🇫🇷' },

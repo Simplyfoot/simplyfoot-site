@@ -1,6 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
 
-import { type AppLocale } from '@/i18n/routing';
+import type { AppLocale } from '~types/i18n.types';
 
 export default async function RugbyHomePage({
     params,

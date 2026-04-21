@@ -6,7 +6,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Group } from 'three';
 import { Vector3 } from 'three';
 
-import { useRootColor } from '@/lib/brand';
+import { useRootColor } from '@/hooks/useRootColor';
 
 const MODEL_PATH = '/images/planet-simplyfoot.glb';
 

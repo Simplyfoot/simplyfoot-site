@@ -6,7 +6,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import type { Mesh } from 'three';
 import { Vector3 } from 'three';
 
-import { useRootColor } from '@/lib/brand';
+import { useRootColor } from '@/hooks/useRootColor';
 
 interface PlanetProps {
     label: string;

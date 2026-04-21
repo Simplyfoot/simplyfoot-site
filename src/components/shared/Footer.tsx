@@ -4,9 +4,11 @@ import { getTranslations } from 'next-intl/server';
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from '@/components/shared/SocialIcons';
 import { BRAND_CONTACT, SIMPLY_LEGAL } from '@/config/site';
 import { Link } from '@/i18n/navigation';
-import { BRANDS, type BrandSlug } from '@/lib/brand';
 import { Button } from '@/shadcn/button';
 import { Separator } from '@/shadcn/separator';
+import { BRANDS } from '@/utils/constants.utils';
+
+import type { BrandSlug } from '~types/brand.types';
 
 interface FooterProps {
     brand: BrandSlug;

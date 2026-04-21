@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { MentionsLegalesContent } from '@/components/shared/legal/MentionsLegalesContent';
-import { type AppLocale } from '@/i18n/routing';
-import { BRANDS } from '@/lib/brand';
-import { buildAlternates } from '@/lib/i18n/metadata';
+import { buildAlternates } from '@/helpers/i18n.helpers';
+import { BRANDS } from '@/utils/constants.utils';
+
+import type { AppLocale } from '~types/i18n.types';
 
 export async function generateMetadata({
     params,

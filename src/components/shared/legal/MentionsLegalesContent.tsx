@@ -2,7 +2,6 @@ import { DotIcon, Mail, MapPin, Phone } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
 import { BRAND_CONTACT, SIMPLY_LEGAL } from '@/config/site';
-import { BRANDS, type BrandSlug } from '@/lib/brand';
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -10,6 +9,9 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator,
 } from '@/shadcn/breadcrumb';
+import { BRANDS } from '@/utils/constants.utils';
+
+import type { BrandSlug } from '~types/brand.types';
 
 interface MentionsLegalesContentProps {
     brand: BrandSlug;

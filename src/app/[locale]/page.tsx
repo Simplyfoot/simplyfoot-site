@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
-import { type AppLocale } from '@/i18n/routing';
-import { buildAlternates } from '@/lib/i18n/metadata';
+import { buildAlternates } from '@/helpers/i18n.helpers';
 
 import { GalaxyScene } from './galaxy-scene';
 import { HomepageOverlay } from './homepage-overlay';
+
+import type { AppLocale } from '~types/i18n.types';
 
 export async function generateMetadata({
     params,

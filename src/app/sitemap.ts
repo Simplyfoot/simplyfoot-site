@@ -1,8 +1,10 @@
 import type { MetadataRoute } from 'next';
 
 import { getPathname } from '@/i18n/navigation';
-import { type AppPathname, routing } from '@/i18n/routing';
-import { SITE_URL } from '@/lib/constants';
+import { routing } from '@/i18n/routing';
+import { SITE_URL } from '@/utils/constants.utils';
+
+import type { AppPathname } from '~types/i18n.types';
 
 const routes: Array<AppPathname> = [
     '/',

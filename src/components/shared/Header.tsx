@@ -6,7 +6,6 @@ import { useTranslations } from 'next-intl';
 import { LanguageSwitcher } from '@/components/shared/LanguageSwitcher';
 import { MobileNav } from '@/components/shared/MobileNav';
 import { Link } from '@/i18n/navigation';
-import { BRANDS, type BrandSlug } from '@/lib/brand';
 import {
     NavigationMenu,
     NavigationMenuItem,
@@ -14,6 +13,9 @@ import {
     NavigationMenuList,
     navigationMenuTriggerStyle,
 } from '@/shadcn/navigation-menu';
+import { BRANDS } from '@/utils/constants.utils';
+
+import type { BrandSlug } from '~types/brand.types';
 
 interface HeaderProps {
     brand: BrandSlug;
