@@ -23,17 +23,10 @@ export function Header({ brand }: HeaderProps) {
     const t = useTranslations('Header');
     const { label, name } = BRANDS[brand];
 
-    // Blog and FAQ only ship for the foot brand today; gate accordingly.
     const navItems = [
-        { href: `/${brand}/about` as const, label: t('nav.about') },
-        ...(brand === 'foot'
-            ? ([
-                  { href: '/foot/faq' as const, label: t('nav.faq') },
-                  { href: '/foot/blog' as const, label: t('nav.blog') },
-              ] as const)
-            : ([] as const)),
-        { href: `/${brand}/contact` as const, label: t('nav.contact') },
-    ];
+        { href: `/${brand}/about`, label: t('nav.about') },
+        { href: `/${brand}/contact`, label: t('nav.contact') },
+    ] as const;
 
     // Default navigationMenuTriggerStyle() assumes a light background;
     // override for the dark header surface.
