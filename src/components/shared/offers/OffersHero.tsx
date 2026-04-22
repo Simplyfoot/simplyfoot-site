@@ -9,10 +9,10 @@ interface OffersHeroProps {
 }
 
 /**
- * Hero de la page Offres. Eyebrow + titre + subtitle + 3 pastilles de
- * confiance. Le toggle mensuel/annuel a été descendu au-dessus de la
- * grille de plans pour alléger la décision immédiate à l'arrivée sur la
- * page (CRO : une seule chose à comprendre dans le hero = la promesse).
+ * Hero de la page Offres V2.1. Angle narratif : "logiciel qui rapporte",
+ * matérialise immédiatement le différenciateur take-rate reversion. 3
+ * pastilles de confiance (essai, remise annuelle, sans carte), aucun
+ * toggle ni sélecteur ici — ils vivent dans le flux principal.
  */
 export function OffersHero({ className }: OffersHeroProps) {
     const t = useTranslations('Offers.hero');
@@ -29,10 +29,11 @@ export function OffersHero({ className }: OffersHeroProps) {
 
             <h1
                 id="offers-hero-title"
-                className="font-display text-foreground max-w-[22ch] text-4xl leading-[1.1] font-bold tracking-tight text-balance md:text-5xl lg:text-6xl"
+                className="font-display text-foreground max-w-[24ch] text-4xl leading-[1.1] font-bold tracking-tight text-balance md:text-5xl lg:text-6xl"
             >
                 {t('titleBefore')}
                 <span className="text-primary">{t('titleHighlight')}</span>
+                {t('titleAfter')}
             </h1>
             <p className="text-muted-foreground max-w-[58ch] text-lg leading-relaxed text-balance">
                 {t('subtitle')}

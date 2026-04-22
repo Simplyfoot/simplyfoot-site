@@ -4,7 +4,8 @@
         "tagline": "El ecosistema del deporte amateur",
         "cta": {
             "demo": "Solicitar una demo"
-        }
+        },
+        "simoAlt": "SIMO, la mascota de SimplyFoot"
     },
     "HomePage": {
         "meta": {
@@ -603,119 +604,206 @@
     "Offers": {
         "meta": {
             "title": "Planes y precios — {brand}",
-            "description": "Un solo producto {brand}, con todas las funcionalidades incluidas. El precio se adapta al tamaño de tu club. 30 días de prueba gratuita, sin tarjeta."
+            "description": "Un software que hace ganar dinero a tu club. DESCUBRIR gratis, STARTER y CLUB con ticketing digital — hasta el 90 % de los ingresos se devuelven a tu club."
         },
         "hero": {
-            "eyebrow": "Planes y precios",
-            "titleBefore": "Un único plan, adaptado al ",
-            "titleHighlight": "tamaño de tu club",
-            "subtitle": "{brand} da acceso a toda la plataforma en cualquier plan. Simplemente pagas según el número de licencias de tu club.",
-            "trustTrial": "Prueba gratuita de {days} días",
-            "trustAnnual": "−{discount}% en anual",
+            "eyebrow": "Planes y reparto de ingresos",
+            "titleBefore": "Un software que ",
+            "titleHighlight": "hace ganar",
+            "titleAfter": " dinero a tu club.",
+            "subtitle": "Tres niveles, tres tamaños de club. Hasta el 90 % de tus ingresos vuelven directamente a tu club.",
+            "trustTrial": "{days} días de prueba gratis",
+            "trustAnnual": "−{discount} % anual",
             "trustNoCard": "Sin tarjeta bancaria"
         },
         "cycle": {
             "label": "Ciclo de facturación",
             "monthly": "Mensual",
             "yearly": "Anual",
-            "yearlyBadge": "−{discount}%"
+            "yearlyBadge": "−{discount} %",
+            "yearlyNote": "Unos 2 meses gratis al año"
         },
-        "selector": {
-            "label": "¿Cuántas licencias tiene tu club?",
-            "eyebrow": "Encuentra tu plan",
-            "title": "¿Cuántas licencias tiene tu club?",
-            "helper": "Arrastra el control o escribe el número exacto. El plan recomendado se ilumina al instante.",
-            "inputLabel": "Número de licencias",
-            "sliderLabel": "Ajustar el número de licencias",
-            "unit": "licencias",
-            "recommended": "El plan recomendado para tu club es {plan}.",
-            "plans": {
-                "mini": "Mini Club",
-                "local": "Local Club",
-                "regional": "Regional Club",
-                "grand": "Grand Club",
-                "maxi": "Maxi Club",
-                "enterprise": "District+ / Ciudad"
+        "sizes": {
+            "eyebrow": "Tu club",
+            "heading": "¿Qué tamaño tiene tu club?",
+            "helper": "El precio se adapta al número de licencias. Cambia cuando quieras.",
+            "small": {
+                "label": "Club pequeño",
+                "range": "Hasta 150 licencias",
+                "short": "≤ 150 licencias"
+            },
+            "medium": {
+                "label": "Club medio",
+                "range": "151 a 400 licencias",
+                "short": "151 – 400 licencias"
+            },
+            "large": {
+                "label": "Club grande",
+                "range": "401 licencias y más",
+                "short": "401+ licencias"
             }
         },
-        "plans": {
-            "mini": "Mini Club",
-            "local": "Local Club",
-            "regional": "Regional Club",
-            "grand": "Grand Club",
-            "maxi": "Maxi Club",
-            "enterprise": "District+ / Ciudad"
+        "tiers": {
+            "eyebrow": "Nuestros planes",
+            "heading": "Tres niveles. Una sola filosofía.",
+            "intro": "Pagas una suscripción justa. Te quedas con casi todo lo que ingresas en ticketing. Sin niveles ocultos.",
+            "recommendedBadge": "El más elegido",
+            "discovery": {
+                "name": "DESCUBRIR",
+                "positioning": "Para probar antes de comprometerte",
+                "pitch": "1 equipo, 5 usuarios, convocatorias y acta de partido. Solo para ver.",
+                "cta": "Crear cuenta gratuita",
+                "takeRateLabel": "—"
+            },
+            "starter": {
+                "name": "STARTER",
+                "positioning": "Para clubes equipados",
+                "pitch": "Toda la gestión deportiva de tu club. Cantina, torneos y tienda como módulos opcionales.",
+                "cta": "Empezar la prueba gratuita",
+                "takeRateLabel": "Te quedas con el 88 % de tus ingresos"
+            },
+            "club": {
+                "name": "CLUB",
+                "positioning": "Para clubes maduros",
+                "pitch": "Todo STARTER + módulos incluidos, exportación FEC, Customer Success dedicado.",
+                "cta": "Empezar la prueba gratuita",
+                "takeRateLabel": "Te quedas con el 90 % de tus ingresos"
+            }
         },
-        "card": {
-            "badgeForClub": "Tu plan",
-            "range": "De {min} a {max} licencias",
-            "rangeFrom": "Desde {min} licencias",
+        "features": {
+            "heading": "Qué está incluido",
+            "values": {
+                "yes": "✓",
+                "no": "—",
+                "unlimited": "Ilimitado",
+                "advanced": "✓ avanzadas",
+                "addon": "Módulo +",
+                "included": "Incluido",
+                "1team": "1 equipo",
+                "5users": "5 máx.",
+                "faq": "FAQ",
+                "email48h": "Email en 48 h",
+                "priority4h": "Prioritario 4 h + CSM",
+                "takeRate12": "88 % al club",
+                "takeRate10": "90 % al club"
+            },
+            "rows": {
+                "teams": "Equipos incluidos",
+                "users": "Usuarios",
+                "convocations": "Convocatorias y acta",
+                "lineups": "Alineaciones drag & drop",
+                "stats": "Estadísticas deportivas",
+                "ticketing": "Monetización de eventos",
+                "passSaison": "Monetización avanzada",
+                "buvetteModule": "Cantina digital",
+                "tournoisModule": "Módulo torneos",
+                "accounting": "Contabilidad y exportación FEC",
+                "support": "Soporte"
+            }
+        },
+        "price": {
             "perMonth": "/ mes sin IVA",
             "vatNote": "Sin IVA. Facturación mensual, cancelable en cualquier momento.",
-            "onRequest": "Bajo presupuesto",
-            "billedYearly": "{amount} de ahorro al año",
-            "ctaPrimary": "Empezar la prueba gratuita",
-            "ctaEnterprise": "Pedir presupuesto",
-            "reassurance": "30 días gratis, sin tarjeta bancaria.",
-            "reassuranceEnterprise": "Respuesta en 48 h, presupuesto a medida.",
-            "bullets": {
-                "0": "Todas las funcionalidades SimplyFoot incluidas",
-                "1": "Usuarios ilimitados: entrenadores, directivos, padres",
-                "2": "Actualizaciones y soporte incluidos",
-                "3": "Cambio de plan posible en cualquier momento"
+            "billedYearly": "Ahorro de {amount} al año",
+            "free": "Gratis",
+            "reassurance": "30 días gratis, sin tarjeta bancaria."
+        },
+        "reversion": {
+            "eyebrow": "Una lógica inversa",
+            "heading": "Tu club no paga. Gana.",
+            "lede": "SimplyFoot no es solo un software: es un socio. Una parte directa de los ingresos que la plataforma ayuda a generar a tu club vuelve automáticamente a tu cuenta. Sin trámites, sin perseguir nada.",
+            "exampleTitle": "El principio en cifras",
+            "exampleBody": "Por cada 100 € de ingresos generados vía SimplyFoot, así se reparte.",
+            "breakdown": {
+                "gross": "Ingresos generados",
+                "simplyfoot": "Comisión SimplyFoot (plan CLUB)",
+                "club": "Devuelto a tu club"
+            },
+            "kicker": "Eso es el 90 % para tu club. Automático. Sin esfuerzo.",
+            "pills": {
+                "starter": "STARTER · 88 % al club",
+                "club": "CLUB · 90 % al club"
+            }
+        },
+        "modules": {
+            "eyebrow": "Módulos complementarios",
+            "heading": "Los add-ons del plan STARTER.",
+            "intro": "Todos incluidos en el plan CLUB. Actívalos a la carta si te quedas en STARTER.",
+            "included": "Incluido en CLUB",
+            "perMonth": "/ mes",
+            "items": {
+                "buvette": {
+                    "name": "Cantina digital",
+                    "pitch": "Caja con QR, stock, cierre automático, exportación contable.",
+                    "target": "Clubes anfitriones"
+                },
+                "tournois": {
+                    "name": "Torneos",
+                    "pitch": "Gestión multi-grupo, cuadros eliminatorios, inscripción en línea, ticketing de torneo.",
+                    "target": "Clubes organizadores"
+                },
+                "boutique": {
+                    "name": "Tienda del club",
+                    "pitch": "Camisetas, bufandas, merchandising, integración de stock y reparto.",
+                    "target": "Clubes maduros"
+                }
             }
         },
         "trust": {
-            "heading": "Todas las funciones. Todos los planes.",
-            "description": "Sin opciones ocultas. 30 días de prueba, sin tarjeta, cancela en un clic.",
+            "heading": "Simple. Sin trampas.",
+            "description": "Sin opciones ocultas. 30 días de prueba, sin tarjeta, cancelable con un clic.",
             "trial": "{days} días de prueba",
-            "noCommit": "Sin compromiso",
+            "noCommit": "Sin compromiso mensual",
             "setup": "Listo en 10 minutos",
-            "security": "Alojado en Francia, RGPD"
+            "security": "Datos en Francia, RGPD"
         },
         "faq": {
             "eyebrow": "Preguntas frecuentes",
             "heading": "Todas las respuestas antes de empezar",
-            "intro": "Las preguntas más habituales sobre los planes y el proceso de suscripción.",
+            "intro": "Las preguntas que más nos hacen sobre planes y reparto.",
             "items": {
                 "whichPlan": {
-                    "question": "¿Qué plan va bien a mi club?",
-                    "answer": "El plan depende solo del número de licencias. Usa el selector de arriba: el plan recomendado se ilumina automáticamente. Si tu club supera 500 licencias, ofrecemos un plan a medida."
+                    "question": "¿Qué plan encaja con mi club?",
+                    "answer": "Si descubres SimplyFoot con un solo equipo, empieza por DESCUBRIR (gratis). Si eres un club estructurado que quiere usar la app en todos sus equipos y cobrar ticketing, elige STARTER. Si eres un club maduro con varias secciones y necesitas pase de temporada, exportación FEC y Customer Success, elige CLUB."
+                },
+                "takeRate": {
+                    "question": "¿Cómo remunera SimplyFoot a mi club?",
+                    "answer": "Por cada ingreso que tu club genera vía SimplyFoot, te quedas con la mayor parte: 88 % en STARTER, 90 % en CLUB. Cobramos una pequeña comisión sobre la capa transaccional; el resto se transfiere automáticamente, sin gestiones."
+                },
+                "modules": {
+                    "question": "¿Qué módulos complementarios hay disponibles?",
+                    "answer": "Se pueden añadir tres módulos al plan STARTER: Cantina digital (+19 € / mes), Torneos (+15 € / mes), Tienda del club (+25 € / mes). Los tres están incluidos de serie en el plan CLUB."
                 },
                 "canChangePlan": {
-                    "question": "¿Puedo cambiar de plan durante el año?",
-                    "answer": "Sí, en cualquier momento. Si tu club crece, el cambio al plan superior es instantáneo con prorrateo. Bajar de plan se aplica al final del periodo."
-                },
-                "allFeaturesIncluded": {
-                    "question": "¿Todas las funcionalidades están incluidas?",
-                    "answer": "Sí. SimplyFoot funciona con un único producto completo: convocatorias, alineaciones, mensajería, seguimiento de jugadores, estadísticas, documentos — todo accesible en cualquier plan. Solo el precio cambia según el tamaño del club."
+                    "question": "¿Puedo cambiar de plan a mitad de año?",
+                    "answer": "Sí, en cualquier momento. El paso DESCUBRIR → STARTER o STARTER → CLUB es instantáneo con prorrateo. El regreso es posible al final del periodo en curso."
                 },
                 "clubGrows": {
-                    "question": "¿Qué pasa si mi club crece?",
-                    "answer": "Cuando superas el tramo de tu plan actual, te proponemos automáticamente el plan superior con ajuste prorrateado. Sin cortes ni sorpresas."
+                    "question": "¿Qué pasa si mi club crece y cambia de tamaño?",
+                    "answer": "El tamaño (Pequeño / Medio / Grande) solo determina el precio. En cuanto superes el límite de licencias, te proponemos el tramo superior con prorrateo. Sin cortes, sin sorpresas."
                 },
                 "engagement": {
                     "question": "¿Hay compromiso?",
-                    "answer": "Sin compromiso impuesto. La suscripción mensual es cancelable en un clic. El plan anual (−10%) cubre 12 meses pero se reembolsa prorrateado si el club deja de operar."
+                    "answer": "Sin compromiso impuesto. La suscripción mensual se cancela con un clic. El plan anual (con 17 % de descuento, unos 2 meses gratis) cubre 12 meses pero es reembolsable de forma prorrateada si el club cesa su actividad."
                 },
                 "paymentMethods": {
                     "question": "¿Cómo funciona el pago?",
-                    "answer": "Tarjeta bancaria (Visa, Mastercard, Amex) o domiciliación SEPA. La facturación empieza solo al final de la prueba gratuita de 30 días — indicas tus datos bancarios cuando decides continuar."
+                    "answer": "Tarjeta bancaria (Visa, Mastercard, American Express) o domiciliación SEPA, vía Stripe o Mangopay. La facturación empieza solo al final de la prueba gratuita de 30 días — introduces tus datos bancarios cuando decides continuar."
                 },
                 "billing": {
-                    "question": "¿Quién recibe la factura?",
-                    "answer": "La factura se emite a nombre del club (asociación o estructura equivalente) y se envía por email al tesorero. Todas las facturas se descargan en PDF desde tu espacio."
+                    "question": "¿Quién recibe la factura y el reparto?",
+                    "answer": "La factura de suscripción se emite a nombre del club (asociación o estructura equivalente) y se envía por email al tesorero. El reparto de ticketing se transfiere a la cuenta bancaria del club según la frecuencia elegida (semanal o mensual). Todos los documentos se descargan en PDF desde tu espacio."
                 },
                 "freeTrial": {
                     "question": "¿Cómo funciona la prueba gratuita?",
-                    "answer": "30 días de acceso completo sin tarjeta bancaria. Configuras el club, invitas entrenadores y jugadores, pruebas en real. Al final decides libremente — sin cargos automáticos."
+                    "answer": "30 días de acceso completo a SimplyFoot, sin tarjeta bancaria al registrarte. Configuras el club, invitas a entrenadores y jugadores, pruebas en condiciones reales. Al final decides libremente si continuar — sin cargo automático."
                 }
             }
         },
         "finalCta": {
-            "eyebrow": "Listo para empezar",
-            "heading": "Da a tu club la herramienta que merece",
-            "subtitle": "Empieza tu prueba gratuita hoy. En 10 minutos, tu club está operativo. En 30 días, decides libremente continuar.",
+            "eyebrow": "Listos para empezar",
+            "heading": "Tu club merece un software que le haga ganar dinero.",
+            "subtitle": "Empieza la prueba gratuita hoy. En 10 minutos tu club está operativo. En 30 días, tú decides.",
             "primaryCta": "Empezar la prueba gratuita",
             "secondaryCta": "Hablar con nuestro equipo",
             "reassurance": "30 días gratis. Sin tarjeta. Sin compromiso."
@@ -723,236 +811,238 @@
         "checkout": {
             "meta": {
                 "title": "Finalizar tu suscripción — {brand}",
-                "description": "Resumen de tu suscripción {brand}."
+                "description": "Resumen de tu suscripción a {brand}."
             },
-            "back": "Volver a las ofertas",
+            "back": "Volver a los planes",
             "eyebrow": "Resumen de tu elección",
             "title": "Has elegido {plan}",
-            "subtitle": "Revisa el resumen a continuación y finaliza tu suscripción.",
+            "subtitle": "Revisa los detalles y finaliza tu suscripción.",
             "summaryLabel": "Detalles del plan",
             "summary": {
                 "plan": "Plan",
                 "size": "Tamaño del club",
                 "sizeRange": "De {min} a {max} licencias",
                 "sizeFrom": "Desde {min} licencias",
+                "sizeUpTo": "Hasta {max} licencias",
                 "cycle": "Ciclo",
                 "priceMonthly": "Precio mensual",
                 "priceYearly": "Importe anual",
+                "takeRate": "Parte devuelta a tu club",
                 "trial": "Prueba gratuita",
                 "trialValue": "{days} días incluidos",
-                "onRequest": "Bajo presupuesto"
+                "free": "Gratis"
             },
             "nextStep": {
                 "heading": "Último paso",
-                "body": "El pago en línea llegará muy pronto. Mientras tanto, escríbenos: nuestro equipo activará tu prueba gratuita en el día, sin tarjeta.",
+                "body": "El pago en línea llega muy pronto. Mientras tanto, envíanos un email: nuestro equipo activará tu prueba gratuita en el día, sin tarjeta bancaria.",
                 "primaryCta": "Enviar por email",
                 "secondaryCta": "Contactar al equipo",
                 "reassurance": "Respuesta garantizada en 24 h laborables."
             },
             "email": {
                 "subject": "Solicitud de suscripción SimplyFoot — {plan}",
-                "body": "Hola,\n\nQuiero empezar mi prueba gratuita SimplyFoot con el plan {plan} en ciclo {cycle}.\n\nPor favor, activad la prueba gratuita de {trialDays} días.\n\nNombre del club:\nNúmero de licencias:\nMi rol:\n\nGracias,"
+                "body": "Hola,\n\nQuiero empezar mi prueba gratuita SimplyFoot con el plan {plan} ({size}) en ciclo {cycle}.\n\nActivad la prueba gratuita de {trialDays} días.\n\nNombre del club:\nNúmero de licencias:\nRol en el club:\n\nGracias,"
             }
         }
     },
     "Features": {
         "meta": {
-            "title": "Fonctionnalités & roadmap — {brand}",
-            "description": "Découvrez ce qui est déjà livré, ce qui arrive bientôt et la vision long terme de SimplyFoot — l'app conçue par et pour le football amateur."
+            "title": "Funciones y roadmap — {brand}",
+            "description": "Descubre lo que ya está disponible, lo que llega pronto y la visión a largo plazo de SimplyFoot — la app diseñada por y para el fútbol amateur."
         },
         "hero": {
-            "eyebrow": "Fonctionnalités & roadmap",
-            "titleBefore": "L'application conçue ",
-            "titleHighlight": "par et pour",
-            "titleAfter": " le football amateur.",
-            "subtitle": "On construit SimplyFoot avec les clubs pilotes. Voici ce qui est déjà livré, ce qui arrive, et la vision qui structure toute la suite.",
-            "ctaPrimary": "Rejoindre le programme pilote",
-            "ctaSecondary": "Découvrir la roadmap",
-            "simoBubble": "Hey, moi c'est SIMO. Je t'embarque ?",
-            "simoAlt": "SIMO, la mascotte de SimplyFoot",
-            "planetAlt": "Planète SimplyFoot en rotation — arrière-plan 3D",
-            "authorityPill": "Programme pilote ouvert · MAJ tous les 15 jours",
-            "reassurance": "Conçue en France · RGPD · Support humain · Sans publicité"
+            "eyebrow": "Funciones y roadmap",
+            "titleBefore": "La app diseñada ",
+            "titleHighlight": "por y para",
+            "titleAfter": " el fútbol amateur.",
+            "subtitle": "Construimos SimplyFoot con los clubes piloto. Esto es lo que ya está disponible, lo que llega y la visión que lo estructura todo.",
+            "ctaPrimary": "Unirme al programa piloto",
+            "ctaSecondary": "Descubrir la roadmap",
+            "simoBubble": "Hey, soy SIMO. ¿Te llevo?",
+            "simoAlt": "SIMO, la mascota de SimplyFoot",
+            "planetAlt": "Planeta SimplyFoot girando — fondo 3D",
+            "authorityPill": "Programa piloto abierto · Actualización cada 15 días",
+            "reassurance": "Hecho en Francia · RGPD · Soporte humano · Sin publicidad"
         },
         "promise": {
-            "eyebrow": "Notre promesse",
-            "heading": "Tout réunir dans une seule application.",
-            "description": "Tout ce qu'il faut pour faire vivre un club amateur — et rien de superflu.",
+            "eyebrow": "Nuestra promesa",
+            "heading": "Todo reunido en una sola aplicación.",
+            "description": "Todo lo necesario para hacer vivir un club amateur — y nada superfluo.",
             "stats": {
-                "updateCadence": "Cadence de mise à jour",
-                "rolesSupported": "Rôles pris en charge",
-                "pilotClubs": "Clubs pilotes",
-                "featuresLive": "Fonctionnalités déjà livrées"
+                "updateCadence": "Ritmo de actualización",
+                "rolesSupported": "Roles soportados",
+                "pilotClubs": "Clubes piloto",
+                "featuresLive": "Funciones ya entregadas"
             }
         },
         "roles": {
-            "all": "Tous les rôles",
+            "all": "Todos los roles",
             "club": "Club",
-            "coach": "Coach",
-            "player": "Joueur",
-            "parent": "Parent"
+            "coach": "Entrenador",
+            "player": "Jugador",
+            "parent": "Padre / Madre"
         },
         "timeline": {
-            "eyebrow": "Roadmap produit",
-            "heading": "De ce qui existe à ce qu’on imagine.",
-            "intro": "Trois phases pour garder la promesse honnête : ce qui est déjà dans vos mains, ce qui arrive dans les prochaines semaines, et la vision qui oriente toutes nos décisions.",
-            "filterLabel": "Filtrer par rôle",
-            "nextUpdate": "Prochaine mise à jour dans {days, plural, one {# jour} other {# jours}}",
-            "emptyFilter": "Aucune catégorie ne concerne ce rôle dans cette phase.",
+            "eyebrow": "Roadmap de producto",
+            "heading": "De lo que existe a lo que imaginamos.",
+            "intro": "Tres fases para mantener la promesa honesta: lo que ya está en tus manos, lo que llega en las próximas semanas y la visión que guía cada decisión.",
+            "filterLabel": "Filtrar por rol",
+            "nextUpdate": "Próxima actualización en {days, plural, one {# día} other {# días}}",
+            "emptyFilter": "Ninguna categoría concierne este rol en esta fase.",
             "phases": {
                 "now": {
-                    "title": "Maintenant",
-                    "eyebrow": "Déjà dans vos mains",
-                    "intro": "Ce qu’on a livré avec l’aide des clubs pilotes.",
+                    "title": "Ahora",
+                    "eyebrow": "Ya en tus manos",
+                    "intro": "Lo que hemos entregado con la ayuda de los clubes piloto.",
                     "categories": {
                         "interface": {
-                            "title": "Interface repensée",
+                            "title": "Interfaz rediseñada",
                             "bullets": {
-                                "0": "Boutons repensés et couleurs retravaillées pour la lisibilité.",
-                                "1": "Catégories normalisées : U6 à U19, puis Seniors.",
-                                "2": "SIMO présent dès la page d’accueil, prêt à motiver.",
-                                "3": "Cloche de notifications intuitive — chaque alerte est claire."
+                                "0": "Botones rediseñados y colores retrabajados para la legibilidad.",
+                                "1": "Categorías normalizadas: U6 a U19, luego Sénior.",
+                                "2": "SIMO presente desde la página de inicio, listo para motivar.",
+                                "3": "Campana de notificaciones intuitiva — cada alerta es clara."
                             }
                         },
                         "profiles": {
-                            "title": "Profils multi-rôles",
+                            "title": "Perfiles multi-rol",
                             "bullets": {
-                                "0": "Un seul profil principal par utilisateur, fini les doublons.",
-                                "1": "Bascule en un clic entre président, coach, joueur, parent.",
-                                "2": "Rattachement au club via code club, aux équipes via code équipe.",
-                                "3": "Création de profils enfants depuis le compte parent.",
-                                "4": "Parents séparés : code enfant dédié, rattachement sans doublon."
+                                "0": "Un único perfil principal por usuario, se acabaron los duplicados.",
+                                "1": "Cambio con un clic entre presidente, entrenador, jugador, padre.",
+                                "2": "Vinculación al club con código de club, a los equipos con código de equipo.",
+                                "3": "Creación de perfiles de hijos desde la cuenta del padre.",
+                                "4": "Padres separados: código de hijo dedicado, vinculación sin duplicados."
                             }
                         },
                         "events": {
-                            "title": "Événements intelligents",
+                            "title": "Eventos inteligentes",
                             "bullets": {
-                                "0": "Création d’événements en quelques secondes.",
-                                "1": "Convocations lançables à tout moment.",
-                                "2": "Modification complète : heure, lieu, jour…",
-                                "3": "Annulation claire, sans ambiguïté pour les joueurs.",
-                                "4": "Validation manuelle de la présence par le coach.",
-                                "5": "Moteur de recherche d’adresses précises pour le point de RDV."
+                                "0": "Creación de eventos en segundos.",
+                                "1": "Convocatorias lanzables en cualquier momento.",
+                                "2": "Edición completa: hora, lugar, día…",
+                                "3": "Cancelación clara, sin ambigüedad para los jugadores.",
+                                "4": "Validación manual de la presencia por el entrenador.",
+                                "5": "Búsqueda de direcciones precisas para el punto de encuentro."
                             }
                         },
                         "messaging": {
-                            "title": "Messagerie moderne",
+                            "title": "Mensajería moderna",
                             "bullets": {
-                                "0": "Expérience inspirée de WhatsApp — zéro perturbation des habitudes.",
-                                "1": "Notifications avec expéditeur clairement identifié.",
-                                "2": "Messagerie privée pour le 1-à-1 coach / parent.",
-                                "3": "Messagerie de groupe pour les échanges d’équipe."
+                                "0": "Experiencia inspirada en WhatsApp — sin cambios de hábitos.",
+                                "1": "Notificaciones con el emisor claramente identificado.",
+                                "2": "Mensajería privada para el 1-a-1 entrenador / padre.",
+                                "3": "Mensajería de grupo para los intercambios del equipo."
                             }
                         },
                         "personal": {
-                            "title": "Informations personnelles",
+                            "title": "Información personal",
                             "bullets": {
-                                "0": "Modification libre du nom, de la date de naissance et des autres infos directement dans l’app."
+                                "0": "Modificación libre del nombre, fecha de nacimiento y otros datos directamente en la app."
                             }
                         },
                         "calendar": {
-                            "title": "Calendrier amélioré",
+                            "title": "Calendario mejorado",
                             "bullets": {
-                                "0": "Affichage calendaire clair — plus seulement un listing plat.",
-                                "1": "Récupération automatique des événements du club."
+                                "0": "Vista de calendario clara — no solo un listado.",
+                                "1": "Recuperación automática de los eventos del club."
                             }
                         }
                     }
                 },
                 "soon": {
-                    "title": "Prochainement",
-                    "eyebrow": "Dans les prochaines semaines",
-                    "intro": "Les évolutions qui arrivent par vagues toutes les deux semaines.",
+                    "title": "Próximamente",
+                    "eyebrow": "En las próximas semanas",
+                    "intro": "Las evoluciones que llegan cada dos semanas.",
                     "categories": {
                         "president": {
-                            "title": "Espace président allégé",
+                            "title": "Espacio presidente simplificado",
                             "bullets": {
-                                "0": "Interface allégée de l’espace président — pour aller à l’essentiel."
+                                "0": "Espacio presidente simplificado — para ir a lo esencial."
                             }
                         },
                         "coachEnhanced": {
-                            "title": "Coach — pilotage renforcé",
+                            "title": "Entrenador — pilotaje reforzado",
                             "bullets": {
-                                "0": "Taux de présence de chaque joueur récupéré automatiquement.",
-                                "1": "Visibilité sur les joueurs blessés.",
-                                "2": "Accès aux allergènes et contacts d’urgence.",
-                                "3": "Nouvel espace de composition — affichable ou masqué aux joueurs.",
-                                "4": "Savoir qui se rend directement au stade lors d’un déplacement."
+                                "0": "Tasa de presencia de cada jugador recuperada automáticamente.",
+                                "1": "Visibilidad sobre los jugadores lesionados.",
+                                "2": "Acceso a alérgenos y contactos de emergencia.",
+                                "3": "Nuevo espacio de alineación — visible u oculto a los jugadores.",
+                                "4": "Saber quién va directo al estadio en los desplazamientos."
                             }
                         },
                         "player": {
-                            "title": "Joueur — infos utiles",
+                            "title": "Jugador — información útil",
                             "bullets": {
-                                "0": "Renseigner ses allergènes et contacts d’urgence.",
-                                "1": "Cocher « Se rend directement au stade » lors d’une convocation."
+                                "0": "Indicar alérgenos y contactos de emergencia.",
+                                "1": "Marcar «Voy directo al estadio» en la convocatoria."
                             }
                         },
                         "coachDashboard": {
-                            "title": "Dashboard coach",
+                            "title": "Dashboard entrenador",
                             "bullets": {
-                                "0": "Premiers indicateurs : présence, régularité, progression.",
-                                "1": "Socle du futur système d’évaluation."
+                                "0": "Primeros indicadores: presencia, regularidad, progreso.",
+                                "1": "Base del futuro sistema de evaluación."
                             }
                         }
                     }
                 },
                 "later": {
-                    "title": "Plus tard",
-                    "eyebrow": "La vision",
-                    "intro": "Notre cap — structurer le foot amateur et valoriser chaque club.",
+                    "title": "Más adelante",
+                    "eyebrow": "La visión",
+                    "intro": "Nuestro rumbo — estructurar el fútbol amateur y dar valor a cada club.",
                     "categories": {
                         "coachAdvanced": {
-                            "title": "Coach — évolution avancée",
+                            "title": "Entrenador — evolución avanzada",
                             "bullets": {
-                                "0": "Attribution de postes aux joueurs.",
-                                "1": "Système d’évaluation complet, adapté à chaque âge.",
-                                "2": "Pour les plus jeunes : apprentissage, motricité, compréhension, gestes simples.",
-                                "3": "Pour les plus grands : évaluations détaillées, coefficients selon les postes.",
-                                "4": "Suivi mental et technique combinés."
+                                "0": "Asignación de posiciones a los jugadores.",
+                                "1": "Sistema de evaluación completo, adaptado a cada edad.",
+                                "2": "Para los más jóvenes: aprendizaje, motricidad, comprensión, gestos simples.",
+                                "3": "Para los mayores: evaluaciones detalladas, coeficientes por posición.",
+                                "4": "Seguimiento mental y técnico combinados."
                             }
                         },
                         "playerEnriched": {
-                            "title": "Joueur — expérience enrichie",
+                            "title": "Jugador — experiencia enriquecida",
                             "bullets": {
-                                "0": "Consultation personnelle de ses évaluations.",
-                                "1": "Gamification avec SIMO : badges, défis, niveaux.",
-                                "2": "Passeport joueur complet avec QR code.",
-                                "3": "Carte évolutive personnelle — physique et digitale.",
-                                "4": "Historique et statistiques sur toute la carrière amateur."
+                                "0": "Consulta personal de sus evaluaciones.",
+                                "1": "Gamificación con SIMO: insignias, retos, niveles.",
+                                "2": "Pasaporte de jugador completo con código QR.",
+                                "3": "Tarjeta evolutiva personal — física y digital.",
+                                "4": "Historial y estadísticas de toda la carrera amateur."
                             }
                         },
                         "cards": {
-                            "title": "Cartes physiques et digitales",
+                            "title": "Tarjetas físicas y digitales",
                             "bullets": {
-                                "0": "Cartes de collection liées à chaque joueur.",
-                                "1": "Éditions physiques — format carte à jouer premium.",
-                                "2": "Versions digitales dans l’app — badges, raretés, statuts.",
-                                "3": "Évolution des cartes selon la progression du joueur.",
-                                "4": "Levier fort d’engagement pour les joueurs et leurs familles."
+                                "0": "Tarjetas coleccionables asociadas a cada jugador.",
+                                "1": "Ediciones físicas — formato de carta coleccionable premium.",
+                                "2": "Versiones digitales en la app — insignias, rarezas, estados.",
+                                "3": "Evolución de las tarjetas según el progreso del jugador.",
+                                "4": "Palanca de engagement fuerte para jugadores y familias."
                             }
                         },
                         "documents": {
-                            "title": "Documents & administratif",
+                            "title": "Documentos y administración",
                             "bullets": {
-                                "0": "Classement intelligent par joueur, équipe, structure.",
-                                "1": "Scan et archivage des pièces utiles.",
-                                "2": "Recherche rapide dans tous les documents du club."
+                                "0": "Clasificación inteligente por jugador, equipo, estructura.",
+                                "1": "Escaneo y archivo de documentos útiles.",
+                                "2": "Búsqueda rápida en todos los documentos del club."
                             }
                         },
                         "staff": {
-                            "title": "Staff étendu",
+                            "title": "Staff ampliado",
                             "bullets": {
-                                "0": "Outils dédiés : trésorier, manager, comptable, secrétaire, bénévoles.",
-                                "1": "Chaque rôle avec son tableau de bord adapté."
+                                "0": "Herramientas dedicadas: tesorero, manager, contable, secretario, voluntarios.",
+                                "1": "Cada rol con su panel adaptado."
                             }
                         },
                         "monetization": {
-                            "title": "Valorisation économique",
+                            "title": "Palanca económica",
                             "bullets": {
-                                "0": "Marketplace intégrée au club.",
-                                "1": "Activations sponsors locaux.",
-                                "2": "Monétisation des cartes joueurs.",
-                                "3": "Nouveaux revenus pour financer la vie du club."
+                                "0": "Marketplace integrada al club.",
+                                "1": "Activaciones de patrocinadores locales.",
+                                "2": "Monetización de las tarjetas de jugadores.",
+                                "3": "Nuevos ingresos para financiar la vida del club."
                             }
                         }
                     }
@@ -960,404 +1050,418 @@
             }
         },
         "differentiation": {
-            "eyebrow": "Ce qui nous rend uniques",
-            "heading": "Cinq choix qui font la différence.",
-            "intro": "On ne fait pas un énième outil de gestion. On fait l’app que le football amateur mérite.",
+            "eyebrow": "Lo que nos hace únicos",
+            "heading": "Cinco elecciones que marcan la diferencia.",
+            "intro": "No hacemos una herramienta de gestión más. Hacemos la app que el fútbol amateur merece.",
             "points": {
                 "football": {
-                    "title": "Conçu uniquement pour le football amateur",
-                    "description": "Pas un outil générique recyclé. Chaque écran, chaque terme parle le langage du terrain."
+                    "title": "Diseñado solo para el fútbol amateur",
+                    "description": "No es una herramienta genérica reciclada. Cada pantalla, cada término habla el lenguaje del terreno."
                 },
                 "experience": {
-                    "title": "Une expérience simple et moderne",
-                    "description": "Une seule app, claire, fluide, agréable à ouvrir tous les jours."
+                    "title": "Una experiencia simple y moderna",
+                    "description": "Una sola app, clara, fluida, agradable de abrir cada día."
                 },
                 "human": {
-                    "title": "Une dimension humaine et émotionnelle",
-                    "description": "Avec SIMO, les cartes et le passeport joueur, SimplyFoot parle d’appartenance, de fierté, de reconnaissance."
+                    "title": "Una dimensión humana y emocional",
+                    "description": "Con SIMO, las tarjetas y el pasaporte de jugador, SimplyFoot habla de pertenencia, orgullo, reconocimiento."
                 },
                 "economic": {
-                    "title": "Une logique de valorisation économique",
-                    "description": "Aider les clubs à mieux fonctionner et à mieux se valoriser : cartes, marketplace, sponsors."
+                    "title": "Una lógica de puesta en valor económico",
+                    "description": "Ayudar a los clubes a funcionar mejor y a valorarse mejor: tarjetas, marketplace, patrocinadores."
                 },
                 "ambition": {
-                    "title": "Une vraie ambition produit",
-                    "description": "Structurer le football amateur, valoriser les joueurs, créer un écosystème moderne — devenir la référence."
+                    "title": "Una auténtica ambición de producto",
+                    "description": "Estructurar el fútbol amateur, dar valor a los jugadores, crear un ecosistema moderno — ser la referencia."
                 }
             }
         },
         "pilot": {
-            "eyebrow": "Engagement équipe",
-            "heading": "Construit avec les clubs, pour les clubs.",
-            "intro": "Une étape claire, une base propre, une cadence qui tient.",
+            "eyebrow": "Compromiso del equipo",
+            "heading": "Construido con los clubes, para los clubes.",
+            "intro": "Una etapa clara, una base limpia, un ritmo que se mantiene.",
             "bullets": {
-                "0": "Une seule réinstallation nécessaire — puis plus jamais.",
-                "1": "Mises à jour environ tous les 15 jours.",
-                "2": "Vos retours orientent directement la roadmap.",
-                "3": "On pense à tout, au moindre détail."
+                "0": "Una única reinstalación necesaria — luego nunca más.",
+                "1": "Actualizaciones aproximadamente cada 15 días.",
+                "2": "Vuestros retornos orientan directamente la roadmap.",
+                "3": "Pensamos en todo, hasta en el mínimo detalle."
             },
-            "simoBubble": "On construit cette app ensemble. Merci d’être là."
+            "simoBubble": "Construimos esta app juntos. Gracias por estar aquí."
         },
         "finalCta": {
-            "eyebrow": "Rejoindre l’aventure",
-            "heading": "Construisons SimplyFoot ensemble.",
-            "subtitle": "Rejoignez les clubs qui écrivent la prochaine page du football amateur.",
-            "primaryCta": "Rejoindre le programme pilote",
-            "secondaryCta": "Nous contacter",
-            "reassurance": "Engagement libre. On échange avant tout.",
-            "simoBubble": "À samedi au stade !",
-            "massiveHeading": "Écrivons la prochaine page du foot amateur. Ensemble.",
-            "massiveSubtitle": "Rejoignez les clubs qui ont déjà fait le pas. Une app simple, une équipe à l’écoute, et une vision ambitieuse pour vos licenciés.",
-            "badge": "Inscription ouverte · Accompagnement personnalisé · Mise en route rapide"
+            "eyebrow": "Unirse a la aventura",
+            "heading": "Construyamos SimplyFoot juntos.",
+            "subtitle": "Únete a los clubes que escriben la próxima página del fútbol amateur.",
+            "primaryCta": "Unirme al programa piloto",
+            "secondaryCta": "Contactar",
+            "reassurance": "Sin compromiso. Hablamos antes que nada.",
+            "simoBubble": "¡Hasta el sábado en el estadio!",
+            "massiveHeading": "Escribamos la próxima página del fútbol amateur. Juntos.",
+            "massiveSubtitle": "Únete a los clubes que ya han dado el paso. Una app simple, un equipo a la escucha y una visión ambiciosa para tus licencias.",
+            "badge": "Inscripción abierta · Acompañamiento personalizado · Puesta en marcha rápida"
         },
         "problem": {
-            "eyebrow": "On connaît le quotidien",
-            "heading": "Faire vivre un club amateur aujourd’hui, c’est…",
-            "transition": "On connaît. On a construit SimplyFoot pour que ça devienne un mauvais souvenir.",
+            "eyebrow": "Conocemos el día a día",
+            "heading": "Hacer vivir un club amateur hoy es…",
+            "transition": "Lo sabemos. Hemos construido SimplyFoot para que sea un mal recuerdo.",
             "items": {
                 "parents": {
-                    "title": "Relancer les parents",
-                    "body": "Chaque samedi matin, le téléphone en main, prêt à remonter la file des SMS."
+                    "title": "Perseguir a los padres",
+                    "body": "Cada sábado por la mañana, teléfono en mano, revisando de nuevo los SMS."
                 },
                 "scattered": {
-                    "title": "Jongler entre 5 outils",
-                    "body": "WhatsApp, Facebook, Excel, carnet du coach — personne ne sait où chercher."
+                    "title": "Hacer malabares con 5 herramientas",
+                    "body": "WhatsApp, Facebook, Excel, libreta del entrenador — nadie sabe dónde buscar."
                 },
                 "sheet": {
-                    "title": "La feuille de match perdue",
-                    "body": "Encore une chasse au trésor à 7 h du matin avant le déplacement."
+                    "title": "El acta de partido perdida",
+                    "body": "Otra caza al tesoro a las 7 de la mañana antes del desplazamiento."
                 },
                 "address": {
-                    "title": "L’adresse du stade adverse",
-                    "body": "Pour la 10ᵉ fois, on réexplique l’itinéraire dans le groupe parents."
+                    "title": "La dirección del estadio contrario",
+                    "body": "Por décima vez, se reexplica la ruta en el grupo de padres."
                 },
                 "stats": {
-                    "title": "Les présences à la main",
-                    "body": "Fin de saison, on reprend les feuilles manuscrites pour faire le bilan."
+                    "title": "Las asistencias a mano",
+                    "body": "Final de temporada, se retoman las hojas manuscritas para hacer el balance."
                 },
                 "money": {
-                    "title": "Financer les équipements",
-                    "body": "Cotisations et buvette ne suffisent plus. Les sponsors se font rares."
+                    "title": "Financiar el equipamiento",
+                    "body": "Las cuotas y la cantina no bastan. Los patrocinadores escasean."
                 }
             }
         },
         "solution": {
-            "eyebrow": "La promesse",
-            "heading": "Une seule application. Tout le club dedans.",
-            "description": "Gestion, communication, progression et bientôt valorisation — au même endroit, pensé pour les bénévoles.",
+            "eyebrow": "La promesa",
+            "heading": "Una sola aplicación. Todo el club dentro.",
+            "description": "Gestión, comunicación, progreso y pronto puesta en valor — en el mismo lugar, pensado para los voluntarios.",
             "stats": {
-                "oneApp": "Application au lieu de 5 outils dispersés",
-                "updateCadence": "Entre chaque mise à jour",
-                "rolesSupported": "Profils adaptés : Club, Coach, Joueur, Parent",
-                "builtWith": "Conçu avec les clubs pilotes"
+                "oneApp": "App en lugar de 5 herramientas dispersas",
+                "updateCadence": "Entre cada actualización",
+                "rolesSupported": "Perfiles adaptados: Club, Entrenador, Jugador, Padre",
+                "builtWith": "Diseñado con los clubes piloto"
             },
-            "simoBubble": "On a pensé à tout, promis."
+            "simoBubble": "Hemos pensado en todo, prometido."
         },
         "profiles": {
-            "eyebrow": "Par rôle",
-            "heading": "Quel que soit ton rôle, ton app est prête.",
-            "intro": "Choisis ton profil pour voir ce que SimplyFoot change au quotidien.",
+            "eyebrow": "Por rol",
+            "heading": "Sea cual sea tu rol, tu app está lista.",
+            "intro": "Elige tu perfil para ver lo que SimplyFoot cambia en el día a día.",
             "items": {
                 "president": {
-                    "tab": "Président / Dirigeant",
-                    "accroche": "Votre club comme vous ne l’avez jamais vu.",
-                    "promise": "Toute la vie du club sur un seul écran : budget, licenciés, équipes, événements.",
+                    "tab": "Presidente / Directivo",
+                    "accroche": "Tu club como nunca lo has visto.",
+                    "promise": "Toda la vida del club en una sola pantalla: presupuesto, licencias, equipos, eventos.",
                     "points": {
-                        "0": "Budget en temps réel avec entrées et sorties",
-                        "1": "Licenciés, équipes, taux de présence — vos chiffres d’un coup d’œil",
-                        "2": "Actions rapides : créer une équipe, ajouter un membre, saisir une opération",
-                        "3": "Staff structuré : président, trésorier, secrétaire, bénévoles"
+                        "0": "Presupuesto en tiempo real con entradas y salidas",
+                        "1": "Licencias, equipos, tasa de presencia — tus cifras de un vistazo",
+                        "2": "Acciones rápidas: crear un equipo, añadir un miembro, registrar una operación",
+                        "3": "Staff estructurado: presidente, tesorero, secretario, voluntarios"
                     },
-                    "simoBubble": "Ton tableau de bord président. Tout le club, en un écran.",
-                    "mockupAlt": "Tableau de bord Président SimplyFoot sur iPhone"
+                    "simoBubble": "Tu panel presidente. Todo el club, en una pantalla.",
+                    "mockupAlt": "Panel Presidente SimplyFoot en iPhone"
                 },
                 "coach": {
-                    "tab": "Coach / Éducateur",
-                    "accroche": "Pilotez votre groupe comme jamais.",
-                    "promise": "Convocations, présences, compositions, stats : tout sur votre écran.",
+                    "tab": "Entrenador / Educador",
+                    "accroche": "Dirige tu grupo como nunca.",
+                    "promise": "Convocatorias, presencias, alineaciones, estadísticas: todo en tu pantalla.",
                     "points": {
-                        "0": "Vos équipes affichées avec blasons (Sénior, U14…)",
-                        "1": "Prochains événements avec suivi des présences en temps réel",
-                        "2": "Actions rapides : créer un événement, lancer une compo, anniversaires",
-                        "3": "Messagerie intégrée pour ne plus perdre personne"
+                        "0": "Tus equipos mostrados con escudos (Sénior, U14…)",
+                        "1": "Próximos eventos con seguimiento de presencias en tiempo real",
+                        "2": "Acciones rápidas: crear evento, lanzar alineación, cumpleaños",
+                        "3": "Mensajería integrada para no perder a nadie"
                     },
-                    "simoBubble": "Ton vestiaire numérique, prêt pour samedi.",
-                    "mockupAlt": "Tableau de bord Coach SimplyFoot sur iPhone"
+                    "simoBubble": "Tu vestuario digital, listo para el sábado.",
+                    "mockupAlt": "Panel Entrenador SimplyFoot en iPhone"
                 },
                 "player": {
-                    "tab": "Joueur",
-                    "accroche": "Ton club dans ta poche.",
-                    "promise": "Entraînements, matchs, convocations, transport — tout y est, rien à retenir.",
+                    "tab": "Jugador",
+                    "accroche": "Tu club en tu bolsillo.",
+                    "promise": "Entrenamientos, partidos, convocatorias, transporte — todo está ahí, nada que recordar.",
                     "points": {
-                        "0": "Tes prochains entraînements et matchs en un clin d’œil",
-                        "1": "Réponse présent / absent en un tap",
-                        "2": "Messagerie privée et de groupe",
-                        "3": "Bientôt : profil évolutif, badges, carte joueur"
+                        "0": "Tus próximos entrenamientos y partidos de un vistazo",
+                        "1": "Respuesta presente / ausente con un toque",
+                        "2": "Mensajería privada y de grupo",
+                        "3": "Pronto: perfil evolutivo, insignias, tarjeta de jugador"
                     },
-                    "simoBubble": "T’as un match samedi. Je te rappelle tout, juré.",
-                    "mockupAlt": "Accueil Joueur SimplyFoot sur iPhone tenu en main"
+                    "simoBubble": "Tienes partido el sábado. Te lo recuerdo todo, prometido.",
+                    "mockupAlt": "Pantalla de inicio Jugador SimplyFoot en iPhone"
                 },
                 "parent": {
-                    "tab": "Parent",
-                    "accroche": "Moins de confusion, plus de tranquillité.",
-                    "promise": "Horaires, convocations, transport — tout clair, tout au bon endroit.",
+                    "tab": "Padre / Madre",
+                    "accroche": "Menos confusión, más tranquilidad.",
+                    "promise": "Horarios, convocatorias, transporte — todo claro, todo en el sitio adecuado.",
                     "points": {
-                        "0": "Un seul compte, plusieurs enfants",
-                        "1": "Parents séparés gérés proprement, sans doublon",
-                        "2": "Convocations, transports et documents accessibles",
-                        "3": "Accès aux infos utiles selon les droits accordés"
+                        "0": "Una cuenta, varios hijos",
+                        "1": "Padres separados gestionados sin duplicados",
+                        "2": "Convocatorias, transporte y documentos accesibles",
+                        "3": "Acceso a la información útil según los permisos concedidos"
                     },
-                    "simoBubble": "Ta tribu foot, organisée sans prise de tête.",
-                    "mockupAlt": "Vue Parent : plusieurs enfants gérés dans un seul compte"
+                    "simoBubble": "Tu tribu de fútbol, organizada sin quebraderos.",
+                    "mockupAlt": "Vista Padre: varios hijos gestionados en una sola cuenta",
+                    "illustration": {
+                        "teaser": "Varios hijos. Una sola cuenta. Cero duplicados."
+                    }
                 }
             }
         },
         "featuresList": {
-            "eyebrow": "Fonctionnalités phares",
-            "heading": "Tout ce qu’il faut pour faire vivre un club. Rien de superflu.",
-            "intro": "Dix capacités signatures, livrées ou en cours — et une dixième qu’on réserve à ceux qui s’inscrivent tôt.",
+            "eyebrow": "Funciones estrella",
+            "heading": "Todo lo que un club necesita. Nada más.",
+            "intro": "Diez capacidades estrella, entregadas o en camino — y una décima reservada a los que se inscriben pronto.",
             "badges": {
-                "live": "Livré",
-                "soon": "Bientôt",
-                "signature": "Signature",
-                "innovation": "Innovation",
-                "priority": "Inscription prioritaire"
+                "live": "Entregado",
+                "soon": "Pronto",
+                "signature": "Firma",
+                "innovation": "Innovación",
+                "priority": "Inscripción prioritaria"
             },
             "items": {
                 "management": {
-                    "title": "Gestion complète du club",
-                    "description": "Équipes, licenciés, staff, rôles, catégories — tout le club dans une interface claire."
+                    "title": "Gestión completa del club",
+                    "description": "Equipos, licencias, staff, roles, categorías — todo el club en una interfaz clara."
                 },
                 "events": {
-                    "title": "Calendrier, matchs & convocations",
-                    "description": "Création, modification, annulation, réponses en un tap, adresses précises."
+                    "title": "Calendario, partidos y convocatorias",
+                    "description": "Creación, modificación, cancelación, respuestas con un toque, direcciones precisas."
                 },
                 "dashboard": {
-                    "title": "Dashboard coach & suivi joueurs",
-                    "description": "Présence, régularité, progression, évaluations — pour piloter la saison."
+                    "title": "Dashboard entrenador y seguimiento de jugadores",
+                    "description": "Presencia, regularidad, progreso, evaluaciones — para dirigir la temporada."
                 },
                 "lineups": {
-                    "title": "Composition intuitive",
-                    "description": "Glisser-déposer moderne, affichage ou masquage aux joueurs."
+                    "title": "Alineación intuitiva",
+                    "description": "Drag & drop moderno, visible u oculto a los jugadores."
                 },
                 "messaging": {
-                    "title": "Communication structurée",
-                    "description": "Messagerie privée et de groupe style WhatsApp, sans dispersion."
+                    "title": "Comunicación estructurada",
+                    "description": "Mensajería privada y de grupo estilo WhatsApp, sin dispersión."
                 },
                 "documents": {
-                    "title": "Documents centralisés",
-                    "description": "Scans, archivage, recherche — fini les classeurs et les relances."
+                    "title": "Documentos centralizados",
+                    "description": "Escaneos, archivo, búsqueda — se acabaron las carpetas y las llamadas."
                 },
                 "passport": {
-                    "title": "Passeport joueur",
-                    "description": "Identité sportive claire : saisons, stats, historique, QR code."
+                    "title": "Pasaporte de jugador",
+                    "description": "Identidad deportiva clara: temporadas, estadísticas, historial, QR."
                 },
                 "cards": {
-                    "title": "Cartes physiques & digitales",
-                    "description": "Cartes évolutives, badges, raretés — la fierté des couleurs."
+                    "title": "Tarjetas físicas y digitales",
+                    "description": "Tarjetas evolutivas, insignias, rarezas — el orgullo de los colores."
                 },
                 "gamification": {
-                    "title": "Gamification avec SIMO",
-                    "description": "Badges, défis, niveaux, célébrations — une app qu’on a envie d’ouvrir."
+                    "title": "Gamificación con SIMO",
+                    "description": "Insignias, retos, niveles, celebraciones — una app que apetece abrir."
                 },
                 "revenue": {
-                    "title": "Valorisation économique du club",
-                    "description": "De nouveaux revenus pour financer la vie du club. On en dit plus bientôt."
+                    "title": "Puesta en valor económico del club",
+                    "description": "Nuevos ingresos para financiar la vida del club. Lo contaremos pronto."
                 }
             }
         },
         "human": {
-            "eyebrow": "Dimension humaine",
-            "heading": "Parce qu’un club, c’est bien plus que de la gestion.",
+            "eyebrow": "Dimensión humana",
+            "heading": "Porque un club es mucho más que gestión.",
             "items": {
                 "simo": {
-                    "title": "SIMO, ton compagnon",
-                    "body": "Il accueille, guide, célèbre. Il accompagne chaque licencié et rend l’app plus vivante qu’un tableur."
+                    "title": "SIMO, tu compañero",
+                    "body": "Acoge, guía, celebra. Acompaña a cada licencia y hace la app más viva que una hoja de cálculo."
                 },
                 "passport": {
-                    "title": "Le passeport joueur",
-                    "body": "Une identité sportive claire et fière : saisons, stats, historique, club — tout ce qui raconte un parcours amateur."
+                    "title": "El pasaporte de jugador",
+                    "body": "Una identidad deportiva clara y orgullosa: temporadas, estadísticas, historial, club — todo lo que cuenta un recorrido amateur."
                 },
                 "card": {
-                    "title": "La carte évolutive",
-                    "body": "Physique ou digitale, elle grandit avec le joueur. Collection, badges, raretés — la fierté des couleurs."
+                    "title": "La tarjeta evolutiva",
+                    "body": "Física o digital, crece con el jugador. Colección, insignias, rarezas — el orgullo de los colores."
                 }
             },
-            "closing": "Un club, c’est de l’organisation. Mais c’est aussi de la fierté, de l’appartenance et des souvenirs. SimplyFoot pense aux deux."
+            "closing": "Un club es organización. Pero también es orgullo, pertenencia y recuerdos. SimplyFoot piensa en ambos."
         },
         "innovation": {
-            "eyebrow": "Prochainement · Confidentiel",
-            "heading": "Et si votre club pouvait générer de nouveaux revenus en 2026 ?",
-            "subtitle": "On prépare quelque chose qui va changer les finances du football amateur. Réservé d’abord aux clubs déjà inscrits sur SimplyFoot.",
-            "body": "Pendant des décennies, les clubs amateurs ont compté sur les cotisations, la buvette et la tombola. Le monde a changé. Les possibilités aussi. On travaille sur un système pensé pour vos licenciés, vos supporters, votre communauté locale — qui transformera l’attachement au club en ressources concrètes. On vous en dit plus très bientôt.",
-            "formHeading": "Soyez les premiers prévenus.",
-            "emailLabel": "Email du club",
-            "emailPlaceholder": "contact@club.fr",
-            "submitLabel": "Rejoindre la liste prioritaire",
-            "microCopy": "Aucun spam. Vous saurez avant tout le monde.",
-            "counterLabel": "clubs déjà inscrits",
-            "successTitle": "C’est noté.",
-            "successBody": "On vous écrit dès qu’on ouvre les portes.",
-            "errorRequired": "Email obligatoire",
-            "errorInvalid": "Email invalide",
-            "simoBubble": "Tu vas adorer. Mais chut, je peux pas tout dire encore.",
+            "eyebrow": "Próximamente · Confidencial",
+            "heading": "¿Y si tu club pudiera generar nuevos ingresos en 2026?",
+            "subtitle": "Preparamos algo que va a cambiar las finanzas del fútbol amateur. Reservado primero a los clubes ya inscritos en SimplyFoot.",
+            "body": "Durante décadas, los clubes amateurs han dependido de las cuotas, la cantina y la tómbola. El mundo ha cambiado. Las posibilidades también. Trabajamos en un sistema pensado para tus licencias, tus aficionados, tu comunidad local — que convertirá el vínculo con el club en recursos concretos. Te contaremos más muy pronto.",
+            "formHeading": "Sé el primero en enterarte.",
+            "emailLabel": "Email del club",
+            "emailPlaceholder": "contacto@club.es",
+            "submitLabel": "Unirme a la lista prioritaria",
+            "microCopy": "Sin spam. Lo sabrás antes que nadie.",
+            "counterLabel": "clubes ya inscritos",
+            "successTitle": "Registrado.",
+            "successBody": "Te escribimos en cuanto abramos las puertas.",
+            "errorRequired": "Email obligatorio",
+            "errorInvalid": "Email inválido",
+            "simoBubble": "Te va a encantar. Pero chut, aún no puedo contártelo todo.",
             "trust": {
-                "france": "Conçu en France",
+                "france": "Hecho en Francia",
                 "rgpd": "RGPD",
-                "amateur": "Pensé pour les clubs amateurs"
+                "amateur": "Pensado para los clubes amateurs"
             }
         },
         "proof": {
-            "eyebrow": "Preuve sociale",
-            "heading": "Construit avec les clubs, pour les clubs.",
-            "intro": "Les clubs pilotes orientent directement la roadmap. Voici ce qu’ils en disent.",
+            "eyebrow": "Prueba social",
+            "heading": "Construido con los clubes, para los clubes.",
+            "intro": "Los clubes piloto orientan directamente la roadmap. Esto es lo que dicen.",
             "testimonials": {
                 "louannec": {
-                    "quote": "Pour la première fois, on sait qui vient samedi sans relancer personne.",
+                    "quote": "Por primera vez, sabemos quién viene el sábado sin perseguir a nadie.",
                     "author": "Jean-Pierre",
-                    "role": "Président, US Louannec"
+                    "role": "Presidente, US Louannec"
                 },
                 "perros": {
-                    "quote": "Mes parents comprennent enfin quand on s’entraîne. Mes joueurs aussi.",
+                    "quote": "Mis padres por fin entienden cuándo entrenamos. Mis jugadores también.",
                     "author": "Sylvie",
-                    "role": "Coach U11, FC Perros"
+                    "role": "Entrenadora U11, FC Perros"
                 },
                 "trebeurden": {
-                    "quote": "Mon fils adore voir ses présences et ses badges. Il me parle foot tous les jours.",
+                    "quote": "A mi hijo le encanta ver sus presencias y sus insignias. Habla de fútbol cada día.",
                     "author": "Karim",
-                    "role": "Parent, AS Trébeurden"
+                    "role": "Padre, AS Trébeurden"
                 }
             },
-            "pilotsLabel": "Clubs pilotes engagés",
-            "statsHeading": "L’effet terrain en chiffres",
+            "pilotsLabel": "Clubes piloto comprometidos",
+            "statsHeading": "El efecto sobre el terreno en cifras",
             "stats": {
-                "clubsCount": "Clubs pilotes engagés",
-                "licensees": "Licenciés actifs sur l’app",
-                "events": "Événements organisés via SimplyFoot",
-                "updates": "Mises à jour livrées depuis le lancement"
+                "clubsCount": "Clubes piloto comprometidos",
+                "licensees": "Licencias activas en la app",
+                "events": "Eventos organizados vía SimplyFoot",
+                "updates": "Actualizaciones entregadas desde el lanzamiento"
             }
         },
         "faqSection": {
             "eyebrow": "FAQ",
-            "heading": "Les questions qu’on nous pose souvent.",
-            "intro": "Désamorcer les objections classiques — sans langue de bois.",
+            "heading": "Las preguntas que más nos hacen.",
+            "intro": "Desactivar las objeciones clásicas — sin lenguaje corporativo.",
             "items": {
                 "price": {
-                    "question": "Combien ça coûte pour le club ?",
-                    "answer": "Accessible pour tous les budgets associatifs. Le tarif s’adapte au nombre de licenciés : les plus petits clubs démarrent à quelques euros par mois. Contactez-nous pour votre offre dédiée."
+                    "question": "¿Cuánto cuesta para el club?",
+                    "answer": "Accesible para todos los presupuestos asociativos. La tarifa se adapta al número de licencias: los clubes más pequeños empiezan desde unos euros al mes. Contáctanos para una oferta a medida."
                 },
                 "seniors": {
-                    "question": "Nos dirigeants de 65 ans vont-ils s’y retrouver ?",
-                    "answer": "SimplyFoot est pensé pour être simple à tout âge. Boutons larges, libellés clairs, parcours courts. Tutoriels vidéo et support humain pour chaque club."
+                    "question": "¿Nuestros directivos de 65 años se aclararán?",
+                    "answer": "SimplyFoot está pensado para ser simple a cualquier edad. Botones grandes, etiquetas claras, recorridos cortos. Tutoriales en vídeo y soporte humano para cada club."
                 },
                 "data": {
-                    "question": "Qu’en est-il de nos données ?",
-                    "answer": "Vos données restent les vôtres. Hébergement en France, RGPD, pas de revente, pas de publicité. Vous pouvez les exporter à tout moment."
+                    "question": "¿Qué pasa con nuestros datos?",
+                    "answer": "Vuestros datos son vuestros. Alojamiento en Francia, RGPD, sin reventa, sin publicidad. Podéis exportarlos cuando queráis."
                 },
                 "migration": {
-                    "question": "Si on migre depuis un autre outil, comment ça se passe ?",
-                    "answer": "On vous accompagne pour importer vos effectifs et votre calendrier. Le basculement se fait en une à deux sessions selon la taille du club."
+                    "question": "Si migramos desde otra herramienta, ¿cómo va?",
+                    "answer": "Os acompañamos para importar efectivos y calendario. La migración se hace en una o dos sesiones según el tamaño del club."
                 },
                 "offline": {
-                    "question": "Est-ce que l’app fonctionne sans connexion ?",
-                    "answer": "Les fonctions essentielles restent accessibles avec un réseau faible — utile sur les stades reculés."
+                    "question": "¿La app funciona sin conexión?",
+                    "answer": "Las funciones esenciales siguen disponibles con red débil — útil en estadios remotos."
                 },
                 "idea": {
-                    "question": "Et si on a une idée de fonctionnalité ?",
-                    "answer": "Elle peut devenir réalité. Nos clubs pilotes orientent directement la roadmap. Écrivez-nous."
+                    "question": "¿Y si tenemos una idea de funcionalidad?",
+                    "answer": "Puede hacerse realidad. Nuestros clubes piloto orientan directamente la roadmap. Escribidnos."
                 },
                 "revenue": {
-                    "question": "C’est quoi exactement cette innovation pour les revenus du club ?",
-                    "answer": "Une fonctionnalité majeure qui arrive bientôt. Inscrivez-vous sur la liste prioritaire pour être prévenu en premier."
+                    "question": "¿Qué es exactamente esta innovación de ingresos del club?",
+                    "answer": "Una función mayor que llega pronto. Inscríbete en la lista prioritaria para enterarte el primero."
                 }
             }
         }
     },
     "Home": {
         "meta": {
-            "title": "SimplyFoot · L’app conçue pour le football amateur",
-            "description": "Conçue avec les clubs pilotes. Mise à jour toutes les deux semaines. Le foot amateur mérite une app à sa hauteur."
+            "title": "SimplyFoot · La app diseñada para el fútbol amateur",
+            "description": "Diseñada con los clubes piloto. Actualizada cada dos semanas. El fútbol amateur merece una app a su altura."
         },
         "hero": {
-            "titleLine1": "Le foot amateur",
-            "titleLine2": "mérite une app",
-            "titleLine3": "à sa hauteur.",
-            "subtitle": "Conçue avec les clubs pilotes. Mise à jour toutes les deux semaines.",
-            "cta": "Découvrir SimplyFoot",
-            "scrollHint": "Faites défiler",
-            "planetAlt": "Planète SimplyFoot — signature 3D"
+            "titleLine1": "El fútbol amateur",
+            "titleLine2": "merece una app",
+            "titleLine3": "a su altura.",
+            "subtitle": "Gestión, convocatorias, mensajería, seguimiento de jugadores — en una única app diseñada con los clubes piloto.",
+            "scrollHint": "Desplázate",
+            "planetAlt": "Planeta SimplyFoot — firma 3D",
+            "authorityPill": "Programa piloto abierto · 10 clubes comprometidos",
+            "ctaPrimary": "Unirme al programa piloto",
+            "ctaSecondary": "Ver cómo funciona",
+            "mockupAlt": "Panel Presidente SimplyFoot en iPhone",
+            "simoBubble": "¡Hey! Te acompaño paso a paso.",
+            "trust": {
+                "france": "Hecho en Francia",
+                "rgpd": "Conforme RGPD",
+                "updates": "Actualización cada 2 semanas",
+                "pilots": "10 clubes piloto"
+            }
         },
         "whisper": {
-            "eyebrow": "Dans chaque club",
-            "quote": "Chaque samedi matin, un président passe deux heures à relancer les parents par SMS.",
-            "response": "SimplyFoot existe pour ça."
+            "eyebrow": "En cada club",
+            "quote": "Cada sábado por la mañana, un presidente pasa dos horas persiguiendo a los padres por SMS.",
+            "response": "SimplyFoot existe para eso."
         },
         "manifesto": {
             "lines": {
-                "0": "Un président.",
-                "1": "Un coach.",
-                "2": "Un joueur.",
-                "3": "Un parent.",
-                "4": "Une seule app."
-            }
+                "0": "Un presidente.",
+                "1": "Un entrenador.",
+                "2": "Un jugador.",
+                "3": "Un padre.",
+                "4": "Una sola app."
+            },
+            "ariaLabel": "Manifiesto SimplyFoot"
         },
         "mockupHero": {
-            "eyebrow": "Le produit",
-            "caption": "Tout le club, dans ta poche.",
-            "footnote": "Application iPhone et Android. Actuellement en programme pilote.",
-            "mockupAlt": "Accueil Joueur SimplyFoot sur iPhone tenu en main"
+            "eyebrow": "El producto",
+            "caption": "Todo el club, en tu bolsillo.",
+            "footnote": "App para iPhone y Android. Actualmente en programa piloto.",
+            "mockupAlt": "Pantalla de inicio Jugador SimplyFoot en iPhone sostenido en mano"
         },
         "triptych": {
-            "eyebrow": "Trois rôles",
-            "heading": "Trois vues, une seule app.",
-            "intro": "Chaque rôle entre par sa propre porte. Mêmes données, expériences séparées.",
+            "eyebrow": "Tres roles",
+            "heading": "Tres vistas, una sola app.",
+            "intro": "Cada rol entra por su propia puerta. Mismos datos, experiencias separadas.",
             "roles": {
                 "president": {
-                    "label": "Président",
-                    "lede": "Le club sous contrôle.",
-                    "mockupAlt": "Accueil Président SimplyFoot"
+                    "label": "Presidente",
+                    "lede": "El club bajo control.",
+                    "mockupAlt": "Pantalla de inicio Presidente SimplyFoot"
                 },
                 "coach": {
-                    "label": "Coach",
-                    "lede": "Le vestiaire numérique.",
-                    "mockupAlt": "Accueil Coach SimplyFoot"
+                    "label": "Entrenador",
+                    "lede": "El vestuario digital.",
+                    "mockupAlt": "Pantalla de inicio Entrenador SimplyFoot"
                 },
                 "player": {
-                    "label": "Joueur",
-                    "lede": "Ton club dans ta poche.",
-                    "mockupAlt": "Accueil Joueur SimplyFoot"
+                    "label": "Jugador",
+                    "lede": "Tu club en tu bolsillo.",
+                    "mockupAlt": "Pantalla de inicio Jugador SimplyFoot"
                 }
             },
-            "linkLabel": "Voir toutes les fonctionnalités"
+            "linkLabel": "Ver todas las funciones"
         },
         "numbers": {
-            "eyebrow": "Notre cadence",
+            "eyebrow": "Nuestro ritmo",
             "items": {
                 "0": {
                     "figure": "15",
-                    "label": "jours",
-                    "caption": "entre chaque mise à jour livrée."
+                    "label": "días",
+                    "caption": "entre cada actualización entregada."
                 },
                 "1": {
                     "figure": "4",
-                    "label": "profils",
-                    "caption": "pensés séparément : président, coach, joueur, parent."
+                    "label": "perfiles",
+                    "caption": "pensados por separado: presidente, entrenador, jugador, padre."
                 },
                 "2": {
                     "figure": "1",
                     "label": "app",
-                    "caption": "pour remplacer 5 outils dispersés."
+                    "caption": "para reemplazar 5 herramientas dispersas."
                 }
             }
         },
         "finalCta": {
-            "eyebrow": "Parlons-en",
-            "question": "Et si on écrivait la suite ensemble ?",
-            "subtitle": "Rejoignez les clubs pilotes. On échange ce week-end, pas dans un an.",
-            "primaryCta": "Rejoindre le programme pilote",
-            "secondaryCta": "Nous contacter",
-            "reassurance": "Inscription ouverte · Conçu en France · RGPD",
-            "simoBubble": "À samedi au stade !"
+            "eyebrow": "Hablemos",
+            "question": "¿Y si escribiéramos la continuación juntos?",
+            "subtitle": "Únete a los clubes piloto. Hablamos este fin de semana, no dentro de un año.",
+            "primaryCta": "Unirme al programa piloto",
+            "secondaryCta": "Contactarnos",
+            "reassurance": "Inscripción abierta · Hecho en Francia · RGPD",
+            "simoBubble": "¡Hasta el sábado en el estadio!"
         }
     },
     "Footer": {

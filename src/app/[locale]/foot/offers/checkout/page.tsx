@@ -3,13 +3,14 @@ import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import {
-    DEFAULT_LICENSEES,
+    CLUB_SIZES,
+    DEFAULT_SIZE,
     formatPrice,
     getEffectiveMonthlyPrice,
+    getPlan,
     getYearlyPrice,
-    isPlanId,
-    pickPlanForLicensees,
-    PLANS,
+    isClubSize,
+    isPlanTier,
     TRIAL_DAYS,
 } from '@/config/offers';
 import { buildAlternates } from '@/helpers/i18n.helpers';
@@ -18,7 +19,7 @@ import { Button } from '@/shadcn/button';
 import { BRANDS } from '@/utils/constants.utils';
 
 import type { AppLocale } from '~types/i18n.types';
-import type { BillingCycle } from '~types/offers.types';
+import type { BillingCycle, ClubSize, PlanTier } from '~types/offers.types';
 
 export async function generateMetadata({
     params,
@@ -39,46 +40,54 @@ export async function generateMetadata({
 
 interface CheckoutPageProps {
     params: Promise<{ locale: AppLocale }>;
-    searchParams: Promise<{ plan?: string; cycle?: string }>;
+    searchParams: Promise<{ plan?: string; size?: string; cycle?: string }>;
 }
 
 /**
- * Stub de checkout. Rôle temporaire : afficher le récapitulatif du plan
- * choisi et rediriger vers un contact par email tant que l'intégration
- * Stripe (ou équivalent) n'est pas livrée.
+ * Stub de checkout V2.1. Rôle temporaire : afficher le récapitulatif
+ * (tier × taille × cadence) et rediriger vers un contact par email tant
+ * que l'intégration Stripe / Mangopay n'est pas livrée.
  *
- * Structure volontairement simple :
- *   1. Lit les query params `plan` et `cycle`.
- *   2. Valide avec les type guards de `config/offers`.
- *   3. Fallback sur le plan recommandé par défaut (licenciés médians) et
- *      cycle mensuel si invalide.
- *   4. Affiche récap + CTA mailto préremplit le message.
+ * Params URL attendus :
+ *   - `plan`  : tier DÉCOUVERTE / STARTER / CLUB (`discovery` / `starter` / `club`)
+ *   - `size`  : taille du club (`small` / `medium` / `large`)
+ *   - `cycle` : `monthly` ou `yearly`
  *
- * Prochain pas : remplacer la section "next step" par une redirection
- * Stripe Checkout Session, en passant `plan.id` + `cycle` comme metadata.
+ * Fallback : tier=`club`, size=`DEFAULT_SIZE` (medium), cycle=`monthly` —
+ * même combinaison que le CTA par défaut de la page Offres.
  */
 export default async function FootCheckoutPage({ params, searchParams }: CheckoutPageProps) {
     const { locale } = await params;
     setRequestLocale(locale);
 
-    const { plan: rawPlan, cycle: rawCycle } = await searchParams;
+    const { plan: rawPlan, size: rawSize, cycle: rawCycle } = await searchParams;
+
+    const tier: PlanTier = isPlanTier(rawPlan) ? rawPlan : 'club';
+    const size: ClubSize = isClubSize(rawSize) ? rawSize : DEFAULT_SIZE;
     const cycle: BillingCycle = rawCycle === 'yearly' ? 'yearly' : 'monthly';
-    // Fallback = le plan recommandé par la taille médiane du club, identique à
-    // celui pré-sélectionné dans le `FinalCta` de la page Offres.
-    const plan = isPlanId(rawPlan)
-        ? (PLANS.find((p) => p.id === rawPlan) ?? pickPlanForLicensees(DEFAULT_LICENSEES))
-        : pickPlanForLicensees(DEFAULT_LICENSEES);
+
+    const plan = getPlan(tier);
+    const sizeDef = CLUB_SIZES.find((s) => s.id === size);
+    if (!sizeDef) {
+        throw new Error(`Unknown club size: ${size}`);
+    }
 
     const t = await getTranslations('Offers.checkout');
-    const tPlans = await getTranslations('Offers.plans');
+    const tTiers = await getTranslations('Offers.tiers');
+    const tSizes = await getTranslations('Offers.sizes');
     const tCycle = await getTranslations('Offers.cycle');
 
-    const monthly = getEffectiveMonthlyPrice(plan, cycle);
-    const yearly = cycle === 'yearly' ? getYearlyPrice(plan) : null;
+    const monthly = getEffectiveMonthlyPrice(plan, size, cycle);
+    const yearly = cycle === 'yearly' ? getYearlyPrice(plan, size) : null;
+    const isFree = plan.prices[size] === 0;
 
-    const subjectLine = t('email.subject', { plan: tPlans(plan.id) });
+    const planLabel = tTiers(`${tier}.name`);
+    const sizeLabel = tSizes(`${size}.label`);
+
+    const subjectLine = t('email.subject', { plan: planLabel });
     const bodyLine = t('email.body', {
-        plan: tPlans(plan.id),
+        plan: planLabel,
+        size: sizeLabel,
         cycle: tCycle(cycle),
         trialDays: TRIAL_DAYS,
     });
@@ -101,7 +110,7 @@ export default async function FootCheckoutPage({ params, searchParams }: Checkou
                     {t('eyebrow')}
                 </span>
                 <h1 className="font-display text-foreground text-3xl font-bold tracking-tight md:text-4xl">
-                    {t('title', { plan: tPlans(plan.id) })}
+                    {t('title', { plan: planLabel })}
                 </h1>
                 <p className="text-muted-foreground text-base leading-relaxed">{t('subtitle')}</p>
             </header>
@@ -114,30 +123,38 @@ export default async function FootCheckoutPage({ params, searchParams }: Checkou
                     {t('summaryLabel')}
                 </h2>
                 <dl className="divide-border mt-5 divide-y">
-                    <Row label={t('summary.plan')} value={tPlans(plan.id)} />
+                    <Row label={t('summary.plan')} value={planLabel} />
                     <Row
                         label={t('summary.size')}
                         value={
-                            plan.licenseeMax === null
-                                ? t('summary.sizeFrom', { min: plan.licenseeMin })
-                                : t('summary.sizeRange', {
-                                      min: plan.licenseeMin,
-                                      max: plan.licenseeMax,
-                                  })
+                            sizeDef.licenseeMax === null
+                                ? t('summary.sizeFrom', { min: sizeDef.licenseeMin })
+                                : sizeDef.licenseeMin === 0
+                                  ? t('summary.sizeUpTo', { max: sizeDef.licenseeMax })
+                                  : t('summary.sizeRange', {
+                                        min: sizeDef.licenseeMin,
+                                        max: sizeDef.licenseeMax,
+                                    })
                         }
                     />
                     <Row label={t('summary.cycle')} value={tCycle(cycle)} />
-                    {monthly !== null ? (
+                    {isFree ? (
+                        <Row label={t('summary.priceMonthly')} value={t('summary.free')} emphasis />
+                    ) : (
                         <Row
                             label={t('summary.priceMonthly')}
                             value={formatPrice(monthly)}
                             emphasis
                         />
-                    ) : (
-                        <Row label={t('summary.priceMonthly')} value={t('summary.onRequest')} />
                     )}
                     {yearly !== null && (
                         <Row label={t('summary.priceYearly')} value={formatPrice(yearly)} />
+                    )}
+                    {plan.takeRate !== null && (
+                        <Row
+                            label={t('summary.takeRate')}
+                            value={tTiers(`${tier}.takeRateLabel`)}
+                        />
                     )}
                     <Row
                         label={t('summary.trial')}

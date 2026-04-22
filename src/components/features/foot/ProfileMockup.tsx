@@ -1,8 +1,9 @@
 'use client';
 
 import { UsersRound } from 'lucide-react';
-import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
+import { PhoneFrame } from '@/components/shared/PhoneFrame';
 import { cn } from '@/lib/utils';
 
 interface ProfileMockupProps {
@@ -13,10 +14,10 @@ interface ProfileMockupProps {
 }
 
 /**
- * Mockup iPhone d'un profil. Légère rotation + ombre portée pour un rendu
- * premium. Pour le profil Parent (`mockupSrc=null`), on affiche une
- * composition illustrative — avatars famille en pastilles — plutôt qu'un
- * vrai mockup.
+ * Mockup iPhone d'un profil, rendu dans un `<PhoneFrame>` avec bezel et
+ * Dynamic Island pour un look premium. Pour le profil Parent
+ * (`mockupSrc=null`), on affiche une composition illustrative — avatars
+ * famille en pastilles — plutôt qu'un vrai mockup.
  */
 export function ProfileMockup({ mockupSrc, alt, className }: ProfileMockupProps) {
     if (!mockupSrc) {
@@ -24,26 +25,18 @@ export function ProfileMockup({ mockupSrc, alt, className }: ProfileMockupProps)
     }
 
     return (
-        <div
-            className={cn(
-                'relative mx-auto aspect-[9/19] w-full max-w-[320px] overflow-hidden rounded-[2.5rem] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.35)]',
-                'rotate-[-3deg] transition-transform duration-500 hover:rotate-0',
-                className,
-            )}
-        >
-            <Image
-                src={mockupSrc}
-                alt={alt}
-                fill
-                sizes="(min-width: 768px) 320px, 260px"
-                className="object-cover"
-                priority={false}
-            />
-        </div>
+        <PhoneFrame
+            src={mockupSrc}
+            alt={alt}
+            size="md"
+            rotation="rotate-[-3deg]"
+            className={className}
+        />
     );
 }
 
 function ParentIllustration({ label, className }: { label: string; className?: string }) {
+    const t = useTranslations('Features.profiles.items.parent.illustration');
     return (
         <div
             role="img"
@@ -72,7 +65,7 @@ function ParentIllustration({ label, className }: { label: string; className?: s
                 ))}
             </div>
             <p className="text-story-ink font-display max-w-[20ch] text-lg font-semibold text-balance">
-                Plusieurs enfants. Un seul compte. Zéro doublon.
+                {t('teaser')}
             </p>
         </div>
     );

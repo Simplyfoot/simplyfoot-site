@@ -5,22 +5,30 @@ import { useLocale, useTranslations } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
 
+import type { BillingCycle, ClubSize, PlanTier } from '~types/offers.types';
+
 interface FinalCtaProps {
-    /** Plan id pré-rempli dans le checkout (par défaut : le plan recommandé). */
-    defaultPlanId: string;
+    /** Tier pré-rempli dans le checkout (par défaut : CLUB, recommandé). */
+    defaultPlanId: PlanTier;
+    /** Taille pré-remplie — reprend la sélection live de l'utilisateur. */
+    defaultSize: ClubSize;
+    /** Cadence pré-remplie — reprend la sélection live de l'utilisateur. */
+    defaultCycle: BillingCycle;
     className?: string;
 }
 
 /**
  * Bloc final haute conversion. Background sombre signature SimplyFoot, CTA
  * double (primaire : démarrer l'essai gratuit ; secondaire : nous parler).
- * Le CTA primaire mène directement au checkout du plan recommandé pour que
- * l'utilisateur indécis aille à l'essentiel.
+ * Le CTA primaire mène directement au checkout pré-rempli avec les choix
+ * live (tier, taille, cadence) — pour que l'utilisateur arrive sur l'étape
+ * suivante sans ressaisir quoi que ce soit.
  */
-export function FinalCta({ defaultPlanId, className }: FinalCtaProps) {
+export function FinalCta({ defaultPlanId, defaultSize, defaultCycle, className }: FinalCtaProps) {
     const t = useTranslations('Offers.finalCta');
     const locale = useLocale();
     const localePrefix = locale === routing.defaultLocale ? '' : `/${locale}`;
+    const checkoutHref = `${localePrefix}/foot/offers/checkout?plan=${defaultPlanId}&size=${defaultSize}&cycle=${defaultCycle}`;
 
     return (
         <section
@@ -48,7 +56,7 @@ export function FinalCta({ defaultPlanId, className }: FinalCtaProps) {
 
                 <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center">
                     <Link
-                        href={`${localePrefix}/foot/offers/checkout?plan=${defaultPlanId}&cycle=monthly`}
+                        href={checkoutHref}
                         className="focus-visible:ring-primary bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-base font-semibold shadow-[0_10px_30px_-10px_color-mix(in_srgb,var(--story-forest-glow)_80%,transparent)] transition-all hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-10px_color-mix(in_srgb,var(--story-forest-glow)_90%,transparent)] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
                     >
                         {t('primaryCta')}

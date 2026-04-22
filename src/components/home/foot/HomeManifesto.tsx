@@ -29,7 +29,7 @@ export function HomeManifesto({ className }: HomeManifestoProps) {
     return (
         <section
             id="home-manifesto"
-            aria-label="Manifesto SimplyFoot"
+            aria-label={t('ariaLabel')}
             className={cn(
                 'bg-primary text-primary-foreground relative isolate flex min-h-screen w-full items-center justify-center overflow-hidden',
                 className,
@@ -39,7 +39,7 @@ export function HomeManifesto({ className }: HomeManifestoProps) {
                 aria-hidden
                 className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--primary-200)_15%,transparent)_0%,transparent_70%)]"
             />
-            <ol className="relative mx-auto flex w-full max-w-6xl flex-col gap-0 px-4 py-24 text-center font-[var(--font-display,inherit)] sm:px-6">
+            <ol className="relative mx-auto flex w-full max-w-6xl flex-col gap-0 px-4 py-24 text-center font-(--font-display,inherit) sm:px-6">
                 {range(LINE_COUNT).map((i) => (
                     <ManifestoLine key={i} index={i} text={t(`lines.${i}`)} />
                 ))}
@@ -58,7 +58,7 @@ function ManifestoLine({ index, text }: { index: number; text: string }) {
             data-reveal={inView}
             style={{ transitionDelay: `${index * 80}ms` }}
             className={cn(
-                'font-display block text-[clamp(2.5rem,11vw,9rem)] leading-[1] font-bold tracking-tighter text-balance',
+                'font-display block text-[clamp(2.5rem,11vw,9rem)] leading-none font-bold tracking-tighter text-balance',
                 'transition-all duration-700 ease-out motion-reduce:transition-none',
                 'data-[reveal=false]:translate-y-6 data-[reveal=false]:opacity-0',
                 'data-[reveal=true]:translate-y-0 data-[reveal=true]:opacity-100',

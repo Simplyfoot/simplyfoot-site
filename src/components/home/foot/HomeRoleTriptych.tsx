@@ -1,9 +1,9 @@
 'use client';
 
 import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
+import { PhoneFrame } from '@/components/shared/PhoneFrame';
 import { useInViewReveal } from '@/hooks/useInViewReveal';
 import { Link } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
@@ -17,19 +17,19 @@ const ROLES = [
         id: 'president' as const,
         mockup: '/images/Accueil President.png',
         accent: 'text-primary',
-        ring: 'ring-primary/20',
+        rotation: 'rotate-[-3deg]',
     },
     {
         id: 'coach' as const,
         mockup: '/images/Accueil Coach.png',
         accent: 'text-info-600',
-        ring: 'ring-info-500/20',
+        rotation: 'rotate-[0deg]',
     },
     {
         id: 'player' as const,
         mockup: '/images/Accueil Joueur.png',
         accent: 'text-warning-600',
-        ring: 'ring-warning-500/20',
+        rotation: 'rotate-[3deg]',
     },
 ];
 
@@ -85,20 +85,12 @@ export function HomeRoleTriptych({ className }: HomeRoleTriptychProps) {
                         className="relative flex w-[260px] shrink-0 snap-center flex-col items-center gap-5 md:w-auto"
                         style={{ transitionDelay: `${index * 120}ms` }}
                     >
-                        <div
-                            className={cn(
-                                'relative aspect-[9/19] w-full max-w-[280px] overflow-hidden rounded-[2.25rem] shadow-[0_30px_60px_-18px_rgba(0,0,0,0.3)] ring-2 transition-transform duration-500 hover:-translate-y-1',
-                                role.ring,
-                            )}
-                        >
-                            <Image
-                                src={role.mockup}
-                                alt={t(`roles.${role.id}.mockupAlt`)}
-                                fill
-                                sizes="(min-width: 768px) 280px, 240px"
-                                className="object-cover"
-                            />
-                        </div>
+                        <PhoneFrame
+                            src={role.mockup}
+                            alt={t(`roles.${role.id}.mockupAlt`)}
+                            size="md"
+                            rotation={role.rotation}
+                        />
                         <div className="flex flex-col items-center gap-1.5 text-center">
                             <p
                                 className={cn(

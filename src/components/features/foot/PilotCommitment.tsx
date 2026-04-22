@@ -19,6 +19,7 @@ const BULLET_COUNT = 4;
  */
 export function PilotCommitment({ className }: PilotCommitmentProps) {
     const t = useTranslations('Features.pilot');
+    const tCommon = useTranslations('Common');
 
     return (
         <section
@@ -60,7 +61,7 @@ export function PilotCommitment({ className }: PilotCommitmentProps) {
                 <div className="flex justify-center md:justify-end">
                     <SimoMascot
                         pose="running"
-                        alt="SIMO"
+                        alt={tCommon('simoAlt')}
                         bubble={t('simoBubble')}
                         bubbleSide="left"
                         sizeClassName="size-52 md:size-64"

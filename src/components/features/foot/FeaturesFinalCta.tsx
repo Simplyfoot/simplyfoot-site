@@ -18,6 +18,7 @@ interface FeaturesFinalCtaProps {
  */
 export function FeaturesFinalCta({ className }: FeaturesFinalCtaProps) {
     const t = useTranslations('Features.finalCta');
+    const tCommon = useTranslations('Common');
 
     return (
         <section
@@ -75,7 +76,7 @@ export function FeaturesFinalCta({ className }: FeaturesFinalCtaProps) {
                 <div className="flex justify-center md:justify-end">
                     <SimoMascot
                         pose="running"
-                        alt="SIMO"
+                        alt={tCommon('simoAlt')}
                         bubble={t('simoBubble')}
                         bubbleSide="left"
                         sizeClassName="size-48 md:size-64"

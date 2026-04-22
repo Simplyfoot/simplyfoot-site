@@ -31,6 +31,7 @@ interface ProfileSelectorProps {
  */
 export function ProfileSelector({ className }: ProfileSelectorProps) {
     const t = useTranslations('Features.profiles');
+    const tCommon = useTranslations('Common');
     const [active, setActive] = useState<ProfileId>('president');
 
     return (
@@ -113,7 +114,7 @@ export function ProfileSelector({ className }: ProfileSelectorProps) {
                     <div className="mt-2">
                         <SimoMascot
                             pose={PROFILE_SIMO_POSE[active]}
-                            alt="SIMO"
+                            alt={tCommon('simoAlt')}
                             bubble={t(`items.${active}.simoBubble`)}
                             bubbleSide="right"
                             sizeClassName="size-32 md:size-40"

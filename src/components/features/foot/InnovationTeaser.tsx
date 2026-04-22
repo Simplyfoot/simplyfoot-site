@@ -30,6 +30,7 @@ interface InnovationTeaserProps {
  */
 export function InnovationTeaser({ className }: InnovationTeaserProps) {
     const t = useTranslations('Features.innovation');
+    const tCommon = useTranslations('Common');
 
     return (
         <section
@@ -70,7 +71,7 @@ export function InnovationTeaser({ className }: InnovationTeaserProps) {
 
                     <SimoMascot
                         pose="default"
-                        alt="SIMO"
+                        alt={tCommon('simoAlt')}
                         bubble={t('simoBubble')}
                         bubbleSide="right"
                         sizeClassName="size-32 md:size-40"

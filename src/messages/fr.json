@@ -4,7 +4,8 @@
         "tagline": "L'écosystème du sport amateur",
         "cta": {
             "demo": "Demander une démo"
-        }
+        },
+        "simoAlt": "Mascotte SIMO de SimplyFoot"
     },
     "HomePage": {
         "meta": {
@@ -603,13 +604,14 @@
     "Offers": {
         "meta": {
             "title": "Offres & tarifs — {brand}",
-            "description": "Un seul produit {brand}, toutes les fonctionnalités incluses. Le tarif s'adapte à la taille de votre club. Essai gratuit 30 jours sans carte."
+            "description": "Un logiciel qui rapporte à votre club. DÉCOUVERTE gratuit, STARTER et CLUB avec billetterie digitale — jusqu'à 90 % des recettes reversées à votre club."
         },
         "hero": {
-            "eyebrow": "Offres & tarifs",
-            "titleBefore": "Un seul plan, adapté à la ",
-            "titleHighlight": "taille de votre club",
-            "subtitle": "SimplyFoot donne accès à l'intégralité de la plateforme quelle que soit l'offre. Vous payez simplement en fonction du nombre de licenciés de votre club.",
+            "eyebrow": "Offres & reversion",
+            "titleBefore": "Un logiciel qui ",
+            "titleHighlight": "rapporte",
+            "titleAfter": " à votre club.",
+            "subtitle": "Trois niveaux, trois tailles de club. Jusqu’à 90 % de vos recettes reviennent directement dans vos caisses.",
             "trustTrial": "{days} jours d'essai gratuit",
             "trustAnnual": "−{discount} % en annuel",
             "trustNoCard": "Sans carte bancaire"
@@ -618,93 +620,179 @@
             "label": "Cadence de facturation",
             "monthly": "Mensuel",
             "yearly": "Annuel",
-            "yearlyBadge": "−{discount} %"
+            "yearlyBadge": "−{discount} %",
+            "yearlyNote": "Soit ~2 mois offerts par an"
         },
-        "selector": {
-            "label": "Combien de licenciés dans votre club ?",
-            "eyebrow": "Trouvez votre offre",
-            "title": "Combien de licenciés dans votre club ?",
-            "helper": "Faites glisser le curseur ou saisissez le nombre exact. L'offre recommandée s'illumine instantanément.",
-            "inputLabel": "Nombre de licenciés",
-            "sliderLabel": "Ajuster le nombre de licenciés",
-            "unit": "licenciés",
-            "recommended": "L'offre recommandée pour votre club est {plan}.",
-            "plans": {
-                "mini": "Mini Club",
-                "local": "Local Club",
-                "regional": "Régional Club",
-                "grand": "Grand Club",
-                "maxi": "Maxi Club",
-                "enterprise": "District+ / Ville"
+        "sizes": {
+            "eyebrow": "Votre club",
+            "heading": "Quelle taille pour votre club ?",
+            "helper": "Les tarifs s'adaptent au nombre de licenciés. Changez à tout moment.",
+            "small": {
+                "label": "Petit club",
+                "range": "Jusqu'à 150 licenciés",
+                "short": "≤ 150 licenciés"
+            },
+            "medium": {
+                "label": "Club moyen",
+                "range": "151 à 400 licenciés",
+                "short": "151 – 400 licenciés"
+            },
+            "large": {
+                "label": "Grand club",
+                "range": "401 licenciés et plus",
+                "short": "401+ licenciés"
             }
         },
-        "plans": {
-            "mini": "Mini Club",
-            "local": "Local Club",
-            "regional": "Régional Club",
-            "grand": "Grand Club",
-            "maxi": "Maxi Club",
-            "enterprise": "District+ / Ville"
+        "tiers": {
+            "eyebrow": "Nos offres",
+            "heading": "Trois niveaux. Une seule philosophie.",
+            "intro": "Vous payez un abonnement juste. Vous encaissez la quasi-totalité de vos recettes billetterie. Zéro palier caché.",
+            "recommendedBadge": "Le plus choisi",
+            "discovery": {
+                "name": "DÉCOUVERTE",
+                "positioning": "Pour tester avant de s'engager",
+                "pitch": "1 équipe, 5 utilisateurs, convocations et feuille de match. Juste pour voir.",
+                "cta": "Créer un compte gratuit",
+                "takeRateLabel": "—"
+            },
+            "starter": {
+                "name": "STARTER",
+                "positioning": "Pour les clubs équipés",
+                "pitch": "Toute la gestion sportive de votre club. Modules buvette, tournois et boutique en option.",
+                "cta": "Démarrer l'essai gratuit",
+                "takeRateLabel": "Vous gardez 88 % de vos recettes"
+            },
+            "club": {
+                "name": "CLUB",
+                "positioning": "Pour les clubs matures",
+                "pitch": "Tout STARTER + modules inclus, export FEC, Customer Success dédié.",
+                "cta": "Démarrer l'essai gratuit",
+                "takeRateLabel": "Vous gardez 90 % de vos recettes"
+            }
         },
-        "card": {
-            "badgeForClub": "Votre offre",
-            "range": "De {min} à {max} licenciés",
-            "rangeFrom": "À partir de {min} licenciés",
+        "features": {
+            "heading": "Ce qui est inclus",
+            "values": {
+                "yes": "✓",
+                "no": "—",
+                "unlimited": "Illimité",
+                "advanced": "✓ avancées",
+                "addon": "Module +",
+                "included": "Inclus",
+                "1team": "1 équipe",
+                "5users": "5 max",
+                "faq": "FAQ",
+                "email48h": "Email sous 48 h",
+                "priority4h": "Prioritaire 4 h + CSM",
+                "takeRate12": "88 % reversé",
+                "takeRate10": "90 % reversé"
+            },
+            "rows": {
+                "teams": "Équipes incluses",
+                "users": "Utilisateurs",
+                "convocations": "Convocations & feuille de match",
+                "lineups": "Compositions drag & drop",
+                "stats": "Statistiques sportives",
+                "ticketing": "Monétisation événements",
+                "passSaison": "Monétisation avancée",
+                "buvetteModule": "Buvette digitale",
+                "tournoisModule": "Module tournois",
+                "accounting": "Comptabilité & export FEC",
+                "support": "Support"
+            }
+        },
+        "price": {
             "perMonth": "/ mois HT",
             "vatNote": "Hors taxes. Facturation mensuelle, résiliable à tout moment.",
-            "onRequest": "Sur devis",
             "billedYearly": "Soit {amount} économisés par an",
-            "ctaPrimary": "Démarrer l'essai gratuit",
-            "ctaEnterprise": "Demander un devis",
-            "reassurance": "30 jours gratuits, sans carte bancaire.",
-            "reassuranceEnterprise": "Réponse sous 48 h, devis sur mesure.",
-            "bullets": {
-                "0": "Toutes les fonctionnalités SimplyFoot incluses",
-                "1": "Utilisateurs illimités : coachs, dirigeants, parents",
-                "2": "Mises à jour et support inclus",
-                "3": "Changement d'offre possible à tout moment"
+            "free": "Gratuit",
+            "reassurance": "30 jours gratuits, sans carte bancaire."
+        },
+        "reversion": {
+            "eyebrow": "Une logique inversée",
+            "heading": "Votre club ne paie pas. Il gagne.",
+            "lede": "SimplyFoot n’est pas qu’un logiciel : c’est un partenaire. Une part directe des recettes que la plateforme aide votre club à générer revient automatiquement dans vos caisses. Sans démarche, sans paperasse.",
+            "exampleTitle": "Le principe en chiffres",
+            "exampleBody": "Pour 100 € de recettes générées via SimplyFoot, voici la répartition.",
+            "breakdown": {
+                "gross": "Recettes générées",
+                "simplyfoot": "Commission SimplyFoot (offre CLUB)",
+                "club": "Reversé à votre club"
+            },
+            "kicker": "Soit 90 % pour votre club. Automatique. Sans effort.",
+            "pills": {
+                "starter": "STARTER · 88 % reversé",
+                "club": "CLUB · 90 % reversé"
+            }
+        },
+        "modules": {
+            "eyebrow": "Modules complémentaires",
+            "heading": "Les add-ons de l'offre STARTER.",
+            "intro": "Tous inclus dans l'offre CLUB. Activez-les à la carte si vous restez en STARTER.",
+            "included": "Inclus dans CLUB",
+            "perMonth": "/ mois",
+            "items": {
+                "buvette": {
+                    "name": "Buvette digitale",
+                    "pitch": "Caisse QR code, stock, clôture automatique, export comptable.",
+                    "target": "Clubs recevants"
+                },
+                "tournois": {
+                    "name": "Tournois",
+                    "pitch": "Gestion multi-poules, arbres de phases finales, inscription en ligne, billetterie tournoi.",
+                    "target": "Clubs organisateurs"
+                },
+                "boutique": {
+                    "name": "Boutique club",
+                    "pitch": "Maillots, écharpes, merchandising, intégration stock et reversion.",
+                    "target": "Clubs matures"
+                }
             }
         },
         "trust": {
-            "heading": "Toutes les fonctionnalités. Tous les plans.",
+            "heading": "Tout simple. Sans piège.",
             "description": "Pas d'options cachées. 30 jours d'essai, sans carte bancaire, résiliable en un clic.",
             "trial": "{days} jours d'essai",
-            "noCommit": "Sans engagement",
+            "noCommit": "Sans engagement mensuel",
             "setup": "Prêt en 10 minutes",
             "security": "Données en France, RGPD"
         },
         "faq": {
             "eyebrow": "Questions fréquentes",
             "heading": "Toutes les réponses avant de démarrer",
-            "intro": "Les questions qu'on nous pose le plus souvent sur les offres et le parcours d'abonnement.",
+            "intro": "Les questions qu'on nous pose le plus souvent sur les offres et la reversion.",
             "items": {
                 "whichPlan": {
                     "question": "Quel plan correspond à mon club ?",
-                    "answer": "Le plan dépend uniquement du nombre de licenciés de votre club. Utilisez le sélecteur ci-dessus : l'offre recommandée s'illumine automatiquement. Si votre club a plus de 500 licenciés ou couvre plusieurs sections, nous proposons un plan sur devis adapté."
+                    "answer": "Si vous découvrez SimplyFoot avec une seule équipe, commencez par DÉCOUVERTE (gratuit). Si vous êtes un club structuré qui veut utiliser l'app pour toutes vos équipes et encaisser vos recettes billetterie, c'est STARTER. Si vous êtes un club mature avec plusieurs sections et besoin de pass saison, export FEC et Customer Success, c'est CLUB."
+                },
+                "takeRate": {
+                    "question": "Comment SimplyFoot rémunère mon club ?",
+                    "answer": "À chaque revenu généré par votre club via SimplyFoot, vous gardez l’essentiel : 88 % en STARTER, 90 % en CLUB. Nous prélevons une petite commission sur la couche transactionnelle ; le reste vous est viré automatiquement, sans démarche."
+                },
+                "modules": {
+                    "question": "Quels modules complémentaires sont disponibles ?",
+                    "answer": "Trois modules peuvent être ajoutés à l'offre STARTER : Buvette digitale (+19 € / mois), Tournois (+15 € / mois), Boutique club (+25 € / mois). Les trois sont inclus d'office dans l'offre CLUB."
                 },
                 "canChangePlan": {
                     "question": "Puis-je changer d'offre en cours d'année ?",
-                    "answer": "Oui, à tout moment. Si votre club grandit, le passage au plan supérieur est instantané et nous ajustons la facturation au prorata. À l'inverse, vous pouvez revenir à un plan inférieur à la fin de la période en cours."
-                },
-                "allFeaturesIncluded": {
-                    "question": "Toutes les fonctionnalités sont-elles vraiment incluses ?",
-                    "answer": "Oui. SimplyFoot fonctionne avec un seul produit complet : convocations, compositions, messagerie, suivi joueurs, statistiques, documents — tout est accessible quel que soit votre plan. Seul le tarif change selon la taille de votre club."
+                    "answer": "Oui, à tout moment. Passage DÉCOUVERTE → STARTER ou STARTER → CLUB instantané, avec ajustement au prorata. Retour en arrière possible à la fin de la période en cours."
                 },
                 "clubGrows": {
-                    "question": "Que se passe-t-il si mon club grandit ?",
-                    "answer": "Dès que vous dépassez la tranche de licenciés de votre plan actuel, nous vous proposons automatiquement le passage au plan supérieur, avec un ajustement au prorata. Aucune coupure, aucune surprise."
+                    "question": "Que se passe-t-il si mon club grandit et change de taille ?",
+                    "answer": "La taille (Petit / Moyen / Grand) détermine uniquement le prix. Dès que vous franchissez la limite des licenciés, on vous propose le palier supérieur avec un ajustement au prorata. Aucune coupure, aucune surprise."
                 },
                 "engagement": {
                     "question": "Y a-t-il un engagement ?",
-                    "answer": "Aucun engagement imposé. L'abonnement mensuel est résiliable en un clic. Le plan annuel (avec 10 % de remise) couvre 12 mois mais reste remboursable au prorata en cas d'arrêt d'activité du club."
+                    "answer": "Aucun engagement imposé. L'abonnement mensuel est résiliable en un clic. Le plan annuel (avec 17 % de remise, soit environ 2 mois offerts) couvre 12 mois mais reste remboursable au prorata en cas d'arrêt d'activité du club."
                 },
                 "paymentMethods": {
                     "question": "Comment fonctionne le paiement ?",
-                    "answer": "Carte bancaire (Visa, Mastercard, American Express) ou prélèvement SEPA. L'abonnement démarre seulement à la fin de l'essai gratuit de 30 jours — vous ne renseignez vos informations bancaires qu'au moment où vous choisissez vraiment de continuer."
+                    "answer": "Carte bancaire (Visa, Mastercard, American Express) ou prélèvement SEPA, via Stripe ou Mangopay. L'abonnement démarre seulement à la fin de l'essai gratuit de 30 jours — vous ne renseignez vos coordonnées bancaires qu'au moment où vous décidez vraiment de continuer."
                 },
                 "billing": {
-                    "question": "Qui reçoit la facture ?",
-                    "answer": "La facture est éditée au nom du club (association loi 1901 ou structure équivalente) et envoyée automatiquement par email au trésorier. Toutes les factures sont téléchargeables en PDF depuis votre espace."
+                    "question": "Qui reçoit la facture et la reversion ?",
+                    "answer": "La facture d'abonnement est éditée au nom du club (association loi 1901 ou structure équivalente) et envoyée par email au trésorier. La reversion billetterie est virée sur le compte bancaire du club selon la cadence choisie (hebdomadaire ou mensuelle). Toutes les pièces sont téléchargeables en PDF depuis votre espace."
                 },
                 "freeTrial": {
                     "question": "Comment fonctionne l'essai gratuit ?",
@@ -714,8 +802,8 @@
         },
         "finalCta": {
             "eyebrow": "Prêt à démarrer",
-            "heading": "Donnez à votre club l'outil qu'il mérite",
-            "subtitle": "Démarrez votre essai gratuit aujourd'hui. En 10 minutes, votre club est opérationnel. Dans 30 jours, vous décidez librement de continuer.",
+            "heading": "Votre club mérite un logiciel qui lui rapporte.",
+            "subtitle": "Démarrez l'essai gratuit aujourd'hui. En 10 minutes votre club est opérationnel. Dans 30 jours, vous décidez.",
             "primaryCta": "Démarrer l'essai gratuit",
             "secondaryCta": "Parler à notre équipe",
             "reassurance": "30 jours gratuits. Sans carte bancaire. Sans engagement."
@@ -735,12 +823,14 @@
                 "size": "Taille du club",
                 "sizeRange": "De {min} à {max} licenciés",
                 "sizeFrom": "À partir de {min} licenciés",
+                "sizeUpTo": "Jusqu'à {max} licenciés",
                 "cycle": "Cadence",
                 "priceMonthly": "Prix mensuel",
                 "priceYearly": "Montant annuel",
+                "takeRate": "Part reversée à votre club",
                 "trial": "Essai gratuit",
                 "trialValue": "{days} jours offerts",
-                "onRequest": "Sur devis"
+                "free": "Gratuit"
             },
             "nextStep": {
                 "heading": "Dernière étape",
@@ -751,7 +841,7 @@
             },
             "email": {
                 "subject": "Demande d'abonnement SimplyFoot — {plan}",
-                "body": "Bonjour,\n\nJe souhaite démarrer mon essai gratuit SimplyFoot avec l'offre {plan} en cadence {cycle}.\n\nMerci de m'activer l'essai gratuit de {trialDays} jours.\n\nNom du club :\nNombre de licenciés :\nRôle dans le club :\n\nMerci,"
+                "body": "Bonjour,\n\nJe souhaite démarrer mon essai gratuit SimplyFoot avec l'offre {plan} ({size}) en cadence {cycle}.\n\nMerci de m'activer l'essai gratuit de {trialDays} jours.\n\nNom du club :\nNombre de licenciés :\nRôle dans le club :\n\nMerci,"
             }
         }
     },
@@ -1108,7 +1198,10 @@
                         "3": "Accès aux infos utiles selon les droits accordés"
                     },
                     "simoBubble": "Ta tribu foot, organisée sans prise de tête.",
-                    "mockupAlt": "Vue Parent : plusieurs enfants gérés dans un seul compte"
+                    "mockupAlt": "Vue Parent : plusieurs enfants gérés dans un seul compte",
+                    "illustration": {
+                        "teaser": "Plusieurs enfants. Un seul compte. Zéro doublon."
+                    }
                 }
             }
         },
@@ -1282,10 +1375,20 @@
             "titleLine1": "Le foot amateur",
             "titleLine2": "mérite une app",
             "titleLine3": "à sa hauteur.",
-            "subtitle": "Conçue avec les clubs pilotes. Mise à jour toutes les deux semaines.",
-            "cta": "Découvrir SimplyFoot",
+            "subtitle": "Gestion, convocations, messagerie, suivi des joueurs — dans une seule app conçue avec les clubs pilotes.",
             "scrollHint": "Faites défiler",
-            "planetAlt": "Planète SimplyFoot — signature 3D"
+            "planetAlt": "Planète SimplyFoot — signature 3D",
+            "authorityPill": "Programme pilote ouvert · 10 clubs engagés",
+            "ctaPrimary": "Rejoindre le programme pilote",
+            "ctaSecondary": "Voir comment ça marche",
+            "mockupAlt": "Tableau de bord Président SimplyFoot sur iPhone",
+            "simoBubble": "Hey ! Je t’accompagne pas à pas.",
+            "trust": {
+                "france": "Conçu en France",
+                "rgpd": "Conforme RGPD",
+                "updates": "MAJ toutes les 2 semaines",
+                "pilots": "10 clubs pilotes"
+            }
         },
         "whisper": {
             "eyebrow": "Dans chaque club",
@@ -1299,7 +1402,8 @@
                 "2": "Un joueur.",
                 "3": "Un parent.",
                 "4": "Une seule app."
-            }
+            },
+            "ariaLabel": "Manifesto SimplyFoot"
         },
         "mockupHero": {
             "eyebrow": "Le produit",

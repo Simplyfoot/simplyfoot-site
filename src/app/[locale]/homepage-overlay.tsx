@@ -36,40 +36,6 @@ export function HomepageOverlay() {
                 >
                     {t('hero.subtitle')}
                 </p>
-
-                <div
-                    className={cn(
-                        'pointer-events-auto flex flex-col gap-3 sm:flex-row sm:justify-center',
-                        isLandscapeMobile ? 'mt-3' : 'mt-6',
-                    )}
-                >
-                    {/*
-                    TODO landing CTA #1 — Bouton "Demander une démo" vers /contact.
-                    Réactiver lors de la reconnexion de la page contact.
-
-                    <Link
-                        href="/contact"
-                        className={cn(buttonVariants({ size: 'lg' }), 'min-h-11 w-full sm:w-auto')}
-                    >
-                        {tc('cta.demo')}
-                    </Link>
-                    */}
-
-                    {/*
-                    TODO landing CTA #2 — Bouton "Explorer" vers /foot.
-                    Réactiver lors de la reconnexion de SimplyFoot.
-
-                    <Link
-                        href="/foot"
-                        className={cn(
-                            buttonVariants({ size: 'lg', variant: 'outline' }),
-                            'border-secondary/30 text-secondary hover:bg-secondary/10 hover:text-secondary min-h-11 w-full bg-transparent sm:w-auto',
-                        )}
-                    >
-                        {t('hero.explore')}
-                    </Link>
-                    */}
-                </div>
             </div>
         </div>
     );

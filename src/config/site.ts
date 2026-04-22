@@ -37,7 +37,7 @@ export const BRAND_CONTACT: Record<BrandSlug, BrandContact> = {
             instagram: 'https://instagram.com/simplyfoot',
         },
     },
-    // TODO: update with rugby-specific contact info once available
+    // Note: shares foot contact channels until rugby has dedicated socials/email.
     rugby: {
         email: 'contact@simplyfoot.fr',
         phone: '+33 6 82 84 56 41',
@@ -47,7 +47,7 @@ export const BRAND_CONTACT: Record<BrandSlug, BrandContact> = {
             instagram: 'https://instagram.com/simplyfoot',
         },
     },
-    // TODO: update with handball-specific contact info once available
+    // Note: shares foot contact channels until handball has dedicated socials/email.
     handball: {
         email: 'contact@simplyfoot.fr',
         phone: '+33 6 82 84 56 41',

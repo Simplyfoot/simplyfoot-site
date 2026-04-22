@@ -17,6 +17,7 @@ interface FeaturesPromiseProps {
  */
 export function FeaturesPromise({ className }: FeaturesPromiseProps) {
     const t = useTranslations('Features.solution');
+    const tCommon = useTranslations('Common');
 
     return (
         <section
@@ -63,7 +64,7 @@ export function FeaturesPromise({ className }: FeaturesPromiseProps) {
             <div className="mt-2">
                 <SimoMascot
                     pose="default"
-                    alt="SIMO"
+                    alt={tCommon('simoAlt')}
                     bubble={t('simoBubble')}
                     bubbleSide="right"
                     sizeClassName="size-36 md:size-44"

@@ -5,6 +5,8 @@ import { SimoMascot } from '@/components/features/foot/SimoMascot';
 import { Link } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
 
+// Alt text for SIMO comes from Common namespace — translated per locale.
+
 interface HomeFinalCtaProps {
     className?: string;
 }
@@ -18,6 +20,7 @@ interface HomeFinalCtaProps {
  */
 export function HomeFinalCta({ className }: HomeFinalCtaProps) {
     const t = useTranslations('Home.finalCta');
+    const tCommon = useTranslations('Common');
 
     return (
         <section
@@ -75,7 +78,7 @@ export function HomeFinalCta({ className }: HomeFinalCtaProps) {
                 <div className="flex justify-center md:justify-end">
                     <SimoMascot
                         pose="running"
-                        alt="SIMO"
+                        alt={tCommon('simoAlt')}
                         bubble={t('simoBubble')}
                         bubbleSide="left"
                         sizeClassName="size-48 md:size-64"

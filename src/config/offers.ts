@@ -1,50 +1,75 @@
-import type { BillingCycle, Plan, PlanId } from '~types/offers.types';
+import type {
+    BillingCycle,
+    ClubSize,
+    ClubSizeDef,
+    ModuleDef,
+    Plan,
+    PlanTier,
+} from '~types/offers.types';
 
 /**
- * Pricing SimplyFoot — philosophie "un seul produit complet, le tarif s'adapte à
- * la taille du club". Toutes les offres donnent accès à l'intégralité des
- * fonctionnalités ; seule la tranche de licenciés fait varier le prix.
- *
- * Les identifiants de plan (`mini`, `local`, …) sont stables — ils servent
- * aussi de paramètre URL pour le parcours de paiement, donc ne pas les
- * renommer sans migration.
+ * Modèle économique SimplyFoot V2.1 — source de vérité unique.
+ * Deux tiers payants (STARTER / CLUB) + DÉCOUVERTE gratuit, déclinés en
+ * trois tailles de club. Prix alignés sur le doc stratégique d'avril 2026.
  */
+
+/** Les trois tiers de l'offre — ordre = ordre d'affichage gauche → droite. */
 export const PLANS: readonly Plan[] = [
-    { id: 'mini', licenseeMin: 1, licenseeMax: 30, priceMonthly: 4.99 },
-    { id: 'local', licenseeMin: 31, licenseeMax: 75, priceMonthly: 9.99 },
-    { id: 'regional', licenseeMin: 76, licenseeMax: 150, priceMonthly: 14.99 },
     {
-        id: 'grand',
-        licenseeMin: 151,
-        licenseeMax: 300,
-        priceMonthly: 19.99,
+        tier: 'discovery',
+        prices: { small: 0, medium: 0, large: 0 },
+        takeRate: null,
+    },
+    {
+        tier: 'starter',
+        prices: { small: 29, medium: 59, large: 99 },
+        takeRate: 0.12,
+    },
+    {
+        tier: 'club',
+        prices: { small: 59, medium: 119, large: 199 },
+        takeRate: 0.1,
         recommended: true,
     },
-    { id: 'maxi', licenseeMin: 301, licenseeMax: 500, priceMonthly: 29.99 },
-    { id: 'enterprise', licenseeMin: 501, licenseeMax: null, priceMonthly: null },
 ];
 
-/**
- * Remise appliquée au paiement annuel. 10 % = exactement 1.2 mois offerts.
- * Calibré pour être visible en CTA sans éroder la marge logicielle (≥ 80 %).
- */
-export const ANNUAL_DISCOUNT = 0.1;
+/** Les trois tailles de club, avec bornes en licenciés. */
+export const CLUB_SIZES: readonly ClubSizeDef[] = [
+    { id: 'small', licenseeMin: 0, licenseeMax: 150 },
+    { id: 'medium', licenseeMin: 151, licenseeMax: 400 },
+    { id: 'large', licenseeMin: 401, licenseeMax: null },
+];
+
+/** Modules complémentaires — tous inclus dans CLUB, vendus séparément aux STARTER. */
+export const MODULES: readonly ModuleDef[] = [
+    { id: 'buvette', priceMonthly: 19 },
+    { id: 'tournois', priceMonthly: 15 },
+    { id: 'boutique', priceMonthly: 25 },
+];
+
+/** Remise sur l'abonnement annuel (équivalent à ~2 mois offerts). */
+export const ANNUAL_DISCOUNT = 0.17;
 
 /** Durée de l'essai gratuit, sans carte bancaire. */
 export const TRIAL_DAYS = 30;
 
-/** Valeur par défaut du slider de licenciés (médiane du segment "Grand Club"). */
-export const DEFAULT_LICENSEES = 180;
+/** Taille par défaut sélectionnée à l'arrivée sur la page. */
+export const DEFAULT_SIZE: ClubSize = 'medium';
 
-/** Bornes du slider (un peu au-delà de la borne supérieure pour inviter au "sur devis"). */
-export const LICENSEE_SLIDER_MIN = 10;
-export const LICENSEE_SLIDER_MAX = 650;
+/**
+ * Recette de référence utilisée dans la section "reversion". Volontairement
+ * neutre (base 100 €) pour éviter d'évoquer un produit transactionnel
+ * spécifique tant que la couche billetterie n'est pas publiquement annoncée.
+ * Lit comme une simple répartition pédagogique : "pour 100 € générés".
+ */
+export const REVERSION_EXAMPLE_GROSS = 100;
 
-/** Clés des items de FAQ pricing. Les questions/réponses vivent dans les messages. */
+/** Clés des items de FAQ pricing (ordre d'affichage). */
 export const OFFERS_FAQ_KEYS = [
     'whichPlan',
+    'takeRate',
+    'modules',
     'canChangePlan',
-    'allFeaturesIncluded',
     'clubGrows',
     'engagement',
     'paymentMethods',
@@ -55,63 +80,85 @@ export const OFFERS_FAQ_KEYS = [
 export type OffersFaqKey = (typeof OFFERS_FAQ_KEYS)[number];
 
 /**
- * Sélectionne le plan adapté à un nombre de licenciés donné. Le dernier
- * plan (`enterprise`) ayant `licenseeMax: null`, il couvre toujours la queue
- * de la plage — un `throw` signale donc un bug de config plutôt qu'un
- * fallback silencieux sur un plan arbitraire.
+ * Map licenciés → taille de club. Utilisé pour suggérer la taille par
+ * défaut quand l'utilisateur n'a pas encore sélectionné son segment.
  */
-export function pickPlanForLicensees(licensees: number): Plan {
+export function pickSizeFromLicensees(licensees: number): ClubSize {
     const safe = Math.max(0, Math.floor(licensees));
-    for (const plan of PLANS) {
-        if (safe < plan.licenseeMin) {
-            continue;
-        }
-        if (plan.licenseeMax === null || safe <= plan.licenseeMax) {
-            return plan;
+    for (const size of CLUB_SIZES) {
+        if (size.licenseeMax === null || safe <= size.licenseeMax) {
+            return size.id;
         }
     }
-    throw new Error(`pickPlanForLicensees: no plan matches ${licensees} licensees`);
+    // Inatteignable : la dernière taille (`large`) a `licenseeMax: null`.
+    throw new Error(`pickSizeFromLicensees: no size matches ${licensees}`);
 }
 
-/** Prix mensuel équivalent compte tenu de la cadence choisie (annuel remisé). */
-export function getEffectiveMonthlyPrice(plan: Plan, cycle: BillingCycle): number | null {
-    if (plan.priceMonthly === null) {
-        return null;
+/** Retourne la définition d'un tier, throw si tier inconnu. */
+export function getPlan(tier: PlanTier): Plan {
+    const plan = PLANS.find((p) => p.tier === tier);
+    if (!plan) {
+        throw new Error(`Unknown plan tier: ${tier}`);
+    }
+    return plan;
+}
+
+/**
+ * Prix mensuel équivalent compte tenu de la cadence choisie (annuel
+ * remisé). Retourne 0 pour DÉCOUVERTE quelle que soit la taille.
+ */
+export function getEffectiveMonthlyPrice(plan: Plan, size: ClubSize, cycle: BillingCycle): number {
+    const price = plan.prices[size];
+    if (price === 0) {
+        return 0;
     }
     if (cycle === 'yearly') {
-        return plan.priceMonthly * (1 - ANNUAL_DISCOUNT);
+        return price * (1 - ANNUAL_DISCOUNT);
     }
-    return plan.priceMonthly;
+    return price;
 }
 
-/** Prix annuel (12 × mois effectif). Utilisé pour afficher l'économie totale. */
-export function getYearlyPrice(plan: Plan): number | null {
-    if (plan.priceMonthly === null) {
+/** Montant annuel facturé (12 × mois effectif). `null` pour DÉCOUVERTE. */
+export function getYearlyPrice(plan: Plan, size: ClubSize): number | null {
+    const price = plan.prices[size];
+    if (price === 0) {
         return null;
     }
-    return plan.priceMonthly * 12 * (1 - ANNUAL_DISCOUNT);
+    return price * 12 * (1 - ANNUAL_DISCOUNT);
 }
 
-/** Économie annuelle en euros par rapport au paiement mensuel. */
-export function getYearlySavings(plan: Plan): number | null {
-    if (plan.priceMonthly === null) {
+/** Économie en euros sur un an si paiement annuel. `null` pour DÉCOUVERTE. */
+export function getYearlySavings(plan: Plan, size: ClubSize): number | null {
+    const price = plan.prices[size];
+    if (price === 0) {
         return null;
     }
-    return plan.priceMonthly * 12 * ANNUAL_DISCOUNT;
+    return price * 12 * ANNUAL_DISCOUNT;
 }
 
-/** Type guard pour filtrer les PlanId valides (utilisé côté query string). */
-export function isPlanId(value: string | null | undefined): value is PlanId {
-    if (!value) {
-        return false;
+/**
+ * Reversion que touche le club pour un volume de billetterie donné, selon
+ * le tier. Le take-rate est la commission SimplyFoot ; la reversion est
+ * ce qui reste au club.
+ */
+export function computeReversion(
+    plan: Plan,
+    grossRevenue: number,
+): {
+    clubShare: number;
+    simplyfootShare: number;
+} | null {
+    if (plan.takeRate === null) {
+        return null;
     }
-    return PLANS.some((p) => p.id === value);
+    const simplyfootShare = grossRevenue * plan.takeRate;
+    const clubShare = grossRevenue - simplyfootShare;
+    return { clubShare, simplyfootShare };
 }
 
 /**
  * Formatteur prix EUR — virgule française, symbole €. `withDecimals: false`
- * est utilisé pour afficher les économies annuelles rondes (ex. "12 €" au
- * lieu de "12,00 €").
+ * pour afficher des montants ronds (ex. "2 160 €" au lieu de "2 160,00 €").
  */
 export function formatPrice(value: number, opts?: { withDecimals?: boolean }): string {
     const withDecimals = opts?.withDecimals ?? true;
@@ -121,4 +168,14 @@ export function formatPrice(value: number, opts?: { withDecimals?: boolean }): s
         minimumFractionDigits: withDecimals ? 2 : 0,
         maximumFractionDigits: withDecimals ? 2 : 0,
     }).format(value);
+}
+
+/** Type guard pour valider un tier côté query string. */
+export function isPlanTier(value: string | null | undefined): value is PlanTier {
+    return value === 'discovery' || value === 'starter' || value === 'club';
+}
+
+/** Type guard pour valider une taille côté query string. */
+export function isClubSize(value: string | null | undefined): value is ClubSize {
+    return value === 'small' || value === 'medium' || value === 'large';
 }

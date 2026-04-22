@@ -11,6 +11,7 @@ import { useDeviceConfig } from '@/hooks/useDeviceConfig';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { useRootColor } from '@/hooks/useRootColor';
 import { useRouter } from '@/i18n/navigation';
+import { FALLBACK_HEX } from '@/utils/constants.utils';
 
 import { FootPlanet } from './FootPlanet';
 import { GalaxyReducedMotion } from './GalaxyReducedMotion';
@@ -76,7 +77,7 @@ function Scene() {
             <OrbitingGroup {...config.planetOrbits.rugby}>
                 <Planet
                     label="Rugby"
-                    color={rugbyPrimary || '#000000'}
+                    color={rugbyPrimary || FALLBACK_HEX}
                     position={[0, 0, 0]}
                     scale={config.planetScale.rugby}
                     sphereSegments={config.sphereSegments}
@@ -88,7 +89,7 @@ function Scene() {
             <OrbitingGroup {...config.planetOrbits.handball}>
                 <Planet
                     label="Handball"
-                    color={handballPrimary || '#000000'}
+                    color={handballPrimary || FALLBACK_HEX}
                     position={[0, 0, 0]}
                     scale={config.planetScale.handball}
                     sphereSegments={config.sphereSegments}
@@ -129,7 +130,7 @@ export default function SimplyGalaxy() {
             dpr={config.dpr}
             aria-hidden="true"
         >
-            <color attach="background" args={['#000000']} />
+            <color attach="background" args={[FALLBACK_HEX]} />
             <Scene />
         </Canvas>
     );
