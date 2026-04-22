@@ -47,6 +47,7 @@
     /* ================= Story (narrative palette) ================= */
     --color-story-forest: var(--story-forest);
     --color-story-forest-glow: var(--story-forest-glow);
+    --color-story-midnight: var(--story-midnight);
     --color-story-cream-deep: var(--story-cream-deep);
     --color-story-cream-light: var(--story-cream-light);
     --color-story-ink: var(--story-ink);
@@ -269,6 +270,22 @@
     }
     to {
         transform: translateX(-100%);
+    }
+}
+
+/* Features page — SIMO idle float. Léger effet vivant sans jump-cut.
+   Couplé à `motion-reduce:animate-none` côté composant pour les
+   utilisateurs sensibles. */
+@keyframes simo-float {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-4px) rotate(-1.5deg);
+    }
+    75% {
+        transform: translateY(-4px) rotate(1.5deg);
     }
 }
 

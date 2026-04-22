@@ -97,6 +97,7 @@
        partagent la même teinte de base. */
     --story-forest: rgb(26 46 34); /* deep forest green */
     --story-forest-glow: rgb(122 158 138); /* sage highlight */
+    --story-midnight: rgb(5 14 10); /* near-black forest, innovation teaser surface */
     --story-cream-deep: rgb(240 221 180); /* warmer cream for stat panels */
     --story-cream-light: rgb(255 245 228); /* light cream for quote cards */
     --story-ink: rgb(26 24 20); /* warm near-black text on cream */

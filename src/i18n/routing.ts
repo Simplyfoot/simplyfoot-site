@@ -53,6 +53,11 @@ export const routing = defineRouting({
             en: '/foot/help',
             es: '/foot/ayuda',
         },
+        '/foot/features': {
+            fr: '/foot/fonctionnalites',
+            en: '/foot/features',
+            es: '/foot/funcionalidades',
+        },
         '/foot/offers': {
             fr: '/foot/offres',
             en: '/foot/offers',
