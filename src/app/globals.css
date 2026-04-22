@@ -44,6 +44,13 @@
     --color-primary-800: var(--primary-800);
     --color-primary-900: var(--primary-900);
 
+    /* ================= Story (narrative palette) ================= */
+    --color-story-forest: var(--story-forest);
+    --color-story-forest-glow: var(--story-forest-glow);
+    --color-story-cream-deep: var(--story-cream-deep);
+    --color-story-cream-light: var(--story-cream-light);
+    --color-story-ink: var(--story-ink);
+
     /* ================= Secondary scale ================= */
     --color-secondary-50: var(--secondary-50);
     --color-secondary-100: var(--secondary-100);
@@ -249,6 +256,19 @@
     }
     body {
         @apply bg-background text-foreground;
+    }
+}
+
+/* About page — pilot clubs marquee. Infinite leftward scroll; the track
+   holds two copies of the list in the DOM so the cycle has no visible jump
+   at wrap-around. Paused by `motion-reduce:animate-none` at the utility
+   level, so no explicit reduced-motion guard needed here. */
+@keyframes about-marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
     }
 }
 

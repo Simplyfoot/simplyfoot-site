@@ -36,7 +36,8 @@
             "label": "Main navigation",
             "about": "About",
             "contact": "Contact",
-            "faq": "Help"
+            "faq": "Help",
+            "offers": "Pricing"
         },
         "logoAlt": "{brand} logo",
         "languageSwitcher": {
@@ -114,6 +115,141 @@
                 "phoneLabel": "By phone",
                 "addressLabel": "By post"
             }
+        }
+    },
+    "About": {
+        "meta": {
+            "title": "About — {brand}",
+            "description": "The story of {brand}: 5 passionate co-founders and 10 pioneer clubs building together the tool amateur football deserves."
+        },
+        "hero": {
+            "title": "About — {brand}",
+            "titleBefore": "We are ",
+            "subtitle": "5 co-founders. 10 pioneer clubs. 1 conviction: amateur football deserves its own tool."
+        },
+        "act1": {
+            "title": "The spark",
+            "titleBefore": "It all started on a ",
+            "titleHighlight": "touchline",
+            "p0": "It's 8:30 am on a cold Saturday morning in November. The pitch is soaked. Parents blow into their hands while the U11s warm up.",
+            "p1": "Romain is there, like every weekend. Phone in hand, he scrolls through three WhatsApp groups: 'Is the match still on?', 'My son can't make it', 'Which pitch is it again?'.",
+            "p2": "The coach is trying to figure out how many players he has for the 10 am match. He sent the call-ups on Tuesday evening by SMS. Three parents never replied. Two replied in the wrong group.",
+            "p3": "The president, meanwhile, is at home with a binder, a spreadsheet and a headache. 200 members. 16 teams. Unpaid dues to chase.",
+            "p4": "Everyone just copes — with makeshift tools, volunteer time and a mountain of goodwill. That Saturday, Romain thinks: 'There must be a better way.'"
+        },
+        "act2": {
+            "title": "5 believers, one obvious call",
+            "titleBefore": "5 believers, one obvious ",
+            "titleHighlight": "call",
+            "titleAfter": "",
+            "p0": "The idea didn't come from an office. It came from the pitch. Romain talks to Jean. Jean knows the pain by heart. They bring in Jérémy, who knows dozens of clubs in the same situation.",
+            "p1": "Vanessa brings perspective: 'If we're going to do this, it has to genuinely serve people.' Damien joins: 'Clean code or it doesn't exist.' The math is simple.",
+            "stats": {
+                "licensees": "registered players in France",
+                "clubs": "amateur clubs",
+                "dedicatedTools": "dedicated tool — until us"
+            }
+        },
+        "act3": {
+            "title": "10 clubs changed everything",
+            "titleBefore": "10 clubs changed ",
+            "titleHighlight": "everything",
+            "intro": "Before writing a single line of code, we went out to listen. 10 partner clubs opened their doors, shared their pain, tested every screen, challenged every decision. Every feature was born from a real problem raised by a real club.",
+            "heroQuote": "SimplyFoot wasn't built in an office. It was built in 10 locker rooms.",
+            "quotes": {
+                "0": {
+                    "text": "We were losing 2 hours a week managing call-ups by SMS. Now, one click and everyone knows who's coming.",
+                    "author": "U15 coach, FC Gardanne"
+                },
+                "1": {
+                    "text": "The hardest part was separated parents. Duplicates, confusion, messages lost. The linking code solved that in one move.",
+                    "author": "President, US Liffré"
+                },
+                "2": {
+                    "text": "My 16 teams in a single app, with separate roles for each coach. I'm never going back.",
+                    "author": "President, Toulouse Rodéo"
+                },
+                "3": {
+                    "text": "My treasurer thanked me for the first time in 10 years. That's when you know you did something right.",
+                    "author": "President, Stade Rennais B"
+                }
+            },
+            "pilotClubs": {
+                "label": "Pioneer clubs",
+                "gardanne": "FC Gardanne",
+                "liffre": "US Liffré",
+                "toulouse-rodeo": "Toulouse Rodéo",
+                "blagnac": "Blagnac FC",
+                "rennes-b": "Stade Rennais B",
+                "martigues": "US Martigues",
+                "berre": "ES Berre",
+                "salon": "SC Salon",
+                "grasse": "RC Grasse",
+                "nice": "Cavigal Nice"
+            },
+            "thanks": "Thanks to our 10 pioneer clubs who are building SimplyFoot with us."
+        },
+        "team": {
+            "heading": "The team behind SimplyFoot",
+            "headingBefore": "The team behind ",
+            "headingHighlight": "SimplyFoot",
+            "intro": "Five people, one shared conviction. No CEO, no hierarchy: 5 co-founders at the exact same rank.",
+            "romain": {
+                "name": "Romain Pennacchio",
+                "role": "Co-founder",
+                "spirit": "The visionary. Passionate about football since childhood, he grew up in amateur clubs, between touchlines and locker rooms. The idea was born from his daily frustration."
+            },
+            "jean": {
+                "name": "Jean Carboni",
+                "role": "Co-founder",
+                "spirit": "The ground guy. He knows every reality of the amateur club — volunteers who give everything, coaches who sacrifice weekends, treasurers who work miracles with nothing."
+            },
+            "jeremy": {
+                "name": "Jérémy Baruc",
+                "role": "Co-founder",
+                "spirit": "The connector. He weaves links between people, ideas, clubs. His obsession: every user feels supported, never alone facing the tool."
+            },
+            "vanessa": {
+                "name": "Vanessa Rolland",
+                "role": "Co-founder",
+                "spirit": "Rigour and sensitivity. She knows that behind every registered player, there's a parent organising, driving, cheering in the rain. The product owes them too."
+            },
+            "damien": {
+                "name": "Damien Alfaia",
+                "role": "Co-founder",
+                "spirit": "The hands that build. Every screen, every interaction. His standard: the app must be as intuitive for a 60-year-old president as for a 16-year-old player."
+            }
+        },
+        "act4": {
+            "title": "Amateur football is a culture",
+            "titleBefore": "Amateur football is a ",
+            "titleHighlight": "culture",
+            "titleAfter": ". Not a market.",
+            "lines": {
+                "0": "It's the 6-year-old kid touching their first ball.",
+                "1": "It's the volunteer coach preparing sessions after work.",
+                "2": "It's the president negotiating with the town hall to keep the pitch.",
+                "3": "It's the parent driving 45 minutes on a Sunday morning.",
+                "4": "It's the snack bar. The chips. The laughter. The arguments."
+            },
+            "firstPerson": {
+                "heading": "We come from that world.",
+                "body": "We don't observe amateur football from afar. We live it. We know it. We love it.",
+                "closing": "That's why we built SimplyFoot. Not to disrupt a market. To serve a community."
+            }
+        },
+        "act5": {
+            "title": "This is only the beginning",
+            "titleBefore": "This is only the ",
+            "titleHighlight": "beginning",
+            "promises": {
+                "0": "Stay at the service of clubs. Not the other way around.",
+                "1": "Listen to the pitch. Always.",
+                "2": "Build with you. Not for you."
+            },
+            "signature": "SimplyFoot: 5 believers and 10 pioneer clubs who said one Saturday morning — amateur football deserves better.",
+            "ctaPrimary": "Join the adventure",
+            "ctaSecondary": "Discover SimplyFoot"
         }
     },
     "FAQ": {
@@ -460,6 +596,231 @@
                         }
                     }
                 }
+            }
+        }
+    },
+    "Offers": {
+        "meta": {
+            "title": "Plans & pricing — {brand}",
+            "description": "One {brand} product, all features included. The price adapts to your club size. 30-day free trial, no credit card required."
+        },
+        "hero": {
+            "eyebrow": "Plans & pricing",
+            "titleBefore": "One plan, sized for your ",
+            "titleHighlight": "club",
+            "subtitle": "{brand} gives access to the full platform whichever plan you pick. You simply pay based on the number of registered players in your club.",
+            "trustTrial": "{days}-day free trial",
+            "trustAnnual": "−{discount}% yearly",
+            "trustNoCard": "No credit card"
+        },
+        "cycle": {
+            "label": "Billing cycle",
+            "monthly": "Monthly",
+            "yearly": "Yearly",
+            "yearlyBadge": "−{discount}%"
+        },
+        "selector": {
+            "label": "How many registered players in your club?",
+            "eyebrow": "Find your plan",
+            "title": "How many registered players in your club?",
+            "helper": "Drag the slider or type the exact number. The recommended plan lights up instantly.",
+            "inputLabel": "Number of registered players",
+            "sliderLabel": "Adjust the number of registered players",
+            "unit": "players",
+            "recommended": "The recommended plan for your club is {plan}.",
+            "plans": {
+                "mini": "Mini Club",
+                "local": "Local Club",
+                "regional": "Regional Club",
+                "grand": "Grand Club",
+                "maxi": "Maxi Club",
+                "enterprise": "District+ / City"
+            }
+        },
+        "plans": {
+            "mini": "Mini Club",
+            "local": "Local Club",
+            "regional": "Regional Club",
+            "grand": "Grand Club",
+            "maxi": "Maxi Club",
+            "enterprise": "District+ / City"
+        },
+        "card": {
+            "badgeRecommended": "Most popular",
+            "range": "From {min} to {max} players",
+            "rangeFrom": "From {min} players",
+            "perMonth": "/ month excl. VAT",
+            "vatNote": "Excluding VAT. Billed monthly, cancel anytime.",
+            "onRequest": "On request",
+            "billedYearly": "{amount} saved per year",
+            "ctaPrimary": "Start free trial",
+            "ctaEnterprise": "Request a quote",
+            "reassurance": "30 days free, no credit card.",
+            "reassuranceEnterprise": "Reply within 48 h, custom quote.",
+            "bullets": {
+                "0": "All SimplyFoot features included",
+                "1": "Unlimited users: coaches, managers, parents",
+                "2": "Updates and support included",
+                "3": "Switch plan anytime"
+            }
+        },
+        "allIncluded": {
+            "eyebrow": "Everything included",
+            "heading": "Every feature. Every plan.",
+            "description": "No hidden options, no add-on modules to pay for. Every club gets the full SimplyFoot experience — the price simply reflects your size.",
+            "pillars": {
+                "0": "Unlimited users",
+                "1": "Every feature",
+                "2": "Updates and support included"
+            }
+        },
+        "benefits": {
+            "eyebrow": "What you get",
+            "heading": "A better-run club, a team that saves time",
+            "intro": "SimplyFoot replaces 3 WhatsApp groups, 2 spreadsheets and a binder. Result: hours saved every week, for coaches and managers alike.",
+            "items": {
+                "clubManagement": {
+                    "title": "Club management",
+                    "description": "Structure, teams, categories, roles: the whole club in one clear interface."
+                },
+                "convocations": {
+                    "title": "Simple call-ups",
+                    "description": "One click to call up, real-time replies, automatic reminders."
+                },
+                "lineups": {
+                    "title": "Drag & drop line-ups",
+                    "description": "Place your players on the pitch in seconds, share with the team."
+                },
+                "calendar": {
+                    "title": "Shared calendar",
+                    "description": "Matches, training, tournaments: each role sees what matters."
+                },
+                "messaging": {
+                    "title": "Club messaging",
+                    "description": "Club, coach and team conversations. The digital locker room, no WhatsApp."
+                },
+                "playerTracking": {
+                    "title": "Player tracking",
+                    "description": "Full profiles, individual stats, attendance and injuries."
+                },
+                "coachDashboard": {
+                    "title": "Coach dashboard",
+                    "description": "Everything a coach needs to prepare and run the season."
+                },
+                "documents": {
+                    "title": "Central documents",
+                    "description": "Licences, consents, call-ups: all in one place, exportable."
+                },
+                "parents": {
+                    "title": "Parents area",
+                    "description": "Parents see call-ups and reply, with no duplicates."
+                },
+                "statistics": {
+                    "title": "Club statistics",
+                    "description": "Attendance, performance, growth: readable data to decide."
+                }
+            }
+        },
+        "reassurance": {
+            "eyebrow": "Before you start",
+            "heading": "Zero reason to hesitate",
+            "intro": "Everything is built so you can try risk-free and decide with a clear head.",
+            "trial": {
+                "title": "{days} days free",
+                "body": "Full access to SimplyFoot for 30 days, no credit card required at sign-up."
+            },
+            "noCommit": {
+                "title": "No commitment",
+                "body": "No imposed annual commitment. Cancel in one click, anytime."
+            },
+            "setup": {
+                "title": "Live in 10 min",
+                "body": "Sign-up, club code, member import: your club is ready by the first session."
+            },
+            "security": {
+                "title": "Secure data",
+                "body": "France-based hosting, GDPR-compliant, daily backups. Your data stays yours."
+            }
+        },
+        "faq": {
+            "eyebrow": "Frequent questions",
+            "heading": "Every answer before you start",
+            "intro": "The questions we get most about plans and the subscription journey.",
+            "items": {
+                "whichPlan": {
+                    "question": "Which plan fits my club?",
+                    "answer": "The plan depends only on the number of registered players. Use the selector above — the recommended plan lights up automatically. For clubs over 500 players or multi-section, we offer a tailored quote."
+                },
+                "canChangePlan": {
+                    "question": "Can I switch plans during the year?",
+                    "answer": "Yes, anytime. If your club grows, moving up is instant and we prorate the billing. Downgrades take effect at the end of the current period."
+                },
+                "allFeaturesIncluded": {
+                    "question": "Are all features really included?",
+                    "answer": "Yes. SimplyFoot is one complete product: call-ups, line-ups, messaging, player tracking, stats, documents — everything is available on every plan. Only the price scales with your club size."
+                },
+                "clubGrows": {
+                    "question": "What if my club grows?",
+                    "answer": "Once you cross the tier of your current plan, we automatically offer the next plan with a prorated adjustment. No outage, no surprise."
+                },
+                "engagement": {
+                    "question": "Is there a commitment?",
+                    "answer": "No imposed commitment. The monthly plan is cancellable in one click. The yearly plan (10% off) covers 12 months but is refundable on a prorated basis if the club stops operating."
+                },
+                "paymentMethods": {
+                    "question": "How does payment work?",
+                    "answer": "Credit card (Visa, Mastercard, Amex) or SEPA direct debit. Billing starts only after the 30-day free trial — you enter banking details only when you decide to continue."
+                },
+                "billing": {
+                    "question": "Who receives the invoice?",
+                    "answer": "The invoice is issued in the club's name and emailed to the treasurer. All invoices are downloadable as PDF from your dashboard."
+                },
+                "freeTrial": {
+                    "question": "How does the free trial work?",
+                    "answer": "30 days of full access with no credit card at sign-up. Set up your club, invite coaches and players, test in real conditions. At the end, you freely decide — no automatic charge."
+                }
+            }
+        },
+        "finalCta": {
+            "eyebrow": "Ready to start",
+            "heading": "Give your club the tool it deserves",
+            "subtitle": "Start your free trial today. Ten minutes to set up, 30 days to decide.",
+            "primaryCta": "Start free trial",
+            "secondaryCta": "Talk to our team",
+            "reassurance": "30 days free. No credit card. No commitment."
+        },
+        "checkout": {
+            "meta": {
+                "title": "Complete your subscription — {brand}",
+                "description": "Recap of your {brand} subscription."
+            },
+            "back": "Back to plans",
+            "eyebrow": "Your choice recap",
+            "title": "You picked {plan}",
+            "subtitle": "Review the details below, then finalise your subscription.",
+            "summaryLabel": "Plan details",
+            "summary": {
+                "plan": "Plan",
+                "size": "Club size",
+                "sizeRange": "From {min} to {max} players",
+                "sizeFrom": "From {min} players",
+                "cycle": "Billing cycle",
+                "priceMonthly": "Monthly price",
+                "priceYearly": "Yearly total",
+                "trial": "Free trial",
+                "trialValue": "{days} days included",
+                "onRequest": "On request"
+            },
+            "nextStep": {
+                "heading": "Final step",
+                "body": "Online payment is coming soon. In the meantime, email us: our team will activate your free trial within the day, no credit card required.",
+                "primaryCta": "Send by email",
+                "secondaryCta": "Contact the team",
+                "reassurance": "Guaranteed reply within 24 business hours."
+            },
+            "email": {
+                "subject": "SimplyFoot subscription request — {plan}",
+                "body": "Hello,\n\nI'd like to start my SimplyFoot free trial with the {plan} plan, billed {cycle}.\n\nPlease activate the {trialDays}-day free trial.\n\nClub name:\nNumber of registered players:\nMy role:\n\nThanks,"
             }
         }
     },

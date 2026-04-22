@@ -25,9 +25,15 @@ export function Header({ brand }: HeaderProps) {
     const t = useTranslations('Header');
     const { label, name } = BRANDS[brand];
 
+    // L'offre payante n'est livrée que sur la marque `foot` en V1 — ajoute
+    // l'entrée de nav uniquement pour ce contexte pour éviter un 404 sur
+    // rugby / handball.
     const navItems = [
         { href: `/${brand}/about`, label: t('nav.about') },
         { href: `/${brand}/faq`, label: t('nav.faq') },
+        ...(brand === 'foot'
+            ? ([{ href: '/foot/offers' as const, label: t('nav.offers') }] as const)
+            : ([] as const)),
         { href: `/${brand}/contact`, label: t('nav.contact') },
     ] as const;
 

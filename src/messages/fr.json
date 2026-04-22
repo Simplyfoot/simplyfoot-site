@@ -36,7 +36,8 @@
             "label": "Navigation principale",
             "about": "À propos",
             "contact": "Contact",
-            "faq": "Aide"
+            "faq": "Aide",
+            "offers": "Offres"
         },
         "logoAlt": "Logo {brand}",
         "languageSwitcher": {
@@ -114,6 +115,141 @@
                 "phoneLabel": "Par téléphone",
                 "addressLabel": "Par courrier"
             }
+        }
+    },
+    "About": {
+        "meta": {
+            "title": "Qui sommes-nous — {brand}",
+            "description": "L'histoire de {brand} : 5 cofondateurs passionnés et 10 clubs pionniers qui construisent ensemble l'outil que le football amateur mérite."
+        },
+        "hero": {
+            "title": "Qui sommes-nous — {brand}",
+            "titleBefore": "Nous sommes ",
+            "subtitle": "5 cofondateurs. 10 clubs pionniers. 1 conviction : le football amateur mérite son propre outil."
+        },
+        "act1": {
+            "title": "Le constat",
+            "titleBefore": "Tout a commencé sur un ",
+            "titleHighlight": "bord de terrain",
+            "p0": "Il est 8h30, un samedi matin de novembre. Il fait froid. Le terrain est trempé. Les parents soufflent dans leurs mains en regardant les U11 s'échauffer.",
+            "p1": "Romain est là, comme chaque week-end. Téléphone à la main, il scrolle trois groupes WhatsApp : « Le match est maintenu ? », « Mon fils ne peut pas venir », « C'est quel terrain déjà ? ».",
+            "p2": "Le coach essaie de savoir combien de joueurs il a pour le match de 10h. Il a envoyé les convocations mardi soir par SMS. Trois parents n'ont pas répondu. Deux ont répondu dans le mauvais groupe.",
+            "p3": "Le président, lui, est dans son salon avec un classeur, un tableur et un mal de tête. 200 licenciés. 16 équipes. Des cotisations à relancer.",
+            "p4": "Tout le monde se débrouille. Avec des bouts de ficelle, du temps bénévole et une montagne de bonne volonté. Ce samedi-là, Romain se dit : « Il doit y avoir un meilleur moyen. »"
+        },
+        "act2": {
+            "title": "5 passionnés, une évidence",
+            "titleBefore": "5 passionnés, une ",
+            "titleHighlight": "évidence",
+            "titleAfter": "",
+            "p0": "L'idée ne vient pas d'un bureau. Elle vient du terrain. Romain en parle à Jean. Jean connaît le problème par cœur. Ils en parlent à Jérémy, qui connaît des dizaines de clubs dans la même situation.",
+            "p1": "Vanessa apporte le recul : « Si on fait ça, il faut que ça serve VRAIMENT les gens. » Damien rejoint l'aventure : « Le code est propre ou il n'existe pas. » L'équation est simple.",
+            "stats": {
+                "licensees": "licenciés en France",
+                "clubs": "clubs amateurs",
+                "dedicatedTools": "outil dédié, jusqu'à nous"
+            }
+        },
+        "act3": {
+            "title": "10 clubs ont tout changé",
+            "titleBefore": "10 clubs ont tout ",
+            "titleHighlight": "changé",
+            "intro": "Avant d'écrire une seule ligne de code, nous sommes allés écouter. 10 clubs partenaires ont ouvert leurs portes, partagé leurs galères, testé chaque écran, challengé chaque décision. Chaque fonctionnalité est née d'un vrai problème remonté par un vrai club.",
+            "heroQuote": "SimplyFoot n'a pas été construit dans un bureau. Il a été construit dans 10 vestiaires.",
+            "quotes": {
+                "0": {
+                    "text": "On perdait 2h par semaine à gérer les convocations par SMS. Maintenant, un clic, et tout le monde sait qui vient au match.",
+                    "author": "Coach U15, FC Gardanne"
+                },
+                "1": {
+                    "text": "Le plus dur, c'était les parents séparés. Doublons, confusion, messages qui se perdent. Le code de rattachement a réglé ça d'un coup.",
+                    "author": "Présidente, US Liffré"
+                },
+                "2": {
+                    "text": "Mes 16 équipes dans une seule app, avec les rôles séparés pour chaque coach. Je ne reviens plus en arrière.",
+                    "author": "Président, Toulouse Rodéo"
+                },
+                "3": {
+                    "text": "Mon trésorier m'a dit merci pour la première fois en 10 ans. C'est qu'on a fait quelque chose de bien.",
+                    "author": "Président, Stade Rennais B"
+                }
+            },
+            "pilotClubs": {
+                "label": "Clubs pilotes",
+                "gardanne": "FC Gardanne",
+                "liffre": "US Liffré",
+                "toulouse-rodeo": "Toulouse Rodéo",
+                "blagnac": "Blagnac FC",
+                "rennes-b": "Stade Rennais B",
+                "martigues": "US Martigues",
+                "berre": "ES Berre",
+                "salon": "SC Salon",
+                "grasse": "RC Grasse",
+                "nice": "Cavigal Nice"
+            },
+            "thanks": "Merci à nos 10 clubs pionniers qui construisent SimplyFoot avec nous."
+        },
+        "team": {
+            "heading": "L'équipe derrière SimplyFoot",
+            "headingBefore": "L'équipe derrière ",
+            "headingHighlight": "SimplyFoot",
+            "intro": "Cinq personnes, une conviction commune. Pas de PDG, pas de hiérarchie : 5 cofondateurs et cofondatrice au même rang.",
+            "romain": {
+                "name": "Romain Pennacchio",
+                "role": "Cofondateur",
+                "spirit": "Le visionnaire. Passionné de football depuis l'enfance, il a grandi dans les clubs amateurs, entre lignes de touche et vestiaires. C'est de sa frustration quotidienne qu'est née l'idée."
+            },
+            "jean": {
+                "name": "Jean Carboni",
+                "role": "Cofondateur",
+                "spirit": "L'homme de terrain. Il connaît chaque réalité du club amateur — les bénévoles qui donnent sans compter, les coachs qui sacrifient leurs week-ends, les trésoriers qui font des miracles."
+            },
+            "jeremy": {
+                "name": "Jérémy Baruc",
+                "role": "Cofondateur",
+                "spirit": "Le connecteur. Il crée les liens entre les gens, les idées, les clubs. Son obsession : que chaque utilisateur se sente accompagné, jamais seul face à l'outil."
+            },
+            "vanessa": {
+                "name": "Vanessa Rolland",
+                "role": "Cofondatrice",
+                "spirit": "La rigueur et la sensibilité. Elle sait que derrière chaque licencié, il y a un parent qui organise, qui conduit, qui encourage sous la pluie. Le produit leur doit aussi quelque chose."
+            },
+            "damien": {
+                "name": "Damien Alfaia",
+                "role": "Cofondateur",
+                "spirit": "Les mains qui construisent. Chaque écran, chaque interaction. Son exigence : que l'app soit aussi intuitive pour un président de 60 ans que pour un joueur de 16 ans."
+            }
+        },
+        "act4": {
+            "title": "Le football amateur est une culture",
+            "titleBefore": "Le football amateur est une ",
+            "titleHighlight": "culture",
+            "titleAfter": ". Pas un marché.",
+            "lines": {
+                "0": "C'est le gamin de 6 ans qui touche son premier ballon.",
+                "1": "C'est le coach bénévole qui prépare ses séances après le boulot.",
+                "2": "C'est le président qui négocie avec la mairie pour garder son terrain.",
+                "3": "C'est le parent qui conduit 45 minutes un dimanche matin.",
+                "4": "C'est la buvette. Les frites. Les rires. Les engueulades."
+            },
+            "firstPerson": {
+                "heading": "Nous, on vient de ce monde.",
+                "body": "On n'observe pas le football amateur de loin. On le vit. On le connaît. On l'aime.",
+                "closing": "C'est pour ça qu'on a créé SimplyFoot. Pas pour disrupter un marché. Pour servir une communauté."
+            }
+        },
+        "act5": {
+            "title": "Ce n'est que le début",
+            "titleBefore": "Ce n'est que le ",
+            "titleHighlight": "début",
+            "promises": {
+                "0": "Rester au service des clubs. Pas l'inverse.",
+                "1": "Écouter le terrain. Toujours.",
+                "2": "Construire avec vous. Pas pour vous."
+            },
+            "signature": "SimplyFoot, c'est 5 passionnés et 10 clubs pionniers qui se sont dit un samedi matin : le football amateur mérite mieux.",
+            "ctaPrimary": "Rejoindre l'aventure",
+            "ctaSecondary": "Découvrir SimplyFoot"
         }
     },
     "FAQ": {
@@ -460,6 +596,231 @@
                         }
                     }
                 }
+            }
+        }
+    },
+    "Offers": {
+        "meta": {
+            "title": "Offres & tarifs — {brand}",
+            "description": "Un seul produit {brand}, toutes les fonctionnalités incluses. Le tarif s'adapte à la taille de votre club. Essai gratuit 30 jours sans carte."
+        },
+        "hero": {
+            "eyebrow": "Offres & tarifs",
+            "titleBefore": "Un seul plan, adapté à la ",
+            "titleHighlight": "taille de votre club",
+            "subtitle": "SimplyFoot donne accès à l'intégralité de la plateforme quelle que soit l'offre. Vous payez simplement en fonction du nombre de licenciés de votre club.",
+            "trustTrial": "{days} jours d'essai gratuit",
+            "trustAnnual": "−{discount} % en annuel",
+            "trustNoCard": "Sans carte bancaire"
+        },
+        "cycle": {
+            "label": "Cadence de facturation",
+            "monthly": "Mensuel",
+            "yearly": "Annuel",
+            "yearlyBadge": "−{discount} %"
+        },
+        "selector": {
+            "label": "Combien de licenciés dans votre club ?",
+            "eyebrow": "Trouvez votre offre",
+            "title": "Combien de licenciés dans votre club ?",
+            "helper": "Faites glisser le curseur ou saisissez le nombre exact. L'offre recommandée s'illumine instantanément.",
+            "inputLabel": "Nombre de licenciés",
+            "sliderLabel": "Ajuster le nombre de licenciés",
+            "unit": "licenciés",
+            "recommended": "L'offre recommandée pour votre club est {plan}.",
+            "plans": {
+                "mini": "Mini Club",
+                "local": "Local Club",
+                "regional": "Régional Club",
+                "grand": "Grand Club",
+                "maxi": "Maxi Club",
+                "enterprise": "District+ / Ville"
+            }
+        },
+        "plans": {
+            "mini": "Mini Club",
+            "local": "Local Club",
+            "regional": "Régional Club",
+            "grand": "Grand Club",
+            "maxi": "Maxi Club",
+            "enterprise": "District+ / Ville"
+        },
+        "card": {
+            "badgeRecommended": "Le plus choisi",
+            "range": "De {min} à {max} licenciés",
+            "rangeFrom": "À partir de {min} licenciés",
+            "perMonth": "/ mois HT",
+            "vatNote": "Hors taxes. Facturation mensuelle, résiliable à tout moment.",
+            "onRequest": "Sur devis",
+            "billedYearly": "Soit {amount} économisés par an",
+            "ctaPrimary": "Démarrer l'essai gratuit",
+            "ctaEnterprise": "Demander un devis",
+            "reassurance": "30 jours gratuits, sans carte bancaire.",
+            "reassuranceEnterprise": "Réponse sous 48 h, devis sur mesure.",
+            "bullets": {
+                "0": "Toutes les fonctionnalités SimplyFoot incluses",
+                "1": "Utilisateurs illimités : coachs, dirigeants, parents",
+                "2": "Mises à jour et support inclus",
+                "3": "Changement d'offre possible à tout moment"
+            }
+        },
+        "allIncluded": {
+            "eyebrow": "Tout est inclus",
+            "heading": "Toutes les fonctionnalités. Tous les plans.",
+            "description": "Pas d'options cachées, pas de modules à payer en plus. Chaque club accède à l'intégralité de SimplyFoot — le tarif s'adapte simplement à sa taille.",
+            "pillars": {
+                "0": "Utilisateurs illimités",
+                "1": "Toutes les fonctionnalités",
+                "2": "Mises à jour et support inclus"
+            }
+        },
+        "benefits": {
+            "eyebrow": "Ce que vous gagnez",
+            "heading": "Un club mieux organisé, une équipe qui gagne du temps",
+            "intro": "SimplyFoot regroupe en un seul endroit ce que vous faisiez sur 3 groupes WhatsApp, 2 tableurs et un classeur. Résultat : des heures gagnées chaque semaine, pour les coachs comme pour les dirigeants.",
+            "items": {
+                "clubManagement": {
+                    "title": "Pilotage du club",
+                    "description": "Structure, équipes, catégories, rôles : tout le club dans une seule interface claire."
+                },
+                "convocations": {
+                    "title": "Convocations simples",
+                    "description": "Un clic pour convoquer, réponses en temps réel, relances automatiques."
+                },
+                "lineups": {
+                    "title": "Compositions drag & drop",
+                    "description": "Placez vos joueurs sur le terrain en quelques secondes, partagez à l'équipe."
+                },
+                "calendar": {
+                    "title": "Calendrier partagé",
+                    "description": "Matchs, entraînements, tournois : chaque rôle voit ce qui le concerne."
+                },
+                "messaging": {
+                    "title": "Messagerie club",
+                    "description": "Conversations club, coachs, équipes. Le vestiaire digital, sans WhatsApp."
+                },
+                "playerTracking": {
+                    "title": "Suivi joueurs",
+                    "description": "Fiches complètes, statistiques individuelles, présences et blessures."
+                },
+                "coachDashboard": {
+                    "title": "Dashboard coach",
+                    "description": "Tout ce dont le coach a besoin pour préparer et piloter sa saison."
+                },
+                "documents": {
+                    "title": "Documents centralisés",
+                    "description": "Licences, autorisations, convocations : tout au même endroit, exportable."
+                },
+                "parents": {
+                    "title": "Espace parents",
+                    "description": "Les parents voient les convocations, répondent, sans créer de doublons."
+                },
+                "statistics": {
+                    "title": "Statistiques club",
+                    "description": "Présence, performances, évolution : des données lisibles pour décider."
+                }
+            }
+        },
+        "reassurance": {
+            "eyebrow": "Avant de démarrer",
+            "heading": "Aucune raison d'hésiter",
+            "intro": "Tout est conçu pour vous permettre d'essayer sans risque et de décider sereinement.",
+            "trial": {
+                "title": "{days} jours gratuits",
+                "body": "Accès complet à SimplyFoot pendant 30 jours, aucune carte bancaire demandée à l'inscription."
+            },
+            "noCommit": {
+                "title": "Sans engagement",
+                "body": "Pas d'engagement annuel imposé. Vous pouvez résilier en un clic, à tout moment."
+            },
+            "setup": {
+                "title": "Mise en route en 10 min",
+                "body": "Inscription, code club, import des licenciés : votre club est opérationnel dès la première séance."
+            },
+            "security": {
+                "title": "Données sécurisées",
+                "body": "Hébergement en France, conformité RGPD, sauvegardes quotidiennes. Vos données vous appartiennent."
+            }
+        },
+        "faq": {
+            "eyebrow": "Questions fréquentes",
+            "heading": "Toutes les réponses avant de démarrer",
+            "intro": "Les questions qu'on nous pose le plus souvent sur les offres et le parcours d'abonnement.",
+            "items": {
+                "whichPlan": {
+                    "question": "Quel plan correspond à mon club ?",
+                    "answer": "Le plan dépend uniquement du nombre de licenciés de votre club. Utilisez le sélecteur ci-dessus : l'offre recommandée s'illumine automatiquement. Si votre club a plus de 500 licenciés ou couvre plusieurs sections, nous proposons un plan sur devis adapté."
+                },
+                "canChangePlan": {
+                    "question": "Puis-je changer d'offre en cours d'année ?",
+                    "answer": "Oui, à tout moment. Si votre club grandit, le passage au plan supérieur est instantané et nous ajustons la facturation au prorata. À l'inverse, vous pouvez revenir à un plan inférieur à la fin de la période en cours."
+                },
+                "allFeaturesIncluded": {
+                    "question": "Toutes les fonctionnalités sont-elles vraiment incluses ?",
+                    "answer": "Oui. SimplyFoot fonctionne avec un seul produit complet : convocations, compositions, messagerie, suivi joueurs, statistiques, documents — tout est accessible quel que soit votre plan. Seul le tarif change selon la taille de votre club."
+                },
+                "clubGrows": {
+                    "question": "Que se passe-t-il si mon club grandit ?",
+                    "answer": "Dès que vous dépassez la tranche de licenciés de votre plan actuel, nous vous proposons automatiquement le passage au plan supérieur, avec un ajustement au prorata. Aucune coupure, aucune surprise."
+                },
+                "engagement": {
+                    "question": "Y a-t-il un engagement ?",
+                    "answer": "Aucun engagement imposé. L'abonnement mensuel est résiliable en un clic. Le plan annuel (avec 10 % de remise) couvre 12 mois mais reste remboursable au prorata en cas d'arrêt d'activité du club."
+                },
+                "paymentMethods": {
+                    "question": "Comment fonctionne le paiement ?",
+                    "answer": "Carte bancaire (Visa, Mastercard, American Express) ou prélèvement SEPA. L'abonnement démarre seulement à la fin de l'essai gratuit de 30 jours — vous ne renseignez vos informations bancaires qu'au moment où vous choisissez vraiment de continuer."
+                },
+                "billing": {
+                    "question": "Qui reçoit la facture ?",
+                    "answer": "La facture est éditée au nom du club (association loi 1901 ou structure équivalente) et envoyée automatiquement par email au trésorier. Toutes les factures sont téléchargeables en PDF depuis votre espace."
+                },
+                "freeTrial": {
+                    "question": "Comment fonctionne l'essai gratuit ?",
+                    "answer": "30 jours d'accès complet à SimplyFoot, sans carte bancaire à l'inscription. Vous paramétrez votre club, invitez coachs et joueurs, testez en conditions réelles. À la fin de l'essai, vous décidez librement de continuer — aucun prélèvement automatique."
+                }
+            }
+        },
+        "finalCta": {
+            "eyebrow": "Prêt à démarrer",
+            "heading": "Donnez à votre club l'outil qu'il mérite",
+            "subtitle": "Démarrez votre essai gratuit aujourd'hui. En 10 minutes, votre club est opérationnel. Dans 30 jours, vous décidez librement de continuer.",
+            "primaryCta": "Démarrer l'essai gratuit",
+            "secondaryCta": "Parler à notre équipe",
+            "reassurance": "30 jours gratuits. Sans carte bancaire. Sans engagement."
+        },
+        "checkout": {
+            "meta": {
+                "title": "Finaliser votre abonnement — {brand}",
+                "description": "Récapitulatif de votre abonnement {brand}."
+            },
+            "back": "Retour aux offres",
+            "eyebrow": "Récapitulatif de votre choix",
+            "title": "Vous avez choisi {plan}",
+            "subtitle": "Vérifiez le récapitulatif ci-dessous, puis finalisez votre abonnement.",
+            "summaryLabel": "Détails de l'offre",
+            "summary": {
+                "plan": "Offre",
+                "size": "Taille du club",
+                "sizeRange": "De {min} à {max} licenciés",
+                "sizeFrom": "À partir de {min} licenciés",
+                "cycle": "Cadence",
+                "priceMonthly": "Prix mensuel",
+                "priceYearly": "Montant annuel",
+                "trial": "Essai gratuit",
+                "trialValue": "{days} jours offerts",
+                "onRequest": "Sur devis"
+            },
+            "nextStep": {
+                "heading": "Dernière étape",
+                "body": "Le paiement en ligne arrive très bientôt. En attendant, envoyez-nous un email : notre équipe activera votre essai gratuit dans la journée, sans carte bancaire.",
+                "primaryCta": "Envoyer par email",
+                "secondaryCta": "Contacter l'équipe",
+                "reassurance": "Réponse garantie sous 24 h ouvrées."
+            },
+            "email": {
+                "subject": "Demande d'abonnement SimplyFoot — {plan}",
+                "body": "Bonjour,\n\nJe souhaite démarrer mon essai gratuit SimplyFoot avec l'offre {plan} en cadence {cycle}.\n\nMerci de m'activer l'essai gratuit de {trialDays} jours.\n\nNom du club :\nNombre de licenciés :\nRôle dans le club :\n\nMerci,"
             }
         }
     },

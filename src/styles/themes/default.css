@@ -89,6 +89,18 @@
     --triadic-2-900: rgb(43 31 69);
     --triadic-2: var(--triadic-2-400);
 
+    /* ================= Story (narrative palette — About page + Offers FinalCta) =================
+       Palette éditoriale partagée : fond vert forêt profond pour les moments
+       de gravité (hero, CTA final), crèmes chaudes pour les actes centraux.
+       Distincte de `secondary-*` car le rôle est narratif, pas
+       "accent secondaire" — même si `--story-cream` et `--secondary-50`
+       partagent la même teinte de base. */
+    --story-forest: rgb(26 46 34); /* deep forest green */
+    --story-forest-glow: rgb(122 158 138); /* sage highlight */
+    --story-cream-deep: rgb(240 221 180); /* warmer cream for stat panels */
+    --story-cream-light: rgb(255 245 228); /* light cream for quote cards */
+    --story-ink: rgb(26 24 20); /* warm near-black text on cream */
+
     /* ================= Secondary (shared, gold/beige) ================= */
     --secondary-50: rgb(248 233 202);
     --secondary-100: rgb(231 199 139);
