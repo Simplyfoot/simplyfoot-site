@@ -1,28 +1,20 @@
-'use client';
-
 import { CircleCheck, Clock3, Sparkles } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { ANNUAL_DISCOUNT, TRIAL_DAYS } from '@/config/offers';
 import { cn } from '@/lib/utils';
 
-import { BillingCycleToggle } from './BillingCycleToggle';
-
-import type { BillingCycle } from '~types/offers.types';
-
 interface OffersHeroProps {
-    cycle: BillingCycle;
-    onCycleChange: (cycle: BillingCycle) => void;
     className?: string;
 }
 
 /**
- * Hero de la page Offres. Eyebrow + titre + subtitle + 3 signaux de
- * confiance en pills (essai gratuit, -10 % annuel, sans carte) + toggle de
- * cadence. Lit en moins de 5 secondes, le CTA est repris juste après dans
- * le `<LicenseeSelector>` et les cartes.
+ * Hero de la page Offres. Eyebrow + titre + subtitle + 3 pastilles de
+ * confiance. Le toggle mensuel/annuel a été descendu au-dessus de la
+ * grille de plans pour alléger la décision immédiate à l'arrivée sur la
+ * page (CRO : une seule chose à comprendre dans le hero = la promesse).
  */
-export function OffersHero({ cycle, onCycleChange, className }: OffersHeroProps) {
+export function OffersHero({ className }: OffersHeroProps) {
     const t = useTranslations('Offers.hero');
 
     return (
@@ -57,13 +49,6 @@ export function OffersHero({ cycle, onCycleChange, className }: OffersHeroProps)
                 />
                 <TrustPill label={t('trustNoCard')} />
             </ul>
-
-            <BillingCycleToggle
-                value={cycle}
-                onChange={onCycleChange}
-                annualDiscount={ANNUAL_DISCOUNT}
-                className="mt-4"
-            />
         </section>
     );
 }

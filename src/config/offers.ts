@@ -40,22 +40,6 @@ export const DEFAULT_LICENSEES = 180;
 export const LICENSEE_SLIDER_MIN = 10;
 export const LICENSEE_SLIDER_MAX = 650;
 
-/** Clés de bénéfices produit rendues dans `BenefitsSection`. Traduits via i18n. */
-export const BENEFIT_KEYS = [
-    'clubManagement',
-    'convocations',
-    'lineups',
-    'calendar',
-    'messaging',
-    'playerTracking',
-    'coachDashboard',
-    'documents',
-    'parents',
-    'statistics',
-] as const;
-
-export type BenefitKey = (typeof BENEFIT_KEYS)[number];
-
 /** Clés des items de FAQ pricing. Les questions/réponses vivent dans les messages. */
 export const OFFERS_FAQ_KEYS = [
     'whichPlan',

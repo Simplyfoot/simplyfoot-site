@@ -646,7 +646,7 @@
             "enterprise": "District+ / City"
         },
         "card": {
-            "badgeRecommended": "Most popular",
+            "badgeForClub": "Your plan",
             "range": "From {min} to {max} players",
             "rangeFrom": "From {min} players",
             "perMonth": "/ month excl. VAT",
@@ -664,83 +664,13 @@
                 "3": "Switch plan anytime"
             }
         },
-        "allIncluded": {
-            "eyebrow": "Everything included",
-            "heading": "Every feature. Every plan.",
-            "description": "No hidden options, no add-on modules to pay for. Every club gets the full SimplyFoot experience — the price simply reflects your size.",
-            "pillars": {
-                "0": "Unlimited users",
-                "1": "Every feature",
-                "2": "Updates and support included"
-            }
-        },
-        "benefits": {
-            "eyebrow": "What you get",
-            "heading": "A better-run club, a team that saves time",
-            "intro": "SimplyFoot replaces 3 WhatsApp groups, 2 spreadsheets and a binder. Result: hours saved every week, for coaches and managers alike.",
-            "items": {
-                "clubManagement": {
-                    "title": "Club management",
-                    "description": "Structure, teams, categories, roles: the whole club in one clear interface."
-                },
-                "convocations": {
-                    "title": "Simple call-ups",
-                    "description": "One click to call up, real-time replies, automatic reminders."
-                },
-                "lineups": {
-                    "title": "Drag & drop line-ups",
-                    "description": "Place your players on the pitch in seconds, share with the team."
-                },
-                "calendar": {
-                    "title": "Shared calendar",
-                    "description": "Matches, training, tournaments: each role sees what matters."
-                },
-                "messaging": {
-                    "title": "Club messaging",
-                    "description": "Club, coach and team conversations. The digital locker room, no WhatsApp."
-                },
-                "playerTracking": {
-                    "title": "Player tracking",
-                    "description": "Full profiles, individual stats, attendance and injuries."
-                },
-                "coachDashboard": {
-                    "title": "Coach dashboard",
-                    "description": "Everything a coach needs to prepare and run the season."
-                },
-                "documents": {
-                    "title": "Central documents",
-                    "description": "Licences, consents, call-ups: all in one place, exportable."
-                },
-                "parents": {
-                    "title": "Parents area",
-                    "description": "Parents see call-ups and reply, with no duplicates."
-                },
-                "statistics": {
-                    "title": "Club statistics",
-                    "description": "Attendance, performance, growth: readable data to decide."
-                }
-            }
-        },
-        "reassurance": {
-            "eyebrow": "Before you start",
-            "heading": "Zero reason to hesitate",
-            "intro": "Everything is built so you can try risk-free and decide with a clear head.",
-            "trial": {
-                "title": "{days} days free",
-                "body": "Full access to SimplyFoot for 30 days, no credit card required at sign-up."
-            },
-            "noCommit": {
-                "title": "No commitment",
-                "body": "No imposed annual commitment. Cancel in one click, anytime."
-            },
-            "setup": {
-                "title": "Live in 10 min",
-                "body": "Sign-up, club code, member import: your club is ready by the first session."
-            },
-            "security": {
-                "title": "Secure data",
-                "body": "France-based hosting, GDPR-compliant, daily backups. Your data stays yours."
-            }
+        "trust": {
+            "heading": "All features. Every plan.",
+            "description": "No hidden options. 30-day free trial, no credit card, cancel in one click.",
+            "trial": "{days}-day free trial",
+            "noCommit": "No commitment",
+            "setup": "Ready in 10 minutes",
+            "security": "Hosted in France, GDPR"
         },
         "faq": {
             "eyebrow": "Frequent questions",

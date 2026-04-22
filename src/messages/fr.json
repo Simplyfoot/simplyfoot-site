@@ -646,7 +646,7 @@
             "enterprise": "District+ / Ville"
         },
         "card": {
-            "badgeRecommended": "Le plus choisi",
+            "badgeForClub": "Votre offre",
             "range": "De {min} à {max} licenciés",
             "rangeFrom": "À partir de {min} licenciés",
             "perMonth": "/ mois HT",
@@ -664,83 +664,13 @@
                 "3": "Changement d'offre possible à tout moment"
             }
         },
-        "allIncluded": {
-            "eyebrow": "Tout est inclus",
+        "trust": {
             "heading": "Toutes les fonctionnalités. Tous les plans.",
-            "description": "Pas d'options cachées, pas de modules à payer en plus. Chaque club accède à l'intégralité de SimplyFoot — le tarif s'adapte simplement à sa taille.",
-            "pillars": {
-                "0": "Utilisateurs illimités",
-                "1": "Toutes les fonctionnalités",
-                "2": "Mises à jour et support inclus"
-            }
-        },
-        "benefits": {
-            "eyebrow": "Ce que vous gagnez",
-            "heading": "Un club mieux organisé, une équipe qui gagne du temps",
-            "intro": "SimplyFoot regroupe en un seul endroit ce que vous faisiez sur 3 groupes WhatsApp, 2 tableurs et un classeur. Résultat : des heures gagnées chaque semaine, pour les coachs comme pour les dirigeants.",
-            "items": {
-                "clubManagement": {
-                    "title": "Pilotage du club",
-                    "description": "Structure, équipes, catégories, rôles : tout le club dans une seule interface claire."
-                },
-                "convocations": {
-                    "title": "Convocations simples",
-                    "description": "Un clic pour convoquer, réponses en temps réel, relances automatiques."
-                },
-                "lineups": {
-                    "title": "Compositions drag & drop",
-                    "description": "Placez vos joueurs sur le terrain en quelques secondes, partagez à l'équipe."
-                },
-                "calendar": {
-                    "title": "Calendrier partagé",
-                    "description": "Matchs, entraînements, tournois : chaque rôle voit ce qui le concerne."
-                },
-                "messaging": {
-                    "title": "Messagerie club",
-                    "description": "Conversations club, coachs, équipes. Le vestiaire digital, sans WhatsApp."
-                },
-                "playerTracking": {
-                    "title": "Suivi joueurs",
-                    "description": "Fiches complètes, statistiques individuelles, présences et blessures."
-                },
-                "coachDashboard": {
-                    "title": "Dashboard coach",
-                    "description": "Tout ce dont le coach a besoin pour préparer et piloter sa saison."
-                },
-                "documents": {
-                    "title": "Documents centralisés",
-                    "description": "Licences, autorisations, convocations : tout au même endroit, exportable."
-                },
-                "parents": {
-                    "title": "Espace parents",
-                    "description": "Les parents voient les convocations, répondent, sans créer de doublons."
-                },
-                "statistics": {
-                    "title": "Statistiques club",
-                    "description": "Présence, performances, évolution : des données lisibles pour décider."
-                }
-            }
-        },
-        "reassurance": {
-            "eyebrow": "Avant de démarrer",
-            "heading": "Aucune raison d'hésiter",
-            "intro": "Tout est conçu pour vous permettre d'essayer sans risque et de décider sereinement.",
-            "trial": {
-                "title": "{days} jours gratuits",
-                "body": "Accès complet à SimplyFoot pendant 30 jours, aucune carte bancaire demandée à l'inscription."
-            },
-            "noCommit": {
-                "title": "Sans engagement",
-                "body": "Pas d'engagement annuel imposé. Vous pouvez résilier en un clic, à tout moment."
-            },
-            "setup": {
-                "title": "Mise en route en 10 min",
-                "body": "Inscription, code club, import des licenciés : votre club est opérationnel dès la première séance."
-            },
-            "security": {
-                "title": "Données sécurisées",
-                "body": "Hébergement en France, conformité RGPD, sauvegardes quotidiennes. Vos données vous appartiennent."
-            }
+            "description": "Pas d'options cachées. 30 jours d'essai, sans carte bancaire, résiliable en un clic.",
+            "trial": "{days} jours d'essai",
+            "noCommit": "Sans engagement",
+            "setup": "Prêt en 10 minutes",
+            "security": "Données en France, RGPD"
         },
         "faq": {
             "eyebrow": "Questions fréquentes",

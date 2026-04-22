@@ -646,7 +646,7 @@
             "enterprise": "District+ / Ciudad"
         },
         "card": {
-            "badgeRecommended": "Más elegido",
+            "badgeForClub": "Tu plan",
             "range": "De {min} a {max} licencias",
             "rangeFrom": "Desde {min} licencias",
             "perMonth": "/ mes sin IVA",
@@ -664,83 +664,13 @@
                 "3": "Cambio de plan posible en cualquier momento"
             }
         },
-        "allIncluded": {
-            "eyebrow": "Todo incluido",
-            "heading": "Todas las funcionalidades. Todos los planes.",
-            "description": "Sin opciones ocultas, sin módulos adicionales. Cada club accede a toda SimplyFoot — el precio solo refleja su tamaño.",
-            "pillars": {
-                "0": "Usuarios ilimitados",
-                "1": "Todas las funcionalidades",
-                "2": "Actualizaciones y soporte incluidos"
-            }
-        },
-        "benefits": {
-            "eyebrow": "Lo que ganas",
-            "heading": "Un club mejor organizado, un equipo que gana tiempo",
-            "intro": "SimplyFoot reúne en un solo lugar lo que hacías en 3 grupos de WhatsApp, 2 hojas de cálculo y una carpeta. Resultado: horas ganadas cada semana, para entrenadores y directivos.",
-            "items": {
-                "clubManagement": {
-                    "title": "Gestión del club",
-                    "description": "Estructura, equipos, categorías, roles: todo el club en una interfaz clara."
-                },
-                "convocations": {
-                    "title": "Convocatorias simples",
-                    "description": "Un clic para convocar, respuestas en tiempo real, recordatorios automáticos."
-                },
-                "lineups": {
-                    "title": "Alineaciones drag & drop",
-                    "description": "Coloca a tus jugadores en el campo en segundos, comparte con el equipo."
-                },
-                "calendar": {
-                    "title": "Calendario compartido",
-                    "description": "Partidos, entrenamientos, torneos: cada rol ve lo que le concierne."
-                },
-                "messaging": {
-                    "title": "Mensajería del club",
-                    "description": "Conversaciones club, entrenadores, equipos. El vestuario digital, sin WhatsApp."
-                },
-                "playerTracking": {
-                    "title": "Seguimiento de jugadores",
-                    "description": "Fichas completas, estadísticas individuales, asistencias y lesiones."
-                },
-                "coachDashboard": {
-                    "title": "Panel del entrenador",
-                    "description": "Todo lo que el entrenador necesita para preparar y dirigir la temporada."
-                },
-                "documents": {
-                    "title": "Documentos centralizados",
-                    "description": "Licencias, autorizaciones, convocatorias: todo en un sitio, exportable."
-                },
-                "parents": {
-                    "title": "Espacio padres",
-                    "description": "Los padres ven las convocatorias, responden, sin duplicados."
-                },
-                "statistics": {
-                    "title": "Estadísticas del club",
-                    "description": "Asistencia, rendimiento, evolución: datos legibles para decidir."
-                }
-            }
-        },
-        "reassurance": {
-            "eyebrow": "Antes de empezar",
-            "heading": "Ninguna razón para dudar",
-            "intro": "Todo está pensado para que pruebes sin riesgo y decidas con calma.",
-            "trial": {
-                "title": "{days} días gratis",
-                "body": "Acceso completo a SimplyFoot durante 30 días, sin tarjeta bancaria al registrarse."
-            },
-            "noCommit": {
-                "title": "Sin compromiso",
-                "body": "Sin compromiso anual impuesto. Cancelación en un clic, cuando quieras."
-            },
-            "setup": {
-                "title": "Listo en 10 min",
-                "body": "Registro, código del club, importación de licencias: tu club operativo desde la primera sesión."
-            },
-            "security": {
-                "title": "Datos seguros",
-                "body": "Alojamiento en Francia, conforme al RGPD, copias diarias. Tus datos son tuyos."
-            }
+        "trust": {
+            "heading": "Todas las funciones. Todos los planes.",
+            "description": "Sin opciones ocultas. 30 días de prueba, sin tarjeta, cancela en un clic.",
+            "trial": "{days} días de prueba",
+            "noCommit": "Sin compromiso",
+            "setup": "Listo en 10 minutos",
+            "security": "Alojado en Francia, RGPD"
         },
         "faq": {
             "eyebrow": "Preguntas frecuentes",

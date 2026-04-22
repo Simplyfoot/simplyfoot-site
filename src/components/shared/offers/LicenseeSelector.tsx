@@ -15,7 +15,7 @@ import { Slider } from '@/shadcn/slider';
 
 interface LicenseeSelectorProps {
     value: number;
-    onChange: (licensees: number) => void;
+    onChangeAction: (licensees: number) => void;
     className?: string;
 }
 
@@ -24,28 +24,28 @@ interface LicenseeSelectorProps {
  * numérique + slider synchronisés, avec rappel temps réel de l'offre
  * recommandée. Valeur initiale : `DEFAULT_LICENSEES` (≈ médiane Grand Club).
  */
-export function LicenseeSelector({ value, onChange, className }: LicenseeSelectorProps) {
+export function LicenseeSelector({ value, onChangeAction, className }: LicenseeSelectorProps) {
     const t = useTranslations('Offers.selector');
     const recommended = pickPlanForLicensees(value);
 
     const handleSlide = useCallback(
         (next: number[]) => {
             const raw = next[0] ?? DEFAULT_LICENSEES;
-            onChange(clamp(raw));
+            onChangeAction(clamp(raw));
         },
-        [onChange],
+        [onChangeAction],
     );
 
     const handleInput = useCallback(
         (raw: string) => {
             const parsed = parseInt(raw, 10);
             if (Number.isNaN(parsed)) {
-                onChange(LICENSEE_SLIDER_MIN);
+                onChangeAction(LICENSEE_SLIDER_MIN);
                 return;
             }
-            onChange(clamp(parsed));
+            onChangeAction(clamp(parsed));
         },
-        [onChange],
+        [onChangeAction],
     );
 
     return (
@@ -58,7 +58,7 @@ export function LicenseeSelector({ value, onChange, className }: LicenseeSelecto
         >
             <div
                 aria-hidden
-                className="bg-primary/[0.06] pointer-events-none absolute -top-24 -right-24 size-56 rounded-full blur-3xl"
+                className="bg-primary/6 pointer-events-none absolute -top-24 -right-24 size-56 rounded-full blur-3xl"
             />
 
             <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-10">

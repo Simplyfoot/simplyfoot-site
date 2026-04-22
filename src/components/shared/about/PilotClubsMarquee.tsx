@@ -39,7 +39,7 @@ export function PilotClubsMarquee({ className }: PilotClubsMarqueeProps) {
         <div
             className={cn(
                 'pointer-events-none relative overflow-hidden',
-                '[mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]',
+                'mask-[linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]',
                 className,
             )}
             aria-label={t('label')}
