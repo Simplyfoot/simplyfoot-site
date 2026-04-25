@@ -13,7 +13,7 @@ import { useRootColor } from '@/hooks/useRootColor';
 import { useRouter } from '@/i18n/navigation';
 import { FALLBACK_HEX } from '@/utils/constants.utils';
 
-import { FootPlanet } from './FootPlanet';
+import { BrandPlanet } from './BrandPlanet';
 import { GalaxyReducedMotion } from './GalaxyReducedMotion';
 import { OrbitingGroup } from './OrbitingGroup';
 import { Planet } from './Planet';
@@ -22,7 +22,6 @@ import { Starfield } from './Starfield';
 
 function Scene() {
     const config = useDeviceConfig();
-    const rugbyPrimary = useBrandColor('rugby');
     const handballPrimary = useBrandColor('handball');
     const ambientWarm = useRootColor('--secondary');
     const router = useRouter();
@@ -65,7 +64,8 @@ function Scene() {
             <SimplyLogo3D scale={config.logoScale} />
 
             <OrbitingGroup {...config.planetOrbits.foot}>
-                <FootPlanet
+                <BrandPlanet
+                    modelPath="/images/planet-simplyfoot.glb"
                     label="Football"
                     position={[0, 0, 0]}
                     scale={config.planetScale.foot}
@@ -75,12 +75,14 @@ function Scene() {
                 />
             </OrbitingGroup>
             <OrbitingGroup {...config.planetOrbits.rugby}>
-                <Planet
+                <BrandPlanet
+                    modelPath="/images/planet-simplyrugby.glb"
                     label="Rugby"
-                    color={rugbyPrimary || FALLBACK_HEX}
                     position={[0, 0, 0]}
                     scale={config.planetScale.rugby}
-                    sphereSegments={config.sphereSegments}
+                    /* Le GLB rugby est exporté à une taille bien supérieure au foot ;
+                       on compense côté client pour aligner le rendu. */
+                    modelScale={0.15}
                     labelFontSize={config.labelFontSize}
                     isTouchDevice={config.isTouchDevice}
                     onClick={goToRugby}
