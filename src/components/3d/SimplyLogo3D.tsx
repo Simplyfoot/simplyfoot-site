@@ -56,7 +56,7 @@ export function SimplyLogo3D({ scale = 1 }: SimplyLogo3DProps) {
 
     return (
         <Billboard follow ref={outerRef}>
-            <group ref={innerRef} scale={baseScale} rotation={[0, 0, Math.PI]}>
+            <group ref={innerRef} scale={baseScale}>
                 <primitive object={clonedScene} />
             </group>
         </Billboard>

@@ -71,7 +71,13 @@ export function TierCard({ plan, size, cycle, className }: TierCardProps) {
                 </p>
             </header>
 
-            <div className="flex flex-col gap-1.5">
+            {/* `key` change forces re-mount → l'animation `price-update` rejoue
+                à chaque modification de size/cycle. Feedback visuel qui confirme
+                la mise à jour sans bouger la mise en page. */}
+            <div
+                key={`${size}-${cycle}`}
+                className="flex flex-col gap-1.5 motion-safe:animate-[price-update_350ms_ease-out]"
+            >
                 {isFree ? (
                     <span className="font-display text-foreground text-4xl font-bold">
                         {t('price.free')}

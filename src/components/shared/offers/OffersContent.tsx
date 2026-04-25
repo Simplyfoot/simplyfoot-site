@@ -4,13 +4,12 @@ import { useState } from 'react';
 
 import { ANNUAL_DISCOUNT, DEFAULT_SIZE } from '@/config/offers';
 
-import { BillingCycleToggle } from './BillingCycleToggle';
 import { FinalCta } from './FinalCta';
 import { ModulesBlock } from './ModulesBlock';
 import { OffersFaq } from './OffersFaq';
 import { OffersHero } from './OffersHero';
+import { PricingControls } from './PricingControls';
 import { ReversionHighlight } from './ReversionHighlight';
-import { SizeSelector } from './SizeSelector';
 import { TierComparison } from './TierComparison';
 import { TrustStrip } from './TrustStrip';
 
@@ -22,17 +21,16 @@ import type { BillingCycle, ClubSize } from '~types/offers.types';
  * Flux narratif :
  *   1. Hero : pitch "logiciel qui rapporte".
  *   2. ReversionHighlight : le différenciateur take-rate, en force.
- *   3. SizeSelector + BillingCycleToggle : les deux inputs utilisateurs.
- *   4. TierComparison : 3 tiers (DÉCOUVERTE / STARTER / CLUB) en colonnes,
- *      prix adaptés à la taille et à la cadence.
- *   5. ModulesBlock : les 3 add-ons STARTER (inclus dans CLUB).
- *   6. TrustStrip : rassurance condensée.
- *   7. FAQ pricing (9 questions dont take-rate et modules).
- *   8. CTA final.
- *
- * Les deux états locaux — `size` et `cycle` — sont co-propagés vers
- * TierComparison pour le pricing live. Le tier recommandé (CLUB) est
- * pré-sélectionné implicitement via `plan.recommended` dans la config.
+ *   3. Bloc tarifs unifié — `PricingControls` (sticky) + `TierComparison`
+ *      groupés dans le même parent. La barre se "stuck" en haut du
+ *      viewport tant que l'utilisateur navigue dans les cartes, puis se
+ *      libère naturellement quand on scrolle au-delà (parent CSS borné).
+ *      Aucun aller-retour scroll : l'utilisateur change taille/cadence
+ *      sans quitter les cartes des yeux.
+ *   4. ModulesBlock : les 3 add-ons STARTER (inclus dans CLUB).
+ *   5. TrustStrip : rassurance condensée.
+ *   6. FAQ pricing.
+ *   7. CTA final.
  */
 export function OffersContent() {
     const [cycle, setCycle] = useState<BillingCycle>('monthly');
@@ -44,17 +42,15 @@ export function OffersContent() {
 
             <ReversionHighlight />
 
-            <div className="flex flex-col gap-6">
-                <SizeSelector value={size} onChangeAction={setSize} />
-
-                <div className="flex justify-center">
-                    <BillingCycleToggle
-                        value={cycle}
-                        onChange={setCycle}
-                        annualDiscount={ANNUAL_DISCOUNT}
-                    />
-                </div>
-
+            <div className="relative flex flex-col gap-6">
+                <PricingControls
+                    size={size}
+                    cycle={cycle}
+                    onSizeChange={setSize}
+                    onCycleChange={setCycle}
+                    annualDiscount={ANNUAL_DISCOUNT}
+                    className="sticky top-20 z-20 mx-auto w-full max-w-4xl"
+                />
                 <TierComparison size={size} cycle={cycle} />
             </div>
 

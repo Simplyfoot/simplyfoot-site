@@ -1464,6 +1464,231 @@
             "simoBubble": "See you Saturday at the pitch!"
         }
     },
+    "Contact": {
+        "meta": {
+            "title": "Contact — {brand}",
+            "description": "Email, phone, WhatsApp hotline or detailed form: pick the channel that suits you. We reply within one business day."
+        },
+        "hero": {
+            "eyebrow": "Let's talk",
+            "title": "Let's talk about your club",
+            "subtitle": "Email, phone, WhatsApp or form — pick the channel that suits you. A real person will reply, not a bot.",
+            "scrollHint": "Scroll to pick your channel"
+        },
+        "channels": {
+            "title": "How would you like to reach us?",
+            "subtitle": "Four channels, one promise: your message lands in the right hands, fast.",
+            "newBadge": "NEW",
+            "email": {
+                "label": "Email",
+                "description": "Reply within one business day",
+                "ariaLabel": "Send an email to {email}"
+            },
+            "phone": {
+                "label": "Phone",
+                "description": "Monday – Friday, 9 a.m. – 6 p.m.",
+                "ariaLabel": "Call {phone}"
+            },
+            "whatsapp": {
+                "label": "WhatsApp hotline",
+                "description": "Quick replies, Monday – Saturday",
+                "ariaLabel": "Message SimplyFoot on WhatsApp"
+            },
+            "form": {
+                "label": "Detailed form",
+                "value": "Structured request",
+                "description": "Pilot, demos, partnerships",
+                "ariaLabel": "Jump to the detailed form"
+            }
+        },
+        "whatsapp": {
+            "badge": "NEW",
+            "heading": "A quick question? Our WhatsApp hotline answers fast.",
+            "subtitle": "For coaches, presidents and volunteers who need a quick answer without going through email. We're reachable six days a week.",
+            "cta": "Message us on WhatsApp",
+            "prefilledMessage": "Hello SimplyFoot, I have a question",
+            "mockup": {
+                "userName": "You",
+                "userMessage": "Hi, I'm the president of a club and I'd like to learn more about SimplyFoot.",
+                "userTime": "10:42",
+                "simplyName": "SimplyFoot",
+                "simplyMessage": "Hi there! Happy to help 👋 How many members does your club have?",
+                "simplyTime": "10:42",
+                "online": "Online"
+            }
+        },
+        "form": {
+            "title": "Tell us about your project",
+            "subtitle": "More context = better answer. We read every message.",
+            "requiredHint": "Fields marked * are required.",
+            "fields": {
+                "name": {
+                    "label": "Full name",
+                    "placeholder": "Jane Smith"
+                },
+                "email": {
+                    "label": "Email",
+                    "placeholder": "you@example.com"
+                },
+                "phone": {
+                    "label": "Phone",
+                    "placeholder": "+33 6 12 34 56 78",
+                    "hint": "Optional"
+                },
+                "clubName": {
+                    "label": "Club name",
+                    "placeholder": "AS Saint-Étienne",
+                    "hint": "Optional"
+                },
+                "role": {
+                    "label": "My role",
+                    "placeholder": "Pick a role",
+                    "options": {
+                        "president": "President",
+                        "coach": "Coach / educator",
+                        "benevole": "Volunteer",
+                        "joueur": "Player",
+                        "parent": "Parent",
+                        "autre": "Other"
+                    }
+                },
+                "clubSize": {
+                    "label": "Club size",
+                    "placeholder": "Pick a size",
+                    "options": {
+                        "1-50": "1 – 50 members",
+                        "51-100": "51 – 100 members",
+                        "101-250": "101 – 250 members",
+                        "251-500": "251 – 500 members",
+                        "500+": "500+ members",
+                        "pas-de-club": "No club yet"
+                    }
+                },
+                "subject": {
+                    "label": "Topic",
+                    "placeholder": "Pick a topic",
+                    "options": {
+                        "pilote": "Join the pilot program",
+                        "demo": "Request a demo",
+                        "offres": "Question about pricing",
+                        "bug": "Report a bug",
+                        "suggestion": "Suggestion / improvement",
+                        "partenariat": "Partnership",
+                        "presse": "Press / media",
+                        "autre": "Other"
+                    }
+                },
+                "message": {
+                    "label": "Your message",
+                    "placeholder": "Describe your need, your context, your timeline.",
+                    "hint": "Minimum 20 characters."
+                },
+                "consent": {
+                    "label": "I agree that my data will be processed to handle my request, in line with the privacy policy."
+                }
+            },
+            "errors": {
+                "name": "Name required (2 characters minimum).",
+                "emailRequired": "Email required.",
+                "emailInvalid": "Invalid email format.",
+                "message": "Message too short (20 characters minimum).",
+                "consent": "GDPR consent required."
+            },
+            "submit": {
+                "label": "Send message",
+                "loading": "Sending…"
+            },
+            "toast": {
+                "successTitle": "Message sent!",
+                "successDescription": "We'll reply within one business day.",
+                "errorTitle": "Couldn't send",
+                "errorDescription": "Try again or email us directly at {email}."
+            }
+        },
+        "info": {
+            "title": "Quick info",
+            "contacts": {
+                "title": "Get in touch",
+                "emailLabel": "By email",
+                "phoneLabel": "By phone",
+                "whatsappLabel": "On WhatsApp"
+            },
+            "location": {
+                "title": "Find us",
+                "company": "{brand} SAS",
+                "address": "60 rue François 1er",
+                "city": "75008 Paris, France"
+            },
+            "hours": {
+                "title": "Hours",
+                "weekdays": "Monday – Friday: 9 a.m. – 6 p.m.",
+                "saturday": "Saturday: 10 a.m. – 4 p.m. (WhatsApp only)",
+                "sunday": "Sunday: closed (but Simmo's awake 🐙)"
+            }
+        },
+        "socials": {
+            "title": "Follow the SimplyFoot journey",
+            "subtitle": "Behind the scenes, updates, club stories — join our community.",
+            "soonBadge": "Soon",
+            "soonAriaLabel": "{platform} — coming soon",
+            "platforms": {
+                "instagram": {
+                    "name": "Instagram",
+                    "handle": "@simplyfoot.fr"
+                },
+                "facebook": {
+                    "name": "Facebook",
+                    "handle": "SimplyFoot"
+                },
+                "linkedin": {
+                    "name": "LinkedIn",
+                    "handle": "SimplyFoot"
+                },
+                "tiktok": {
+                    "name": "TikTok",
+                    "handle": "@simplyfoot"
+                },
+                "twitter": {
+                    "name": "X",
+                    "handle": "@simplyfoot_fr"
+                },
+                "youtube": {
+                    "name": "YouTube",
+                    "handle": "SimplyFoot"
+                }
+            }
+        },
+        "miniFaq": {
+            "title": "Need a quick answer?",
+            "subtitle": "Simmo, our octopus assistant, knows SimplyFoot inside out 🐙",
+            "items": {
+                "pilote": {
+                    "question": "How do I join the pilot program?",
+                    "answer": "The pilot program welcomes 10 founding partner clubs. We have a 30-minute chat to check the fit, you get free app access, and we build the product around your feedback. Apply via the form by selecting “Join the pilot program”."
+                },
+                "compat": {
+                    "question": "Does SimplyFoot work for a club of 50 members?",
+                    "answer": "Yes — the tool is built for every amateur club, from the village team to the city giant. The DISCOVERY plan is free up to 50 members and includes the essential features. You upgrade only when you actually need to."
+                },
+                "delay": {
+                    "question": "How long until I can get a demo?",
+                    "answer": "We'll offer you a slot within two business days. The demo lasts 30 minutes over video, with no commitment. You walk away with a sandbox account to share with your team."
+                }
+            },
+            "ctaSimmo": "Chat with Simmo",
+            "ctaFaq": "See all FAQs"
+        },
+        "simmoDialog": {
+            "title": "Simmo, your SimplyFoot guide",
+            "bubble": "Hi! 👋 I'm Simmo, the octopus guide.",
+            "body": "Live chat with Simmo is coming very soon. In the meantime, here are the most useful resources for your request.",
+            "actions": {
+                "faq": "See all FAQs",
+                "whatsapp": "Message us on WhatsApp",
+                "close": "Close"
+            }
+        }
+    },
     "Footer": {
         "sections": {
             "legal": "Legal information",

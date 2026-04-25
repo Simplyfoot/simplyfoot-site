@@ -273,6 +273,21 @@
     }
 }
 
+/* Offers page — pulse léger des prix quand la taille ou la cadence
+   changent (clé React force le re-mount, l'animation se rejoue). Sert de
+   feedback visuel pour confirmer que les cartes ont bien réagi à un
+   changement de contrôle, sans bouger la mise en page. */
+@keyframes price-update {
+    0% {
+        opacity: 0.4;
+        transform: translateY(2px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Features page — SIMO idle float. Léger effet vivant sans jump-cut.
    Couplé à `motion-reduce:animate-none` côté composant pour les
    utilisateurs sensibles. */

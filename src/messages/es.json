@@ -1464,6 +1464,231 @@
             "simoBubble": "¡Hasta el sábado en el estadio!"
         }
     },
+    "Contact": {
+        "meta": {
+            "title": "Contacto — {brand}",
+            "description": "Email, teléfono, hotline de WhatsApp o formulario detallado: elige el canal que mejor te convenga. Respondemos en menos de un día laborable."
+        },
+        "hero": {
+            "eyebrow": "Hablemos",
+            "title": "Hablemos de tu club",
+            "subtitle": "Email, teléfono, WhatsApp o formulario — elige el canal que prefieras. Te responde una persona real, no un bot.",
+            "scrollHint": "Desplázate para elegir tu canal"
+        },
+        "channels": {
+            "title": "¿Cómo prefieres contactarnos?",
+            "subtitle": "Cuatro canales, una sola promesa: tu mensaje llega rápido a la persona indicada.",
+            "newBadge": "NUEVO",
+            "email": {
+                "label": "Email",
+                "description": "Respuesta en menos de un día laborable",
+                "ariaLabel": "Enviar un email a {email}"
+            },
+            "phone": {
+                "label": "Teléfono",
+                "description": "Lunes – viernes, 9 h – 18 h",
+                "ariaLabel": "Llamar al {phone}"
+            },
+            "whatsapp": {
+                "label": "Hotline de WhatsApp",
+                "description": "Respuesta rápida, lunes – sábado",
+                "ariaLabel": "Escribir a SimplyFoot por WhatsApp"
+            },
+            "form": {
+                "label": "Formulario detallado",
+                "value": "Solicitud estructurada",
+                "description": "Piloto, demos, alianzas",
+                "ariaLabel": "Ir al formulario detallado"
+            }
+        },
+        "whatsapp": {
+            "badge": "NUEVO",
+            "heading": "¿Una pregunta? Nuestra hotline de WhatsApp responde rápido.",
+            "subtitle": "Para entrenadores, presidentes y voluntarios que necesitan una respuesta rápida sin pasar por el email. Estamos disponibles seis días a la semana.",
+            "cta": "Escribir por WhatsApp",
+            "prefilledMessage": "Hola SimplyFoot, tengo una pregunta",
+            "mockup": {
+                "userName": "Tú",
+                "userMessage": "Hola, soy presidente de un club y me gustaría conocer mejor SimplyFoot.",
+                "userTime": "10:42",
+                "simplyName": "SimplyFoot",
+                "simplyMessage": "¡Hola! Encantados de ayudar 👋 ¿Cuántos socios tiene tu club?",
+                "simplyTime": "10:42",
+                "online": "En línea"
+            }
+        },
+        "form": {
+            "title": "Cuéntanos sobre tu proyecto",
+            "subtitle": "Más contexto = mejor respuesta. Leemos cada mensaje.",
+            "requiredHint": "Los campos con * son obligatorios.",
+            "fields": {
+                "name": {
+                    "label": "Nombre completo",
+                    "placeholder": "Juan Pérez"
+                },
+                "email": {
+                    "label": "Email",
+                    "placeholder": "tu@ejemplo.com"
+                },
+                "phone": {
+                    "label": "Teléfono",
+                    "placeholder": "+34 612 34 56 78",
+                    "hint": "Opcional"
+                },
+                "clubName": {
+                    "label": "Nombre del club",
+                    "placeholder": "AS Saint-Étienne",
+                    "hint": "Opcional"
+                },
+                "role": {
+                    "label": "Mi rol",
+                    "placeholder": "Elige un rol",
+                    "options": {
+                        "president": "Presidente/a",
+                        "coach": "Entrenador / educador",
+                        "benevole": "Voluntario/a",
+                        "joueur": "Jugador/a",
+                        "parent": "Madre / padre",
+                        "autre": "Otro"
+                    }
+                },
+                "clubSize": {
+                    "label": "Tamaño del club",
+                    "placeholder": "Elige un tamaño",
+                    "options": {
+                        "1-50": "1 – 50 socios",
+                        "51-100": "51 – 100 socios",
+                        "101-250": "101 – 250 socios",
+                        "251-500": "251 – 500 socios",
+                        "500+": "500+ socios",
+                        "pas-de-club": "Aún no tengo club"
+                    }
+                },
+                "subject": {
+                    "label": "Asunto",
+                    "placeholder": "Elige un asunto",
+                    "options": {
+                        "pilote": "Unirme al programa piloto",
+                        "demo": "Pedir una demo",
+                        "offres": "Pregunta sobre las tarifas",
+                        "bug": "Reportar un fallo",
+                        "suggestion": "Sugerencia / mejora",
+                        "partenariat": "Alianza",
+                        "presse": "Prensa / medios",
+                        "autre": "Otro"
+                    }
+                },
+                "message": {
+                    "label": "Tu mensaje",
+                    "placeholder": "Cuéntanos tu necesidad, tu contexto, tus plazos.",
+                    "hint": "Mínimo 20 caracteres."
+                },
+                "consent": {
+                    "label": "Acepto que mis datos se traten para responder a mi solicitud, conforme a la política de privacidad."
+                }
+            },
+            "errors": {
+                "name": "Nombre obligatorio (mínimo 2 caracteres).",
+                "emailRequired": "Email obligatorio.",
+                "emailInvalid": "Formato de email inválido.",
+                "message": "Mensaje demasiado corto (mínimo 20 caracteres).",
+                "consent": "Consentimiento RGPD obligatorio."
+            },
+            "submit": {
+                "label": "Enviar mensaje",
+                "loading": "Enviando…"
+            },
+            "toast": {
+                "successTitle": "¡Mensaje enviado!",
+                "successDescription": "Te respondemos en menos de un día laborable.",
+                "errorTitle": "No se pudo enviar",
+                "errorDescription": "Inténtalo de nuevo o escríbenos directamente a {email}."
+            }
+        },
+        "info": {
+            "title": "Información práctica",
+            "contacts": {
+                "title": "Cómo contactarnos",
+                "emailLabel": "Por email",
+                "phoneLabel": "Por teléfono",
+                "whatsappLabel": "Por WhatsApp"
+            },
+            "location": {
+                "title": "Encuéntranos",
+                "company": "{brand} SAS",
+                "address": "60 rue François 1er",
+                "city": "75008 París, Francia"
+            },
+            "hours": {
+                "title": "Horario",
+                "weekdays": "Lunes – viernes: 9 h – 18 h",
+                "saturday": "Sábado: 10 h – 16 h (solo WhatsApp)",
+                "sunday": "Domingo: cerrado (pero Simmo está despierto 🐙)"
+            }
+        },
+        "socials": {
+            "title": "Sigue la aventura SimplyFoot",
+            "subtitle": "Tras bastidores, novedades, historias de clubes — únete a nuestra comunidad.",
+            "soonBadge": "Próximamente",
+            "soonAriaLabel": "{platform} — disponible próximamente",
+            "platforms": {
+                "instagram": {
+                    "name": "Instagram",
+                    "handle": "@simplyfoot.fr"
+                },
+                "facebook": {
+                    "name": "Facebook",
+                    "handle": "SimplyFoot"
+                },
+                "linkedin": {
+                    "name": "LinkedIn",
+                    "handle": "SimplyFoot"
+                },
+                "tiktok": {
+                    "name": "TikTok",
+                    "handle": "@simplyfoot"
+                },
+                "twitter": {
+                    "name": "X",
+                    "handle": "@simplyfoot_fr"
+                },
+                "youtube": {
+                    "name": "YouTube",
+                    "handle": "SimplyFoot"
+                }
+            }
+        },
+        "miniFaq": {
+            "title": "¿Una respuesta rápida?",
+            "subtitle": "Simmo, nuestro pulpo asistente, conoce SimplyFoot al dedillo 🐙",
+            "items": {
+                "pilote": {
+                    "question": "¿Cómo entro en el programa piloto?",
+                    "answer": "El programa piloto acoge a 10 clubes socios fundadores. Hablamos media hora para validar el encaje, accedes gratis a la app y construimos la herramienta con tus comentarios. Postula desde el formulario eligiendo «Unirme al programa piloto»."
+                },
+                "compat": {
+                    "question": "¿SimplyFoot funciona para un club de 50 socios?",
+                    "answer": "Sí — la herramienta está pensada para todos los clubes amateurs, desde el equipo del pueblo al gran club urbano. El plan DESCUBRIMIENTO es gratuito hasta 50 socios e incluye lo esencial. Subes de plan solo cuando realmente lo necesitas."
+                },
+                "delay": {
+                    "question": "¿En cuánto tiempo puedo tener una demo?",
+                    "answer": "Te proponemos un hueco en menos de dos días laborables. La demo dura 30 minutos por videollamada, sin compromiso. Te vas con una cuenta de prueba para que tu equipo la pruebe."
+                }
+            },
+            "ctaSimmo": "Hablar con Simmo",
+            "ctaFaq": "Ver todas las preguntas"
+        },
+        "simmoDialog": {
+            "title": "Simmo, tu guía SimplyFoot",
+            "bubble": "¡Hola! 👋 Soy Simmo, el pulpo guía.",
+            "body": "El chat en directo con Simmo llega muy pronto. Mientras tanto, aquí tienes los recursos más útiles para tu solicitud.",
+            "actions": {
+                "faq": "Ver todas las preguntas",
+                "whatsapp": "Escribir por WhatsApp",
+                "close": "Cerrar"
+            }
+        }
+    },
     "Footer": {
         "sections": {
             "legal": "Información legal",
