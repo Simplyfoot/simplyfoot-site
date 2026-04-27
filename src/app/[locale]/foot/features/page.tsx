@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { FeaturesContent } from '@/components/features/foot/FeaturesContent';
-import { daysUntilNextUpdate } from '@/config/features-foot';
 import { buildAlternates } from '@/helpers/i18n.helpers';
 import { BRANDS } from '@/utils/constants.utils';
 
@@ -32,12 +31,9 @@ export default async function FootFeaturesPage({
     const { locale } = await params;
     setRequestLocale(locale);
 
-    // Calculé côté serveur pour éviter un flash d'hydratation sur le compteur.
-    const daysUntilNext = daysUntilNextUpdate();
-
     return (
         <main>
-            <FeaturesContent daysUntilNext={daysUntilNext} />
+            <FeaturesContent />
         </main>
     );
 }

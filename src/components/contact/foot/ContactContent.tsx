@@ -1,27 +1,30 @@
-import { ContactChannels } from './ContactChannels';
-import { ContactFormSection } from './ContactFormSection';
+import { ContactForm } from './ContactForm';
 import { ContactHero } from './ContactHero';
-import { ContactMiniFaq } from './ContactMiniFaq';
-import { ContactSocials } from './ContactSocials';
-import { ContactWhatsApp } from './ContactWhatsApp';
 
 /**
- * Orchestrateur de la page `/foot/contact`. Six sections dans un ordre
- * pensé conversion : on présente la promesse (Hero), on offre le choix
- * (Channels), on insiste sur le canal "nouveau" qui débloque le plus de
- * réponses (WhatsApp), on accueille la demande structurée (FormSection),
- * on prolonge la relation (Socials) et on ferme par un dernier filet
- * (MiniFaq + Simmo) pour ceux qui hésitent encore.
+ * Page contact — version sobre. Hero + formulaire détaillé, rien d'autre.
+ * Le formulaire embarque sa propre validation Zod, ses messages d'erreur
+ * localisés et un toast de confirmation : c'est lui qui fait le travail,
+ * la page n'a pas besoin de l'entourer de canaux alternatifs ni de
+ * coordonnées.
+ *
+ * Ancien flux (canaux, hotline WhatsApp, sidebar coordonnées, sociaux,
+ * mini-FAQ, dialog Simmo) retiré volontairement — décision produit du
+ * 2026-04-27 : revenir à l'essentiel tant que les canaux secondaires ne
+ * sont pas tous opérationnels.
  */
 export function ContactContent() {
     return (
         <>
             <ContactHero />
-            <ContactChannels />
-            <ContactWhatsApp />
-            <ContactFormSection />
-            <ContactSocials />
-            <ContactMiniFaq />
+            <section
+                aria-labelledby="contact-form-heading"
+                className="bg-secondary-50 text-story-ink w-full scroll-mt-24"
+            >
+                <div className="mx-auto w-full max-w-3xl px-4 py-20 sm:px-6 md:py-24">
+                    <ContactForm />
+                </div>
+            </section>
         </>
     );
 }

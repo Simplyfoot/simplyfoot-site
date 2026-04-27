@@ -40,7 +40,7 @@ export function HomeHero({ className }: HomeHeroProps) {
         <section
             aria-labelledby="home-hero-title"
             className={cn(
-                'bg-story-midnight text-secondary-50 relative isolate flex min-h-screen w-full flex-col overflow-hidden',
+                'bg-story-midnight text-secondary-50 relative isolate flex min-h-[88vh] w-full flex-col overflow-hidden',
                 className,
             )}
         >
@@ -92,12 +92,12 @@ export function HomeHero({ className }: HomeHeroProps) {
                                 aria-hidden
                             />
                         </Link>
-                        <a
-                            href="#home-showcase"
+                        <Link
+                            href="/foot/features"
                             className="focus-visible:ring-secondary-50 border-secondary-50/25 text-secondary-50 hover:border-secondary-50/60 hover:bg-secondary-50/10 inline-flex items-center justify-center gap-2 rounded-full border bg-transparent px-6 py-3.5 text-base font-semibold transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
                         >
                             {t('ctaSecondary')}
-                        </a>
+                        </Link>
                     </div>
 
                     <ul className="mt-2 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs font-medium md:justify-start">
@@ -145,7 +145,7 @@ export function HomeHero({ className }: HomeHeroProps) {
             </div>
 
             <a
-                href="#home-whisper"
+                href="#home-clubs"
                 aria-label={t('scrollHint')}
                 className="focus-visible:ring-secondary-50 absolute bottom-6 left-1/2 inline-flex -translate-x-1/2 flex-col items-center gap-1 text-[10px] font-semibold tracking-[0.4em] uppercase opacity-60 transition-opacity hover:opacity-100 focus-visible:ring-2 focus-visible:outline-none"
             >

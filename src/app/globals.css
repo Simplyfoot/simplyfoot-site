@@ -273,6 +273,19 @@
     }
 }
 
+/* Home page — défilement infini des logos clubs pilotes. Couplé à un
+   contenu DOM dupliqué (×2) côté composant : à -50 % la deuxième copie
+   prend la place de la première, boucle sans saccade. Pause au survol
+   gérée côté composant via `[animation-play-state:paused]`. */
+@keyframes logos-marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
 /* Offers page — pulse léger des prix quand la taille ou la cadence
    changent (clé React force le re-mount, l'animation se rejoue). Sert de
    feedback visuel pour confirmer que les cartes ont bien réagi à un

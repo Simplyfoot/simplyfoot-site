@@ -1,45 +1,29 @@
-import { InnovationTeaser } from '@/components/features/foot/InnovationTeaser';
-
 import { HomeFinalCta } from './HomeFinalCta';
 import { HomeHero } from './HomeHero';
-import { HomeManifesto } from './HomeManifesto';
-import { HomeMockupHero } from './HomeMockupHero';
-import { HomeNumbers } from './HomeNumbers';
 import { HomeRoleTriptych } from './HomeRoleTriptych';
-import { HomeWhisper } from './HomeWhisper';
+import { PilotClubsCarousel } from './PilotClubsCarousel';
 
 /**
- * Orchestrateur de la home `/foot/`. Enchaînement cinématique en 8
- * scènes, alternance sombre/clair pour le rythme, zéro redite avec la
- * landing Features.
+ * Orchestrateur de la home `/foot/` — version courte. Quatre sections,
+ * trois "écrans" en moyenne sur desktop, contenu humain et marketing :
  *
- * Ordre narratif :
- *   1. Hero sobre — promesse en un titre.
- *   2. Whisper — douleur reconnue.
- *   3. Manifesto — 5 lignes qui nomment les rôles et scellent la promesse.
- *   4. Mockup hero — UNE image iconique.
- *   5. Triptyque rôles — 3 mockups posés, lien vers Features.
- *   6. Numbers — 3 chiffres cinémas plein écran.
- *   7. Innovation teaser — seule pièce mutualisée (déjà cinématique).
- *   8. CTA final — question ouverte, SIMO.
+ *   1. Hero — promesse + CTA principal + iPhone mockup + planète 3D.
+ *   2. PilotClubsCarousel — preuve sociale immédiate (clubs partenaires
+ *      en marquise infinie).
+ *   3. RoleTriptych — trois rôles, trois mockups, lien vers Features.
+ *   4. FinalCta — invitation pilote.
  *
- * Les sections plein-viewport (Hero / Manifesto / MockupHero / Numbers /
- * FinalCta) débordent du conteneur pour produire un vrai rythme bande-
- * annonce ; les sections "respiration" (Whisper / Triptyque) gardent
- * leurs paddings naturels.
+ * Décision produit du 2026-04-27 : retrait des sections `HomeWhisper`,
+ * `HomeManifesto`, `HomeMockupHero`, `HomeNumbers` et de l'innovation
+ * teaser pour réduire le scroll de moitié et garder un focus marketing
+ * fort. Les composants supprimés sont récupérables via git.
  */
 export function HomeContent() {
     return (
         <>
             <HomeHero />
-            <HomeWhisper />
-            <HomeManifesto />
-            <HomeMockupHero />
+            <PilotClubsCarousel />
             <HomeRoleTriptych />
-            <HomeNumbers />
-            <div className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6 md:py-28">
-                <InnovationTeaser />
-            </div>
             <HomeFinalCta />
         </>
     );

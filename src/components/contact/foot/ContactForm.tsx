@@ -7,7 +7,6 @@ import { useId } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 
-import { BRAND_CONTACT } from '@/config/site';
 import {
     buildContactSchema,
     CLUB_SIZE_VALUES,
@@ -304,10 +303,6 @@ export function ContactForm() {
                         )}
                     </button>
                 </div>
-
-                <p className="text-story-ink/45 text-xs">
-                    {tToast('errorDescription', { email: BRAND_CONTACT.foot.email })}
-                </p>
             </form>
         </div>
     );

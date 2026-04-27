@@ -10,9 +10,9 @@ import { AdditiveBlending, BackSide, Color, ShaderMaterial } from 'three';
    calcule un Fresnel (1 - dot(N, V))^power pour produire un halo concentré
    sur les bords. Coût négligeable (un seul mesh, un seul material).
 
-   Utilisé par `Hero3DScene` (halo chaud) et `InnovationPlanet` (halo
-   froid). Couleur passée en hex CSS (résolu via `useRootColor` côté
-   consommateur — zéro hex hardcodé dans cette couche).
+   Utilisé par `Hero3DScene` (halo chaud autour de la planète foot).
+   Couleur passée en hex CSS (résolu via `useRootColor` côté consommateur
+   — zéro hex hardcodé dans cette couche).
    ═══════════════════════════════════════════════════════════════════════════ */
 
 const ATMOSPHERE_VERT = /* glsl */ `

@@ -24,8 +24,8 @@ interface FeaturesHeroProps {
  * rotation, chargée en `dynamic` avec `ssr:false`), dégradé vert forêt
  * signature, superposition de texte + SIMO + scroll indicator.
  *
- * Le bouton secondaire pointe vers l'ancre `#timeline` qui s'active dès
- * que `FeaturesTimelineSection` est rendue sur la même page.
+ * Le bouton secondaire et le scroll indicator pointent vers l'ancre
+ * `#features-list` (section `CurrentFeaturesList`).
  */
 export function FeaturesHero({ className }: FeaturesHeroProps) {
     const t = useTranslations('Features.hero');
@@ -81,7 +81,7 @@ export function FeaturesHero({ className }: FeaturesHeroProps) {
                             variant="outline"
                             className="border-secondary-50/40 text-secondary-50 hover:border-secondary-50/70 hover:bg-secondary-50/10 hover:text-secondary-50 shrink-0 bg-transparent"
                         >
-                            <a href="#features-timeline">
+                            <a href="#features-list">
                                 {t('ctaSecondary')}
                                 <ChevronDown className="ml-2 size-4" aria-hidden />
                             </a>
@@ -106,7 +106,7 @@ export function FeaturesHero({ className }: FeaturesHeroProps) {
             </p>
 
             <a
-                href="#features-problem"
+                href="#features-list"
                 aria-label={t('ctaSecondary')}
                 className="focus-visible:ring-secondary-50 absolute bottom-6 left-1/2 inline-flex -translate-x-1/2 flex-col items-center gap-1 text-xs font-medium opacity-80 transition-opacity hover:opacity-100 focus-visible:ring-2 focus-visible:outline-none"
             >

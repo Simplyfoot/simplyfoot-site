@@ -602,9 +602,16 @@
         }
     },
     "Offers": {
+        "comingSoon": {
+            "eyebrow": "Próximamente",
+            "title": "Próximamente",
+            "subtitle": "Estamos afinando la oferta con los primeros clubes piloto. Cuéntanos tu proyecto y te avisamos personalmente en cuanto abramos las inscripciones.",
+            "primaryCta": "Avísame",
+            "secondaryCta": "Volver al inicio"
+        },
         "meta": {
-            "title": "Planes y precios — {brand}",
-            "description": "Un software que hace ganar dinero a tu club. DESCUBRIR gratis, STARTER y CLUB con ticketing digital — hasta el 90 % de los ingresos se devuelven a tu club."
+            "title": "Planes — {brand}",
+            "description": "Nuestra oferta se está finalizando. Cuéntanos tu proyecto y te avisamos en cuanto esté disponible."
         },
         "hero": {
             "eyebrow": "Planes y reparto de ingresos",
@@ -847,569 +854,89 @@
     },
     "Features": {
         "meta": {
-            "title": "Funciones y roadmap — {brand}",
-            "description": "Descubre lo que ya está disponible, lo que llega pronto y la visión a largo plazo de SimplyFoot — la app diseñada por y para el fútbol amateur."
+            "title": "Funciones — {brand}",
+            "description": "Cuatro funciones, todas operativas: eventos, calendario, mensajería y gestión de roles. Lo que SimplyFoot hace hoy, sin promesas vagas."
         },
         "hero": {
-            "eyebrow": "Funciones y roadmap",
-            "titleBefore": "La app diseñada ",
-            "titleHighlight": "por y para",
-            "titleAfter": " el fútbol amateur.",
-            "subtitle": "Construimos SimplyFoot con los clubes piloto. Esto es lo que ya está disponible, lo que llega y la visión que lo estructura todo.",
+            "eyebrow": "Funciones",
+            "titleBefore": "Esto es ",
+            "titleHighlight": "concretamente",
+            "titleAfter": " lo que hacemos hoy.",
+            "subtitle": "Sin hoja de ruta vaga. Sin promesas lejanas. Cuatro herramientas entregadas, usadas en piloto por los clubes asociados.",
             "ctaPrimary": "Unirme al programa piloto",
-            "ctaSecondary": "Descubrir la roadmap",
-            "simoBubble": "Hey, soy SIMO. ¿Te llevo?",
+            "ctaSecondary": "Ver las funciones",
+            "simoBubble": "¡Hey! Soy SIMO. ¿Vamos?",
             "simoAlt": "SIMO, la mascota de SimplyFoot",
             "planetAlt": "Planeta SimplyFoot girando — fondo 3D",
-            "authorityPill": "Programa piloto abierto · Actualización cada 15 días",
+            "authorityPill": "Programa piloto abierto · 7 clubes comprometidos",
             "reassurance": "Hecho en Francia · RGPD · Soporte humano · Sin publicidad"
         },
-        "promise": {
-            "eyebrow": "Nuestra promesa",
-            "heading": "Todo reunido en una sola aplicación.",
-            "description": "Todo lo necesario para hacer vivir un club amateur — y nada superfluo.",
-            "stats": {
-                "updateCadence": "Ritmo de actualización",
-                "rolesSupported": "Roles soportados",
-                "pilotClubs": "Clubes piloto",
-                "featuresLive": "Funciones ya entregadas"
-            }
-        },
-        "roles": {
-            "all": "Todos los roles",
-            "club": "Club",
-            "coach": "Entrenador",
-            "player": "Jugador",
-            "parent": "Padre / Madre"
-        },
-        "timeline": {
-            "eyebrow": "Roadmap de producto",
-            "heading": "De lo que existe a lo que imaginamos.",
-            "intro": "Tres fases para mantener la promesa honesta: lo que ya está en tus manos, lo que llega en las próximas semanas y la visión que guía cada decisión.",
-            "filterLabel": "Filtrar por rol",
-            "nextUpdate": "Próxima actualización en {days, plural, one {# día} other {# días}}",
-            "emptyFilter": "Ninguna categoría concierne este rol en esta fase.",
-            "phases": {
-                "now": {
-                    "title": "Ahora",
-                    "eyebrow": "Ya en tus manos",
-                    "intro": "Lo que hemos entregado con la ayuda de los clubes piloto.",
-                    "categories": {
-                        "interface": {
-                            "title": "Interfaz rediseñada",
-                            "bullets": {
-                                "0": "Botones rediseñados y colores retrabajados para la legibilidad.",
-                                "1": "Categorías normalizadas: U6 a U19, luego Sénior.",
-                                "2": "SIMO presente desde la página de inicio, listo para motivar.",
-                                "3": "Campana de notificaciones intuitiva — cada alerta es clara."
-                            }
-                        },
-                        "profiles": {
-                            "title": "Perfiles multi-rol",
-                            "bullets": {
-                                "0": "Un único perfil principal por usuario, se acabaron los duplicados.",
-                                "1": "Cambio con un clic entre presidente, entrenador, jugador, padre.",
-                                "2": "Vinculación al club con código de club, a los equipos con código de equipo.",
-                                "3": "Creación de perfiles de hijos desde la cuenta del padre.",
-                                "4": "Padres separados: código de hijo dedicado, vinculación sin duplicados."
-                            }
-                        },
-                        "events": {
-                            "title": "Eventos inteligentes",
-                            "bullets": {
-                                "0": "Creación de eventos en segundos.",
-                                "1": "Convocatorias lanzables en cualquier momento.",
-                                "2": "Edición completa: hora, lugar, día…",
-                                "3": "Cancelación clara, sin ambigüedad para los jugadores.",
-                                "4": "Validación manual de la presencia por el entrenador.",
-                                "5": "Búsqueda de direcciones precisas para el punto de encuentro."
-                            }
-                        },
-                        "messaging": {
-                            "title": "Mensajería moderna",
-                            "bullets": {
-                                "0": "Experiencia inspirada en WhatsApp — sin cambios de hábitos.",
-                                "1": "Notificaciones con el emisor claramente identificado.",
-                                "2": "Mensajería privada para el 1-a-1 entrenador / padre.",
-                                "3": "Mensajería de grupo para los intercambios del equipo."
-                            }
-                        },
-                        "personal": {
-                            "title": "Información personal",
-                            "bullets": {
-                                "0": "Modificación libre del nombre, fecha de nacimiento y otros datos directamente en la app."
-                            }
-                        },
-                        "calendar": {
-                            "title": "Calendario mejorado",
-                            "bullets": {
-                                "0": "Vista de calendario clara — no solo un listado.",
-                                "1": "Recuperación automática de los eventos del club."
-                            }
-                        }
-                    }
+        "list": {
+            "eyebrow": "Disponible hoy",
+            "title": "Cuatro funciones. Todas operativas.",
+            "subtitle": "Solo enseñamos lo que está entregado. Lo demás llega con los comentarios de los clubes piloto — te avisamos primero.",
+            "availableBadge": "Disponible",
+            "footnote": "¿Quieres ver la app sobre tu caso real? Pide una demo: 30 minutos por videollamada, sin compromiso.",
+            "items": {
+                "events": {
+                    "title": "Creación de eventos",
+                    "description": "Partido, entrenamiento, torneo, asamblea: crea cualquier evento en segundos. Fecha, lugar, equipo, convocados — todo de una vez."
                 },
-                "soon": {
-                    "title": "Próximamente",
-                    "eyebrow": "En las próximas semanas",
-                    "intro": "Las evoluciones que llegan cada dos semanas.",
-                    "categories": {
-                        "president": {
-                            "title": "Espacio presidente simplificado",
-                            "bullets": {
-                                "0": "Espacio presidente simplificado — para ir a lo esencial."
-                            }
-                        },
-                        "coachEnhanced": {
-                            "title": "Entrenador — pilotaje reforzado",
-                            "bullets": {
-                                "0": "Tasa de presencia de cada jugador recuperada automáticamente.",
-                                "1": "Visibilidad sobre los jugadores lesionados.",
-                                "2": "Acceso a alérgenos y contactos de emergencia.",
-                                "3": "Nuevo espacio de alineación — visible u oculto a los jugadores.",
-                                "4": "Saber quién va directo al estadio en los desplazamientos."
-                            }
-                        },
-                        "player": {
-                            "title": "Jugador — información útil",
-                            "bullets": {
-                                "0": "Indicar alérgenos y contactos de emergencia.",
-                                "1": "Marcar «Voy directo al estadio» en la convocatoria."
-                            }
-                        },
-                        "coachDashboard": {
-                            "title": "Dashboard entrenador",
-                            "bullets": {
-                                "0": "Primeros indicadores: presencia, regularidad, progreso.",
-                                "1": "Base del futuro sistema de evaluación."
-                            }
-                        }
-                    }
+                "calendar": {
+                    "title": "Calendario de temporada",
+                    "description": "Toda la temporada de un vistazo. Filtra por equipo o categoría, cada miembro ve solo lo que le concierne."
                 },
-                "later": {
-                    "title": "Más adelante",
-                    "eyebrow": "La visión",
-                    "intro": "Nuestro rumbo — estructurar el fútbol amateur y dar valor a cada club.",
-                    "categories": {
-                        "coachAdvanced": {
-                            "title": "Entrenador — evolución avanzada",
-                            "bullets": {
-                                "0": "Asignación de posiciones a los jugadores.",
-                                "1": "Sistema de evaluación completo, adaptado a cada edad.",
-                                "2": "Para los más jóvenes: aprendizaje, motricidad, comprensión, gestos simples.",
-                                "3": "Para los mayores: evaluaciones detalladas, coeficientes por posición.",
-                                "4": "Seguimiento mental y técnico combinados."
-                            }
-                        },
-                        "playerEnriched": {
-                            "title": "Jugador — experiencia enriquecida",
-                            "bullets": {
-                                "0": "Consulta personal de sus evaluaciones.",
-                                "1": "Gamificación con SIMO: insignias, retos, niveles.",
-                                "2": "Pasaporte de jugador completo con código QR.",
-                                "3": "Tarjeta evolutiva personal — física y digital.",
-                                "4": "Historial y estadísticas de toda la carrera amateur."
-                            }
-                        },
-                        "cards": {
-                            "title": "Tarjetas físicas y digitales",
-                            "bullets": {
-                                "0": "Tarjetas coleccionables asociadas a cada jugador.",
-                                "1": "Ediciones físicas — formato de carta coleccionable premium.",
-                                "2": "Versiones digitales en la app — insignias, rarezas, estados.",
-                                "3": "Evolución de las tarjetas según el progreso del jugador.",
-                                "4": "Palanca de engagement fuerte para jugadores y familias."
-                            }
-                        },
-                        "documents": {
-                            "title": "Documentos y administración",
-                            "bullets": {
-                                "0": "Clasificación inteligente por jugador, equipo, estructura.",
-                                "1": "Escaneo y archivo de documentos útiles.",
-                                "2": "Búsqueda rápida en todos los documentos del club."
-                            }
-                        },
-                        "staff": {
-                            "title": "Staff ampliado",
-                            "bullets": {
-                                "0": "Herramientas dedicadas: tesorero, manager, contable, secretario, voluntarios.",
-                                "1": "Cada rol con su panel adaptado."
-                            }
-                        },
-                        "monetization": {
-                            "title": "Palanca económica",
-                            "bullets": {
-                                "0": "Marketplace integrada al club.",
-                                "1": "Activaciones de patrocinadores locales.",
-                                "2": "Monetización de las tarjetas de jugadores.",
-                                "3": "Nuevos ingresos para financiar la vida del club."
-                            }
-                        }
-                    }
+                "messaging": {
+                    "title": "Mensajería estilo WhatsApp",
+                    "description": "Una conversación por equipo, staff o categoría. Notificaciones claras, archivos compartidos, hilos ordenados — adiós SMS desbordados."
+                },
+                "roles": {
+                    "title": "Gestión de roles",
+                    "description": "Presidente, entrenador, jugador, padre: cada rol tiene sus permisos y su vista. Tú repartes las llaves y sabes quién puede hacer qué."
                 }
             }
-        },
-        "differentiation": {
-            "eyebrow": "Lo que nos hace únicos",
-            "heading": "Cinco elecciones que marcan la diferencia.",
-            "intro": "No hacemos una herramienta de gestión más. Hacemos la app que el fútbol amateur merece.",
-            "points": {
-                "football": {
-                    "title": "Diseñado solo para el fútbol amateur",
-                    "description": "No es una herramienta genérica reciclada. Cada pantalla, cada término habla el lenguaje del terreno."
-                },
-                "experience": {
-                    "title": "Una experiencia simple y moderna",
-                    "description": "Una sola app, clara, fluida, agradable de abrir cada día."
-                },
-                "human": {
-                    "title": "Una dimensión humana y emocional",
-                    "description": "Con SIMO, las tarjetas y el pasaporte de jugador, SimplyFoot habla de pertenencia, orgullo, reconocimiento."
-                },
-                "economic": {
-                    "title": "Una lógica de puesta en valor económico",
-                    "description": "Ayudar a los clubes a funcionar mejor y a valorarse mejor: tarjetas, marketplace, patrocinadores."
-                },
-                "ambition": {
-                    "title": "Una auténtica ambición de producto",
-                    "description": "Estructurar el fútbol amateur, dar valor a los jugadores, crear un ecosistema moderno — ser la referencia."
-                }
-            }
-        },
-        "pilot": {
-            "eyebrow": "Compromiso del equipo",
-            "heading": "Construido con los clubes, para los clubes.",
-            "intro": "Una etapa clara, una base limpia, un ritmo que se mantiene.",
-            "bullets": {
-                "0": "Una única reinstalación necesaria — luego nunca más.",
-                "1": "Actualizaciones aproximadamente cada 15 días.",
-                "2": "Vuestros retornos orientan directamente la roadmap.",
-                "3": "Pensamos en todo, hasta en el mínimo detalle."
-            },
-            "simoBubble": "Construimos esta app juntos. Gracias por estar aquí."
         },
         "finalCta": {
-            "eyebrow": "Unirse a la aventura",
+            "eyebrow": "Únete a la aventura",
             "heading": "Construyamos SimplyFoot juntos.",
             "subtitle": "Únete a los clubes que escriben la próxima página del fútbol amateur.",
             "primaryCta": "Unirme al programa piloto",
-            "secondaryCta": "Contactar",
-            "reassurance": "Sin compromiso. Hablamos antes que nada.",
+            "secondaryCta": "Contactarnos",
+            "reassurance": "Sin compromiso. Hablamos antes.",
             "simoBubble": "¡Hasta el sábado en el estadio!",
             "massiveHeading": "Escribamos la próxima página del fútbol amateur. Juntos.",
-            "massiveSubtitle": "Únete a los clubes que ya han dado el paso. Una app simple, un equipo a la escucha y una visión ambiciosa para tus licencias.",
+            "massiveSubtitle": "Únete a los clubes que ya dieron el paso. Una app simple, un equipo que escucha y funciones entregadas cada dos semanas.",
             "badge": "Inscripción abierta · Acompañamiento personalizado · Puesta en marcha rápida"
-        },
-        "problem": {
-            "eyebrow": "Conocemos el día a día",
-            "heading": "Hacer vivir un club amateur hoy es…",
-            "transition": "Lo sabemos. Hemos construido SimplyFoot para que sea un mal recuerdo.",
-            "items": {
-                "parents": {
-                    "title": "Perseguir a los padres",
-                    "body": "Cada sábado por la mañana, teléfono en mano, revisando de nuevo los SMS."
-                },
-                "scattered": {
-                    "title": "Hacer malabares con 5 herramientas",
-                    "body": "WhatsApp, Facebook, Excel, libreta del entrenador — nadie sabe dónde buscar."
-                },
-                "sheet": {
-                    "title": "El acta de partido perdida",
-                    "body": "Otra caza al tesoro a las 7 de la mañana antes del desplazamiento."
-                },
-                "address": {
-                    "title": "La dirección del estadio contrario",
-                    "body": "Por décima vez, se reexplica la ruta en el grupo de padres."
-                },
-                "stats": {
-                    "title": "Las asistencias a mano",
-                    "body": "Final de temporada, se retoman las hojas manuscritas para hacer el balance."
-                },
-                "money": {
-                    "title": "Financiar el equipamiento",
-                    "body": "Las cuotas y la cantina no bastan. Los patrocinadores escasean."
-                }
-            }
-        },
-        "solution": {
-            "eyebrow": "La promesa",
-            "heading": "Una sola aplicación. Todo el club dentro.",
-            "description": "Gestión, comunicación, progreso y pronto puesta en valor — en el mismo lugar, pensado para los voluntarios.",
-            "stats": {
-                "oneApp": "App en lugar de 5 herramientas dispersas",
-                "updateCadence": "Entre cada actualización",
-                "rolesSupported": "Perfiles adaptados: Club, Entrenador, Jugador, Padre",
-                "builtWith": "Diseñado con los clubes piloto"
-            },
-            "simoBubble": "Hemos pensado en todo, prometido."
-        },
-        "profiles": {
-            "eyebrow": "Por rol",
-            "heading": "Sea cual sea tu rol, tu app está lista.",
-            "intro": "Elige tu perfil para ver lo que SimplyFoot cambia en el día a día.",
-            "items": {
-                "president": {
-                    "tab": "Presidente / Directivo",
-                    "accroche": "Tu club como nunca lo has visto.",
-                    "promise": "Toda la vida del club en una sola pantalla: presupuesto, licencias, equipos, eventos.",
-                    "points": {
-                        "0": "Presupuesto en tiempo real con entradas y salidas",
-                        "1": "Licencias, equipos, tasa de presencia — tus cifras de un vistazo",
-                        "2": "Acciones rápidas: crear un equipo, añadir un miembro, registrar una operación",
-                        "3": "Staff estructurado: presidente, tesorero, secretario, voluntarios"
-                    },
-                    "simoBubble": "Tu panel presidente. Todo el club, en una pantalla.",
-                    "mockupAlt": "Panel Presidente SimplyFoot en iPhone"
-                },
-                "coach": {
-                    "tab": "Entrenador / Educador",
-                    "accroche": "Dirige tu grupo como nunca.",
-                    "promise": "Convocatorias, presencias, alineaciones, estadísticas: todo en tu pantalla.",
-                    "points": {
-                        "0": "Tus equipos mostrados con escudos (Sénior, U14…)",
-                        "1": "Próximos eventos con seguimiento de presencias en tiempo real",
-                        "2": "Acciones rápidas: crear evento, lanzar alineación, cumpleaños",
-                        "3": "Mensajería integrada para no perder a nadie"
-                    },
-                    "simoBubble": "Tu vestuario digital, listo para el sábado.",
-                    "mockupAlt": "Panel Entrenador SimplyFoot en iPhone"
-                },
-                "player": {
-                    "tab": "Jugador",
-                    "accroche": "Tu club en tu bolsillo.",
-                    "promise": "Entrenamientos, partidos, convocatorias, transporte — todo está ahí, nada que recordar.",
-                    "points": {
-                        "0": "Tus próximos entrenamientos y partidos de un vistazo",
-                        "1": "Respuesta presente / ausente con un toque",
-                        "2": "Mensajería privada y de grupo",
-                        "3": "Pronto: perfil evolutivo, insignias, tarjeta de jugador"
-                    },
-                    "simoBubble": "Tienes partido el sábado. Te lo recuerdo todo, prometido.",
-                    "mockupAlt": "Pantalla de inicio Jugador SimplyFoot en iPhone"
-                },
-                "parent": {
-                    "tab": "Padre / Madre",
-                    "accroche": "Menos confusión, más tranquilidad.",
-                    "promise": "Horarios, convocatorias, transporte — todo claro, todo en el sitio adecuado.",
-                    "points": {
-                        "0": "Una cuenta, varios hijos",
-                        "1": "Padres separados gestionados sin duplicados",
-                        "2": "Convocatorias, transporte y documentos accesibles",
-                        "3": "Acceso a la información útil según los permisos concedidos"
-                    },
-                    "simoBubble": "Tu tribu de fútbol, organizada sin quebraderos.",
-                    "mockupAlt": "Vista Padre: varios hijos gestionados en una sola cuenta",
-                    "illustration": {
-                        "teaser": "Varios hijos. Una sola cuenta. Cero duplicados."
-                    }
-                }
-            }
-        },
-        "featuresList": {
-            "eyebrow": "Funciones estrella",
-            "heading": "Todo lo que un club necesita. Nada más.",
-            "intro": "Diez capacidades estrella, entregadas o en camino — y una décima reservada a los que se inscriben pronto.",
-            "badges": {
-                "live": "Entregado",
-                "soon": "Pronto",
-                "signature": "Firma",
-                "innovation": "Innovación",
-                "priority": "Inscripción prioritaria"
-            },
-            "items": {
-                "management": {
-                    "title": "Gestión completa del club",
-                    "description": "Equipos, licencias, staff, roles, categorías — todo el club en una interfaz clara."
-                },
-                "events": {
-                    "title": "Calendario, partidos y convocatorias",
-                    "description": "Creación, modificación, cancelación, respuestas con un toque, direcciones precisas."
-                },
-                "dashboard": {
-                    "title": "Dashboard entrenador y seguimiento de jugadores",
-                    "description": "Presencia, regularidad, progreso, evaluaciones — para dirigir la temporada."
-                },
-                "lineups": {
-                    "title": "Alineación intuitiva",
-                    "description": "Drag & drop moderno, visible u oculto a los jugadores."
-                },
-                "messaging": {
-                    "title": "Comunicación estructurada",
-                    "description": "Mensajería privada y de grupo estilo WhatsApp, sin dispersión."
-                },
-                "documents": {
-                    "title": "Documentos centralizados",
-                    "description": "Escaneos, archivo, búsqueda — se acabaron las carpetas y las llamadas."
-                },
-                "passport": {
-                    "title": "Pasaporte de jugador",
-                    "description": "Identidad deportiva clara: temporadas, estadísticas, historial, QR."
-                },
-                "cards": {
-                    "title": "Tarjetas físicas y digitales",
-                    "description": "Tarjetas evolutivas, insignias, rarezas — el orgullo de los colores."
-                },
-                "gamification": {
-                    "title": "Gamificación con SIMO",
-                    "description": "Insignias, retos, niveles, celebraciones — una app que apetece abrir."
-                },
-                "revenue": {
-                    "title": "Puesta en valor económico del club",
-                    "description": "Nuevos ingresos para financiar la vida del club. Lo contaremos pronto."
-                }
-            }
-        },
-        "human": {
-            "eyebrow": "Dimensión humana",
-            "heading": "Porque un club es mucho más que gestión.",
-            "items": {
-                "simo": {
-                    "title": "SIMO, tu compañero",
-                    "body": "Acoge, guía, celebra. Acompaña a cada licencia y hace la app más viva que una hoja de cálculo."
-                },
-                "passport": {
-                    "title": "El pasaporte de jugador",
-                    "body": "Una identidad deportiva clara y orgullosa: temporadas, estadísticas, historial, club — todo lo que cuenta un recorrido amateur."
-                },
-                "card": {
-                    "title": "La tarjeta evolutiva",
-                    "body": "Física o digital, crece con el jugador. Colección, insignias, rarezas — el orgullo de los colores."
-                }
-            },
-            "closing": "Un club es organización. Pero también es orgullo, pertenencia y recuerdos. SimplyFoot piensa en ambos."
-        },
-        "innovation": {
-            "eyebrow": "Próximamente · Confidencial",
-            "heading": "¿Y si tu club pudiera generar nuevos ingresos en 2026?",
-            "subtitle": "Preparamos algo que va a cambiar las finanzas del fútbol amateur. Reservado primero a los clubes ya inscritos en SimplyFoot.",
-            "body": "Durante décadas, los clubes amateurs han dependido de las cuotas, la cantina y la tómbola. El mundo ha cambiado. Las posibilidades también. Trabajamos en un sistema pensado para tus licencias, tus aficionados, tu comunidad local — que convertirá el vínculo con el club en recursos concretos. Te contaremos más muy pronto.",
-            "formHeading": "Sé el primero en enterarte.",
-            "emailLabel": "Email del club",
-            "emailPlaceholder": "contacto@club.es",
-            "submitLabel": "Unirme a la lista prioritaria",
-            "microCopy": "Sin spam. Lo sabrás antes que nadie.",
-            "counterLabel": "clubes ya inscritos",
-            "successTitle": "Registrado.",
-            "successBody": "Te escribimos en cuanto abramos las puertas.",
-            "errorRequired": "Email obligatorio",
-            "errorInvalid": "Email inválido",
-            "simoBubble": "Te va a encantar. Pero chut, aún no puedo contártelo todo.",
-            "trust": {
-                "france": "Hecho en Francia",
-                "rgpd": "RGPD",
-                "amateur": "Pensado para los clubes amateurs"
-            }
-        },
-        "proof": {
-            "eyebrow": "Prueba social",
-            "heading": "Construido con los clubes, para los clubes.",
-            "intro": "Los clubes piloto orientan directamente la roadmap. Esto es lo que dicen.",
-            "testimonials": {
-                "louannec": {
-                    "quote": "Por primera vez, sabemos quién viene el sábado sin perseguir a nadie.",
-                    "author": "Jean-Pierre",
-                    "role": "Presidente, US Louannec"
-                },
-                "perros": {
-                    "quote": "Mis padres por fin entienden cuándo entrenamos. Mis jugadores también.",
-                    "author": "Sylvie",
-                    "role": "Entrenadora U11, FC Perros"
-                },
-                "trebeurden": {
-                    "quote": "A mi hijo le encanta ver sus presencias y sus insignias. Habla de fútbol cada día.",
-                    "author": "Karim",
-                    "role": "Padre, AS Trébeurden"
-                }
-            },
-            "pilotsLabel": "Clubes piloto comprometidos",
-            "statsHeading": "El efecto sobre el terreno en cifras",
-            "stats": {
-                "clubsCount": "Clubes piloto comprometidos",
-                "licensees": "Licencias activas en la app",
-                "events": "Eventos organizados vía SimplyFoot",
-                "updates": "Actualizaciones entregadas desde el lanzamiento"
-            }
-        },
-        "faqSection": {
-            "eyebrow": "FAQ",
-            "heading": "Las preguntas que más nos hacen.",
-            "intro": "Desactivar las objeciones clásicas — sin lenguaje corporativo.",
-            "items": {
-                "price": {
-                    "question": "¿Cuánto cuesta para el club?",
-                    "answer": "Accesible para todos los presupuestos asociativos. La tarifa se adapta al número de licencias: los clubes más pequeños empiezan desde unos euros al mes. Contáctanos para una oferta a medida."
-                },
-                "seniors": {
-                    "question": "¿Nuestros directivos de 65 años se aclararán?",
-                    "answer": "SimplyFoot está pensado para ser simple a cualquier edad. Botones grandes, etiquetas claras, recorridos cortos. Tutoriales en vídeo y soporte humano para cada club."
-                },
-                "data": {
-                    "question": "¿Qué pasa con nuestros datos?",
-                    "answer": "Vuestros datos son vuestros. Alojamiento en Francia, RGPD, sin reventa, sin publicidad. Podéis exportarlos cuando queráis."
-                },
-                "migration": {
-                    "question": "Si migramos desde otra herramienta, ¿cómo va?",
-                    "answer": "Os acompañamos para importar efectivos y calendario. La migración se hace en una o dos sesiones según el tamaño del club."
-                },
-                "offline": {
-                    "question": "¿La app funciona sin conexión?",
-                    "answer": "Las funciones esenciales siguen disponibles con red débil — útil en estadios remotos."
-                },
-                "idea": {
-                    "question": "¿Y si tenemos una idea de funcionalidad?",
-                    "answer": "Puede hacerse realidad. Nuestros clubes piloto orientan directamente la roadmap. Escribidnos."
-                },
-                "revenue": {
-                    "question": "¿Qué es exactamente esta innovación de ingresos del club?",
-                    "answer": "Una función mayor que llega pronto. Inscríbete en la lista prioritaria para enterarte el primero."
-                }
-            }
         }
     },
     "Home": {
         "meta": {
             "title": "SimplyFoot · La app diseñada para el fútbol amateur",
-            "description": "Diseñada con los clubes piloto. Actualizada cada dos semanas. El fútbol amateur merece una app a su altura."
+            "description": "Convocatorias, pagos, mensajería, seguimiento de jugadores: toda la vida del club en una única app, hecha por y para los voluntarios."
         },
         "hero": {
             "titleLine1": "El fútbol amateur",
             "titleLine2": "merece una app",
             "titleLine3": "a su altura.",
-            "subtitle": "Gestión, convocatorias, mensajería, seguimiento de jugadores — en una única app diseñada con los clubes piloto.",
+            "subtitle": "Convocatorias, pagos, asistencia, mensajería: toda la vida del club en una única app, hecha por y para los voluntarios.",
             "scrollHint": "Desplázate",
             "planetAlt": "Planeta SimplyFoot — firma 3D",
-            "authorityPill": "Programa piloto abierto · 10 clubes comprometidos",
+            "authorityPill": "Programa piloto abierto · 7 clubes comprometidos",
             "ctaPrimary": "Unirme al programa piloto",
-            "ctaSecondary": "Ver cómo funciona",
+            "ctaSecondary": "Ver funciones",
             "mockupAlt": "Panel Presidente SimplyFoot en iPhone",
             "simoBubble": "¡Hey! Te acompaño paso a paso.",
             "trust": {
                 "france": "Hecho en Francia",
                 "rgpd": "Conforme RGPD",
                 "updates": "Actualización cada 2 semanas",
-                "pilots": "10 clubes piloto"
+                "pilots": "7 clubes piloto"
             }
         },
-        "whisper": {
-            "eyebrow": "En cada club",
-            "quote": "Cada sábado por la mañana, un presidente pasa dos horas persiguiendo a los padres por SMS.",
-            "response": "SimplyFoot existe para eso."
-        },
-        "manifesto": {
-            "lines": {
-                "0": "Un presidente.",
-                "1": "Un entrenador.",
-                "2": "Un jugador.",
-                "3": "Un padre.",
-                "4": "Una sola app."
-            },
-            "ariaLabel": "Manifiesto SimplyFoot"
-        },
-        "mockupHero": {
-            "eyebrow": "El producto",
-            "caption": "Todo el club, en tu bolsillo.",
-            "footnote": "App para iPhone y Android. Actualmente en programa piloto.",
-            "mockupAlt": "Pantalla de inicio Jugador SimplyFoot en iPhone sostenido en mano"
+        "pilotClubs": {
+            "eyebrow": "Confían en nosotros",
+            "title": "Los clubes piloto que construyen SimplyFoot con nosotros.",
+            "listLabel": "Lista de clubes asociados"
         },
         "triptych": {
             "eyebrow": "Tres roles",
@@ -1434,26 +961,6 @@
             },
             "linkLabel": "Ver todas las funciones"
         },
-        "numbers": {
-            "eyebrow": "Nuestro ritmo",
-            "items": {
-                "0": {
-                    "figure": "15",
-                    "label": "días",
-                    "caption": "entre cada actualización entregada."
-                },
-                "1": {
-                    "figure": "4",
-                    "label": "perfiles",
-                    "caption": "pensados por separado: presidente, entrenador, jugador, padre."
-                },
-                "2": {
-                    "figure": "1",
-                    "label": "app",
-                    "caption": "para reemplazar 5 herramientas dispersas."
-                }
-            }
-        },
         "finalCta": {
             "eyebrow": "Hablemos",
             "question": "¿Y si escribiéramos la continuación juntos?",
@@ -1467,55 +974,13 @@
     "Contact": {
         "meta": {
             "title": "Contacto — {brand}",
-            "description": "Email, teléfono, hotline de WhatsApp o formulario detallado: elige el canal que mejor te convenga. Respondemos en menos de un día laborable."
+            "description": "Cuéntanos tu proyecto en unos minutos. Leemos cada mensaje y respondemos en menos de un día laborable."
         },
         "hero": {
             "eyebrow": "Hablemos",
             "title": "Hablemos de tu club",
-            "subtitle": "Email, teléfono, WhatsApp o formulario — elige el canal que prefieras. Te responde una persona real, no un bot.",
-            "scrollHint": "Desplázate para elegir tu canal"
-        },
-        "channels": {
-            "title": "¿Cómo prefieres contactarnos?",
-            "subtitle": "Cuatro canales, una sola promesa: tu mensaje llega rápido a la persona indicada.",
-            "newBadge": "NUEVO",
-            "email": {
-                "label": "Email",
-                "description": "Respuesta en menos de un día laborable",
-                "ariaLabel": "Enviar un email a {email}"
-            },
-            "phone": {
-                "label": "Teléfono",
-                "description": "Lunes – viernes, 9 h – 18 h",
-                "ariaLabel": "Llamar al {phone}"
-            },
-            "whatsapp": {
-                "label": "Hotline de WhatsApp",
-                "description": "Respuesta rápida, lunes – sábado",
-                "ariaLabel": "Escribir a SimplyFoot por WhatsApp"
-            },
-            "form": {
-                "label": "Formulario detallado",
-                "value": "Solicitud estructurada",
-                "description": "Piloto, demos, alianzas",
-                "ariaLabel": "Ir al formulario detallado"
-            }
-        },
-        "whatsapp": {
-            "badge": "NUEVO",
-            "heading": "¿Una pregunta? Nuestra hotline de WhatsApp responde rápido.",
-            "subtitle": "Para entrenadores, presidentes y voluntarios que necesitan una respuesta rápida sin pasar por el email. Estamos disponibles seis días a la semana.",
-            "cta": "Escribir por WhatsApp",
-            "prefilledMessage": "Hola SimplyFoot, tengo una pregunta",
-            "mockup": {
-                "userName": "Tú",
-                "userMessage": "Hola, soy presidente de un club y me gustaría conocer mejor SimplyFoot.",
-                "userTime": "10:42",
-                "simplyName": "SimplyFoot",
-                "simplyMessage": "¡Hola! Encantados de ayudar 👋 ¿Cuántos socios tiene tu club?",
-                "simplyTime": "10:42",
-                "online": "En línea"
-            }
+            "subtitle": "Cuéntanos tu proyecto: un miembro del equipo te responderá personalmente.",
+            "scrollHint": "El formulario está justo abajo"
         },
         "form": {
             "title": "Cuéntanos sobre tu proyecto",
@@ -1600,92 +1065,7 @@
             },
             "toast": {
                 "successTitle": "¡Mensaje enviado!",
-                "successDescription": "Te respondemos en menos de un día laborable.",
-                "errorTitle": "No se pudo enviar",
-                "errorDescription": "Inténtalo de nuevo o escríbenos directamente a {email}."
-            }
-        },
-        "info": {
-            "title": "Información práctica",
-            "contacts": {
-                "title": "Cómo contactarnos",
-                "emailLabel": "Por email",
-                "phoneLabel": "Por teléfono",
-                "whatsappLabel": "Por WhatsApp"
-            },
-            "location": {
-                "title": "Encuéntranos",
-                "company": "{brand} SAS",
-                "address": "60 rue François 1er",
-                "city": "75008 París, Francia"
-            },
-            "hours": {
-                "title": "Horario",
-                "weekdays": "Lunes – viernes: 9 h – 18 h",
-                "saturday": "Sábado: 10 h – 16 h (solo WhatsApp)",
-                "sunday": "Domingo: cerrado (pero Simmo está despierto 🐙)"
-            }
-        },
-        "socials": {
-            "title": "Sigue la aventura SimplyFoot",
-            "subtitle": "Tras bastidores, novedades, historias de clubes — únete a nuestra comunidad.",
-            "soonBadge": "Próximamente",
-            "soonAriaLabel": "{platform} — disponible próximamente",
-            "platforms": {
-                "instagram": {
-                    "name": "Instagram",
-                    "handle": "@simplyfoot.fr"
-                },
-                "facebook": {
-                    "name": "Facebook",
-                    "handle": "SimplyFoot"
-                },
-                "linkedin": {
-                    "name": "LinkedIn",
-                    "handle": "SimplyFoot"
-                },
-                "tiktok": {
-                    "name": "TikTok",
-                    "handle": "@simplyfoot"
-                },
-                "twitter": {
-                    "name": "X",
-                    "handle": "@simplyfoot_fr"
-                },
-                "youtube": {
-                    "name": "YouTube",
-                    "handle": "SimplyFoot"
-                }
-            }
-        },
-        "miniFaq": {
-            "title": "¿Una respuesta rápida?",
-            "subtitle": "Simmo, nuestro pulpo asistente, conoce SimplyFoot al dedillo 🐙",
-            "items": {
-                "pilote": {
-                    "question": "¿Cómo entro en el programa piloto?",
-                    "answer": "El programa piloto acoge a 10 clubes socios fundadores. Hablamos media hora para validar el encaje, accedes gratis a la app y construimos la herramienta con tus comentarios. Postula desde el formulario eligiendo «Unirme al programa piloto»."
-                },
-                "compat": {
-                    "question": "¿SimplyFoot funciona para un club de 50 socios?",
-                    "answer": "Sí — la herramienta está pensada para todos los clubes amateurs, desde el equipo del pueblo al gran club urbano. El plan DESCUBRIMIENTO es gratuito hasta 50 socios e incluye lo esencial. Subes de plan solo cuando realmente lo necesitas."
-                },
-                "delay": {
-                    "question": "¿En cuánto tiempo puedo tener una demo?",
-                    "answer": "Te proponemos un hueco en menos de dos días laborables. La demo dura 30 minutos por videollamada, sin compromiso. Te vas con una cuenta de prueba para que tu equipo la pruebe."
-                }
-            },
-            "ctaSimmo": "Hablar con Simmo",
-            "ctaFaq": "Ver todas las preguntas"
-        },
-        "simmoDialog": {
-            "title": "Simmo, tu guía SimplyFoot",
-            "bubble": "¡Hola! 👋 Soy Simmo, el pulpo guía.",
-            "body": "El chat en directo con Simmo llega muy pronto. Mientras tanto, aquí tienes los recursos más útiles para tu solicitud.",
-            "actions": {
-                "faq": "Ver todas las preguntas",
-                "whatsapp": "Escribir por WhatsApp",
-                "close": "Cerrar"
+                "successDescription": "Te respondemos en menos de un día laborable."
             }
         }
     },

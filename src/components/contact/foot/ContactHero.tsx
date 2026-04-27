@@ -2,11 +2,12 @@ import { ChevronDown } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 /**
- * Hero de la page contact. Volontairement sans CTA — la décision est
- * différée à la section suivante (`ContactChannels`) pour laisser le
- * visiteur choisir SON canal plutôt qu'imposer un parcours. Fond
- * `--story-forest` avec halo radial subtil pour cohérence visuelle avec
- * les autres heroes "narratifs" du site (HomeFinalCta, etc.).
+ * Hero de la page contact. Volontairement sans CTA et sans mention de
+ * canaux alternatifs (téléphone, WhatsApp, sociaux) — la page ne propose
+ * qu'un formulaire, le hero le pose calmement.
+ *
+ * Fond `--story-forest` avec halo radial subtil, pour cohérence avec les
+ * autres sections "narratives" du site.
  */
 export function ContactHero() {
     const t = useTranslations('Contact.hero');

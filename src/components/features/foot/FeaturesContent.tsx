@@ -1,51 +1,27 @@
-import { DifferentiationSection } from './DifferentiationSection';
-import { FeatureGrid } from './FeatureGrid';
-import { FeaturesFaq } from './FeaturesFaq';
+import { CurrentFeaturesList } from './CurrentFeaturesList';
 import { FeaturesFinalCta } from './FeaturesFinalCta';
 import { FeaturesHero } from './FeaturesHero';
-import { FeaturesPromise } from './FeaturesPromise';
-import { FeaturesTimelineSection } from './FeaturesTimelineSection';
-import { HumanDimension } from './HumanDimension';
-import { InnovationTeaser } from './InnovationTeaser';
-import { PilotCommitment } from './PilotCommitment';
-import { ProblemSection } from './ProblemSection';
-import { ProfileSelector } from './ProfileSelector';
-import { SocialProof } from './SocialProof';
-
-interface FeaturesContentProps {
-    /** Nombre de jours avant la prochaine MAJ — calculé côté serveur. */
-    daysUntilNext: number;
-}
 
 /**
- * Orchestrateur landing `/foot/features`. Ordre narratif de la V3 :
- * promesse → empathie → résumé chiffré → projection par rôle →
- * matérialisation (features + roadmap) → teasing innovation → pièces
- * émotionnelles (humain + différenciation + preuves) → engagement →
- * désamorçage (FAQ) → CTA final.
+ * Page `/foot/features` — version courte et concrète. Trois sections :
  *
- * Chaque section est autonome (import direct, pas de prop-drilling),
- * laissant chaque composant décider de son besoin de `'use client'`.
- * L'orchestrateur reste un Server Component pour bénéficier de la
- * résolution i18n serveur.
+ *   1. Hero — promesse simple ("voici ce qu'on fait aujourd'hui").
+ *   2. CurrentFeaturesList — 4 cartes égales pour les 4 fonctionnalités
+ *      réellement disponibles : événements, calendrier, messagerie, rôles.
+ *   3. FinalCta — invitation programme pilote.
+ *
+ * Décision produit du 2026-04-27 : retrait des sections roadmap, problem,
+ * promise, profile-selector, differentiation, human, innovation teaser,
+ * social proof, pilot commitment et FAQ — la page ne promet que ce qui
+ * est livré, le reste arrive avec les clubs pilotes. Composants
+ * supprimés du disque ; restauration via `git log` si besoin.
  */
-export function FeaturesContent({ daysUntilNext }: FeaturesContentProps) {
+export function FeaturesContent() {
     return (
         <>
             <FeaturesHero />
-
-            <div className="mx-auto flex w-full max-w-6xl flex-col gap-24 px-4 py-16 sm:px-6 md:gap-32 md:py-24">
-                <ProblemSection />
-                <FeaturesPromise />
-                <ProfileSelector />
-                <FeatureGrid />
-                <FeaturesTimelineSection daysUntilNext={daysUntilNext} />
-                <InnovationTeaser />
-                <HumanDimension />
-                <DifferentiationSection />
-                <SocialProof />
-                <PilotCommitment />
-                <FeaturesFaq />
+            <CurrentFeaturesList />
+            <div className="mx-auto w-full max-w-6xl px-4 pb-16 sm:px-6 md:pb-24">
                 <FeaturesFinalCta />
             </div>
         </>
