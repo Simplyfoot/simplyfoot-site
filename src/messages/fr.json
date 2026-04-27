@@ -10,11 +10,31 @@
     "HomePage": {
         "meta": {
             "title": "SIMPLY — L'écosystème du sport amateur",
-            "description": "Plateforme digitale pour la gestion de clubs sportifs amateurs en France. Football, Rugby, Handball."
+            "description": "Une plateforme, trois sports : SimplyFoot, SimplyRugby et SimplyHandball. Choisissez votre univers et reprenez votre club en main."
         },
         "hero": {
-            "subtitle": "Choisissez votre sport",
-            "explore": "Explorer"
+            "eyebrow": "L'écosystème",
+            "titleStart": "Un outil pour",
+            "titleEnd": "le sport amateur.",
+            "subtitle": "Trois sports, une même conviction : les bénévoles méritent des outils à leur hauteur. Choisissez votre univers."
+        },
+        "cards": {
+            "foot": {
+                "description": "Pensé avec les présidents, coachs et bénévoles du foot. Convocations, paiements, messagerie — toute la vie du club.",
+                "cta": "Découvrir SimplyFoot"
+            },
+            "rugby": {
+                "description": "Pour le rugby amateur. La même promesse, adaptée à la culture du ballon ovale.",
+                "cta": "Découvrir SimplyRugby"
+            },
+            "handball": {
+                "description": "Pour le handball amateur. La même rigueur collective, au service du jeu rapide.",
+                "cta": "Découvrir SimplyHandball"
+            }
+        },
+        "footer": {
+            "contactQuestion": "Une question ?",
+            "contactCta": "Parlez-nous"
         }
     },
     "Errors": {
@@ -122,136 +142,55 @@
     "About": {
         "meta": {
             "title": "Qui sommes-nous — {brand}",
-            "description": "L'histoire de {brand} : 5 cofondateurs passionnés et 10 clubs pionniers qui construisent ensemble l'outil que le football amateur mérite."
+            "description": "L'histoire de {brand} : une équipe née sur un terrain de Provence, animée par l'envie de simplifier la vie des clubs amateurs."
         },
         "hero": {
             "title": "Qui sommes-nous — {brand}",
+            "eyebrow": "Notre histoire",
             "titleBefore": "Nous sommes ",
-            "subtitle": "5 cofondateurs. 10 clubs pionniers. 1 conviction : le football amateur mérite son propre outil."
+            "subtitle": "Une équipe soudée par la passion du football amateur, animée par l'envie de redonner du temps à ceux qui font vivre les clubs."
         },
-        "act1": {
-            "title": "Le constat",
-            "titleBefore": "Tout a commencé sur un ",
-            "titleHighlight": "bord de terrain",
-            "p0": "Il est 8h30, un samedi matin de novembre. Il fait froid. Le terrain est trempé. Les parents soufflent dans leurs mains en regardant les U11 s'échauffer.",
-            "p1": "Romain est là, comme chaque week-end. Téléphone à la main, il scrolle trois groupes WhatsApp : « Le match est maintenu ? », « Mon fils ne peut pas venir », « C'est quel terrain déjà ? ».",
-            "p2": "Le coach essaie de savoir combien de joueurs il a pour le match de 10h. Il a envoyé les convocations mardi soir par SMS. Trois parents n'ont pas répondu. Deux ont répondu dans le mauvais groupe.",
-            "p3": "Le président, lui, est dans son salon avec un classeur, un tableur et un mal de tête. 200 licenciés. 16 équipes. Des cotisations à relancer.",
-            "p4": "Tout le monde se débrouille. Avec des bouts de ficelle, du temps bénévole et une montagne de bonne volonté. Ce samedi-là, Romain se dit : « Il doit y avoir un meilleur moyen. »"
-        },
-        "act2": {
-            "title": "5 passionnés, une évidence",
-            "titleBefore": "5 passionnés, une ",
-            "titleHighlight": "évidence",
-            "titleAfter": "",
-            "p0": "L'idée ne vient pas d'un bureau. Elle vient du terrain. Romain en parle à Jean. Jean connaît le problème par cœur. Ils en parlent à Jérémy, qui connaît des dizaines de clubs dans la même situation.",
-            "p1": "Vanessa apporte le recul : « Si on fait ça, il faut que ça serve VRAIMENT les gens. » Damien rejoint l'aventure : « Le code est propre ou il n'existe pas. » L'équation est simple.",
-            "stats": {
-                "licensees": "licenciés en France",
-                "clubs": "clubs amateurs",
-                "dedicatedTools": "outil dédié, jusqu'à nous"
-            }
-        },
-        "act3": {
-            "title": "10 clubs ont tout changé",
-            "titleBefore": "10 clubs ont tout ",
-            "titleHighlight": "changé",
-            "intro": "Avant d'écrire une seule ligne de code, nous sommes allés écouter. 10 clubs partenaires ont ouvert leurs portes, partagé leurs galères, testé chaque écran, challengé chaque décision. Chaque fonctionnalité est née d'un vrai problème remonté par un vrai club.",
-            "heroQuote": "SimplyFoot n'a pas été construit dans un bureau. Il a été construit dans 10 vestiaires.",
-            "quotes": {
-                "0": {
-                    "text": "On perdait 2h par semaine à gérer les convocations par SMS. Maintenant, un clic, et tout le monde sait qui vient au match.",
-                    "author": "Coach U15, FC Gardanne"
-                },
-                "1": {
-                    "text": "Le plus dur, c'était les parents séparés. Doublons, confusion, messages qui se perdent. Le code de rattachement a réglé ça d'un coup.",
-                    "author": "Présidente, US Liffré"
-                },
-                "2": {
-                    "text": "Mes 16 équipes dans une seule app, avec les rôles séparés pour chaque coach. Je ne reviens plus en arrière.",
-                    "author": "Président, Toulouse Rodéo"
-                },
-                "3": {
-                    "text": "Mon trésorier m'a dit merci pour la première fois en 10 ans. C'est qu'on a fait quelque chose de bien.",
-                    "author": "Président, Stade Rennais B"
-                }
-            },
-            "pilotClubs": {
-                "label": "Clubs pilotes",
-                "gardanne": "FC Gardanne",
-                "liffre": "US Liffré",
-                "toulouse-rodeo": "Toulouse Rodéo",
-                "blagnac": "Blagnac FC",
-                "rennes-b": "Stade Rennais B",
-                "martigues": "US Martigues",
-                "berre": "ES Berre",
-                "salon": "SC Salon",
-                "grasse": "RC Grasse",
-                "nice": "Cavigal Nice"
-            },
-            "thanks": "Merci à nos 10 clubs pionniers qui construisent SimplyFoot avec nous."
+        "story": {
+            "heading": "Une rencontre, une conviction",
+            "eyebrow": "Le récit",
+            "headingBefore": "Une rencontre, une ",
+            "headingHighlight": "conviction",
+            "p0": "SimplyFoot, c'est d'abord une histoire de rencontres et de passions croisées. Sur un terrain de Provence, Romain et Jérémy partagent le même rêve : redonner du temps et de l'énergie à tous ces bénévoles, éducateurs, parents et jeunes qui font vivre le football amateur en France.",
+            "p1": "Mais très vite, ils sont rejoints par Jean, Vanessa et Damien, qui partagent la même conviction : un club, ce n'est pas qu'un tableau de scores ou une feuille Excel — c'est une famille, un foyer de valeurs et de passions.",
+            "p2": "Ensemble, ils écoutent les clubs, échangent sur les frustrations, imaginent la plateforme idéale… et découvrent que la clé, c'est l'humain : rendre simple ce qui est compliqué, créer du lien, valoriser chaque bénévole.",
+            "p3": "Après des mois de terrain, de réunions tardives, de tests et d'échanges, naît SimplyFoot : un logiciel pensé avec le cœur, codé avec rigueur, et porté par l'ambition de rendre le quotidien de chaque club plus doux, plus fluide, plus humain.",
+            "p4": "Aujourd'hui, SimplyFoot c'est avant tout une équipe soudée, guidée par l'envie d'apporter du bonheur, du progrès et de la simplicité à tous les amoureux du football amateur."
         },
         "team": {
             "heading": "L'équipe derrière SimplyFoot",
             "headingBefore": "L'équipe derrière ",
             "headingHighlight": "SimplyFoot",
-            "intro": "Cinq personnes, une conviction commune. Pas de PDG, pas de hiérarchie : 5 cofondateurs et cofondatrice au même rang.",
+            "intro": "Cinq personnes, une conviction commune. Pas de hiérarchie : cinq cofondateurs et cofondatrice au même rang.",
             "romain": {
-                "name": "Romain Pennacchio",
+                "name": "Romain",
                 "role": "Cofondateur",
                 "spirit": "Le visionnaire. Passionné de football depuis l'enfance, il a grandi dans les clubs amateurs, entre lignes de touche et vestiaires. C'est de sa frustration quotidienne qu'est née l'idée."
             },
             "jean": {
-                "name": "Jean Carboni",
+                "name": "Jean",
                 "role": "Cofondateur",
                 "spirit": "L'homme de terrain. Il connaît chaque réalité du club amateur — les bénévoles qui donnent sans compter, les coachs qui sacrifient leurs week-ends, les trésoriers qui font des miracles."
             },
             "jeremy": {
-                "name": "Jérémy Baruc",
+                "name": "Jérémy",
                 "role": "Cofondateur",
                 "spirit": "Le connecteur. Il crée les liens entre les gens, les idées, les clubs. Son obsession : que chaque utilisateur se sente accompagné, jamais seul face à l'outil."
             },
             "vanessa": {
-                "name": "Vanessa Rolland",
+                "name": "Vanessa",
                 "role": "Cofondatrice",
                 "spirit": "La rigueur et la sensibilité. Elle sait que derrière chaque licencié, il y a un parent qui organise, qui conduit, qui encourage sous la pluie. Le produit leur doit aussi quelque chose."
             },
             "damien": {
-                "name": "Damien Alfaia",
+                "name": "Damien",
                 "role": "Cofondateur",
                 "spirit": "Les mains qui construisent. Chaque écran, chaque interaction. Son exigence : que l'app soit aussi intuitive pour un président de 60 ans que pour un joueur de 16 ans."
             }
-        },
-        "act4": {
-            "title": "Le football amateur est une culture",
-            "titleBefore": "Le football amateur est une ",
-            "titleHighlight": "culture",
-            "titleAfter": ". Pas un marché.",
-            "lines": {
-                "0": "C'est le gamin de 6 ans qui touche son premier ballon.",
-                "1": "C'est le coach bénévole qui prépare ses séances après le boulot.",
-                "2": "C'est le président qui négocie avec la mairie pour garder son terrain.",
-                "3": "C'est le parent qui conduit 45 minutes un dimanche matin.",
-                "4": "C'est la buvette. Les frites. Les rires. Les engueulades."
-            },
-            "firstPerson": {
-                "heading": "Nous, on vient de ce monde.",
-                "body": "On n'observe pas le football amateur de loin. On le vit. On le connaît. On l'aime.",
-                "closing": "C'est pour ça qu'on a créé SimplyFoot. Pas pour disrupter un marché. Pour servir une communauté."
-            }
-        },
-        "act5": {
-            "title": "Ce n'est que le début",
-            "titleBefore": "Ce n'est que le ",
-            "titleHighlight": "début",
-            "promises": {
-                "0": "Rester au service des clubs. Pas l'inverse.",
-                "1": "Écouter le terrain. Toujours.",
-                "2": "Construire avec vous. Pas pour vous."
-            },
-            "signature": "SimplyFoot, c'est 5 passionnés et 10 clubs pionniers qui se sont dit un samedi matin : le football amateur mérite mieux.",
-            "ctaPrimary": "Rejoindre l'aventure",
-            "ctaSecondary": "Découvrir SimplyFoot"
         }
     },
     "FAQ": {

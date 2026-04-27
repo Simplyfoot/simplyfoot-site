@@ -5,8 +5,9 @@ import { FOUNDERS } from '@/config/about';
 import { FounderCard } from './FounderCard';
 
 /**
- * Section équipe — les 5 cofondateurs présentés avec le même poids éditorial
- * (pas de hiérarchie). Grille responsive : 1 / 2 / 3 / 5 colonnes.
+ * Section équipe — les 5 cofondateurs au même rang éditorial. Photos pour
+ * Romain et Jean, avatar typographique pour les autres en attendant les
+ * leurs (le rendu reste cohérent dans les deux cas).
  */
 export function AboutTeam() {
     const t = useTranslations('About.team');

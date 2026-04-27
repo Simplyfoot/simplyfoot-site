@@ -3,8 +3,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { buildAlternates } from '@/helpers/i18n.helpers';
 
-import { GalaxyScene } from './galaxy-scene';
-import { HomepageOverlay } from './homepage-overlay';
+import { LandingContent } from './landing-content';
 
 import type { AppLocale } from '~types/i18n.types';
 
@@ -28,11 +27,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: A
     setRequestLocale(locale);
 
     return (
-        <main className="relative h-svh w-full overflow-hidden bg-black">
-            <div className="absolute inset-0">
-                <GalaxyScene />
-            </div>
-            <HomepageOverlay />
+        <main>
+            <LandingContent />
         </main>
     );
 }

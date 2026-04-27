@@ -1,9 +1,11 @@
 import type { MetadataRoute } from 'next';
 
+import { isBrandEnabled } from '@/config/brands';
 import { getPathname } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
 import { SITE_URL } from '@/utils/constants.utils';
 
+import type { BrandSlug } from '~types/brand.types';
 import type { AppPathname } from '~types/i18n.types';
 
 /**
@@ -53,15 +55,41 @@ const routes: ReadonlyArray<{
 ];
 
 /**
+ * Extrait le slug de marque d'un href interne (`/foot/contact` → `'foot'`).
+ * Retourne `null` pour les routes neutres (`/`, `/api/...`).
+ */
+function extractBrandSlug(href: AppPathname): BrandSlug | null {
+    if (href.startsWith('/foot')) {
+        return 'foot';
+    }
+    if (href.startsWith('/rugby')) {
+        return 'rugby';
+    }
+    if (href.startsWith('/handball')) {
+        return 'handball';
+    }
+    return null;
+}
+
+/**
  * Génère un sitemap multilingue : pour chaque (route × locale), on émet
  * une entrée avec ses URLs alternatives `hreflang` (incluant
  * `x-default`). Conforme aux recommandations Google pour l'indexation
  * de sites internationalisés.
+ *
+ * Les routes des marques désactivées (`src/config/brands.ts` —
+ * `ENABLED_BRAND_SLUGS`) sont automatiquement filtrées : elles n'apparaissent
+ * pas dans le sitemap tant que la marque n'est pas réactivée.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
     const lastModified = new Date();
 
-    return routes.flatMap(({ href, priority, changeFrequency }) =>
+    const visibleRoutes = routes.filter((route) => {
+        const slug = extractBrandSlug(route.href);
+        return slug === null || isBrandEnabled(slug);
+    });
+
+    return visibleRoutes.flatMap(({ href, priority, changeFrequency }) =>
         routing.locales.map((locale) => {
             const languages: Record<string, string> = {};
             for (const alt of routing.locales) {
