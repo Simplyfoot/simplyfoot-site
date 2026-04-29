@@ -1,4 +1,4 @@
-import { DotIcon, Mail, MapPin, Phone } from 'lucide-react';
+import { DotIcon, Mail, MapPin } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
 import { BRAND_CONTACT, SIMPLY_LEGAL } from '@/config/site';
@@ -23,7 +23,7 @@ async function ContactSection() {
 
     return (
         <section id="contact-block" aria-labelledby="contact-block-title" className="mt-8">
-            <dl className="grid gap-6 md:grid-cols-3">
+            <dl className="grid gap-6 md:grid-cols-2">
                 <div className="space-y-2">
                     <dt className="text-muted-foreground flex items-center gap-2 text-sm font-medium">
                         <Mail className="size-4" aria-hidden="true" />
@@ -35,20 +35,6 @@ async function ContactSection() {
                             className="text-primary focus-visible:ring-ring rounded-sm font-medium underline-offset-4 hover:underline focus-visible:ring-2 focus-visible:outline-none"
                         >
                             {contact.email}
-                        </a>
-                    </dd>
-                </div>
-                <div className="space-y-2">
-                    <dt className="text-muted-foreground flex items-center gap-2 text-sm font-medium">
-                        <Phone className="size-4" aria-hidden="true" />
-                        {t('contactBlock.phoneLabel')}
-                    </dt>
-                    <dd>
-                        <a
-                            href={`tel:${contact.phone.replace(/\s/g, '')}`}
-                            className="text-primary focus-visible:ring-ring rounded-sm font-medium underline-offset-4 hover:underline focus-visible:ring-2 focus-visible:outline-none"
-                        >
-                            {contact.phone}
                         </a>
                     </dd>
                 </div>
