@@ -7,7 +7,7 @@ import { SITE_URL } from '@/utils/constants.utils';
 import type { AppPathname } from '~types/i18n.types';
 
 const routes: Array<AppPathname> = [
-    '/',
+    '/foot',
     '/foot/legal/mentions-legales',
     '/rugby/legal/mentions-legales',
     '/handball/legal/mentions-legales',
@@ -34,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
                 url: `${SITE_URL}${getPathname({ locale, href })}`,
                 lastModified,
                 changeFrequency: 'weekly' as const,
-                priority: href === '/' ? 1 : 0.7,
+                priority: href === '/foot' ? 1 : 0.7,
                 alternates: { languages },
             };
         }),

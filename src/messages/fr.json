@@ -6,16 +6,6 @@
             "demo": "Demander une démo"
         }
     },
-    "HomePage": {
-        "meta": {
-            "title": "SIMPLY — L'écosystème du sport amateur",
-            "description": "Plateforme digitale pour la gestion de clubs sportifs amateurs en France. Football, Rugby, Handball."
-        },
-        "hero": {
-            "subtitle": "Choisissez votre sport",
-            "explore": "Explorer"
-        }
-    },
     "Errors": {
         "generic": {
             "title": "Oops",
