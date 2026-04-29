@@ -14,7 +14,6 @@ export const SIMPLY_LEGAL = {
 
 interface BrandContact {
     email: string;
-    phone: string;
     socials: {
         facebook: string;
         linkedin: string;
@@ -30,7 +29,6 @@ interface BrandContact {
 export const BRAND_CONTACT: Record<BrandSlug, BrandContact> = {
     foot: {
         email: 'contact@simplyfoot.fr',
-        phone: '+33 6 82 84 56 41',
         socials: {
             facebook: 'https://facebook.com/simplyfoot',
             linkedin: 'https://linkedin.com/company/simplyfoot',
@@ -40,7 +38,6 @@ export const BRAND_CONTACT: Record<BrandSlug, BrandContact> = {
     // TODO: update with rugby-specific contact info once available
     rugby: {
         email: 'contact@simplyfoot.fr',
-        phone: '+33 6 82 84 56 41',
         socials: {
             facebook: 'https://facebook.com/simplyfoot',
             linkedin: 'https://linkedin.com/company/simplyfoot',
@@ -50,7 +47,6 @@ export const BRAND_CONTACT: Record<BrandSlug, BrandContact> = {
     // TODO: update with handball-specific contact info once available
     handball: {
         email: 'contact@simplyfoot.fr',
-        phone: '+33 6 82 84 56 41',
         socials: {
             facebook: 'https://facebook.com/simplyfoot',
             linkedin: 'https://linkedin.com/company/simplyfoot',

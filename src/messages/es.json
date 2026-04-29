@@ -437,19 +437,6 @@
                         }
                     }
                 }
-            },
-            "contact": {
-                "title": "Contacto",
-                "items": {
-                    "contact-team": {
-                        "question": "¿Cómo contacto con el equipo de {brand}?",
-                        "answer": {
-                            "p0": "Para cualquier pregunta, sugerencia o incidencia, puedes contactarnos:",
-                            "l0": "<mail>{email}</mail>",
-                            "l1": "<tel>{phone}</tel>"
-                        }
-                    }
-                }
             }
         }
     },

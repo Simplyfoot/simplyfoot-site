@@ -111,16 +111,6 @@ export const FAQ_CATEGORIES: readonly FaqCategory[] = [
             { id: 'update-frequency', blocks: [{ kind: 'paragraph' }] },
         ],
     },
-    {
-        id: 'contact',
-        icon: 'Mail',
-        items: [
-            {
-                id: 'contact-team',
-                blocks: [{ kind: 'paragraph' }, { kind: 'list', count: 2 }],
-            },
-        ],
-    },
 ];
 
 function isItemVisibleForBrand(

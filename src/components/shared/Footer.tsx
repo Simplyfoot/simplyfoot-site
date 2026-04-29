@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from '@/components/shared/SocialIcons';
@@ -58,15 +58,6 @@ export async function Footer({ brand }: FooterProps) {
                             <li className="flex items-start gap-2">
                                 <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
                                 <span>{SIMPLY_LEGAL.address}</span>
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <Phone className="size-4 shrink-0" aria-hidden="true" />
-                                <a
-                                    href={`tel:${contact.phone.replace(/\s/g, '')}`}
-                                    className="hover:text-primary-foreground transition-colors hover:underline"
-                                >
-                                    {contact.phone}
-                                </a>
                             </li>
                             <li className="flex items-center gap-2">
                                 <Mail className="size-4 shrink-0" aria-hidden="true" />
