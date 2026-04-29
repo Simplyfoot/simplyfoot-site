@@ -198,6 +198,7 @@ function renderControl({
                 onBlur={onBlur}
                 name={name}
                 ref={ref as React.Ref<HTMLTextAreaElement>}
+                className="bg-white dark:bg-zinc-900"
             />
         );
     }
@@ -205,7 +206,7 @@ function renderControl({
     if (kind.type === 'select') {
         return (
             <Select value={controllerValue} onValueChange={onChange}>
-                <SelectTrigger className="w-full">
+                <SelectTrigger className="w-full bg-white dark:bg-zinc-900">
                     <SelectValue
                         placeholder={placeholder ?? t(`fields.${field.i18nKey}.placeholder`)}
                     />
@@ -233,6 +234,7 @@ function renderControl({
             onBlur={onBlur}
             name={name}
             ref={ref as React.Ref<HTMLInputElement>}
+            className="bg-white dark:bg-zinc-900"
         />
     );
 }
@@ -321,7 +323,7 @@ export function ContactForm({ brand }: ContactFormProps) {
                                 onValueChange={(value) => field.onChange(value as ContactTopic)}
                             >
                                 <FormControl>
-                                    <SelectTrigger className="w-full">
+                                    <SelectTrigger className="w-full bg-white dark:bg-zinc-900">
                                         <SelectValue placeholder={t('topicPlaceholder')} />
                                     </SelectTrigger>
                                 </FormControl>
