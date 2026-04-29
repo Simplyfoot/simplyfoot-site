@@ -446,6 +446,7 @@
             "description": "Contacta con el equipo de {brand}: demo, programa piloto, alianzas, informe de errores o cualquier otra consulta. Respuesta rápida garantizada."
         },
         "heading": "Contacta con {brand}",
+        "intro": "Demo, tarifas, alianza, error o simple sugerencia: elige tu asunto a continuación y escríbenos. ¡No esperaremos al tiempo añadido para responderte!",
         "formTitle": "Escríbenos",
         "formIntro": "Selecciona un asunto a continuación: adaptaremos el formulario para responderte más rápido.",
         "legalNotice": "La información recogida a través de este formulario está destinada a SimplyFoot SAS, editor del sitio, en su calidad de responsable del tratamiento, y se utiliza para responder a tu solicitud. Los campos marcados con un asterisco son obligatorios. Tus datos se conservan durante 3 años desde nuestro último intercambio. De conformidad con el RGPD, dispones de un derecho de acceso, rectificación, supresión, limitación, portabilidad y oposición sobre tus datos personales. Para ejercer estos derechos u obtener más información, consulta nuestra <privacy>Política de privacidad</privacy>.",

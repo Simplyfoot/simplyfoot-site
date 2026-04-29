@@ -17,19 +17,19 @@ export async function ContactContent({ brand }: ContactContentProps) {
     return (
         <article className="text-foreground">
             <div className="mx-auto w-full max-w-4xl px-6 py-12 md:px-8 md:py-20">
-                <header className="mb-12 space-y-4">
-                    <h1 className="mb-4 text-center text-4xl font-bold tracking-tight md:text-5xl">
+                <header className="mb-8 max-w-3xl space-y-3 md:mb-10 md:space-y-4">
+                    <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
                         {t('heading', { brand: brandMeta.label })}
                     </h1>
-                    <div
-                        aria-hidden="true"
-                        className="bg-primary-400 mx-auto mb-8 h-2 w-[34px] rounded-full"
-                    />
+                    <div aria-hidden="true" className="bg-primary-400 h-2 w-[34px] rounded-full" />
+                    <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+                        {t('intro')}
+                    </p>
                 </header>
 
                 <section
                     aria-labelledby="contact-form-title"
-                    className="rounded-2xl border bg-white p-6 shadow-sm md:p-10 dark:bg-zinc-900"
+                    className="bg-muted/50 dark:bg-muted/50 rounded-2xl p-6 md:p-10"
                 >
                     <h2
                         id="contact-form-title"

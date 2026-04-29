@@ -446,6 +446,7 @@
             "description": "Contactez l'équipe {brand} : démo, programme pilote, partenariat, signaler un bug ou toute autre demande. Réponse rapide garantie."
         },
         "heading": "Contactez l'équipe {brand}",
+        "intro": "Démo, tarifs, partenariat, bug ou simple suggestion : choisissez votre sujet ci-dessous, et écrivez-nous. Nous n'attendrons pas le temps additionnel pour vous répondre !",
         "formTitle": "Écrivez-nous",
         "formIntro": "Sélectionnez un sujet ci-dessous : nous adapterons les questions pour vous répondre au mieux.",
         "legalNotice": "Les informations recueillies via ce formulaire sont destinées à SimplyFoot SAS, éditeur du site, en sa qualité de responsable de traitement, et sont utilisées pour répondre à votre demande. Les champs marqués d'un astérisque sont obligatoires. Vos données sont conservées 3 ans à compter de notre dernier échange. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, de portabilité et d'opposition sur les données vous concernant. Pour exercer ces droits ou obtenir plus d'informations, consultez notre <privacy>Politique de confidentialité</privacy>.",

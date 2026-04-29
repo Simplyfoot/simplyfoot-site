@@ -446,6 +446,7 @@
             "description": "Get in touch with the {brand} team: demo, pilot programme, partnership, bug reports or any other request. Quick response guaranteed."
         },
         "heading": "Get in touch with {brand}",
+        "intro": "Demo, pricing, partnership, bug or just a suggestion: pick your subject below and write to us. We won't wait for stoppage time to reply!",
         "formTitle": "Write to us",
         "formIntro": "Pick a subject below — we'll tailor the form so we can answer you faster.",
         "legalNotice": "The information collected through this form is intended for SimplyFoot SAS, publisher of the website, acting as data controller, and is used to respond to your request. Fields marked with an asterisk are required. Your data is kept for 3 years from our last exchange. Under the GDPR, you have a right of access, rectification, erasure, restriction, portability and objection regarding your personal data. To exercise these rights or for more information, see our <privacy>Privacy Policy</privacy>.",
