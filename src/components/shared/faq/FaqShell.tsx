@@ -61,7 +61,6 @@ export function FaqShell({ sidebarItems, categories, sidebarLabel, brand }: FaqS
         () => ({
             brand: BRANDS[brand].label,
             email: BRAND_CONTACT[brand].email,
-            phone: BRAND_CONTACT[brand].phone,
         }),
         [brand],
     );
@@ -103,8 +102,7 @@ export function FaqShell({ sidebarItems, categories, sidebarLabel, brand }: FaqS
             }
             return stripTags(raw)
                 .replaceAll('{brand}', interpolationValues.brand)
-                .replaceAll('{email}', interpolationValues.email)
-                .replaceAll('{phone}', interpolationValues.phone);
+                .replaceAll('{email}', interpolationValues.email);
         };
 
         for (const category of categories) {
