@@ -453,6 +453,97 @@
             }
         }
     },
+    "Contact": {
+        "meta": {
+            "title": "Contact — {brand}",
+            "description": "Get in touch with the {brand} team: demo, pilot programme, partnership, bug reports or any other request. Quick response guaranteed."
+        },
+        "heading": "Get in touch with {brand}",
+        "formTitle": "Write to us",
+        "formIntro": "Pick a subject below — we'll tailor the form so we can answer you faster.",
+        "legalNotice": "The information collected through this form is intended for SimplyFoot SAS, publisher of the website, acting as data controller, and is used to respond to your request. Fields marked with an asterisk are required. Your data is kept for 3 years from our last exchange. Under the GDPR, you have a right of access, rectification, erasure, restriction, portability and objection regarding your personal data. To exercise these rights or for more information, see our <privacy>Privacy Policy</privacy>.",
+        "form": {
+            "topicLabel": "Subject of your request",
+            "topicPlaceholder": "Choose a subject",
+            "topics": {
+                "request-demo": "Request a demo",
+                "join-pilot": "Join the pilot programme",
+                "pricing-question": "Question about pricing",
+                "report-bug": "Report a bug",
+                "suggestion": "Suggestion / improvement",
+                "partnership": "Partnership",
+                "press": "Press / media",
+                "other": "Other"
+            },
+            "fields": {
+                "firstName": { "label": "First name" },
+                "lastName": { "label": "Last name" },
+                "email": { "label": "Email" },
+                "phone": { "label": "Phone (optional)" },
+                "message": {
+                    "label": "Your message",
+                    "placeholder": "Describe your request, your context, and the expected outcome if relevant.",
+                    "help": "Minimum 20 characters. The more specific, the faster we can respond."
+                },
+                "customSubject": {
+                    "label": "Tell us the subject",
+                    "help": "A few words to describe what your message is about."
+                },
+                "club": { "label": "Club name" },
+                "clubSize": {
+                    "label": "Club size",
+                    "placeholder": "Select a size",
+                    "options": {
+                        "1-50": "1 – 50 members",
+                        "51-100": "51 – 100 members",
+                        "101-250": "101 – 250 members",
+                        "251-500": "251 – 500 members",
+                        "500+": "500+ members",
+                        "no-club": "Not affiliated with a club yet"
+                    }
+                },
+                "role": {
+                    "label": "Your role in the club",
+                    "placeholder": "e.g. president, manager, coach, parent…"
+                },
+                "preferredSlot": {
+                    "label": "Preferred slot for the demo",
+                    "placeholder": "e.g. Tuesday afternoon, video call"
+                },
+                "bugPage": {
+                    "label": "On which page did the bug occur?",
+                    "placeholder": "e.g. the calendar page of the app",
+                    "help": "You can also paste a link if you have one."
+                },
+                "bugSteps": {
+                    "label": "How can we reproduce the bug?",
+                    "placeholder": "1. I went to page X\n2. I clicked on button Y\n3. Instead of seeing A, I saw B",
+                    "help": "Describe what you did, what you expected, and what actually happened. No technical jargon required."
+                },
+                "organization": { "label": "Organisation" },
+                "organizationWebsite": { "label": "Organisation website (optional)", "placeholder": "https://" },
+                "media": { "label": "Media / publication" },
+                "mediaRole": {
+                    "label": "Your role",
+                    "placeholder": "e.g. journalist, editor-in-chief…"
+                }
+            },
+            "submit": "Send my message",
+            "submitting": "Sending…",
+            "errors": {
+                "required": "This field is required.",
+                "email": "Invalid email address.",
+                "url": "Invalid web address.",
+                "tooShort": "At least {min} characters, please.",
+                "tooLong": "Maximum {max} characters.",
+                "invalid": "Invalid value."
+            },
+            "toastSuccessTitle": "Message sent",
+            "toastSuccessDescription": "Thank you! We'll get back to you as soon as possible.",
+            "toastErrorTitle": "Sending failed",
+            "toastErrorDescription": "Something went wrong. Try again in a moment or write to us directly by email."
+        }
+    },
     "Footer": {
         "sections": {
             "legal": "Legal information",

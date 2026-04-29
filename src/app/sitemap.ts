@@ -16,6 +16,9 @@ const allRoutes: Array<AppPathname> = [
     '/foot/faq',
     '/rugby/faq',
     '/handball/faq',
+    '/foot/contact',
+    '/rugby/contact',
+    '/handball/contact',
 ];
 
 const ALL_BRANDS: ReadonlyArray<BrandSlug> = ['foot', 'rugby', 'handball'];

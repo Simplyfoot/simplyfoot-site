@@ -453,6 +453,97 @@
             }
         }
     },
+    "Contact": {
+        "meta": {
+            "title": "Contacto — {brand}",
+            "description": "Contacta con el equipo de {brand}: demo, programa piloto, alianzas, informe de errores o cualquier otra consulta. Respuesta rápida garantizada."
+        },
+        "heading": "Contacta con {brand}",
+        "formTitle": "Escríbenos",
+        "formIntro": "Selecciona un asunto a continuación: adaptaremos el formulario para responderte más rápido.",
+        "legalNotice": "La información recogida a través de este formulario está destinada a SimplyFoot SAS, editor del sitio, en su calidad de responsable del tratamiento, y se utiliza para responder a tu solicitud. Los campos marcados con un asterisco son obligatorios. Tus datos se conservan durante 3 años desde nuestro último intercambio. De conformidad con el RGPD, dispones de un derecho de acceso, rectificación, supresión, limitación, portabilidad y oposición sobre tus datos personales. Para ejercer estos derechos u obtener más información, consulta nuestra <privacy>Política de privacidad</privacy>.",
+        "form": {
+            "topicLabel": "Asunto de tu consulta",
+            "topicPlaceholder": "Elige un asunto",
+            "topics": {
+                "request-demo": "Solicitar una demo",
+                "join-pilot": "Unirse al programa piloto",
+                "pricing-question": "Pregunta sobre las ofertas",
+                "report-bug": "Informar de un error",
+                "suggestion": "Sugerencia / mejora",
+                "partnership": "Alianza",
+                "press": "Prensa / medios",
+                "other": "Otro"
+            },
+            "fields": {
+                "firstName": { "label": "Nombre" },
+                "lastName": { "label": "Apellido" },
+                "email": { "label": "Correo electrónico" },
+                "phone": { "label": "Teléfono (opcional)" },
+                "message": {
+                    "label": "Tu mensaje",
+                    "placeholder": "Detalla tu consulta, tu contexto y el resultado esperado si procede.",
+                    "help": "Mínimo 20 caracteres. Cuanto más preciso, más rápida será la respuesta."
+                },
+                "customSubject": {
+                    "label": "Indica el asunto",
+                    "help": "Unas palabras para describir el motivo de tu mensaje."
+                },
+                "club": { "label": "Nombre del club" },
+                "clubSize": {
+                    "label": "Tamaño del club",
+                    "placeholder": "Selecciona un tamaño",
+                    "options": {
+                        "1-50": "1 – 50 federados",
+                        "51-100": "51 – 100 federados",
+                        "101-250": "101 – 250 federados",
+                        "251-500": "251 – 500 federados",
+                        "500+": "500+ federados",
+                        "no-club": "Aún sin club"
+                    }
+                },
+                "role": {
+                    "label": "Tu rol en el club",
+                    "placeholder": "p. ej. presidente, directivo, entrenador, padre/madre…"
+                },
+                "preferredSlot": {
+                    "label": "Franja horaria preferida para la demo",
+                    "placeholder": "p. ej. martes por la tarde, en videollamada"
+                },
+                "bugPage": {
+                    "label": "¿En qué página ocurrió el error?",
+                    "placeholder": "p. ej. la página del calendario de la app",
+                    "help": "También puedes pegar un enlace si lo tienes."
+                },
+                "bugSteps": {
+                    "label": "¿Cómo reproducir el error?",
+                    "placeholder": "1. Fui a la página X\n2. Hice clic en el botón Y\n3. En lugar de ver A, vi B",
+                    "help": "Describe lo que hiciste, lo que esperabas y lo que ocurrió. No se necesita jerga técnica."
+                },
+                "organization": { "label": "Organización" },
+                "organizationWebsite": { "label": "Sitio web de la organización (opcional)", "placeholder": "https://" },
+                "media": { "label": "Medio / publicación" },
+                "mediaRole": {
+                    "label": "Tu cargo",
+                    "placeholder": "p. ej. periodista, redactor jefe…"
+                }
+            },
+            "submit": "Enviar mi mensaje",
+            "submitting": "Enviando…",
+            "errors": {
+                "required": "Este campo es obligatorio.",
+                "email": "Correo electrónico no válido.",
+                "url": "Dirección web no válida.",
+                "tooShort": "Al menos {min} caracteres, por favor.",
+                "tooLong": "Máximo {max} caracteres.",
+                "invalid": "Valor no válido."
+            },
+            "toastSuccessTitle": "Mensaje enviado",
+            "toastSuccessDescription": "¡Gracias! Te responderemos lo antes posible.",
+            "toastErrorTitle": "El envío falló",
+            "toastErrorDescription": "Se produjo un error. Inténtalo de nuevo en unos instantes o escríbenos directamente por correo."
+        }
+    },
     "Footer": {
         "sections": {
             "legal": "Información legal",

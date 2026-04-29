@@ -453,6 +453,97 @@
             }
         }
     },
+    "Contact": {
+        "meta": {
+            "title": "Contact — {brand}",
+            "description": "Contactez l'équipe {brand} : démo, programme pilote, partenariat, signaler un bug ou toute autre demande. Réponse rapide garantie."
+        },
+        "heading": "Contactez l'équipe {brand}",
+        "formTitle": "Écrivez-nous",
+        "formIntro": "Sélectionnez un sujet ci-dessous : nous adapterons les questions pour vous répondre au mieux.",
+        "legalNotice": "Les informations recueillies via ce formulaire sont destinées à SimplyFoot SAS, éditeur du site, en sa qualité de responsable de traitement, et sont utilisées pour répondre à votre demande. Les champs marqués d'un astérisque sont obligatoires. Vos données sont conservées 3 ans à compter de notre dernier échange. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, de portabilité et d'opposition sur les données vous concernant. Pour exercer ces droits ou obtenir plus d'informations, consultez notre <privacy>Politique de confidentialité</privacy>.",
+        "form": {
+            "topicLabel": "Sujet de votre demande",
+            "topicPlaceholder": "Choisissez un sujet",
+            "topics": {
+                "request-demo": "Demander une démo",
+                "join-pilot": "Rejoindre le programme pilote",
+                "pricing-question": "Question sur les offres",
+                "report-bug": "Signaler un bug",
+                "suggestion": "Suggestion / amélioration",
+                "partnership": "Partenariat",
+                "press": "Presse / médias",
+                "other": "Autre"
+            },
+            "fields": {
+                "firstName": { "label": "Prénom" },
+                "lastName": { "label": "Nom" },
+                "email": { "label": "Email" },
+                "phone": { "label": "Téléphone (optionnel)" },
+                "message": {
+                    "label": "Votre message",
+                    "placeholder": "Détaillez votre demande, votre contexte, et le résultat attendu si pertinent.",
+                    "help": "20 caractères minimum. Plus c'est précis, plus la réponse sera rapide."
+                },
+                "customSubject": {
+                    "label": "Précisez le sujet",
+                    "help": "Quelques mots pour décrire le sujet de votre message."
+                },
+                "club": { "label": "Nom du club" },
+                "clubSize": {
+                    "label": "Taille du club",
+                    "placeholder": "Sélectionnez une taille",
+                    "options": {
+                        "1-50": "1 – 50 licenciés",
+                        "51-100": "51 – 100 licenciés",
+                        "101-250": "101 – 250 licenciés",
+                        "251-500": "251 – 500 licenciés",
+                        "500+": "500+ licenciés",
+                        "no-club": "Pas encore de club"
+                    }
+                },
+                "role": {
+                    "label": "Votre rôle dans le club",
+                    "placeholder": "ex. président, dirigeant, éducateur, parent…"
+                },
+                "preferredSlot": {
+                    "label": "Créneau préféré pour la démo",
+                    "placeholder": "ex. mardi après-midi, en visio"
+                },
+                "bugPage": {
+                    "label": "Sur quelle page le bug s'est-il produit ?",
+                    "placeholder": "ex. la page « calendrier » de l'application",
+                    "help": "Vous pouvez aussi coller un lien si vous l'avez."
+                },
+                "bugSteps": {
+                    "label": "Comment reproduire le bug ?",
+                    "placeholder": "1. Je suis allé(e) sur la page X\n2. J'ai cliqué sur le bouton Y\n3. Au lieu de voir A, j'ai vu B",
+                    "help": "Décrivez ce que vous avez fait, ce que vous attendiez, et ce qui s'est réellement passé. Aucun jargon technique requis."
+                },
+                "organization": { "label": "Organisation" },
+                "organizationWebsite": { "label": "Site web de l'organisation (optionnel)", "placeholder": "https://" },
+                "media": { "label": "Média / publication" },
+                "mediaRole": {
+                    "label": "Votre fonction",
+                    "placeholder": "ex. journaliste, rédacteur en chef…"
+                }
+            },
+            "submit": "Envoyer mon message",
+            "submitting": "Envoi en cours…",
+            "errors": {
+                "required": "Ce champ est requis.",
+                "email": "Adresse email invalide.",
+                "url": "Adresse web invalide.",
+                "tooShort": "Au moins {min} caractères, merci.",
+                "tooLong": "Maximum {max} caractères.",
+                "invalid": "Valeur invalide."
+            },
+            "toastSuccessTitle": "Message envoyé",
+            "toastSuccessDescription": "Merci ! Nous vous répondrons dans les plus brefs délais.",
+            "toastErrorTitle": "L'envoi a échoué",
+            "toastErrorDescription": "Une erreur est survenue. Réessayez dans quelques instants ou écrivez-nous directement par email."
+        }
+    },
     "Footer": {
         "sections": {
             "legal": "Informations légales",
