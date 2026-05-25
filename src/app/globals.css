@@ -250,6 +250,13 @@
     body {
         @apply bg-background text-foreground;
     }
+    /* Tailwind v4 Preflight ne met plus `cursor: pointer` sur les boutons.
+       On le rétablit globalement pour tous les éléments interactifs. */
+    button:not(:disabled),
+    [role='button']:not(:disabled),
+    summary {
+        cursor: pointer;
+    }
 }
 
 /* Sidebar dark variant — inactive while the project stays light-only (the
