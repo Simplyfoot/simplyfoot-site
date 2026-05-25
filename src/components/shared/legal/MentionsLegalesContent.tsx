@@ -1,6 +1,7 @@
 import { DotIcon } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
+import { BRAND_CONTACT, SIMPLY_HOSTING, SIMPLY_LEGAL } from '@/config/site';
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -18,6 +19,81 @@ interface MentionsLegalesContentProps {
 
 interface DataSectionBodyProps {
     brandLabel: string;
+}
+
+interface EditorSectionBodyProps {
+    brand: BrandSlug;
+    brandLabel: string;
+}
+
+const editorFieldKeys = [
+    'companyName',
+    'registeredOffice',
+    'rcs',
+    'legalForm',
+    'vat',
+    'email',
+    'publicationDirector',
+] as const;
+
+async function EditorSectionBody({ brand, brandLabel }: EditorSectionBodyProps) {
+    const t = await getTranslations('Legal.mentionsLegales.sections.editor');
+
+    const valueVars = {
+        brand: brandLabel.toUpperCase(),
+        entity: SIMPLY_LEGAL.entity,
+        capital: SIMPLY_LEGAL.capital,
+        address: SIMPLY_LEGAL.address,
+        rcs: SIMPLY_LEGAL.rcs,
+        tva: SIMPLY_LEGAL.tva,
+        email: BRAND_CONTACT[brand].email,
+    };
+
+    return (
+        <div className="text-muted-foreground space-y-4 text-base leading-relaxed md:text-lg">
+            <p>{t('intro')}</p>
+            <ul className="space-y-1">
+                {editorFieldKeys.map((key) => (
+                    <li key={key}>
+                        <span className="text-foreground font-medium">
+                            {t(`fields.${key}.label`)} :
+                        </span>{' '}
+                        {t(`fields.${key}.value`, valueVars)}
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+}
+
+async function HostingSectionBody() {
+    const t = await getTranslations('Legal.mentionsLegales.sections.hosting');
+
+    return (
+        <div className="text-muted-foreground space-y-4 text-base leading-relaxed md:text-lg">
+            <p>{t('intro')}</p>
+            <address className="not-italic">
+                <span className="block">{SIMPLY_HOSTING.name}</span>
+                {SIMPLY_HOSTING.addressLines.map((line) => (
+                    <span key={line} className="block">
+                        {line}
+                    </span>
+                ))}
+                <span className="block">{t('country')}</span>
+            </address>
+            <p>
+                <span className="text-foreground font-medium">{t('websiteLabel')} :</span>{' '}
+                <a
+                    href={SIMPLY_HOSTING.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary-600 hover:text-primary-700 focus-visible:ring-ring rounded-sm underline underline-offset-4 focus-visible:ring-2 focus-visible:outline-none"
+                >
+                    {SIMPLY_HOSTING.website}
+                </a>
+            </p>
+        </div>
+    );
 }
 
 async function DataSectionBody({ brandLabel }: DataSectionBodyProps) {
@@ -51,8 +127,9 @@ export async function MentionsLegalesContent({ brand }: MentionsLegalesContentPr
     const brandMeta = BRANDS[brand];
 
     const sectionKeys = [
-        'presentation',
-        'object',
+        'editor',
+        'hosting',
+        'activity',
         'ip',
         'liability',
         'data',
@@ -110,7 +187,11 @@ export async function MentionsLegalesContent({ brand }: MentionsLegalesContentPr
                                 />
                                 <span>{t(`sections.${key}.title`)}</span>
                             </h2>
-                            {key === 'data' ? (
+                            {key === 'editor' ? (
+                                <EditorSectionBody brand={brand} brandLabel={brandMeta.label} />
+                            ) : key === 'hosting' ? (
+                                <HostingSectionBody />
+                            ) : key === 'data' ? (
                                 <DataSectionBody brandLabel={brandMeta.label} />
                             ) : (
                                 <p className="text-muted-foreground text-base leading-relaxed md:text-lg">

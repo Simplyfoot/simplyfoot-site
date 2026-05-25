@@ -58,7 +58,7 @@
             },
             "breadcrumb": {
                 "legal": "Aviso legal",
-                "updatedOn": "Actualizado el 13-10-2025"
+                "updatedOn": "Actualizado el 28-05-2026"
             },
             "heading": "Aviso legal",
             "introduction": {
@@ -66,24 +66,48 @@
                 "description": "El presente aviso legal define las modalidades de puesta a disposición de la información y los servicios ofrecidos en el sitio de {brand}, así como las condiciones de uso aplicables a los usuarios."
             },
             "sections": {
-                "presentation": {
-                    "title": "1. Presentación del sitio",
-                    "body": "El sitio www.simplyfoot.fr está editado por la sociedad {brand} SAS, con un capital social de 2 000 €, inscrita en el Registro Mercantil de París con el número 991 139 171, cuyo domicilio social se encuentra en 60 rue François 1er, 75008 París."
+                "editor": {
+                    "title": "1. Editor del sitio",
+                    "intro": "El sitio web www.simplyfoot.fr y la aplicación SimplyFoot son editados por:",
+                    "fields": {
+                        "companyName": {
+                            "label": "Razón social",
+                            "value": "{brand} {entity}"
+                        },
+                        "registeredOffice": { "label": "Domicilio social", "value": "{address}" },
+                        "rcs": { "label": "RCS", "value": "{rcs}" },
+                        "legalForm": {
+                            "label": "Forma jurídica",
+                            "value": "{entity}, sociedad por acciones simplificada con un capital social de {capital}"
+                        },
+                        "vat": { "label": "Número de IVA intracomunitario", "value": "{tva}" },
+                        "email": { "label": "Correo electrónico", "value": "{email}" },
+                        "publicationDirector": {
+                            "label": "Director de publicación y responsable de redacción",
+                            "value": "Jérémy BARUC, Presidente de {brand} {entity}"
+                        }
+                    }
                 },
-                "object": {
-                    "title": "2. Objeto",
-                    "body": "El presente aviso legal tiene por objeto definir las modalidades de puesta a disposición de la información y los servicios ofrecidos en el sitio www.simplyfoot.fr e informar a los usuarios al respecto."
+                "hosting": {
+                    "title": "2. Alojamiento del sitio",
+                    "intro": "El sitio está alojado por:",
+                    "country": "Estados Unidos",
+                    "websiteLabel": "Sitio web"
+                },
+                "activity": {
+                    "title": "3. Actividad del sitio",
+                    "body": "El sitio www.simplyfoot.fr presenta los servicios ofrecidos por SimplyFoot, en particular una aplicación web y móvil dedicada a la gestión de clubes de fútbol amateur."
                 },
                 "ip": {
-                    "title": "3. Propiedad intelectual",
+                    "title": "4. Propiedad intelectual",
                     "body": "El conjunto de elementos presentes en el sitio (textos, imágenes, gráficos, logotipo, iconos, estructura, código, etc.) es propiedad exclusiva de {brand}, salvo mención en contrario. Queda prohibida toda reproducción, representación, modificación, publicación o adaptación, total o parcial, de estos elementos, por cualquier medio o procedimiento que sea, sin autorización previa por escrito."
                 },
                 "liability": {
-                    "title": "4. Responsabilidad",
+                    "title": "5. Responsabilidad",
                     "body": "{brand} se esfuerza por garantizar la exactitud y la actualización de la información difundida en el sitio. No obstante, la sociedad no podrá considerarse responsable de los errores, omisiones ni indisponibilidad del servicio. El usuario reconoce utilizar la información disponible bajo su exclusiva responsabilidad."
                 },
                 "data": {
-                    "title": "5. Datos personales",
+                    "title": "6. Datos personales",
                     "intro": "{brand} se compromete a que la recopilación y el tratamiento de los datos personales se ajusten:",
                     "complianceList": [
                         "al Reglamento General de Protección de Datos (RGPD)",
@@ -98,15 +122,15 @@
                     ]
                 },
                 "links": {
-                    "title": "6. Enlaces externos",
+                    "title": "7. Enlaces externos",
                     "body": "El sitio puede contener enlaces a sitios externos. {brand} no se hace responsable del contenido ni de las prácticas de dichos sitios de terceros."
                 },
                 "law": {
-                    "title": "7. Ley aplicable",
+                    "title": "8. Ley aplicable",
                     "body": "El presente sitio está sometido a la ley francesa. En caso de litigio, y a falta de resolución amistosa, serán competentes los tribunales de la jurisdicción del domicilio social de {brand}."
                 },
                 "contact": {
-                    "title": "8. Contacto",
+                    "title": "9. Contacto",
                     "body": "Para cualquier pregunta o solicitud de información: contact@simplyfoot.fr"
                 }
             }

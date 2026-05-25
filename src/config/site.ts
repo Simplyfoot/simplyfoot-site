@@ -12,6 +12,17 @@ export const SIMPLY_LEGAL = {
     address: '60 rue François 1er, 75008 Paris',
 } as const;
 
+/**
+ * Hosting provider of the site, shared across all brands. Used in the legal
+ * notice "Hébergement du site" section.
+ */
+export const SIMPLY_HOSTING = {
+    name: 'Vercel Inc.',
+    addressLines: ['440 N Barranca Ave #4133', 'Covina, CA 91723'] as const,
+    country: 'United States',
+    website: 'https://vercel.com',
+} as const;
+
 interface BrandContact {
     email: string;
     socials: {

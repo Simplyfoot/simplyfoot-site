@@ -58,7 +58,7 @@
             },
             "breadcrumb": {
                 "legal": "Mentions légales",
-                "updatedOn": "Mis à jour le 13-10-2025"
+                "updatedOn": "Mis à jour le 28-05-2026"
             },
             "heading": "Mentions légales",
             "introduction": {
@@ -66,24 +66,51 @@
                 "description": "Les présentes mentions légales définissent les modalités de mise à disposition des informations et services proposés sur le site de {brand}, ainsi que les conditions d'utilisation du site par l'internaute."
             },
             "sections": {
-                "presentation": {
-                    "title": "1. Présentation du site",
-                    "body": "Le site www.simplyfoot.fr est édité par la société {brand} SAS, au capital social de 2 000 €, immatriculée au RCS de Paris sous le numéro 991 139 171, dont le siège social est situé au 60 rue François 1er, 75008 Paris."
+                "editor": {
+                    "title": "1. Éditeur du site",
+                    "intro": "Le site internet www.simplyfoot.fr et l'application SimplyFoot sont édités par :",
+                    "fields": {
+                        "companyName": {
+                            "label": "Raison sociale",
+                            "value": "{brand} {entity}"
+                        },
+                        "registeredOffice": { "label": "Siège social", "value": "{address}" },
+                        "rcs": { "label": "RCS", "value": "{rcs}" },
+                        "legalForm": {
+                            "label": "Forme sociale",
+                            "value": "{entity}, Société par actions simplifiée au capital social de {capital}"
+                        },
+                        "vat": {
+                            "label": "Numéro de TVA intracommunautaire",
+                            "value": "{tva}"
+                        },
+                        "email": { "label": "Adresse e-mail", "value": "{email}" },
+                        "publicationDirector": {
+                            "label": "Directeur de la publication et responsable de la rédaction",
+                            "value": "Jérémy BARUC, Président de {brand} {entity}"
+                        }
+                    }
                 },
-                "object": {
-                    "title": "2. Objet",
-                    "body": "Les présentes mentions légales ont pour objet de définir les modalités de mise à disposition des informations et services proposés sur le site www.simplyfoot.fr et d'en informer les utilisateurs."
+                "hosting": {
+                    "title": "2. Hébergement du site",
+                    "intro": "Le site est hébergé par :",
+                    "country": "États-Unis",
+                    "websiteLabel": "Site web"
+                },
+                "activity": {
+                    "title": "3. Activité du site",
+                    "body": "Le site www.simplyfoot.fr présente les services proposés par SimplyFoot, notamment une application web et mobile dédiée à la gestion des clubs de football amateurs."
                 },
                 "ip": {
-                    "title": "3. Propriété intellectuelle",
+                    "title": "4. Propriété intellectuelle",
                     "body": "L'ensemble des éléments présents sur le site (textes, images, graphismes, logo, icônes, structure, code, etc.) est la propriété exclusive de {brand}, sauf mention contraire. Toute reproduction, représentation, modification, publication ou adaptation, totale ou partielle, de ces éléments, quel que soit le moyen ou le procédé utilisé, est interdite sans autorisation écrite préalable."
                 },
                 "liability": {
-                    "title": "4. Responsabilité",
+                    "title": "5. Responsabilité",
                     "body": "{brand} s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur le site. Toutefois, la société ne saurait être tenue responsable des erreurs, omissions ou d'une indisponibilité du service. L'utilisateur reconnaît utiliser les informations disponibles sous sa responsabilité exclusive."
                 },
                 "data": {
-                    "title": "5. Données personnelles",
+                    "title": "6. Données personnelles",
                     "intro": "{brand} s'engage à ce que la collecte et le traitement des données personnelles soient conformes :",
                     "complianceList": [
                         "au Règlement Général sur la Protection des Données (RGPD)",
@@ -98,15 +125,15 @@
                     ]
                 },
                 "links": {
-                    "title": "6. Liens hypertextes",
+                    "title": "7. Liens hypertextes",
                     "body": "Le site peut contenir des liens vers des sites externes. {brand} ne peut être tenu responsable du contenu ou des pratiques de ces sites tiers."
                 },
                 "law": {
-                    "title": "7. Droit applicable",
+                    "title": "8. Droit applicable",
                     "body": "Le présent site est soumis au droit français. En cas de litige, et à défaut de résolution amiable, les tribunaux compétents seront ceux du ressort du siège social de {brand}."
                 },
                 "contact": {
-                    "title": "8. Contact",
+                    "title": "9. Contact",
                     "body": "Pour toute question ou demande d'information : contact@simplyfoot.fr"
                 }
             }
