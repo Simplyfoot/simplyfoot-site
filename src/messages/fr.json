@@ -58,7 +58,7 @@
             },
             "breadcrumb": {
                 "legal": "Mentions légales",
-                "updatedOn": "Mis à jour le 28-05-2026"
+                "updatedOn": "Mis à jour le 28 mai 2026"
             },
             "heading": "Mentions légales",
             "introduction": {
@@ -86,7 +86,7 @@
                         },
                         "email": { "label": "Adresse e-mail", "value": "{email}" },
                         "publicationDirector": {
-                            "label": "Directeur de la publication et responsable de la rédaction",
+                            "label": "Directeur de la publication",
                             "value": "Jérémy BARUC, Président de {brand} {entity}"
                         }
                     }
@@ -135,6 +135,968 @@
                 "contact": {
                     "title": "9. Contact",
                     "body": "Pour toute question ou demande d'information : contact@simplyfoot.fr"
+                }
+            }
+        },
+        "cgu": {
+            "meta": {
+                "title": "Conditions générales d'utilisation — {brand}",
+                "description": "Conditions générales d'utilisation de la plateforme {brand}, éditée par SIMPLYFOOT SAS."
+            },
+            "breadcrumb": {
+                "legal": "Mentions légales",
+                "current": "CGU",
+                "effectiveDate": "En vigueur au 03 mai 2026"
+            },
+            "heading": "Conditions générales d'utilisation",
+            "introduction": {
+                "title": "Préambule",
+                "description": "Les présentes Conditions Générales d'Utilisation définissent les conditions d'accès et d'utilisation de la plateforme {brand}, éditée par SIMPLYFOOT SAS."
+            },
+            "copyright": "© {brand} – Tous droits réservés.",
+            "sections": {
+                "editor": {
+                    "title": "1. Éditeur du site"
+                },
+                "hosting": {
+                    "title": "2. Hébergement du site"
+                },
+                "definitions": {
+                    "title": "3. Définitions",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Dans les présentes CGU, les termes suivants ont la signification ci-dessous :"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "Administrateur Club : utilisateur disposant des droits d'administration d'un Club sur la Plateforme.",
+                                "Application : application mobile {brand} disponible sur Android et iOS (TestFlight).",
+                                "Club : structure sportive utilisant {brand}, notamment association, club amateur, équipe, école de football ou toute autre organisation sportive.",
+                                "Compte : espace personnel permettant à un Utilisateur d'accéder à la Plateforme.",
+                                "CGU : les présentes Conditions Générales d'Utilisation.",
+                                "CGV : les Conditions Générales de Vente applicables aux offres payantes, lorsqu'elles existent.",
+                                "Données Club : données importées, créées ou générées par un Club dans le cadre de l'utilisation de la Plateforme.",
+                                "Espace Club : espace dédié à un Club sur la Plateforme.",
+                                "Joueur : membre d'une équipe référencée sur {brand}.",
+                                "Mineur : utilisateur ou joueur âgé de moins de 18 ans.",
+                                "Parent / Responsable légal : personne titulaire de l'autorité parentale sur un mineur.",
+                                "Plateforme : ensemble des services {brand} accessibles via le site, l'application web et/ou l'application mobile.",
+                                "Service : fonctionnalités proposées par {brand}.",
+                                "Utilisateur : toute personne accédant ou utilisant la Plateforme, avec ou sans Compte."
+                            ]
+                        }
+                    ]
+                },
+                "object": {
+                    "title": "4. Objet des CGU",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Les présentes CGU ont pour objet de définir les conditions dans lesquelles les Utilisateurs peuvent accéder à la Plateforme {brand} et l'utiliser."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Toute création de Compte, navigation ou utilisation de la Plateforme implique l'acceptation pleine et entière des présentes CGU."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Les CGU s'appliquent sans préjudice des autres documents contractuels applicables, notamment :"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "les Mentions légales ;",
+                                "la Politique de confidentialité ;",
+                                "la Politique de gestion des cookies ;",
+                                "les CGV, le cas échéant ;",
+                                "tout contrat spécifique conclu avec un Club."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "En cas de contradiction, les documents contractuels s'appliquent dans l'ordre suivant :"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "contrat spécifique signé avec un Club ;",
+                                "CGV ;",
+                                "CGU ;",
+                                "Politique de confidentialité ;",
+                                "Politique de cookies."
+                            ]
+                        }
+                    ]
+                },
+                "service": {
+                    "title": "5. Description du Service",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} est une plateforme web et mobile dédiée à la gestion des clubs de football amateurs."
+                        },
+                        { "type": "paragraph", "text": "Elle permet notamment :" },
+                        {
+                            "type": "list",
+                            "items": [
+                                "la gestion des clubs, équipes et joueurs ;",
+                                "la gestion des convocations, présences et absences ;",
+                                "l'organisation des entraînements, matchs et événements ;",
+                                "la centralisation du calendrier sportif ;",
+                                "la communication entre membres d'un club ;",
+                                "la gestion de rôles utilisateurs ;",
+                                "toute autre fonctionnalité ajoutée ultérieurement."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} peut faire évoluer librement les fonctionnalités proposées afin d'améliorer le Service."
+                        }
+                    ]
+                },
+                "access": {
+                    "title": "6. Accès à la Plateforme",
+                    "blocks": [
+                        { "type": "paragraph", "text": "La Plateforme est accessible via internet." },
+                        {
+                            "type": "paragraph",
+                            "text": "L'Utilisateur reconnaît disposer des compétences, équipements et moyens nécessaires pour accéder à la Plateforme."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Les frais liés à l'accès à internet, aux équipements et aux communications restent à la charge exclusive de l'Utilisateur."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} s'efforce d'assurer l'accessibilité de la Plateforme, sans garantir un accès permanent, continu ou exempt d'erreurs."
+                        }
+                    ]
+                },
+                "clubSpace": {
+                    "title": "7. Création d'un Espace Club",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "L'utilisation complète de {brand} par un Club nécessite la création d'un Espace Club."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "L'Espace Club est créé par un Administrateur Club, qui déclare disposer des pouvoirs nécessaires pour représenter le Club ou agir avec l'autorisation de celui-ci."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "L'Administrateur Club s'engage à fournir des informations exactes, complètes et à jour."
+                        },
+                        { "type": "paragraph", "text": "Il garantit notamment :" },
+                        {
+                            "type": "list",
+                            "items": [
+                                "être habilité à créer l'Espace Club ;",
+                                "disposer des autorisations nécessaires pour inviter les membres ;",
+                                "ne pas usurper l'identité d'un tiers ;",
+                                "assurer la mise à jour des informations du Club."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} se réserve le droit de demander tout justificatif en cas de doute légitime."
+                        }
+                    ]
+                },
+                "userAccount": {
+                    "title": "8. Création d'un Compte Utilisateur",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "L'utilisation de l'application nécessite la création d'un Compte."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "L'Utilisateur s'engage à fournir des informations exactes, complètes et à jour."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Chaque Compte est personnel. L'Utilisateur est responsable de la confidentialité de ses identifiants et de toute activité réalisée depuis son Compte."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "En cas de perte, vol, utilisation frauduleuse ou accès non autorisé, l'Utilisateur doit en informer {brand} sans délai à l'adresse : {email}."
+                        }
+                    ]
+                },
+                "roles": {
+                    "title": "9. Rôles et responsabilités des Utilisateurs",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "La Plateforme peut prévoir plusieurs rôles, notamment :"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "Administrateur Club = Président ;",
+                                "Coach ;",
+                                "Parent / Responsable légal ;",
+                                "Joueur ;",
+                                "Tout autre rôle ajouté par la suite."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Chaque rôle dispose de droits d'accès spécifiques."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "L'Administrateur Club est responsable :"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "de la configuration de l'Espace Club ;",
+                                "de l'attribution des droits utilisateurs ;",
+                                "de la gestion des données du Club ;",
+                                "de la suppression ou modification des accès ;",
+                                "du respect des présentes CGU par les membres du Club."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Les Coachs, dirigeants et autres Utilisateurs s'engagent à utiliser la Plateforme uniquement dans le cadre autorisé par le Club et conformément aux présentes CGU."
+                        }
+                    ]
+                },
+                "minors": {
+                    "title": "10. Mineurs",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} peut être utilisé dans un cadre impliquant des joueurs mineurs."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Lorsqu'un mineur utilise la Plateforme ou lorsque des données le concernant sont renseignées, le Club, l'Administrateur Club ou le Parent / Responsable légal garantit disposer des autorisations nécessaires."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Pour les mineurs de moins de 15 ans, les traitements reposant sur le consentement nécessitent l'accord du mineur et de son représentant légal, conformément à la réglementation applicable."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Les Comptes de mineurs doivent être créés, autorisés ou encadrés par un Parent / Responsable légal ou par une structure habilitée."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} ne se substitue ni aux Clubs, ni aux éducateurs, ni aux titulaires de l'autorité parentale."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Les Clubs s'engagent à ne collecter que les données strictement nécessaires à la gestion sportive."
+                        }
+                    ]
+                },
+                "clubData": {
+                    "title": "11. Données renseignées par les Clubs",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Les Clubs et leurs Administrateurs sont responsables des données qu'ils importent, créent ou gèrent dans la Plateforme."
+                        },
+                        { "type": "paragraph", "text": "Ils garantissent :" },
+                        {
+                            "type": "list",
+                            "items": [
+                                "l'exactitude des données renseignées ;",
+                                "la licéité de leur collecte ;",
+                                "l'information des personnes concernées ;",
+                                "l'obtention des autorisations nécessaires, notamment parentales ;",
+                                "le respect du droit à l'image lorsqu'une photo ou tout autre contenu identifiable est partagé."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} agit comme fournisseur technique de la Plateforme et ne vérifie pas systématiquement l'exactitude ou la licéité des données communiquées par les Clubs."
+                        }
+                    ]
+                },
+                "acceptableUse": {
+                    "title": "12. Règles d'usage acceptable",
+                    "blocks": [
+                        { "type": "paragraph", "text": "L'Utilisateur s'interdit notamment :" },
+                        {
+                            "type": "list",
+                            "items": [
+                                "d'utiliser la Plateforme à des fins illicites ;",
+                                "de porter atteinte aux droits de tiers ;",
+                                "de publier des contenus injurieux, diffamatoires, discriminatoires, violents, haineux, obscènes ou contraires à l'ordre public ;",
+                                "de diffuser des données personnelles sans autorisation ;",
+                                "de publier des photos ou vidéos sans disposer des droits nécessaires ;",
+                                "d'utiliser la Plateforme à des fins commerciales non autorisées ;",
+                                "de détourner la finalité sportive de la Plateforme ;",
+                                "de tenter d'accéder à un Compte ou à des données sans autorisation ;",
+                                "de contourner, désactiver ou perturber les mesures de sécurité ;",
+                                "de pratiquer le scraping, l'extraction massive ou l'automatisation abusive ;",
+                                "d'introduire virus, code malveillant ou tout élément nuisible ;",
+                                "de nuire au bon fonctionnement de la Plateforme."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} se réserve le droit de retirer tout contenu manifestement illicite ou contraire aux présentes CGU."
+                        }
+                    ]
+                },
+                "userContent": {
+                    "title": "13. Contenus publiés par les Utilisateurs",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Les Utilisateurs conservent leurs droits sur les contenus qu'ils publient sur la Plateforme."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Ils concèdent toutefois à {brand} une licence non exclusive, gratuite, mondiale et limitée aux besoins de fonctionnement du Service, permettant d'héberger, stocker, reproduire, afficher, transmettre et traiter ces contenus."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Cette licence est strictement limitée à la fourniture du Service."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "L'Utilisateur garantit disposer de tous les droits nécessaires sur les contenus publiés."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Il garantit {brand} contre toute réclamation liée aux contenus qu'il publie, notamment en cas d'atteinte à la vie privée, au droit à l'image, aux droits d'auteur ou aux droits de tiers."
+                        }
+                    ]
+                },
+                "moderation": {
+                    "title": "14. Rôle de modération de l'Administrateur Club",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "L'Administrateur Club est responsable de la bonne utilisation de l'Espace Club par ses membres."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Il s'engage à supprimer ou faire supprimer, dès qu'il en a connaissance, tout contenu :"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "contraire à la loi ;",
+                                "contraire aux présentes CGU ;",
+                                "portant atteinte aux droits d'un tiers ;",
+                                "portant atteinte à la dignité ou à la sécurité d'une personne ;",
+                                "inadapté à un public mineur."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} peut intervenir en cas de signalement ou de violation manifeste."
+                        }
+                    ]
+                },
+                "notifications": {
+                    "title": "15. Notifications, emails, SMS et communications",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} peut envoyer des communications nécessaires au fonctionnement du Service, notamment :"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "emails de création de Compte ;",
+                                "notifications liées aux convocations ;",
+                                "rappels d'événements ;",
+                                "messages de sécurité ;",
+                                "informations importantes relatives au Service."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "L'Utilisateur peut gérer certaines préférences de notification depuis son Compte lorsque cette fonctionnalité est disponible."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Les communications strictement nécessaires au fonctionnement du Service ne peuvent pas toujours être désactivées sans empêcher l'utilisation normale de la Plateforme."
+                        }
+                    ]
+                },
+                "thirdParty": {
+                    "title": "16. Services tiers",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Certaines fonctionnalités peuvent dépendre de services tiers, notamment :"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "hébergement ;",
+                                "notifications ;",
+                                "authentification ;",
+                                "services mobiles Apple ou Google."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Ces services tiers peuvent être soumis à leurs propres conditions."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} ne peut être tenue responsable des indisponibilités, dysfonctionnements ou modifications imputables à ces services tiers."
+                        }
+                    ]
+                },
+                "paidOffers": {
+                    "title": "17. Offres, abonnements et services payants",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "La création d'un Compte peut être gratuite."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Certaines fonctionnalités peuvent être proposées dans le cadre d'offres payantes, d'abonnements ou de modules optionnels."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Les conditions financières applicables sont précisées dans les CGV, devis, bons de commande ou contrats spécifiques."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "En cas de contradiction entre les présentes CGU et les CGV, les CGV prévalent pour les aspects commerciaux, tarifaires, de facturation, de paiement, de renouvellement, de résiliation commerciale et de remboursement."
+                        }
+                    ]
+                },
+                "suspension": {
+                    "title": "18. Suspension d'accès",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} peut suspendre temporairement ou définitivement l'accès à tout ou partie du Service en cas :"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "de violation des présentes CGU ;",
+                                "d'utilisation frauduleuse ;",
+                                "de comportement abusif ;",
+                                "de risque pour la sécurité de la Plateforme ;",
+                                "de contenu manifestement illicite ;",
+                                "de non-paiement, si une offre payante est concernée ;",
+                                "de demande d'une autorité compétente ;",
+                                "de risque juridique ou technique sérieux."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Lorsque cela est possible, {brand} informe préalablement l'Utilisateur ou le Club concerné."
+                        }
+                    ]
+                },
+                "accountClosure": {
+                    "title": "19. Fermeture de Compte",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Un Utilisateur peut demander la fermeture de son Compte à tout moment."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "La fermeture du Compte entraîne la suppression ou l'anonymisation progressive des données personnelles associées, sous réserve :"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "des obligations légales de conservation ;",
+                                "des besoins de preuve ;",
+                                "des données nécessaires au Club ;",
+                                "des sauvegardes techniques temporaires ;",
+                                "des droits et demandes en cours."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "La suppression d'un Compte Utilisateur n'entraîne pas automatiquement la suppression de l'Espace Club."
+                        }
+                    ]
+                },
+                "clubSpaceDeletion": {
+                    "title": "20. Suppression d'un Espace Club",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Un Administrateur Club habilité peut demander la suppression de l'Espace Club."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "La suppression de l'Espace Club peut entraîner la suppression ou l'anonymisation des données associées, sous réserve des obligations légales et techniques applicables."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} peut également supprimer un Espace Club en cas de violation grave des CGU, d'inactivité prolongée ou de demande légitime."
+                        }
+                    ]
+                },
+                "dataExport": {
+                    "title": "21. Réversibilité et export des données",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "À la fin de l'utilisation du Service, le Club peut demander l'export de ses Données Club dans un format standard, lorsque cela est techniquement possible."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Sauf disposition contractuelle différente, l'export reste disponible pendant une durée maximale de 30 jours après la fermeture effective de l'Espace Club."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Passé ce délai, les données peuvent être supprimées ou anonymisées progressivement."
+                        }
+                    ]
+                },
+                "security": {
+                    "title": "22. Sécurité",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} met en œuvre des mesures techniques et organisationnelles raisonnables afin de protéger la Plateforme et les données traitées."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Ces mesures peuvent inclure notamment :"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "chiffrement des communications ;",
+                                "contrôle des accès ;",
+                                "journalisation ;",
+                                "sauvegardes ;",
+                                "surveillance technique ;",
+                                "séparation des droits ;",
+                                "limitation des accès internes."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "L'Utilisateur reconnaît toutefois qu'aucun système informatique ne peut garantir une sécurité absolue."
+                        }
+                    ]
+                },
+                "availability": {
+                    "title": "23. Disponibilité et maintenance",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} fait ses meilleurs efforts pour assurer la disponibilité de la Plateforme."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "La Plateforme peut toutefois être interrompue, notamment en cas :"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "de maintenance corrective ou évolutive ;",
+                                "de mise à jour ;",
+                                "d'incident technique ;",
+                                "de force majeure ;",
+                                "de défaillance d'un prestataire tiers ;",
+                                "de risque de sécurité."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} peut modifier, suspendre ou retirer certaines fonctionnalités, notamment pour des raisons techniques, légales, économiques ou de sécurité."
+                        }
+                    ]
+                },
+                "support": {
+                    "title": "24. Support",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Le support est joignable à l'adresse : {email}."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} s'efforce de répondre aux demandes dans des délais raisonnables."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Les niveaux de support spécifiques, délais garantis ou engagements de service peuvent faire l'objet d'un contrat séparé."
+                        }
+                    ]
+                },
+                "ipSimplyfoot": {
+                    "title": "25. Propriété intellectuelle de {brand}",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "La Plateforme, son logiciel, son code, son interface, ses bases de données, ses marques, logos, visuels, textes, documents, éléments graphiques et plus généralement tous les éléments qui la composent sont protégés par le droit de la propriété intellectuelle."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Ils sont la propriété exclusive de {brand} ou de ses partenaires/licenciants."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Aucune disposition des présentes CGU ne transfère de droit de propriété à l'Utilisateur."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} concède à l'Utilisateur un droit personnel, non exclusif, non cessible, non transférable et révocable d'utiliser la Plateforme uniquement dans le cadre prévu par les présentes CGU."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Sont interdits sans autorisation préalable :"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "reproduction ;",
+                                "adaptation ;",
+                                "modification ;",
+                                "décompilation, sauf exception légale ;",
+                                "extraction substantielle de base de données ;",
+                                "revente ;",
+                                "mise à disposition à un tiers ;",
+                                "utilisation concurrente ou abusive."
+                            ]
+                        }
+                    ]
+                },
+                "feedback": {
+                    "title": "26. Suggestions et retours utilisateurs",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "L'Utilisateur peut transmettre à {brand} des suggestions, remarques ou idées d'amélioration."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Sauf accord contraire écrit, {brand} est libre d'utiliser ces suggestions sans obligation de rémunération, de reconnaissance ou d'intégration."
+                        }
+                    ]
+                },
+                "confidentiality": {
+                    "title": "27. Confidentialité",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Les Parties s'engagent à conserver confidentielles les informations non publiques échangées dans le cadre de l'utilisation du Service."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Cette obligation ne s'applique pas aux informations :"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "déjà publiques ;",
+                                "obtenues légalement auprès d'un tiers ;",
+                                "exigées par une autorité compétente ;",
+                                "nécessaires à la défense des droits d'une Partie."
+                            ]
+                        }
+                    ]
+                },
+                "personalData": {
+                    "title": "28. Données personnelles",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Les données personnelles sont traitées conformément à la Politique de confidentialité de {brand}."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Dans le cadre de l'utilisation par un Club, le Club agit en principe comme responsable de traitement pour les données qu'il renseigne concernant ses membres, joueurs, parents, coachs et dirigeants."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} agit en principe comme sous-traitant au sens de l'article 28 du RGPD pour les traitements réalisés pour le compte du Club."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} peut également agir comme responsable de traitement pour certains traitements propres, notamment :"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "gestion des comptes administrateurs ;",
+                                "prospection commerciale ;",
+                                "facturation ;",
+                                "sécurité de la Plateforme ;",
+                                "gestion du support ;",
+                                "mesure d'audience du site."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Les rôles exacts, obligations et garanties applicables sont détaillés dans la Politique de confidentialité et, le cas échéant, dans une annexe de sous-traitance RGPD."
+                        }
+                    ]
+                },
+                "subprocessors": {
+                    "title": "29. Sous-traitants et transferts hors Union européenne",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} peut recourir à des sous-traitants techniques nécessaires au fonctionnement du Service."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Certains sous-traitants peuvent être situés hors de l'Union européenne ou impliquer des transferts de données hors UE."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Dans ce cas, {brand} s'assure que ces transferts sont encadrés par des garanties appropriées, notamment une décision d'adéquation, les clauses contractuelles types de la Commission européenne ou tout autre mécanisme reconnu par la réglementation applicable."
+                        }
+                    ]
+                },
+                "liability": {
+                    "title": "30. Responsabilité",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} fournit une plateforme technique destinée à faciliter la gestion sportive des Clubs."
+                        },
+                        { "type": "paragraph", "text": "{brand} n'est pas responsable :" },
+                        {
+                            "type": "list",
+                            "items": [
+                                "des décisions sportives prises par les Clubs ;",
+                                "des erreurs de saisie des Utilisateurs ;",
+                                "de l'exactitude des données renseignées par les Clubs ;",
+                                "des contenus publiés par les Utilisateurs ;",
+                                "des litiges entre membres, parents, joueurs, coachs ou Clubs ;",
+                                "de l'utilisation non conforme de la Plateforme ;",
+                                "d'une absence d'autorisation parentale lorsque celle-ci relève du Club ou du responsable légal ;",
+                                "des dommages résultant d'un tiers ou d'un prestataire extérieur."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "La responsabilité de {brand} ne peut être engagée qu'en cas de faute prouvée lui étant directement imputable."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} ne saurait être tenue responsable des dommages indirects, tels que perte de chance, perte d'exploitation, perte de revenus, atteinte à l'image, perte de données non sauvegardées par l'Utilisateur ou préjudice moral indirect."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Pour les clients professionnels, sauf faute lourde ou disposition légale contraire, la responsabilité totale de {brand} est limitée aux sommes effectivement versées par le Club au cours des douze derniers mois précédant le fait générateur du dommage."
+                        }
+                    ]
+                },
+                "userGuarantee": {
+                    "title": "31. Garantie de l'Utilisateur",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "L'Utilisateur garantit {brand} contre toute réclamation, action, demande ou condamnation résultant :"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "de son utilisation de la Plateforme ;",
+                                "des contenus qu'il publie ;",
+                                "des données qu'il renseigne ;",
+                                "d'une violation des présentes CGU ;",
+                                "d'une atteinte aux droits d'un tiers ;",
+                                "d'un défaut d'autorisation parentale ou de droit à l'image."
+                            ]
+                        }
+                    ]
+                },
+                "forceMajeure": {
+                    "title": "32. Force majeure",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Aucune Partie ne pourra être tenue responsable d'un manquement résultant d'un événement de force majeure au sens du droit français."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Sont notamment concernés, sans que cette liste soit limitative :"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "catastrophes naturelles ;",
+                                "incendies ;",
+                                "grèves ;",
+                                "cyberattaques massives ;",
+                                "pannes généralisées ;",
+                                "décisions administratives ;",
+                                "interruptions majeures de réseaux ;",
+                                "événements imprévisibles, irrésistibles et extérieurs."
+                            ]
+                        }
+                    ]
+                },
+                "cguModifications": {
+                    "title": "33. Modification des CGU",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} peut modifier les présentes CGU à tout moment, notamment pour tenir compte :"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "d'une évolution légale ;",
+                                "d'une évolution technique ;",
+                                "d'une nouvelle fonctionnalité ;",
+                                "d'un changement d'organisation ;",
+                                "d'un impératif de sécurité."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Les Utilisateurs seront informés des modifications substantielles par tout moyen approprié."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "La poursuite de l'utilisation de la Plateforme après l'entrée en vigueur des nouvelles CGU vaut acceptation."
+                        }
+                    ]
+                },
+                "duration": {
+                    "title": "34. Durée",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Les présentes CGU s'appliquent pendant toute la durée d'utilisation de la Plateforme par l'Utilisateur."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Certaines clauses continueront à produire effet après la fermeture du Compte ou la résiliation du Service, notamment celles relatives à la propriété intellectuelle, à la responsabilité, aux garanties, à la confidentialité, aux données et au règlement des litiges."
+                        }
+                    ]
+                },
+                "partialNullity": {
+                    "title": "35. Nullité partielle",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Si une clause des présentes CGU est déclarée nulle ou inapplicable, les autres clauses resteront pleinement applicables."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "La clause concernée sera remplacée, dans la mesure du possible, par une clause valable poursuivant un objectif économique et juridique équivalent."
+                        }
+                    ]
+                },
+                "nonWaiver": {
+                    "title": "36. Non-renonciation",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Le fait pour {brand} de ne pas se prévaloir à un moment donné d'une clause des présentes CGU ne constitue pas une renonciation à s'en prévaloir ultérieurement."
+                        }
+                    ]
+                },
+                "proof": {
+                    "title": "37. Preuve",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Les registres informatisés conservés dans les systèmes de {brand} dans des conditions raisonnables de sécurité pourront être utilisés comme éléments de preuve concernant :"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "connexions ;",
+                                "actions réalisées ;",
+                                "acceptation des CGU ;",
+                                "échanges ;",
+                                "notifications ;",
+                                "paiements, le cas échéant."
+                            ]
+                        }
+                    ]
+                },
+                "claims": {
+                    "title": "38. Réclamations",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Toute réclamation peut être adressée à :"
+                        },
+                        {
+                            "type": "lines",
+                            "items": ["SIMPLYFOOT SAS", "{address}"]
+                        },
+                        { "type": "paragraph", "text": "Email : {email}" },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} s'efforcera de traiter les réclamations dans un délai raisonnable."
+                        }
+                    ]
+                },
+                "mediation": {
+                    "title": "39. Médiation de la consommation",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Pour les Utilisateurs agissant en qualité de consommateurs, et après démarche préalable écrite auprès de {brand} restée infructueuse, l'Utilisateur peut recourir gratuitement à un médiateur de la consommation."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Le médiateur sera désigné lors du lancement des offres payantes."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "L'Utilisateur peut également accéder à la plateforme européenne de règlement en ligne des litiges :"
+                        },
+                        {
+                            "type": "link",
+                            "label": "Plateforme européenne ODR",
+                            "url": "https://ec.europa.eu/consumers/odr/"
+                        }
+                    ]
+                },
+                "governingLaw": {
+                    "title": "40. Droit applicable et juridiction compétente",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Les présentes CGU sont soumises au droit français."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "En cas de litige, les Parties s'engagent à rechercher une solution amiable."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "À défaut de résolution amiable, les tribunaux compétents seront déterminés conformément aux règles de droit commun."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Pour les litiges entre professionnels, compétence est attribuée aux tribunaux du ressort du siège social de {brand}, sauf disposition légale impérative contraire."
+                        }
+                    ]
+                },
+                "contact": {
+                    "title": "41. Contact",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Pour toute question relative aux présentes CGU :"
+                        },
+                        { "type": "paragraph", "text": "Email : {email}" },
+                        {
+                            "type": "paragraph",
+                            "text": "Adresse : SIMPLYFOOT SAS, {address}"
+                        }
+                    ]
                 }
             }
         }
