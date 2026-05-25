@@ -76,33 +76,39 @@
                 },
                 "ip": {
                     "title": "3. Intellectual property",
-                    "body": "All elements on the site (texts, images, graphics, logo, structure, code, etc.) are the exclusive property of {brand}, unless otherwise stated. Any reproduction, representation, modification, publication or adaptation, in whole or in part, of these elements, by any means or process whatsoever, is prohibited without the prior written consent of {brand}."
+                    "body": "All elements on the site (texts, images, graphics, logo, icons, structure, code, etc.) are the exclusive property of {brand}, unless otherwise stated. Any reproduction, representation, modification, publication or adaptation, in whole or in part, of these elements, by any means or process whatsoever, is prohibited without prior written consent."
                 },
                 "liability": {
                     "title": "4. Liability",
-                    "body": "SimplyFoot takes reasonable care to ensure that the information published on its site is accurate and up to date. However, the company cannot be held liable for any errors, omissions or unavailability of the service. Users acknowledge that they use the site at their own risk."
+                    "body": "{brand} takes reasonable care to ensure that the information published on the site is accurate and up to date. However, the company cannot be held liable for any errors, omissions or unavailability of the service. Users acknowledge that they use the available information at their own risk."
                 },
                 "data": {
                     "title": "5. Personal data",
-                    "body": "{brand} is committed to protecting the privacy of site users in accordance with the General Data Protection Regulation (GDPR) and the French \"Informatique et Libertés\" Act of 6 January 1978, as amended. Information collected through the forms is processed to respond to user requests and to offer {brand} services. See our privacy policy for more details."
+                    "intro": "{brand} is committed to ensuring that the collection and processing of personal data comply with:",
+                    "complianceList": [
+                        "the General Data Protection Regulation (GDPR)",
+                        "the French \"Informatique et Libertés\" Act"
+                    ],
+                    "usage": "Data collected through the site is used solely in connection with the services offered.",
+                    "rights": "Users have a right of access, rectification, deletion and objection regarding their personal data.",
+                    "consultIntro": "For more information, users are invited to consult:",
+                    "consultList": [
+                        "the Privacy Policy",
+                        "the Cookie Management Policy"
+                    ]
                 },
                 "links": {
                     "title": "6. Hyperlinks",
-                    "body": "The SimplyFoot site may contain links to other sites. SimplyFoot has no control over the content of those sites and accepts no liability for their content or personal-data practices."
+                    "body": "The site may contain links to external sites. {brand} cannot be held liable for the content or practices of those third-party sites."
                 },
                 "law": {
                     "title": "7. Applicable law",
-                    "body": "This site is governed by French law. In the event of any dispute, and failing an amicable settlement, exclusive jurisdiction is granted to the courts of Paris."
+                    "body": "This site is governed by French law. In the event of any dispute, and failing an amicable settlement, the competent courts shall be those of the jurisdiction of {brand}'s registered office."
                 },
                 "contact": {
                     "title": "8. Contact",
-                    "body": "For any question, comment or complaint relating to the site or to {brand} services, you can reach us:"
+                    "body": "For any question or request for information: contact@simplyfoot.fr"
                 }
-            },
-            "contactBlock": {
-                "emailLabel": "By email",
-                "phoneLabel": "By phone",
-                "addressLabel": "By post"
             }
         }
     },
@@ -449,7 +455,7 @@
         "intro": "Demo, pricing, partnership, bug or just a suggestion: pick your subject below and write to us. We won't wait for stoppage time to reply!",
         "formTitle": "Write to us",
         "formIntro": "Pick a subject below — we'll tailor the form so we can answer you faster.",
-        "legalNotice": "The information collected through this form is intended for SimplyFoot SAS, publisher of the website, acting as data controller, and is used to respond to your request. Fields marked with an asterisk are required. Your data is kept for 3 years from our last exchange. Under the GDPR, you have a right of access, rectification, erasure, restriction, portability and objection regarding your personal data. To exercise these rights or for more information, see our <privacy>Privacy Policy</privacy>.",
+        "legalNotice": "The information collected through this form is intended for {brand} SAS, publisher of the website, acting as data controller, and is used to respond to your request. Fields marked with an asterisk are required. Your data is kept for 3 years from our last exchange. Under the GDPR, you have a right of access, rectification, erasure, restriction, portability and objection regarding your personal data. To exercise these rights or for more information, see our <privacy>Privacy Policy</privacy>.",
         "form": {
             "topicLabel": "Subject of your request",
             "topicPlaceholder": "Choose a subject",

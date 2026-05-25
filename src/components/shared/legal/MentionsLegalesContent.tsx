@@ -1,7 +1,6 @@
-import { DotIcon, Mail, MapPin } from 'lucide-react';
+import { DotIcon } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
-import { BRAND_CONTACT, SIMPLY_LEGAL } from '@/config/site';
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -17,36 +16,33 @@ interface MentionsLegalesContentProps {
     brand: BrandSlug;
 }
 
-async function ContactSection() {
-    const t = await getTranslations('Legal.mentionsLegales');
-    const contact = BRAND_CONTACT['foot'];
+interface DataSectionBodyProps {
+    brandLabel: string;
+}
+
+async function DataSectionBody({ brandLabel }: DataSectionBodyProps) {
+    const t = await getTranslations('Legal.mentionsLegales.sections.data');
+
+    const complianceList = t.raw('complianceList') as string[];
+    const consultList = t.raw('consultList') as string[];
 
     return (
-        <section id="contact-block" aria-labelledby="contact-block-title" className="mt-8">
-            <dl className="grid gap-6 md:grid-cols-2">
-                <div className="space-y-2">
-                    <dt className="text-muted-foreground flex items-center gap-2 text-sm font-medium">
-                        <Mail className="size-4" aria-hidden="true" />
-                        {t('contactBlock.emailLabel')}
-                    </dt>
-                    <dd>
-                        <a
-                            href={`mailto:${contact.email}`}
-                            className="text-primary focus-visible:ring-ring rounded-sm font-medium underline-offset-4 hover:underline focus-visible:ring-2 focus-visible:outline-none"
-                        >
-                            {contact.email}
-                        </a>
-                    </dd>
-                </div>
-                <div className="space-y-2">
-                    <dt className="text-muted-foreground flex items-center gap-2 text-sm font-medium">
-                        <MapPin className="size-4" aria-hidden="true" />
-                        {t('contactBlock.addressLabel')}
-                    </dt>
-                    <dd className="text-foreground text-sm">{SIMPLY_LEGAL.address}</dd>
-                </div>
-            </dl>
-        </section>
+        <div className="text-muted-foreground space-y-4 text-base leading-relaxed md:text-lg">
+            <p>{t('intro', { brand: brandLabel })}</p>
+            <ul className="list-disc space-y-1 pl-6">
+                {complianceList.map((item) => (
+                    <li key={item}>{item}</li>
+                ))}
+            </ul>
+            <p>{t('usage')}</p>
+            <p>{t('rights')}</p>
+            <p>{t('consultIntro')}</p>
+            <ul className="list-disc space-y-1 pl-6">
+                {consultList.map((item) => (
+                    <li key={item}>{item}</li>
+                ))}
+            </ul>
+        </div>
     );
 }
 
@@ -114,10 +110,13 @@ export async function MentionsLegalesContent({ brand }: MentionsLegalesContentPr
                                 />
                                 <span>{t(`sections.${key}.title`)}</span>
                             </h2>
-                            <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
-                                {t(`sections.${key}.body`, { brand: brandMeta.label })}
-                            </p>
-                            {key === 'contact' && <ContactSection />}
+                            {key === 'data' ? (
+                                <DataSectionBody brandLabel={brandMeta.label} />
+                            ) : (
+                                <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+                                    {t(`sections.${key}.body`, { brand: brandMeta.label })}
+                                </p>
+                            )}
                         </section>
                     ))}
                 </section>

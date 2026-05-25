@@ -76,33 +76,39 @@
                 },
                 "ip": {
                     "title": "3. Propriété intellectuelle",
-                    "body": "L'ensemble des éléments présents sur le site (textes, images, graphismes, logo, structure, code, etc.) sont la propriété exclusive de {brand}, sauf mention contraire. Toute reproduction, représentation, modification, publication ou adaptation, totale ou partielle, de ces éléments, quel que soit le moyen ou le procédé utilisé, est interdite sans autorisation écrite préalable de {brand}."
+                    "body": "L'ensemble des éléments présents sur le site (textes, images, graphismes, logo, icônes, structure, code, etc.) est la propriété exclusive de {brand}, sauf mention contraire. Toute reproduction, représentation, modification, publication ou adaptation, totale ou partielle, de ces éléments, quel que soit le moyen ou le procédé utilisé, est interdite sans autorisation écrite préalable."
                 },
                 "liability": {
                     "title": "4. Responsabilité",
-                    "body": "SimplyFoot s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur son site. Toutefois, la société ne saurait être tenue responsable d'erreurs, d'omissions ou d'une indisponibilité du service. L'utilisateur reconnaît utiliser le site sous sa responsabilité exclusive."
+                    "body": "{brand} s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur le site. Toutefois, la société ne saurait être tenue responsable des erreurs, omissions ou d'une indisponibilité du service. L'utilisateur reconnaît utiliser les informations disponibles sous sa responsabilité exclusive."
                 },
                 "data": {
                     "title": "5. Données personnelles",
-                    "body": "{brand} s'engage à protéger la vie privée des utilisateurs du site, conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi française « Informatique et Libertés » du 6 janvier 1978 modifiée. Les informations collectées via les formulaires font l'objet d'un traitement destiné à répondre aux demandes des utilisateurs et à leur proposer les services {brand}. Pour plus d'informations, consultez notre politique de confidentialité."
+                    "intro": "{brand} s'engage à ce que la collecte et le traitement des données personnelles soient conformes :",
+                    "complianceList": [
+                        "au Règlement Général sur la Protection des Données (RGPD)",
+                        "à la loi Informatique et Libertés"
+                    ],
+                    "usage": "Les données collectées via le site sont utilisées uniquement dans le cadre des services proposés.",
+                    "rights": "L'utilisateur dispose d'un droit d'accès, de rectification, de suppression et d'opposition concernant ses données personnelles.",
+                    "consultIntro": "Pour plus d'informations, l'utilisateur est invité à consulter :",
+                    "consultList": [
+                        "la Politique de confidentialité",
+                        "la Politique de gestion des cookies"
+                    ]
                 },
                 "links": {
                     "title": "6. Liens hypertextes",
-                    "body": "Le site SimplyFoot peut contenir des liens vers d'autres sites. SimplyFoot n'exerce aucun contrôle sur le contenu de ces sites et décline toute responsabilité quant à leur contenu ou à leurs pratiques en matière de protection des données personnelles."
+                    "body": "Le site peut contenir des liens vers des sites externes. {brand} ne peut être tenu responsable du contenu ou des pratiques de ces sites tiers."
                 },
                 "law": {
                     "title": "7. Droit applicable",
-                    "body": "Le présent site est régi par le droit français. En cas de litige, et à défaut de solution amiable, compétence exclusive est attribuée aux tribunaux du ressort de Paris."
+                    "body": "Le présent site est soumis au droit français. En cas de litige, et à défaut de résolution amiable, les tribunaux compétents seront ceux du ressort du siège social de {brand}."
                 },
                 "contact": {
                     "title": "8. Contact",
-                    "body": "Pour toute question, remarque ou réclamation relative au site ou aux services de {brand}, vous pouvez nous contacter :"
+                    "body": "Pour toute question ou demande d'information : contact@simplyfoot.fr"
                 }
-            },
-            "contactBlock": {
-                "emailLabel": "Par email",
-                "phoneLabel": "Par téléphone",
-                "addressLabel": "Par courrier"
             }
         }
     },
@@ -449,7 +455,7 @@
         "intro": "Démo, tarifs, partenariat, bug ou simple suggestion : choisissez votre sujet ci-dessous, et écrivez-nous. Nous n'attendrons pas le temps additionnel pour vous répondre !",
         "formTitle": "Écrivez-nous",
         "formIntro": "Sélectionnez un sujet ci-dessous : nous adapterons les questions pour vous répondre au mieux.",
-        "legalNotice": "Les informations recueillies via ce formulaire sont destinées à SimplyFoot SAS, éditeur du site, en sa qualité de responsable de traitement, et sont utilisées pour répondre à votre demande. Les champs marqués d'un astérisque sont obligatoires. Vos données sont conservées 3 ans à compter de notre dernier échange. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, de portabilité et d'opposition sur les données vous concernant. Pour exercer ces droits ou obtenir plus d'informations, consultez notre <privacy>Politique de confidentialité</privacy>.",
+        "legalNotice": "Les informations recueillies via ce formulaire sont destinées à {brand} SAS, éditeur du site, en sa qualité de responsable de traitement, et sont utilisées pour répondre à votre demande. Les champs marqués d'un astérisque sont obligatoires. Vos données sont conservées 3 ans à compter de notre dernier échange. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, de portabilité et d'opposition sur les données vous concernant. Pour exercer ces droits ou obtenir plus d'informations, consultez notre <privacy>Politique de confidentialité</privacy>.",
         "form": {
             "topicLabel": "Sujet de votre demande",
             "topicPlaceholder": "Choisissez un sujet",
