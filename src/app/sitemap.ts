@@ -14,6 +14,7 @@ const allRoutes: Array<AppPathname> = [
     '/rugby/legal/mentions-legales',
     '/handball/legal/mentions-legales',
     '/foot/legal/cgu',
+    '/foot/legal/privacy',
     '/foot/faq',
     '/rugby/faq',
     '/handball/faq',

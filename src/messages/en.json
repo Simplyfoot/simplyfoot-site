@@ -152,7 +152,7 @@
                 "title": "Preamble",
                 "description": "These Terms of Use set out the conditions of access to and use of the {brand} platform, published by SIMPLYFOOT SAS."
             },
-            "copyright": "© {brand} – All rights reserved.",
+            "copyright": "© {brand} - All rights reserved.",
             "sections": {
                 "editor": {
                     "title": "1. Site publisher"
@@ -1095,6 +1095,226 @@
                     ]
                 }
             }
+        },
+        "privacy": {
+            "meta": {
+                "title": "Privacy policy & cookie settings — {brand}",
+                "description": "Privacy policy and cookie settings for {brand}: data controller, data collected, purposes, your rights and cookies."
+            },
+            "breadcrumb": {
+                "legal": "Legal",
+                "current": "Privacy & cookies",
+                "effectiveDate": "Last updated on May 26, 2026"
+            },
+            "heading": "Privacy policy & cookie settings",
+            "introduction": {
+                "title": "Foreword",
+                "description": "SimplyFoot places the highest importance on the protection of your personal data and on transparency regarding its use."
+            },
+            "copyright": "© {brand} - All rights reserved",
+            "sections": {
+                "controller": {
+                    "title": "1. Data controller"
+                },
+                "hosting": {
+                    "title": "2. Hosting"
+                },
+                "service": {
+                    "title": "3. Service overview",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "SimplyFoot is a web and mobile application dedicated to the management of amateur football clubs."
+                        }
+                    ]
+                },
+                "dataCollected": {
+                    "title": "4. Data collected",
+                    "blocks": [
+                        { "type": "paragraph", "text": "The data that may be collected includes:" },
+                        {
+                            "type": "list",
+                            "items": [
+                                "Identification data: last name, first name, date of birth, role (coach, player, parent, president), position (goalkeeper, forward, defender…)",
+                                "Contact details: email address, phone number",
+                                "Information related to clubs, teams and sporting activities",
+                                "Technical data: IP address, connection logs"
+                            ]
+                        },
+                        { "type": "paragraph", "text": "No sensitive data is collected without explicit consent." }
+                    ]
+                },
+                "purposes": {
+                    "title": "5. Purposes of processing",
+                    "blocks": [
+                        { "type": "paragraph", "text": "Data is collected to:" },
+                        {
+                            "type": "list",
+                            "items": [
+                                "Create and manage user accounts",
+                                "Enable the use of application features",
+                                "Manage teams and clubs",
+                                "Provide user support",
+                                "Improve the services and ensure security"
+                            ]
+                        }
+                    ]
+                },
+                "minors": {
+                    "title": "6. Data concerning minors",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "As part of SimplyFoot's use by sports clubs, data concerning minors may be processed."
+                        },
+                        { "type": "paragraph", "text": "Such data is strictly limited to sports management." },
+                        {
+                            "type": "paragraph",
+                            "text": "Clubs and team managers undertake to obtain the necessary parental authorisations."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "SimplyFoot does not allow a minor to create an account autonomously without supervision."
+                        }
+                    ]
+                },
+                "legalBasis": {
+                    "title": "7. Legal basis",
+                    "blocks": [
+                        { "type": "paragraph", "text": "Processing is based on:" },
+                        {
+                            "type": "list",
+                            "items": [
+                                "Performance of the contract (use of the service)",
+                                "Consent (cookies, communications)",
+                                "Legitimate interest (service improvement, security)"
+                            ]
+                        }
+                    ]
+                },
+                "recipients": {
+                    "title": "8. Data recipients",
+                    "blocks": [
+                        { "type": "paragraph", "text": "Data is intended for:" },
+                        {
+                            "type": "list",
+                            "items": [
+                                "SimplyFoot",
+                                "Club administrators",
+                                "Technical service providers required for the operation of the service"
+                            ]
+                        },
+                        { "type": "paragraph", "text": "No data is sold to third parties." }
+                    ]
+                },
+                "retention": {
+                    "title": "9. Retention period",
+                    "blocks": [
+                        { "type": "paragraph", "text": "Data is retained:" },
+                        {
+                            "type": "list",
+                            "items": [
+                                "For the duration of account use",
+                                "Up to 3 years after the last activity",
+                                "In accordance with applicable legal obligations"
+                            ]
+                        }
+                    ]
+                },
+                "security": {
+                    "title": "10. Security",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "SimplyFoot implements appropriate technical and organisational measures to protect personal data."
+                        }
+                    ]
+                },
+                "transfers": {
+                    "title": "11. Transfers outside the European Union",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Some data may be hosted or processed outside the European Union, in particular via Vercel."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "In such cases, SimplyFoot ensures that these transfers are governed by appropriate safeguards, in particular the European Commission's standard contractual clauses."
+                        }
+                    ]
+                },
+                "rights": {
+                    "title": "12. Your rights",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "In accordance with the applicable regulations, you have the following rights:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "Right of access",
+                                "Right to rectification",
+                                "Right to erasure",
+                                "Right to object",
+                                "Right to restriction",
+                                "Right to portability"
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "You may exercise your rights at the following address: contact@simplyfoot.fr"
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "You may also lodge a complaint with the CNIL (the French data protection authority)."
+                        }
+                    ]
+                },
+                "cookies": {
+                    "title": "13. Cookies",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "While you browse, cookies may be placed on your device."
+                        },
+                        { "type": "subheading", "text": "Necessary cookies" },
+                        {
+                            "type": "paragraph",
+                            "text": "They enable the proper functioning of the site and do not require consent."
+                        },
+                        { "type": "subheading", "text": "Analytics cookies" },
+                        {
+                            "type": "paragraph",
+                            "text": "They allow us to measure audience and improve the services offered."
+                        },
+                        { "type": "subheading", "text": "Consent management" },
+                        {
+                            "type": "paragraph",
+                            "text": "A banner lets you accept or refuse non-essential cookies on your first visit."
+                        },
+                        { "type": "paragraph", "text": "You can change your preferences at any time." }
+                    ]
+                },
+                "modifications": {
+                    "title": "14. Policy updates",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "SimplyFoot reserves the right to amend this policy at any time in order to ensure compliance with current legislation."
+                        }
+                    ]
+                },
+                "contact": {
+                    "title": "15. Contact",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "For any question regarding data protection: contact@simplyfoot.fr"
+                        }
+                    ]
+                }
+            }
         }
     },
     "FAQ": {
@@ -1473,10 +1693,10 @@
                     "label": "Club size",
                     "placeholder": "Select a size",
                     "options": {
-                        "1-50": "1 – 50 members",
-                        "51-100": "51 – 100 members",
-                        "101-250": "101 – 250 members",
-                        "251-500": "251 – 500 members",
+                        "1-50": "1 - 50 members",
+                        "51-100": "51 - 100 members",
+                        "101-250": "101 - 250 members",
+                        "251-500": "251 - 500 members",
                         "500+": "500+ members",
                         "no-club": "Not affiliated with a club yet"
                     }
@@ -1531,8 +1751,7 @@
             "mentionsLegales": "Legal notice",
             "cgu": "Terms of use",
             "cgv": "Terms of sale (coming soon)",
-            "privacy": "Privacy policy",
-            "cookies": "Cookie settings",
+            "privacy": "Privacy & cookies",
             "contact": "Contact us",
             "faq": "Help center"
         },
@@ -1542,7 +1761,7 @@
             "tva": "VAT: {tva}"
         },
         "socialsDescription": "Follow our latest news, updates and club management tips.",
-        "copyright": "© {year} {brand} – All rights reserved. Crafted with ❤️ for amateur clubs.",
+        "copyright": "© {year} {brand} - All rights reserved. Crafted with ❤️ for amateur clubs.",
         "socialLabel": {
             "facebook": "Follow on Facebook",
             "linkedin": "Follow on LinkedIn",
