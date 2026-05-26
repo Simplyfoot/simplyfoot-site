@@ -92,7 +92,9 @@
                     "title": "2. Hosting",
                     "intro": "The site is hosted by:",
                     "country": "United States",
-                    "websiteLabel": "Website"
+                    "phoneLabel": "Phone",
+                    "websiteLabel": "Website",
+                    "contactLabel": "Contact"
                 },
                 "activity": {
                     "title": "3. Site activity",
@@ -1489,8 +1491,7 @@
                 },
                 "bugPage": {
                     "label": "On which page did the bug occur?",
-                    "placeholder": "e.g. the calendar page of the app",
-                    "help": "You can also paste a link if you have one."
+                    "placeholder": "e.g. the calendar page of the app"
                 },
                 "bugSteps": {
                     "label": "How can we reproduce the bug?",

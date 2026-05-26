@@ -46,6 +46,7 @@ export async function ContactContent({ brand }: ContactContentProps) {
                         className="text-muted-foreground mt-8 text-xs leading-relaxed"
                     >
                         {t.rich('legalNotice', {
+                            brand: brandMeta.label,
                             privacy: (chunks) => (
                                 <Link
                                     href={`/${brand}/legal/privacy`}

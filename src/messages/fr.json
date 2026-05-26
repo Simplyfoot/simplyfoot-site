@@ -95,7 +95,9 @@
                     "title": "2. Hébergement du site",
                     "intro": "Le site est hébergé par :",
                     "country": "États-Unis",
-                    "websiteLabel": "Site web"
+                    "phoneLabel": "Téléphone",
+                    "websiteLabel": "Site web",
+                    "contactLabel": "Contact"
                 },
                 "activity": {
                     "title": "3. Activité du site",
@@ -1495,13 +1497,12 @@
                 },
                 "bugPage": {
                     "label": "Sur quelle page le bug s'est-il produit ?",
-                    "placeholder": "ex. la page « calendrier » de l'application",
-                    "help": "Vous pouvez aussi coller un lien si vous l'avez."
+                    "placeholder": "ex. la page « calendrier » de l'application"
                 },
                 "bugSteps": {
                     "label": "Comment reproduire le bug ?",
                     "placeholder": "1. Je suis allé(e) sur la page X\n2. J'ai cliqué sur le bouton Y\n3. Au lieu de voir A, j'ai vu B",
-                    "help": "Décrivez ce que vous avez fait, ce que vous attendiez, et ce qui s'est réellement passé. Aucun jargon technique requis."
+                    "help": "Décrivez ce que vous avez fait, ce que vous attendiez, et ce qui s'est réellement passé."
                 },
                 "organization": { "label": "Organisation" },
                 "organizationWebsite": { "label": "Site web de l'organisation (optionnel)", "placeholder": "https://" },

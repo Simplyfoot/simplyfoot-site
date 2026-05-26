@@ -20,7 +20,9 @@ export const SIMPLY_HOSTING = {
     name: 'Vercel Inc.',
     addressLines: ['440 N Barranca Ave #4133', 'Covina, CA 91723'] as const,
     country: 'United States',
+    phone: '+1 951 383 6898',
     website: 'https://vercel.com',
+    contactUrl: 'https://vercel.com/contact',
 } as const;
 
 interface BrandContact {

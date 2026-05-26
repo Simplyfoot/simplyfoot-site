@@ -18,6 +18,15 @@ export async function HostingSectionBody() {
                 <span className="block">{t('country')}</span>
             </address>
             <p>
+                <span className="text-foreground font-medium">{t('phoneLabel')} :</span>{' '}
+                <a
+                    href={`tel:${SIMPLY_HOSTING.phone.replace(/\s/g, '')}`}
+                    className="text-primary-600 hover:text-primary-700 focus-visible:ring-ring rounded-sm underline underline-offset-4 focus-visible:ring-2 focus-visible:outline-none"
+                >
+                    {SIMPLY_HOSTING.phone}
+                </a>
+            </p>
+            <p>
                 <span className="text-foreground font-medium">{t('websiteLabel')} :</span>{' '}
                 <a
                     href={SIMPLY_HOSTING.website}
@@ -26,6 +35,17 @@ export async function HostingSectionBody() {
                     className="text-primary-600 hover:text-primary-700 focus-visible:ring-ring rounded-sm underline underline-offset-4 focus-visible:ring-2 focus-visible:outline-none"
                 >
                     {SIMPLY_HOSTING.website}
+                </a>
+            </p>
+            <p>
+                <span className="text-foreground font-medium">{t('contactLabel')} :</span>{' '}
+                <a
+                    href={SIMPLY_HOSTING.contactUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary-600 hover:text-primary-700 focus-visible:ring-ring rounded-sm underline underline-offset-4 focus-visible:ring-2 focus-visible:outline-none"
+                >
+                    {SIMPLY_HOSTING.contactUrl}
                 </a>
             </p>
         </div>

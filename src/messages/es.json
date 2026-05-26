@@ -92,7 +92,9 @@
                     "title": "2. Alojamiento del sitio",
                     "intro": "El sitio está alojado por:",
                     "country": "Estados Unidos",
-                    "websiteLabel": "Sitio web"
+                    "phoneLabel": "Teléfono",
+                    "websiteLabel": "Sitio web",
+                    "contactLabel": "Contacto"
                 },
                 "activity": {
                     "title": "3. Actividad del sitio",
@@ -1498,8 +1500,7 @@
                 },
                 "bugPage": {
                     "label": "¿En qué página ocurrió el error?",
-                    "placeholder": "p. ej. la página del calendario de la app",
-                    "help": "También puedes pegar un enlace si lo tienes."
+                    "placeholder": "p. ej. la página del calendario de la app"
                 },
                 "bugSteps": {
                     "label": "¿Cómo reproducir el error?",
