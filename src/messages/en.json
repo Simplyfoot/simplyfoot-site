@@ -1767,5 +1767,21 @@
             "linkedin": "Follow on LinkedIn",
             "instagram": "Follow on Instagram"
         }
+    },
+    "FootHome": {
+        "meta": {
+            "title": "SimplyFoot — Run your football club, the simple way",
+            "description": "A simple app to manage your teams, matches and communication for your amateur football club."
+        },
+        "pilots": {
+            "title": "They trust us 💚",
+            "description": "Clubs that joined the SimplyFoot adventure, testing our solutions on the pitch.",
+            "logoAlt": "{name} logo"
+        },
+        "partners": {
+            "eyebrow": "Our partners",
+            "title": "They support SimplyFoot",
+            "logoAlt": "{name} logo"
+        }
     }
 }

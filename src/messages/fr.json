@@ -1773,5 +1773,21 @@
             "linkedin": "Suivre sur LinkedIn",
             "instagram": "Suivre sur Instagram"
         }
+    },
+    "FootHome": {
+        "meta": {
+            "title": "SimplyFoot — Simplifiez la gestion de votre club de football",
+            "description": "Une application simple pour organiser vos équipes, vos matchs et la communication de votre club de football amateur."
+        },
+        "pilots": {
+            "title": "Ils nous font confiance 💚",
+            "description": "Des clubs engagés dans l'aventure SimplyFoot, testant nos solutions sur le terrain.",
+            "logoAlt": "Logo {name}"
+        },
+        "partners": {
+            "eyebrow": "Nos partenaires",
+            "title": "Ils soutiennent SimplyFoot",
+            "logoAlt": "Logo {name}"
+        }
     }
 }

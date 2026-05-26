@@ -272,3 +272,30 @@
     --sidebar-border: hsl(240 3.7% 15.9%);
     --sidebar-ring: hsl(217.2 91.2% 59.8%);
 }
+
+/* Marquee horizontal infini — utilisé pour les bandeaux de logos (pilotes,
+   partenaires). Le contenu est dupliqué côté JSX, l'animation translate de
+   0 à -50% pour boucler sans saut visible. */
+@keyframes marquee-x {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.marquee-track {
+    animation: marquee-x var(--marquee-duration, 40s) linear infinite;
+    will-change: transform;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+        animation: none;
+    }
+}
