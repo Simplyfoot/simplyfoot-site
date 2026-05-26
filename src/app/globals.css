@@ -299,3 +299,63 @@
         animation: none;
     }
 }
+
+/* Animation d'entrée — chaque élément `intro-rise` apparaît en fondu et
+   remonte légèrement. Les `intro-rise-delay-N` décalent l'apparition pour
+   créer une cascade. */
+@keyframes intro-rise {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.intro-rise {
+    animation: intro-rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.intro-rise-delay-1 {
+    animation-delay: 0.1s;
+}
+.intro-rise-delay-2 {
+    animation-delay: 0.2s;
+}
+.intro-rise-delay-3 {
+    animation-delay: 0.3s;
+}
+.intro-rise-delay-4 {
+    animation-delay: 0.4s;
+}
+.intro-rise-delay-5 {
+    animation-delay: 0.5s;
+}
+
+/* Variante pour le cadre smartphone : entre par la droite. La rotation reste
+   sur l'élément `PhoneFrame` interne pour ne pas se cumuler avec cette
+   transformation. */
+@keyframes intro-phone-in {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.intro-phone-in {
+    animation: intro-phone-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: 0.15s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .intro-rise,
+    .intro-phone-in {
+        animation: none;
+    }
+}

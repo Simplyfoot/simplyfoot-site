@@ -1773,6 +1773,12 @@
             "title": "SimplyFoot — Run your football club, the simple way",
             "description": "A simple app to manage your teams, matches and communication for your amateur football club."
         },
+        "intro": {
+            "title": "Run your football club, the simple way",
+            "description": "SimplyFoot makes life easier for volunteers and club leaders, while offering a unique experience to players and families.",
+            "cta": "Request a demo",
+            "screenshotAlt": "SimplyFoot app preview"
+        },
         "pilots": {
             "title": "They trust us 💚",
             "description": "Clubs that joined the SimplyFoot adventure, testing our solutions on the pitch.",

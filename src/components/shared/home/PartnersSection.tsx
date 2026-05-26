@@ -23,7 +23,7 @@ export async function PartnersSection({ brand, namespace }: PartnersSectionProps
         <section
             id="partners"
             aria-labelledby="partners-heading"
-            className="border-border/60 border-y bg-white py-16 md:py-20"
+            className="bg-muted py-16 md:py-20"
         >
             <div className="mx-auto max-w-7xl px-6 md:px-12">
                 <div className="mx-auto max-w-2xl text-center">

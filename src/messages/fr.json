@@ -1779,6 +1779,12 @@
             "title": "SimplyFoot — Simplifiez la gestion de votre club de football",
             "description": "Une application simple pour organiser vos équipes, vos matchs et la communication de votre club de football amateur."
         },
+        "intro": {
+            "title": "Simplifiez la gestion de votre club de football",
+            "description": "SimplyFoot simplifie la vie des bénévoles et dirigeants, tout en offrant une expérience unique aux joueurs et familles.",
+            "cta": "Demander une démo",
+            "screenshotAlt": "Aperçu de l'application SimplyFoot"
+        },
         "pilots": {
             "title": "Ils nous font confiance 💚",
             "description": "Des clubs engagés dans l'aventure SimplyFoot, testant nos solutions sur le terrain.",
