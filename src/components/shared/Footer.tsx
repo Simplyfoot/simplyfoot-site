@@ -60,12 +60,12 @@ export async function Footer({ brand }: FooterProps) {
                             </li>
                             <li className="flex items-center gap-2">
                                 <Mail className="size-4 shrink-0" aria-hidden="true" />
-                                <a
-                                    href={`mailto:${contact.email}`}
+                                <Link
+                                    href={`/${brand}/contact`}
                                     className="hover:text-primary-foreground transition-colors hover:underline"
                                 >
                                     {contact.email}
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
