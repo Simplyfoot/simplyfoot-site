@@ -1768,6 +1768,37 @@
             "instagram": "Follow on Instagram"
         }
     },
+    "FootAbout": {
+        "meta": {
+            "title": "About — {brand}",
+            "description": "The {brand} story: a collective, human adventure driven by passionate people who put their energy at the service of amateur football."
+        },
+        "heading": "About us",
+        "intro": "A collective, human adventure driven by five people passionate about sport and technology.",
+        "team": {
+            "title": "The team",
+            "photoAlt": "Portrait of {name}",
+            "noPhoto": "Photo coming soon",
+            "linkedinLabel": "{name}'s LinkedIn profile (new tab)",
+            "members": {
+                "jeremy": { "title": "President", "coFounder": "Co-founder" },
+                "romain": { "title": "General Manager", "coFounder": "Co-founder" },
+                "jean": { "title": "Developer", "coFounder": "Co-founder" },
+                "vanessa": { "title": "Developer", "coFounder": "Co-founder" },
+                "damien": { "title": "Developer", "coFounder": "Co-founder" }
+            }
+        },
+        "story": {
+            "title": "Our story",
+            "paragraphs": [
+                "{brand} is, first and foremost, a story of encounters and shared passions. On a pitch in Provence, Romain and Jérémy share the same dream: to give back time and energy to all those volunteers, coaches, parents and young players who keep amateur football alive in France.",
+                "Very quickly, they are joined by Jean, Vanessa and Damien, who share the same belief: a club is not just a scoreboard or a spreadsheet — it's a family, a home of values and passion.",
+                "Together, they listen to clubs, talk through frustrations, imagine the ideal platform… and discover that the key is human: making simple what is complicated, creating connection, and valuing every volunteer.",
+                "After months on the ground, late-night meetings, tests and conversations, {brand} is born: software built with heart, coded with rigour, and driven by the ambition to make every club's daily life softer, smoother, and more human.",
+                "Today, {brand} is above all a tight-knit team, guided by the desire to bring happiness, progress and simplicity to every lover of amateur football."
+            ]
+        }
+    },
     "FootHome": {
         "meta": {
             "title": "SimplyFoot — Run your football club, the simple way",

@@ -1774,6 +1774,37 @@
             "instagram": "Suivre sur Instagram"
         }
     },
+    "FootAbout": {
+        "meta": {
+            "title": "À propos — {brand}",
+            "description": "L'histoire de {brand} : une aventure humaine et collective portée par des passionnés qui mettent leur énergie au service du football amateur."
+        },
+        "heading": "À propos de nous",
+        "intro": "Une aventure humaine et collective, portée par cinq passionnés de sport et de technologie.",
+        "team": {
+            "title": "L'équipe",
+            "photoAlt": "Portrait de {name}",
+            "noPhoto": "Photo bientôt disponible",
+            "linkedinLabel": "Profil LinkedIn de {name} (nouvel onglet)",
+            "members": {
+                "jeremy": { "title": "Président", "coFounder": "Cofondateur" },
+                "romain": { "title": "Directeur général", "coFounder": "Cofondateur" },
+                "jean": { "title": "Développeur", "coFounder": "Cofondateur" },
+                "vanessa": { "title": "Développeuse", "coFounder": "Cofondatrice" },
+                "damien": { "title": "Développeur", "coFounder": "Cofondateur" }
+            }
+        },
+        "story": {
+            "title": "Notre histoire",
+            "paragraphs": [
+                "{brand}, c'est d'abord une histoire de rencontres et de passions croisées. Sur un terrain de Provence, Romain et Jérémy partagent le même rêve : redonner du temps et de l'énergie à tous ces bénévoles, éducateurs, parents et jeunes qui font vivre le football amateur en France.",
+                "Mais très vite, ils sont rejoints par Jean, Vanessa et Damien, qui partagent la même conviction : un club, ce n'est pas qu'un tableau de scores ou une feuille Excel : c'est une famille, un foyer de valeurs et de passions.",
+                "Ensemble, ils écoutent les clubs, échangent sur les frustrations, imaginent la plateforme idéale… et découvrent que la clé, c'est l'humain : rendre simple ce qui est compliqué, créer du lien, valoriser chaque bénévole.",
+                "Après des mois de terrain, de réunions tardives, de tests et d'échanges, naît {brand} : un logiciel pensé avec le cœur, codé avec rigueur, et porté par l'ambition de rendre le quotidien de chaque club plus doux, plus fluide, plus humain.",
+                "Aujourd'hui, {brand} c'est avant tout une équipe soudée, guidée par l'envie d'apporter du bonheur, du progrès et de la simplicité à tous les amoureux du football amateur."
+            ]
+        }
+    },
     "FootHome": {
         "meta": {
             "title": "SimplyFoot — Simplifiez la gestion de votre club de football",
