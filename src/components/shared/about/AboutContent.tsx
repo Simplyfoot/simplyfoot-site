@@ -97,7 +97,9 @@ export async function AboutContent({ brand, namespace }: AboutContentProps) {
                 <div className="text-foreground/90 space-y-5 text-base leading-relaxed md:text-lg md:leading-loose">
                     {storyParagraphs.slice(0, -1).map((paragraph, index) => (
                         <ScrollReveal key={index} delay={index * 80}>
-                            <p>{renderRichText(paragraph, brandLabel)}</p>
+                            <p className="text-justify hyphens-auto">
+                                {renderRichText(paragraph, brandLabel)}
+                            </p>
                         </ScrollReveal>
                     ))}
 
@@ -108,7 +110,7 @@ export async function AboutContent({ brand, namespace }: AboutContentProps) {
                                     aria-hidden="true"
                                     className="bg-primary-400 mx-auto mb-6 h-1 w-32 rounded-full md:mb-8 md:w-48"
                                 />
-                                <p className="text-primary-700 text-lg leading-relaxed font-medium italic md:text-xl">
+                                <p className="text-primary-700 text-justify text-lg leading-relaxed font-medium hyphens-auto italic md:text-xl">
                                     {renderRichText(
                                         storyParagraphs[storyParagraphs.length - 1] ?? '',
                                         brandLabel,
