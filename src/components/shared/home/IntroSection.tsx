@@ -39,7 +39,7 @@ export async function IntroSection({ brand, namespace }: IntroSectionProps) {
                 <div>
                     <h1
                         id="intro-heading"
-                        className="intro-rise text-primary-100 text-4xl font-bold tracking-tight md:text-5xl"
+                        className="intro-rise text-primary-100 text-4xl leading-tight font-bold tracking-tight md:text-5xl"
                     >
                         {t('intro.title')}
                     </h1>
