@@ -1774,7 +1774,7 @@
             "description": "The {brand} story: a collective, human adventure driven by passionate people who put their energy at the service of amateur football."
         },
         "heading": "About us",
-        "intro": "A collective, human adventure driven by five people passionate about sport and technology.",
+        "intro": "A collective, human adventure driven by <em>five people passionate about sport and technology</em>.",
         "team": {
             "title": "The team",
             "photoAlt": "Portrait of {name}",
@@ -1791,11 +1791,11 @@
         "story": {
             "title": "Our story",
             "paragraphs": [
-                "{brand} is, first and foremost, a story of encounters and shared passions. On a pitch in Provence, Romain and Jérémy share the same dream: to give back time and energy to all those volunteers, coaches, parents and young players who keep amateur football alive in France.",
-                "Very quickly, they are joined by Jean, Vanessa and Damien, who share the same belief: a club is not just a scoreboard or a spreadsheet — it's a family, a home of values and passion.",
-                "Together, they listen to clubs, talk through frustrations, imagine the ideal platform… and discover that the key is human: making simple what is complicated, creating connection, and valuing every volunteer.",
-                "After months on the ground, late-night meetings, tests and conversations, {brand} is born: software built with heart, coded with rigour, and driven by the ambition to make every club's daily life softer, smoother, and more human.",
-                "Today, {brand} is above all a tight-knit team, guided by the desire to bring happiness, progress and simplicity to every lover of amateur football."
+                "<em>Before becoming a project, {brand} was a frustration</em>. Jérémy's — the father of a young player, who watches his son's club hold together thanks to the energy of its volunteers, only to see them wear themselves out coordinating training sessions, callups and travel, <em>without a single tool built for them</em>.",
+                "<em>An intuition. The right moment.</em> The rise of artificial intelligence made him believe it was finally within reach to create the tool clubs were missing, even without any developer skills. He turned to Romain, his long-time partner in work, and within a few weeks, <em>a first prototype came to life</em>.",
+                "<em>The prototype stood up, yet the duo quickly hit walls: security, reliability, robustness</em>. An application responsible for the data of countless players is not something you improvise. Jérémy and Romain decided to surround themselves. Vanessa joined the adventure, followed by Jean. Together, they completed a pilot version and rolled it out to a handful of partner clubs. The field spoke fast: <em>concrete needs emerged — including one that is too often overlooked, supporting families whose parents are separated</em>.",
+                "<em>To clear the final hurdle, the team needed one more recruit.</em> Jean suggested Damien, a developer passionate about football who was eager to take the entrepreneurial leap. He joined the team near the end of the pilot's development. <em>The team was finally complete: as five</em>, they took the pilot, folded in the clubs' feedback and gave birth to {brand} as we know it today: <em>an application built for the people who keep amateur football alive</em>.",
+                "<em>The kick-off has been given, and the match goes on. {brand} still has a lot to learn, propose and build. Every piece of feedback from clubs brings us closer to a product that fits ever better</em>."
             ]
         }
     },

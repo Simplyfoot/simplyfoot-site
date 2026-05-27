@@ -37,7 +37,7 @@ const FOOT_TEAM: ReadonlyArray<TeamMember> = [
     },
     {
         id: 'damien',
-        name: 'Damien',
+        name: 'Damien Alfaia',
         photo: null,
         linkedin: 'https://www.linkedin.com/in/damien-alfaia-bb0aa0186/',
     },

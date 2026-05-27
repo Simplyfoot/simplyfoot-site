@@ -1779,8 +1779,8 @@
             "title": "À propos — {brand}",
             "description": "L'histoire de {brand} : une aventure humaine et collective portée par des passionnés qui mettent leur énergie au service du football amateur."
         },
-        "heading": "À propos de nous",
-        "intro": "Une aventure humaine et collective, portée par cinq passionnés de sport et de technologie.",
+        "heading": "Qui sommes-nous ?",
+        "intro": "Une aventure humaine et collective, portée par <em>cinq passionnés de sport et de technologie</em>.",
         "team": {
             "title": "L'équipe",
             "photoAlt": "Portrait de {name}",
@@ -1797,11 +1797,11 @@
         "story": {
             "title": "Notre histoire",
             "paragraphs": [
-                "{brand}, c'est d'abord une histoire de rencontres et de passions croisées. Sur un terrain de Provence, Romain et Jérémy partagent le même rêve : redonner du temps et de l'énergie à tous ces bénévoles, éducateurs, parents et jeunes qui font vivre le football amateur en France.",
-                "Mais très vite, ils sont rejoints par Jean, Vanessa et Damien, qui partagent la même conviction : un club, ce n'est pas qu'un tableau de scores ou une feuille Excel : c'est une famille, un foyer de valeurs et de passions.",
-                "Ensemble, ils écoutent les clubs, échangent sur les frustrations, imaginent la plateforme idéale… et découvrent que la clé, c'est l'humain : rendre simple ce qui est compliqué, créer du lien, valoriser chaque bénévole.",
-                "Après des mois de terrain, de réunions tardives, de tests et d'échanges, naît {brand} : un logiciel pensé avec le cœur, codé avec rigueur, et porté par l'ambition de rendre le quotidien de chaque club plus doux, plus fluide, plus humain.",
-                "Aujourd'hui, {brand} c'est avant tout une équipe soudée, guidée par l'envie d'apporter du bonheur, du progrès et de la simplicité à tous les amoureux du football amateur."
+                "<em>Avant d'être un projet, {brand} fut une frustration</em>. Celle de Jérémy, père d'un jeune joueur, qui voit le club au sein duquel évolue son fils, tenir grâce à l'énergie de ses bénévoles, mais s'épuiser à coordonner les entraînements, les convocations, les déplacements, <em>sans aucun outil pensé pour eux</em>.",
+                "<em>Une intuition. Un contexte favorable.</em> L'essor de l'intelligence artificielle lui fait penser qu'il est maintenant à portée de main de créer l'outil dont les clubs ont besoin, même sans avoir de compétences de développeur. Il fait appel à Romain, son complice de longue date, et en quelques semaines, <em>un premier prototype voit le jour</em>.",
+                "<em>Le prototype tient debout, cependant le duo se heurte rapidement à des murs : sécurité, fiabilité, robustesse</em>. Une application responsable des données d'une multitude de licenciés ne s'improvise pas. Jérémy et Romain décident alors de s'entourer. Vanessa se joint à l'aventure, suivie par Jean. Ensemble, ils achèvent une version pilote et l'installent dans quelques clubs partenaires. Le terrain parle vite : <em>des besoins concrets émergent, comme celui – bien souvent sous-estimé – d'accompagner les familles dont les parents sont séparés</em>.",
+                "<em>Pour passer le dernier cap, il faut encore une recrue.</em> Jean propose Damien, un développeur passionné de football qui souhaitait ardemment entreprendre. Il rejoint l'équipe vers la fin du développement de l'application pilote. <em>L'équipe est alors au complet : à cinq</em>, ils reprennent le pilote, intègrent les retours des clubs et donnent naissance à {brand} tel qu'on le connaît aujourd'hui : <em>une application pensée pour ceux qui font vivre le football amateur</em>.",
+                "<em>Le coup d'envoi est donné, le match se poursuit. {brand} a encore beaucoup à apprendre, à proposer et à construire. Chaque retour de club nous rapproche d'un produit toujours plus juste</em>."
             ]
         }
     },

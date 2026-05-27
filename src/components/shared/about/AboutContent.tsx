@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
+import type { ReactNode } from 'react';
 
 import { BRANDS } from '@/utils/constants.utils';
 import { BRAND_TEAMS, type TeamMember } from '@/utils/team.utils';
@@ -31,7 +32,7 @@ export async function AboutContent({ brand, namespace }: AboutContentProps) {
                             {t('heading')}
                         </h1>
                         <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
-                            {t('intro')}
+                            {renderRichText(t.raw('intro') as string, brandLabel)}
                         </p>
                     </header>
 
@@ -79,9 +80,24 @@ export async function AboutContent({ brand, namespace }: AboutContentProps) {
                 </h2>
 
                 <div className="text-foreground/90 space-y-5 text-base leading-relaxed md:text-lg md:leading-loose">
-                    {storyParagraphs.map((paragraph, index) => (
-                        <p key={index}>{interpolateBrand(paragraph, brandLabel)}</p>
+                    {storyParagraphs.slice(0, -1).map((paragraph, index) => (
+                        <p key={index}>{renderRichText(paragraph, brandLabel)}</p>
                     ))}
+
+                    {storyParagraphs.length > 0 && (
+                        <div className="mt-10 md:mt-12">
+                            <div
+                                aria-hidden="true"
+                                className="bg-primary-400 mx-auto mb-6 h-1 w-32 rounded-full md:mb-8 md:w-48"
+                            />
+                            <p className="text-primary-700 text-lg leading-relaxed font-medium italic md:text-xl">
+                                {renderRichText(
+                                    storyParagraphs[storyParagraphs.length - 1] ?? '',
+                                    brandLabel,
+                                )}
+                            </p>
+                        </div>
+                    )}
                 </div>
             </section>
         </article>
@@ -135,14 +151,16 @@ function TeamCard({
 
     const details = (
         <>
-            <p className="text-base leading-tight font-semibold md:text-lg">{member.name}</p>
+            <p className="text-base leading-tight font-semibold whitespace-nowrap md:text-lg">
+                {member.name}
+            </p>
             <p className="text-muted-foreground mt-1 text-sm md:text-base">{role}</p>
             <p className="text-muted-foreground/80 text-xs md:text-sm">{coFounder}</p>
         </>
     );
 
     return (
-        <li className="flex w-28 flex-col items-center text-center md:w-36">
+        <li className="flex w-40 flex-col items-center text-center md:w-48">
             {member.linkedin ? (
                 <a
                     href={member.linkedin}
@@ -175,4 +193,45 @@ function getInitials(name: string): string {
 
 function interpolateBrand(text: string, brandLabel: string): string {
     return text.replaceAll('{brand}', brandLabel);
+}
+
+const EMPHASIS_PATTERN = /<em>(.*?)<\/em>/g;
+
+type EmphasisTone = 'default' | 'onDark';
+
+function renderRichText(
+    text: string,
+    brandLabel: string,
+    tone: EmphasisTone = 'default',
+): ReactNode {
+    const interpolated = interpolateBrand(text, brandLabel);
+    const nodes: ReactNode[] = [];
+
+    const emphasisClass =
+        tone === 'onDark' ? 'text-primary-100 font-semibold' : 'text-primary-700 font-semibold';
+
+    let cursor = 0;
+    let match: RegExpExecArray | null;
+    let key = 0;
+
+    EMPHASIS_PATTERN.lastIndex = 0;
+    while ((match = EMPHASIS_PATTERN.exec(interpolated)) !== null) {
+        if (match.index > cursor) {
+            nodes.push(interpolated.slice(cursor, match.index));
+        }
+
+        nodes.push(
+            <strong key={key++} className={emphasisClass}>
+                {match[1]}
+            </strong>,
+        );
+
+        cursor = match.index + match[0].length;
+    }
+
+    if (cursor < interpolated.length) {
+        nodes.push(interpolated.slice(cursor));
+    }
+
+    return nodes;
 }
