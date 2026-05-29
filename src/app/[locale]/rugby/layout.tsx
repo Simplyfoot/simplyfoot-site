@@ -1,10 +1,16 @@
+import { notFound } from 'next/navigation';
 import type { ReactNode } from 'react';
 
 import { Footer } from '@/components/shared/Footer';
 import { Header } from '@/components/shared/Header';
 import { StickyLegalBar } from '@/components/shared/StickyLegalBar';
+import { isBrandEnabled } from '@/config/features';
 
 export default function RugbyLayout({ children }: { children: ReactNode }) {
+    if (!isBrandEnabled('rugby')) {
+        notFound();
+    }
+
     return (
         <div data-brand="rugby" className="bg-analogous-2-50 flex min-h-svh flex-col">
             <Header brand="rugby" />

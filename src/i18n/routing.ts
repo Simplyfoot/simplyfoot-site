@@ -39,14 +39,9 @@ export const routing = defineRouting({
             es: '/foot/legal/condiciones-de-venta',
         },
         '/foot/legal/privacy': {
-            fr: '/foot/legal/confidentialite',
-            en: '/foot/legal/privacy',
-            es: '/foot/legal/privacidad',
-        },
-        '/foot/legal/cookies': {
-            fr: '/foot/legal/cookies',
-            en: '/foot/legal/cookies',
-            es: '/foot/legal/cookies',
+            fr: '/foot/legal/confidentialite-et-cookies',
+            en: '/foot/legal/privacy-and-cookies',
+            es: '/foot/legal/privacidad-y-cookies',
         },
         '/foot/faq': {
             fr: '/foot/aide',
@@ -80,14 +75,9 @@ export const routing = defineRouting({
             es: '/rugby/legal/condiciones-de-venta',
         },
         '/rugby/legal/privacy': {
-            fr: '/rugby/legal/confidentialite',
-            en: '/rugby/legal/privacy',
-            es: '/rugby/legal/privacidad',
-        },
-        '/rugby/legal/cookies': {
-            fr: '/rugby/legal/cookies',
-            en: '/rugby/legal/cookies',
-            es: '/rugby/legal/cookies',
+            fr: '/rugby/legal/confidentialite-et-cookies',
+            en: '/rugby/legal/privacy-and-cookies',
+            es: '/rugby/legal/privacidad-y-cookies',
         },
         '/rugby/faq': {
             fr: '/rugby/aide',
@@ -121,14 +111,9 @@ export const routing = defineRouting({
             es: '/handball/legal/condiciones-de-venta',
         },
         '/handball/legal/privacy': {
-            fr: '/handball/legal/confidentialite',
-            en: '/handball/legal/privacy',
-            es: '/handball/legal/privacidad',
-        },
-        '/handball/legal/cookies': {
-            fr: '/handball/legal/cookies',
-            en: '/handball/legal/cookies',
-            es: '/handball/legal/cookies',
+            fr: '/handball/legal/confidentialite-et-cookies',
+            en: '/handball/legal/privacy-and-cookies',
+            es: '/handball/legal/privacidad-y-cookies',
         },
         '/handball/faq': {
             fr: '/handball/aide',

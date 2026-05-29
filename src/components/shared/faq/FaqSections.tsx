@@ -6,7 +6,6 @@ import { type ReactNode, useMemo } from 'react';
 import { BRAND_CONTACT } from '@/config/site';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/shadcn/accordion';
 import { BRANDS } from '@/utils/constants.utils';
-import { formatPhoneForTel } from '@/utils/phone.utils';
 
 import type { BrandSlug } from '~types/brand.types';
 import type { FaqCategory } from '~types/faq.types';
@@ -31,8 +30,8 @@ export function FaqSections({
     const contact = BRAND_CONTACT[brand];
 
     const interpolationValues = useMemo(
-        () => ({ brand: brandLabel, email: contact.email, phone: contact.phone }),
-        [brandLabel, contact.email, contact.phone],
+        () => ({ brand: brandLabel, email: contact.email }),
+        [brandLabel, contact.email],
     );
 
     const richHandlers = useMemo<RichValues>(
@@ -47,16 +46,8 @@ export function FaqSections({
                     {chunks}
                 </a>
             ),
-            tel: (chunks) => (
-                <a
-                    href={`tel:${formatPhoneForTel(contact.phone)}`}
-                    className="text-primary focus-visible:ring-ring rounded-sm font-medium underline underline-offset-4 hover:no-underline focus-visible:ring-2 focus-visible:outline-none"
-                >
-                    {chunks}
-                </a>
-            ),
         }),
-        [contact.email, contact.phone, interpolationValues],
+        [contact.email, interpolationValues],
     );
 
     if (categories.length === 0) {

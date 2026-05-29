@@ -1,7 +1,9 @@
-import { DotIcon, Mail, MapPin, Phone } from 'lucide-react';
+import { DotIcon } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
-import { BRAND_CONTACT, SIMPLY_LEGAL } from '@/config/site';
+import { EditorSectionBody } from '@/components/shared/legal/EditorSectionBody';
+import { HostingSectionBody } from '@/components/shared/legal/HostingSectionBody';
+import { Link } from '@/i18n/navigation';
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -17,50 +19,54 @@ interface MentionsLegalesContentProps {
     brand: BrandSlug;
 }
 
-async function ContactSection() {
-    const t = await getTranslations('Legal.mentionsLegales');
-    const contact = BRAND_CONTACT['foot'];
+interface DataSectionBodyProps {
+    brand: BrandSlug;
+    brandLabel: string;
+}
+
+type ConsultItemKey = 'privacy' | 'cookies';
+
+interface ConsultItem {
+    key: ConsultItemKey;
+    label: string;
+}
+
+async function DataSectionBody({ brand, brandLabel }: DataSectionBodyProps) {
+    const t = await getTranslations('Legal.mentionsLegales.sections.data');
+
+    const complianceList = t.raw('complianceList') as string[];
+    const consultList = t.raw('consultList') as ConsultItem[];
+
+    // Les deux items renvoient vers la page combinée confidentialité + cookies.
+    const consultHrefByKey: Record<ConsultItemKey, `/${BrandSlug}/legal/privacy`> = {
+        privacy: `/${brand}/legal/privacy`,
+        cookies: `/${brand}/legal/privacy`,
+    };
 
     return (
-        <section id="contact-block" aria-labelledby="contact-block-title" className="mt-8">
-            <dl className="grid gap-6 md:grid-cols-3">
-                <div className="space-y-2">
-                    <dt className="text-muted-foreground flex items-center gap-2 text-sm font-medium">
-                        <Mail className="size-4" aria-hidden="true" />
-                        {t('contactBlock.emailLabel')}
-                    </dt>
-                    <dd>
-                        <a
-                            href={`mailto:${contact.email}`}
-                            className="text-primary focus-visible:ring-ring rounded-sm font-medium underline-offset-4 hover:underline focus-visible:ring-2 focus-visible:outline-none"
+        <div className="text-muted-foreground space-y-4 text-base leading-relaxed md:text-lg">
+            <p>{t('intro', { brand: brandLabel })}</p>
+            <ul className="list-disc space-y-1 pl-6">
+                {complianceList.map((item) => (
+                    <li key={item}>{item}</li>
+                ))}
+            </ul>
+            <p>{t('usage')}</p>
+            <p>{t('rights')}</p>
+            <p>{t('consultIntro')}</p>
+            <ul className="list-disc space-y-1 pl-6">
+                {consultList.map((item) => (
+                    <li key={item.key}>
+                        <Link
+                            href={consultHrefByKey[item.key]}
+                            className="text-primary underline-offset-4 hover:underline focus-visible:underline"
                         >
-                            {contact.email}
-                        </a>
-                    </dd>
-                </div>
-                <div className="space-y-2">
-                    <dt className="text-muted-foreground flex items-center gap-2 text-sm font-medium">
-                        <Phone className="size-4" aria-hidden="true" />
-                        {t('contactBlock.phoneLabel')}
-                    </dt>
-                    <dd>
-                        <a
-                            href={`tel:${contact.phone.replace(/\s/g, '')}`}
-                            className="text-primary focus-visible:ring-ring rounded-sm font-medium underline-offset-4 hover:underline focus-visible:ring-2 focus-visible:outline-none"
-                        >
-                            {contact.phone}
-                        </a>
-                    </dd>
-                </div>
-                <div className="space-y-2">
-                    <dt className="text-muted-foreground flex items-center gap-2 text-sm font-medium">
-                        <MapPin className="size-4" aria-hidden="true" />
-                        {t('contactBlock.addressLabel')}
-                    </dt>
-                    <dd className="text-foreground text-sm">{SIMPLY_LEGAL.address}</dd>
-                </div>
-            </dl>
-        </section>
+                            {item.label}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
     );
 }
 
@@ -69,8 +75,9 @@ export async function MentionsLegalesContent({ brand }: MentionsLegalesContentPr
     const brandMeta = BRANDS[brand];
 
     const sectionKeys = [
-        'presentation',
-        'object',
+        'editor',
+        'hosting',
+        'activity',
         'ip',
         'liability',
         'data',
@@ -128,10 +135,31 @@ export async function MentionsLegalesContent({ brand }: MentionsLegalesContentPr
                                 />
                                 <span>{t(`sections.${key}.title`)}</span>
                             </h2>
-                            <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
-                                {t(`sections.${key}.body`, { brand: brandMeta.label })}
-                            </p>
-                            {key === 'contact' && <ContactSection />}
+                            {key === 'editor' ? (
+                                <EditorSectionBody brand={brand} />
+                            ) : key === 'hosting' ? (
+                                <HostingSectionBody />
+                            ) : key === 'data' ? (
+                                <DataSectionBody brand={brand} brandLabel={brandMeta.label} />
+                            ) : key === 'contact' ? (
+                                <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+                                    {t.rich('sections.contact.body', {
+                                        brand: brandMeta.label,
+                                        contactLink: (chunks) => (
+                                            <Link
+                                                href={`/${brand}/contact`}
+                                                className="text-primary underline-offset-4 hover:underline focus-visible:underline"
+                                            >
+                                                {chunks}
+                                            </Link>
+                                        ),
+                                    })}
+                                </p>
+                            ) : (
+                                <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+                                    {t(`sections.${key}.body`, { brand: brandMeta.label })}
+                                </p>
+                            )}
                         </section>
                     ))}
                 </section>

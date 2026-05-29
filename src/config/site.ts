@@ -12,9 +12,21 @@ export const SIMPLY_LEGAL = {
     address: '60 rue François 1er, 75008 Paris',
 } as const;
 
+/**
+ * Hosting provider of the site, shared across all brands. Used in the legal
+ * notice "Hébergement du site" section.
+ */
+export const SIMPLY_HOSTING = {
+    name: 'Vercel Inc.',
+    addressLines: ['440 N Barranca Ave #4133', 'Covina, CA 91723'] as const,
+    country: 'United States',
+    phone: '+1 951 383 6898',
+    website: 'https://vercel.com',
+    contactUrl: 'https://vercel.com/contact',
+} as const;
+
 interface BrandContact {
     email: string;
-    phone: string;
     socials: {
         facebook: string;
         linkedin: string;
@@ -30,31 +42,28 @@ interface BrandContact {
 export const BRAND_CONTACT: Record<BrandSlug, BrandContact> = {
     foot: {
         email: 'contact@simplyfoot.fr',
-        phone: '+33 6 82 84 56 41',
         socials: {
-            facebook: 'https://facebook.com/simplyfoot',
+            facebook: 'https://facebook.com/profile.php?id=61580681960537',
             linkedin: 'https://linkedin.com/company/simplyfoot',
-            instagram: 'https://instagram.com/simplyfoot',
+            instagram: 'https://instagram.com/simply.foot',
         },
     },
     // TODO: update with rugby-specific contact info once available
     rugby: {
         email: 'contact@simplyfoot.fr',
-        phone: '+33 6 82 84 56 41',
         socials: {
-            facebook: 'https://facebook.com/simplyfoot',
+            facebook: 'https://facebook.com/profile.php?id=61580681960537',
             linkedin: 'https://linkedin.com/company/simplyfoot',
-            instagram: 'https://instagram.com/simplyfoot',
+            instagram: 'https://instagram.com/simply.foot',
         },
     },
     // TODO: update with handball-specific contact info once available
     handball: {
         email: 'contact@simplyfoot.fr',
-        phone: '+33 6 82 84 56 41',
         socials: {
-            facebook: 'https://facebook.com/simplyfoot',
+            facebook: 'https://facebook.com/profile.php?id=61580681960537',
             linkedin: 'https://linkedin.com/company/simplyfoot',
-            instagram: 'https://instagram.com/simplyfoot',
+            instagram: 'https://instagram.com/simply.foot',
         },
     },
 };

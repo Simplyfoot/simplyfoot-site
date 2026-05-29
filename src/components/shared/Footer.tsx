@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from '@/components/shared/SocialIcons';
@@ -23,9 +23,8 @@ export async function Footer({ brand }: FooterProps) {
     const legalLinks = [
         { href: `/${brand}/legal/mentions-legales`, label: t('links.mentionsLegales') },
         { href: `/${brand}/legal/cgu`, label: t('links.cgu') },
-        { href: `/${brand}/legal/cgv`, label: t('links.cgv') },
+        { href: null, label: t('links.cgv') },
         { href: `/${brand}/legal/privacy`, label: t('links.privacy') },
-        { href: `/${brand}/legal/cookies`, label: t('links.cookies') },
         { href: `/${brand}/faq`, label: t('links.faq') },
         { href: `/${brand}/contact`, label: t('links.contact') },
     ] as const;
@@ -60,22 +59,13 @@ export async function Footer({ brand }: FooterProps) {
                                 <span>{SIMPLY_LEGAL.address}</span>
                             </li>
                             <li className="flex items-center gap-2">
-                                <Phone className="size-4 shrink-0" aria-hidden="true" />
-                                <a
-                                    href={`tel:${contact.phone.replace(/\s/g, '')}`}
-                                    className="hover:text-primary-foreground transition-colors hover:underline"
-                                >
-                                    {contact.phone}
-                                </a>
-                            </li>
-                            <li className="flex items-center gap-2">
                                 <Mail className="size-4 shrink-0" aria-hidden="true" />
-                                <a
-                                    href={`mailto:${contact.email}`}
+                                <Link
+                                    href={`/${brand}/contact`}
                                     className="hover:text-primary-foreground transition-colors hover:underline"
                                 >
                                     {contact.email}
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -84,16 +74,27 @@ export async function Footer({ brand }: FooterProps) {
                     <nav aria-label={t('sections.legal')}>
                         <h2 className="mb-3 text-sm font-semibold">{t('sections.legal')}</h2>
                         <ul className="space-y-2 text-sm">
-                            {legalLinks.map((link) => (
-                                <li key={link.href}>
-                                    <Link
-                                        href={link.href}
-                                        className="text-primary-foreground/90 hover:text-primary-foreground transition-colors hover:underline"
-                                    >
-                                        {link.label}
-                                    </Link>
-                                </li>
-                            ))}
+                            {legalLinks.map((link) =>
+                                link.href ? (
+                                    <li key={link.href}>
+                                        <Link
+                                            href={link.href}
+                                            className="text-primary-foreground/90 hover:text-primary-foreground transition-colors hover:underline"
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    </li>
+                                ) : (
+                                    <li key={link.label}>
+                                        <span
+                                            aria-disabled="true"
+                                            className="text-primary-foreground/60 cursor-not-allowed"
+                                        >
+                                            {link.label}
+                                        </span>
+                                    </li>
+                                ),
+                            )}
                         </ul>
                     </nav>
 

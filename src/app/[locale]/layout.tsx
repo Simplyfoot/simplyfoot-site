@@ -5,6 +5,7 @@ import { setRequestLocale } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
 import { routing } from '@/i18n/routing';
+import { Toaster } from '@/shadcn/sonner';
 
 export function generateStaticParams() {
     return routing.locales.map((locale) => ({ locale }));
@@ -33,7 +34,10 @@ export default async function LocaleLayout({
     return (
         <html lang={locale} suppressHydrationWarning>
             <body>
-                <NextIntlClientProvider>{children}</NextIntlClientProvider>
+                <NextIntlClientProvider>
+                    {children}
+                    <Toaster richColors closeButton position="bottom-right" />
+                </NextIntlClientProvider>
             </body>
         </html>
     );
