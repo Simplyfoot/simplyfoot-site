@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 
 import { EditorSectionBody } from '@/components/shared/legal/EditorSectionBody';
 import { HostingSectionBody } from '@/components/shared/legal/HostingSectionBody';
+import { Link } from '@/i18n/navigation';
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -49,16 +50,43 @@ const sectionKeys = [
 
 interface PrivacySectionBodyProps {
     section: PrivacySection;
+    brand: BrandSlug;
 }
 
-function PrivacySectionBody({ section }: PrivacySectionBodyProps) {
+function renderParagraph(text: string, brand: BrandSlug, key: number) {
+    const contactLinkPattern = /<contactLink>([\s\S]*?)<\/contactLink>/;
+    const match = contactLinkPattern.exec(text);
+
+    if (!match) {
+        return <p key={key}>{text}</p>;
+    }
+
+    const [fullMatch, inner = ''] = match;
+    const before = text.slice(0, match.index);
+    const after = text.slice(match.index + fullMatch.length);
+
+    return (
+        <p key={key}>
+            {before}
+            <Link
+                href={`/${brand}/contact`}
+                className="text-primary underline-offset-4 hover:underline focus-visible:underline"
+            >
+                {inner}
+            </Link>
+            {after}
+        </p>
+    );
+}
+
+function PrivacySectionBody({ section, brand }: PrivacySectionBodyProps) {
     const blocks = section.blocks ?? [];
 
     return (
         <div className="text-muted-foreground space-y-4 text-base leading-relaxed md:text-lg">
             {blocks.map((block, index) => {
                 if (block.type === 'paragraph') {
-                    return <p key={index}>{block.text}</p>;
+                    return renderParagraph(block.text, brand, index);
                 }
 
                 if (block.type === 'subheading') {
@@ -157,7 +185,7 @@ export async function PrivacyContent({ brand }: PrivacyContentProps) {
                                 ) : key === 'hosting' ? (
                                     <HostingSectionBody />
                                 ) : (
-                                    <PrivacySectionBody section={section} />
+                                    <PrivacySectionBody section={section} brand={brand} />
                                 )}
                             </section>
                         );

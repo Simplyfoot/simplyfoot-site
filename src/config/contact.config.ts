@@ -134,6 +134,12 @@ export interface ContactTopicConfig {
     id: ContactTopic;
     /** Champs additionnels propres au sujet (s'ajoutent aux champs communs). */
     fields: ReadonlyArray<ContactField>;
+    /**
+     * Noms de champs communs (BEFORE ou AFTER) à NE PAS rendre pour ce sujet.
+     * Utile quand un champ commun fait doublon avec un champ spécifique
+     * (ex. `message` redondant avec `bugSteps` pour un signalement de bug).
+     */
+    excludeCommonFields?: ReadonlyArray<string>;
 }
 
 export const CONTACT_TOPICS_CONFIG: ReadonlyArray<ContactTopicConfig> = [
@@ -162,6 +168,8 @@ export const CONTACT_TOPICS_CONFIG: ReadonlyArray<ContactTopicConfig> = [
     },
     {
         id: 'report-bug',
+        // `bugSteps` recouvre déjà le besoin du `message` commun.
+        excludeCommonFields: ['message'],
         fields: [
             {
                 name: 'bugPage',

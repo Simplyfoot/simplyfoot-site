@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 
 import { EditorSectionBody } from '@/components/shared/legal/EditorSectionBody';
 import { HostingSectionBody } from '@/components/shared/legal/HostingSectionBody';
+import { Link } from '@/i18n/navigation';
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -19,14 +20,28 @@ interface MentionsLegalesContentProps {
 }
 
 interface DataSectionBodyProps {
+    brand: BrandSlug;
     brandLabel: string;
 }
 
-async function DataSectionBody({ brandLabel }: DataSectionBodyProps) {
+type ConsultItemKey = 'privacy' | 'cookies';
+
+interface ConsultItem {
+    key: ConsultItemKey;
+    label: string;
+}
+
+async function DataSectionBody({ brand, brandLabel }: DataSectionBodyProps) {
     const t = await getTranslations('Legal.mentionsLegales.sections.data');
 
     const complianceList = t.raw('complianceList') as string[];
-    const consultList = t.raw('consultList') as string[];
+    const consultList = t.raw('consultList') as ConsultItem[];
+
+    // Les deux items renvoient vers la page combinée confidentialité + cookies.
+    const consultHrefByKey: Record<ConsultItemKey, `/${BrandSlug}/legal/privacy`> = {
+        privacy: `/${brand}/legal/privacy`,
+        cookies: `/${brand}/legal/privacy`,
+    };
 
     return (
         <div className="text-muted-foreground space-y-4 text-base leading-relaxed md:text-lg">
@@ -41,7 +56,14 @@ async function DataSectionBody({ brandLabel }: DataSectionBodyProps) {
             <p>{t('consultIntro')}</p>
             <ul className="list-disc space-y-1 pl-6">
                 {consultList.map((item) => (
-                    <li key={item}>{item}</li>
+                    <li key={item.key}>
+                        <Link
+                            href={consultHrefByKey[item.key]}
+                            className="text-primary underline-offset-4 hover:underline focus-visible:underline"
+                        >
+                            {item.label}
+                        </Link>
+                    </li>
                 ))}
             </ul>
         </div>
@@ -118,7 +140,21 @@ export async function MentionsLegalesContent({ brand }: MentionsLegalesContentPr
                             ) : key === 'hosting' ? (
                                 <HostingSectionBody />
                             ) : key === 'data' ? (
-                                <DataSectionBody brandLabel={brandMeta.label} />
+                                <DataSectionBody brand={brand} brandLabel={brandMeta.label} />
+                            ) : key === 'contact' ? (
+                                <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+                                    {t.rich('sections.contact.body', {
+                                        brand: brandMeta.label,
+                                        contactLink: (chunks) => (
+                                            <Link
+                                                href={`/${brand}/contact`}
+                                                className="text-primary underline-offset-4 hover:underline focus-visible:underline"
+                                            >
+                                                {chunks}
+                                            </Link>
+                                        ),
+                                    })}
+                                </p>
                             ) : (
                                 <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
                                     {t(`sections.${key}.body`, { brand: brandMeta.label })}

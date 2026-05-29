@@ -2,6 +2,7 @@ import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 
+import { AppStoreBadges } from '@/components/shared/home/AppStoreBadges';
 import { Link } from '@/i18n/navigation';
 import { Button } from '@/shadcn/button';
 
@@ -36,7 +37,7 @@ export async function IntroSection({ brand, namespace }: IntroSectionProps) {
             <div aria-hidden="true" className="bg-primary-700/70 absolute inset-0" />
 
             <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 md:grid-cols-2 md:gap-16 md:px-12">
-                <div>
+                <div className="relative z-10 order-1">
                     <h1
                         id="intro-heading"
                         className="intro-rise text-primary-100 text-4xl leading-tight font-bold tracking-tight md:text-5xl"
@@ -58,17 +59,23 @@ export async function IntroSection({ brand, namespace }: IntroSectionProps) {
                     </div>
                 </div>
 
-                <div className="intro-phone-in flex justify-center md:justify-end">
-                    <PhoneFrame>
-                        <Image
-                            src={`/brands/${brand}/app_home.png`}
-                            alt={t('intro.screenshotAlt')}
-                            width={270}
-                            height={600}
-                            priority
-                            className="block h-auto w-[240px] object-contain md:w-[270px]"
-                        />
-                    </PhoneFrame>
+                <div className="intro-phone-in pointer-events-none absolute inset-0 z-0 flex items-center justify-center md:pointer-events-auto md:relative md:inset-auto md:order-2 md:justify-end">
+                    <div className="opacity-15 md:opacity-100">
+                        <PhoneFrame>
+                            <Image
+                                src={`/brands/${brand}/app_home.png`}
+                                alt={t('intro.screenshotAlt')}
+                                width={270}
+                                height={600}
+                                priority
+                                className="block h-auto w-[240px] object-contain md:w-[270px]"
+                            />
+                        </PhoneFrame>
+                    </div>
+                </div>
+
+                <div className="intro-rise intro-rise-delay-3 relative z-10 order-2 flex justify-center md:order-3 md:col-span-2 md:-mt-56">
+                    <AppStoreBadges brand={brand} namespace={namespace} />
                 </div>
             </div>
         </section>

@@ -145,16 +145,16 @@ function buildFieldZod(field: ContactField): z.ZodTypeAny {
 
 function buildTopicSchema(topic: ContactTopic): z.ZodObject<z.ZodRawShape> {
     const config = getTopicConfig(topic);
+    const excluded = new Set(config.excludeCommonFields ?? []);
     const shape: Record<string, z.ZodTypeAny> = {
         ...baseShape,
         topic: z.literal(topic),
     };
 
-    for (const field of [
-        ...CONTACT_COMMON_FIELDS_BEFORE,
-        ...config.fields,
-        ...CONTACT_COMMON_FIELDS_AFTER,
-    ]) {
+    const commonBefore = CONTACT_COMMON_FIELDS_BEFORE.filter((field) => !excluded.has(field.name));
+    const commonAfter = CONTACT_COMMON_FIELDS_AFTER.filter((field) => !excluded.has(field.name));
+
+    for (const field of [...commonBefore, ...config.fields, ...commonAfter]) {
         shape[field.name] = buildFieldZod(field);
     }
 
@@ -235,6 +235,12 @@ export function buildEmailHtml(payload: ContactPayload): string {
         )
         .join('');
 
+    const messageBody = readString(payload, 'message');
+    const messageBlock = messageBody
+        ? `<h2 style="margin:24px 0 8px;font-size:16px">Message</h2>
+    <div style="white-space:pre-wrap;border-left:3px solid #2563eb;padding:12px 16px;background:#f9fafb;font-size:14px;line-height:1.6">${escapeHtml(messageBody)}</div>`
+        : '';
+
     return `<!doctype html>
 <html lang="fr">
 <head><meta charset="utf-8"><title>${escapeHtml(formatSubject(payload))}</title></head>
@@ -243,8 +249,7 @@ export function buildEmailHtml(payload: ContactPayload): string {
     <table style="border-collapse:collapse;width:100%;max-width:640px;border:1px solid #e5e5e5;font-size:14px">
         ${tableRows}
     </table>
-    <h2 style="margin:24px 0 8px;font-size:16px">Message</h2>
-    <div style="white-space:pre-wrap;border-left:3px solid #2563eb;padding:12px 16px;background:#f9fafb;font-size:14px;line-height:1.6">${escapeHtml(readString(payload, 'message'))}</div>
+    ${messageBlock}
     <p style="margin-top:24px;font-size:12px;color:#666">Reply-To configuré sur l'adresse de l'utilisateur. Headers : X-Simply-Brand=${escapeHtml(payload.brand)}, X-Simply-Topic=${escapeHtml(payload.topic)}.</p>
 </body>
 </html>`;

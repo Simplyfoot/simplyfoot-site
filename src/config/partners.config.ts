@@ -7,8 +7,10 @@ import type { BrandSlug } from '~types/brand.types';
  * `public/brands/<brand>/` et suit un préfixe imposé pour permettre une
  * intégration "drop-in" sans toucher au code des composants :
  *
- *   - Clubs pilotes : `logo_club_<slug>.png`
- *   - Partenaires   : `logo_partner_<slug>.png`
+ *   - Clubs pilotes              : `logo_club_<slug>.png`
+ *   - Partenaires (de la marque) : `partner_<slug>.png`
+ *   - Partenariats (la marque    : `partner_of_<slug>.png`
+ *     est partenaire de…)
  *
  * Pour ajouter un nouveau club / partenaire :
  *   1. Déposer le PNG (idéalement 256×256, fond transparent) dans le bon dossier
@@ -56,7 +58,19 @@ export const PILOT_CLUBS: Record<BrandSlug, ReadonlyArray<PartnerEntry>> = {
 };
 
 export const BRAND_PARTNERS: Record<BrandSlug, ReadonlyArray<PartnerEntry>> = {
-    foot: [],
+    foot: [{ slug: 'pennac', name: 'Pennac' }],
+    rugby: [],
+    handball: [],
+};
+
+export const BRAND_PARTNER_OF: Record<BrandSlug, ReadonlyArray<PartnerEntry>> = {
+    foot: [
+        {
+            slug: 'tournoi_maurice_revello',
+            name: 'Tournoi Maurice Revello',
+            url: 'https://www.tournoimauricerevello.com/',
+        },
+    ],
     rugby: [],
     handball: [],
 };
@@ -66,5 +80,9 @@ export function getPilotLogoSrc(brand: BrandSlug, slug: string): string {
 }
 
 export function getPartnerLogoSrc(brand: BrandSlug, slug: string): string {
-    return `/brands/${brand}/logo_partner_${slug}.png`;
+    return `/brands/${brand}/partner_${slug}.png`;
+}
+
+export function getPartnerOfLogoSrc(brand: BrandSlug, slug: string): string {
+    return `/brands/${brand}/partner_of_${slug}.png`;
 }

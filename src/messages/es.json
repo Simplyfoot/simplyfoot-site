@@ -119,8 +119,8 @@
                     "rights": "El usuario dispone de un derecho de acceso, rectificación, supresión y oposición respecto a sus datos personales.",
                     "consultIntro": "Para más información, se invita al usuario a consultar:",
                     "consultList": [
-                        "la Política de privacidad",
-                        "la Política de gestión de cookies"
+                        { "key": "privacy", "label": "la Política de privacidad" },
+                        { "key": "cookies", "label": "la Política de gestión de cookies" }
                     ]
                 },
                 "links": {
@@ -133,7 +133,7 @@
                 },
                 "contact": {
                     "title": "9. Contacto",
-                    "body": "Para cualquier pregunta o solicitud de información: contact@simplyfoot.fr"
+                    "body": "Para cualquier pregunta o solicitud de información: <contactLink>contact@simplyfoot.fr</contactLink>"
                 }
             }
         },
@@ -206,10 +206,10 @@
                         {
                             "type": "list",
                             "items": [
-                                "el Aviso legal;",
-                                "la Política de privacidad;",
-                                "la Política de gestión de cookies;",
-                                "las CGV, en su caso;",
+                                { "template": "el {link};", "link": { "key": "mentions-legales", "label": "Aviso legal" } },
+                                { "template": "la {link};", "link": { "key": "privacy", "label": "Política de privacidad" } },
+                                { "template": "la {link};", "link": { "key": "privacy", "label": "Política de gestión de cookies" } },
+                                { "template": "las {link}, en su caso;", "link": { "key": "cgv", "label": "Condiciones de venta (próximamente)" } },
                                 "todo contrato específico celebrado con un Club."
                             ]
                         },
@@ -221,10 +221,10 @@
                             "type": "list",
                             "items": [
                                 "contrato específico firmado con un Club;",
-                                "CGV;",
-                                "CGU;",
-                                "Política de privacidad;",
-                                "Política de cookies."
+                                { "template": "{link};", "link": { "key": "cgv", "label": "Condiciones de venta (próximamente)" } },
+                                { "template": "{link};", "link": { "key": "cgu", "label": "CGU" } },
+                                { "template": "{link};", "link": { "key": "privacy", "label": "Política de privacidad" } },
+                                { "template": "{link}.", "link": { "key": "privacy", "label": "Política de cookies" } }
                             ]
                         }
                     ]
@@ -1039,7 +1039,7 @@
                             "type": "lines",
                             "items": ["SIMPLYFOOT SAS", "{address}"]
                         },
-                        { "type": "paragraph", "text": "Correo electrónico: {email}" },
+                        { "type": "paragraph", "text": "Correo electrónico: <contactLink>{email}</contactLink>" },
                         {
                             "type": "paragraph",
                             "text": "{brand} se esforzará por tratar las reclamaciones en un plazo razonable."
@@ -1096,7 +1096,7 @@
                             "type": "paragraph",
                             "text": "Para cualquier pregunta relativa a las presentes CGU:"
                         },
-                        { "type": "paragraph", "text": "Correo electrónico: {email}" },
+                        { "type": "paragraph", "text": "Correo electrónico: <contactLink>{email}</contactLink>" },
                         {
                             "type": "paragraph",
                             "text": "Dirección: SIMPLYFOOT SAS, {address}"
@@ -1272,7 +1272,7 @@
                         },
                         {
                             "type": "paragraph",
-                            "text": "Puede ejercer sus derechos en la siguiente dirección: contact@simplyfoot.fr"
+                            "text": "Puede ejercer sus derechos en la siguiente dirección: <contactLink>contact@simplyfoot.fr</contactLink>"
                         },
                         {
                             "type": "paragraph",
@@ -1319,7 +1319,7 @@
                     "blocks": [
                         {
                             "type": "paragraph",
-                            "text": "Para cualquier pregunta relativa a la protección de datos: contact@simplyfoot.fr"
+                            "text": "Para cualquier pregunta relativa a la protección de datos: <contactLink>contact@simplyfoot.fr</contactLink>"
                         }
                     ]
                 }
@@ -1684,20 +1684,21 @@
                 "other": "Otro"
             },
             "fields": {
-                "firstName": { "label": "Nombre" },
-                "lastName": { "label": "Apellido" },
-                "email": { "label": "Correo electrónico" },
-                "phone": { "label": "Teléfono (opcional)" },
+                "firstName": { "label": "Nombre", "placeholder": "Lucía" },
+                "lastName": { "label": "Apellido", "placeholder": "García" },
+                "email": { "label": "Correo electrónico", "placeholder": "lucia.garcia@simplyfoot.es" },
+                "phone": { "label": "Teléfono", "placeholder": "+34 612 345 678" },
                 "message": {
                     "label": "Tu mensaje",
-                    "placeholder": "Detalla tu consulta, tu contexto y el resultado esperado si procede.",
+                    "placeholder": "Tu mensaje…",
                     "help": "Mínimo 20 caracteres. Cuanto más preciso, más rápida será la respuesta."
                 },
                 "customSubject": {
                     "label": "Indica el asunto",
+                    "placeholder": "Tu asunto…",
                     "help": "Unas palabras para describir el motivo de tu mensaje."
                 },
-                "club": { "label": "Nombre del club" },
+                "club": { "label": "Nombre del club", "placeholder": "AS Simply-Foot" },
                 "clubSize": {
                     "label": "Tamaño del club",
                     "placeholder": "Selecciona un tamaño",
@@ -1712,27 +1713,27 @@
                 },
                 "role": {
                     "label": "Tu rol en el club",
-                    "placeholder": "p. ej. presidente, directivo, entrenador, padre/madre…"
+                    "placeholder": "Presidente, entrenador, jugador…"
                 },
                 "preferredSlot": {
                     "label": "Franja horaria preferida para la demo",
-                    "placeholder": "p. ej. martes por la tarde, en videollamada"
+                    "placeholder": "Preferiblemente el martes después de las 18 h, en videollamada"
                 },
                 "bugPage": {
                     "label": "¿En qué página ocurrió el error?",
-                    "placeholder": "p. ej. la página del calendario de la app"
+                    "placeholder": "En la pantalla de inicio"
                 },
                 "bugSteps": {
                     "label": "¿Cómo reproducir el error?",
-                    "placeholder": "1. Fui a la página X\n2. Hice clic en el botón Y\n3. En lugar de ver A, vi B",
+                    "placeholder": "1. Fui a la pantalla de inicio\n2. Pulsé una tarjeta de evento\n3. La aplicación se cerró",
                     "help": "Describe lo que hiciste, lo que esperabas y lo que ocurrió. No se necesita jerga técnica."
                 },
-                "organization": { "label": "Organización" },
+                "organization": { "label": "Organización", "placeholder": "Tu organización…" },
                 "organizationWebsite": { "label": "Sitio web de la organización (opcional)", "placeholder": "https://" },
-                "media": { "label": "Medio / publicación" },
+                "media": { "label": "Medio / publicación", "placeholder": "Simply Blog…" },
                 "mediaRole": {
                     "label": "Tu cargo",
-                    "placeholder": "p. ej. periodista, redactor jefe…"
+                    "placeholder": "Tu cargo…"
                 }
             },
             "submit": "Enviar mi mensaje",
@@ -1826,8 +1827,29 @@
         },
         "partners": {
             "eyebrow": "Nuestros socios",
-            "title": "Apoyan a SimplyFoot",
             "logoAlt": "Logo {name}"
+        },
+        "partnerOf": {
+            "eyebrow": "Colaboraciones",
+            "logoAlt": "Logo {name}"
+        },
+        "appStores": {
+            "groupLabel": "Descargar la aplicación SimplyFoot",
+            "googlePlay": {
+                "eyebrow": "Disponible en",
+                "label": "Google Play",
+                "ariaLabel": "Descargar SimplyFoot en Google Play (se abre en una nueva pestaña)"
+            },
+            "appStore": {
+                "eyebrow": "Descargar en",
+                "label": "App Store",
+                "ariaLabel": "Descargar SimplyFoot en App Store (se abre en una nueva pestaña)"
+            },
+            "testFlight": {
+                "eyebrow": "Beta iOS vía",
+                "label": "TestFlight",
+                "ariaLabel": "Únete a la beta iOS de SimplyFoot en TestFlight (se abre en una nueva pestaña)"
+            }
         }
     }
 }

@@ -62,7 +62,7 @@ export async function PilotsMarquee({ brand, namespace }: PilotsMarqueeProps) {
         <section
             id="pilots"
             aria-labelledby="pilots-heading"
-            className="bg-secondary-50 py-20 md:py-28"
+            className="bg-secondary-50 py-4 md:py-8"
         >
             <div className="mx-auto max-w-7xl px-6 md:px-12">
                 <div className="mx-auto max-w-2xl text-center">

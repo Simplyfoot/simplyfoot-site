@@ -281,6 +281,18 @@ export function ContactForm({ brand }: ContactFormProps) {
 
     const topic = form.watch('topic');
     const topicConfig = getTopicConfig(topic);
+    const excludedCommon = useMemo(
+        () => new Set(topicConfig.excludeCommonFields ?? []),
+        [topicConfig],
+    );
+    const commonFieldsBefore = useMemo(
+        () => CONTACT_COMMON_FIELDS_BEFORE.filter((field) => !excludedCommon.has(field.name)),
+        [excludedCommon],
+    );
+    const commonFieldsAfter = useMemo(
+        () => CONTACT_COMMON_FIELDS_AFTER.filter((field) => !excludedCommon.has(field.name)),
+        [excludedCommon],
+    );
 
     async function onSubmit(values: ContactFormValues) {
         setSubmitting(true);
@@ -340,9 +352,9 @@ export function ContactForm({ brand }: ContactFormProps) {
                     )}
                 />
 
-                <FieldGrid fields={CONTACT_COMMON_FIELDS_BEFORE} control={form.control} t={t} />
+                <FieldGrid fields={commonFieldsBefore} control={form.control} t={t} />
                 <FieldGrid fields={topicConfig.fields} control={form.control} t={t} />
-                <FieldGrid fields={CONTACT_COMMON_FIELDS_AFTER} control={form.control} t={t} />
+                <FieldGrid fields={commonFieldsAfter} control={form.control} t={t} />
 
                 {/* Honeypot anti-spam : caché aux humains et au lecteur d'écran. */}
                 <div aria-hidden="true" className="absolute left-[-9999px] h-0 w-0 overflow-hidden">

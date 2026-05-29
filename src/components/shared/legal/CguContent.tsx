@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import { EditorSectionBody } from '@/components/shared/legal/EditorSectionBody';
 import { HostingSectionBody } from '@/components/shared/legal/HostingSectionBody';
 import { BRAND_CONTACT, SIMPLY_LEGAL } from '@/config/site';
+import { Link } from '@/i18n/navigation';
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -15,13 +16,23 @@ import { BRANDS } from '@/utils/constants.utils';
 
 import type { BrandSlug } from '~types/brand.types';
 
+type CguLinkKey = 'mentions-legales' | 'privacy' | 'cgv' | 'cgu';
+
+interface CguLinkedListItem {
+    /** Gabarit avec le marqueur `{link}` remplacé par le lien. */
+    template: string;
+    link: { key: CguLinkKey; label: string };
+}
+
+type CguListItem = string | CguLinkedListItem;
+
 interface CguContentProps {
     brand: BrandSlug;
 }
 
 type CguBlock =
     | { type: 'paragraph'; text: string }
-    | { type: 'list'; items: string[] }
+    | { type: 'list'; items: CguListItem[] }
     | { type: 'lines'; items: string[] }
     | { type: 'link'; label: string; url: string };
 
@@ -83,24 +94,109 @@ function interpolate(template: string, variables: Record<string, string>): strin
 interface CguSectionBodyProps {
     section: CguSection;
     variables: Record<string, string>;
+    brand: BrandSlug;
 }
 
-function CguSectionBody({ section, variables }: CguSectionBodyProps) {
+function renderListItem(
+    item: CguListItem,
+    variables: Record<string, string>,
+    brand: BrandSlug,
+    itemIndex: number,
+) {
+    if (typeof item === 'string') {
+        return <li key={itemIndex}>{interpolate(item, variables)}</li>;
+    }
+
+    const [beforeRaw = '', afterRaw = ''] = item.template.split('{link}');
+    const before = interpolate(beforeRaw, variables);
+    const after = interpolate(afterRaw, variables);
+
+    // Les CGV n'existent pas encore : on les affiche désactivées, comme dans le footer.
+    if (item.link.key === 'cgv') {
+        return (
+            <li key={itemIndex}>
+                {before}
+                <span aria-disabled="true" className="cursor-not-allowed opacity-60">
+                    {item.link.label}
+                </span>
+                {after}
+            </li>
+        );
+    }
+
+    const href = `/${brand}/legal/${item.link.key}` as const;
+
+    return (
+        <li key={itemIndex}>
+            {before}
+            <Link
+                href={href}
+                className="text-primary underline-offset-4 hover:underline focus-visible:underline"
+            >
+                {item.link.label}
+            </Link>
+            {after}
+        </li>
+    );
+}
+
+interface ParagraphRendererProps {
+    text: string;
+    variables: Record<string, string>;
+    brand: BrandSlug;
+}
+
+function ParagraphRenderer({ text, variables, brand }: ParagraphRendererProps) {
+    const interpolated = interpolate(text, variables);
+    const contactLinkPattern = /<contactLink>([\s\S]*?)<\/contactLink>/;
+    const match = contactLinkPattern.exec(interpolated);
+
+    if (!match) {
+        return <p>{interpolated}</p>;
+    }
+
+    const [fullMatch, inner = ''] = match;
+    const startIndex = match.index;
+    const before = interpolated.slice(0, startIndex);
+    const after = interpolated.slice(startIndex + fullMatch.length);
+
+    return (
+        <p>
+            {before}
+            <Link
+                href={`/${brand}/contact`}
+                className="text-primary underline-offset-4 hover:underline focus-visible:underline"
+            >
+                {inner}
+            </Link>
+            {after}
+        </p>
+    );
+}
+
+function CguSectionBody({ section, variables, brand }: CguSectionBodyProps) {
     const blocks = section.blocks ?? [];
 
     return (
         <div className="text-muted-foreground space-y-4 text-base leading-relaxed md:text-lg">
             {blocks.map((block, index) => {
                 if (block.type === 'paragraph') {
-                    return <p key={index}>{interpolate(block.text, variables)}</p>;
+                    return (
+                        <ParagraphRenderer
+                            key={index}
+                            text={block.text}
+                            variables={variables}
+                            brand={brand}
+                        />
+                    );
                 }
 
                 if (block.type === 'list') {
                     return (
                         <ul key={index} className="list-disc space-y-1 pl-6">
-                            {block.items.map((item, itemIndex) => (
-                                <li key={itemIndex}>{interpolate(item, variables)}</li>
-                            ))}
+                            {block.items.map((item, itemIndex) =>
+                                renderListItem(item, variables, brand, itemIndex),
+                            )}
                         </ul>
                     );
                 }
@@ -207,7 +303,11 @@ export async function CguContent({ brand }: CguContentProps) {
                                 ) : key === 'hosting' ? (
                                     <HostingSectionBody />
                                 ) : (
-                                    <CguSectionBody section={section} variables={variables} />
+                                    <CguSectionBody
+                                        section={section}
+                                        variables={variables}
+                                        brand={brand}
+                                    />
                                 )}
                             </section>
                         );

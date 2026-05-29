@@ -14,7 +14,7 @@ const FOOT_TEAM: ReadonlyArray<TeamMember> = [
     {
         id: 'jeremy',
         name: 'Jérémy Baruc',
-        photo: null,
+        photo: '/brands/common/Jeremy.png',
         linkedin: 'https://www.linkedin.com/in/jeremy-baruc-90abb0146/',
     },
     {
@@ -38,7 +38,7 @@ const FOOT_TEAM: ReadonlyArray<TeamMember> = [
     {
         id: 'damien',
         name: 'Damien Alfaia',
-        photo: null,
+        photo: '/brands/common/Damien.png',
         linkedin: 'https://www.linkedin.com/in/damien-alfaia-bb0aa0186/',
     },
 ];
