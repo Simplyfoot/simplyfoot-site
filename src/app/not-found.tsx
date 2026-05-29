@@ -1,52 +1,33 @@
-import Image from "next/image";
-import TeamImage from "../assets/images/Equipe_8.png";
-import Link from "next/link";
+import Link from 'next/link';
 
-export default function NotFound() {
-  return (
-    <main className="flex flex-col items-center justify-start min-h-screen bg-[#14482F] text-center px-6 pt-0 lg:pt-0 pb-10">
-
-      {/* Halo vert */}
-
-      {/* Illustration */}
-      <Image
-        src={TeamImage}
-        alt="Équipe SimplyFoot"
-        width={420}
-        height={420}
-        className="rounded-3xl shadow-2xl border-4 border-[#29be4f]/40 object-cover mb-8"
-      />
-
-      {/* Texte principal */}
-      <h1 className="text-6xl font-extrabold text-[#29be4f] drop-shadow mb-4">404</h1>
-      <h2 className="text-2xl font-bold text-[#FFFFFF] mb-3">
-        Oups... cette page a été remplacée à la mi-temps ⚽
-      </h2>
-      <p className="text-[#F8E9CA]/80 max-w-md mb-8 mt-4">
-        Pas de panique&nbsp;! Même les meilleurs ratent parfois une passe.  
-        Reviens à l’accueil et reprends le match avec SimplyFoot.
-      </p>
-
-      {/* Boutons */}
-      <div className="flex flex-wrap gap-4 justify-center mt-4">
-        <Link
-          href="/"
-          className="cursor-pointer inline-flex items-center gap-2 rounded-xl bg-[#29be4f] px-6 py-3 font-extrabold text-[#14482F] shadow hover:bg-[#63f286] active:scale-[.98] transition"
-        >
-          Retour à l’accueil
-        </Link>
-        <Link
-          href="/contact"
-          className="cursor-pointer inline-flex items-center gap-2 rounded-xl border border-[#29be4f]/40 px-6 py-3 font-semibold text-[#F8E9CA] hover:border-[#29be4f] hover:text-[#29be4f] active:scale-[.98] transition"
-        >
-          Contacter l’équipe
-        </Link>
-      </div>
-
-      {/* Footer minimal */}
-      <p className="mt-16 text-sm text-[#F8E9CA]/60">
-        SimplyFoot – L’appli qui simplifie la vie des clubs amateurs 💚
-      </p>
-    </main>
-  );
+/**
+ * Global not-found. Catches requests that never matched a locale segment
+ * (e.g. unknown top-level paths, malformed locale). Must provide its own
+ * <html>/<body> because the root app/layout.tsx returns children as-is
+ * (the <html>/<body> live in app/[locale]/layout.tsx, which is bypassed
+ * here by definition).
+ *
+ * Uses next/link directly (not the next-intl wrapper) since the locale
+ * context is not available at this level. Copy defaults to French (primary
+ * locale) for the same reason.
+ */
+export default function GlobalNotFound() {
+    return (
+        <html lang="fr" suppressHydrationWarning>
+            <body>
+                <main className="flex min-h-svh flex-col items-center justify-center bg-black px-6 md:px-12">
+                    <h1 className="text-secondary-50 text-4xl font-bold md:text-6xl">404</h1>
+                    <p className="text-secondary-50/70 mt-4 text-base md:text-lg">
+                        Page introuvable
+                    </p>
+                    <Link
+                        href="/"
+                        className="bg-primary-700 text-primary-foreground focus-visible:ring-secondary-50 mt-8 inline-flex min-h-11 items-center rounded-lg px-6 transition-opacity hover:opacity-80 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-black focus-visible:outline-none"
+                    >
+                        Retour à l&apos;accueil
+                    </Link>
+                </main>
+            </body>
+        </html>
+    );
 }

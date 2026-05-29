@@ -1,130 +1,361 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Brand palettes — default is :root (acts as fallback for the landing page),
+   each brand overrides only the primary scale via [data-brand="<slug>"]. */
+@import '../styles/themes/default.css';
+@import '../styles/themes/foot.css';
+@import '../styles/themes/rugby.css';
+@import '../styles/themes/handball.css';
+
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    /* ================= shadcn semantic ================= */
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    /* ================= Primary scale ================= */
+    --color-primary-50: var(--primary-50);
+    --color-primary-100: var(--primary-100);
+    --color-primary-200: var(--primary-200);
+    --color-primary-300: var(--primary-300);
+    --color-primary-400: var(--primary-400);
+    --color-primary-500: var(--primary-500);
+    --color-primary-600: var(--primary-600);
+    --color-primary-700: var(--primary-700);
+    --color-primary-800: var(--primary-800);
+    --color-primary-900: var(--primary-900);
+
+    /* ================= Secondary scale ================= */
+    --color-secondary-50: var(--secondary-50);
+    --color-secondary-100: var(--secondary-100);
+    --color-secondary-200: var(--secondary-200);
+    --color-secondary-300: var(--secondary-300);
+    --color-secondary-400: var(--secondary-400);
+    --color-secondary-500: var(--secondary-500);
+    --color-secondary-600: var(--secondary-600);
+    --color-secondary-700: var(--secondary-700);
+    --color-secondary-800: var(--secondary-800);
+    --color-secondary-900: var(--secondary-900);
+
+    /* ================= Error scale ================= */
+    --color-error-0: var(--error-0);
+    --color-error-50: var(--error-50);
+    --color-error-100: var(--error-100);
+    --color-error-200: var(--error-200);
+    --color-error-300: var(--error-300);
+    --color-error-400: var(--error-400);
+    --color-error-500: var(--error-500);
+    --color-error-600: var(--error-600);
+    --color-error-700: var(--error-700);
+    --color-error-800: var(--error-800);
+    --color-error-900: var(--error-900);
+    --color-error-950: var(--error-950);
+
+    /* ================= Success scale ================= */
+    --color-success-0: var(--success-0);
+    --color-success-50: var(--success-50);
+    --color-success-100: var(--success-100);
+    --color-success-200: var(--success-200);
+    --color-success-300: var(--success-300);
+    --color-success-400: var(--success-400);
+    --color-success-500: var(--success-500);
+    --color-success-600: var(--success-600);
+    --color-success-700: var(--success-700);
+    --color-success-800: var(--success-800);
+    --color-success-900: var(--success-900);
+    --color-success-950: var(--success-950);
+
+    /* ================= Warning scale ================= */
+    --color-warning-0: var(--warning-0);
+    --color-warning-50: var(--warning-50);
+    --color-warning-100: var(--warning-100);
+    --color-warning-200: var(--warning-200);
+    --color-warning-300: var(--warning-300);
+    --color-warning-400: var(--warning-400);
+    --color-warning-500: var(--warning-500);
+    --color-warning-600: var(--warning-600);
+    --color-warning-700: var(--warning-700);
+    --color-warning-800: var(--warning-800);
+    --color-warning-900: var(--warning-900);
+    --color-warning-950: var(--warning-950);
+
+    /* ================= Info scale ================= */
+    --color-info-0: var(--info-0);
+    --color-info-50: var(--info-50);
+    --color-info-100: var(--info-100);
+    --color-info-200: var(--info-200);
+    --color-info-300: var(--info-300);
+    --color-info-400: var(--info-400);
+    --color-info-500: var(--info-500);
+    --color-info-600: var(--info-600);
+    --color-info-700: var(--info-700);
+    --color-info-800: var(--info-800);
+    --color-info-900: var(--info-900);
+    --color-info-950: var(--info-950);
+
+    /* ================= Typography scale ================= */
+    --color-typography-0: var(--typography-0);
+    --color-typography-50: var(--typography-50);
+    --color-typography-100: var(--typography-100);
+    --color-typography-200: var(--typography-200);
+    --color-typography-300: var(--typography-300);
+    --color-typography-400: var(--typography-400);
+    --color-typography-500: var(--typography-500);
+    --color-typography-600: var(--typography-600);
+    --color-typography-700: var(--typography-700);
+    --color-typography-800: var(--typography-800);
+    --color-typography-900: var(--typography-900);
+    --color-typography-950: var(--typography-950);
+
+    /* ================= Outline scale ================= */
+    --color-outline-0: var(--outline-0);
+    --color-outline-50: var(--outline-50);
+    --color-outline-100: var(--outline-100);
+    --color-outline-200: var(--outline-200);
+    --color-outline-300: var(--outline-300);
+    --color-outline-400: var(--outline-400);
+    --color-outline-500: var(--outline-500);
+    --color-outline-600: var(--outline-600);
+    --color-outline-700: var(--outline-700);
+    --color-outline-800: var(--outline-800);
+    --color-outline-900: var(--outline-900);
+    --color-outline-950: var(--outline-950);
+
+    /* ================= Background scale ================= */
+    --color-background-0: var(--background-0);
+    --color-background-50: var(--background-50);
+    --color-background-100: var(--background-100);
+    --color-background-200: var(--background-200);
+    --color-background-300: var(--background-300);
+    --color-background-400: var(--background-400);
+    --color-background-500: var(--background-500);
+    --color-background-600: var(--background-600);
+    --color-background-700: var(--background-700);
+    --color-background-800: var(--background-800);
+    --color-background-900: var(--background-900);
+    --color-background-950: var(--background-950);
+    --color-background-error: var(--background-error);
+    --color-background-warning: var(--background-warning);
+    --color-background-success: var(--background-success);
+    --color-background-muted: var(--background-muted);
+    --color-background-info: var(--background-info);
+
+    /* ================= Indicators ================= */
+    --color-indicator-primary: var(--indicator-primary);
+    --color-indicator-info: var(--indicator-info);
+    --color-indicator-error: var(--indicator-error);
+
+    /* ================= Brand harmonies (handball only for now) ================= */
+    --color-complementary: var(--complementary);
+    --color-analogous-1: var(--analogous-1);
+    --color-analogous-2: var(--analogous-2);
+    --color-triadic-1: var(--triadic-1);
+    --color-triadic-2: var(--triadic-2);
+
+    --color-complementary-50: var(--complementary-50);
+    --color-complementary-100: var(--complementary-100);
+    --color-complementary-200: var(--complementary-200);
+    --color-complementary-300: var(--complementary-300);
+    --color-complementary-400: var(--complementary-400);
+    --color-complementary-500: var(--complementary-500);
+    --color-complementary-600: var(--complementary-600);
+    --color-complementary-700: var(--complementary-700);
+    --color-complementary-800: var(--complementary-800);
+    --color-complementary-900: var(--complementary-900);
+
+    --color-analogous-1-50: var(--analogous-1-50);
+    --color-analogous-1-100: var(--analogous-1-100);
+    --color-analogous-1-200: var(--analogous-1-200);
+    --color-analogous-1-300: var(--analogous-1-300);
+    --color-analogous-1-400: var(--analogous-1-400);
+    --color-analogous-1-500: var(--analogous-1-500);
+    --color-analogous-1-600: var(--analogous-1-600);
+    --color-analogous-1-700: var(--analogous-1-700);
+    --color-analogous-1-800: var(--analogous-1-800);
+    --color-analogous-1-900: var(--analogous-1-900);
+
+    --color-analogous-2-50: var(--analogous-2-50);
+    --color-analogous-2-100: var(--analogous-2-100);
+    --color-analogous-2-200: var(--analogous-2-200);
+    --color-analogous-2-300: var(--analogous-2-300);
+    --color-analogous-2-400: var(--analogous-2-400);
+    --color-analogous-2-500: var(--analogous-2-500);
+    --color-analogous-2-600: var(--analogous-2-600);
+    --color-analogous-2-700: var(--analogous-2-700);
+    --color-analogous-2-800: var(--analogous-2-800);
+    --color-analogous-2-900: var(--analogous-2-900);
+
+    --color-triadic-1-50: var(--triadic-1-50);
+    --color-triadic-1-100: var(--triadic-1-100);
+    --color-triadic-1-200: var(--triadic-1-200);
+    --color-triadic-1-300: var(--triadic-1-300);
+    --color-triadic-1-400: var(--triadic-1-400);
+    --color-triadic-1-500: var(--triadic-1-500);
+    --color-triadic-1-600: var(--triadic-1-600);
+    --color-triadic-1-700: var(--triadic-1-700);
+    --color-triadic-1-800: var(--triadic-1-800);
+    --color-triadic-1-900: var(--triadic-1-900);
+
+    --color-triadic-2-50: var(--triadic-2-50);
+    --color-triadic-2-100: var(--triadic-2-100);
+    --color-triadic-2-200: var(--triadic-2-200);
+    --color-triadic-2-300: var(--triadic-2-300);
+    --color-triadic-2-400: var(--triadic-2-400);
+    --color-triadic-2-500: var(--triadic-2-500);
+    --color-triadic-2-600: var(--triadic-2-600);
+    --color-triadic-2-700: var(--triadic-2-700);
+    --color-triadic-2-800: var(--triadic-2-800);
+    --color-triadic-2-900: var(--triadic-2-900);
+
+    /* ================= Radius ================= */
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+
+    /* ================= Sidebar ================= */
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-marquee {
-  animation: marquee 24s linear infinite;
-}
-
-@layer utilities {
-  .pulse {
-    animation: pulse-ring 2.1s infinite;
-  }
-
-  @keyframes pulse-ring {
-    0% {
-      box-shadow: 0 0 0 0 #29be4f44;
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
     }
-
-    70% {
-      box-shadow: 0 0 0 15px #29be4f11;
+    body {
+        @apply bg-background text-foreground;
     }
-
-    100% {
-      box-shadow: 0 0 0 0 #29be4f00;
+    /* Tailwind v4 Preflight ne met plus `cursor: pointer` sur les boutons.
+       On le rétablit globalement pour tous les éléments interactifs. */
+    button:not(:disabled),
+    [role='button']:not(:disabled),
+    summary {
+        cursor: pointer;
     }
-  }
 }
 
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Sidebar dark variant — inactive while the project stays light-only (the
+   `.dark` class is never applied on <html>). Kept for future-proofing in case
+   a per-brand dark mode is introduced on the <Sidebar> component. */
+.dark {
+    --sidebar: hsl(240 5.9% 10%);
+    --sidebar-foreground: hsl(240 4.8% 95.9%);
+    --sidebar-primary: hsl(224.3 76.3% 48%);
+    --sidebar-primary-foreground: hsl(0 0% 100%);
+    --sidebar-accent: hsl(240 3.7% 15.9%);
+    --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+    --sidebar-border: hsl(240 3.7% 15.9%);
+    --sidebar-ring: hsl(217.2 91.2% 59.8%);
 }
 
-.animate-slideDown {
-  animation: slideDown 0.3s ease-out forwards;
+/* Marquee horizontal infini — utilisé pour les bandeaux de logos (pilotes,
+   partenaires). Le contenu est dupliqué côté JSX, l'animation translate de
+   0 à -50% pour boucler sans saut visible. */
+@keyframes marquee-x {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
 }
 
-/* === Champs de formulaire SimplyFoot === */
-.form-input,
-.form-textarea {
-  @apply w-full rounded-lg border border-[#DAD7CF] bg-[#F7F6F3] text-[#14482F] placeholder:text-[#5f6b61] px-3 py-2 outline-none focus:ring-2 focus:ring-[#29be4f] focus:bg-white focus:border-[#29be4f];
+.marquee-track {
+    animation: marquee-x var(--marquee-duration, 40s) linear infinite;
+    will-change: transform;
 }
 
-/* ===== Legal content styling (headings, text, links) ===== */
-@layer components {
-  .legal h2 {
-    @apply mt-10 mb-4 text-2xl font-semibold text-zinc-900 dark:text-zinc-100;
-    position: relative;
-    padding-left: 0.75rem;
-    /* space for accent */
-  }
+.marquee-track:hover {
+    animation-play-state: paused;
+}
 
-  /* Emerald accent bar on the left of h2 */
-  .legal h2::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.5em;
-    width: 6px;
-    height: 0.9em;
-    background-color: rgb(16 185 129);
-    /* emerald-500 */
-    border-radius: 9999px;
-  }
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+        animation: none;
+    }
+}
 
-  /* First heading doesn’t need a big top margin */
-  .legal h2:first-child {
-    @apply mt-0;
-  }
+/* Animation d'entrée — chaque élément `intro-rise` apparaît en fondu et
+   remonte légèrement. Les `intro-rise-delay-N` décalent l'apparition pour
+   créer une cascade. */
+@keyframes intro-rise {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-  .legal h3 {
-    @apply mt-5 text-lg font-semibold text-[#14482F] dark:text-emerald-400;
-  }
+.intro-rise {
+    animation: intro-rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
 
-  .legal p {
-    @apply text-zinc-700 dark:text-zinc-300 leading-relaxed;
-  }
+.intro-rise-delay-1 {
+    animation-delay: 0.1s;
+}
+.intro-rise-delay-2 {
+    animation-delay: 0.2s;
+}
+.intro-rise-delay-3 {
+    animation-delay: 0.3s;
+}
+.intro-rise-delay-4 {
+    animation-delay: 0.4s;
+}
+.intro-rise-delay-5 {
+    animation-delay: 0.5s;
+}
 
-  .legal a {
-    @apply decoration-emerald-300 underline-offset-4 hover:text-emerald-700 dark:hover:text-emerald-300;
-  }
+/* Variante pour le cadre smartphone : entre par la droite. La rotation reste
+   sur l'élément `PhoneFrame` interne pour ne pas se cumuler avec cette
+   transformation. */
+@keyframes intro-phone-in {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
-  .legal ul {
-    @apply list-disc pl-5 space-y-1 text-zinc-700 dark:text-zinc-300;
-  }
+.intro-phone-in {
+    animation: intro-phone-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: 0.15s;
+}
 
-  .legal ol {
-    @apply list-decimal pl-5 space-y-1 text-zinc-700 dark:text-zinc-300;
-  }
+@media (prefers-reduced-motion: reduce) {
+    .intro-rise,
+    .intro-phone-in {
+        animation: none;
+    }
 }

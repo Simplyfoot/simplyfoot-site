@@ -1,0 +1,88 @@
+/**
+ * SimplyFoot brand palette. Only the primary scale + derived harmonies
+ * are declared here — all other tokens inherit from :root (default.css).
+ *
+ * Harmonies (complementary / analogous / triadic) are derived from the
+ * primary #567e66 via the Material color tool. They are scoped to foot
+ * because the relationships only make visual sense relative to this primary.
+ */
+
+[data-brand='foot'] {
+    /* Primary scale — P at 700 (logo color) */
+    --primary-50: rgb(230 243 238);
+    --primary-100: rgb(195 225 212);
+    --primary-200: rgb(160 206 185);
+    --primary-300: rgb(130 187 160);
+    --primary-400: rgb(112 171 142);
+    --primary-500: rgb(102 156 127);
+    --primary-600: rgb(95 142 116);
+    --primary-700: rgb(86 126 102);
+    --primary-800: rgb(78 110 90);
+    --primary-900: rgb(63 81 68);
+    --primary: var(--primary-700);
+
+    /* Complementary (pink — opposite on color wheel) — P at 900 */
+    --complementary-50: rgb(250 235 243);
+    --complementary-100: rgb(244 204 226);
+    --complementary-200: rgb(240 173 208);
+    --complementary-300: rgb(237 144 189);
+    --complementary-400: rgb(234 125 173);
+    --complementary-500: rgb(234 114 158);
+    --complementary-600: rgb(216 108 151);
+    --complementary-700: rgb(191 101 140);
+    --complementary-800: rgb(168 96 130);
+    --complementary-900: rgb(126 86 110);
+    --complementary: var(--complementary-900);
+
+    /* Analogous 1 (green-yellow — +30° on color wheel) — P at 800 */
+    --analogous-1-50: rgb(236 245 237);
+    --analogous-1-100: rgb(210 230 210);
+    --analogous-1-200: rgb(183 215 183);
+    --analogous-1-300: rgb(157 200 156);
+    --analogous-1-400: rgb(138 188 136);
+    --analogous-1-500: rgb(121 177 116);
+    --analogous-1-600: rgb(111 162 107);
+    --analogous-1-700: rgb(100 143 95);
+    --analogous-1-800: rgb(90 126 86);
+    --analogous-1-900: rgb(73 94 70);
+    --analogous-1: var(--analogous-1-800);
+
+    /* Analogous 2 (teal — −30° on color wheel) — P at 800 */
+    --analogous-2-50: rgb(228 247 244);
+    --analogous-2-100: rgb(190 234 228);
+    --analogous-2-200: rgb(153 220 213);
+    --analogous-2-300: rgb(125 205 199);
+    --analogous-2-400: rgb(113 195 190);
+    --analogous-2-500: rgb(108 184 182);
+    --analogous-2-600: rgb(101 168 166);
+    --analogous-2-700: rgb(93 147 143);
+    --analogous-2-800: rgb(86 126 122);
+    --analogous-2-900: rgb(73 90 86);
+    --analogous-2: var(--analogous-2-800);
+
+    /* Triadic 1 (blue-gray — +120°) — P at 600 */
+    --triadic-1-50: rgb(235 239 243);
+    --triadic-1-100: rgb(207 216 223);
+    --triadic-1-200: rgb(176 190 200);
+    --triadic-1-300: rgb(145 164 178);
+    --triadic-1-400: rgb(122 144 160);
+    --triadic-1-500: rgb(99 125 143);
+    --triadic-1-600: rgb(86 110 126);
+    --triadic-1-700: rgb(71 90 104);
+    --triadic-1-800: rgb(56 71 82);
+    --triadic-1-900: rgb(39 50 59);
+    --triadic-1: var(--triadic-1-600);
+
+    /* Triadic 2 (purple — −120°) — P at 400 */
+    --triadic-2-50: rgb(232 230 236);
+    --triadic-2-100: rgb(198 193 209);
+    --triadic-2-200: rgb(162 153 178);
+    --triadic-2-300: rgb(127 114 148);
+    --triadic-2-400: rgb(102 86 126);
+    --triadic-2-500: rgb(79 61 106);
+    --triadic-2-600: rgb(73 56 101);
+    --triadic-2-700: rgb(64 48 92);
+    --triadic-2-800: rgb(56 43 82);
+    --triadic-2-900: rgb(43 31 69);
+    --triadic-2: var(--triadic-2-400);
+}

@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+build
+dist
+coverage
+public
+src/messages/*.json
+package-lock.json

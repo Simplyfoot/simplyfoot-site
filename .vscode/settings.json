@@ -1,0 +1,29 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.sortMembers": "explicit",
+        "source.fixAll.eslint": "explicit"
+    },
+    "editor.wordWrap": "on",
+    "editor.formatOnSave": true,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "terminal.integrated.tabs.defaultColor": "terminal.ansiBlue",
+    "npm.packageManager": "npm",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}

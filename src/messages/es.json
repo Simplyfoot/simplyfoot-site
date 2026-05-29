@@ -1,0 +1,1855 @@
+{
+    "Common": {
+        "brand": "SIMPLY",
+        "tagline": "El ecosistema del deporte amateur",
+        "cta": {
+            "demo": "Solicitar una demo"
+        }
+    },
+    "Errors": {
+        "generic": {
+            "title": "Ups",
+            "description": "Se produjo un error.",
+            "retry": "Reintentar"
+        },
+        "notFound": {
+            "title": "404",
+            "heading": "Ups... esta página fue sustituida al descanso {emoji}",
+            "description": "¡No te preocupes! Hasta los mejores fallan un pase a veces. Vuelve al inicio y retoma el partido con {brand}.",
+            "backHome": "Volver al inicio",
+            "contactTeam": "Contactar al equipo",
+            "imageAlt": "Ilustración página no encontrada {brand}"
+        }
+    },
+    "Header": {
+        "nav": {
+            "label": "Navegación principal",
+            "about": "Acerca de",
+            "contact": "Contacto",
+            "faq": "Ayuda"
+        },
+        "logoAlt": "Logo de {brand}",
+        "languageSwitcher": {
+            "label": "Cambiar idioma"
+        },
+        "mobileMenu": {
+            "open": "Abrir menú",
+            "close": "Cerrar menú",
+            "title": "Navegación",
+            "languageLabel": "Idioma"
+        }
+    },
+    "Brands": {
+        "foot": {
+            "sport": "Fútbol amateur"
+        },
+        "rugby": {
+            "sport": "Rugby amateur"
+        },
+        "handball": {
+            "sport": "Balonmano amateur"
+        }
+    },
+    "Legal": {
+        "mentionsLegales": {
+            "meta": {
+                "title": "Aviso legal — {brand}",
+                "description": "Información legal de {brand}: editor, alojamiento, propiedad intelectual, responsabilidad, datos personales y contacto."
+            },
+            "breadcrumb": {
+                "legal": "Aviso legal",
+                "updatedOn": "Actualizado el 28 de mayo de 2026"
+            },
+            "heading": "Aviso legal",
+            "introduction": {
+                "title": "Introducción",
+                "description": "El presente aviso legal define las modalidades de puesta a disposición de la información y los servicios ofrecidos en el sitio de {brand}, así como las condiciones de uso aplicables a los usuarios."
+            },
+            "sections": {
+                "editor": {
+                    "title": "1. Editor del sitio",
+                    "intro": "El sitio web www.simplyfoot.fr y la aplicación SimplyFoot son editados por:",
+                    "fields": {
+                        "companyName": {
+                            "label": "Razón social",
+                            "value": "{brand} {entity}"
+                        },
+                        "registeredOffice": { "label": "Domicilio social", "value": "{address}" },
+                        "rcs": { "label": "RCS", "value": "{rcs}" },
+                        "legalForm": {
+                            "label": "Forma jurídica",
+                            "value": "{entity}, sociedad por acciones simplificada con un capital social de {capital}"
+                        },
+                        "vat": { "label": "Número de IVA intracomunitario", "value": "{tva}" },
+                        "email": { "label": "Correo electrónico", "value": "{email}" },
+                        "publicationDirector": {
+                            "label": "Director de publicación",
+                            "value": "Jérémy BARUC, Presidente de {brand} {entity}"
+                        }
+                    }
+                },
+                "hosting": {
+                    "title": "2. Alojamiento del sitio",
+                    "intro": "El sitio está alojado por:",
+                    "country": "Estados Unidos",
+                    "phoneLabel": "Teléfono",
+                    "websiteLabel": "Sitio web",
+                    "contactLabel": "Contacto"
+                },
+                "activity": {
+                    "title": "3. Actividad del sitio",
+                    "body": "El sitio www.simplyfoot.fr presenta los servicios ofrecidos por SimplyFoot, en particular una aplicación web y móvil dedicada a la gestión de clubes de fútbol amateur."
+                },
+                "ip": {
+                    "title": "4. Propiedad intelectual",
+                    "body": "El conjunto de elementos presentes en el sitio (textos, imágenes, gráficos, logotipo, iconos, estructura, código, etc.) es propiedad exclusiva de {brand}, salvo mención en contrario. Queda prohibida toda reproducción, representación, modificación, publicación o adaptación, total o parcial, de estos elementos, por cualquier medio o procedimiento que sea, sin autorización previa por escrito."
+                },
+                "liability": {
+                    "title": "5. Responsabilidad",
+                    "body": "{brand} se esfuerza por garantizar la exactitud y la actualización de la información difundida en el sitio. No obstante, la sociedad no podrá considerarse responsable de los errores, omisiones ni indisponibilidad del servicio. El usuario reconoce utilizar la información disponible bajo su exclusiva responsabilidad."
+                },
+                "data": {
+                    "title": "6. Datos personales",
+                    "intro": "{brand} se compromete a que la recopilación y el tratamiento de los datos personales se ajusten:",
+                    "complianceList": [
+                        "al Reglamento General de Protección de Datos (RGPD)",
+                        "a la ley francesa «Informatique et Libertés»"
+                    ],
+                    "usage": "Los datos recopilados a través del sitio se utilizan únicamente en el marco de los servicios ofrecidos.",
+                    "rights": "El usuario dispone de un derecho de acceso, rectificación, supresión y oposición respecto a sus datos personales.",
+                    "consultIntro": "Para más información, se invita al usuario a consultar:",
+                    "consultList": [
+                        { "key": "privacy", "label": "la Política de privacidad" },
+                        { "key": "cookies", "label": "la Política de gestión de cookies" }
+                    ]
+                },
+                "links": {
+                    "title": "7. Enlaces externos",
+                    "body": "El sitio puede contener enlaces a sitios externos. {brand} no se hace responsable del contenido ni de las prácticas de dichos sitios de terceros."
+                },
+                "law": {
+                    "title": "8. Ley aplicable",
+                    "body": "El presente sitio está sometido a la ley francesa. En caso de litigio, y a falta de resolución amistosa, serán competentes los tribunales de la jurisdicción del domicilio social de {brand}."
+                },
+                "contact": {
+                    "title": "9. Contacto",
+                    "body": "Para cualquier pregunta o solicitud de información: <contactLink>contact@simplyfoot.fr</contactLink>"
+                }
+            }
+        },
+        "cgu": {
+            "meta": {
+                "title": "Condiciones generales de uso — {brand}",
+                "description": "Condiciones generales de uso de la plataforma {brand}, editada por SIMPLYFOOT SAS."
+            },
+            "breadcrumb": {
+                "legal": "Aviso legal",
+                "current": "CGU",
+                "effectiveDate": "En vigor a partir del 03 de mayo de 2026"
+            },
+            "heading": "Condiciones generales de uso",
+            "introduction": {
+                "title": "Preámbulo",
+                "description": "Las presentes Condiciones Generales de Uso definen las condiciones de acceso y uso de la plataforma {brand}, editada por SIMPLYFOOT SAS."
+            },
+            "copyright": "© {brand} - Todos los derechos reservados.",
+            "sections": {
+                "editor": {
+                    "title": "1. Editor del sitio"
+                },
+                "hosting": {
+                    "title": "2. Alojamiento del sitio"
+                },
+                "definitions": {
+                    "title": "3. Definiciones",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "En las presentes CGU, los términos siguientes tienen el significado indicado a continuación:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "Administrador del Club: usuario que dispone de los derechos de administración de un Club en la Plataforma.",
+                                "Aplicación: aplicación móvil {brand} disponible en Android y iOS (TestFlight).",
+                                "Club: estructura deportiva que utiliza {brand}, en particular asociación, club amateur, equipo, escuela de fútbol o cualquier otra organización deportiva.",
+                                "Cuenta: espacio personal que permite a un Usuario acceder a la Plataforma.",
+                                "CGU: las presentes Condiciones Generales de Uso.",
+                                "CGV: las Condiciones Generales de Venta aplicables a las ofertas de pago, cuando existan.",
+                                "Datos del Club: datos importados, creados o generados por un Club en el marco del uso de la Plataforma.",
+                                "Espacio del Club: espacio dedicado a un Club en la Plataforma.",
+                                "Jugador: miembro de un equipo registrado en {brand}.",
+                                "Menor: usuario o jugador menor de 18 años.",
+                                "Padre / Tutor legal: persona titular de la autoridad parental sobre un menor.",
+                                "Plataforma: conjunto de servicios {brand} accesibles a través del sitio, la aplicación web y/o la aplicación móvil.",
+                                "Servicio: funcionalidades ofrecidas por {brand}.",
+                                "Usuario: toda persona que acceda o utilice la Plataforma, con o sin Cuenta."
+                            ]
+                        }
+                    ]
+                },
+                "object": {
+                    "title": "4. Objeto de las CGU",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Las presentes CGU tienen por objeto definir las condiciones en las que los Usuarios pueden acceder a la Plataforma {brand} y utilizarla."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Toda creación de Cuenta, navegación o uso de la Plataforma implica la aceptación plena y sin reservas de las presentes CGU."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Las CGU se aplican sin perjuicio de los demás documentos contractuales aplicables, en particular:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                { "template": "el {link};", "link": { "key": "mentions-legales", "label": "Aviso legal" } },
+                                { "template": "la {link};", "link": { "key": "privacy", "label": "Política de privacidad" } },
+                                { "template": "la {link};", "link": { "key": "privacy", "label": "Política de gestión de cookies" } },
+                                { "template": "las {link}, en su caso;", "link": { "key": "cgv", "label": "Condiciones de venta (próximamente)" } },
+                                "todo contrato específico celebrado con un Club."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "En caso de contradicción, los documentos contractuales se aplican en el siguiente orden:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "contrato específico firmado con un Club;",
+                                { "template": "{link};", "link": { "key": "cgv", "label": "Condiciones de venta (próximamente)" } },
+                                { "template": "{link};", "link": { "key": "cgu", "label": "CGU" } },
+                                { "template": "{link};", "link": { "key": "privacy", "label": "Política de privacidad" } },
+                                { "template": "{link}.", "link": { "key": "privacy", "label": "Política de cookies" } }
+                            ]
+                        }
+                    ]
+                },
+                "service": {
+                    "title": "5. Descripción del Servicio",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} es una plataforma web y móvil dedicada a la gestión de clubes de fútbol amateur."
+                        },
+                        { "type": "paragraph", "text": "Permite, en particular:" },
+                        {
+                            "type": "list",
+                            "items": [
+                                "la gestión de clubes, equipos y jugadores;",
+                                "la gestión de convocatorias, presencias y ausencias;",
+                                "la organización de entrenamientos, partidos y eventos;",
+                                "la centralización del calendario deportivo;",
+                                "la comunicación entre miembros de un club;",
+                                "la gestión de roles de usuario;",
+                                "cualquier otra funcionalidad añadida posteriormente."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} puede hacer evolucionar libremente las funcionalidades ofrecidas con el fin de mejorar el Servicio."
+                        }
+                    ]
+                },
+                "access": {
+                    "title": "6. Acceso a la Plataforma",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "La Plataforma es accesible a través de internet."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "El Usuario reconoce disponer de las competencias, equipos y medios necesarios para acceder a la Plataforma."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Los gastos relativos al acceso a internet, a los equipos y a las comunicaciones corren a cargo exclusivo del Usuario."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} se esfuerza por garantizar la accesibilidad de la Plataforma, sin garantizar un acceso permanente, continuo o exento de errores."
+                        }
+                    ]
+                },
+                "clubSpace": {
+                    "title": "7. Creación de un Espacio del Club",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "El uso completo de {brand} por un Club requiere la creación de un Espacio del Club."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "El Espacio del Club es creado por un Administrador del Club, que declara disponer de los poderes necesarios para representar al Club o actuar con su autorización."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "El Administrador del Club se compromete a proporcionar información exacta, completa y actualizada."
+                        },
+                        { "type": "paragraph", "text": "Garantiza, en particular:" },
+                        {
+                            "type": "list",
+                            "items": [
+                                "estar habilitado para crear el Espacio del Club;",
+                                "disponer de las autorizaciones necesarias para invitar a los miembros;",
+                                "no suplantar la identidad de un tercero;",
+                                "mantener actualizada la información del Club."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} se reserva el derecho de solicitar cualquier justificante en caso de duda legítima."
+                        }
+                    ]
+                },
+                "userAccount": {
+                    "title": "8. Creación de una Cuenta de Usuario",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "El uso de la aplicación requiere la creación de una Cuenta."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "El Usuario se compromete a proporcionar información exacta, completa y actualizada."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Cada Cuenta es personal. El Usuario es responsable de la confidencialidad de sus credenciales y de cualquier actividad realizada desde su Cuenta."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "En caso de pérdida, robo, uso fraudulento o acceso no autorizado, el Usuario debe informar a {brand} sin demora en la dirección: {email}."
+                        }
+                    ]
+                },
+                "roles": {
+                    "title": "9. Roles y responsabilidades de los Usuarios",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "La Plataforma puede prever varios roles, en particular:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "Administrador del Club = Presidente;",
+                                "Entrenador;",
+                                "Padre / Tutor legal;",
+                                "Jugador;",
+                                "Cualquier otro rol añadido posteriormente."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Cada rol dispone de derechos de acceso específicos."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "El Administrador del Club es responsable:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "de la configuración del Espacio del Club;",
+                                "de la atribución de los derechos de usuario;",
+                                "de la gestión de los datos del Club;",
+                                "de la supresión o modificación de los accesos;",
+                                "del respeto de las presentes CGU por parte de los miembros del Club."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Los Entrenadores, dirigentes y demás Usuarios se comprometen a utilizar la Plataforma únicamente en el marco autorizado por el Club y de conformidad con las presentes CGU."
+                        }
+                    ]
+                },
+                "minors": {
+                    "title": "10. Menores",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} puede utilizarse en un marco que implique a jugadores menores."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Cuando un menor utiliza la Plataforma o cuando se introducen datos que le conciernen, el Club, el Administrador del Club o el Padre / Tutor legal garantiza disponer de las autorizaciones necesarias."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Para los menores de 15 años, los tratamientos basados en el consentimiento requieren el acuerdo del menor y de su representante legal, de conformidad con la normativa aplicable."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Las Cuentas de menores deben ser creadas, autorizadas o supervisadas por un Padre / Tutor legal o por una estructura habilitada."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} no sustituye ni a los Clubes, ni a los educadores, ni a los titulares de la autoridad parental."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Los Clubes se comprometen a recopilar únicamente los datos estrictamente necesarios para la gestión deportiva."
+                        }
+                    ]
+                },
+                "clubData": {
+                    "title": "11. Datos introducidos por los Clubes",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Los Clubes y sus Administradores son responsables de los datos que importan, crean o gestionan en la Plataforma."
+                        },
+                        { "type": "paragraph", "text": "Garantizan:" },
+                        {
+                            "type": "list",
+                            "items": [
+                                "la exactitud de los datos introducidos;",
+                                "la licitud de su recopilación;",
+                                "la información de las personas afectadas;",
+                                "la obtención de las autorizaciones necesarias, en particular parentales;",
+                                "el respeto del derecho a la imagen cuando se comparta una foto o cualquier otro contenido identificable."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} actúa como proveedor técnico de la Plataforma y no verifica sistemáticamente la exactitud o la licitud de los datos comunicados por los Clubes."
+                        }
+                    ]
+                },
+                "acceptableUse": {
+                    "title": "12. Reglas de uso aceptable",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "El Usuario se compromete a abstenerse, en particular, de:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "utilizar la Plataforma con fines ilícitos;",
+                                "atentar contra los derechos de terceros;",
+                                "publicar contenidos injuriosos, difamatorios, discriminatorios, violentos, odiosos, obscenos o contrarios al orden público;",
+                                "difundir datos personales sin autorización;",
+                                "publicar fotos o vídeos sin disponer de los derechos necesarios;",
+                                "utilizar la Plataforma con fines comerciales no autorizados;",
+                                "desviar la finalidad deportiva de la Plataforma;",
+                                "intentar acceder a una Cuenta o a datos sin autorización;",
+                                "eludir, desactivar o perturbar las medidas de seguridad;",
+                                "practicar scraping, extracción masiva o automatización abusiva;",
+                                "introducir virus, código malicioso o cualquier elemento perjudicial;",
+                                "perjudicar el correcto funcionamiento de la Plataforma."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} se reserva el derecho de retirar cualquier contenido manifiestamente ilícito o contrario a las presentes CGU."
+                        }
+                    ]
+                },
+                "userContent": {
+                    "title": "13. Contenidos publicados por los Usuarios",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Los Usuarios conservan sus derechos sobre los contenidos que publican en la Plataforma."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "No obstante, conceden a {brand} una licencia no exclusiva, gratuita, mundial y limitada a las necesidades de funcionamiento del Servicio, que permite alojar, almacenar, reproducir, mostrar, transmitir y procesar dichos contenidos."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Esta licencia se limita estrictamente a la prestación del Servicio."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "El Usuario garantiza disponer de todos los derechos necesarios sobre los contenidos publicados."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Garantiza a {brand} frente a cualquier reclamación relativa a los contenidos que publique, en particular en caso de atentado contra la vida privada, el derecho a la imagen, los derechos de autor o los derechos de terceros."
+                        }
+                    ]
+                },
+                "moderation": {
+                    "title": "14. Función de moderación del Administrador del Club",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "El Administrador del Club es responsable del buen uso del Espacio del Club por parte de sus miembros."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Se compromete a suprimir o hacer suprimir, en cuanto tenga conocimiento, todo contenido:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "contrario a la ley;",
+                                "contrario a las presentes CGU;",
+                                "que atente contra los derechos de un tercero;",
+                                "que atente contra la dignidad o la seguridad de una persona;",
+                                "inadecuado para un público menor."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} puede intervenir en caso de denuncia o de violación manifiesta."
+                        }
+                    ]
+                },
+                "notifications": {
+                    "title": "15. Notificaciones, correos electrónicos, SMS y comunicaciones",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} puede enviar comunicaciones necesarias para el funcionamiento del Servicio, en particular:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "correos electrónicos de creación de Cuenta;",
+                                "notificaciones relativas a convocatorias;",
+                                "recordatorios de eventos;",
+                                "mensajes de seguridad;",
+                                "información importante relativa al Servicio."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "El Usuario puede gestionar determinadas preferencias de notificación desde su Cuenta cuando esta funcionalidad esté disponible."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Las comunicaciones estrictamente necesarias para el funcionamiento del Servicio no siempre pueden desactivarse sin impedir el uso normal de la Plataforma."
+                        }
+                    ]
+                },
+                "thirdParty": {
+                    "title": "16. Servicios de terceros",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Determinadas funcionalidades pueden depender de servicios de terceros, en particular:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "alojamiento;",
+                                "notificaciones;",
+                                "autenticación;",
+                                "servicios móviles de Apple o Google."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Estos servicios de terceros pueden estar sujetos a sus propias condiciones."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} no podrá ser considerada responsable de las indisponibilidades, disfunciones o modificaciones imputables a estos servicios de terceros."
+                        }
+                    ]
+                },
+                "paidOffers": {
+                    "title": "17. Ofertas, suscripciones y servicios de pago",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "La creación de una Cuenta puede ser gratuita."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Determinadas funcionalidades pueden ofrecerse en el marco de ofertas de pago, suscripciones o módulos opcionales."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Las condiciones financieras aplicables se precisan en las CGV, presupuestos, órdenes de compra o contratos específicos."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "En caso de contradicción entre las presentes CGU y las CGV, las CGV prevalecerán para los aspectos comerciales, tarifarios, de facturación, de pago, de renovación, de resolución comercial y de reembolso."
+                        }
+                    ]
+                },
+                "suspension": {
+                    "title": "18. Suspensión de acceso",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} puede suspender temporal o definitivamente el acceso a la totalidad o parte del Servicio en caso de:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "violación de las presentes CGU;",
+                                "uso fraudulento;",
+                                "comportamiento abusivo;",
+                                "riesgo para la seguridad de la Plataforma;",
+                                "contenido manifiestamente ilícito;",
+                                "impago, si se trata de una oferta de pago;",
+                                "solicitud de una autoridad competente;",
+                                "riesgo jurídico o técnico grave."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Cuando sea posible, {brand} informará previamente al Usuario o al Club afectado."
+                        }
+                    ]
+                },
+                "accountClosure": {
+                    "title": "19. Cierre de Cuenta",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Un Usuario puede solicitar el cierre de su Cuenta en cualquier momento."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "El cierre de la Cuenta conlleva la supresión o anonimización progresiva de los datos personales asociados, sin perjuicio de:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "las obligaciones legales de conservación;",
+                                "las necesidades probatorias;",
+                                "los datos necesarios para el Club;",
+                                "las copias de seguridad técnicas temporales;",
+                                "los derechos y solicitudes en curso."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "La supresión de una Cuenta de Usuario no conlleva automáticamente la supresión del Espacio del Club."
+                        }
+                    ]
+                },
+                "clubSpaceDeletion": {
+                    "title": "20. Supresión de un Espacio del Club",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Un Administrador del Club habilitado puede solicitar la supresión del Espacio del Club."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "La supresión del Espacio del Club puede conllevar la supresión o anonimización de los datos asociados, sin perjuicio de las obligaciones legales y técnicas aplicables."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} también puede suprimir un Espacio del Club en caso de violación grave de las CGU, inactividad prolongada o solicitud legítima."
+                        }
+                    ]
+                },
+                "dataExport": {
+                    "title": "21. Reversibilidad y exportación de los datos",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Al final del uso del Servicio, el Club puede solicitar la exportación de sus Datos del Club en un formato estándar, cuando sea técnicamente posible."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Salvo disposición contractual distinta, la exportación permanece disponible durante un plazo máximo de 30 días tras el cierre efectivo del Espacio del Club."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Transcurrido este plazo, los datos podrán ser suprimidos o anonimizados progresivamente."
+                        }
+                    ]
+                },
+                "security": {
+                    "title": "22. Seguridad",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} aplica medidas técnicas y organizativas razonables para proteger la Plataforma y los datos tratados."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Estas medidas pueden incluir, en particular:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "cifrado de las comunicaciones;",
+                                "control de los accesos;",
+                                "registro de actividad;",
+                                "copias de seguridad;",
+                                "supervisión técnica;",
+                                "separación de derechos;",
+                                "limitación de los accesos internos."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "El Usuario reconoce, no obstante, que ningún sistema informático puede garantizar una seguridad absoluta."
+                        }
+                    ]
+                },
+                "availability": {
+                    "title": "23. Disponibilidad y mantenimiento",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} hace todo lo posible para garantizar la disponibilidad de la Plataforma."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "No obstante, la Plataforma puede ser interrumpida, en particular en caso de:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "mantenimiento correctivo o evolutivo;",
+                                "actualización;",
+                                "incidente técnico;",
+                                "fuerza mayor;",
+                                "fallo de un proveedor externo;",
+                                "riesgo de seguridad."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} puede modificar, suspender o retirar determinadas funcionalidades, en particular por razones técnicas, legales, económicas o de seguridad."
+                        }
+                    ]
+                },
+                "support": {
+                    "title": "24. Soporte",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "El soporte está disponible en la dirección: {email}."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} se esfuerza por responder a las solicitudes en plazos razonables."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Los niveles de soporte específicos, plazos garantizados o compromisos de servicio podrán ser objeto de un contrato aparte."
+                        }
+                    ]
+                },
+                "ipSimplyfoot": {
+                    "title": "25. Propiedad intelectual de {brand}",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "La Plataforma, su software, su código, su interfaz, sus bases de datos, sus marcas, logotipos, elementos visuales, textos, documentos, elementos gráficos y, en general, todos los elementos que la componen están protegidos por el derecho de la propiedad intelectual."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Son propiedad exclusiva de {brand} o de sus socios/licenciantes."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Ninguna disposición de las presentes CGU transfiere ningún derecho de propiedad al Usuario."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} concede al Usuario un derecho personal, no exclusivo, no cesible, no transferible y revocable de utilizar la Plataforma únicamente en el marco previsto por las presentes CGU."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Quedan prohibidos sin autorización previa:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "reproducción;",
+                                "adaptación;",
+                                "modificación;",
+                                "descompilación, salvo excepción legal;",
+                                "extracción sustancial de la base de datos;",
+                                "reventa;",
+                                "puesta a disposición de un tercero;",
+                                "uso concurrente o abusivo."
+                            ]
+                        }
+                    ]
+                },
+                "feedback": {
+                    "title": "26. Sugerencias y comentarios de los usuarios",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "El Usuario puede transmitir a {brand} sugerencias, observaciones o ideas de mejora."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Salvo acuerdo en contrario por escrito, {brand} es libre de utilizar dichas sugerencias sin obligación de remuneración, reconocimiento o integración."
+                        }
+                    ]
+                },
+                "confidentiality": {
+                    "title": "27. Confidencialidad",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Las Partes se comprometen a mantener confidencial la información no pública intercambiada en el marco del uso del Servicio."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Esta obligación no se aplica a la información:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "ya pública;",
+                                "obtenida legalmente de un tercero;",
+                                "exigida por una autoridad competente;",
+                                "necesaria para la defensa de los derechos de una Parte."
+                            ]
+                        }
+                    ]
+                },
+                "personalData": {
+                    "title": "28. Datos personales",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Los datos personales se tratan de conformidad con la Política de privacidad de {brand}."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "En el marco del uso por un Club, el Club actúa en principio como responsable del tratamiento de los datos que introduce relativos a sus miembros, jugadores, padres, entrenadores y dirigentes."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} actúa en principio como encargado del tratamiento en el sentido del artículo 28 del RGPD para los tratamientos realizados por cuenta del Club."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} también puede actuar como responsable del tratamiento para determinados tratamientos propios, en particular:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "gestión de las cuentas de administradores;",
+                                "prospección comercial;",
+                                "facturación;",
+                                "seguridad de la Plataforma;",
+                                "gestión del soporte;",
+                                "medición de audiencia del sitio."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Los roles exactos, obligaciones y garantías aplicables se detallan en la Política de privacidad y, en su caso, en un anexo de subcontratación RGPD."
+                        }
+                    ]
+                },
+                "subprocessors": {
+                    "title": "29. Subcontratistas y transferencias fuera de la Unión Europea",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} puede recurrir a subcontratistas técnicos necesarios para el funcionamiento del Servicio."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Algunos subcontratistas pueden estar situados fuera de la Unión Europea o implicar transferencias de datos fuera de la UE."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "En tal caso, {brand} se asegura de que dichas transferencias estén enmarcadas por garantías adecuadas, en particular una decisión de adecuación, las cláusulas contractuales tipo de la Comisión Europea o cualquier otro mecanismo reconocido por la normativa aplicable."
+                        }
+                    ]
+                },
+                "liability": {
+                    "title": "30. Responsabilidad",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} proporciona una plataforma técnica destinada a facilitar la gestión deportiva de los Clubes."
+                        },
+                        { "type": "paragraph", "text": "{brand} no es responsable:" },
+                        {
+                            "type": "list",
+                            "items": [
+                                "de las decisiones deportivas adoptadas por los Clubes;",
+                                "de los errores de introducción de los Usuarios;",
+                                "de la exactitud de los datos introducidos por los Clubes;",
+                                "de los contenidos publicados por los Usuarios;",
+                                "de los litigios entre miembros, padres, jugadores, entrenadores o Clubes;",
+                                "del uso no conforme de la Plataforma;",
+                                "de la ausencia de autorización parental cuando esta sea responsabilidad del Club o del tutor legal;",
+                                "de los daños resultantes de un tercero o de un proveedor externo."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "La responsabilidad de {brand} solo podrá ser comprometida en caso de culpa probada que le sea directamente imputable."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} no podrá ser considerada responsable de los daños indirectos, tales como pérdida de oportunidad, pérdida de explotación, pérdida de ingresos, perjuicio a la imagen, pérdida de datos no respaldados por el Usuario o perjuicio moral indirecto."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Para los clientes profesionales, salvo culpa grave o disposición legal contraria, la responsabilidad total de {brand} se limita a las sumas efectivamente abonadas por el Club durante los doce meses anteriores al hecho generador del daño."
+                        }
+                    ]
+                },
+                "userGuarantee": {
+                    "title": "31. Garantía del Usuario",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "El Usuario garantiza a {brand} frente a cualquier reclamación, acción, demanda o condena resultante:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "de su uso de la Plataforma;",
+                                "de los contenidos que publica;",
+                                "de los datos que introduce;",
+                                "de una violación de las presentes CGU;",
+                                "de un atentado contra los derechos de un tercero;",
+                                "de la falta de autorización parental o de derecho a la imagen."
+                            ]
+                        }
+                    ]
+                },
+                "forceMajeure": {
+                    "title": "32. Fuerza mayor",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Ninguna Parte podrá ser considerada responsable de un incumplimiento resultante de un evento de fuerza mayor en el sentido del derecho francés."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Se incluyen, en particular, sin que esta lista sea limitativa:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "catástrofes naturales;",
+                                "incendios;",
+                                "huelgas;",
+                                "ciberataques masivos;",
+                                "averías generalizadas;",
+                                "decisiones administrativas;",
+                                "interrupciones importantes de redes;",
+                                "eventos imprevisibles, irresistibles y externos."
+                            ]
+                        }
+                    ]
+                },
+                "cguModifications": {
+                    "title": "33. Modificación de las CGU",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} puede modificar las presentes CGU en cualquier momento, en particular para tener en cuenta:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "una evolución legal;",
+                                "una evolución técnica;",
+                                "una nueva funcionalidad;",
+                                "un cambio de organización;",
+                                "un imperativo de seguridad."
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Los Usuarios serán informados de las modificaciones sustanciales por cualquier medio apropiado."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "La continuación del uso de la Plataforma tras la entrada en vigor de las nuevas CGU equivale a su aceptación."
+                        }
+                    ]
+                },
+                "duration": {
+                    "title": "34. Duración",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Las presentes CGU se aplican durante toda la duración de uso de la Plataforma por el Usuario."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Determinadas cláusulas seguirán produciendo efecto tras el cierre de la Cuenta o la resolución del Servicio, en particular las relativas a la propiedad intelectual, la responsabilidad, las garantías, la confidencialidad, los datos y la resolución de litigios."
+                        }
+                    ]
+                },
+                "partialNullity": {
+                    "title": "35. Nulidad parcial",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Si una cláusula de las presentes CGU se declara nula o inaplicable, las demás cláusulas seguirán siendo plenamente aplicables."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "La cláusula afectada se sustituirá, en la medida de lo posible, por una cláusula válida que persiga un objetivo económico y jurídico equivalente."
+                        }
+                    ]
+                },
+                "nonWaiver": {
+                    "title": "36. No renuncia",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "El hecho de que {brand} no haga valer en un momento dado una cláusula de las presentes CGU no constituye una renuncia a hacerla valer posteriormente."
+                        }
+                    ]
+                },
+                "proof": {
+                    "title": "37. Prueba",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Los registros informatizados conservados en los sistemas de {brand} en condiciones razonables de seguridad podrán utilizarse como elementos de prueba relativos a:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "conexiones;",
+                                "acciones realizadas;",
+                                "aceptación de las CGU;",
+                                "intercambios;",
+                                "notificaciones;",
+                                "pagos, en su caso."
+                            ]
+                        }
+                    ]
+                },
+                "claims": {
+                    "title": "38. Reclamaciones",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Toda reclamación puede dirigirse a:"
+                        },
+                        {
+                            "type": "lines",
+                            "items": ["SIMPLYFOOT SAS", "{address}"]
+                        },
+                        { "type": "paragraph", "text": "Correo electrónico: <contactLink>{email}</contactLink>" },
+                        {
+                            "type": "paragraph",
+                            "text": "{brand} se esforzará por tratar las reclamaciones en un plazo razonable."
+                        }
+                    ]
+                },
+                "mediation": {
+                    "title": "39. Mediación de consumo",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Para los Usuarios que actúen como consumidores, y tras una gestión previa por escrito ante {brand} que haya resultado infructuosa, el Usuario puede recurrir gratuitamente a un mediador de consumo."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "El mediador se designará en el momento del lanzamiento de las ofertas de pago."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "El Usuario también puede acceder a la plataforma europea de resolución en línea de litigios:"
+                        },
+                        {
+                            "type": "link",
+                            "label": "Plataforma europea ODR",
+                            "url": "https://ec.europa.eu/consumers/odr/"
+                        }
+                    ]
+                },
+                "governingLaw": {
+                    "title": "40. Ley aplicable y jurisdicción competente",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Las presentes CGU se rigen por el derecho francés."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "En caso de litigio, las Partes se comprometen a buscar una solución amistosa."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "A falta de resolución amistosa, los tribunales competentes se determinarán conforme a las reglas del derecho común."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Para los litigios entre profesionales, la competencia se atribuye a los tribunales de la jurisdicción del domicilio social de {brand}, salvo disposición legal imperativa contraria."
+                        }
+                    ]
+                },
+                "contact": {
+                    "title": "41. Contacto",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Para cualquier pregunta relativa a las presentes CGU:"
+                        },
+                        { "type": "paragraph", "text": "Correo electrónico: <contactLink>{email}</contactLink>" },
+                        {
+                            "type": "paragraph",
+                            "text": "Dirección: SIMPLYFOOT SAS, {address}"
+                        }
+                    ]
+                }
+            }
+        },
+        "privacy": {
+            "meta": {
+                "title": "Política de privacidad y gestión de cookies — {brand}",
+                "description": "Política de privacidad y gestión de cookies de {brand}: responsable del tratamiento, datos recogidos, finalidades, sus derechos y cookies."
+            },
+            "breadcrumb": {
+                "legal": "Aviso legal",
+                "current": "Privacidad y cookies",
+                "effectiveDate": "Última actualización el 26 de mayo de 2026"
+            },
+            "heading": "Política de privacidad y gestión de cookies",
+            "introduction": {
+                "title": "Preámbulo",
+                "description": "SimplyFoot concede una gran importancia a la protección de sus datos personales y a la transparencia en cuanto a su uso."
+            },
+            "copyright": "© {brand} - Todos los derechos reservados",
+            "sections": {
+                "controller": {
+                    "title": "1. Responsable del tratamiento"
+                },
+                "hosting": {
+                    "title": "2. Alojamiento"
+                },
+                "service": {
+                    "title": "3. Presentación del servicio",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "SimplyFoot es una aplicación web y móvil dedicada a la gestión de clubes de fútbol amateur."
+                        }
+                    ]
+                },
+                "dataCollected": {
+                    "title": "4. Datos recogidos",
+                    "blocks": [
+                        { "type": "paragraph", "text": "Los datos que pueden recogerse son:" },
+                        {
+                            "type": "list",
+                            "items": [
+                                "Datos de identificación: apellidos, nombre, fecha de nacimiento, rol (entrenador, jugador, padre/madre, presidente), posición (portero, delantero, defensa…)",
+                                "Datos de contacto: dirección de correo electrónico, teléfono",
+                                "Información relativa a los clubes, equipos y actividades deportivas",
+                                "Datos técnicos: dirección IP, registros de conexión"
+                            ]
+                        },
+                        { "type": "paragraph", "text": "No se recoge ningún dato sensible sin consentimiento explícito." }
+                    ]
+                },
+                "purposes": {
+                    "title": "5. Finalidades del tratamiento",
+                    "blocks": [
+                        { "type": "paragraph", "text": "Los datos se recogen para:" },
+                        {
+                            "type": "list",
+                            "items": [
+                                "Crear y gestionar las cuentas de los usuarios",
+                                "Permitir el uso de las funcionalidades de la aplicación",
+                                "Gestionar los equipos y clubes",
+                                "Garantizar el soporte al usuario",
+                                "Mejorar los servicios y garantizar la seguridad"
+                            ]
+                        }
+                    ]
+                },
+                "minors": {
+                    "title": "6. Datos de menores",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "En el marco del uso de SimplyFoot por clubes deportivos, pueden tratarse datos relativos a menores."
+                        },
+                        { "type": "paragraph", "text": "Estos datos se limitan estrictamente a la gestión deportiva." },
+                        {
+                            "type": "paragraph",
+                            "text": "Los clubes y responsables de equipo se comprometen a disponer de las autorizaciones parentales necesarias."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "SimplyFoot no permite que un menor cree una cuenta de forma autónoma sin supervisión."
+                        }
+                    ]
+                },
+                "legalBasis": {
+                    "title": "7. Base jurídica",
+                    "blocks": [
+                        { "type": "paragraph", "text": "Los tratamientos se basan en:" },
+                        {
+                            "type": "list",
+                            "items": [
+                                "La ejecución del contrato (uso del servicio)",
+                                "El consentimiento (cookies, comunicaciones)",
+                                "El interés legítimo (mejora del servicio, seguridad)"
+                            ]
+                        }
+                    ]
+                },
+                "recipients": {
+                    "title": "8. Destinatarios de los datos",
+                    "blocks": [
+                        { "type": "paragraph", "text": "Los datos se destinan a:" },
+                        {
+                            "type": "list",
+                            "items": [
+                                "SimplyFoot",
+                                "Los administradores de los clubes",
+                                "Los proveedores técnicos necesarios para el funcionamiento del servicio"
+                            ]
+                        },
+                        { "type": "paragraph", "text": "No se vende ningún dato a terceros." }
+                    ]
+                },
+                "retention": {
+                    "title": "9. Plazo de conservación",
+                    "blocks": [
+                        { "type": "paragraph", "text": "Los datos se conservan:" },
+                        {
+                            "type": "list",
+                            "items": [
+                                "Durante la utilización de la cuenta",
+                                "Hasta 3 años después de la última actividad",
+                                "Según las obligaciones legales aplicables"
+                            ]
+                        }
+                    ]
+                },
+                "security": {
+                    "title": "10. Seguridad",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "SimplyFoot aplica las medidas técnicas y organizativas adecuadas para proteger los datos personales."
+                        }
+                    ]
+                },
+                "transfers": {
+                    "title": "11. Transferencias fuera de la Unión Europea",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Ciertos datos pueden alojarse o tratarse fuera de la Unión Europea, en particular a través de Vercel."
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "En tal caso, SimplyFoot garantiza que estas transferencias se rigen por garantías adecuadas, en particular las cláusulas contractuales tipo de la Comisión Europea."
+                        }
+                    ]
+                },
+                "rights": {
+                    "title": "12. Sus derechos",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "De conformidad con la normativa vigente, usted dispone de los siguientes derechos:"
+                        },
+                        {
+                            "type": "list",
+                            "items": [
+                                "Derecho de acceso",
+                                "Derecho de rectificación",
+                                "Derecho de supresión",
+                                "Derecho de oposición",
+                                "Derecho a la limitación",
+                                "Derecho a la portabilidad"
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "Puede ejercer sus derechos en la siguiente dirección: <contactLink>contact@simplyfoot.fr</contactLink>"
+                        },
+                        {
+                            "type": "paragraph",
+                            "text": "También tiene la posibilidad de presentar una reclamación ante la CNIL (autoridad francesa de protección de datos)."
+                        }
+                    ]
+                },
+                "cookies": {
+                    "title": "13. Cookies",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Durante su navegación, pueden depositarse cookies en su dispositivo."
+                        },
+                        { "type": "subheading", "text": "Cookies necesarias" },
+                        {
+                            "type": "paragraph",
+                            "text": "Permiten el correcto funcionamiento del sitio y no requieren consentimiento."
+                        },
+                        { "type": "subheading", "text": "Cookies analíticas" },
+                        {
+                            "type": "paragraph",
+                            "text": "Permiten medir la audiencia y mejorar los servicios ofrecidos."
+                        },
+                        { "type": "subheading", "text": "Gestión del consentimiento" },
+                        {
+                            "type": "paragraph",
+                            "text": "Un banner le permite aceptar o rechazar las cookies no esenciales en su primera visita."
+                        },
+                        { "type": "paragraph", "text": "Puede modificar sus preferencias en cualquier momento." }
+                    ]
+                },
+                "modifications": {
+                    "title": "14. Modificación de la política",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "SimplyFoot se reserva el derecho de modificar la presente política en cualquier momento para garantizar su conformidad con la legislación vigente."
+                        }
+                    ]
+                },
+                "contact": {
+                    "title": "15. Contacto",
+                    "blocks": [
+                        {
+                            "type": "paragraph",
+                            "text": "Para cualquier pregunta relativa a la protección de datos: <contactLink>contact@simplyfoot.fr</contactLink>"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "FAQ": {
+        "meta": {
+            "title": "Centro de ayuda — {brand}",
+            "description": "Encuentra respuestas a las preguntas frecuentes sobre {brand}: registro, gestión de equipos, convocatorias, mensajería y mucho más."
+        },
+        "heading": "Centro de ayuda",
+        "intro": "Encuentra rápidamente respuestas a las preguntas más frecuentes sobre {brand}. ¿No encuentras lo que buscas? Contáctanos directamente.",
+        "sidebarLabel": "Categorías de la FAQ",
+        "searchPlaceholder": "Buscar una pregunta…",
+        "searchClearLabel": "Borrar búsqueda",
+        "noResults": "Ninguna pregunta coincide con tu búsqueda.",
+        "categories": {
+            "signup": {
+                "title": "Registro y cuenta",
+                "items": {
+                    "create-account": {
+                        "question": "¿Cómo creo mi cuenta {brand}?",
+                        "answer": {
+                            "p0": "Introduce tu correo electrónico y una contraseña, luego pulsa <strong>«Registrarme»</strong>. También puedes registrarte con tu cuenta de <strong>Google</strong> o <strong>Apple</strong>."
+                        }
+                    },
+                    "google-login": {
+                        "question": "El inicio de sesión con Google no funciona, ¿qué hago?",
+                        "answer": {
+                            "p0": "Para registrarte con Google, <strong>Chrome</strong> debe estar definido como navegador predeterminado en tu teléfono. Si se utiliza otro navegador (por ejemplo Opera o Samsung Internet), el inicio de sesión con Google puede fallar. En ese caso, regístrate de forma clásica con correo electrónico y contraseña."
+                        }
+                    },
+                    "join-club": {
+                        "question": "¿Cómo me uno a mi club?",
+                        "answer": {
+                            "p0": "Tras crear tu cuenta, puedes unirte a un club de tres maneras:",
+                            "l0": "<strong>Como jugador o entrenador</strong>: introduce el código de club que te facilite el presidente (o {brand} en el caso de clubes piloto).",
+                            "l1": "<strong>Como representante legal</strong>: introduce tus datos, después el código de equipo facilitado por el entrenador y la información de tu hijo/a.",
+                            "l2": "<strong>Ambos</strong>: combina los dos procesos."
+                        }
+                    },
+                    "club-code": {
+                        "question": "¿Dónde encuentro el código de club?",
+                        "answer": {
+                            "p0": "El código de club lo facilita el <strong>presidente del club</strong>. En los clubes piloto, este código lo comunica directamente el equipo de {brand}."
+                        }
+                    },
+                    "team-code": {
+                        "question": "¿Dónde encuentro el código de equipo?",
+                        "answer": {
+                            "p0": "El código de equipo aparece en la etiqueta del equipo en el panel del entrenador. El entrenador puede copiarlo con un clic y enviártelo."
+                        }
+                    },
+                    "multi-role": {
+                        "question": "¿Puedo ser entrenador, jugador y padre/madre a la vez?",
+                        "answer": {
+                            "p0": "Sí. {brand} gestiona el <strong>multi-rol</strong>. Puedes ser entrenador, jugador, madre o padre de un jugador, y cambiar entre tus perfiles con un clic sin cerrar sesión."
+                        }
+                    },
+                    "switch-profiles": {
+                        "question": "¿Cómo cambio entre mis distintos perfiles?",
+                        "answer": {
+                            "p0": "En la parte superior de la pantalla, junto a tu foto de perfil, pulsa el logotipo a la derecha. Verás todos tus roles y podrás cambiar de uno a otro al instante."
+                        }
+                    },
+                    "edit-profile": {
+                        "question": "¿Cómo modifico mis datos personales?",
+                        "answer": {
+                            "p0": "Pulsa la <strong>rueda dentada</strong> arriba a la derecha y luego <strong>«Datos personales»</strong>. Puedes cambiar tu nombre, fecha de nacimiento, correo, añadir una foto de perfil o gestionar el perfil de tu hijo/a."
+                        }
+                    },
+                    "change-password": {
+                        "question": "¿Cómo cambio mi contraseña?",
+                        "answer": {
+                            "p0": "Pulsa la <strong>rueda dentada</strong> arriba a la derecha y luego <strong>«Modificar tu contraseña»</strong>."
+                        }
+                    },
+                    "change-club": {
+                        "question": "¿Cómo cambio de club?",
+                        "answer": {
+                            "p0": "En los ajustes, pulsa <strong>«Gestionar tus roles»</strong>. Puedes abandonar tu rol actual en cualquier momento y unirte a un nuevo club con el código correspondiente."
+                        }
+                    },
+                    "deactivate-account": {
+                        "question": "¿Cómo desactivo mi cuenta?",
+                        "answer": {
+                            "p0": "Ve a los ajustes y luego a <strong>«Datos personales»</strong>. Al final de esa página encontrarás la opción para desactivar tu cuenta."
+                        }
+                    }
+                }
+            },
+            "separated-parents": {
+                "title": "Padres separados",
+                "items": {
+                    "avoid-duplicates": {
+                        "question": "Somos padres separados, ¿cómo evitamos duplicados?",
+                        "answer": {
+                            "p0": "Uno de los padres inscribe al hijo/a normalmente. El entrenador genera después un <strong>código de vinculación</strong> específico para ese niño/a desde su ficha. Este código se envía al segundo progenitor que, al registrarse, pulsa <strong>«Vincular un hijo/a»</strong> e introduce el código. El segundo progenitor queda vinculado automáticamente, sin crear duplicados."
+                        }
+                    },
+                    "share-credentials": {
+                        "question": "¿Tenemos que compartir un correo o una contraseña?",
+                        "answer": {
+                            "p0": "No. Cada padre/madre dispone de su propia cuenta independiente. No es necesario compartir credenciales."
+                        }
+                    },
+                    "generate-link-code": {
+                        "question": "¿Dónde genera el entrenador el código de vinculación?",
+                        "answer": {
+                            "p0": "El entrenador accede a la ficha del jugador mediante la pestaña <strong>«Equipos»</strong> y pulsa sobre el jugador en cuestión. En la sección «Código de vinculación» hay un botón <strong>«Generar un código»</strong>. Este código es de un solo uso."
+                        }
+                    }
+                }
+            },
+            "coach-teams": {
+                "title": "Entrenador — Gestión de equipos",
+                "items": {
+                    "create-team": {
+                        "question": "¿Cómo creo un equipo?",
+                        "answer": {
+                            "p0": "Desde tu panel, pulsa <strong>«Crear un equipo»</strong>. Indica un nombre o alias (Grupo 1, Equipo A…), selecciona la categoría y el género y valida. Se generará un código de equipo automáticamente."
+                        }
+                    },
+                    "share-team-code": {
+                        "question": "¿Cómo comparto el código de equipo?",
+                        "answer": {
+                            "p0": "El código de equipo aparece en la etiqueta de tu equipo en el panel. Púlsalo para copiarlo y envíalo a los jugadores o padres implicados."
+                        }
+                    },
+                    "second-coach": {
+                        "question": "¿Cómo me uno a un equipo como segundo entrenador?",
+                        "answer": {
+                            "p0": "Pulsa <strong>«Crear un equipo»</strong> y, en la parte inferior de la pantalla, selecciona <strong>«Unirse a un equipo como entrenador»</strong>. Introduce el código de equipo facilitado por el entrenador principal."
+                        }
+                    },
+                    "player-profiles": {
+                        "question": "¿Cómo accedo a las fichas de mis jugadores?",
+                        "answer": {
+                            "p0": "Pulsa la pestaña <strong>«Equipos»</strong> y luego el jugador deseado. Accederás a sus datos personales y a los contactos de sus representantes legales. Al tocar el correo electrónico, la aplicación propone enviar un email. Al tocar el número de teléfono, se marca automáticamente."
+                        }
+                    }
+                }
+            },
+            "coach-events": {
+                "title": "Entrenador — Eventos y convocatorias",
+                "items": {
+                    "create-event": {
+                        "question": "¿Cómo creo un evento?",
+                        "answer": {
+                            "p0": "Pulsa el botón <strong>«+»</strong> o <strong>«Crear un evento»</strong>. Indica el título, el equipo implicado, el tipo de encuentro, la fecha y la hora de inicio y fin."
+                        }
+                    },
+                    "club-wide-event": {
+                        "question": "¿Cómo envío un evento a todo el club?",
+                        "answer": {
+                            "p0": "Al crearlo, selecciona <strong>todos los equipos del club</strong>. El evento se enviará a todos los miembros. Ideal para cenas de Navidad, bingos, etc."
+                        }
+                    },
+                    "event-vs-callup": {
+                        "question": "¿Qué diferencia hay entre un evento clásico y una convocatoria?",
+                        "answer": {
+                            "p0": "Si marcas la opción <strong>«Convocatoria»</strong>, solo los jugadores que selecciones verán este evento y podrán participar. Sin esta opción (por ejemplo, un entrenamiento), todo el equipo ve el evento."
+                        }
+                    },
+                    "recurring-training": {
+                        "question": "¿Cómo creo un entrenamiento recurrente?",
+                        "answer": {
+                            "p0": "Marca <strong>«Crear un evento recurrente»</strong>. Selecciona el día y el horario (por ejemplo, martes de 17:30 a 19:30) durante un período determinado. Se creará un evento automáticamente cada semana."
+                        }
+                    },
+                    "edit-event": {
+                        "question": "¿Puedo modificar un evento tras crearlo?",
+                        "answer": {
+                            "p0": "Sí. Pulsa sobre el evento para abrir su ficha. Puedes modificar todos los elementos en cualquier momento: lugar, rival, horario, fecha, etc."
+                        }
+                    },
+                    "cancel-event": {
+                        "question": "¿Cómo cancelo un evento?",
+                        "answer": {
+                            "p0": "Puedes cancelar un evento en cualquier momento. Los jugadores seguirán viendo el evento, pero con la indicación <strong>«Cancelado»</strong> claramente visible."
+                        }
+                    },
+                    "send-callups": {
+                        "question": "¿Cómo envío las convocatorias?",
+                        "answer": {
+                            "p0": "Pulsa el contador de asistencia arriba a la derecha del evento. Desde esa pestaña, selecciona a tus jugadores uno por uno o todos a la vez y valida."
+                        }
+                    },
+                    "track-responses": {
+                        "question": "¿Cómo sigo las respuestas de los jugadores?",
+                        "answer": {
+                            "p0": "En la pestaña de asistencia verás el recuento (por ejemplo <strong>12/14</strong>) y el indicador junto a cada jugador:",
+                            "l0": "<strong>Marca verde</strong> = presente",
+                            "l1": "<strong>Cruz roja</strong> = ausente",
+                            "l2": "<strong>Cochecito</strong> = acude directamente al estadio de forma autónoma"
+                        }
+                    },
+                    "answer-for-player": {
+                        "question": "Un jugador no tiene su teléfono, ¿puedo responder por él?",
+                        "answer": {
+                            "p0": "Sí. A la derecha de la barra de búsqueda, pulsa el <strong>lápiz pequeño</strong> para pasar al modo edición. Puedes entonces validar la asistencia, la ausencia o indicar que el jugador acude directamente al estadio."
+                        }
+                    },
+                    "car-icon": {
+                        "question": "¿Qué significa el icono «cochecito»?",
+                        "answer": {
+                            "p0": "Significa que el jugador (o su padre/madre) acude <strong>directamente al estadio</strong> por sus propios medios, sin pasar por el punto de encuentro del grupo. Así el entrenador sabe que no debe esperarle en la salida."
+                        }
+                    }
+                }
+            },
+            "player": {
+                "title": "Jugador",
+                "items": {
+                    "upcoming-events": {
+                        "question": "¿Cómo veo los próximos eventos?",
+                        "answer": {
+                            "p0": "En tu página de inicio encontrarás los próximos eventos junto con tu respuesta para cada uno: presente, ausente o sin responder."
+                        }
+                    },
+                    "respond-to-callup": {
+                        "question": "¿Cómo respondo a una convocatoria?",
+                        "answer": {
+                            "p0": "Pulsa el evento y, al final de la ficha, indica <strong>«Presente»</strong> o <strong>«Ausente»</strong>. También puedes precisar si vas con el grupo o directamente al estadio."
+                        }
+                    },
+                    "edit-response": {
+                        "question": "¿Puedo modificar mi respuesta más tarde?",
+                        "answer": {
+                            "p0": "Sí, puedes modificar tu respuesta en cualquier momento."
+                        }
+                    },
+                    "transport": {
+                        "question": "¿Está disponible la función Transporte?",
+                        "answer": {
+                            "p0": "No, la función Transporte <strong>aún no está disponible</strong>. Se incluirá en una próxima actualización."
+                        }
+                    }
+                }
+            },
+            "calendar": {
+                "title": "Calendario",
+                "items": {
+                    "calendar-how-it-works": {
+                        "question": "¿Cómo funciona el calendario?",
+                        "answer": {
+                            "p0": "El calendario muestra todos los días en los que hay un evento programado. Pulsa sobre un día para ver los eventos y luego sobre un evento para consultar los detalles."
+                        }
+                    },
+                    "calendar-all-roles": {
+                        "question": "¿El calendario muestra los eventos de todos mis roles?",
+                        "answer": {
+                            "p0": "Sí. Si eres a la vez entrenador, jugador y padre/madre, el calendario agrupa <strong>todos tus eventos</strong> en un mismo lugar, sea cual sea el rol implicado."
+                        }
+                    }
+                }
+            },
+            "notifications-messaging": {
+                "title": "Notificaciones y mensajería",
+                "items": {
+                    "bell": {
+                        "question": "¿Para qué sirve la campana en la parte superior?",
+                        "answer": {
+                            "p0": "La campana funciona como en Facebook. Todas las notificaciones (aceptación de convocatoria, modificación de evento, etc.) aparecen allí, además de la notificación push en tu teléfono."
+                        }
+                    },
+                    "coach-notifications": {
+                        "question": "¿Qué notificaciones recibe un entrenador?",
+                        "answer": {
+                            "p0": "El entrenador recibe una notificación cuando un jugador acepta o rechaza una convocatoria."
+                        }
+                    },
+                    "player-notifications": {
+                        "question": "¿Qué notificaciones recibe un jugador?",
+                        "answer": {
+                            "p0": "El jugador recibe una notificación cuando el entrenador crea, modifica o cancela un evento."
+                        }
+                    },
+                    "messaging-location": {
+                        "question": "¿Dónde está la mensajería?",
+                        "answer": {
+                            "p0": "La mensajería está junto a la campana, en la parte superior de la pantalla. Pulsa el icono de abajo a la derecha para crear un nuevo mensaje."
+                        }
+                    },
+                    "coach-conversations": {
+                        "question": "¿Qué conversaciones hay disponibles para un entrenador?",
+                        "answer": {
+                            "l0": "<strong>Conversación del club</strong> — Intercambia con los demás entrenadores y el presidente.",
+                            "l1": "<strong>Entrenadores</strong> — Envía un mensaje privado a otro entrenador del club.",
+                            "l2": "<strong>Equipos</strong> — Conversa con todos los jugadores y padres de un equipo."
+                        }
+                    },
+                    "player-conversations": {
+                        "question": "¿Qué conversaciones hay disponibles para un jugador?",
+                        "answer": {
+                            "l0": "<strong>Conversación del club</strong> — Solo lectura (puedes leer los intercambios del cuerpo técnico).",
+                            "l1": "<strong>Entrenadores</strong> — Envía un mensaje privado al/los entrenador/es de tu equipo.",
+                            "l2": "<strong>Equipos</strong> — Conversa con todos los jugadores y padres de tu equipo."
+                        }
+                    },
+                    "messaging-identify": {
+                        "question": "¿Cómo sé con quién estoy hablando en la mensajería?",
+                        "answer": {
+                            "p0": "Al abrir una conversación, aparecen tanto el <strong>nombre del padre/madre</strong> como el <strong>nombre del hijo/a</strong>, lo que te permite identificar claramente a tu interlocutor. Lo mismo ocurre en las conversaciones de grupo."
+                        }
+                    },
+                    "messaging-photos": {
+                        "question": "¿Puedo enviar fotos o vídeos?",
+                        "answer": {
+                            "p0": "No, el envío de fotos y vídeos <strong>aún no está disponible</strong> en la mensajería. Esta función podría añadirse en una próxima actualización."
+                        }
+                    }
+                }
+            },
+            "upcoming": {
+                "title": "Próximas funcionalidades",
+                "items": {
+                    "upcoming-features": {
+                        "question": "¿Qué funcionalidades aún no están disponibles?",
+                        "answer": {
+                            "p0": "Las siguientes funcionalidades están en desarrollo y se desplegarán en las próximas actualizaciones:",
+                            "l0": "Los datos deportivos",
+                            "l1": "El módulo de Transporte",
+                            "l2": "El envío de fotos y vídeos en la mensajería",
+                            "l3": "La alineación del equipo",
+                            "l4": "Las evaluaciones",
+                            "l5": "El Nutri-Scan"
+                        }
+                    },
+                    "update-frequency": {
+                        "question": "¿Con qué frecuencia se publican las actualizaciones?",
+                        "answer": {
+                            "p0": "Las actualizaciones serán muy frecuentes, con un ritmo previsto de <strong>aproximadamente cada 15 días</strong>."
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "Contact": {
+        "meta": {
+            "title": "Contacto — {brand}",
+            "description": "Contacta con el equipo de {brand}: demo, programa piloto, alianzas, informe de errores o cualquier otra consulta. Respuesta rápida garantizada."
+        },
+        "heading": "Contacta con {brand}",
+        "intro": "Demo, tarifas, alianza, error o simple sugerencia: elige tu asunto a continuación y escríbenos. ¡No esperaremos al tiempo añadido para responderte!",
+        "formTitle": "Escríbenos",
+        "formIntro": "Selecciona un asunto a continuación: adaptaremos el formulario para responderte más rápido.",
+        "legalNotice": "La información recogida a través de este formulario está destinada a {brand} SAS, editor del sitio, en su calidad de responsable del tratamiento, y se utiliza para responder a tu solicitud. Los campos marcados con un asterisco son obligatorios. Tus datos se conservan durante 3 años desde nuestro último intercambio. De conformidad con el RGPD, dispones de un derecho de acceso, rectificación, supresión, limitación, portabilidad y oposición sobre tus datos personales. Para ejercer estos derechos u obtener más información, consulta nuestra <privacy>Política de privacidad</privacy>.",
+        "form": {
+            "topicLabel": "Asunto de tu consulta",
+            "topicPlaceholder": "Elige un asunto",
+            "topics": {
+                "request-demo": "Solicitar una demo",
+                "join-pilot": "Unirse al programa piloto",
+                "pricing-question": "Pregunta sobre las ofertas",
+                "report-bug": "Informar de un error",
+                "suggestion": "Sugerencia / mejora",
+                "partnership": "Alianza",
+                "press": "Prensa / medios",
+                "other": "Otro"
+            },
+            "fields": {
+                "firstName": { "label": "Nombre", "placeholder": "Lucía" },
+                "lastName": { "label": "Apellido", "placeholder": "García" },
+                "email": { "label": "Correo electrónico", "placeholder": "lucia.garcia@simplyfoot.es" },
+                "phone": { "label": "Teléfono", "placeholder": "+34 612 345 678" },
+                "message": {
+                    "label": "Tu mensaje",
+                    "placeholder": "Tu mensaje…",
+                    "help": "Mínimo 20 caracteres. Cuanto más preciso, más rápida será la respuesta."
+                },
+                "customSubject": {
+                    "label": "Indica el asunto",
+                    "placeholder": "Tu asunto…",
+                    "help": "Unas palabras para describir el motivo de tu mensaje."
+                },
+                "club": { "label": "Nombre del club", "placeholder": "AS Simply-Foot" },
+                "clubSize": {
+                    "label": "Tamaño del club",
+                    "placeholder": "Selecciona un tamaño",
+                    "options": {
+                        "1-50": "1 - 50 federados",
+                        "51-100": "51 - 100 federados",
+                        "101-250": "101 - 250 federados",
+                        "251-500": "251 - 500 federados",
+                        "500+": "500+ federados",
+                        "no-club": "Aún sin club"
+                    }
+                },
+                "role": {
+                    "label": "Tu rol en el club",
+                    "placeholder": "Presidente, entrenador, jugador…"
+                },
+                "preferredSlot": {
+                    "label": "Franja horaria preferida para la demo",
+                    "placeholder": "Preferiblemente el martes después de las 18 h, en videollamada"
+                },
+                "bugPage": {
+                    "label": "¿En qué página ocurrió el error?",
+                    "placeholder": "En la pantalla de inicio"
+                },
+                "bugSteps": {
+                    "label": "¿Cómo reproducir el error?",
+                    "placeholder": "1. Fui a la pantalla de inicio\n2. Pulsé una tarjeta de evento\n3. La aplicación se cerró",
+                    "help": "Describe lo que hiciste, lo que esperabas y lo que ocurrió. No se necesita jerga técnica."
+                },
+                "organization": { "label": "Organización", "placeholder": "Tu organización…" },
+                "organizationWebsite": { "label": "Sitio web de la organización (opcional)", "placeholder": "https://" },
+                "media": { "label": "Medio / publicación", "placeholder": "Simply Blog…" },
+                "mediaRole": {
+                    "label": "Tu cargo",
+                    "placeholder": "Tu cargo…"
+                }
+            },
+            "submit": "Enviar mi mensaje",
+            "submitting": "Enviando…",
+            "errors": {
+                "required": "Este campo es obligatorio.",
+                "email": "Correo electrónico no válido.",
+                "url": "Dirección web no válida.",
+                "tooShort": "Al menos {min} caracteres, por favor.",
+                "tooLong": "Máximo {max} caracteres.",
+                "invalid": "Valor no válido."
+            },
+            "toastSuccessTitle": "Mensaje enviado",
+            "toastSuccessDescription": "¡Gracias! Te responderemos lo antes posible.",
+            "toastErrorTitle": "El envío falló",
+            "toastErrorDescription": "Se produjo un error. Inténtalo de nuevo en unos instantes o escríbenos directamente por correo."
+        }
+    },
+    "Footer": {
+        "sections": {
+            "legal": "Información legal",
+            "socials": "Sigue conectado"
+        },
+        "links": {
+            "mentionsLegales": "Aviso legal",
+            "cgu": "Condiciones de uso",
+            "cgv": "Condiciones de venta (próximamente)",
+            "privacy": "Privacidad y cookies",
+            "contact": "Contáctanos",
+            "faq": "Centro de ayuda"
+        },
+        "company": {
+            "capital": "Capital social: {capital}",
+            "rcs": "RCS: {rcs}",
+            "tva": "N° IVA: {tva}"
+        },
+        "socialsDescription": "Sigue nuestras últimas novedades, actualizaciones y consejos de gestión de clubes.",
+        "copyright": "© {year} {brand} - Todos los derechos reservados. Creado con ❤️ para los clubes amateurs.",
+        "socialLabel": {
+            "facebook": "Seguir en Facebook",
+            "linkedin": "Seguir en LinkedIn",
+            "instagram": "Seguir en Instagram"
+        }
+    },
+    "FootAbout": {
+        "meta": {
+            "title": "Acerca de — {brand}",
+            "description": "La historia de {brand}: una aventura humana y colectiva, impulsada por apasionados que ponen su energía al servicio del fútbol amateur."
+        },
+        "heading": "Sobre nosotros",
+        "intro": "Una aventura humana y colectiva, impulsada por <em>cinco apasionados del deporte y de la tecnología</em>.",
+        "team": {
+            "title": "El equipo",
+            "photoAlt": "Retrato de {name}",
+            "noPhoto": "Foto disponible pronto",
+            "linkedinLabel": "Perfil de LinkedIn de {name} (nueva pestaña)",
+            "members": {
+                "jeremy": { "title": "Presidente", "coFounder": "Cofundador" },
+                "romain": { "title": "Director General", "coFounder": "Cofundador" },
+                "jean": { "title": "Desarrollador", "coFounder": "Cofundador" },
+                "vanessa": { "title": "Desarrolladora", "coFounder": "Cofundadora" },
+                "damien": { "title": "Desarrollador", "coFounder": "Cofundador" }
+            }
+        },
+        "story": {
+            "title": "Nuestra historia",
+            "paragraphs": [
+                "<em>Antes de ser un proyecto, {brand} fue una frustración</em>. La de Jérémy, padre de un joven jugador, que ve cómo el club en el que juega su hijo se mantiene en pie gracias a la energía de sus voluntarios, pero se agota coordinando entrenamientos, convocatorias y desplazamientos, <em>sin ninguna herramienta pensada para ellos</em>.",
+                "<em>Una intuición. Un contexto favorable.</em> El auge de la inteligencia artificial le hace pensar que por fin está al alcance crear la herramienta que los clubes necesitan, incluso sin tener formación de desarrollador. Llama a Romain, su cómplice de toda la vida, y en pocas semanas <em>nace un primer prototipo</em>.",
+                "<em>El prototipo se sostiene, sin embargo el dúo choca rápidamente contra muros: seguridad, fiabilidad, robustez</em>. Una aplicación responsable de los datos de una multitud de federados no se improvisa. Jérémy y Romain deciden entonces rodearse. Vanessa se une a la aventura, seguida por Jean. Juntos terminan una versión piloto y la instalan en varios clubes asociados. El terreno habla rápido: <em>surgen necesidades concretas, como esa —a menudo subestimada— de acompañar a las familias con padres separados</em>.",
+                "<em>Para pasar el último escalón, hace falta todavía una incorporación.</em> Jean propone a Damien, un desarrollador apasionado por el fútbol que deseaba ardientemente emprender. Se une al equipo hacia el final del desarrollo de la aplicación piloto. <em>El equipo queda al completo: entre los cinco</em> retoman el piloto, integran los retornos de los clubes y dan vida a {brand} tal como lo conocemos hoy: <em>una aplicación pensada para quienes hacen vivir el fútbol amateur</em>.",
+                "<em>El pitido inicial ha sonado, el partido continúa. {brand} aún tiene mucho que aprender, que proponer y que construir. Cada retorno de un club nos acerca a un producto cada vez más justo</em>."
+            ]
+        }
+    },
+    "FootHome": {
+        "meta": {
+            "title": "SimplyFoot — Simplifica la gestión de tu club de fútbol",
+            "description": "Una aplicación sencilla para organizar tus equipos, tus partidos y la comunicación de tu club de fútbol amateur."
+        },
+        "intro": {
+            "title": "La aplicación que reúne todas las herramientas que tu club necesita.",
+            "description": "Queremos ayudarte a simplificar tu día a día como presidente y el trabajo de tus voluntarios, ofreciendo además una experiencia única a tus federados y a sus familias.",
+            "cta": "Solicitar una demo",
+            "screenshotAlt": "Vista previa de la aplicación SimplyFoot"
+        },
+        "pilots": {
+            "title": "Confían en nosotros 💚",
+            "description": "Clubes que se han unido a la aventura SimplyFoot, probando nuestras soluciones sobre el terreno.",
+            "logoAlt": "Logo {name}"
+        },
+        "partners": {
+            "eyebrow": "Nuestros socios",
+            "logoAlt": "Logo {name}"
+        },
+        "partnerOf": {
+            "eyebrow": "Colaboraciones",
+            "logoAlt": "Logo {name}"
+        },
+        "appStores": {
+            "groupLabel": "Descargar la aplicación SimplyFoot",
+            "googlePlay": {
+                "eyebrow": "Disponible en",
+                "label": "Google Play",
+                "ariaLabel": "Descargar SimplyFoot en Google Play (se abre en una nueva pestaña)"
+            },
+            "appStore": {
+                "eyebrow": "Descargar en",
+                "label": "App Store",
+                "ariaLabel": "Descargar SimplyFoot en App Store (se abre en una nueva pestaña)"
+            },
+            "testFlight": {
+                "eyebrow": "Beta iOS vía",
+                "label": "TestFlight",
+                "ariaLabel": "Únete a la beta iOS de SimplyFoot en TestFlight (se abre en una nueva pestaña)"
+            }
+        }
+    }
+}
