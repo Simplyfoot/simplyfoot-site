@@ -4,6 +4,7 @@ import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import type { ReactNode } from 'react';
 
+import { Analytics } from '@/components/shared/Analytics';
 import { routing } from '@/i18n/routing';
 import { Toaster } from '@/shadcn/sonner';
 
@@ -38,6 +39,7 @@ export default async function LocaleLayout({
                     {children}
                     <Toaster richColors closeButton position="bottom-right" />
                 </NextIntlClientProvider>
+                <Analytics />
             </body>
         </html>
     );
