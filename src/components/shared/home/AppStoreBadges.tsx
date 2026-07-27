@@ -11,19 +11,17 @@ interface AppStoreBadgesProps {
 }
 
 /**
- * Boutons de téléchargement de l'application (Google Play + TestFlight iOS).
+ * Boutons de téléchargement de l'application (Google Play + App Store).
  *
  * Style "badge officiel" : fond foncé, logo de la plateforme à gauche, ligne
- * de service en haut ("Disponible sur") et nom du store en bas. Pour iOS, on
- * met explicitement en avant "TestFlight" puisque l'app n'est pas encore sur
- * l'App Store — c'est la convention adoptée par les apps en phase de bêta.
+ * de service en haut ("Disponible sur") et nom du store en bas.
  *
  * Une marque sans liens configurés ne rend rien.
  */
 export async function AppStoreBadges({ brand, namespace }: AppStoreBadgesProps) {
     const links = BRAND_APP_STORES[brand];
 
-    if (!links.googlePlay && !links.testFlight && !links.appStore) {
+    if (!links.googlePlay && !links.appStore) {
         return null;
     }
 
@@ -52,14 +50,6 @@ export async function AppStoreBadges({ brand, namespace }: AppStoreBadgesProps) 
                     eyebrow={t('appStore.eyebrow')}
                     label={t('appStore.label')}
                     ariaLabel={t('appStore.ariaLabel')}
-                />
-            ) : links.testFlight ? (
-                <StoreBadge
-                    href={links.testFlight}
-                    icon={<AppleIcon />}
-                    eyebrow={t('testFlight.eyebrow')}
-                    label={t('testFlight.label')}
-                    ariaLabel={t('testFlight.ariaLabel')}
                 />
             ) : null}
         </div>

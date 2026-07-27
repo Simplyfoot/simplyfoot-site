@@ -174,7 +174,7 @@
                             "type": "list",
                             "items": [
                                 "Administrateur Club : utilisateur disposant des droits d'administration d'un Club sur la Plateforme.",
-                                "Application : application mobile {brand} disponible sur Android et iOS (TestFlight).",
+                                "Application : application mobile {brand} disponible sur Google Play (Android) et l'App Store (iOS).",
                                 "Club : structure sportive utilisant {brand}, notamment association, club amateur, équipe, école de football ou toute autre organisation sportive.",
                                 "Compte : espace personnel permettant à un Utilisateur d'accéder à la Plateforme.",
                                 "CGU : les présentes Conditions Générales d'Utilisation.",
@@ -1838,14 +1838,9 @@
                 "ariaLabel": "Télécharger SimplyFoot sur Google Play (nouvel onglet)"
             },
             "appStore": {
-                "eyebrow": "Télécharger dans l'",
+                "eyebrow": "Disponible sur",
                 "label": "App Store",
                 "ariaLabel": "Télécharger SimplyFoot sur l'App Store (nouvel onglet)"
-            },
-            "testFlight": {
-                "eyebrow": "Bêta iOS via",
-                "label": "TestFlight",
-                "ariaLabel": "Rejoindre la bêta iOS de SimplyFoot sur TestFlight (nouvel onglet)"
             }
         }
     }
