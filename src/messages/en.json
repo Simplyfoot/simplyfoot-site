@@ -171,7 +171,7 @@
                             "type": "list",
                             "items": [
                                 "Club Administrator: user holding administration rights over a Club on the Platform.",
-                                "Application: {brand} mobile application available on Android and iOS (TestFlight).",
+                                "Application: {brand} mobile application available on Google Play (Android) and the App Store (iOS).",
                                 "Club: sports organization using {brand}, in particular an association, amateur club, team, football school or any other sports organization.",
                                 "Account: personal space allowing a User to access the Platform.",
                                 "Terms of Use: these Terms of Use.",
@@ -1835,11 +1835,6 @@
                 "eyebrow": "Download on the",
                 "label": "App Store",
                 "ariaLabel": "Download SimplyFoot on the App Store (opens in a new tab)"
-            },
-            "testFlight": {
-                "eyebrow": "iOS beta via",
-                "label": "TestFlight",
-                "ariaLabel": "Join the SimplyFoot iOS beta on TestFlight (opens in a new tab)"
             }
         }
     }
