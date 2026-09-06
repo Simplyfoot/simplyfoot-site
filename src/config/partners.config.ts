@@ -51,16 +51,6 @@ export const PILOT_CLUBS: Record<BrandSlug, ReadonlyArray<PartnerEntry>> = {
             name: 'U.S. Ollioulaise',
             url: 'https://var.fff.fr/recherche-clubs?scl=7319',
         },
-        {
-            slug: 'olympique_tamaris',
-            name: 'Olympique Tamaris',
-            url: 'https://www.facebook.com/olympique.tamaris/',
-        },
-        {
-            slug: 'us_bandol',
-            name: 'U.S. Bandolaise',
-            url: 'https://www.fff.fr/competition/club/503050-u-s-bandolaise/information.html',
-        },
         { slug: 'us_mer', name: 'US Mer', url: 'https://var.fff.fr/recherche-clubs?scl=2399' },
     ],
     rugby: [],
