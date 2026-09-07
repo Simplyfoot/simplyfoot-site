@@ -45,7 +45,6 @@ export const PILOT_CLUBS: Record<BrandSlug, ReadonlyArray<PartnerEntry>> = {
             name: 'FC Carnoules',
             url: 'https://var.fff.fr/recherche-clubs?scl=180654',
         },
-        { slug: 'fc_cournon', name: 'FC Cournon', url: 'https://fccournon.com/' },
         {
             slug: 'ollioulaise',
             name: 'U.S. Ollioulaise',
